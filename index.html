@@ -514,6 +514,109 @@
       color: var(--cyan);
     }
 
+    /* Pricing Section */
+    .pricing-section {
+      background: linear-gradient(135deg, #0f172a 0%, var(--navy) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
+
+    .pricing-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .pricing-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .pricing-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .price-main {
+      margin-bottom: 1.5rem;
+    }
+
+    .price-amount {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1;
+      text-shadow: 0 0 30px var(--cyan-glow);
+    }
+
+    .price-period {
+      display: block;
+      color: var(--slate-300);
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .price-breakdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .price-detail {
+      text-align: center;
+    }
+
+    .price-detail-value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .price-detail-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      margin-top: 0.25rem;
+    }
+
+    .price-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .price-includes {
+      color: var(--slate-300);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
     /* CTA Button */
     .cta-section {
       background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
@@ -641,6 +744,24 @@
     @media (max-width: 480px) {
       .icons-grid {
         grid-template-columns: 1fr;
+      }
+
+      .pricing-card {
+        padding: 1.5rem;
+      }
+
+      .price-amount {
+        font-size: 2.75rem;
+      }
+
+      .price-breakdown {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .price-divider {
+        width: 60px;
+        height: 1px;
       }
     }
   </style>
@@ -826,6 +947,53 @@
             <span data-lang-content="zh"><strong>上期学员：</strong>全部达到或超过年级预期水平。</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <div class="section">
+      <h2 class="pricing-title">
+        <span data-lang-content="en">Investment</span>
+        <span data-lang-content="zh">课程费用</span>
+      </h2>
+      <div class="pricing-card">
+        <div class="price-main">
+          <span class="price-amount">$550</span>
+          <span class="price-period">
+            <span data-lang-content="en">for 10 weeks</span>
+            <span data-lang-content="zh">/ 10周课程</span>
+          </span>
+        </div>
+        <div class="price-breakdown">
+          <div class="price-detail">
+            <span class="price-detail-value">$55</span>
+            <span class="price-detail-label">
+              <span data-lang-content="en">per week</span>
+              <span data-lang-content="zh">每周</span>
+            </span>
+          </div>
+          <div class="price-divider"></div>
+          <div class="price-detail">
+            <span class="price-detail-value">1.5</span>
+            <span class="price-detail-label">
+              <span data-lang-content="en">hours per lesson</span>
+              <span data-lang-content="zh">小时/课时</span>
+            </span>
+          </div>
+          <div class="price-divider"></div>
+          <div class="price-detail">
+            <span class="price-detail-value">~$37</span>
+            <span class="price-detail-label">
+              <span data-lang-content="en">per hour</span>
+              <span data-lang-content="zh">每小时</span>
+            </span>
+          </div>
+        </div>
+        <p class="price-includes">
+          <span data-lang-content="en">Includes weekly worksheets, written feedback on every submission, and progress reports</span>
+          <span data-lang-content="zh">包含每周练习、作业书面反馈及学习进度报告</span>
+        </p>
       </div>
     </div>
   </section>
