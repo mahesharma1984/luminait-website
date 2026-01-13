@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuminAIT Learning</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.4;
+      color: #2d3748;
+      font-size: 10px;
+    }
+    
+    /* Header */
+    .header {
+      background: #0d1b2a;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .logo { width: 140px; height: auto; }
+    
+    .header-text h2 {
+      color: #00d4ff;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    
+    .header-text .tagline {
+      color: #94a3b8;
+      font-size: 9px;
+      margin-bottom: 2px;
+    }
+    
+    .header-text .texts {
+      color: #64748b;
+      font-size: 8px;
+      font-style: italic;
+    }
+    
+    /* Section 1 */
+    .section-1 {
+      background: white;
+      padding: 12px 20px;
+    }
+    
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    
+    .col h3 {
+      color: #0080ff;
+      font-size: 10px;
+      margin-bottom: 4px;
+    }
+    
+    .col p {
+      font-size: 9px;
+      color: #4a5568;
+    }
+    
+    /* Section 2 */
+    .section-2 {
+      background: #f1f5f9;
+      padding: 12px 20px;
+    }
+    
+    .section-2 h3 {
+      color: #0080ff;
+      font-size: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .icons-circle {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .icon-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: white;
+      padding: 5px 10px;
+      border-radius: 15px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      font-size: 8px;
+      color: #4a5568;
+    }
+    
+    .icon-item .icon { font-size: 10px; }
+    
+    /* Section 3 */
+    .section-3 {
+      background: white;
+      padding: 12px 20px;
+    }
+    
+    .two-col-arrow {
+      display: grid;
+      grid-template-columns: 1fr 30px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #0080ff;
+      padding-top: 15px;
+    }
+    
+    .section-3 h3 {
+      color: #0080ff;
+      font-size: 10px;
+      margin-bottom: 6px;
+    }
+    
+    .section-3 ul { list-style: none; }
+    
+    .section-3 li {
+      padding: 2px 0 2px 10px;
+      position: relative;
+      font-size: 9px;
+    }
+    
+    .section-3 li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0080ff;
+    }
+    
+    .section-3 .note {
+      margin-top: 6px;
+      font-style: italic;
+      color: #64748b;
+      font-size: 8px;
+    }
+    
+    .results-stat {
+      font-weight: 600;
+      color: #0080ff;
+    }
+    
+    .cohort-note {
+      margin-top: 6px;
+      padding: 5px 8px;
+      background: #f0fdf4;
+      border-left: 2px solid #22c55e;
+      font-size: 8px;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0d1b2a;
+      padding: 12px 20px;
+      color: white;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .footer h3 {
+      color: #00d4ff;
+      font-size: 9px;
+      margin-bottom: 6px;
+    }
+    
+    .details-grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 2px 15px;
+      font-size: 9px;
+    }
+    
+    .details-grid dt { color: #94a3b8; }
+    .details-grid dd { color: white; }
+    
+    .contact-info p {
+      margin-bottom: 2px;
+      font-size: 9px;
+    }
+    
+    .contact-info a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    
+    .referral {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #1e3a5f;
+      font-style: italic;
+      color: #94a3b8;
+      font-size: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <img src="luminait_logo.png" alt="LuminAIT Learning" class="logo">
+    <div class="header-text">
+      <h2>Analytical Writing for Secondary Students</h2>
+      <p class="tagline">Years 7–12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</p>
+      <p class="texts">Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.</p>
+    </div>
+  </header>
+
+  <section class="section-1">
+    <div class="three-col">
+      <div class="col">
+        <h3>What this is</h3>
+        <p>A 10-week course teaching literary analysis and logical writing which prepares students for high-stakes examinations such as NAPLAN, VCE, IB, and beyond.</p>
+      </div>
+      <div class="col">
+        <h3>How it works</h3>
+        <p>Students learn a sentence-level framework for building analytical arguments — a skill that transfers across high school, university, and into their working life.</p>
+      </div>
+      <div class="col">
+        <h3>The goal</h3>
+        <p>Students who can read a text, identify what's significant, and explain why it matters — so they can succeed in school and take advantage of the AI-enabled future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-2">
+    <h3>What's included</h3>
+    <div class="icons-circle">
+      <div class="icon-item"><span class="icon">📚</span> Skills & techniques</div>
+      <div class="icon-item"><span class="icon">📝</span> Weekly worksheets</div>
+      <div class="icon-item"><span class="icon">💬</span> Written feedback</div>
+      <div class="icon-item"><span class="icon">📊</span> Progress reports</div>
+      <div class="icon-item"><span class="icon">📋</span> Final assessment</div>
+    </div>
+  </section>
+
+  <section class="section-3">
+    <div class="two-col-arrow">
+      <div>
+        <h3>What students learn</h3>
+        <ul>
+          <li>Identify literary and narrative devices in texts</li>
+          <li>Build analytical sentences that explain significance</li>
+          <li>Develop thesis and argument with cohesion</li>
+          <li>Connect textual evidence to interpretation</li>
+        </ul>
+        <p class="note">By week 10, students have a repeatable method for any analytical writing task.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div>
+        <h3>Results</h3>
+        <ul>
+          <li><span class="results-stat">10–20%</span> improvement over the term</li>
+          <li><span class="results-stat">30–50%</span> improvement when applying feedback</li>
+        </ul>
+        <div class="cohort-note">
+          <strong>Previous cohort:</strong> all students met or exceeded grade-level expectations.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Details</h3>
+        <dl class="details-grid">
+          <dt>Duration</dt><dd>10 weeks</dd>
+          <dt>Format</dt><dd>Online, small group</dd>
+          <dt>Price</dt><dd>$550</dd>
+          <dt>Next cohort</dt><dd>[Term X — starts DATE]</dd>
+        </dl>
+      </div>
+      <div class="contact-info">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a></p>
+        <p>Call/WhatsApp: +61 421 213 517</p>
+        <p>WeChat: sharmeleon</p>
+      </div>
+      <p class="referral">Referred by a current family? Let us know to secure a special referral bonus for both of you!</p>
+    </div>
+  </footer>
+
+</body>
+</html>
