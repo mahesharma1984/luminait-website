@@ -76,53 +76,23 @@
       color: var(--deep-navy);
     }
 
-    /* Language visibility */
-    [data-lang-content="zh"] { display: none; }
-    [data-lang-content="en"] { display: inline; }
-
-    body[data-lang="zh"] [data-lang-content="zh"] { display: inline; }
-    body[data-lang="zh"] [data-lang-content="en"] { display: none; }
-
-    /* Block elements */
-    p[data-lang-content="zh"],
-    h1[data-lang-content="zh"],
-    h2[data-lang-content="zh"],
-    h3[data-lang-content="zh"],
-    li[data-lang-content="zh"],
-    dt[data-lang-content="zh"],
-    dd[data-lang-content="zh"],
-    div[data-lang-content="zh"] { display: none; }
-
-    p[data-lang-content="en"],
-    h1[data-lang-content="en"],
-    h2[data-lang-content="en"],
-    h3[data-lang-content="en"],
-    li[data-lang-content="en"],
-    dt[data-lang-content="en"],
-    dd[data-lang-content="en"],
-    div[data-lang-content="en"] { display: block; }
-
+    /* Language visibility - Default: show English, hide Chinese */
+    [data-lang-content="zh"] { display: none !important; }
+    
+    /* When Chinese is active: show Chinese, hide English */
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    
+    /* Block-level elements need display: block instead of inline */
     body[data-lang="zh"] p[data-lang-content="zh"],
     body[data-lang="zh"] h1[data-lang-content="zh"],
     body[data-lang="zh"] h2[data-lang-content="zh"],
     body[data-lang="zh"] h3[data-lang-content="zh"],
-    body[data-lang="zh"] li[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="zh"],
     body[data-lang="zh"] dt[data-lang-content="zh"],
-    body[data-lang="zh"] dd[data-lang-content="zh"],
-    body[data-lang="zh"] div[data-lang-content="en"] { display: none; }
-
-    body[data-lang="zh"] p[data-lang-content="en"],
-    body[data-lang="zh"] h1[data-lang-content="en"],
-    body[data-lang="zh"] h2[data-lang-content="en"],
-    body[data-lang="zh"] h3[data-lang-content="en"],
-    body[data-lang="zh"] li[data-lang-content="en"],
-    body[data-lang="zh"] dt[data-lang-content="en"],
-    body[data-lang="zh"] dd[data-lang-content="en"] { display: none; }
-
-    body[data-lang="zh"] div[data-lang-content="zh"] { display: block; }
-
-    /* List items special handling */
-    body[data-lang="zh"] li[data-lang-content="zh"] { display: list-item; }
+    body[data-lang="zh"] dd[data-lang-content="zh"] { display: block !important; }
+    
+    body[data-lang="zh"] li[data-lang-content="zh"] { display: list-item !important; }
 
     /* Header */
     .header {
@@ -689,11 +659,11 @@
         <h1 data-lang-content="zh">中学生分析性写作课程</h1>
         <p class="tagline">
           <span data-lang-content="en">Years 7–12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</span>
-          <span data-lang-content="zh">7–12年级 · 与学校课程同步 · 备考NAPLAN、VCE、IB</span>
+          <span data-lang-content="zh">7–12年级 · 对接学校课程 · 备战NAPLAN、VCE、IB考试</span>
         </p>
         <p class="texts">
           <span data-lang-content="en">Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.</span>
-          <span data-lang-content="zh">课程文本包括《罗密欧与朱丽叶》、《杀死一只知更鸟》、《记忆传授人》等经典作品。</span>
+          <span data-lang-content="zh">涵盖学校主要文本，包括《罗密欧与朱丽叶》《杀死一只知更鸟》《记忆传授人》等</span>
         </p>
       </div>
     </div>
@@ -704,21 +674,21 @@
       <div class="three-col">
         <div class="col">
           <h3 data-lang-content="en">What this is</h3>
-          <h3 data-lang-content="zh">课程简介</h3>
+          <h3 data-lang-content="zh">课程介绍</h3>
           <p data-lang-content="en">A 10-week course teaching literary analysis and logical writing which prepares students for high-stakes examinations such as NAPLAN, VCE, IB, and beyond.</p>
-          <p data-lang-content="zh">为期10周的课程，教授文学分析和逻辑写作技巧，帮助学生备考NAPLAN、VCE、IB等重要考试。</p>
+          <p data-lang-content="zh">为期10周的课程，教授文学分析与逻辑写作，帮助学生备战NAPLAN、VCE、IB等重要考试。</p>
         </div>
         <div class="col">
           <h3 data-lang-content="en">How it works</h3>
-          <h3 data-lang-content="zh">教学方式</h3>
+          <h3 data-lang-content="zh">教学方法</h3>
           <p data-lang-content="en">Students learn a sentence-level framework for building analytical arguments — a skill that transfers across high school, university, and into their working life.</p>
-          <p data-lang-content="zh">学生将学习一套句子层面的分析论证框架——这项技能可应用于高中、大学乃至职业生涯。</p>
+          <p data-lang-content="zh">学生将学习一套句子层级的分析框架，掌握构建分析性论证的技巧——这项能力将贯穿高中、大学乃至职业生涯。</p>
         </div>
         <div class="col">
           <h3 data-lang-content="en">The goal</h3>
           <h3 data-lang-content="zh">课程目标</h3>
           <p data-lang-content="en">Students can read a text, identify what's significant, and explain why it matters so they can succeed in school and take advantage of the AI-enabled future.</p>
-          <p data-lang-content="zh">让学生能够阅读文本、识别重点、解释其意义，从而在学业中取得成功，并为AI时代做好准备。</p>
+          <p data-lang-content="zh">让学生能够阅读文本、识别关键内容、并阐释其重要性——在学业中取得成功，为AI时代做好准备。</p>
         </div>
       </div>
     </div>
@@ -741,7 +711,7 @@
           </div>
           <p class="feature-desc">
             <span data-lang-content="en">Skills and techniques to improve reading and writing</span>
-            <span data-lang-content="zh">提升阅读和写作能力的技能与方法</span>
+            <span data-lang-content="zh">提升阅读与写作的技巧和方法</span>
           </p>
           <span class="feature-hint">
             <span data-lang-content="en">Hover for details</span>
@@ -758,7 +728,7 @@
           </div>
           <p class="feature-desc">
             <span data-lang-content="en">Customised to specific texts, featuring structured reading and writing activities</span>
-            <span data-lang-content="zh">针对特定文本定制，包含结构化的阅读和写作活动</span>
+            <span data-lang-content="zh">每周定制化练习，针对具体文本设计结构化读写活动</span>
           </p>
           <span class="feature-hint">
             <span data-lang-content="en">Hover for details</span>
@@ -775,7 +745,7 @@
           </div>
           <p class="feature-desc">
             <span data-lang-content="en">Detailed written feedback on every submission each week</span>
-            <span data-lang-content="zh">每周对每份作业提供详细的书面反馈</span>
+            <span data-lang-content="zh">每周作业均有详细书面反馈</span>
           </p>
           <span class="feature-hint">
             <span data-lang-content="en">Hover for details</span>
@@ -792,7 +762,7 @@
           </div>
           <p class="feature-desc">
             <span data-lang-content="en">Regular reports for parents to observe the student's development</span>
-            <span data-lang-content="zh">定期向家长汇报学生的学习进展</span>
+            <span data-lang-content="zh">家长进度报告，随时了解学生发展</span>
           </p>
           <span class="feature-hint">
             <span data-lang-content="en">Hover for details</span>
@@ -809,7 +779,7 @@
           </div>
           <p class="feature-desc">
             <span data-lang-content="en">Modelled on high-stakes exams, testing essay writing and comprehension</span>
-            <span data-lang-content="zh">模拟正式考试，测试作文写作和阅读理解能力</span>
+            <span data-lang-content="zh">期末测评，模拟高考题型，测试写作与阅读理解能力</span>
           </p>
           <span class="feature-hint">
             <span data-lang-content="en">Hover for details</span>
@@ -825,35 +795,35 @@
       <div class="two-col-arrow">
         <div class="content-box">
           <h3 data-lang-content="en">What students learn</h3>
-          <h3 data-lang-content="zh">学生收获</h3>
+          <h3 data-lang-content="zh">学生将学会</h3>
           <ul>
             <li data-lang-content="en">Identify literary and narrative devices in texts</li>
-            <li data-lang-content="zh">识别文本中的文学和叙事手法</li>
+            <li data-lang-content="zh">识别文本中的文学手法与叙事技巧</li>
             <li data-lang-content="en">Build analytical sentences that explain significance</li>
-            <li data-lang-content="zh">构建解释意义的分析性句子</li>
+            <li data-lang-content="zh">构建分析性句子，阐释意义而非简单描述</li>
             <li data-lang-content="en">Develop thesis and argument with cohesion</li>
-            <li data-lang-content="zh">发展连贯的论点和论证</li>
+            <li data-lang-content="zh">发展论点，运用连贯性将观点组织成完整文章</li>
             <li data-lang-content="en">Connect textual evidence to interpretation</li>
-            <li data-lang-content="zh">将文本证据与解读相结合</li>
+            <li data-lang-content="zh">将文本证据与分析解读相结合</li>
           </ul>
           <p class="note">
             <span data-lang-content="en">By week 10, students have a repeatable method for any analytical writing task.</span>
-            <span data-lang-content="zh">到第10周结束时，学生将掌握一套可重复使用的分析写作方法。</span>
+            <span data-lang-content="zh">完成10周课程后，学生将掌握一套可复用的文学分析写作方法。</span>
           </p>
         </div>
         <div class="arrow">→</div>
         <div class="content-box">
           <h3 data-lang-content="en">Results</h3>
-          <h3 data-lang-content="zh">学习成效</h3>
+          <h3 data-lang-content="zh">学习成果</h3>
           <ul>
             <li data-lang-content="en"><span class="results-stat">10–20%</span> improvement over the term</li>
-            <li data-lang-content="zh">学期内提升 <span class="results-stat">10–20%</span></li>
+            <li data-lang-content="zh">学期内整体提升 <span class="results-stat">10–20%</span></li>
             <li data-lang-content="en"><span class="results-stat">30–50%</span> improvement when applying feedback</li>
-            <li data-lang-content="zh">应用反馈后提升 <span class="results-stat">30–50%</span></li>
+            <li data-lang-content="zh">运用反馈后，单次作业提升 <span class="results-stat">30–50%</span></li>
           </ul>
           <div class="cohort-note">
             <span data-lang-content="en"><strong>Previous cohort:</strong> all students met or exceeded grade-level expectations.</span>
-            <span data-lang-content="zh"><strong>往期学员：</strong>所有学生均达到或超过年级预期水平。</span>
+            <span data-lang-content="zh"><strong>上期学员：</strong>全部达到或超过年级预期水平。</span>
           </div>
         </div>
       </div>
@@ -919,7 +889,7 @@
         </div>
         <p class="referral">
           <span data-lang-content="en">Referred by a current family? Let us know to secure a <strong>special referral bonus</strong> for both of you!</span>
-          <span data-lang-content="zh">由现有学员家庭推荐？请告诉我们，双方都可获得<strong>特别推荐奖励</strong>！</span>
+          <span data-lang-content="zh">由现有学员家庭推荐？请告知我们，双方均可获得<strong>推荐奖励</strong>！</span>
         </p>
       </div>
     </div>
