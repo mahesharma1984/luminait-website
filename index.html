@@ -7,7 +7,7 @@
   <meta name="description" content="A 10-week course teaching literary analysis and logical writing for Years 7-12 students. Prepares for NAPLAN, VCE, IB and beyond.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --deep-navy: #0a1628;
@@ -35,6 +35,94 @@
       font-size: 16px;
       background: var(--slate-100);
     }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      z-index: 100;
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: white;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    /* Language visibility */
+    [data-lang-content="zh"] { display: none; }
+    [data-lang-content="en"] { display: inline; }
+
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none; }
+
+    /* Block elements */
+    p[data-lang-content="zh"],
+    h1[data-lang-content="zh"],
+    h2[data-lang-content="zh"],
+    h3[data-lang-content="zh"],
+    li[data-lang-content="zh"],
+    dt[data-lang-content="zh"],
+    dd[data-lang-content="zh"],
+    div[data-lang-content="zh"] { display: none; }
+
+    p[data-lang-content="en"],
+    h1[data-lang-content="en"],
+    h2[data-lang-content="en"],
+    h3[data-lang-content="en"],
+    li[data-lang-content="en"],
+    dt[data-lang-content="en"],
+    dd[data-lang-content="en"],
+    div[data-lang-content="en"] { display: block; }
+
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"],
+    body[data-lang="zh"] h3[data-lang-content="zh"],
+    body[data-lang="zh"] li[data-lang-content="zh"],
+    body[data-lang="zh"] dt[data-lang-content="zh"],
+    body[data-lang="zh"] dd[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="en"] { display: none; }
+
+    body[data-lang="zh"] p[data-lang-content="en"],
+    body[data-lang="zh"] h1[data-lang-content="en"],
+    body[data-lang="zh"] h2[data-lang-content="en"],
+    body[data-lang="zh"] h3[data-lang-content="en"],
+    body[data-lang="zh"] li[data-lang-content="en"],
+    body[data-lang="zh"] dt[data-lang-content="en"],
+    body[data-lang="zh"] dd[data-lang-content="en"] { display: none; }
+
+    body[data-lang="zh"] div[data-lang-content="zh"] { display: block; }
+
+    /* List items special handling */
+    body[data-lang="zh"] li[data-lang-content="zh"] { display: list-item; }
 
     /* Header */
     .header {
@@ -80,6 +168,11 @@
       letter-spacing: -0.02em;
     }
 
+    body[data-lang="zh"] .header-text h1 {
+      font-family: 'Noto Sans SC', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
     .header-text .tagline {
       color: var(--slate-300);
       font-size: 1.05rem;
@@ -91,6 +184,10 @@
       color: var(--slate-400);
       font-size: 0.95rem;
       font-style: italic;
+    }
+
+    body[data-lang="zh"] .header-text .texts {
+      font-style: normal;
     }
 
     /* Sections */
@@ -132,6 +229,10 @@
       font-weight: 600;
     }
 
+    body[data-lang="zh"] .col h3 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
     .col p {
       font-size: 1rem;
       color: var(--slate-500);
@@ -150,6 +251,10 @@
       margin-bottom: 1.5rem;
       text-align: center;
       font-weight: 600;
+    }
+
+    body[data-lang="zh"] .section-2 .section-title {
+      font-family: 'Noto Sans SC', sans-serif;
     }
 
     .icons-grid {
@@ -302,6 +407,10 @@
       font-weight: 600;
     }
 
+    body[data-lang="zh"] .content-box h3 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
     .content-box ul { 
       list-style: none; 
     }
@@ -328,6 +437,10 @@
       font-size: 0.95rem;
       padding-top: 1rem;
       border-top: 1px dashed #e2e8f0;
+    }
+
+    body[data-lang="zh"] .note {
+      font-style: normal;
     }
 
     .results-stat {
@@ -376,6 +489,10 @@
       font-weight: 600;
     }
 
+    body[data-lang="zh"] .footer h3 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
     .details-grid {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -419,6 +536,10 @@
       font-size: 1rem;
     }
 
+    body[data-lang="zh"] .referral {
+      font-style: normal;
+    }
+
     .referral strong {
       color: var(--cyan);
     }
@@ -440,6 +561,10 @@
       color: white;
       font-size: 1.5rem;
       margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .cta-content h2 {
+      font-family: 'Noto Sans SC', sans-serif;
     }
 
     .cta-button {
@@ -468,9 +593,15 @@
     }
 
     @media (max-width: 768px) {
+      .lang-toggle {
+        top: 0.75rem;
+        right: 1rem;
+      }
+
       .header-content {
         flex-direction: column;
         text-align: center;
+        padding-top: 2.5rem;
       }
 
       .logo {
@@ -544,15 +675,26 @@
     }
   </style>
 </head>
-<body>
+<body data-lang="en">
 
   <header class="header">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+    </div>
     <div class="header-content">
       <img src="luminait_logo.png" alt="LuminAIT Learning" class="logo">
       <div class="header-text">
-        <h1>Analytical Writing for Secondary Students</h1>
-        <p class="tagline">Years 7–12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</p>
-        <p class="texts">Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.</p>
+        <h1 data-lang-content="en">Analytical Writing for Secondary Students</h1>
+        <h1 data-lang-content="zh">中学生分析性写作课程</h1>
+        <p class="tagline">
+          <span data-lang-content="en">Years 7–12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</span>
+          <span data-lang-content="zh">7–12年级 · 与学校课程同步 · 备考NAPLAN、VCE、IB</span>
+        </p>
+        <p class="texts">
+          <span data-lang-content="en">Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.</span>
+          <span data-lang-content="zh">课程文本包括《罗密欧与朱丽叶》、《杀死一只知更鸟》、《记忆传授人》等经典作品。</span>
+        </p>
       </div>
     </div>
   </header>
@@ -561,16 +703,22 @@
     <div class="section">
       <div class="three-col">
         <div class="col">
-          <h3>What this is</h3>
-          <p>A 10-week course teaching literary analysis and logical writing which prepares students for high-stakes examinations such as NAPLAN, VCE, IB, and beyond.</p>
+          <h3 data-lang-content="en">What this is</h3>
+          <h3 data-lang-content="zh">课程简介</h3>
+          <p data-lang-content="en">A 10-week course teaching literary analysis and logical writing which prepares students for high-stakes examinations such as NAPLAN, VCE, IB, and beyond.</p>
+          <p data-lang-content="zh">为期10周的课程，教授文学分析和逻辑写作技巧，帮助学生备考NAPLAN、VCE、IB等重要考试。</p>
         </div>
         <div class="col">
-          <h3>How it works</h3>
-          <p>Students learn a sentence-level framework for building analytical arguments — a skill that transfers across high school, university, and into their working life.</p>
+          <h3 data-lang-content="en">How it works</h3>
+          <h3 data-lang-content="zh">教学方式</h3>
+          <p data-lang-content="en">Students learn a sentence-level framework for building analytical arguments — a skill that transfers across high school, university, and into their working life.</p>
+          <p data-lang-content="zh">学生将学习一套句子层面的分析论证框架——这项技能可应用于高中、大学乃至职业生涯。</p>
         </div>
         <div class="col">
-          <h3>The goal</h3>
-          <p>Students can read a text, identify what's significant, and explain why it matters so they can succeed in school and take advantage of the AI-enabled future.</p>
+          <h3 data-lang-content="en">The goal</h3>
+          <h3 data-lang-content="zh">课程目标</h3>
+          <p data-lang-content="en">Students can read a text, identify what's significant, and explain why it matters so they can succeed in school and take advantage of the AI-enabled future.</p>
+          <p data-lang-content="zh">让学生能够阅读文本、识别重点、解释其意义，从而在学业中取得成功，并为AI时代做好准备。</p>
         </div>
       </div>
     </div>
@@ -578,47 +726,95 @@
 
   <section class="section-2">
     <div class="section">
-      <h2 class="section-title">What's included</h2>
+      <h2 class="section-title">
+        <span data-lang-content="en">What's included</span>
+        <span data-lang-content="zh">课程内容</span>
+      </h2>
       <div class="icons-grid">
         <div class="feature-card" tabindex="0">
           <div class="feature-header">
             <span class="feature-icon">📚</span>
-            <span class="feature-title">Skills & techniques</span>
+            <span class="feature-title">
+              <span data-lang-content="en">Skills & techniques</span>
+              <span data-lang-content="zh">技能与方法</span>
+            </span>
           </div>
-          <p class="feature-desc">Skills and techniques to improve reading and writing</p>
-          <span class="feature-hint">Hover for details</span>
+          <p class="feature-desc">
+            <span data-lang-content="en">Skills and techniques to improve reading and writing</span>
+            <span data-lang-content="zh">提升阅读和写作能力的技能与方法</span>
+          </p>
+          <span class="feature-hint">
+            <span data-lang-content="en">Hover for details</span>
+            <span data-lang-content="zh">悬停查看详情</span>
+          </span>
         </div>
         <div class="feature-card" tabindex="0">
           <div class="feature-header">
             <span class="feature-icon">📝</span>
-            <span class="feature-title">Weekly worksheets</span>
+            <span class="feature-title">
+              <span data-lang-content="en">Weekly worksheets</span>
+              <span data-lang-content="zh">每周练习</span>
+            </span>
           </div>
-          <p class="feature-desc">Customised to specific texts, featuring structured reading and writing activities</p>
-          <span class="feature-hint">Hover for details</span>
+          <p class="feature-desc">
+            <span data-lang-content="en">Customised to specific texts, featuring structured reading and writing activities</span>
+            <span data-lang-content="zh">针对特定文本定制，包含结构化的阅读和写作活动</span>
+          </p>
+          <span class="feature-hint">
+            <span data-lang-content="en">Hover for details</span>
+            <span data-lang-content="zh">悬停查看详情</span>
+          </span>
         </div>
         <div class="feature-card" tabindex="0">
           <div class="feature-header">
             <span class="feature-icon">💬</span>
-            <span class="feature-title">Written feedback</span>
+            <span class="feature-title">
+              <span data-lang-content="en">Written feedback</span>
+              <span data-lang-content="zh">书面反馈</span>
+            </span>
           </div>
-          <p class="feature-desc">Detailed written feedback on every submission each week</p>
-          <span class="feature-hint">Hover for details</span>
+          <p class="feature-desc">
+            <span data-lang-content="en">Detailed written feedback on every submission each week</span>
+            <span data-lang-content="zh">每周对每份作业提供详细的书面反馈</span>
+          </p>
+          <span class="feature-hint">
+            <span data-lang-content="en">Hover for details</span>
+            <span data-lang-content="zh">悬停查看详情</span>
+          </span>
         </div>
         <div class="feature-card" tabindex="0">
           <div class="feature-header">
             <span class="feature-icon">📊</span>
-            <span class="feature-title">Progress reports</span>
+            <span class="feature-title">
+              <span data-lang-content="en">Progress reports</span>
+              <span data-lang-content="zh">进度报告</span>
+            </span>
           </div>
-          <p class="feature-desc">Regular reports for parents to observe the student's development</p>
-          <span class="feature-hint">Hover for details</span>
+          <p class="feature-desc">
+            <span data-lang-content="en">Regular reports for parents to observe the student's development</span>
+            <span data-lang-content="zh">定期向家长汇报学生的学习进展</span>
+          </p>
+          <span class="feature-hint">
+            <span data-lang-content="en">Hover for details</span>
+            <span data-lang-content="zh">悬停查看详情</span>
+          </span>
         </div>
         <div class="feature-card" tabindex="0">
           <div class="feature-header">
             <span class="feature-icon">📋</span>
-            <span class="feature-title">Final assessment</span>
+            <span class="feature-title">
+              <span data-lang-content="en">Final assessment</span>
+              <span data-lang-content="zh">结业测评</span>
+            </span>
           </div>
-          <p class="feature-desc">Modelled on high-stakes exams, testing essay writing and comprehension</p>
-          <span class="feature-hint">Hover for details</span>
+          <p class="feature-desc">
+            <span data-lang-content="en">Modelled on high-stakes exams, testing essay writing and comprehension</span>
+            <span data-lang-content="zh">模拟正式考试，测试作文写作和阅读理解能力</span>
+          </p>
+          <span class="feature-hint">
+            <span data-lang-content="en">Hover for details</span>
+            <span data-lang-content="zh">悬停查看详情</span>
+          </span>
         </div>
       </div>
     </div>
@@ -628,24 +824,36 @@
     <div class="section">
       <div class="two-col-arrow">
         <div class="content-box">
-          <h3>What students learn</h3>
+          <h3 data-lang-content="en">What students learn</h3>
+          <h3 data-lang-content="zh">学生收获</h3>
           <ul>
-            <li>Identify literary and narrative devices in texts</li>
-            <li>Build analytical sentences that explain significance</li>
-            <li>Develop thesis and argument with cohesion</li>
-            <li>Connect textual evidence to interpretation</li>
+            <li data-lang-content="en">Identify literary and narrative devices in texts</li>
+            <li data-lang-content="zh">识别文本中的文学和叙事手法</li>
+            <li data-lang-content="en">Build analytical sentences that explain significance</li>
+            <li data-lang-content="zh">构建解释意义的分析性句子</li>
+            <li data-lang-content="en">Develop thesis and argument with cohesion</li>
+            <li data-lang-content="zh">发展连贯的论点和论证</li>
+            <li data-lang-content="en">Connect textual evidence to interpretation</li>
+            <li data-lang-content="zh">将文本证据与解读相结合</li>
           </ul>
-          <p class="note">By week 10, students have a repeatable method for any analytical writing task.</p>
+          <p class="note">
+            <span data-lang-content="en">By week 10, students have a repeatable method for any analytical writing task.</span>
+            <span data-lang-content="zh">到第10周结束时，学生将掌握一套可重复使用的分析写作方法。</span>
+          </p>
         </div>
         <div class="arrow">→</div>
         <div class="content-box">
-          <h3>Results</h3>
+          <h3 data-lang-content="en">Results</h3>
+          <h3 data-lang-content="zh">学习成效</h3>
           <ul>
-            <li><span class="results-stat">10–20%</span> improvement over the term</li>
-            <li><span class="results-stat">30–50%</span> improvement when applying feedback</li>
+            <li data-lang-content="en"><span class="results-stat">10–20%</span> improvement over the term</li>
+            <li data-lang-content="zh">学期内提升 <span class="results-stat">10–20%</span></li>
+            <li data-lang-content="en"><span class="results-stat">30–50%</span> improvement when applying feedback</li>
+            <li data-lang-content="zh">应用反馈后提升 <span class="results-stat">30–50%</span></li>
           </ul>
           <div class="cohort-note">
-            <strong>Previous cohort:</strong> all students met or exceeded grade-level expectations.
+            <span data-lang-content="en"><strong>Previous cohort:</strong> all students met or exceeded grade-level expectations.</span>
+            <span data-lang-content="zh"><strong>往期学员：</strong>所有学生均达到或超过年级预期水平。</span>
           </div>
         </div>
       </div>
@@ -654,8 +862,12 @@
 
   <section class="cta-section">
     <div class="cta-content">
-      <h2>Ready to help your child excel in analytical writing?</h2>
-      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button">Get in Touch</a>
+      <h2 data-lang-content="en">Ready to help your child excel in analytical writing?</h2>
+      <h2 data-lang-content="zh">准备好帮助您的孩子提升分析写作能力了吗？</h2>
+      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button">
+        <span data-lang-content="en">Get in Touch</span>
+        <span data-lang-content="zh">联系我们</span>
+      </a>
     </div>
   </section>
 
@@ -663,24 +875,74 @@
     <div class="footer-content">
       <div class="footer-grid">
         <div>
-          <h3>Course Details</h3>
+          <h3 data-lang-content="en">Course Details</h3>
+          <h3 data-lang-content="zh">课程详情</h3>
           <dl class="details-grid">
-            <dt>Duration</dt><dd>10 weeks</dd>
-            <dt>Format</dt><dd>Online, small group</dd>
-            <dt>Price</dt><dd>$550</dd>
-            <dt>Next cohort</dt><dd>Term 1 — starts February 2026</dd>
+            <dt data-lang-content="en">Duration</dt>
+            <dt data-lang-content="zh">时长</dt>
+            <dd data-lang-content="en">10 weeks</dd>
+            <dd data-lang-content="zh">10周</dd>
+            
+            <dt data-lang-content="en">Format</dt>
+            <dt data-lang-content="zh">形式</dt>
+            <dd data-lang-content="en">Online, small group</dd>
+            <dd data-lang-content="zh">线上小班授课</dd>
+            
+            <dt data-lang-content="en">Price</dt>
+            <dt data-lang-content="zh">价格</dt>
+            <dd>$550</dd>
+            
+            <dt data-lang-content="en">Next cohort</dt>
+            <dt data-lang-content="zh">下期开课</dt>
+            <dd data-lang-content="en">Term 1 — starts February 2026</dd>
+            <dd data-lang-content="zh">第一学期 — 2026年2月开课</dd>
           </dl>
         </div>
         <div class="contact-info">
-          <h3>Contact</h3>
-          <p>Email: <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a></p>
-          <p>Call/WhatsApp: <a href="tel:+61421213517">+61 421 213 517</a></p>
-          <p>WeChat: sharmeleon</p>
+          <h3 data-lang-content="en">Contact</h3>
+          <h3 data-lang-content="zh">联系方式</h3>
+          <p>
+            <span data-lang-content="en">Email:</span>
+            <span data-lang-content="zh">邮箱：</span>
+            <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a>
+          </p>
+          <p>
+            <span data-lang-content="en">Call/WhatsApp:</span>
+            <span data-lang-content="zh">电话/WhatsApp：</span>
+            <a href="tel:+61421213517">+61 421 213 517</a>
+          </p>
+          <p>
+            <span data-lang-content="en">WeChat:</span>
+            <span data-lang-content="zh">微信：</span>
+            sharmeleon
+          </p>
         </div>
-        <p class="referral">Referred by a current family? Let us know to secure a <strong>special referral bonus</strong> for both of you!</p>
+        <p class="referral">
+          <span data-lang-content="en">Referred by a current family? Let us know to secure a <strong>special referral bonus</strong> for both of you!</span>
+          <span data-lang-content="zh">由现有学员家庭推荐？请告诉我们，双方都可获得<strong>特别推荐奖励</strong>！</span>
+        </p>
       </div>
     </div>
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    // Load saved language preference
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+    });
+  </script>
 
 </body>
 </html>
