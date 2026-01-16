@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Reports | LuminAIT Learning</title>
+  <meta name="description" content="See how we track your child's development with detailed progress reports throughout the course.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--slate-300);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: white;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    /* Language visibility */
+    [data-lang-content="zh"] { display: none !important; }
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"],
+    body[data-lang="zh"] h3[data-lang-content="zh"],
+    body[data-lang="zh"] h4[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="zh"],
+    body[data-lang="zh"] li[data-lang-content="zh"] { display: block !important; }
+    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 3rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    body[data-lang="zh"] .page-header h1 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .page-header .subtitle {
+      color: var(--slate-300);
+      font-size: 1.15rem;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-gray {
+      background: var(--slate-100);
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    body[data-lang="zh"] .section-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: var(--slate-600);
+      line-height: 1.8;
+    }
+
+    /* Sample Report */
+    .sample-report {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      margin-top: 1rem;
+    }
+
+    .report-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .report-badge {
+      display: inline-block;
+      background: rgba(0, 212, 255, 0.2);
+      color: var(--cyan);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .report-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    body[data-lang="zh"] .report-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .report-meta {
+      color: var(--slate-400);
+      font-size: 0.95rem;
+    }
+
+    .report-body {
+      padding: 2rem;
+    }
+
+    .report-section {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .report-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .report-section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--blue);
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    body[data-lang="zh"] .report-section-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .report-section-icon {
+      font-size: 1.25rem;
+    }
+
+    /* Skills Track */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-desc {
+      font-size: 0.85rem;
+      color: var(--slate-500);
+    }
+
+    /* Score Table */
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .score-table th {
+      background: var(--slate-100);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--slate-700);
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .score-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: var(--slate-600);
+    }
+
+    .score-table tr:hover {
+      background: #f8fafc;
+    }
+
+    .score-value {
+      font-weight: 700;
+      color: var(--emerald);
+    }
+
+    .score-improved {
+      color: var(--emerald);
+      font-size: 0.8rem;
+    }
+
+    /* Rewrite Comparison */
+    .rewrite-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .rewrite-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .rewrite-card.original {
+      border-left: 4px solid var(--slate-400);
+    }
+
+    .rewrite-card.improved {
+      border-left: 4px solid var(--emerald);
+    }
+
+    .rewrite-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .rewrite-card.original .rewrite-label {
+      color: var(--slate-500);
+    }
+
+    .rewrite-card.improved .rewrite-label {
+      color: var(--emerald);
+    }
+
+    .rewrite-score {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .rewrite-card.original .rewrite-score {
+      color: var(--slate-600);
+    }
+
+    .rewrite-card.improved .rewrite-score {
+      color: var(--emerald);
+    }
+
+    .rewrite-note {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    .rewrite-improvement {
+      text-align: center;
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .rewrite-improvement-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--emerald);
+    }
+
+    .rewrite-improvement-label {
+      font-size: 0.85rem;
+      color: #065f46;
+    }
+
+    /* Summary */
+    .summary-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .summary-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+
+    .summary-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .summary-content h4 {
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 0.25rem;
+    }
+
+    .summary-content p {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      margin: 0;
+    }
+
+    /* Next Focus */
+    .next-focus {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-left: 4px solid var(--blue);
+      padding: 1.25rem;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .next-focus h4 {
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .next-focus p {
+      color: #1e40af;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* What Parents Receive */
+    .receive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .receive-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .receive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+    }
+
+    .receive-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .receive-title {
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 0.5rem;
+    }
+
+    .receive-timing {
+      font-size: 0.85rem;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .receive-desc {
+      font-size: 0.9rem;
+      color: var(--slate-500);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .cta-content h2 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      box-shadow: none;
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--slate-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-contact {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rewrite-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .receive-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--deep-navy);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-content {
+        flex-wrap: wrap;
+      }
+
+      .lang-toggle {
+        order: 2;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .section {
+        padding: 2rem 1.25rem;
+      }
+
+      .report-body {
+        padding: 1.5rem;
+      }
+
+      .score-table {
+        font-size: 0.8rem;
+      }
+
+      .score-table th,
+      .score-table td {
+        padding: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">
+          <span data-lang-content="en">Home</span>
+          <span data-lang-content="zh">首页</span>
+        </a>
+        <a href="syllabus.html" class="nav-link">
+          <span data-lang-content="en">Curriculum</span>
+          <span data-lang-content="zh">课程大纲</span>
+        </a>
+        <a href="sample.html" class="nav-link">
+          <span data-lang-content="en">Sample</span>
+          <span data-lang-content="zh">练习样例</span>
+        </a>
+        <a href="progress.html" class="nav-link active">
+          <span data-lang-content="en">Progress</span>
+          <span data-lang-content="zh">进度报告</span>
+        </a>
+        <a href="results.html" class="nav-link">
+          <span data-lang-content="en">Results</span>
+          <span data-lang-content="zh">学习成果</span>
+        </a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
+          <span data-lang-content="en">Enroll</span>
+          <span data-lang-content="zh">报名咨询</span>
+        </a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1 data-lang-content="en">Progress Reports</h1>
+      <h1 data-lang-content="zh">进度报告</h1>
+      <p class="subtitle">
+        <span data-lang-content="en">How we track your child's development</span>
+        <span data-lang-content="zh">我们如何跟踪您孩子的发展</span>
+      </p>
+    </div>
+  </header>
+
+  <section class="section-white">
+    <div class="section intro">
+      <p data-lang-content="en">
+        Every parent receives detailed progress reports showing exactly how their child is developing. We track three core skills — evidence, reasoning, and analysis — and provide clear, actionable feedback at every stage.
+      </p>
+      <p data-lang-content="zh">
+        每位家长都会收到详细的进度报告，清楚展示孩子的发展情况。我们跟踪三项核心技能——证据、推理和分析——并在每个阶段提供清晰、可操作的反馈。
+      </p>
+    </div>
+  </section>
+
+  <section class="section-gray">
+    <div class="section">
+      <h2 class="section-title">
+        <span data-lang-content="en">Sample Progress Report</span>
+        <span data-lang-content="zh">进度报告样例</span>
+      </h2>
+      <div class="sample-report">
+        <div class="report-header">
+          <div class="report-badge">
+            <span data-lang-content="en">Sample Report</span>
+            <span data-lang-content="zh">报告样例</span>
+          </div>
+          <h3 class="report-title">
+            <span data-lang-content="en">Student Progress Report</span>
+            <span data-lang-content="zh">学生进度报告</span>
+          </h3>
+          <p class="report-meta">
+            <span data-lang-content="en">[Sample Student] · Term 1, 2026 · Week 4</span>
+            <span data-lang-content="zh">[样例学生] · 2026年第一学期 · 第4周</span>
+          </p>
+        </div>
+        <div class="report-body">
+          <div class="report-section">
+            <h4 class="report-section-title">
+              <span class="report-section-icon">📊</span>
+              <span data-lang-content="en">Skills We Track</span>
+              <span data-lang-content="zh">我们跟踪的技能</span>
+            </h4>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">📖</div>
+                <div class="skill-name">
+                  <span data-lang-content="en">Evidence</span>
+                  <span data-lang-content="zh">证据</span>
+                </div>
+                <div class="skill-desc">
+                  <span data-lang-content="en">Supporting claims with text details</span>
+                  <span data-lang-content="zh">用文本细节支撑论点</span>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">🧠</div>
+                <div class="skill-name">
+                  <span data-lang-content="en">Reasoning</span>
+                  <span data-lang-content="zh">推理</span>
+                </div>
+                <div class="skill-desc">
+                  <span data-lang-content="en">Explaining why things matter</span>
+                  <span data-lang-content="zh">解释事物的重要性</span>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">🔍</div>
+                <div class="skill-name">
+                  <span data-lang-content="en">Analysis</span>
+                  <span data-lang-content="zh">分析</span>
+                </div>
+                <div class="skill-desc">
+                  <span data-lang-content="en">Explaining author's choices</span>
+                  <span data-lang-content="zh">解释作者的选择</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <h4 class="report-section-title">
+              <span class="report-section-icon">📈</span>
+              <span data-lang-content="en">Score Progression</span>
+              <span data-lang-content="zh">分数进展</span>
+            </h4>
+            <table class="score-table">
+              <thead>
+                <tr>
+                  <th>
+                    <span data-lang-content="en">Week</span>
+                    <span data-lang-content="zh">周次</span>
+                  </th>
+                  <th>
+                    <span data-lang-content="en">Focus</span>
+                    <span data-lang-content="zh">重点</span>
+                  </th>
+                  <th>
+                    <span data-lang-content="en">Score</span>
+                    <span data-lang-content="zh">分数</span>
+                  </th>
+                  <th>
+                    <span data-lang-content="en">Notes</span>
+                    <span data-lang-content="zh">备注</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <span data-lang-content="en">Exposition Devices</span>
+                    <span data-lang-content="zh">开端手法</span>
+                  </td>
+                  <td><span class="score-value">2.5</span></td>
+                  <td>
+                    <span data-lang-content="en">Identifies devices, needs significance work</span>
+                    <span data-lang-content="zh">能识别手法，需加强意义阐述</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <span data-lang-content="en">Rising Action</span>
+                    <span data-lang-content="zh">情节上升</span>
+                  </td>
+                  <td><span class="score-value">2.8</span> <span class="score-improved">+0.3</span></td>
+                  <td>
+                    <span data-lang-content="en">Better evidence selection</span>
+                    <span data-lang-content="zh">证据选择有进步</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <span data-lang-content="en">Climax & Structure</span>
+                    <span data-lang-content="zh">高潮与结构</span>
+                  </td>
+                  <td><span class="score-value">3.2</span> <span class="score-improved">+0.4</span></td>
+                  <td>
+                    <span data-lang-content="en">Strong analysis emerging</span>
+                    <span data-lang-content="zh">分析能力开始显现</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <span data-lang-content="en">Narrative Voice</span>
+                    <span data-lang-content="zh">叙述声音</span>
+                  </td>
+                  <td><span class="score-value">3.5</span> <span class="score-improved">+0.3</span></td>
+                  <td>
+                    <span data-lang-content="en">Excellent reasoning development</span>
+                    <span data-lang-content="zh">推理能力发展优秀</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="report-section">
+            <h4 class="report-section-title">
+              <span class="report-section-icon">🔄</span>
+              <span data-lang-content="en">Rewrite Impact</span>
+              <span data-lang-content="zh">修改效果</span>
+            </h4>
+            <div class="rewrite-grid">
+              <div class="rewrite-card original">
+                <div class="rewrite-label">
+                  <span data-lang-content="en">Original Submission</span>
+                  <span data-lang-content="zh">原始提交</span>
+                </div>
+                <div class="rewrite-score">2.8</div>
+                <p class="rewrite-note">
+                  <span data-lang-content="en">Week 2 worksheet before feedback</span>
+                  <span data-lang-content="zh">第2周练习，反馈前</span>
+                </p>
+              </div>
+              <div class="rewrite-card improved">
+                <div class="rewrite-label">
+                  <span data-lang-content="en">After Rewrite</span>
+                  <span data-lang-content="zh">修改后</span>
+                </div>
+                <div class="rewrite-score">3.8</div>
+                <p class="rewrite-note">
+                  <span data-lang-content="en">Same worksheet after applying feedback</span>
+                  <span data-lang-content="zh">应用反馈后的同一练习</span>
+                </p>
+              </div>
+            </div>
+            <div class="rewrite-improvement">
+              <div class="rewrite-improvement-value">+36%</div>
+              <div class="rewrite-improvement-label">
+                <span data-lang-content="en">Improvement from feedback application</span>
+                <span data-lang-content="zh">应用反馈后的提升</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <h4 class="report-section-title">
+              <span class="report-section-icon">📝</span>
+              <span data-lang-content="en">Summary</span>
+              <span data-lang-content="zh">总结</span>
+            </h4>
+            <div class="summary-list">
+              <div class="summary-item">
+                <span class="summary-icon">📖</span>
+                <div class="summary-content">
+                  <h4 data-lang-content="en">Evidence</h4>
+                  <h4 data-lang-content="zh">证据</h4>
+                  <p data-lang-content="en">Strong improvement in selecting relevant quotes. Now consistently chooses evidence that supports analytical claims.</p>
+                  <p data-lang-content="zh">在选择相关引用方面有明显进步。现在能持续选择支持分析论点的证据。</p>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="summary-icon">🧠</span>
+                <div class="summary-content">
+                  <h4 data-lang-content="en">Reasoning</h4>
+                  <h4 data-lang-content="zh">推理</h4>
+                  <p data-lang-content="en">Developing ability to explain significance. Moving beyond description toward interpretation.</p>
+                  <p data-lang-content="zh">解释意义的能力正在发展。正在从描述向解读过渡。</p>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="summary-icon">🔍</span>
+                <div class="summary-content">
+                  <h4 data-lang-content="en">Analysis</h4>
+                  <h4 data-lang-content="zh">分析</h4>
+                  <p data-lang-content="en">Beginning to connect devices to author intent. Ready to develop more sophisticated analytical sentences.</p>
+                  <p data-lang-content="zh">开始将文学手法与作者意图相连接。已准备好发展更复杂的分析句子。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <h4 class="report-section-title">
+              <span class="report-section-icon">🎯</span>
+              <span data-lang-content="en">Next Focus</span>
+              <span data-lang-content="zh">下一步重点</span>
+            </h4>
+            <div class="next-focus">
+              <h4 data-lang-content="en">Recommended Development Area</h4>
+              <h4 data-lang-content="zh">建议发展领域</h4>
+              <p data-lang-content="en">Focus on strengthening the connection between evidence and effect. Practice explaining how specific word choices create emotional impact on readers.</p>
+              <p data-lang-content="zh">重点加强证据与效果之间的联系。练习解释具体的词语选择如何对读者产生情感影响。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="section">
+      <h2 class="section-title">
+        <span data-lang-content="en">What Parents Receive</span>
+        <span data-lang-content="zh">家长收到的内容</span>
+      </h2>
+      <div class="receive-grid">
+        <div class="receive-card">
+          <div class="receive-icon">📊</div>
+          <div class="receive-title">
+            <span data-lang-content="en">Progress Reports</span>
+            <span data-lang-content="zh">进度报告</span>
+          </div>
+          <div class="receive-timing">
+            <span data-lang-content="en">Weeks 4 & 8</span>
+            <span data-lang-content="zh">第4周和第8周</span>
+          </div>
+          <div class="receive-desc">
+            <span data-lang-content="en">Comprehensive reports showing skill development and trajectory</span>
+            <span data-lang-content="zh">展示技能发展和进步轨迹的综合报告</span>
+          </div>
+        </div>
+        <div class="receive-card">
+          <div class="receive-icon">💬</div>
+          <div class="receive-title">
+            <span data-lang-content="en">Written Feedback</span>
+            <span data-lang-content="zh">书面反馈</span>
+          </div>
+          <div class="receive-timing">
+            <span data-lang-content="en">Every Week</span>
+            <span data-lang-content="zh">每周</span>
+          </div>
+          <div class="receive-desc">
+            <span data-lang-content="en">Detailed feedback on every submission with specific improvement suggestions</span>
+            <span data-lang-content="zh">每次作业的详细反馈，包含具体改进建议</span>
+          </div>
+        </div>
+        <div class="receive-card">
+          <div class="receive-icon">📋</div>
+          <div class="receive-title">
+            <span data-lang-content="en">Final Assessment</span>
+            <span data-lang-content="zh">结业测评</span>
+          </div>
+          <div class="receive-timing">
+            <span data-lang-content="en">Week 10</span>
+            <span data-lang-content="zh">第10周</span>
+          </div>
+          <div class="receive-desc">
+            <span data-lang-content="en">Complete assessment with detailed breakdown of all skill areas</span>
+            <span data-lang-content="zh">完整测评，包含所有技能领域的详细分析</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 data-lang-content="en">Ready to see your child's progress?</h2>
+      <h2 data-lang-content="zh">准备好见证您孩子的进步了吗？</h2>
+      <div class="cta-buttons">
+        <a href="results.html" class="cta-button">
+          <span data-lang-content="en">See Our Results</span>
+          <span data-lang-content="zh">查看学习成果</span>
+        </a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button secondary">
+          <span data-lang-content="en">Enroll Now</span>
+          <span data-lang-content="zh">立即报名</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">
+        <span data-lang-content="en">Home</span>
+        <span data-lang-content="zh">首页</span>
+      </a>
+      <a href="syllabus.html">
+        <span data-lang-content="en">Curriculum</span>
+        <span data-lang-content="zh">课程大纲</span>
+      </a>
+      <a href="sample.html">
+        <span data-lang-content="en">Sample Worksheet</span>
+        <span data-lang-content="zh">练习样例</span>
+      </a>
+      <a href="progress.html">
+        <span data-lang-content="en">Progress Reports</span>
+        <span data-lang-content="zh">进度报告</span>
+      </a>
+      <a href="results.html">
+        <span data-lang-content="en">Results</span>
+        <span data-lang-content="zh">学习成果</span>
+      </a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+    });
+  </script>
+
+</body>
+</html>

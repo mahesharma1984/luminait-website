@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-Week Curriculum | LuminAIT Learning</title>
+  <meta name="description" content="Our 10-week analytical writing curriculum for secondary students. From literary devices to complete essays.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--slate-300);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: white;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    /* Language visibility */
+    [data-lang-content="zh"] { display: none !important; }
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"],
+    body[data-lang="zh"] h3[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="zh"],
+    body[data-lang="zh"] li[data-lang-content="zh"],
+    body[data-lang="zh"] td[data-lang-content="zh"],
+    body[data-lang="zh"] th[data-lang-content="zh"] { display: block !important; }
+    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 3rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    body[data-lang="zh"] .page-header h1 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .page-header .subtitle {
+      color: var(--slate-300);
+      font-size: 1.15rem;
+      margin-bottom: 0;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-gray {
+      background: var(--slate-100);
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .section-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: var(--slate-600);
+      line-height: 1.8;
+    }
+
+    /* Phase Cards */
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .phase-card {
+      background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .phase-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+    }
+
+    .phase-card.phase-pre {
+      border-top: 4px solid var(--cyan);
+    }
+
+    .phase-card.phase-analysis {
+      border-top: 4px solid var(--blue);
+    }
+
+    .phase-card.phase-synthesis {
+      border-top: 4px solid var(--emerald);
+    }
+
+    .phase-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-pre .phase-label { color: var(--cyan); }
+    .phase-analysis .phase-label { color: var(--blue); }
+    .phase-synthesis .phase-label { color: var(--emerald); }
+
+    .phase-card h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--slate-800);
+      margin-bottom: 0.75rem;
+    }
+
+    body[data-lang="zh"] .phase-card h3 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .phase-card p {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .phase-weeks {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #e2e8f0;
+      font-size: 0.85rem;
+      color: var(--slate-500);
+    }
+
+    /* Week Table */
+    .week-table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .week-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .week-table th {
+      background: var(--deep-navy);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .week-table th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .week-table th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .week-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    .week-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .week-table tr:hover {
+      background: #f1f5f9;
+    }
+
+    .week-table tr:last-child td:first-child {
+      border-radius: 0 0 0 8px;
+    }
+
+    .week-table tr:last-child td:last-child {
+      border-radius: 0 0 8px 0;
+    }
+
+    .week-num {
+      font-weight: 700;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .week-focus {
+      font-weight: 600;
+      color: var(--slate-700);
+    }
+
+    .week-desc {
+      color: var(--slate-600);
+    }
+
+    /* Frameworks */
+    .frameworks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .framework-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .framework-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .framework-name {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .framework-full {
+      font-size: 0.85rem;
+      color: var(--slate-500);
+      margin-bottom: 0.75rem;
+    }
+
+    .framework-desc {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .cta-content h2 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--slate-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-contact {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .phases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .frameworks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--deep-navy);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-content {
+        flex-wrap: wrap;
+      }
+
+      .lang-toggle {
+        order: 2;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .section {
+        padding: 2rem 1.25rem;
+      }
+
+      .week-table {
+        font-size: 0.85rem;
+      }
+
+      .week-table th,
+      .week-table td {
+        padding: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">
+          <span data-lang-content="en">Home</span>
+          <span data-lang-content="zh">首页</span>
+        </a>
+        <a href="syllabus.html" class="nav-link active">
+          <span data-lang-content="en">Curriculum</span>
+          <span data-lang-content="zh">课程大纲</span>
+        </a>
+        <a href="sample.html" class="nav-link">
+          <span data-lang-content="en">Sample</span>
+          <span data-lang-content="zh">练习样例</span>
+        </a>
+        <a href="progress.html" class="nav-link">
+          <span data-lang-content="en">Progress</span>
+          <span data-lang-content="zh">进度报告</span>
+        </a>
+        <a href="results.html" class="nav-link">
+          <span data-lang-content="en">Results</span>
+          <span data-lang-content="zh">学习成果</span>
+        </a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
+          <span data-lang-content="en">Enroll</span>
+          <span data-lang-content="zh">报名咨询</span>
+        </a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1 data-lang-content="en">10-Week Curriculum</h1>
+      <h1 data-lang-content="zh">10周课程大纲</h1>
+      <p class="subtitle">
+        <span data-lang-content="en">Analytical Writing for Secondary Students</span>
+        <span data-lang-content="zh">中学生分析性写作课程</span>
+      </p>
+    </div>
+  </header>
+
+  <section class="section-white">
+    <div class="section intro">
+      <p data-lang-content="en">
+        Our structured 10-week course takes students from foundational reading skills to writing complete analytical essays. By the end, students will be able to identify literary devices, explain their significance, and construct cohesive arguments — skills that transfer to NAPLAN, VCE, IB, and beyond.
+      </p>
+      <p data-lang-content="zh">
+        我们精心设计的10周课程，带领学生从基础阅读技能逐步进阶到完成完整的分析性文章。课程结束时，学生将能够识别文学手法、阐释其意义并构建连贯的论证——这些技能适用于NAPLAN、VCE、IB等各类考试。
+      </p>
+    </div>
+  </section>
+
+  <section class="section-gray">
+    <div class="section">
+      <h2 class="section-title" style="text-align: center;">
+        <span data-lang-content="en">Three Phases of Learning</span>
+        <span data-lang-content="zh">三个学习阶段</span>
+      </h2>
+      <div class="phases-grid">
+        <div class="phase-card phase-pre">
+          <div class="phase-label">
+            <span data-lang-content="en">Pre-Analysis</span>
+            <span data-lang-content="zh">分析准备阶段</span>
+          </div>
+          <h3 data-lang-content="en">Context & Pattern</h3>
+          <h3 data-lang-content="zh">背景与模式</h3>
+          <p data-lang-content="en">
+            Students build foundational understanding of the text: genre conventions, reading strategies, character relationships, and how the text creates meaning.
+          </p>
+          <p data-lang-content="zh">
+            学生建立对文本的基础理解：文体规范、阅读策略、人物关系，以及文本如何构建意义。
+          </p>
+          <div class="phase-weeks">
+            <span data-lang-content="en">Weeks 0 – 0.5</span>
+            <span data-lang-content="zh">第0周 – 第0.5周</span>
+          </div>
+        </div>
+        <div class="phase-card phase-analysis">
+          <div class="phase-label">
+            <span data-lang-content="en">Analysis</span>
+            <span data-lang-content="zh">分析阶段</span>
+          </div>
+          <h3 data-lang-content="en">Device Analysis</h3>
+          <h3 data-lang-content="zh">手法分析</h3>
+          <p data-lang-content="en">
+            Students learn to identify and analyze literary devices through the stages of Freytag's Pyramid: exposition, rising action, climax, falling action, and resolution.
+          </p>
+          <p data-lang-content="zh">
+            学生通过弗莱塔格金字塔的各个阶段学习识别和分析文学手法：开端、上升、高潮、下降和结局。
+          </p>
+          <div class="phase-weeks">
+            <span data-lang-content="en">Weeks 1 – 5</span>
+            <span data-lang-content="zh">第1周 – 第5周</span>
+          </div>
+        </div>
+        <div class="phase-card phase-synthesis">
+          <div class="phase-label">
+            <span data-lang-content="en">Synthesis</span>
+            <span data-lang-content="zh">综合阶段</span>
+          </div>
+          <h3 data-lang-content="en">Thesis & Essay</h3>
+          <h3 data-lang-content="zh">论点与文章</h3>
+          <p data-lang-content="en">
+            Students synthesize their analysis into thesis statements and complete essays, learning paragraph structure and argument development.
+          </p>
+          <p data-lang-content="zh">
+            学生将分析综合成论点陈述和完整文章，学习段落结构和论证展开。
+          </p>
+          <div class="phase-weeks">
+            <span data-lang-content="en">Weeks 6 – 10</span>
+            <span data-lang-content="zh">第6周 – 第10周</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="section">
+      <h2 class="section-title">
+        <span data-lang-content="en">Week-by-Week Breakdown</span>
+        <span data-lang-content="zh">每周课程安排</span>
+      </h2>
+      <div class="week-table-container">
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>
+                <span data-lang-content="en">Week</span>
+                <span data-lang-content="zh">周次</span>
+              </th>
+              <th>
+                <span data-lang-content="en">Focus</span>
+                <span data-lang-content="zh">重点</span>
+              </th>
+              <th>
+                <span data-lang-content="en">What Students Do</span>
+                <span data-lang-content="zh">学生活动</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="week-num">0</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Context Introduction</span>
+                <span data-lang-content="zh">背景介绍</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Genre conventions, reading strategies, character relationships</span>
+                <span data-lang-content="zh">文体规范、阅读策略、人物关系</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">0.5</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Pattern Introduction</span>
+                <span data-lang-content="zh">模式介绍</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">How the text creates meaning through patterns and structures</span>
+                <span data-lang-content="zh">文本如何通过模式和结构构建意义</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">1</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Exposition Devices</span>
+                <span data-lang-content="zh">开端手法</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Character and setting analysis in the opening sections</span>
+                <span data-lang-content="zh">开篇部分的人物与场景分析</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">2</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Rising Action</span>
+                <span data-lang-content="zh">情节上升</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Literary devices in context as tension builds</span>
+                <span data-lang-content="zh">张力积累过程中的文学手法分析</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">3</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Climax & Structure</span>
+                <span data-lang-content="zh">高潮与结构</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Narrative structure analysis at the turning point</span>
+                <span data-lang-content="zh">转折点处的叙事结构分析</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">4</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Falling Action & Voice</span>
+                <span data-lang-content="zh">情节下降与叙述声音</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Narrative voice analysis as consequences unfold</span>
+                <span data-lang-content="zh">情节发展过程中的叙述声音分析</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">5</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Resolution & Rhetoric</span>
+                <span data-lang-content="zh">结局与修辞</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Rhetorical voice analysis in the conclusion</span>
+                <span data-lang-content="zh">结尾部分的修辞分析</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">6</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Thesis Development</span>
+                <span data-lang-content="zh">论点发展</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Organising knowledge and forming central arguments</span>
+                <span data-lang-content="zh">整理知识并形成中心论点</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">7</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Essay Planning</span>
+                <span data-lang-content="zh">文章规划</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Paragraph structure and topic sentence development</span>
+                <span data-lang-content="zh">段落结构与主题句发展</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">8</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Complete Essay</span>
+                <span data-lang-content="zh">完整文章</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Writing a full TEEL essay with introduction and conclusion</span>
+                <span data-lang-content="zh">撰写包含引言和结论的完整TEEL文章</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">9</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Alternative Thesis</span>
+                <span data-lang-content="zh">论点变体</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Exploring thesis variations and argument flexibility</span>
+                <span data-lang-content="zh">探索论点变体与论证灵活性</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="week-num">10</td>
+              <td class="week-focus">
+                <span data-lang-content="en">Assessment</span>
+                <span data-lang-content="zh">结业测评</span>
+              </td>
+              <td class="week-desc">
+                <span data-lang-content="en">Final exam modelled on high-stakes assessments</span>
+                <span data-lang-content="zh">模拟高考形式的期末测评</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gray">
+    <div class="section">
+      <h2 class="section-title" style="text-align: center;">
+        <span data-lang-content="en">Key Frameworks</span>
+        <span data-lang-content="zh">核心框架</span>
+      </h2>
+      <div class="frameworks-grid">
+        <div class="framework-card">
+          <div class="framework-name">TVODE</div>
+          <div class="framework-full">
+            <span data-lang-content="en">Topic, Voice, Object, Detail, Effect</span>
+            <span data-lang-content="zh">主题、声音、对象、细节、效果</span>
+          </div>
+          <p class="framework-desc">
+            <span data-lang-content="en">A sentence-level structure for building analytical statements that connect textual evidence to interpretation.</span>
+            <span data-lang-content="zh">句子层级的分析结构，将文本证据与解读相连接。</span>
+          </p>
+        </div>
+        <div class="framework-card">
+          <div class="framework-name">TEEL</div>
+          <div class="framework-full">
+            <span data-lang-content="en">Topic, Explanation, Evidence, Link</span>
+            <span data-lang-content="zh">主题、解释、证据、联结</span>
+          </div>
+          <p class="framework-desc">
+            <span data-lang-content="en">A paragraph-level structure for organising analytical essays with clear topic sentences and supporting evidence.</span>
+            <span data-lang-content="zh">段落层级的结构，用于组织带有清晰主题句和支撑证据的分析文章。</span>
+          </p>
+        </div>
+        <div class="framework-card">
+          <div class="framework-name">DCCEPS</div>
+          <div class="framework-full">
+            <span data-lang-content="en">Reasoning Progression</span>
+            <span data-lang-content="zh">推理进阶</span>
+          </div>
+          <p class="framework-desc">
+            <span data-lang-content="en">A framework for developing reasoning skills from description through to evaluation and synthesis.</span>
+            <span data-lang-content="zh">从描述到评价与综合的推理能力发展框架。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 data-lang-content="en">Ready to enroll?</h2>
+      <h2 data-lang-content="zh">准备好报名了吗？</h2>
+      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button">
+        <span data-lang-content="en">Get in Touch</span>
+        <span data-lang-content="zh">联系我们</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">
+        <span data-lang-content="en">Home</span>
+        <span data-lang-content="zh">首页</span>
+      </a>
+      <a href="syllabus.html">
+        <span data-lang-content="en">Curriculum</span>
+        <span data-lang-content="zh">课程大纲</span>
+      </a>
+      <a href="sample.html">
+        <span data-lang-content="en">Sample Worksheet</span>
+        <span data-lang-content="zh">练习样例</span>
+      </a>
+      <a href="progress.html">
+        <span data-lang-content="en">Progress Reports</span>
+        <span data-lang-content="zh">进度报告</span>
+      </a>
+      <a href="results.html">
+        <span data-lang-content="en">Results</span>
+        <span data-lang-content="zh">学习成果</span>
+      </a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+    });
+  </script>
+
+</body>
+</html>

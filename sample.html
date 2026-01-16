@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Worksheet | LuminAIT Learning</title>
+  <meta name="description" content="See what students actually do each week in our analytical writing course. Sample worksheet from Week 4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--slate-300);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: white;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    /* Language visibility */
+    [data-lang-content="zh"] { display: none !important; }
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"],
+    body[data-lang="zh"] h3[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="zh"],
+    body[data-lang="zh"] li[data-lang-content="zh"] { display: block !important; }
+    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 3rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    body[data-lang="zh"] .page-header h1 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .page-header .subtitle {
+      color: var(--slate-300);
+      font-size: 1.15rem;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-gray {
+      background: var(--slate-100);
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .section-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: var(--slate-600);
+      line-height: 1.8;
+    }
+
+    /* Worksheet Preview */
+    .worksheet-sections {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .worksheet-section {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .worksheet-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1);
+    }
+
+    .worksheet-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .worksheet-number {
+      background: var(--cyan);
+      color: var(--deep-navy);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .worksheet-title {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .worksheet-pages {
+      color: var(--slate-400);
+      font-size: 0.85rem;
+      margin-left: auto;
+    }
+
+    .worksheet-content {
+      padding: 1.5rem;
+    }
+
+    .worksheet-content p {
+      color: var(--slate-600);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .worksheet-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .worksheet-example {
+      background: #f8fafc;
+      border-left: 4px solid var(--cyan);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1rem;
+    }
+
+    .worksheet-example-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .worksheet-example p {
+      font-size: 0.95rem;
+      color: var(--slate-700);
+      margin-bottom: 0;
+    }
+
+    /* Process Steps */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .process-step {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .process-step::after {
+      content: '→';
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .process-step:last-child::after {
+      display: none;
+    }
+
+    .process-number {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 0.75rem;
+    }
+
+    .process-title {
+      font-weight: 600;
+      color: var(--slate-700);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .process-desc {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      line-height: 1.4;
+    }
+
+    /* Device Analysis Steps */
+    .device-steps {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .device-step {
+      background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .device-step-num {
+      font-size: 0.75rem;
+      color: var(--slate-400);
+      margin-bottom: 0.25rem;
+    }
+
+    .device-step-name {
+      font-weight: 600;
+      color: var(--blue);
+      font-size: 0.85rem;
+    }
+
+    /* Tiering */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .tier-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tier-card.beginner {
+      border-top: 4px solid var(--emerald);
+    }
+
+    .tier-card.standard {
+      border-top: 4px solid var(--blue);
+    }
+
+    .tier-card.advanced {
+      border-top: 4px solid #8b5cf6;
+    }
+
+    .tier-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .tier-card.beginner .tier-label { color: var(--emerald); }
+    .tier-card.standard .tier-label { color: var(--blue); }
+    .tier-card.advanced .tier-label { color: #8b5cf6; }
+
+    .tier-list {
+      list-style: none;
+    }
+
+    .tier-list li {
+      padding: 0.4rem 0 0.4rem 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    .tier-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .cta-content h2 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      box-shadow: none;
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--slate-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-contact {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .process-step:nth-child(3)::after {
+        display: none;
+      }
+
+      .device-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .tier-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--deep-navy);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-content {
+        flex-wrap: wrap;
+      }
+
+      .lang-toggle {
+        order: 2;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .section {
+        padding: 2rem 1.25rem;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step::after {
+        display: none;
+      }
+
+      .device-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .device-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">
+          <span data-lang-content="en">Home</span>
+          <span data-lang-content="zh">首页</span>
+        </a>
+        <a href="syllabus.html" class="nav-link">
+          <span data-lang-content="en">Curriculum</span>
+          <span data-lang-content="zh">课程大纲</span>
+        </a>
+        <a href="sample.html" class="nav-link active">
+          <span data-lang-content="en">Sample</span>
+          <span data-lang-content="zh">练习样例</span>
+        </a>
+        <a href="progress.html" class="nav-link">
+          <span data-lang-content="en">Progress</span>
+          <span data-lang-content="zh">进度报告</span>
+        </a>
+        <a href="results.html" class="nav-link">
+          <span data-lang-content="en">Results</span>
+          <span data-lang-content="zh">学习成果</span>
+        </a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
+          <span data-lang-content="en">Enroll</span>
+          <span data-lang-content="zh">报名咨询</span>
+        </a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1 data-lang-content="en">Sample Worksheet</h1>
+      <h1 data-lang-content="zh">练习样例</h1>
+      <p class="subtitle">
+        <span data-lang-content="en">Week 4 — Narrative Voice</span>
+        <span data-lang-content="zh">第4周 — 叙述声音</span>
+      </p>
+    </div>
+  </header>
+
+  <section class="section-white">
+    <div class="section intro">
+      <p data-lang-content="en">
+        Each week, students complete a structured worksheet that guides them through device analysis. This sample from Week 4 shows how students learn to identify narrative voice devices and explain their significance to the text's overall meaning.
+      </p>
+      <p data-lang-content="zh">
+        每周，学生完成一份结构化的练习，引导他们进行文学手法分析。这份第4周的样例展示了学生如何学习识别叙述声音手法，并解释其对文本整体意义的重要性。
+      </p>
+    </div>
+  </section>
+
+  <section class="section-gray">
+    <div class="section">
+      <h2 class="section-title" style="text-align: center;">
+        <span data-lang-content="en">Worksheet Structure</span>
+        <span data-lang-content="zh">练习结构</span>
+      </h2>
+      <div class="worksheet-sections">
+        <div class="worksheet-section">
+          <div class="worksheet-header">
+            <span class="worksheet-number">1</span>
+            <span class="worksheet-title">
+              <span data-lang-content="en">Thesis Alignment</span>
+              <span data-lang-content="zh">论点对齐</span>
+            </span>
+            <span class="worksheet-pages">
+              <span data-lang-content="en">Pages 6-7</span>
+              <span data-lang-content="zh">第6-7页</span>
+            </span>
+          </div>
+          <div class="worksheet-content">
+            <p data-lang-content="en">
+              Shows how this week's focus connects to the overall meaning of the text. Students see where their analysis fits in the bigger picture — building toward a cohesive essay thesis.
+            </p>
+            <p data-lang-content="zh">
+              展示本周重点如何与文本整体意义相连接。学生能看到他们的分析如何融入更大的图景——逐步构建一个连贯的文章论点。
+            </p>
+            <div class="worksheet-example">
+              <div class="worksheet-example-label">
+                <span data-lang-content="en">Example</span>
+                <span data-lang-content="zh">示例</span>
+              </div>
+              <p data-lang-content="en">
+                "This week we examine narrative voice in Chapters 15-21. Scout's evolving perspective reveals how empathy develops through direct experience with injustice."
+              </p>
+              <p data-lang-content="zh">
+                "本周我们分析第15-21章中的叙述声音。斯库特不断演变的视角揭示了共情如何通过直接经历不公正而发展。"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="worksheet-section">
+          <div class="worksheet-header">
+            <span class="worksheet-number">2</span>
+            <span class="worksheet-title">
+              <span data-lang-content="en">Comprehension Check</span>
+              <span data-lang-content="zh">理解检查</span>
+            </span>
+            <span class="worksheet-pages">
+              <span data-lang-content="en">Page 8</span>
+              <span data-lang-content="zh">第8页</span>
+            </span>
+          </div>
+          <div class="worksheet-content">
+            <p data-lang-content="en">
+              Quick entry activity ensuring students have surface-level understanding before moving to deeper analysis. Checks character motivations, key events, and basic plot comprehension.
+            </p>
+            <p data-lang-content="zh">
+              快速入门活动，确保学生在进入深度分析之前具有表层理解。检查人物动机、关键事件和基本情节理解。
+            </p>
+          </div>
+        </div>
+
+        <div class="worksheet-section">
+          <div class="worksheet-header">
+            <span class="worksheet-number">3</span>
+            <span class="worksheet-title">
+              <span data-lang-content="en">Device Analysis</span>
+              <span data-lang-content="zh">手法分析</span>
+            </span>
+            <span class="worksheet-pages">
+              <span data-lang-content="en">Pages 9-18</span>
+              <span data-lang-content="zh">第9-18页</span>
+            </span>
+          </div>
+          <div class="worksheet-content">
+            <p data-lang-content="en">
+              The core of each worksheet: a 6-step scaffolded process for analyzing 2-4 literary devices. Students move from identification through to explaining effect and significance.
+            </p>
+            <p data-lang-content="zh">
+              每份练习的核心：一个6步骤的脚手架流程，用于分析2-4个文学手法。学生从识别逐步过渡到解释效果和意义。
+            </p>
+            <div class="device-steps">
+              <div class="device-step">
+                <div class="device-step-num">
+                  <span data-lang-content="en">Step 1</span>
+                  <span data-lang-content="zh">步骤1</span>
+                </div>
+                <div class="device-step-name">
+                  <span data-lang-content="en">Definition</span>
+                  <span data-lang-content="zh">定义</span>
+                </div>
+              </div>
+              <div class="device-step">
+                <div class="device-step-num">
+                  <span data-lang-content="en">Step 2</span>
+                  <span data-lang-content="zh">步骤2</span>
+                </div>
+                <div class="device-step-name">
+                  <span data-lang-content="en">Topic</span>
+                  <span data-lang-content="zh">主题</span>
+                </div>
+              </div>
+              <div class="device-step">
+                <div class="device-step-num">
+                  <span data-lang-content="en">Step 3</span>
+                  <span data-lang-content="zh">步骤3</span>
+                </div>
+                <div class="device-step-name">
+                  <span data-lang-content="en">Object</span>
+                  <span data-lang-content="zh">对象</span>
+                </div>
+              </div>
+              <div class="device-step">
+                <div class="device-step-num">
+                  <span data-lang-content="en">Step 4</span>
+                  <span data-lang-content="zh">步骤4</span>
+                </div>
+                <div class="device-step-name">
+                  <span data-lang-content="en">Analyze</span>
+                  <span data-lang-content="zh">分析</span>
+                </div>
+              </div>
+              <div class="device-step">
+                <div class="device-step-num">
+                  <span data-lang-content="en">Step 5</span>
+                  <span data-lang-content="zh">步骤5</span>
+                </div>
+                <div class="device-step-name">
+                  <span data-lang-content="en">Detail</span>
+                  <span data-lang-content="zh">细节</span>
+                </div>
+              </div>
+              <div class="device-step">
+                <div class="device-step-num">
+                  <span data-lang-content="en">Step 6</span>
+                  <span data-lang-content="zh">步骤6</span>
+                </div>
+                <div class="device-step-name">
+                  <span data-lang-content="en">Effect</span>
+                  <span data-lang-content="zh">效果</span>
+                </div>
+              </div>
+            </div>
+            <div class="worksheet-example" style="margin-top: 1.5rem;">
+              <div class="worksheet-example-label">
+                <span data-lang-content="en">Example Device: Dramatic Irony</span>
+                <span data-lang-content="zh">示例手法：戏剧性反讽</span>
+              </div>
+              <p data-lang-content="en">
+                Students identify dramatic irony in Scout's narration, analyze what readers understand that Scout doesn't, and explain how this creates empathy for the trial's injustice.
+              </p>
+              <p data-lang-content="zh">
+                学生在斯库特的叙述中识别戏剧性反讽，分析读者理解而斯库特不理解的内容，并解释这如何为审判的不公正创造共情。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="worksheet-section">
+          <div class="worksheet-header">
+            <span class="worksheet-number">4</span>
+            <span class="worksheet-title">
+              <span data-lang-content="en">TVODE Connection</span>
+              <span data-lang-content="zh">TVODE连接</span>
+            </span>
+            <span class="worksheet-pages">
+              <span data-lang-content="en">Page 19</span>
+              <span data-lang-content="zh">第19页</span>
+            </span>
+          </div>
+          <div class="worksheet-content">
+            <p data-lang-content="en">
+              Students synthesize their device analysis into TVODE sentences — the building blocks for analytical paragraphs. This connects individual insights to the essay-writing skills developed in later weeks.
+            </p>
+            <p data-lang-content="zh">
+              学生将他们的手法分析综合成TVODE句子——分析段落的构建模块。这将个别见解与后续几周发展的文章写作技能相连接。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="section">
+      <h2 class="section-title" style="text-align: center;">
+        <span data-lang-content="en">How the Process Works</span>
+        <span data-lang-content="zh">流程如何运作</span>
+      </h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <div class="process-title">
+            <span data-lang-content="en">Understand Context</span>
+            <span data-lang-content="zh">理解背景</span>
+          </div>
+          <div class="process-desc">
+            <span data-lang-content="en">Thesis alignment shows the week's purpose</span>
+            <span data-lang-content="zh">论点对齐展示本周目的</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <div class="process-title">
+            <span data-lang-content="en">Check Comprehension</span>
+            <span data-lang-content="zh">检查理解</span>
+          </div>
+          <div class="process-desc">
+            <span data-lang-content="en">Entry activity confirms readiness</span>
+            <span data-lang-content="zh">入门活动确认准备就绪</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <div class="process-title">
+            <span data-lang-content="en">Analyze Devices</span>
+            <span data-lang-content="zh">分析手法</span>
+          </div>
+          <div class="process-desc">
+            <span data-lang-content="en">6-step scaffolded process</span>
+            <span data-lang-content="zh">6步骤脚手架流程</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <div class="process-title">
+            <span data-lang-content="en">Build Effects</span>
+            <span data-lang-content="zh">构建效果</span>
+          </div>
+          <div class="process-desc">
+            <span data-lang-content="en">Categorise insights by type</span>
+            <span data-lang-content="zh">按类型分类见解</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <div class="process-title">
+            <span data-lang-content="en">Connect to TVODE</span>
+            <span data-lang-content="zh">连接TVODE</span>
+          </div>
+          <div class="process-desc">
+            <span data-lang-content="en">Build analytical sentences</span>
+            <span data-lang-content="zh">构建分析句子</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gray">
+    <div class="section">
+      <h2 class="section-title" style="text-align: center;">
+        <span data-lang-content="en">Worksheets Are Tiered</span>
+        <span data-lang-content="zh">练习分层设计</span>
+      </h2>
+      <p style="text-align: center; color: var(--slate-600); margin-bottom: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <span data-lang-content="en">Every worksheet comes in three versions to match student ability levels:</span>
+        <span data-lang-content="zh">每份练习有三个版本，以匹配学生的能力水平：</span>
+      </p>
+      <div class="tier-grid">
+        <div class="tier-card beginner">
+          <div class="tier-label">
+            <span data-lang-content="en">Beginner</span>
+            <span data-lang-content="zh">初级</span>
+          </div>
+          <ul class="tier-list">
+            <li data-lang-content="en">2 devices per worksheet</li>
+            <li data-lang-content="zh">每份练习2个手法</li>
+            <li data-lang-content="en">4-step simplified process</li>
+            <li data-lang-content="zh">4步简化流程</li>
+            <li data-lang-content="en">Sentence frames provided</li>
+            <li data-lang-content="zh">提供句子框架</li>
+            <li data-lang-content="en">More guided prompts</li>
+            <li data-lang-content="zh">更多引导性提示</li>
+          </ul>
+        </div>
+        <div class="tier-card standard">
+          <div class="tier-label">
+            <span data-lang-content="en">Standard</span>
+            <span data-lang-content="zh">标准</span>
+          </div>
+          <ul class="tier-list">
+            <li data-lang-content="en">3-4 devices per worksheet</li>
+            <li data-lang-content="zh">每份练习3-4个手法</li>
+            <li data-lang-content="en">Full 6-step process</li>
+            <li data-lang-content="zh">完整6步流程</li>
+            <li data-lang-content="en">Guided response structure</li>
+            <li data-lang-content="zh">引导性回答结构</li>
+            <li data-lang-content="en">Some independent work</li>
+            <li data-lang-content="zh">部分独立完成</li>
+          </ul>
+        </div>
+        <div class="tier-card advanced">
+          <div class="tier-label">
+            <span data-lang-content="en">Advanced</span>
+            <span data-lang-content="zh">高级</span>
+          </div>
+          <ul class="tier-list">
+            <li data-lang-content="en">4-5 devices per worksheet</li>
+            <li data-lang-content="zh">每份练习4-5个手法</li>
+            <li data-lang-content="en">6-step + extension tasks</li>
+            <li data-lang-content="zh">6步流程+拓展任务</li>
+            <li data-lang-content="en">Open response format</li>
+            <li data-lang-content="zh">开放式回答格式</li>
+            <li data-lang-content="en">Critical evaluation required</li>
+            <li data-lang-content="zh">需要批判性评价</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 data-lang-content="en">Ready to see the full curriculum?</h2>
+      <h2 data-lang-content="zh">准备好查看完整课程了吗？</h2>
+      <div class="cta-buttons">
+        <a href="syllabus.html" class="cta-button">
+          <span data-lang-content="en">View Curriculum</span>
+          <span data-lang-content="zh">查看课程大纲</span>
+        </a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button secondary">
+          <span data-lang-content="en">Enroll Now</span>
+          <span data-lang-content="zh">立即报名</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">
+        <span data-lang-content="en">Home</span>
+        <span data-lang-content="zh">首页</span>
+      </a>
+      <a href="syllabus.html">
+        <span data-lang-content="en">Curriculum</span>
+        <span data-lang-content="zh">课程大纲</span>
+      </a>
+      <a href="sample.html">
+        <span data-lang-content="en">Sample Worksheet</span>
+        <span data-lang-content="zh">练习样例</span>
+      </a>
+      <a href="progress.html">
+        <span data-lang-content="en">Progress Reports</span>
+        <span data-lang-content="zh">进度报告</span>
+      </a>
+      <a href="results.html">
+        <span data-lang-content="en">Results</span>
+        <span data-lang-content="zh">学习成果</span>
+      </a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+    });
+  </script>
+
+</body>
+</html>
