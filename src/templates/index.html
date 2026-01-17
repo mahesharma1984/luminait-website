@@ -244,6 +244,136 @@
       box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
     }
 
+    /* Cycling Author Animation */
+    .hero-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-300);
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    body[data-lang="zh"] .hero-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .hero-line {
+      display: inline-block;
+    }
+
+    .cycling-author {
+      display: inline-block;
+      position: relative;
+      color: var(--cyan);
+      font-weight: 600;
+      min-width: 180px;
+      line-height: 1.6;
+    }
+
+    .cycling-author-text {
+      display: inline-block;
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      color: var(--cyan);
+      font-weight: 400;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    /* Currently Teaching Marquee */
+    .currently-teaching {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .currently-teaching::before,
+    .currently-teaching::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .currently-teaching::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--deep-navy) 0%, transparent 100%);
+    }
+
+    .currently-teaching::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--deep-navy) 0%, transparent 100%);
+    }
+
+    .teaching-label {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    .teaching-marquee {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+      will-change: transform;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .teaching-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .teaching-item {
+      color: var(--slate-300);
+      font-size: 1rem;
+      font-style: italic;
+      white-space: nowrap;
+      padding: 0 1rem;
+    }
+
+    body[data-lang="zh"] .teaching-item {
+      font-style: normal;
+    }
+
+    .teaching-item::after {
+      content: '·';
+      margin-left: 2rem;
+      color: var(--cyan);
+    }
+
+    @keyframes marquee {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
     /* Sections */
     .section {
       max-width: 1100px;
@@ -520,6 +650,490 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
+    /* Funnel Sections */
+    .funnel-section {
+      padding: 4rem 2rem;
+    }
+
+    .funnel-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .funnel-section-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Section backgrounds */
+    .bg-gray {
+      background: var(--slate-100);
+    }
+
+    .bg-white {
+      background: white;
+    }
+
+    .bg-navy {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      overflow: hidden;
+    }
+
+    /* Problem Section */
+    .problem-section {
+      text-align: center;
+    }
+
+    .problem-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    body[data-lang="zh"] .problem-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .problem-body {
+      color: var(--slate-600);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Gap Diagram */
+    .gap-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .gap-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--slate-600);
+    }
+
+    .gap-step-icon {
+      font-size: 1.5rem;
+    }
+
+    .gap-arrow {
+      color: var(--slate-400);
+      font-size: 1.25rem;
+    }
+
+    .gap-step.gap-highlighted {
+      background: rgba(0, 212, 255, 0.1);
+      border: 2px dashed var(--cyan);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      color: var(--slate-700);
+    }
+
+    .gap-step.gap-filled {
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 2px solid var(--cyan);
+    }
+
+    /* Solution Section */
+    .solution-section {
+      text-align: center;
+    }
+
+    .solution-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    body[data-lang="zh"] .solution-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .solution-body {
+      color: var(--slate-600);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* How It Works Section */
+    .how-section {
+      text-align: center;
+    }
+
+    .how-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+    }
+
+    body[data-lang="zh"] .how-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .how-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .how-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .how-card-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.75rem;
+    }
+
+    .how-card-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    body[data-lang="zh"] .how-card-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .how-card-desc {
+      color: var(--slate-600);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Course Feature Section */
+    .course-section {
+      text-align: center;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .course-card-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1.5rem 2rem;
+    }
+
+    .course-card-heading {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .course-card-heading {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .course-card-body {
+      padding: 2rem;
+    }
+
+    .course-includes {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-includes li {
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      position: relative;
+      color: var(--slate-700);
+      font-size: 1rem;
+    }
+
+    .course-includes li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .course-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .course-price-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .course-price-label {
+      color: var(--slate-500);
+      font-size: 1rem;
+    }
+
+    .course-price-hourly {
+      color: var(--slate-500);
+      font-size: 0.95rem;
+    }
+
+    .course-teaching-label {
+      color: var(--slate-500);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .course-card .currently-teaching::before {
+      background: linear-gradient(90deg, white 0%, transparent 100%);
+    }
+
+    .course-card .currently-teaching::after {
+      background: linear-gradient(270deg, white 0%, transparent 100%);
+    }
+
+    .course-card .teaching-item {
+      color: var(--slate-600);
+    }
+
+    .course-card .teaching-item::after {
+      color: var(--blue);
+    }
+
+    .course-cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-top: 1rem;
+    }
+
+    .course-cta:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* Stats/Proof Section */
+    .stats-section {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .stats-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    body[data-lang="zh"] .stats-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .stats-subheadline {
+      color: var(--slate-400);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--slate-300);
+      font-size: 1rem;
+    }
+
+    /* Stats and CTA separator */
+    .stats-cta-separator {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Final CTA Section */
+    .final-cta-section {
+      text-align: center;
+      position: relative;
+    }
+
+    .final-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .final-cta-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    body[data-lang="zh"] .final-cta-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .final-cta-button {
+      display: inline-block;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 212, 255, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta-button:hover {
+      background: #00e5ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Responsive for Funnel Sections */
+    @media (max-width: 768px) {
+      .funnel-section {
+        padding: 3rem 1.5rem;
+      }
+
+      .problem-headline,
+      .solution-headline,
+      .how-headline {
+        font-size: 1.5rem;
+      }
+
+      .problem-body,
+      .solution-body {
+        font-size: 1rem;
+      }
+
+      .how-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .gap-diagram {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .gap-arrow {
+        transform: rotate(90deg);
+      }
+
+      .course-card-body {
+        padding: 1.5rem;
+      }
+
+      .course-price-value {
+        font-size: 1.75rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+      }
+
+      .final-cta-headline {
+        font-size: 1.35rem;
+      }
+    }
+
     /* Footer */
     .footer {
       background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
@@ -620,6 +1234,28 @@
         font-size: 1.75rem;
       }
 
+      .hero-headline {
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+
+      .cycling-author {
+        min-width: 120px;
+      }
+
+      .teaching-label {
+        font-size: 0.8rem;
+      }
+
+      .teaching-item {
+        font-size: 0.9rem;
+        padding: 0 0.75rem;
+      }
+
+      .teaching-item::after {
+        margin-left: 1.5rem;
+      }
+
       .hero-logo {
         width: 150px;
       }
@@ -652,21 +1288,49 @@
 </head>
 <body data-lang="en">
 
-{{>nav.html}}
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="{{SITE_NAME}}" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+{{NAV_LINKS}}
+        <a href="{{ENROLL_LINK}}" class="nav-cta">
+          <span data-lang-content="en">Enroll</span>
+          <span data-lang-content="zh">报名咨询</span>
+        </a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
 
   <section class="hero">
     <div class="hero-content">
       <img src="luminait_logo.png" alt="{{SITE_NAME}}" class="hero-logo">
-      <h1 data-lang-content="en">{{SITE_TAGLINE_EN}}</h1>
-      <h1 data-lang-content="zh">{{SITE_TAGLINE_ZH}}</h1>
-      <p class="hero-subtitle">
-        <span data-lang-content="en">{{SITE_SUBTITLE_EN}}</span>
-        <span data-lang-content="zh">{{SITE_SUBTITLE_ZH}}</span>
-      </p>
-      <p class="hero-texts">
-        <span data-lang-content="en">{{SITE_TEXTS_EN}}</span>
-        <span data-lang-content="zh">{{SITE_TEXTS_ZH}}</span>
-      </p>
+      <h1 class="hero-headline" data-lang-content="en">
+        <span class="hero-line">In 5 weeks, write thematic essays on</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">that are informed, reasoned, and genuinely yours.</span>
+      </h1>
+      <h1 class="hero-headline" data-lang-content="zh">
+        <span class="hero-line">5周内，撰写关于</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">的主题论文——有理有据，独具见解。</span>
+      </h1>
+      <div class="currently-teaching">
+        <p class="teaching-label">
+          <span data-lang-content="en">Currently Teaching</span>
+          <span data-lang-content="zh">正在教授</span>
+        </p>
+        <div class="teaching-marquee" id="teachingMarquee">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
       <a href="course.html" class="hero-cta">
         <span data-lang-content="en">View Course Details</span>
         <span data-lang-content="zh">查看课程详情</span>
@@ -674,53 +1338,439 @@
     </div>
   </section>
 
-  <section class="section-white">
-    <div class="section">
-      <h2 class="section-title">
-        <span data-lang-content="en">Explore the Course</span>
-        <span data-lang-content="zh">探索课程</span>
+  <!-- Section 2: Problem -->
+  <section class="funnel-section bg-gray">
+    <div class="funnel-section-inner problem-section">
+      <h2 class="problem-headline">
+        <span data-lang-content="en">Reading isn't the hard part</span>
+        <span data-lang-content="zh">阅读并非难点</span>
       </h2>
-      <p class="section-subtitle">
-        <span data-lang-content="en">Everything you need to know about our analytical writing program</span>
-        <span data-lang-content="zh">关于我们分析性写作课程的一切</span>
+      <p class="problem-body">
+        <span data-lang-content="en">Most students can read the text. Fewer understand what it's actually doing. Even fewer can explain it in writing. That gap — between reading and reasoning — is where grades get stuck.</span>
+        <span data-lang-content="zh">大多数学生能读懂文本。但真正理解文本在做什么的学生更少。能够用文字解释清楚的学生更是寥寥无几。这个差距——从阅读到推理——正是成绩停滞不前的原因。</span>
       </p>
-
-      <div class="map-grid">
-{{MAP_CARDS}}
+      <div class="gap-diagram">
+        <div class="gap-step">
+          <span class="gap-step-icon">📖</span>
+          <span data-lang-content="en">Read</span>
+          <span data-lang-content="zh">阅读</span>
+        </div>
+        <span class="gap-arrow">→</span>
+        <div class="gap-step gap-highlighted">
+          <span data-lang-content="en">???</span>
+          <span data-lang-content="zh">???</span>
+        </div>
+        <span class="gap-arrow">→</span>
+        <div class="gap-step">
+          <span class="gap-step-icon">✍️</span>
+          <span data-lang-content="en">Write</span>
+          <span data-lang-content="zh">写作</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-gray">
-    <div class="section">
-      <h2 class="section-title">
+  <!-- Section 3: Solution -->
+  <section class="funnel-section bg-white">
+    <div class="funnel-section-inner solution-section">
+      <h2 class="solution-headline">
+        <span data-lang-content="en">We teach the text — the writing follows</span>
+        <span data-lang-content="zh">我们教授文本理解——写作自然水到渠成</span>
+      </h2>
+      <p class="solution-body">
+        <span data-lang-content="en">Most tutoring teaches generic essay tricks. We teach your child to genuinely understand what Shakespeare (or Lee, or Lowry) is doing — and the ability to write about it comes naturally.</span>
+        <span data-lang-content="zh">大多数补习只教授通用的写作技巧。我们教您的孩子真正理解莎士比亚（或李、或劳里）在做什么——写作能力自然而然就会跟上。</span>
+      </p>
+      <div class="gap-diagram">
+        <div class="gap-step">
+          <span class="gap-step-icon">📖</span>
+          <span data-lang-content="en">Read</span>
+          <span data-lang-content="zh">阅读</span>
+        </div>
+        <span class="gap-arrow">→</span>
+        <div class="gap-step gap-filled">
+          <span data-lang-content="en">Understand</span>
+          <span data-lang-content="zh">理解</span>
+        </div>
+        <span class="gap-arrow">→</span>
+        <div class="gap-step">
+          <span class="gap-step-icon">✍️</span>
+          <span data-lang-content="en">Write</span>
+          <span data-lang-content="zh">写作</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: How It Works -->
+  <section class="funnel-section bg-gray">
+    <div class="funnel-section-wide how-section">
+      <h2 class="how-headline">
+        <span data-lang-content="en">How It Works</span>
+        <span data-lang-content="zh">课程方法</span>
+      </h2>
+      <div class="how-cards">
+        <div class="how-card">
+          <div class="how-card-icon">📖</div>
+          <h3 class="how-card-title">
+            <span data-lang-content="en">Understand the text</span>
+            <span data-lang-content="zh">理解文本</span>
+          </h3>
+          <p class="how-card-desc">
+            <span data-lang-content="en">Context, themes, and how the text creates its effect</span>
+            <span data-lang-content="zh">背景、主题，以及文本如何产生效果</span>
+          </p>
+        </div>
+        <div class="how-card">
+          <div class="how-card-icon">✍️</div>
+          <h3 class="how-card-title">
+            <span data-lang-content="en">Build analytical sentences</span>
+            <span data-lang-content="zh">构建分析句</span>
+          </h3>
+          <p class="how-card-desc">
+            <span data-lang-content="en">Our TVODE method makes invisible thinking visible</span>
+            <span data-lang-content="zh">我们的TVODE方法让隐性思维显性化</span>
+          </p>
+        </div>
+        <div class="how-card">
+          <div class="how-card-icon">📝</div>
+          <h3 class="how-card-title">
+            <span data-lang-content="en">Write complete essays</span>
+            <span data-lang-content="zh">写作完整文章</span>
+          </h3>
+          <p class="how-card-desc">
+            <span data-lang-content="en">Informed, reasoned, and genuinely theirs</span>
+            <span data-lang-content="zh">有理有据，独具见解</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: The Course -->
+  <section class="funnel-section bg-white">
+    <div class="funnel-section-inner course-section">
+      <div class="course-card">
+        <div class="course-card-header">
+          <h2 class="course-card-heading">
+            <span data-lang-content="en">5 weeks. One text. Complete essay.</span>
+            <span data-lang-content="zh">5周。一本书。完整文章。</span>
+          </h2>
+        </div>
+        <div class="course-card-body">
+          <ul class="course-includes">
+            <li>
+              <span data-lang-content="en">Weekly worksheets tailored to your child's text</span>
+              <span data-lang-content="zh">每周定制化练习，针对您孩子的文本</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Written feedback on every submission</span>
+              <span data-lang-content="zh">每次作业均有书面反馈</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Final essay and exam</span>
+              <span data-lang-content="zh">期末论文与考试</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Progress report for parents</span>
+              <span data-lang-content="zh">家长进度报告</span>
+            </li>
+          </ul>
+          <div class="course-price">
+            <span class="course-price-value">$275</span>
+            <span class="course-price-label">
+              <span data-lang-content="en">for 5 weeks</span>
+              <span data-lang-content="zh">5周课程</span>
+            </span>
+            <span class="course-price-hourly">
+              <span data-lang-content="en">(~$37/hour)</span>
+              <span data-lang-content="zh">(约$37/小时)</span>
+            </span>
+          </div>
+          <p class="course-teaching-label">
+            <span data-lang-content="en">Currently teaching:</span>
+            <span data-lang-content="zh">正在教授：</span>
+          </p>
+          <div class="currently-teaching" style="margin-top: 0; margin-bottom: 1rem;">
+            <div class="teaching-marquee" id="courseMarquee">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+          <a href="course.html" class="course-cta">
+            <span data-lang-content="en">View Course Details</span>
+            <span data-lang-content="zh">查看课程详情</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Proof/Stats -->
+  <section class="funnel-section bg-navy">
+    <div class="funnel-section-wide stats-section">
+      <h2 class="stats-headline">
         <span data-lang-content="en">Proven Results</span>
         <span data-lang-content="zh">实证成果</span>
       </h2>
-      <p class="section-subtitle">
+      <p class="stats-subheadline">
         <span data-lang-content="en">From our previous cohorts</span>
         <span data-lang-content="zh">来自往期学员</span>
       </p>
-      <div class="quick-stats">
-{{QUICK_STATS}}
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">of students improved</span>
+            <span data-lang-content="zh">学生取得进步</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">10-20%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">term improvement</span>
+            <span data-lang-content="zh">学期内提升</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">30-50%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">improvement with feedback</span>
+            <span data-lang-content="zh">运用反馈后提升</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="cta-content">
-      <h2 data-lang-content="en">Ready to help your child excel in analytical writing?</h2>
-      <h2 data-lang-content="zh">准备好帮助您的孩子提升分析写作能力了吗？</h2>
-      <a href="{{ENROLL_LINK}}" class="cta-button">
+  <!-- Section 8: Final CTA -->
+  <section class="funnel-section bg-navy stats-cta-separator">
+    <div class="funnel-section-inner final-cta-section">
+      <h2 class="final-cta-headline">
+        <span data-lang-content="en">Ready to help your child understand their English text?</span>
+        <span data-lang-content="zh">准备好帮助您的孩子理解英语文本了吗？</span>
+      </h2>
+      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="final-cta-button">
         <span data-lang-content="en">Get in Touch</span>
         <span data-lang-content="zh">联系我们</span>
       </a>
     </div>
   </section>
 
-{{>footer-simple.html}}
+  <footer class="footer">
+    <div class="footer-links">
+{{FOOTER_LINKS}}
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a> ·
+      <a href="tel:{{CONTACT_PHONE_LINK}}">{{CONTACT_PHONE}}</a>
+    </p>
+  </footer>
 
-{{>scripts.html}}
+
+  <script>
+    // ============================================
+    // CONFIGURABLE CONTENT - Edit these arrays
+    // ============================================
+
+    // Authors that cycle in the hero headline
+    const cyclingAuthors = {
+      en: [
+        'Lois Lowry',
+        'Shakespeare',
+        'Harper Lee',
+        'Steinbeck',
+        'Orwell',
+        'Fitzgerald',
+        'Golding'
+      ],
+      zh: [
+        '洛伊丝·劳里',
+        '莎士比亚',
+        '哈珀·李',
+        '斯坦贝克',
+        '奥威尔',
+        '菲茨杰拉德',
+        '戈尔丁'
+      ]
+    };
+
+    // Texts currently being taught (displayed in marquee)
+    const currentTexts = {
+      en: [
+        'Romeo and Juliet',
+        'To Kill a Mockingbird',
+        'The Giver',
+        'Of Mice and Men',
+        '1984',
+        'The Great Gatsby',
+        'Lord of the Flies'
+      ],
+      zh: [
+        '《罗密欧与朱丽叶》',
+        '《杀死一只知更鸟》',
+        '《记忆传授人》',
+        '《人鼠之间》',
+        '《1984》',
+        '《了不起的盖茨比》',
+        '《蝇王》'
+      ]
+    };
+
+    // ============================================
+    // END CONFIGURABLE CONTENT
+    // ============================================
+
+    // Language functions
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Typewriter effect for cycling author animation
+    let currentAuthorIndex = 0;
+    let typewriterTimeout;
+    let isRunning = false;
+
+    async function typeWriter(text, element, speed = 80) {
+      element.textContent = '';
+      
+      // Type out the text character by character
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await new Promise(resolve => setTimeout(resolve, speed));
+      }
+      
+      // Wait before starting to delete
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Delete the text character by character
+      for (let i = text.length; i > 0; i--) {
+        element.textContent = text.substring(0, i - 1);
+        await new Promise(resolve => setTimeout(resolve, speed / 2)); // Delete faster than typing
+      }
+    }
+
+    async function cycleAuthor() {
+      if (!isRunning) return;
+      
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+      
+      if (!authorEl || !authorElZh) return;
+      
+      // Move to next author
+      currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
+      
+      // Get next author texts
+      const nextAuthorEn = cyclingAuthors.en[currentAuthorIndex];
+      const nextAuthorZh = cyclingAuthors.zh[currentAuthorIndex];
+      
+      // Type out both versions simultaneously (they'll be shown/hidden by language system)
+      await Promise.all([
+        typeWriter(nextAuthorEn, authorEl, 80),
+        typeWriter(nextAuthorZh, authorElZh, 80)
+      ]);
+      
+      // Continue to next author if still running
+      if (isRunning) {
+        cycleAuthor();
+      }
+    }
+
+    function startAuthorCycle() {
+      isRunning = true;
+      
+      // Initialize with first author (Lois Lowry)
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+      
+      if (authorEl && authorElZh) {
+        authorEl.textContent = cyclingAuthors.en[0];
+        authorElZh.textContent = cyclingAuthors.zh[0];
+      }
+      
+      // Start cycling after initial delay
+      setTimeout(() => {
+        cycleAuthor();
+      }, 3000); // Wait 3 seconds before starting to cycle
+    }
+
+    function stopAuthorCycle() {
+      isRunning = false;
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+        typewriterTimeout = null;
+      }
+    }
+
+    // Populate teaching marquee
+    function populateTeachingMarquee() {
+      const marquees = [
+        document.getElementById('teachingMarquee'),
+        document.getElementById('courseMarquee')
+      ];
+
+      marquees.forEach(marquee => {
+        if (!marquee) return;
+
+        // Create content twice for seamless loop
+        let htmlEn = '';
+        let htmlZh = '';
+
+        for (let i = 0; i < 2; i++) {
+          currentTexts.en.forEach(text => {
+            htmlEn += `<span class="teaching-item" data-lang-content="en">${text}</span>`;
+          });
+          currentTexts.zh.forEach(text => {
+            htmlZh += `<span class="teaching-item" data-lang-content="zh">${text}</span>`;
+          });
+        }
+
+        marquee.innerHTML = htmlEn + htmlZh;
+
+        // Force a reflow on mobile to ensure width is calculated correctly
+        marquee.offsetWidth;
+      });
+    }
+
+    // Optional: Pause cycling on hover
+    function setupHoverPause() {
+      const heroHeadlines = document.querySelectorAll('.hero-headline');
+      heroHeadlines.forEach(headline => {
+        headline.addEventListener('mouseenter', () => {
+          stopAuthorCycle();
+        });
+        headline.addEventListener('mouseleave', () => {
+          startAuthorCycle();
+        });
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load saved language preference
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+
+      // Start cycling authors
+      startAuthorCycle();
+      setupHoverPause();
+
+      // Populate marquee
+      populateTeachingMarquee();
+    });
+  </script>
+
 
 </body>
 </html>
