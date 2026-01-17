@@ -252,11 +252,16 @@
       font-weight: 400;
       margin-bottom: 1.5rem;
       letter-spacing: -0.01em;
-      line-height: 1.4;
+      line-height: 1.6;
+      text-align: center;
     }
 
     body[data-lang="zh"] .hero-headline {
       font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .hero-line {
+      display: inline-block;
     }
 
     .cycling-author {
@@ -265,6 +270,7 @@
       color: var(--cyan);
       font-weight: 600;
       min-width: 180px;
+      line-height: 1.6;
     }
 
     .cycling-author-text {
@@ -330,6 +336,9 @@
       display: flex;
       animation: marquee 30s linear infinite;
       width: max-content;
+      will-change: transform;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .teaching-marquee:hover {
@@ -356,9 +365,11 @@
 
     @keyframes marquee {
       0% {
+        -webkit-transform: translateX(0);
         transform: translateX(0);
       }
       100% {
+        -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
       }
     }
@@ -841,10 +852,14 @@
     <div class="hero-content">
       <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
       <h1 class="hero-headline" data-lang-content="en">
-        In 5 weeks, write thematic essays on <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span> that are informed, reasoned, and genuinely yours.
+        <span class="hero-line">In 5 weeks, write thematic essays on</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">that are informed, reasoned, and genuinely yours.</span>
       </h1>
       <h1 class="hero-headline" data-lang-content="zh">
-        5周内，撰写关于<span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span>的主题论文——有理有据，独具见解。
+        <span class="hero-line">5周内，撰写关于</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">的主题论文——有理有据，独具见解。</span>
       </h1>
       <div class="currently-teaching">
         <p class="teaching-label">
@@ -1273,6 +1288,9 @@
       }
 
       marquee.innerHTML = htmlEn + htmlZh;
+      
+      // Force a reflow on mobile to ensure width is calculated correctly
+      marquee.offsetWidth;
     }
 
     // Optional: Pause cycling on hover
