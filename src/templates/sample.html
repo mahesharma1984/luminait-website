@@ -678,49 +678,7 @@
 </head>
 <body data-lang="en">
 
-    <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html">
-        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
-      </a>
-      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link">
-          <span data-lang-content="en">Home</span>
-          <span data-lang-content="zh">首页</span>
-        </a>
-        <a href="course.html" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <a href="syllabus.html" class="nav-link">
-          <span data-lang-content="en">Curriculum</span>
-          <span data-lang-content="zh">课程大纲</span>
-        </a>
-        <a href="sample.html" class="nav-link active">
-          <span data-lang-content="en">Sample</span>
-          <span data-lang-content="zh">练习样例</span>
-        </a>
-        <a href="progress.html" class="nav-link">
-          <span data-lang-content="en">Progress</span>
-          <span data-lang-content="zh">进度报告</span>
-        </a>
-        <a href="results.html" class="nav-link">
-          <span data-lang-content="en">Results</span>
-          <span data-lang-content="zh">学习成果</span>
-        </a>
-        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
-          <span data-lang-content="en">Enroll</span>
-          <span data-lang-content="zh">报名咨询</span>
-        </a>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
-      </div>
-    </div>
-  </nav>
-
+  {{>nav.html}}
 
   <header class="page-header">
     <div class="page-header-content">
@@ -1074,63 +1032,9 @@
     </div>
   </section>
 
-    <footer class="footer">
-    <div class="footer-links">
-      <a href="index.html">
-        <span data-lang-content="en">Home</span>
-        <span data-lang-content="zh">首页</span>
-      </a>
-      <a href="course.html">
-        <span data-lang-content="en">Course</span>
-        <span data-lang-content="zh">课程</span>
-      </a>
-      <a href="syllabus.html">
-        <span data-lang-content="en">Curriculum</span>
-        <span data-lang-content="zh">课程大纲</span>
-      </a>
-      <a href="sample.html">
-        <span data-lang-content="en">Sample</span>
-        <span data-lang-content="zh">练习样例</span>
-      </a>
-      <a href="progress.html">
-        <span data-lang-content="en">Progress</span>
-        <span data-lang-content="zh">进度报告</span>
-      </a>
-      <a href="results.html">
-        <span data-lang-content="en">Results</span>
-        <span data-lang-content="zh">学习成果</span>
-      </a>
-    </div>
-    <p class="footer-contact">
-      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
-      <a href="tel:+61421213517">+61 421 213 517</a>
-    </p>
-  </footer>
+  {{>footer-simple.html}}
 
-
-    <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Load saved language preference
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) {
-        setLanguage(savedLang);
-      }
-    });
-  </script>
-
+  {{>scripts.html}}
 
 </body>
 </html>

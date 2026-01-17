@@ -1,0 +1,260 @@
+{
+  "site": {
+    "name": "LuminAIT Learning",
+    "tagline": {
+      "en": "Analytical Writing for Secondary Students",
+      "zh": "中学生分析性写作课程"
+    },
+    "description": "A 10-week course teaching literary analysis and logical writing for Years 7-12 students. Prepares for NAPLAN, VCE, IB and beyond.",
+    "subtitle": {
+      "en": "Years 7-12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB",
+      "zh": "7-12年级 · 对接学校课程 · 备战NAPLAN、VCE、IB考试"
+    },
+    "texts": {
+      "en": "Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.",
+      "zh": "涵盖学校主要文本，包括《罗密欧与朱丽叶》《杀死一只知更鸟》《记忆传授人》等"
+    },
+    "contact": {
+      "email": "mahesh@luminait.app",
+      "phone": "+61 421 213 517",
+      "wechat": "sharmeleon"
+    },
+    "enrollLink": "mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning"
+  },
+  "course": {
+    "price": "$550",
+    "duration": "10 weeks",
+    "hoursPerLesson": "1.5",
+    "pricePerHour": "~$37",
+    "pricePerWeek": "$55",
+    "format": {
+      "en": "Online, small group",
+      "zh": "线上小班授课"
+    },
+    "nextCohort": {
+      "en": "Term 1 — starts the week of January 19, when students return to school",
+      "zh": "第一学期 — 1月19日当周开课，学生返校时开始"
+    }
+  },
+  "results": {
+    "improvementRate": "100%",
+    "termImprovement": "10-20%",
+    "feedbackImprovement": "30-50%"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "file": "index.html",
+      "template": "index.html",
+      "title": {
+        "en": "Home",
+        "zh": "首页"
+      },
+      "navTitle": {
+        "en": "Home",
+        "zh": "首页"
+      }
+    },
+    {
+      "id": "course",
+      "file": "course.html",
+      "template": "course.html",
+      "title": {
+        "en": "Course Details",
+        "zh": "课程详情"
+      },
+      "navTitle": {
+        "en": "Course",
+        "zh": "课程"
+      },
+      "icon": "📖",
+      "cardTitle": {
+        "en": "Course Overview",
+        "zh": "课程概览"
+      },
+      "description": {
+        "en": "A 10-week course teaching literary analysis and logical writing. Students learn a sentence-level framework for building analytical arguments — a skill that transfers across high school, university, and into their working life.",
+        "zh": "为期10周的课程，教授文学分析与逻辑写作。学生将学习一套句子层级的分析框架，掌握构建分析性论证的技巧——这项能力将贯穿高中、大学乃至职业生涯。"
+      },
+      "highlights": [
+        {
+          "en": "Weekly worksheets customized to specific texts",
+          "zh": "每周定制化练习，针对具体文本设计"
+        },
+        {
+          "en": "Detailed written feedback on every submission",
+          "zh": "每次作业均有详细书面反馈"
+        },
+        {
+          "en": "Progress reports for parents at weeks 4 and 8",
+          "zh": "第4周和第8周提供家长进度报告"
+        }
+      ],
+      "linkText": {
+        "en": "View full course details",
+        "zh": "查看完整课程详情"
+      },
+      "featured": true
+    },
+    {
+      "id": "syllabus",
+      "file": "syllabus.html",
+      "template": "syllabus.html",
+      "title": {
+        "en": "Curriculum",
+        "zh": "课程大纲"
+      },
+      "navTitle": {
+        "en": "Curriculum",
+        "zh": "课程大纲"
+      },
+      "icon": "📋",
+      "cardTitle": {
+        "en": "10-Week Curriculum",
+        "zh": "10周课程大纲"
+      },
+      "description": {
+        "en": "Our structured curriculum takes students from foundational reading skills to writing complete analytical essays through three learning phases.",
+        "zh": "我们精心设计的课程，通过三个学习阶段，带领学生从基础阅读技能逐步进阶到完成完整的分析性文章。"
+      },
+      "highlights": [
+        {
+          "en": "Pre-Analysis: Context & Pattern (Weeks 0-0.5)",
+          "zh": "分析准备阶段：背景与模式（第0-0.5周）"
+        },
+        {
+          "en": "Analysis: Device Analysis (Weeks 1-5)",
+          "zh": "分析阶段：手法分析（第1-5周）"
+        },
+        {
+          "en": "Synthesis: Thesis & Essay (Weeks 6-10)",
+          "zh": "综合阶段：论点与文章（第6-10周）"
+        }
+      ],
+      "linkText": {
+        "en": "View week-by-week breakdown",
+        "zh": "查看每周课程安排"
+      }
+    },
+    {
+      "id": "sample",
+      "file": "sample.html",
+      "template": "sample.html",
+      "title": {
+        "en": "Sample Worksheet",
+        "zh": "练习样例"
+      },
+      "navTitle": {
+        "en": "Sample",
+        "zh": "练习样例"
+      },
+      "icon": "📝",
+      "cardTitle": {
+        "en": "Sample Worksheet",
+        "zh": "练习样例"
+      },
+      "description": {
+        "en": "See what students actually do each week. Our structured worksheets guide students through a 6-step device analysis process with tiered difficulty levels.",
+        "zh": "了解学生每周的实际学习内容。我们的结构化练习通过6步骤的手法分析流程引导学生，并设有分层难度。"
+      },
+      "highlights": [
+        {
+          "en": "6-step scaffolded analysis process",
+          "zh": "6步骤脚手架分析流程"
+        },
+        {
+          "en": "Three tiers: Beginner, Standard, Advanced",
+          "zh": "三个难度层次：初级、标准、高级"
+        },
+        {
+          "en": "TVODE sentence construction",
+          "zh": "TVODE句子构建"
+        }
+      ],
+      "linkText": {
+        "en": "See sample worksheet",
+        "zh": "查看练习样例"
+      }
+    },
+    {
+      "id": "progress",
+      "file": "progress.html",
+      "template": "progress.html",
+      "title": {
+        "en": "Progress Reports",
+        "zh": "进度报告"
+      },
+      "navTitle": {
+        "en": "Progress",
+        "zh": "进度报告"
+      },
+      "icon": "📊",
+      "cardTitle": {
+        "en": "Progress Reports",
+        "zh": "进度报告"
+      },
+      "description": {
+        "en": "Detailed tracking of your child's development across three core skills: evidence, reasoning, and analysis. Parents receive comprehensive reports at weeks 4 and 8.",
+        "zh": "详细跟踪孩子在三项核心技能上的发展：证据、推理和分析。家长在第4周和第8周收到综合报告。"
+      },
+      "highlights": [
+        {
+          "en": "Score progression tracking",
+          "zh": "分数进展跟踪"
+        },
+        {
+          "en": "Rewrite improvement analysis",
+          "zh": "修改提升分析"
+        },
+        {
+          "en": "Specific next-step recommendations",
+          "zh": "具体的下一步建议"
+        }
+      ],
+      "linkText": {
+        "en": "See sample report",
+        "zh": "查看报告样例"
+      }
+    },
+    {
+      "id": "results",
+      "file": "results.html",
+      "template": "results.html",
+      "title": {
+        "en": "Results & Outcomes",
+        "zh": "学习成果"
+      },
+      "navTitle": {
+        "en": "Results",
+        "zh": "学习成果"
+      },
+      "icon": "🏆",
+      "cardTitle": {
+        "en": "Results & Outcomes",
+        "zh": "学习成果"
+      },
+      "description": {
+        "en": "Proven outcomes from our analytical writing course. See how students improve from identifying devices to independently writing analytical paragraphs.",
+        "zh": "我们分析性写作课程的实证成果。了解学生如何从识别文学手法进步到独立撰写分析段落。"
+      },
+      "highlights": [
+        {
+          "en": "100% of students show measurable improvement",
+          "zh": "100%的学生取得可量化的进步"
+        },
+        {
+          "en": "10-20% improvement over the term",
+          "zh": "学期内整体提升10-20%"
+        },
+        {
+          "en": "30-50% improvement when feedback applied",
+          "zh": "运用反馈后提升30-50%"
+        }
+      ],
+      "linkText": {
+        "en": "View detailed results",
+        "zh": "查看详细成果"
+      }
+    }
+  ]
+}

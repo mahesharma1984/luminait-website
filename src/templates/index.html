@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LuminAIT Learning | Analytical Writing for Secondary Students</title>
-  <meta name="description" content="A 10-week course teaching literary analysis and logical writing for Years 7-12 students. Prepares for NAPLAN, VCE, IB and beyond.">
+  <title>{{SITE_NAME}} | {{SITE_TAGLINE_EN}}</title>
+  <meta name="description" content="{{SITE_DESCRIPTION}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -652,62 +652,20 @@
 </head>
 <body data-lang="en">
 
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html">
-        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
-      </a>
-      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link active">
-          <span data-lang-content="en">Home</span>
-          <span data-lang-content="zh">首页</span>
-        </a>
-        <a href="course.html" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <a href="syllabus.html" class="nav-link">
-          <span data-lang-content="en">Curriculum</span>
-          <span data-lang-content="zh">课程大纲</span>
-        </a>
-        <a href="sample.html" class="nav-link">
-          <span data-lang-content="en">Sample</span>
-          <span data-lang-content="zh">练习样例</span>
-        </a>
-        <a href="progress.html" class="nav-link">
-          <span data-lang-content="en">Progress</span>
-          <span data-lang-content="zh">进度报告</span>
-        </a>
-        <a href="results.html" class="nav-link">
-          <span data-lang-content="en">Results</span>
-          <span data-lang-content="zh">学习成果</span>
-        </a>
-        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
-          <span data-lang-content="en">Enroll</span>
-          <span data-lang-content="zh">报名咨询</span>
-        </a>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
-      </div>
-    </div>
-  </nav>
-
+{{>nav.html}}
 
   <section class="hero">
     <div class="hero-content">
-      <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
-      <h1 data-lang-content="en">Analytical Writing for Secondary Students</h1>
-      <h1 data-lang-content="zh">中学生分析性写作课程</h1>
+      <img src="luminait_logo.png" alt="{{SITE_NAME}}" class="hero-logo">
+      <h1 data-lang-content="en">{{SITE_TAGLINE_EN}}</h1>
+      <h1 data-lang-content="zh">{{SITE_TAGLINE_ZH}}</h1>
       <p class="hero-subtitle">
-        <span data-lang-content="en">Years 7-12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</span>
-        <span data-lang-content="zh">7-12年级 · 对接学校课程 · 备战NAPLAN、VCE、IB考试</span>
+        <span data-lang-content="en">{{SITE_SUBTITLE_EN}}</span>
+        <span data-lang-content="zh">{{SITE_SUBTITLE_ZH}}</span>
       </p>
       <p class="hero-texts">
-        <span data-lang-content="en">Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.</span>
-        <span data-lang-content="zh">涵盖学校主要文本，包括《罗密欧与朱丽叶》《杀死一只知更鸟》《记忆传授人》等</span>
+        <span data-lang-content="en">{{SITE_TEXTS_EN}}</span>
+        <span data-lang-content="zh">{{SITE_TEXTS_ZH}}</span>
       </p>
       <a href="course.html" class="hero-cta">
         <span data-lang-content="en">View Course Details</span>
@@ -728,157 +686,7 @@
       </p>
 
       <div class="map-grid">
-        <!-- Featured Card: Course Overview -->
-        <a href="course.html" class="map-card featured">
-          <div class="featured-content">
-            <div>
-              <span class="map-card-icon">📖</span>
-              <h3 class="map-card-title">
-                <span data-lang-content="en">Course Overview</span>
-                <span data-lang-content="zh">课程概览</span>
-              </h3>
-              <p class="map-card-desc">
-                <span data-lang-content="en">A 10-week course teaching literary analysis and logical writing. Students learn a sentence-level framework for building analytical arguments — a skill that transfers across high school, university, and into their working life.</span>
-                <span data-lang-content="zh">为期10周的课程，教授文学分析与逻辑写作。学生将学习一套句子层级的分析框架，掌握构建分析性论证的技巧——这项能力将贯穿高中、大学乃至职业生涯。</span>
-              </p>
-              <ul class="map-card-highlights">
-                <li data-lang-content="en">Weekly worksheets customized to specific texts</li>
-                <li data-lang-content="zh">每周定制化练习，针对具体文本设计</li>
-                <li data-lang-content="en">Detailed written feedback on every submission</li>
-                <li data-lang-content="zh">每次作业均有详细书面反馈</li>
-                <li data-lang-content="en">Progress reports for parents at weeks 4 and 8</li>
-                <li data-lang-content="zh">第4周和第8周提供家长进度报告</li>
-              </ul>
-              <span class="map-card-link">
-                <span data-lang-content="en">View full course details</span>
-                <span data-lang-content="zh">查看完整课程详情</span>
-              </span>
-            </div>
-            <div class="featured-stats">
-              <div class="featured-stat">
-                <div class="featured-stat-value">$550</div>
-                <div class="featured-stat-label">
-                  <span data-lang-content="en">for 10 weeks</span>
-                  <span data-lang-content="zh">10周课程</span>
-                </div>
-              </div>
-              <div class="featured-stat">
-                <div class="featured-stat-value">1.5h</div>
-                <div class="featured-stat-label">
-                  <span data-lang-content="en">per lesson</span>
-                  <span data-lang-content="zh">每课时</span>
-                </div>
-              </div>
-              <div class="featured-stat">
-                <div class="featured-stat-value">~$37</div>
-                <div class="featured-stat-label">
-                  <span data-lang-content="en">per hour</span>
-                  <span data-lang-content="zh">每小时</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- 10-Week Curriculum Card -->
-        <a href="syllabus.html" class="map-card">
-          <span class="map-card-icon">📋</span>
-          <h3 class="map-card-title">
-            <span data-lang-content="en">10-Week Curriculum</span>
-            <span data-lang-content="zh">10周课程大纲</span>
-          </h3>
-          <p class="map-card-desc">
-            <span data-lang-content="en">Our structured curriculum takes students from foundational reading skills to writing complete analytical essays through three learning phases.</span>
-            <span data-lang-content="zh">我们精心设计的课程，通过三个学习阶段，带领学生从基础阅读技能逐步进阶到完成完整的分析性文章。</span>
-          </p>
-          <ul class="map-card-highlights">
-            <li data-lang-content="en">Pre-Analysis: Context & Pattern (Weeks 0-0.5)</li>
-            <li data-lang-content="zh">分析准备阶段：背景与模式（第0-0.5周）</li>
-            <li data-lang-content="en">Analysis: Device Analysis (Weeks 1-5)</li>
-            <li data-lang-content="zh">分析阶段：手法分析（第1-5周）</li>
-            <li data-lang-content="en">Synthesis: Thesis & Essay (Weeks 6-10)</li>
-            <li data-lang-content="zh">综合阶段：论点与文章（第6-10周）</li>
-          </ul>
-          <span class="map-card-link">
-            <span data-lang-content="en">View week-by-week breakdown</span>
-            <span data-lang-content="zh">查看每周课程安排</span>
-          </span>
-        </a>
-
-        <!-- Sample Worksheet Card -->
-        <a href="sample.html" class="map-card">
-          <span class="map-card-icon">📝</span>
-          <h3 class="map-card-title">
-            <span data-lang-content="en">Sample Worksheet</span>
-            <span data-lang-content="zh">练习样例</span>
-          </h3>
-          <p class="map-card-desc">
-            <span data-lang-content="en">See what students actually do each week. Our structured worksheets guide students through a 6-step device analysis process with tiered difficulty levels.</span>
-            <span data-lang-content="zh">了解学生每周的实际学习内容。我们的结构化练习通过6步骤的手法分析流程引导学生，并设有分层难度。</span>
-          </p>
-          <ul class="map-card-highlights">
-            <li data-lang-content="en">6-step scaffolded analysis process</li>
-            <li data-lang-content="zh">6步骤脚手架分析流程</li>
-            <li data-lang-content="en">Three tiers: Beginner, Standard, Advanced</li>
-            <li data-lang-content="zh">三个难度层次：初级、标准、高级</li>
-            <li data-lang-content="en">TVODE sentence construction</li>
-            <li data-lang-content="zh">TVODE句子构建</li>
-          </ul>
-          <span class="map-card-link">
-            <span data-lang-content="en">See sample worksheet</span>
-            <span data-lang-content="zh">查看练习样例</span>
-          </span>
-        </a>
-
-        <!-- Progress Reports Card -->
-        <a href="progress.html" class="map-card">
-          <span class="map-card-icon">📊</span>
-          <h3 class="map-card-title">
-            <span data-lang-content="en">Progress Reports</span>
-            <span data-lang-content="zh">进度报告</span>
-          </h3>
-          <p class="map-card-desc">
-            <span data-lang-content="en">Detailed tracking of your child's development across three core skills: evidence, reasoning, and analysis. Parents receive comprehensive reports at weeks 4 and 8.</span>
-            <span data-lang-content="zh">详细跟踪孩子在三项核心技能上的发展：证据、推理和分析。家长在第4周和第8周收到综合报告。</span>
-          </p>
-          <ul class="map-card-highlights">
-            <li data-lang-content="en">Score progression tracking</li>
-            <li data-lang-content="zh">分数进展跟踪</li>
-            <li data-lang-content="en">Rewrite improvement analysis</li>
-            <li data-lang-content="zh">修改提升分析</li>
-            <li data-lang-content="en">Specific next-step recommendations</li>
-            <li data-lang-content="zh">具体的下一步建议</li>
-          </ul>
-          <span class="map-card-link">
-            <span data-lang-content="en">See sample report</span>
-            <span data-lang-content="zh">查看报告样例</span>
-          </span>
-        </a>
-
-        <!-- Results & Outcomes Card -->
-        <a href="results.html" class="map-card">
-          <span class="map-card-icon">🏆</span>
-          <h3 class="map-card-title">
-            <span data-lang-content="en">Results & Outcomes</span>
-            <span data-lang-content="zh">学习成果</span>
-          </h3>
-          <p class="map-card-desc">
-            <span data-lang-content="en">Proven outcomes from our analytical writing course. See how students improve from identifying devices to independently writing analytical paragraphs.</span>
-            <span data-lang-content="zh">我们分析性写作课程的实证成果。了解学生如何从识别文学手法进步到独立撰写分析段落。</span>
-          </p>
-          <ul class="map-card-highlights">
-            <li data-lang-content="en">100% of students show measurable improvement</li>
-            <li data-lang-content="zh">100%的学生取得可量化的进步</li>
-            <li data-lang-content="en">10-20% improvement over the term</li>
-            <li data-lang-content="zh">学期内整体提升10-20%</li>
-            <li data-lang-content="en">30-50% improvement when feedback applied</li>
-            <li data-lang-content="zh">运用反馈后提升30-50%</li>
-          </ul>
-          <span class="map-card-link">
-            <span data-lang-content="en">View detailed results</span>
-            <span data-lang-content="zh">查看详细成果</span>
-          </span>
-        </a>
+{{MAP_CARDS}}
       </div>
     </div>
   </section>
@@ -894,27 +702,7 @@
         <span data-lang-content="zh">来自往期学员</span>
       </p>
       <div class="quick-stats">
-        <div class="quick-stat">
-          <div class="quick-stat-value">100%</div>
-          <div class="quick-stat-label">
-            <span data-lang-content="en">students improved</span>
-            <span data-lang-content="zh">学生取得进步</span>
-          </div>
-        </div>
-        <div class="quick-stat">
-          <div class="quick-stat-value">10-20%</div>
-          <div class="quick-stat-label">
-            <span data-lang-content="en">term improvement</span>
-            <span data-lang-content="zh">学期内提升</span>
-          </div>
-        </div>
-        <div class="quick-stat">
-          <div class="quick-stat-value">30-50%</div>
-          <div class="quick-stat-label">
-            <span data-lang-content="en">with feedback</span>
-            <span data-lang-content="zh">运用反馈后</span>
-          </div>
-        </div>
+{{QUICK_STATS}}
       </div>
     </div>
   </section>
@@ -923,70 +711,16 @@
     <div class="cta-content">
       <h2 data-lang-content="en">Ready to help your child excel in analytical writing?</h2>
       <h2 data-lang-content="zh">准备好帮助您的孩子提升分析写作能力了吗？</h2>
-      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button">
+      <a href="{{ENROLL_LINK}}" class="cta-button">
         <span data-lang-content="en">Get in Touch</span>
         <span data-lang-content="zh">联系我们</span>
       </a>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="index.html">
-        <span data-lang-content="en">Home</span>
-        <span data-lang-content="zh">首页</span>
-      </a>
-      <a href="course.html">
-        <span data-lang-content="en">Course</span>
-        <span data-lang-content="zh">课程</span>
-      </a>
-      <a href="syllabus.html">
-        <span data-lang-content="en">Curriculum</span>
-        <span data-lang-content="zh">课程大纲</span>
-      </a>
-      <a href="sample.html">
-        <span data-lang-content="en">Sample</span>
-        <span data-lang-content="zh">练习样例</span>
-      </a>
-      <a href="progress.html">
-        <span data-lang-content="en">Progress</span>
-        <span data-lang-content="zh">进度报告</span>
-      </a>
-      <a href="results.html">
-        <span data-lang-content="en">Results</span>
-        <span data-lang-content="zh">学习成果</span>
-      </a>
-    </div>
-    <p class="footer-contact">
-      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
-      <a href="tel:+61421213517">+61 421 213 517</a>
-    </p>
-  </footer>
+{{>footer-simple.html}}
 
-
-  <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Load saved language preference
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) {
-        setLanguage(savedLang);
-      }
-    });
-  </script>
-
+{{>scripts.html}}
 
 </body>
 </html>

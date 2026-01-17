@@ -882,49 +882,7 @@
 </head>
 <body data-lang="en">
 
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html">
-        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
-      </a>
-      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link">
-          <span data-lang-content="en">Home</span>
-          <span data-lang-content="zh">首页</span>
-        </a>
-        <a href="course.html" class="nav-link active">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <a href="syllabus.html" class="nav-link">
-          <span data-lang-content="en">Curriculum</span>
-          <span data-lang-content="zh">课程大纲</span>
-        </a>
-        <a href="sample.html" class="nav-link">
-          <span data-lang-content="en">Sample</span>
-          <span data-lang-content="zh">练习样例</span>
-        </a>
-        <a href="progress.html" class="nav-link">
-          <span data-lang-content="en">Progress</span>
-          <span data-lang-content="zh">进度报告</span>
-        </a>
-        <a href="results.html" class="nav-link">
-          <span data-lang-content="en">Results</span>
-          <span data-lang-content="zh">学习成果</span>
-        </a>
-        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
-          <span data-lang-content="en">Enroll</span>
-          <span data-lang-content="zh">报名咨询</span>
-        </a>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
-      </div>
-    </div>
-  </nav>
-
+{{>nav.html}}
 
   <header class="header">
     <div class="lang-toggle" style="display: none;">
@@ -1167,84 +1125,9 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-grid">
-        <div>
-          <h3 data-lang-content="en">Course Details</h3>
-          <h3 data-lang-content="zh">课程详情</h3>
-          <dl class="details-grid">
-            <dt data-lang-content="en">Duration</dt>
-            <dt data-lang-content="zh">时长</dt>
-            <dd data-lang-content="en">10 weeks</dd>
-            <dd data-lang-content="zh">10周</dd>
+{{>footer-course.html}}
 
-            <dt data-lang-content="en">Format</dt>
-            <dt data-lang-content="zh">形式</dt>
-            <dd data-lang-content="en">Online, small group</dd>
-            <dd data-lang-content="zh">线上小班授课</dd>
-
-            <dt data-lang-content="en">Price</dt>
-            <dt data-lang-content="zh">价格</dt>
-            <dd>$550</dd>
-
-            <dt data-lang-content="en">Next cohort</dt>
-            <dt data-lang-content="zh">下期开课</dt>
-            <dd data-lang-content="en">Term 1 — starts the week of January 19, when students return to school</dd>
-            <dd data-lang-content="zh">第一学期 — 1月19日当周开课，学生返校时开始</dd>
-          </dl>
-        </div>
-        <div class="contact-info">
-          <h3 data-lang-content="en">Contact</h3>
-          <h3 data-lang-content="zh">联系方式</h3>
-          <p>
-            <span data-lang-content="en">Email:</span>
-            <span data-lang-content="zh">邮箱：</span>
-            <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a>
-          </p>
-          <p>
-            <span data-lang-content="en">Call/WhatsApp:</span>
-            <span data-lang-content="zh">电话/WhatsApp：</span>
-            <a href="tel:+61421213517">+61 421 213 517</a>
-          </p>
-          <p>
-            <span data-lang-content="en">WeChat:</span>
-            <span data-lang-content="zh">微信：</span>
-            sharmeleon
-          </p>
-        </div>
-        <p class="referral">
-          <span data-lang-content="en">Referred by a current family? Let us know to secure a <strong>special referral bonus</strong> for both of you!</span>
-          <span data-lang-content="zh">由现有学员家庭推荐？请告知我们，双方均可获得<strong>推荐奖励</strong>！</span>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-
-  <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Load saved language preference
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) {
-        setLanguage(savedLang);
-      }
-    });
-  </script>
-
+{{>scripts.html}}
 
 </body>
 </html>

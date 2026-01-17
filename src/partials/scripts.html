@@ -1,0 +1,22 @@
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Load saved language preference
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+    });
+  </script>
