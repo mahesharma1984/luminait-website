@@ -244,6 +244,114 @@
       box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
     }
 
+    /* Cycling Author Animation */
+    .hero-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-300);
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+
+    body[data-lang="zh"] .hero-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .cycling-author {
+      display: inline-block;
+      position: relative;
+      color: var(--cyan);
+      font-weight: 600;
+      min-width: 180px;
+    }
+
+    .cycling-author-text {
+      display: inline-block;
+      opacity: 1;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .cycling-author-text.fade-out {
+      opacity: 0;
+    }
+
+    /* Currently Teaching Marquee */
+    .currently-teaching {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .currently-teaching::before,
+    .currently-teaching::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .currently-teaching::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--deep-navy) 0%, transparent 100%);
+    }
+
+    .currently-teaching::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--deep-navy) 0%, transparent 100%);
+    }
+
+    .teaching-label {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    .teaching-marquee {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    .teaching-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .teaching-item {
+      color: var(--slate-300);
+      font-size: 1rem;
+      font-style: italic;
+      white-space: nowrap;
+      padding: 0 1rem;
+    }
+
+    body[data-lang="zh"] .teaching-item {
+      font-style: normal;
+    }
+
+    .teaching-item::after {
+      content: '·';
+      margin-left: 2rem;
+      color: var(--cyan);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
     /* Sections */
     .section {
       max-width: 1100px;
@@ -620,6 +728,28 @@
         font-size: 1.75rem;
       }
 
+      .hero-headline {
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+
+      .cycling-author {
+        min-width: 120px;
+      }
+
+      .teaching-label {
+        font-size: 0.8rem;
+      }
+
+      .teaching-item {
+        font-size: 0.9rem;
+        padding: 0 0.75rem;
+      }
+
+      .teaching-item::after {
+        margin-left: 1.5rem;
+      }
+
       .hero-logo {
         width: 150px;
       }
@@ -699,16 +829,25 @@
   <section class="hero">
     <div class="hero-content">
       <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
-      <h1 data-lang-content="en">Analytical Writing for Secondary Students</h1>
-      <h1 data-lang-content="zh">中学生分析性写作课程</h1>
+      <h1 class="hero-headline" data-lang-content="en">
+        In 5 weeks, write thematic essays on <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor">Shakespeare</span></span> that are informed, reasoned, and genuinely yours.
+      </h1>
+      <h1 class="hero-headline" data-lang-content="zh">
+        5周内，撰写关于<span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh">莎士比亚</span></span>的主题论文——有理有据，独具见解。
+      </h1>
       <p class="hero-subtitle">
         <span data-lang-content="en">Years 7-12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</span>
         <span data-lang-content="zh">7-12年级 · 对接学校课程 · 备战NAPLAN、VCE、IB考试</span>
       </p>
-      <p class="hero-texts">
-        <span data-lang-content="en">Texts include Romeo and Juliet, To Kill a Mockingbird, The Giver, and others.</span>
-        <span data-lang-content="zh">涵盖学校主要文本，包括《罗密欧与朱丽叶》《杀死一只知更鸟》《记忆传授人》等</span>
-      </p>
+      <div class="currently-teaching">
+        <p class="teaching-label">
+          <span data-lang-content="en">Currently Teaching</span>
+          <span data-lang-content="zh">正在教授</span>
+        </p>
+        <div class="teaching-marquee" id="teachingMarquee">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
       <a href="course.html" class="hero-cta">
         <span data-lang-content="en">View Course Details</span>
         <span data-lang-content="zh">查看课程详情</span>
@@ -965,6 +1104,59 @@
 
 
   <script>
+    // ============================================
+    // CONFIGURABLE CONTENT - Edit these arrays
+    // ============================================
+
+    // Authors that cycle in the hero headline
+    const cyclingAuthors = {
+      en: [
+        'Shakespeare',
+        'Harper Lee',
+        'Lois Lowry',
+        'Steinbeck',
+        'Orwell',
+        'Fitzgerald',
+        'Golding'
+      ],
+      zh: [
+        '莎士比亚',
+        '哈珀·李',
+        '洛伊丝·劳里',
+        '斯坦贝克',
+        '奥威尔',
+        '菲茨杰拉德',
+        '戈尔丁'
+      ]
+    };
+
+    // Texts currently being taught (displayed in marquee)
+    const currentTexts = {
+      en: [
+        'Romeo and Juliet',
+        'To Kill a Mockingbird',
+        'The Giver',
+        'Of Mice and Men',
+        '1984',
+        'The Great Gatsby',
+        'Lord of the Flies'
+      ],
+      zh: [
+        '《罗密欧与朱丽叶》',
+        '《杀死一只知更鸟》',
+        '《记忆传授人》',
+        '《人鼠之间》',
+        '《1984》',
+        '《了不起的盖茨比》',
+        '《蝇王》'
+      ]
+    };
+
+    // ============================================
+    // END CONFIGURABLE CONTENT
+    // ============================================
+
+    // Language functions
     function setLanguage(lang) {
       document.body.setAttribute('data-lang', lang);
       document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -978,12 +1170,82 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Load saved language preference
+    // Cycling author animation
+    let currentAuthorIndex = 0;
+    let authorCycleInterval;
+
+    function cycleAuthor() {
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+
+      // Fade out
+      authorEl.classList.add('fade-out');
+      authorElZh.classList.add('fade-out');
+
+      setTimeout(() => {
+        // Update to next author
+        currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
+        authorEl.textContent = cyclingAuthors.en[currentAuthorIndex];
+        authorElZh.textContent = cyclingAuthors.zh[currentAuthorIndex];
+
+        // Fade in
+        authorEl.classList.remove('fade-out');
+        authorElZh.classList.remove('fade-out');
+      }, 400); // Match the CSS transition duration
+    }
+
+    function startAuthorCycle() {
+      authorCycleInterval = setInterval(cycleAuthor, 3500); // 3.5 second interval
+    }
+
+    // Populate teaching marquee
+    function populateTeachingMarquee() {
+      const marquee = document.getElementById('teachingMarquee');
+      if (!marquee) return;
+
+      // Create content twice for seamless loop
+      let htmlEn = '';
+      let htmlZh = '';
+
+      for (let i = 0; i < 2; i++) {
+        currentTexts.en.forEach(text => {
+          htmlEn += `<span class="teaching-item" data-lang-content="en">${text}</span>`;
+        });
+        currentTexts.zh.forEach(text => {
+          htmlZh += `<span class="teaching-item" data-lang-content="zh">${text}</span>`;
+        });
+      }
+
+      marquee.innerHTML = htmlEn + htmlZh;
+    }
+
+    // Optional: Pause cycling on hover
+    function setupHoverPause() {
+      const heroHeadlines = document.querySelectorAll('.hero-headline');
+      heroHeadlines.forEach(headline => {
+        headline.addEventListener('mouseenter', () => {
+          clearInterval(authorCycleInterval);
+        });
+        headline.addEventListener('mouseleave', () => {
+          startAuthorCycle();
+        });
+      });
+    }
+
+    // Initialize on page load
     document.addEventListener('DOMContentLoaded', () => {
+      // Load saved language preference
       const savedLang = localStorage.getItem('luminait-lang');
       if (savedLang) {
         setLanguage(savedLang);
       }
+
+      // Start cycling authors
+      startAuthorCycle();
+      setupHoverPause();
+
+      // Populate marquee
+      populateTeachingMarquee();
     });
   </script>
 
