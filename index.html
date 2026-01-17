@@ -269,12 +269,23 @@
 
     .cycling-author-text {
       display: inline-block;
-      opacity: 1;
-      transition: opacity 0.4s ease-in-out;
     }
 
-    .cycling-author-text.fade-out {
-      opacity: 0;
+    .typewriter-cursor {
+      display: inline-block;
+      color: var(--cyan);
+      font-weight: 400;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
     }
 
     /* Currently Teaching Marquee */
@@ -830,10 +841,10 @@
     <div class="hero-content">
       <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
       <h1 class="hero-headline" data-lang-content="en">
-        In 5 weeks, write thematic essays on <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor">Shakespeare</span></span> that are informed, reasoned, and genuinely yours.
+        In 5 weeks, write thematic essays on <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span> that are informed, reasoned, and genuinely yours.
       </h1>
       <h1 class="hero-headline" data-lang-content="zh">
-        5周内，撰写关于<span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh">莎士比亚</span></span>的主题论文——有理有据，独具见解。
+        5周内，撰写关于<span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span>的主题论文——有理有据，独具见解。
       </h1>
       <p class="hero-subtitle">
         <span data-lang-content="en">Years 7-12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB</span>
@@ -1111,18 +1122,18 @@
     // Authors that cycle in the hero headline
     const cyclingAuthors = {
       en: [
+        'Lois Lowry',
         'Shakespeare',
         'Harper Lee',
-        'Lois Lowry',
         'Steinbeck',
         'Orwell',
         'Fitzgerald',
         'Golding'
       ],
       zh: [
+        '洛伊丝·劳里',
         '莎士比亚',
         '哈珀·李',
-        '洛伊丝·劳里',
         '斯坦贝克',
         '奥威尔',
         '菲茨杰拉德',
@@ -1170,32 +1181,81 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Cycling author animation
+    // Typewriter effect for cycling author animation
     let currentAuthorIndex = 0;
-    let authorCycleInterval;
+    let typewriterTimeout;
+    let isRunning = false;
 
-    function cycleAuthor() {
+    async function typeWriter(text, element, speed = 80) {
+      element.textContent = '';
+      
+      // Type out the text character by character
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await new Promise(resolve => setTimeout(resolve, speed));
+      }
+      
+      // Wait before starting to delete
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Delete the text character by character
+      for (let i = text.length; i > 0; i--) {
+        element.textContent = text.substring(0, i - 1);
+        await new Promise(resolve => setTimeout(resolve, speed / 2)); // Delete faster than typing
+      }
+    }
+
+    async function cycleAuthor() {
+      if (!isRunning) return;
+      
       const authorEl = document.getElementById('cyclingAuthor');
       const authorElZh = document.getElementById('cyclingAuthorZh');
-
-      // Fade out
-      authorEl.classList.add('fade-out');
-      authorElZh.classList.add('fade-out');
-
-      setTimeout(() => {
-        // Update to next author
-        currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
-        authorEl.textContent = cyclingAuthors.en[currentAuthorIndex];
-        authorElZh.textContent = cyclingAuthors.zh[currentAuthorIndex];
-
-        // Fade in
-        authorEl.classList.remove('fade-out');
-        authorElZh.classList.remove('fade-out');
-      }, 400); // Match the CSS transition duration
+      
+      if (!authorEl || !authorElZh) return;
+      
+      // Move to next author
+      currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
+      
+      // Get next author texts
+      const nextAuthorEn = cyclingAuthors.en[currentAuthorIndex];
+      const nextAuthorZh = cyclingAuthors.zh[currentAuthorIndex];
+      
+      // Type out both versions simultaneously (they'll be shown/hidden by language system)
+      await Promise.all([
+        typeWriter(nextAuthorEn, authorEl, 80),
+        typeWriter(nextAuthorZh, authorElZh, 80)
+      ]);
+      
+      // Continue to next author if still running
+      if (isRunning) {
+        cycleAuthor();
+      }
     }
 
     function startAuthorCycle() {
-      authorCycleInterval = setInterval(cycleAuthor, 3500); // 3.5 second interval
+      isRunning = true;
+      
+      // Initialize with first author (Lois Lowry)
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+      
+      if (authorEl && authorElZh) {
+        authorEl.textContent = cyclingAuthors.en[0];
+        authorElZh.textContent = cyclingAuthors.zh[0];
+      }
+      
+      // Start cycling after initial delay
+      setTimeout(() => {
+        cycleAuthor();
+      }, 3000); // Wait 3 seconds before starting to cycle
+    }
+
+    function stopAuthorCycle() {
+      isRunning = false;
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+        typewriterTimeout = null;
+      }
     }
 
     // Populate teaching marquee
@@ -1224,7 +1284,7 @@
       const heroHeadlines = document.querySelectorAll('.hero-headline');
       heroHeadlines.forEach(headline => {
         headline.addEventListener('mouseenter', () => {
-          clearInterval(authorCycleInterval);
+          stopAuthorCycle();
         });
         headline.addEventListener('mouseleave', () => {
           startAuthorCycle();
