@@ -255,6 +255,20 @@
         "en": "View detailed results",
         "zh": "查看详细成果"
       }
+    },
+    {
+      "id": "romeo-and-juliet",
+      "file": "romeo-and-juliet.html",
+      "template": "romeo-and-juliet.html",
+      "title": {
+        "en": "Romeo and Juliet Analysis Guide",
+        "zh": "《罗密欧与朱丽叶》分析指南"
+      },
+      "navTitle": {
+        "en": "Romeo & Juliet",
+        "zh": "罗密欧与朱丽叶"
+      },
+      "showInNav": false
     }
   ]
 }
