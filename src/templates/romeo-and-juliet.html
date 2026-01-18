@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romeo and Juliet Analysis Guide | {{SITE_NAME}}</title>
+  <meta name="description" content="The Dread Engine: Why Shakespeare spoils the ending. A complete analysis guide for Romeo and Juliet using the 5-Step Method.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-back {
+      color: var(--slate-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    /* Guide Hero - Step 1 */
+    .guide-hero {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guide-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .guide-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guide-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 212, 255, 0.15);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      padding: 0.35rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .guide-context {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .context-tag {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--slate-400);
+    }
+
+    .guide-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .guide-subtitle {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-300);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .guide-tagline {
+      color: var(--slate-300);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .guide-insight {
+      background: rgba(0, 212, 255, 0.1);
+      border-left: 3px solid var(--cyan);
+      padding: 1rem 1.25rem;
+      color: var(--slate-300);
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    /* Section Base */
+    .guide-section {
+      padding: 4rem 2rem;
+    }
+
+    .guide-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .guide-section-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 0.35rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--slate-500);
+      font-size: 1.05rem;
+    }
+
+    .bg-white { background: white; }
+    .bg-gray { background: var(--slate-100); }
+    .bg-navy {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+    }
+
+    /* Step 2: The Reveal - Pattern Grid */
+    .reveal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .reveal-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--slate-200);
+    }
+
+    .reveal-number {
+      width: 36px;
+      height: 36px;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .reveal-card-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .reveal-card-text {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Step 2: Anchor Quote */
+    .anchor-quote-section {
+      text-align: center;
+    }
+
+    .anchor-quote-box {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .anchor-quote-box::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 5rem;
+      color: var(--cyan);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .anchor-quote-text {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .anchor-quote-attribution {
+      color: var(--cyan);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quote-meaning {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .quote-meaning-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .quote-meaning-label {
+      color: var(--slate-400);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-meaning-text {
+      color: var(--slate-300);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .quote-pattern-connection {
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .quote-pattern-connection p {
+      color: var(--cyan);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Step 3: Devices Grid */
+    .devices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .device-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--slate-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .device-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .device-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .device-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--cyan);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .device-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .device-tagline {
+      color: var(--slate-500);
+      font-size: 0.85rem;
+    }
+
+    .device-quote {
+      background: var(--slate-100);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .device-quote-text {
+      font-style: italic;
+      color: var(--slate-700);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .device-quote-location {
+      color: var(--slate-500);
+      font-size: 0.8rem;
+    }
+
+    .device-impact {
+      color: var(--slate-600);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Step 3: Timeline/Tracker */
+    .timeline-section {
+      position: relative;
+    }
+
+    .timeline-intro {
+      text-align: center;
+      color: var(--slate-300);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--cyan), var(--red));
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+
+    .timeline-content {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .timeline-content.left {
+      text-align: right;
+    }
+
+    .timeline-content.right {
+      text-align: left;
+    }
+
+    .timeline-act {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-title {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-event {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-quote {
+      font-style: italic;
+      color: var(--slate-300);
+      font-size: 0.9rem;
+    }
+
+    .timeline-marker {
+      width: 48px;
+      height: 48px;
+      background: var(--deep-navy);
+      border: 3px solid var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-marker-number {
+      color: var(--cyan);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .dread-indicator {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .dread-bar {
+      width: 8px;
+      height: 8px;
+      background: var(--slate-600);
+      border-radius: 2px;
+    }
+
+    .dread-bar.active {
+      background: var(--cyan);
+    }
+
+    /* Step 4: Conflict Matrix */
+    .conflict-matrix {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .conflict-intro {
+      text-align: center;
+      color: var(--slate-600);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .conflict-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .conflict-side {
+      background: white;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .conflict-side-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .conflict-icon {
+      font-size: 1.5rem;
+    }
+
+    .conflict-name {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .conflict-evidence {
+      list-style: none;
+    }
+
+    .conflict-evidence li {
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      color: var(--slate-600);
+      font-size: 0.95rem;
+    }
+
+    .conflict-evidence li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    .conflict-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--slate-200);
+      border-radius: 50%;
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-500);
+      font-size: 0.9rem;
+      font-weight: 600;
+      align-self: center;
+    }
+
+    .conflict-insight {
+      background: var(--slate-100);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .conflict-insight p {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .conflict-insight strong {
+      color: var(--slate-800);
+    }
+
+    /* Step 4: Essay Toolkit */
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .toolkit-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--slate-200);
+    }
+
+    .toolkit-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .toolkit-icon {
+      font-size: 1.5rem;
+    }
+
+    .toolkit-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .toolkit-text {
+      color: var(--slate-600);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .toolkit-text code {
+      background: var(--slate-100);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--slate-700);
+    }
+
+    /* Step 4: Modern Mirror */
+    .mirror-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .mirror-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mirror-year {
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .mirror-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .mirror-text {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* FAQ Section */
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--slate-800);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: var(--cyan);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.25rem 1.25rem;
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Bibliography */
+    .bibliography {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .bibliography-primary {
+      font-size: 1rem;
+      color: var(--slate-700);
+      margin-bottom: 1rem;
+    }
+
+    .bibliography-framework {
+      color: var(--slate-500);
+      font-size: 0.9rem;
+    }
+
+    /* Step 5: CTA Panel */
+    .cta-panel {
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-panel::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 0.35rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-subhead {
+      color: var(--slate-400);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lead-magnet-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lead-magnet-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .lead-magnet-items {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .lead-magnet-items li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--slate-300);
+      font-size: 0.95rem;
+    }
+
+    .lead-magnet-items li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .lead-magnet-form {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .lead-magnet-input {
+      flex: 1;
+      padding: 0.875rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 1rem;
+    }
+
+    .lead-magnet-input::placeholder {
+      color: var(--slate-500);
+    }
+
+    .lead-magnet-button {
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 0.875rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lead-magnet-button:hover {
+      background: #00e5ff;
+      transform: translateY(-1px);
+    }
+
+    .parent-bridge {
+      color: var(--slate-400);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .parent-bridge a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .parent-bridge a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-contact {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .reveal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conflict-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conflict-vs {
+        margin: 1rem auto;
+      }
+
+      .timeline::before {
+        left: 24px;
+      }
+
+      .timeline-item {
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+      }
+
+      .timeline-content.left {
+        text-align: left;
+        order: 2;
+      }
+
+      .timeline-marker {
+        order: 1;
+      }
+
+      .timeline-content.right {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .guide-title {
+        font-size: 2rem;
+      }
+
+      .guide-subtitle {
+        font-size: 1.25rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .quote-meaning {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-magnet-form {
+        flex-direction: column;
+      }
+
+      .nav-content {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="{{SITE_NAME}}" class="nav-logo">
+      </a>
+      <a href="index.html" class="nav-back">← Back to Home</a>
+      <a href="{{ENROLL_LINK}}" class="nav-cta">Enroll</a>
+    </div>
+  </nav>
+
+  <!-- STEP 1: KNOW THE TEXT - Hero Section -->
+  <section class="guide-hero">
+    <div class="guide-hero-content">
+      <div class="guide-step-badge">Step 1: Know the Text</div>
+      <div class="guide-context">
+        <span class="context-tag">Shakespeare</span>
+        <span class="context-tag">Tragedy</span>
+        <span class="context-tag">5-Act Structure</span>
+        <span class="context-tag">Elizabethan</span>
+      </div>
+      <h1 class="guide-title">The Dread Engine</h1>
+      <p class="guide-subtitle">Why Shakespeare Spoils the Ending</p>
+      <p class="guide-tagline">The Prologue is a spoiler. Shakespeare kills suspense in the first 30 seconds to build something more devastating: Dread.</p>
+      <div class="guide-insight">
+        Most stories ask: "What will happen?" Romeo & Juliet asks: "How will I watch it happen?"
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: SEE THE PATTERN - The Reveal -->
+  <section class="guide-section bg-gray">
+    <div class="guide-section-wide">
+      <div class="section-header">
+        <div class="section-step">Step 2: See the Pattern</div>
+        <h2 class="section-title">Prophetic Witnessing</h2>
+        <p class="section-subtitle">The pattern that makes Romeo & Juliet work</p>
+      </div>
+      <div class="reveal-grid">
+        <div class="reveal-card">
+          <div class="reveal-number">1</div>
+          <h3 class="reveal-card-title">The Prophecy</h3>
+          <p class="reveal-card-text">The Prologue announces the ending: "star-crossed lovers take their life." We know everything before Act 1 begins.</p>
+        </div>
+        <div class="reveal-card">
+          <div class="reveal-number">2</div>
+          <h3 class="reveal-card-title">The Gap</h3>
+          <p class="reveal-card-text">Characters have hope. We have knowledge. This unbridgeable gap creates dramatic irony in every scene.</p>
+        </div>
+        <div class="reveal-card">
+          <div class="reveal-number">3</div>
+          <h3 class="reveal-card-title">The Dread</h3>
+          <p class="reveal-card-text">We don't ask "will they survive?" We watch them pursue hope toward doom we already know.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: Anchor Quote -->
+  <section class="guide-section bg-white anchor-quote-section">
+    <div class="guide-section-inner">
+      <div class="anchor-quote-box">
+        <p class="anchor-quote-text">"My grave is like to be my wedding bed."</p>
+        <p class="anchor-quote-attribution">— Juliet, Act 1 Scene 5 (1.5.132)</p>
+        <div class="quote-meaning">
+          <div class="quote-meaning-box">
+            <p class="quote-meaning-label">Surface Meaning</p>
+            <p class="quote-meaning-text">If he's already married, I'll die unmarried.</p>
+          </div>
+          <div class="quote-meaning-box">
+            <p class="quote-meaning-label">Ironic Meaning</p>
+            <p class="quote-meaning-text">She's right — her wedding will lead to her grave.</p>
+          </div>
+        </div>
+        <div class="quote-pattern-connection">
+          <p><strong>This is Prophetic Witnessing in action.</strong> Characters speak more truly than they know. We see the prophecy being fulfilled before their eyes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3: FIND THE PROOF - Devices Grid -->
+  <section class="guide-section bg-gray">
+    <div class="guide-section-wide">
+      <div class="section-header">
+        <div class="section-step">Step 3: Find the Proof</div>
+        <h2 class="section-title">The Literary Devices</h2>
+        <p class="section-subtitle">How Shakespeare executes the pattern</p>
+      </div>
+      <div class="devices-grid">
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">📜</div>
+            <div>
+              <h3 class="device-title">Chorus Speech</h3>
+              <p class="device-tagline">The Prophecy Mechanism</p>
+            </div>
+          </div>
+          <div class="device-quote">
+            <p class="device-quote-text">"A pair of star-crossed lovers take their life"</p>
+            <p class="device-quote-location">Prologue, Line 6</p>
+          </div>
+          <p class="device-impact">Creates structural dramatic irony from line one. Everything that follows is shadowed by this announcement.</p>
+        </div>
+
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">⚡</div>
+            <div>
+              <h3 class="device-title">Dramatic Irony</h3>
+              <p class="device-tagline">The Knowledge Gap</p>
+            </div>
+          </div>
+          <div class="device-quote">
+            <p class="device-quote-text">"My only love sprung from my only hate!"</p>
+            <p class="device-quote-location">1.5.137</p>
+          </div>
+          <p class="device-impact">Juliet recognizes the tragic situation, but we know even more — that this recognition comes too late to prevent the doom we already know.</p>
+        </div>
+
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">🌙</div>
+            <div>
+              <h3 class="device-title">Light/Dark Imagery</h3>
+              <p class="device-tagline">Hope vs. Doom Visual</p>
+            </div>
+          </div>
+          <div class="device-quote">
+            <p class="device-quote-text">"She doth teach the torches to burn bright"</p>
+            <p class="device-quote-location">1.5.42</p>
+          </div>
+          <p class="device-impact">Establishes the visual system that tracks toward darkness. Juliet as light source foreshadows her eventual extinguishing.</p>
+        </div>
+
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">👁️</div>
+            <div>
+              <h3 class="device-title">Foreshadowing</h3>
+              <p class="device-tagline">Characters Predict Their Fate</p>
+            </div>
+          </div>
+          <div class="device-quote">
+            <p class="device-quote-text">"Methinks I see thee now, thou art so low, / As one dead in the bottom of a tomb"</p>
+            <p class="device-quote-location">3.5.54-55</p>
+          </div>
+          <p class="device-impact">Juliet's explicit visual prophecy — she sees exactly what will happen. Character joins audience in foreknowledge.</p>
+        </div>
+
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">💔</div>
+            <div>
+              <h3 class="device-title">Oxymoron</h3>
+              <p class="device-tagline">Hope/Doom Collapsed</p>
+            </div>
+          </div>
+          <div class="device-quote">
+            <p class="device-quote-text">"Parting is such sweet sorrow"</p>
+            <p class="device-quote-location">2.1.229</p>
+          </div>
+          <p class="device-impact">Captures the hope/doom tension linguistically. Sweetness of love already contains the sorrow to come.</p>
+        </div>
+
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">🎭</div>
+            <div>
+              <h3 class="device-title">Soliloquy</h3>
+              <p class="device-tagline">Intimate Access to the Doomed</p>
+            </div>
+          </div>
+          <div class="device-quote">
+            <p class="device-quote-text">"But soft, what light through yonder window breaks?"</p>
+            <p class="device-quote-location">2.1.44</p>
+          </div>
+          <p class="device-impact">Gives audience intimate access to Romeo's love while we know this love leads to death — creates pathos through the hope/knowledge gap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3: Timeline/Tracker -->
+  <section class="guide-section bg-navy timeline-section">
+    <div class="guide-section-wide">
+      <div class="section-header">
+        <h2 class="section-title" style="color: white;">Dread Tracker: Prologue to Tomb</h2>
+        <p class="timeline-intro">Watch the prophecy unfold. Each act brings characters closer to the doom we've known since line 6.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content left">
+            <p class="timeline-act">ACT I</p>
+            <h4 class="timeline-title">The Prophecy</h4>
+            <p class="timeline-event">Prologue announces death. Romeo and Juliet meet at the Capulet ball.</p>
+            <p class="timeline-quote">"My only love sprung from my only hate!"</p>
+            <div class="dread-indicator">
+              <span class="dread-bar active"></span>
+              <span class="dread-bar"></span>
+              <span class="dread-bar"></span>
+              <span class="dread-bar"></span>
+              <span class="dread-bar"></span>
+            </div>
+          </div>
+          <div class="timeline-marker">
+            <span class="timeline-marker-number">I</span>
+          </div>
+          <div class="timeline-content right"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content left"></div>
+          <div class="timeline-marker">
+            <span class="timeline-marker-number">II</span>
+          </div>
+          <div class="timeline-content right">
+            <p class="timeline-act">ACT II</p>
+            <h4 class="timeline-title">The Secret Bond</h4>
+            <p class="timeline-event">Balcony scene. Secret marriage. Peak hope — but we know the end.</p>
+            <p class="timeline-quote">"Too swift arrives as tardy as too slow"</p>
+            <div class="dread-indicator">
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar"></span>
+              <span class="dread-bar"></span>
+              <span class="dread-bar"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content left">
+            <p class="timeline-act">ACT III</p>
+            <h4 class="timeline-title">The Turn</h4>
+            <p class="timeline-event">Mercutio and Tybalt die. Romeo banished. Hope collapses.</p>
+            <p class="timeline-quote">"A plague on both your houses!"</p>
+            <div class="dread-indicator">
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar"></span>
+              <span class="dread-bar"></span>
+            </div>
+          </div>
+          <div class="timeline-marker">
+            <span class="timeline-marker-number">III</span>
+          </div>
+          <div class="timeline-content right"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content left"></div>
+          <div class="timeline-marker">
+            <span class="timeline-marker-number">IV</span>
+          </div>
+          <div class="timeline-content right">
+            <p class="timeline-act">ACT IV</p>
+            <h4 class="timeline-title">The Desperate Plan</h4>
+            <p class="timeline-event">Juliet takes the potion. The plan depends on timing — we know it will fail.</p>
+            <p class="timeline-quote">"Romeo, I come! This do I drink to thee"</p>
+            <div class="dread-indicator">
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content left">
+            <p class="timeline-act">ACT V</p>
+            <h4 class="timeline-title">The Prophecy Fulfilled</h4>
+            <p class="timeline-event">Letter fails. Romeo takes poison. Juliet wakes, finds him dead, stabs herself.</p>
+            <p class="timeline-quote">"Thus with a kiss I die"</p>
+            <div class="dread-indicator">
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+              <span class="dread-bar active"></span>
+            </div>
+          </div>
+          <div class="timeline-marker">
+            <span class="timeline-marker-number">V</span>
+          </div>
+          <div class="timeline-content right"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 4: BUILD THE CLAIM - Conflict Matrix -->
+  <section class="guide-section bg-white">
+    <div class="guide-section-wide">
+      <div class="section-header">
+        <div class="section-step">Step 4: Build the Claim</div>
+        <h2 class="section-title">Fate vs. Free Will</h2>
+        <p class="section-subtitle">The central tension that drives meaning</p>
+      </div>
+      <div class="conflict-matrix">
+        <p class="conflict-intro">Every scene pulls in two directions. Characters choose — but we know the ending.</p>
+        <div class="conflict-grid">
+          <div class="conflict-side">
+            <div class="conflict-side-header">
+              <span class="conflict-icon">⚡</span>
+              <h3 class="conflict-name">Fate</h3>
+            </div>
+            <ul class="conflict-evidence">
+              <li>"Star-crossed" in line 6</li>
+              <li>The Prologue announces death</li>
+              <li>Timing of the letter failure</li>
+              <li>"Some greater power" (5.3)</li>
+            </ul>
+          </div>
+          <div class="conflict-vs">vs</div>
+          <div class="conflict-side">
+            <div class="conflict-side-header">
+              <span class="conflict-icon">🎭</span>
+              <h3 class="conflict-name">Free Will</h3>
+            </div>
+            <ul class="conflict-evidence">
+              <li>Romeo chooses to attend the party</li>
+              <li>Juliet chooses the potion plan</li>
+              <li>Romeo chooses poison over patience</li>
+              <li>Every impulsive decision</li>
+            </ul>
+          </div>
+        </div>
+        <div class="conflict-insight">
+          <p><strong>Don't argue for one side.</strong> Show how Shakespeare keeps the tension unresolved — characters feel free, but the prophecy always wins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 4: Essay Toolkit -->
+  <section class="guide-section bg-gray">
+    <div class="guide-section-wide">
+      <div class="section-header">
+        <h2 class="section-title">Essay Toolkit</h2>
+        <p class="section-subtitle">How to use this in your essay</p>
+      </div>
+      <div class="toolkit-grid">
+        <div class="toolkit-card">
+          <div class="toolkit-card-header">
+            <span class="toolkit-icon">💡</span>
+            <h3 class="toolkit-title">The Killer Thesis</h3>
+          </div>
+          <p class="toolkit-text">Don't write: <code>"Shakespeare uses dramatic irony."</code> Write: <strong>Shakespeare creates dread by announcing the ending in the Prologue, transforming every moment of hope into tragic irony.</strong></p>
+        </div>
+        <div class="toolkit-card">
+          <div class="toolkit-card-header">
+            <span class="toolkit-icon">🎯</span>
+            <h3 class="toolkit-title">Quote Selection</h3>
+          </div>
+          <p class="toolkit-text">Choose quotes where characters unknowingly predict their fate. These demonstrate the pattern better than famous "love" quotes.</p>
+        </div>
+        <div class="toolkit-card">
+          <div class="toolkit-card-header">
+            <span class="toolkit-icon">🔗</span>
+            <h3 class="toolkit-title">Link to Effect</h3>
+          </div>
+          <p class="toolkit-text">Always connect device → pattern → reader effect. "The dramatic irony creates dread because we..."</p>
+        </div>
+        <div class="toolkit-card">
+          <div class="toolkit-card-header">
+            <span class="toolkit-icon">⚖️</span>
+            <h3 class="toolkit-title">Address the Tension</h3>
+          </div>
+          <p class="toolkit-text">Acknowledge both fate AND free will. The best essays show how Shakespeare keeps the question open.</p>
+        </div>
+        <div class="toolkit-card">
+          <div class="toolkit-card-header">
+            <span class="toolkit-icon">📈</span>
+            <h3 class="toolkit-title">Track the Build</h3>
+          </div>
+          <p class="toolkit-text">Show how dread intensifies across the play. Use the timeline as your structural backbone.</p>
+        </div>
+        <div class="toolkit-card">
+          <div class="toolkit-card-header">
+            <span class="toolkit-icon">🚫</span>
+            <h3 class="toolkit-title">Avoid the Trap</h3>
+          </div>
+          <p class="toolkit-text">Don't just retell the plot. Every paragraph should answer: "How does this create the pattern's effect?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 4: Modern Mirror -->
+  <section class="guide-section bg-navy">
+    <div class="guide-section-wide">
+      <div class="section-header">
+        <h2 class="section-title" style="color: white;">Modern Mirror</h2>
+        <p class="section-subtitle" style="color: var(--slate-400);">The same pattern, different stories</p>
+      </div>
+      <div class="mirror-grid">
+        <div class="mirror-card">
+          <p class="mirror-year">1997</p>
+          <h3 class="mirror-title">Titanic</h3>
+          <p class="mirror-text">We know the ship sinks. James Cameron opens with the wreck. Yet we spend three hours hoping Jack and Rose escape — watching hope move toward doom we already know.</p>
+        </div>
+        <div class="mirror-card">
+          <p class="mirror-year">2008</p>
+          <h3 class="mirror-title">Breaking Bad</h3>
+          <p class="mirror-text">The flash-forward opening shows destruction. We watch Walter White's choices lead exactly where we knew they would — but can't look away.</p>
+        </div>
+        <div class="mirror-card">
+          <p class="mirror-year">2014</p>
+          <h3 class="mirror-title">Gone Girl</h3>
+          <p class="mirror-text">The diary entries create dramatic irony — we know more than the characters, watching them walk into traps we can see coming.</p>
+        </div>
+        <div class="mirror-card">
+          <p class="mirror-year">2019</p>
+          <h3 class="mirror-title">Chernobyl</h3>
+          <p class="mirror-text">We know the reactor will explode. Every scene of confidence, every dismissal of danger, is shadowed by our knowledge of the coming disaster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="guide-section bg-white">
+    <div class="guide-section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">What is the main motif in Romeo and Juliet?</div>
+          <div class="faq-answer">The primary motif is Light and Dark imagery, tracking the movement from hope (balcony scene, which happens at night) to death (the tomb). Light represents love and hope, but it's always surrounded by darkness — visually representing how their love is doomed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why does Shakespeare spoil the ending in the Prologue?</div>
+          <div class="faq-answer">Shakespeare isn't interested in suspense ("Will they survive?"). He wants dread. By telling us the ending upfront, every moment of hope becomes ironic. We watch characters pursue happiness toward doom we already know — that's the experience Shakespeare is creating.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is Romeo and Juliet about fate or free will?</div>
+          <div class="faq-answer">Both — and that's the point. The play deliberately keeps the tension unresolved. Characters make choices (free will), but the Prologue has already announced the outcome (fate). The best essays don't pick a side; they show how Shakespeare holds both in tension.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What's the most important quote to analyze?</div>
+          <div class="faq-answer">Look for quotes where characters unknowingly predict their fate: "My grave is like to be my wedding bed" (Juliet), "I dreamt my lady came and found me dead" (Romeo). These demonstrate the Prophetic Witnessing pattern better than famous romantic quotes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bibliography -->
+  <section class="guide-section bg-gray">
+    <div class="guide-section-inner">
+      <div class="bibliography">
+        <p class="bibliography-primary">Shakespeare, William. <em>Romeo and Juliet</em>. Ed. Hannah August. New Oxford Shakespeare, 2024.</p>
+        <p class="bibliography-framework">Pattern: Prophetic Witnessing | Structure: 5-Act Tragedy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5: CTA Panel (Gated) -->
+  <section class="guide-section bg-navy cta-panel">
+    <div class="guide-section-inner">
+      <div class="cta-step-badge">Step 5: Write the Essay</div>
+      <h2 class="cta-headline">You've seen the pattern. Now write it yourself.</h2>
+      <p class="cta-subhead">Get the tools to turn this understanding into your own essay.</p>
+
+      <div class="lead-magnet-box">
+        <h3 class="lead-magnet-title">Get the Romeo & Juliet Essay Tips</h3>
+        <ul class="lead-magnet-items">
+          <li>5 pre-written TVODE sentences you can adapt</li>
+          <li>The thesis formula for this text</li>
+          <li>A Year 12 exemplar paragraph</li>
+        </ul>
+        <form class="lead-magnet-form">
+          <input type="email" class="lead-magnet-input" placeholder="Your email for the PDF">
+          <button type="submit" class="lead-magnet-button">Get the Tips</button>
+        </form>
+      </div>
+
+      <p class="parent-bridge">
+        Showing this to a parent? <a href="course.html">See the 5-week program →</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-contact">
+      <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a> ·
+      <a href="tel:{{CONTACT_PHONE_LINK}}">{{CONTACT_PHONE}}</a>
+    </p>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

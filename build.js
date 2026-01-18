@@ -28,25 +28,29 @@ const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
  * Generate navigation links HTML
  */
 function generateNavLinks(currentPageId) {
-  return config.pages.map(page => {
-    const isActive = page.id === currentPageId ? ' active' : '';
-    return `        <a href="${page.file}" class="nav-link${isActive}">
+  return config.pages
+    .filter(page => page.showInNav !== false)
+    .map(page => {
+      const isActive = page.id === currentPageId ? ' active' : '';
+      return `        <a href="${page.file}" class="nav-link${isActive}">
           <span data-lang-content="en">${page.navTitle.en}</span>
           <span data-lang-content="zh">${page.navTitle.zh}</span>
         </a>`;
-  }).join('\n');
+    }).join('\n');
 }
 
 /**
  * Generate footer links HTML
  */
 function generateFooterLinks() {
-  return config.pages.map(page => {
-    return `      <a href="${page.file}">
+  return config.pages
+    .filter(page => page.showInNav !== false)
+    .map(page => {
+      return `      <a href="${page.file}">
         <span data-lang-content="en">${page.navTitle.en}</span>
         <span data-lang-content="zh">${page.navTitle.zh}</span>
       </a>`;
-  }).join('\n');
+    }).join('\n');
 }
 
 /**
