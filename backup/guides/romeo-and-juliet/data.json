@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "text_title": "Romeo and Juliet",
+    "author": "William Shakespeare",
+    "edition": "New Oxford Shakespeare (Hannah August, ed. 2024)",
+    "genre": "tragedy",
+    "structure_type": "5ACT",
+    "era": "400-year"
+  },
+  "hook": {
+    "title": "The Dread Engine",
+    "subtitle": "Why Shakespeare Spoils the Ending",
+    "tagline": "The Prologue is a spoiler. Shakespeare kills suspense in the first 30 seconds to build something more devastating: Dread.",
+    "insight": "Most stories ask: <strong>\"What will happen?\"</strong><br>Romeo & Juliet asks: <strong>\"How will I watch it happen?\"</strong>"
+  },
+  "pattern": {
+    "name": "Prophetic Witnessing",
+    "code": "PERVASIVE_IRONY + PROPHETIC_CHORUS + HIGH_PATHOS + ELEG",
+    "core_dynamic": "Shakespeare invented a pattern that makes tragedy feel inevitable. Once you see it, you can't unsee it.",
+    "reader_effect": "As the play progresses, characters move closer to doom while believing in escape. The gap between hope and reality is where dread lives.",
+    "three_points": [
+      {"number": 1, "title": "The Prophecy", "text": "The Prologue announces the ending."},
+      {"number": 2, "title": "The Gap", "text": "Characters have hope. We have knowledge."},
+      {"number": 3, "title": "The Dread", "text": "We watch them pursue hope toward doom we already know."}
+    ]
+  },
+  "anchor_quote": {
+    "text": "My grave is like to be my wedding bed.",
+    "speaker": "Juliet",
+    "location": "Act 1 Scene 5",
+    "line_ref": "1.5.132",
+    "surface_meaning": "If he's already married, I'll die unmarried.",
+    "ironic_meaning": "She's right—her wedding will lead to her grave.",
+    "pattern_connection": "Characters speak more truly than they know."
+  },
+  "tension": {
+    "title": "Fate vs. Free Will",
+    "intro": "Every scene pulls in two directions.",
+    "side_a": {"name": "Fate", "icon": "⚡", "evidence": ["Star-crossed in line 6", "Prologue announces death"]},
+    "side_b": {"name": "Free Will", "icon": "🎭", "evidence": ["Romeo chooses to attend party", "Juliet chooses potion plan"]},
+    "insight": "Show how Shakespeare keeps the tension unresolved."
+  },
+  "devices": [
+    {"name": "Chorus Speech", "tagline": "The Prophecy Mechanism", "icon": "📜", "quote": "A pair of star-crossed lovers take their life", "location": "Prologue, Line 6", "impact": "Creates structural dramatic irony from line one.", "link_section": "reveal"},
+    {"name": "Dramatic Irony", "tagline": "The Knowledge Gap", "icon": "👁️", "quote": "Thy lips are warm.", "location": "Juliet, 5.3.167", "impact": "Juliet discovers Romeo still warm—seconds too late.", "link_section": "gap"},
+    {"name": "Foreshadowing", "tagline": "Characters Predict Their Doom", "icon": "🔮", "quote": "Methinks I see thee now, thou art so low", "location": "Juliet, 3.5.54", "impact": "Juliet sees exactly what will happen.", "link_section": "trace"},
+    {"name": "Oxymoron", "tagline": "Love-Death Collision", "icon": "⚔️", "quote": "O happy dagger!", "location": "Juliet, 5.3.169", "impact": "Love can only be fulfilled in death.", "link_section": "tension"},
+    {"name": "Aubade", "tagline": "The Dawn Parting", "icon": "🌅", "quote": "It was the nightingale, and not the lark", "location": "Juliet, 3.5.2", "impact": "Dawn = danger. We know this is their last meeting.", "link_section": "trace"}
+  ],
+  "timeline": {
+    "title": "Dread Tracker: Prologue to Tomb",
+    "intro": "Watch the prophecy unfold.",
+    "acts": [
+      {"number": "I", "title": "The Prophecy", "event": "Prologue announces death. Romeo and Juliet meet.", "quote": "My only love sprung from my only hate!", "dread_level": 1},
+      {"number": "II", "title": "The Secret", "event": "Balcony scene. Secret marriage.", "quote": "It is the east, and Juliet is the sun.", "dread_level": 2},
+      {"number": "III", "title": "The Pivot", "event": "Mercutio dies. Romeo kills Tybalt. Banishment.", "quote": "A plague o' both your houses!", "dread_level": 3},
+      {"number": "IV", "title": "The Plan", "event": "Juliet fakes death.", "quote": "My grave is like to be my wedding bed — fulfilled", "dread_level": 4},
+      {"number": "V", "title": "The Prophecy Fulfilled", "event": "Romeo takes poison. Juliet wakes too late.", "quote": "For never was a story of more woe", "dread_level": 5}
+    ]
+  },
+  "toolkit": [
+    {"icon": "💡", "title": "The Killer Thesis", "text": "Don't write: Shakespeare uses dramatic irony. Write: Shakespeare creates dread by announcing the ending."},
+    {"icon": "🔗", "title": "Connect Devices", "text": "Show how devices serve the same pattern."},
+    {"icon": "📊", "title": "Track Progression", "text": "Show how the pattern intensifies."},
+    {"icon": "⚖️", "title": "Hold the Tension", "text": "Don't pick a winner between fate and free will."},
+    {"icon": "💬", "title": "Quote with Layers", "text": "Show surface meaning vs. what we hear."},
+    {"icon": "🎯", "title": "Name the Pattern", "text": "Using pattern name signals structural understanding."}
+  ],
+  "modern_mirror": [
+    {"year": "1997", "title": "Titanic", "text": "We know the ship sinks."},
+    {"year": "2023", "title": "Oppenheimer", "text": "Everyone knows the bomb works."},
+    {"year": "2019", "title": "Avengers: Endgame", "text": "We sense Tony's sacrifice coming."},
+    {"year": "Every Biopic", "title": "The Wikipedia Problem", "text": "Shakespeare solved spoilers 400 years ago."}
+  ],
+  "faq": [
+    {"question": "What is the main motif in Romeo and Juliet?", "answer": "Light and Dark contrast."},
+    {"question": "Why reveal the ending in the Prologue?", "answer": "Creates dread instead of suspense."},
+    {"question": "What is dramatic irony?", "answer": "Audience knows more than characters."},
+    {"question": "Fate or free will?", "answer": "Shakespeare keeps tension unresolved."}
+  ],
+  "bibliography": {
+    "primary_text": "Shakespeare, William. Romeo and Juliet. New Oxford Shakespeare, 2024.",
+    "line_references": [
+      {"quote": "My grave is like to be my wedding bed", "ref": "1.5.132"},
+      {"quote": "It is the east, and Juliet is the sun", "ref": "2.1.45"},
+      {"quote": "A plague o' both your houses", "ref": "3.1.87"},
+      {"quote": "Thy lips are warm", "ref": "5.3.167"}
+    ],
+    "framework": "Pattern: Prophetic Witnessing; Structure: Freytag's Pyramid"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "text_title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "edition": "Harper Perennial Modern Classics, 2006",
+    "genre": "Southern Gothic / Bildungsroman",
+    "structure_type": "NOVEL",
+    "era": "65-year",
+    "pattern_lens": "Social"
+  },
+  "hook": {
+    "title": "The Innocence Lens",
+    "subtitle": "How a Child's Eyes Expose Adult Hypocrisy",
+    "tagline": "Scout doesn't understand racism. That's exactly why we see it so clearly.",
+    "insight": "Most stories tell you what's wrong.<br><strong>To Kill a Mockingbird shows you through eyes that can't see it—and makes you confront why you can.</strong>"
+  },
+  "pattern": {
+    "name": "Maturing Moral Witness",
+    "code": "FP + RETRO + INT + DRAM_IRONY + ADV",
+    "core_dynamic": "Harper Lee invented a pattern that makes injustice feel <em>undeniable</em>. Adult Scout narrates childhood memories, creating a devastating gap between innocent observation and mature understanding.",
+    "reader_effect": "As Scout innocently reports what she sees, readers experience dual consciousness—seeing through a child's eyes while understanding the adult truth she can't grasp.",
+    "device_function": "transforms innocent observation into social testimony",
+    "three_points": [
+      {"number": 1, "title": "The Distance", "text": "Adult Scout looks back: \"When enough years had gone by to enable us to look back on them.\" She's a witness testifying after the fact."},
+      {"number": 2, "title": "The Gap", "text": "Child Scout sees without understanding. Adult Scout (and we) understand without being able to change what happened. This creates dramatic irony in every scene."},
+      {"number": 3, "title": "The Testimony", "text": "Scout's innocent observations become evidence of systemic racism. She doesn't argue—she simply reports what reasonable people go \"stark raving mad\" about."}
+    ]
+  },
+  "anchor_quote": {
+    "text": "Maycomb's usual disease.",
+    "speaker": "Atticus",
+    "location": "Chapter 9",
+    "line_ref": "Ch. 9",
+    "surface_meaning": "Atticus describes how his neighbors lose their reason when race is involved.",
+    "ironic_meaning": "Racism isn't individual prejudice—it's a contagion the whole town carries.",
+    "pattern_connection": "This is Maturing Moral Witness in action. Child Scout hears words without grasping the diagnosis. Adult Scout—and we—recognize the systemic disease being named."
+  },
+  "gap_states": {
+    "1": {"audience": "Sees social hierarchies forming", "characters": "Play innocently in Maycomb"},
+    "2": {"audience": "Recognizes racism building", "characters": "Navigate childhood adventures"},
+    "3": {"audience": "Watches injustice consume the trial", "characters": "Believe Atticus will win"},
+    "4": {"audience": "Understands the verdict before it comes", "characters": "Process shock and grief"},
+    "5": {"audience": "Grasps the full cost of moral courage", "characters": "Begin to understand"}
+  },
+  "meter_label": "Understanding",
+  "effect_noun": "Awareness",
+  "dread_levels": {"1": "20%", "2": "40%", "3": "60%", "4": "80%", "5": "100%"},
+  "tension": {
+    "title": "Innocence vs. Experience",
+    "intro": "Every scene pulls in two directions. Scout sees without understanding. We understand without being able to intervene. This gap is where the novel's moral power lives.",
+    "side_a": {"name": "Innocence", "icon": "🌱", "color": "gold", "evidence": ["\"Our father satisfactory\"—simple childhood assessment", "Scout doesn't understand why Tom Robinson can't win", "Boo Radley as monster, then as neighbor", "Scout's literal interpretation of \"entailments\""]},
+    "side_b": {"name": "Experience", "icon": "⚖️", "color": "crimson", "evidence": ["Adult Scout's retrospective narration", "\"Maycomb's usual disease\" diagnosis", "The jury's inevitable verdict", "Community turning against Atticus"]},
+    "insight": "Don't argue for one side. Show how Lee maintains the tension—Scout's innocence makes the experienced truth unbearable."
+  },
+  "devices": [
+    {"name": "Temporal Distance", "tagline": "The Testimony Mechanism", "icon": "📜", "quote": "When enough years had gone by to enable us to look back on them", "location": "Chapter 1", "impact": "Creates structural dramatic irony from page one. Adult Scout positions herself as a witness testifying, transforming personal memory into social evidence.", "link_section": "reveal"},
+    {"name": "Dramatic Irony", "tagline": "The Knowledge Gap", "icon": "👁️", "quote": "Why reasonable people go stark raving mad when anything involving a Negro comes up", "location": "Chapter 9", "impact": "Child Scout reports Atticus's words without fully grasping them. We hear a diagnosis of systemic racism.", "link_section": "gap"},
+    {"name": "Limited Focalization", "tagline": "The Innocent Eye", "icon": "🔍", "quote": "Atticus was related by blood or marriage to nearly every family in the town", "location": "Chapter 1", "impact": "Scout's child-level perspective presents Maycomb as an interconnected web without recognizing how this insularity enables prejudice.", "link_section": "trace"},
+    {"name": "Juxtaposition", "tagline": "The Hypocrisy Revealer", "icon": "⚔️", "quote": "Atticus said the Ewells had been the disgrace of Maycomb for three generations", "location": "Chapter 3", "impact": "The Ewells are called \"disgraceful\" while systemic racism—the true disgrace—goes unacknowledged.", "link_section": "tension"},
+    {"name": "Advocative Stance", "tagline": "The Moral Direction", "icon": "🧭", "quote": "You never really understand a person until you consider things from his point of view", "location": "Chapter 3", "impact": "Atticus's teaching becomes the reader's instruction. The novel advocates without preaching.", "link_section": "toolkit"}
+  ],
+  "timeline": {
+    "title": "Awareness Tracker: Innocence to Understanding",
+    "intro": "Watch Scout's understanding develop. Each section brings readers closer to the truth Scout's innocence reveals but cannot grasp.",
+    "acts": [
+      {"number": "I", "title": "The Setup", "event": "Adult Scout establishes her retrospective position. Child Scout introduces Maycomb's social world through innocent eyes.", "quote": "Maycomb was an old town, but it was a tired old town when I first knew it.", "dread_level": 1},
+      {"number": "II", "title": "The Gathering", "event": "Accumulating incidents reveal deepening prejudice: the mad dog, Mrs. Dubose's morphine battle, the courthouse confrontation.", "quote": "I hoped that Jem and Scout come to me for their answers instead of listening to the town.", "dread_level": 2},
+      {"number": "III", "title": "The Trial", "event": "Tom Robinson's trial strips away all pretense. Scout watches from the colored balcony as her father proves innocence—and loses anyway.", "quote": "Is this the man who raped you?... How?", "dread_level": 3},
+      {"number": "IV", "title": "The Aftermath", "event": "Community reaction reveals the entrenchment of prejudice. Bob Ewell's threat, Tom's death, the cost of moral courage.", "quote": "Tom Robinson's death was typical.", "dread_level": 4},
+      {"number": "V", "title": "The Recognition", "event": "Scout's final understanding of Boo Radley demonstrates her moral growth. Standing on the Radley porch, she finally sees Maycomb through experienced eyes.", "quote": "Atticus, he was real nice.", "dread_level": 5}
+    ]
+  },
+  "toolkit": [
+    {"icon": "💡", "title": "The Killer Thesis", "text": "Don't write: \"Lee uses a child narrator to show racism.\"<br><br>Write: <code>Lee creates dramatic irony by having adult Scout narrate childhood memories, allowing readers to see systemic racism that the child cannot yet name.</code>"},
+    {"icon": "🔗", "title": "Connect Devices", "text": "Show how temporal distance + limited focalization + dramatic irony all serve the same pattern: <code>transforming innocent observation into social testimony.</code>"},
+    {"icon": "📊", "title": "Track the Progression", "text": "Show how Scout's awareness <em>develops</em>. The pattern <code>builds toward recognition.</code>"},
+    {"icon": "⚖️", "title": "Hold the Tension", "text": "For Innocence vs. Experience: don't pick a winner. Show how Lee keeps <code>both perspectives active simultaneously.</code>"},
+    {"icon": "💬", "title": "Quote with Layers", "text": "For \"Maycomb's usual disease\": show <code>what Scout hears</code> vs. <code>what we understand</code>."},
+    {"icon": "🎯", "title": "Name the Pattern", "text": "Using \"Maturing Moral Witness\" signals you understand the novel's <code>structural principle</code>."}
+  ],
+  "modern_mirror": [
+    {"year": "2017", "title": "Get Out", "text": "Jordan Peele uses Chris's outsider perspective to expose racism. <strong>The protagonist witnesses what he can't fully process until too late.</strong>"},
+    {"year": "2023", "title": "The Holdovers", "text": "A prep school setting reveals class divides through characters who don't fully grasp them."},
+    {"year": "Ongoing", "title": "True Crime Documentaries", "text": "Filmmakers present evidence and let viewers reach conclusions."},
+    {"year": "Every Coming-of-Age Film", "title": "The Nostalgic Frame", "text": "Stand By Me, Boyhood—all use adult retrospection to give childhood events weight."}
+  ],
+  "faq": [
+    {"question": "What is the main theme in To Kill a Mockingbird?", "answer": "The novel explores <strong>racial injustice in the American South</strong> through a child's innocent perspective."},
+    {"question": "Why does Harper Lee use a child narrator?", "answer": "Lee creates <strong>\"Maturing Moral Witness\"</strong>—adult Scout narrates childhood memories, creating a gap between innocent observation and mature understanding."},
+    {"question": "What is dramatic irony in To Kill a Mockingbird?", "answer": "Dramatic irony occurs when readers understand more than Scout does."},
+    {"question": "Why does Tom Robinson lose despite Atticus proving his innocence?", "answer": "The verdict demonstrates <strong>\"Maycomb's usual disease\"</strong>—systemic racism that corrupts justice regardless of evidence."}
+  ],
+  "bibliography": {
+    "primary_text": "Lee, Harper. <em>To Kill a Mockingbird.</em> Harper Perennial Modern Classics, 2006. First published 1960.",
+    "line_references": [
+      {"quote": "When enough years had gone by to enable us to look back on them", "ref": "Ch. 1"},
+      {"quote": "Maycomb's usual disease", "ref": "Ch. 9"},
+      {"quote": "You never really understand a person until you consider things from his point of view", "ref": "Ch. 3"},
+      {"quote": "Atticus, he was real nice", "ref": "Ch. 31"}
+    ],
+    "framework": "Pattern: Maturing Moral Witness; Structure: Novel mapped to Freytag's Pyramid"
+  }
+}

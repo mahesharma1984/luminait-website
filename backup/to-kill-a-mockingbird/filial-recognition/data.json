@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "text_title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "edition": "Harper Perennial Modern Classics, 2006",
+    "genre": "Southern Gothic / Bildungsroman",
+    "structure_type": "NOVEL",
+    "era": "65-year",
+    "pattern_lens": "Relational"
+  },
+  "hook": {
+    "title": "The Father Figure",
+    "subtitle": "How Scout Learns to See Atticus",
+    "tagline": "At first, Scout finds her father merely \"satisfactory.\" By the end, she understands what he's been all along.",
+    "insight": "Most stories show parents teaching children.<br><strong>To Kill a Mockingbird shows a child learning to see her parent—and makes you wonder how well you see yours.</strong>"
+  },
+  "pattern": {
+    "name": "Filial Recognition",
+    "code": "CHAR + RETRO + INT + NOSTALGIC + JUXTAPOSITION",
+    "core_dynamic": "Harper Lee traces the delicate process of a child recognizing parental humanity. Retrospective narration allows adult Scout to reveal how hero-worship transformed into mature appreciation of moral complexity.",
+    "reader_effect": "Readers witness Scout's evolving understanding of Atticus—from \"merely adequate\" father to moral hero—and recognize the journey of seeing parents as full human beings.",
+    "device_function": "reveals the gap between childhood perception and adult understanding of parents",
+    "three_points": [
+      {"number": 1, "title": "The Baseline", "text": "Scout establishes Atticus as \"satisfactory\"—an older, quieter father who plays with them, reads to them, but seems unremarkable. This is where every child starts."},
+      {"number": 2, "title": "The Revelations", "text": "Through accumulating incidents—the mad dog, Mrs. Dubose, the courthouse—Scout discovers hidden depths. Each revelation shifts her understanding of who Atticus really is."},
+      {"number": 3, "title": "The Recognition", "text": "Adult Scout's retrospective narration shows she has internalized Atticus's lessons. Standing on the Radley porch, she finally sees through his eyes—completing filial recognition."}
+    ]
+  },
+  "anchor_quote": {
+    "text": "Jem and I found our father satisfactory.",
+    "speaker": "Scout",
+    "location": "Chapter 1",
+    "line_ref": "Ch. 1",
+    "surface_meaning": "A child's simple assessment: Atticus is adequate, meets basic requirements.",
+    "ironic_meaning": "Adult Scout reveals how much she underestimated—how much every child underestimates their parents.",
+    "pattern_connection": "This is Filial Recognition's starting point. The childlike word 'satisfactory' captures Scout's early, uncomplicated view—the foundation against which her growing understanding will be measured."
+  },
+  "gap_states": {
+    "1": {"audience": "Sees Atticus as complex moral figure", "characters": "Find father merely 'satisfactory'"},
+    "2": {"audience": "Watches hidden qualities emerge", "characters": "Discover surprising depths"},
+    "3": {"audience": "Understands the cost of moral courage", "characters": "Grapple with community criticism"},
+    "4": {"audience": "Recognizes sacrifice and principle", "characters": "Process the aftermath"},
+    "5": {"audience": "Witnesses complete recognition", "characters": "Finally sees through his eyes"}
+  },
+  "meter_label": "Recognition",
+  "effect_noun": "Understanding",
+  "dread_levels": {"1": "20%", "2": "40%", "3": "60%", "4": "80%", "5": "100%"},
+  "tension": {
+    "title": "Hero-Worship vs. Human Understanding",
+    "intro": "Every child begins seeing parents as either inadequate or invincible. Scout's journey is learning Atticus is neither—and that real moral courage is more complex than either view allows.",
+    "side_a": {"name": "Hero-Worship", "icon": "⭐", "color": "amber", "evidence": ["The mad dog shooting reveals hidden skill", "\"One-Shot Finch\" becomes legendary", "Atticus facing down a mob alone", "Standing up for Tom Robinson"]},
+    "side_b": {"name": "Human Understanding", "icon": "🤲", "color": "sage", "evidence": ["Initial assessment: \"merely satisfactory\"", "Atticus doesn't play football or hunt", "He loses Tom Robinson's case", "Community turns against him"]},
+    "insight": "Don't argue for one side. Show how Scout moves from dismissal through hero-worship to something deeper—recognizing her father as a full human being with principles she's come to share."
+  },
+  "devices": [
+    {"name": "Character Development", "tagline": "The Recognition Engine", "icon": "👤", "quote": "Jem and I found our father satisfactory: he played with us, read to us, and treated us with courteous detachment.", "location": "Chapter 1", "impact": "Establishes the foundational intimacy and Scout's early, uncomplicated view. This baseline makes her later recognition of Atticus's depth emotionally powerful.", "link_section": "reveal"},
+    {"name": "Temporal Distance", "tagline": "The Retrospective Lens", "icon": "🔭", "quote": "Winter, and a man walked into the street, dropped his glasses, and shot a dog.", "location": "Chapter 31", "impact": "Adult Scout collapses years into essential moments. The temporal compression distills Atticus into defining acts of courage.", "link_section": "trace"},
+    {"name": "Limited Focalization", "tagline": "The Child's Eye", "icon": "👁️", "quote": "Atticus, when they finally saw him, why he hadn't done any of those things...", "location": "Chapter 31", "impact": "Scout's fragmented, real-time processing captures pivotal moments in her evolving understanding of his hidden depths.", "link_section": "gap"},
+    {"name": "Nostalgic Tone", "tagline": "The Loving Distance", "icon": "💫", "quote": "Summer, and he watched his children's heart break.", "location": "Chapter 31", "impact": "The nostalgic frame transforms childhood events into sacred memory. Adult Scout's loving retrospection reveals how deeply she's come to appreciate her father.", "link_section": "tension"},
+    {"name": "Juxtaposition", "tagline": "The Contrast Revealer", "icon": "⚖️", "quote": "Winter, and his children shivered at the front gate, silhouetted against a blazing house.", "location": "Chapter 31", "impact": "Seasonal juxtaposition against human vulnerability creates tender family tableaux.", "link_section": "toolkit"}
+  ],
+  "timeline": {
+    "title": "Recognition Tracker: From 'Satisfactory' to Seeing",
+    "intro": "Watch Scout's understanding of Atticus evolve. Each section transforms her perception from childish assessment to mature recognition.",
+    "acts": [
+      {"number": "I", "title": "The Assessment", "event": "Scout establishes Atticus as an older, quieter father figure. He doesn't play football or hunt. The children find him 'merely satisfactory'.", "quote": "He played with us, read to us, and treated us with courteous detachment.", "dread_level": 1},
+      {"number": "II", "title": "The Revelations", "event": "A series of incidents gradually reveal Atticus's hidden qualities: the mad dog shooting shows his marksmanship, Mrs. Dubose's battle reveals his teaching about courage.", "quote": "One-Shot Finch.", "dread_level": 2},
+      {"number": "III", "title": "The Test", "event": "The trial preparation and execution show Atticus's moral courage in full. Scout grapples with community criticism of her father.", "quote": "This is Saturday. Trial'll probably be Monday.", "dread_level": 3},
+      {"number": "IV", "title": "The Processing", "event": "Scout processes the aftermath of the trial and community rejection. She deepens her understanding of her father's sacrifice.", "quote": "It was quite a pity our father had not remarried.", "dread_level": 4},
+      {"number": "V", "title": "The Recognition", "event": "Standing on the Radley porch, Scout finally sees Maycomb—and her father—through mature eyes. She has internalized Atticus's lessons.", "quote": "Atticus, he was real nice.", "dread_level": 5}
+    ]
+  },
+  "toolkit": [
+    {"icon": "💡", "title": "The Killer Thesis", "text": "Don't write: \"Scout learns to appreciate her father.\"<br><br>Write: <code>Lee traces Scout's journey from finding Atticus 'satisfactory' to recognizing his moral complexity, using retrospective narration to show how children gradually see parents as full human beings.</code>"},
+    {"icon": "🔗", "title": "Connect Devices", "text": "Show how character development + temporal distance + nostalgic tone all serve the same pattern: <code>revealing the gap between childhood perception and adult understanding of parents.</code>"},
+    {"icon": "📊", "title": "Track the Progression", "text": "Show how Scout's view <em>transforms</em>. From 'satisfactory' baseline through hero-worship to genuine understanding."},
+    {"icon": "⚖️", "title": "Hold the Tension", "text": "For Hero-Worship vs. Human Understanding: show how Scout moves <code>through both to something deeper.</code>"},
+    {"icon": "💬", "title": "Quote with Layers", "text": "For 'our father satisfactory': show <code>what child Scout means</code> vs. <code>what adult Scout reveals</code>."},
+    {"icon": "🎯", "title": "Name the Pattern", "text": "Using \"Filial Recognition\" signals you understand the novel's <code>relational dimension</code>—not just its social critique."}
+  ],
+  "modern_mirror": [
+    {"year": "2022", "title": "The Fabelmans", "text": "Spielberg's autobiographical film traces a son's journey to understand his parents' complexity."},
+    {"year": "2019", "title": "Marriage Story", "text": "Through a child's eyes, we see parents as heroes and villains."},
+    {"year": "2024", "title": "The Last of Us (HBO)", "text": "Joel and Ellie's relationship traces the same pattern—initial wariness transforming into profound recognition."},
+    {"year": "Every Family Drama", "title": "The Coming-of-Age Moment", "text": "Lady Bird, Boyhood, Little Women—all feature the moment a child finally sees their parent clearly."}
+  ],
+  "faq": [
+    {"question": "What is Scout's relationship with Atticus?", "answer": "Scout's relationship evolves from finding Atticus 'merely satisfactory' to <strong>deep recognition of his moral complexity</strong>."},
+    {"question": "How does Scout's view of Atticus change?", "answer": "Scout moves through three stages: <strong>initial dismissal</strong>, <strong>hero-worship</strong>, and finally <strong>genuine understanding</strong>."},
+    {"question": "What does 'our father satisfactory' mean?", "answer": "This childlike assessment establishes <strong>Scout's baseline perception</strong>—Atticus meets basic requirements but seems unremarkable."},
+    {"question": "Why is Atticus important to Scout's development?", "answer": "Atticus serves as <strong>moral educator through example</strong>. Scout learns empathy, courage, and judgment by gradually recognizing who her father really is."}
+  ],
+  "bibliography": {
+    "primary_text": "Lee, Harper. <em>To Kill a Mockingbird.</em> Harper Perennial Modern Classics, 2006. First published 1960.",
+    "line_references": [
+      {"quote": "Jem and I found our father satisfactory", "ref": "Ch. 1"},
+      {"quote": "Winter, and a man walked into the street, dropped his glasses, and shot a dog", "ref": "Ch. 31"},
+      {"quote": "Summer, and he watched his children's heart break", "ref": "Ch. 31"},
+      {"quote": "Atticus, he was real nice", "ref": "Ch. 31"}
+    ],
+    "framework": "Pattern: Filial Recognition; Structure: Novel mapped to recognition arc"
+  }
+}

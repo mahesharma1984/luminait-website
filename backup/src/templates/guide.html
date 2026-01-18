@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{hook.title}} — {{hook.subtitle}} | {{meta.text_title}} Analysis</title>
+  <meta name="description" content="{{hook.tagline}}">
+  <meta name="keywords" content="{{meta.text_title}} analysis, {{pattern.name}}, {{meta.author}} literary devices">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{hook.title}} — {{hook.subtitle}}">
+  <meta property="og:description" content="{{hook.tagline}}">
+  <meta property="og:type" content="article">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{hook.title}}: {{hook.subtitle}}",
+    "description": "{{hook.tagline}}",
+    "author": { "@type": "Organization", "name": "LuminAIT Learning" },
+    "about": {
+      "@type": "CreativeWork",
+      "name": "{{meta.text_title}}",
+      "author": { "@type": "Person", "name": "{{meta.author}}" }
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {{#each faq}}
+      {
+        "@type": "Question",
+        "name": "{{this.question}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{this.answer}}" }
+      }{{#unless @last}},{{/unless}}
+      {{/each}}
+    ]
+  }
+  </script>
+  
+  <!-- Styles loaded from partial -->
+  {{> guide-styles}}
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="../../index.html">
+        <img src="../../luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="#reveal" class="nav-link">The Pattern</a>
+        <a href="#tension" class="nav-link">The Tension</a>
+        <a href="#tools" class="nav-link">The Tools</a>
+        <a href="#trace" class="nav-link">The Trace</a>
+        <a href="#toolkit" class="nav-link">Essay Kit</a>
+        <a href="#mirror" class="nav-link">Modern</a>
+        <a href="../../course.html" class="nav-cta">Get Toolkit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HERO SECTION
+       Source: hook.*, pattern.name
+       ========================================== -->
+  <section id="hero" class="hero">
+    {{> hero-visual pattern=pattern.name}}
+    <div class="hero-content">
+      <span class="hero-label">{{meta.text_title}} Analysis</span>
+      <h1>{{hook.title}}</h1>
+      <p class="hero-subtitle">{{hook.tagline}}</p>
+      <div class="hero-insight">
+        <p>{{{hook.insight}}}</p>
+      </div>
+    </div>
+    <div class="scroll-cue">Discover the pattern</div>
+  </section>
+
+  <!-- ==========================================
+       THE REVEAL (Pattern Grid)
+       Source: pattern.*
+       ========================================== -->
+  <section id="reveal" class="section section-dark reveal-section">
+    <div class="section-content">
+      <span class="section-label">The Master Mechanic</span>
+      <h2 class="section-title">{{pattern.name}}</h2>
+      <p class="section-intro">{{{pattern.core_dynamic}}}</p>
+
+      <div class="reveal-grid">
+        {{#each pattern.three_points}}
+        <div class="reveal-card">
+          <div class="reveal-number">{{this.number}}</div>
+          <h3 class="reveal-title">{{this.title}}</h3>
+          <p class="reveal-text">{{{this.text}}}</p>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Anchor Quote -->
+      <div class="anchor-quote">
+        <blockquote>"{{anchor_quote.text}}"</blockquote>
+        <cite>— {{anchor_quote.speaker}}, {{anchor_quote.location}}</cite>
+        <div class="quote-analysis">
+          <p>{{anchor_quote.speaker}} means: "{{anchor_quote.surface_meaning}}"</p>
+          <p>We hear: <strong>"{{anchor_quote.ironic_meaning}}"</strong></p>
+          <p>{{anchor_quote.pattern_connection}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       KNOWLEDGE GAP (Interactive)
+       Source: timeline dread levels
+       ========================================== -->
+  <section id="gap" class="section knowledge-gap-section">
+    <div class="section-content">
+      <span class="section-label">Interactive</span>
+      <h2 class="section-title">The Knowledge Gap</h2>
+      <p class="section-intro">{{{pattern.reader_effect}}}</p>
+
+      <div class="knowledge-gap-visual">
+        <div class="gap-slider-container">
+          <div class="gap-labels">
+            <div class="gap-label audience">
+              <div class="gap-label-title">Audience</div>
+              <div class="gap-label-text" id="audienceText">{{gap_states.1.audience}}</div>
+            </div>
+            <div class="gap-label characters">
+              <div class="gap-label-title">Characters</div>
+              <div class="gap-label-text" id="charactersText">{{gap_states.1.characters}}</div>
+            </div>
+          </div>
+          <div class="gap-track">
+            <input type="range" min="1" max="5" value="1" class="gap-slider" id="gapSlider">
+          </div>
+          <div class="dread-meter">
+            <span class="dread-label">{{meter_label}}:</span>
+            <span class="dread-value" id="dreadValue">{{dread_levels.1}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONFLICT MATRIX (Tension)
+       Source: tension.*
+       ========================================== -->
+  <section id="tension" class="section section-dark conflict-section">
+    <div class="section-content">
+      <span class="section-label">The Conflict Matrix</span>
+      <h2 class="section-title">{{tension.title}}</h2>
+      <p class="section-intro">{{tension.intro}}</p>
+
+      <div class="conflict-visual">
+        <div class="conflict-side">
+          <div class="conflict-card side-a">
+            <div class="conflict-icon">{{tension.side_a.icon}}</div>
+            <h3 class="conflict-title">{{tension.side_a.name}}</h3>
+            <ul class="conflict-evidence">
+              {{#each tension.side_a.evidence}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="conflict-vs">VS</div>
+        <div class="conflict-side">
+          <div class="conflict-card side-b">
+            <div class="conflict-icon">{{tension.side_b.icon}}</div>
+            <h3 class="conflict-title">{{tension.side_b.name}}</h3>
+            <ul class="conflict-evidence">
+              {{#each tension.side_b.evidence}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-insight">
+        <strong>The essay insight:</strong> {{tension.insight}}
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DEVICES GRID (Top 5)
+       Source: devices[]
+       ========================================== -->
+  <section id="tools" class="section devices-section">
+    <div class="section-content">
+      <span class="section-label">The Emotional Toolkit</span>
+      <h2 class="section-title">{{devices.length}} Devices That Create the {{effect_noun}}</h2>
+      <div class="devices-intro">
+        <p>These aren't just "techniques to identify." They're <em>impact tools</em>.</p>
+      </div>
+
+      <div class="devices-grid">
+        {{#each devices}}
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">{{this.icon}}</div>
+            <div class="device-info">
+              <h3 class="device-name">{{this.name}}</h3>
+              <span class="device-tagline">{{this.tagline}}</span>
+            </div>
+          </div>
+          <div class="device-body">
+            <div class="device-quote">
+              "{{this.quote}}"
+              <cite>{{this.location}}</cite>
+            </div>
+            <p class="device-effect"><strong>Impact:</strong> {{this.impact}}</p>
+            <a href="#{{this.link_section}}" class="device-link">See in context →</a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TIMELINE (Dread Tracker)
+       Source: timeline.*
+       ========================================== -->
+  <section id="trace" class="section section-dark timeline-section">
+    <div class="section-content">
+      <span class="section-label">The Countdown</span>
+      <h2 class="section-title">{{timeline.title}}</h2>
+      <p class="section-intro">{{timeline.intro}}</p>
+
+      <div class="dread-tracker">
+        <div class="tracker-progress"></div>
+        <div class="tracker-items">
+          {{#each timeline.acts}}
+          <div class="tracker-item" data-level="{{this.dread_level}}">
+            <div class="tracker-marker">{{this.number}}</div>
+            <div class="tracker-content">
+              <div class="tracker-card">
+                <div class="tracker-act">Act {{this.number}} — {{this.title}}</div>
+                <p class="tracker-event">{{this.event}}</p>
+                <div class="tracker-quote">"{{this.quote}}"</div>
+                <div class="tracker-dread">
+                  Dread level:
+                  <div class="dread-dots">
+                    <!-- Render active dots based on dread_level -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ESSAY TOOLKIT
+       Source: toolkit[]
+       ========================================== -->
+  <section id="toolkit" class="section toolkit-section">
+    <div class="section-content">
+      <span class="section-label">The Practical Value</span>
+      <h2 class="section-title">Essay Toolkit</h2>
+      <p class="section-intro">Turn this analysis into marks.</p>
+
+      <div class="toolkit-grid">
+        {{#each toolkit}}
+        <div class="toolkit-card">
+          <div class="toolkit-icon">{{this.icon}}</div>
+          <h3 class="toolkit-title">{{this.title}}</h3>
+          <p class="toolkit-text">{{{this.text}}}</p>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h3 class="faq-title">Frequently Asked Questions</h3>
+        <div class="faq-grid">
+          {{#each faq}}
+          <div class="faq-item">
+            <h4 class="faq-question">{{this.question}}</h4>
+            <p class="faq-answer">{{{this.answer}}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- Bibliography -->
+      <div class="bibliography-section">
+        <h3 class="bibliography-title">Sources & Further Reading</h3>
+        <div class="bibliography-content">
+          <div class="bib-category">
+            <h4 class="bib-category-title">Primary Text</h4>
+            <p class="bib-item">{{{bibliography.primary_text}}}</p>
+          </div>
+          <div class="bib-category">
+            <h4 class="bib-category-title">Line References</h4>
+            {{#each bibliography.line_references}}
+            <p class="bib-item">"{{this.quote}}" — {{this.ref}}</p>
+            {{/each}}
+          </div>
+          <div class="bib-category">
+            <h4 class="bib-category-title">Framework</h4>
+            <p class="bib-item">{{bibliography.framework}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MODERN MIRROR
+       Source: modern_mirror[]
+       ========================================== -->
+  <section id="mirror" class="section section-dark mirror-section">
+    <div class="section-content">
+      <span class="section-label">The Modern Mirror</span>
+      <h2 class="section-title">Why This Pattern Still Works</h2>
+      <p class="section-intro">"{{pattern.name}}" powers some of the most emotionally devastating stories of our time.</p>
+
+      <div class="mirror-grid">
+        {{#each modern_mirror}}
+        <div class="mirror-card">
+          <div class="mirror-year">{{this.year}}</div>
+          <h3 class="mirror-title">{{this.title}}</h3>
+          <p class="mirror-text">{{{this.text}}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Want to write essays like this?</h2>
+      <p>Our 10-week course teaches the exact analytical method behind this guide.</p>
+      <a href="../../course.html" class="cta-button">Download the Essay Toolkit →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  {{> footer}}
+
+  <a href="#hero" class="back-to-top" id="backToTop">↑</a>
+
+  <!-- Scripts -->
+  {{> guide-scripts}}
+
+</body>
+</html>
