@@ -346,11 +346,11 @@
     }
 
     .teaching-item {
-      color: var(--slate-300);
-      font-size: 1rem;
-      font-style: italic;
+      color: var(--slate-700);
+      font-size: 1.5rem;
+      font-weight: 500;
       white-space: nowrap;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
     }
 
     body[data-lang="zh"] .teaching-item {
@@ -916,24 +916,31 @@
     }
 
     .course-teaching-label {
-      color: var(--slate-500);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
-    .course-card .currently-teaching::before {
+    body[data-lang="zh"] .course-teaching-label {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .course-section .currently-teaching::before {
       background: linear-gradient(90deg, white 0%, transparent 100%);
     }
 
-    .course-card .currently-teaching::after {
+    .course-section .currently-teaching::after {
       background: linear-gradient(270deg, white 0%, transparent 100%);
     }
 
-    .course-card .teaching-item {
-      color: var(--slate-600);
+    .course-section .teaching-item {
+      color: var(--slate-700);
     }
 
-    .course-card .teaching-item::after {
+    .course-section .teaching-item::after {
       color: var(--blue);
     }
 
@@ -1441,11 +1448,11 @@
   <!-- Section 5: The Course -->
   <section class="funnel-section bg-white">
     <div class="funnel-section-inner course-section">
-      <p class="course-teaching-label">
+      <h2 class="course-teaching-label">
         <span data-lang-content="en">Currently teaching:</span>
         <span data-lang-content="zh">正在教授：</span>
-      </p>
-      <div class="currently-teaching" style="margin-top: 0; margin-bottom: 1.5rem;">
+      </h2>
+      <div class="currently-teaching" style="margin-top: 0; margin-bottom: 2rem;">
         <div class="teaching-marquee" id="courseMarquee">
           <!-- Populated by JavaScript -->
         </div>
