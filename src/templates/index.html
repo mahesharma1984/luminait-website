@@ -835,6 +835,168 @@
       line-height: 1.6;
     }
 
+    /* 5-Step Method Section */
+    .method-intro {
+      text-align: center;
+    }
+
+    .method-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .method-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .method-body {
+      color: var(--slate-600);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Steps Grid */
+    .steps-section {
+      padding-top: 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+    }
+
+    .step-card {
+      background: var(--slate-100);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-card-highlight {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+    }
+
+    .step-card-highlight .step-title,
+    .step-card-highlight .step-question,
+    .step-card-highlight .step-desc {
+      color: var(--slate-300);
+    }
+
+    .step-card-highlight .step-title {
+      color: var(--cyan);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .step-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    body[data-lang="zh"] .step-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .step-question {
+      color: var(--slate-500);
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    body[data-lang="zh"] .step-question {
+      font-style: normal;
+    }
+
+    .step-desc {
+      color: var(--slate-600);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive for Steps Grid */
+    @media (max-width: 1100px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .step-card:nth-child(4),
+      .step-card:nth-child(5) {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 1rem;
+        text-align: left;
+        padding: 1.25rem;
+      }
+
+      .step-number {
+        grid-row: span 2;
+        margin: 0;
+        align-self: center;
+      }
+
+      .step-title {
+        margin-bottom: 0.25rem;
+      }
+
+      .step-question {
+        display: none;
+      }
+
+      .step-desc {
+        grid-column: 2;
+      }
+
+      .method-headline {
+        font-size: 1.5rem;
+      }
+
+      .method-body {
+        font-size: 1rem;
+      }
+    }
+
     /* Course Feature Section */
     .course-section {
       text-align: center;
@@ -929,11 +1091,11 @@
     }
 
     .course-section .currently-teaching::before {
-      background: linear-gradient(90deg, white 0%, transparent 100%);
+      background: linear-gradient(90deg, var(--slate-100) 0%, transparent 100%);
     }
 
     .course-section .currently-teaching::after {
-      background: linear-gradient(270deg, white 0%, transparent 100%);
+      background: linear-gradient(270deg, var(--slate-100) 0%, transparent 100%);
     }
 
     .course-section .teaching-item {
@@ -1336,117 +1498,105 @@
     </div>
   </section>
 
-  <!-- Section 2: Problem -->
+  <!-- Section 2: The 5-Step Method -->
   <section class="funnel-section bg-gray">
-    <div class="funnel-section-inner problem-section">
-      <h2 class="problem-headline">
-        <span data-lang-content="en">Reading isn't the hard part</span>
-        <span data-lang-content="zh">阅读并非难点</span>
+    <div class="funnel-section-inner method-intro">
+      <h2 class="method-headline">
+        <span data-lang-content="en">The 5-Step Method</span>
+        <span data-lang-content="zh">五步教学法</span>
       </h2>
-      <p class="problem-body">
-        <span data-lang-content="en">Most students can read the text. Fewer understand what it's actually doing. Even fewer can explain it in writing. That gap — between reading and reasoning — is where grades get stuck.</span>
-        <span data-lang-content="zh">大多数学生能读懂文本。但真正理解文本在做什么的学生更少。能够用文字解释清楚的学生更是寥寥无几。这个差距——从阅读到推理——正是成绩停滞不前的原因。</span>
+      <p class="method-body">
+        <span data-lang-content="en">Most tutoring teaches generic essay tricks. We teach your child to genuinely understand what the text is doing — and the ability to write about it comes naturally.</span>
+        <span data-lang-content="zh">大多数补习只教授通用的写作技巧。我们教您的孩子真正理解文本在做什么——写作能力自然而然就会跟上。</span>
       </p>
-      <div class="gap-diagram">
-        <div class="gap-step">
-          <span class="gap-step-icon">📖</span>
-          <span data-lang-content="en">Read</span>
-          <span data-lang-content="zh">阅读</span>
-        </div>
-        <span class="gap-arrow">→</span>
-        <div class="gap-step gap-highlighted">
-          <span data-lang-content="en">???</span>
-          <span data-lang-content="zh">???</span>
-        </div>
-        <span class="gap-arrow">→</span>
-        <div class="gap-step">
-          <span class="gap-step-icon">✍️</span>
-          <span data-lang-content="en">Write</span>
-          <span data-lang-content="zh">写作</span>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Section 3: Solution -->
+  <!-- Section 3: 5-Step Cards -->
   <section class="funnel-section bg-white">
-    <div class="funnel-section-inner solution-section">
-      <h2 class="solution-headline">
-        <span data-lang-content="en">Develop perspectives that are informed, reasoned, and genuinely YOURS (not just copying AI!).</span>
-        <span data-lang-content="zh">培养有理有据、独具见解的观点——真正属于你自己（不只是复制AI！）。</span>
-      </h2>
-      <p class="solution-body">
-        <span data-lang-content="en">Most tutoring teaches generic essay tricks. We teach your child to genuinely understand what Shakespeare (or Lee, or Lowry) is doing — and the ability to write about it comes naturally.</span>
-        <span data-lang-content="zh">大多数补习只教授通用的写作技巧。我们教您的孩子真正理解莎士比亚（或李、或劳里）在做什么——写作能力自然而然就会跟上。</span>
-      </p>
-      <div class="gap-diagram">
-        <div class="gap-step">
-          <span class="gap-step-icon">📖</span>
-          <span data-lang-content="en">Read</span>
-          <span data-lang-content="zh">阅读</span>
+    <div class="funnel-section-wide steps-section">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Know the text</span>
+            <span data-lang-content="zh">认识文本</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">What world is this?</span>
+            <span data-lang-content="zh">这是什么样的世界？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">We start by understanding the text — its context, structure, and the world it creates.</span>
+            <span data-lang-content="zh">我们从理解文本开始——了解其背景、结构和它所创造的世界。</span>
+          </p>
         </div>
-        <span class="gap-arrow">→</span>
-        <div class="gap-step gap-filled">
-          <span data-lang-content="en">Understand</span>
-          <span data-lang-content="zh">理解</span>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">See the pattern</span>
+            <span data-lang-content="zh">发现模式</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">What does it do to me?</span>
+            <span data-lang-content="zh">它对我产生什么影响？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">Then we decode what it does to readers — the pattern that creates its effect.</span>
+            <span data-lang-content="zh">然后我们解读它对读者的影响——产生效果的模式。</span>
+          </p>
         </div>
-        <span class="gap-arrow">→</span>
-        <div class="gap-step">
-          <span class="gap-step-icon">✍️</span>
-          <span data-lang-content="en">Write</span>
-          <span data-lang-content="zh">写作</span>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Find the proof</span>
+            <span data-lang-content="zh">寻找证据</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">How does it do that?</span>
+            <span data-lang-content="zh">它是如何做到的？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">Students learn to identify the techniques — the literary devices that execute the pattern.</span>
+            <span data-lang-content="zh">学生学会识别技巧——执行模式的文学手法。</span>
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Build the claim</span>
+            <span data-lang-content="zh">构建论点</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">What can I argue?</span>
+            <span data-lang-content="zh">我能论证什么？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">They build analytical arguments — moving from understanding to articulation.</span>
+            <span data-lang-content="zh">他们构建分析性论点——从理解走向表达。</span>
+          </p>
+        </div>
+        <div class="step-card step-card-highlight">
+          <div class="step-number">5</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Write the essay</span>
+            <span data-lang-content="zh">撰写文章</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">How do I write it?</span>
+            <span data-lang-content="zh">我该如何写？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">And write essays that demonstrate genuine understanding — informed, reasoned, and theirs.</span>
+            <span data-lang-content="zh">最终写出展示真正理解的文章——有理有据，独具见解。</span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: How It Works -->
+  <!-- Section 4: The Course -->
   <section class="funnel-section bg-gray">
-    <div class="funnel-section-wide how-section">
-      <h2 class="how-headline">
-        <span data-lang-content="en">How It Works</span>
-        <span data-lang-content="zh">课程方法</span>
-      </h2>
-      <div class="how-cards">
-        <div class="how-card">
-          <div class="how-card-icon">📖</div>
-          <h3 class="how-card-title">
-            <span data-lang-content="en">Understand the text</span>
-            <span data-lang-content="zh">理解文本</span>
-          </h3>
-          <p class="how-card-desc">
-            <span data-lang-content="en">Context, themes, and how the text creates its effect</span>
-            <span data-lang-content="zh">背景、主题，以及文本如何产生效果</span>
-          </p>
-        </div>
-        <div class="how-card">
-          <div class="how-card-icon">✍️</div>
-          <h3 class="how-card-title">
-            <span data-lang-content="en">Build analytical sentences</span>
-            <span data-lang-content="zh">构建分析句</span>
-          </h3>
-          <p class="how-card-desc">
-            <span data-lang-content="en">Our TVODE method makes invisible thinking visible</span>
-            <span data-lang-content="zh">我们的TVODE方法让隐性思维显性化</span>
-          </p>
-        </div>
-        <div class="how-card">
-          <div class="how-card-icon">📝</div>
-          <h3 class="how-card-title">
-            <span data-lang-content="en">Write complete essays</span>
-            <span data-lang-content="zh">写作完整文章</span>
-          </h3>
-          <p class="how-card-desc">
-            <span data-lang-content="en">Informed, reasoned, and genuinely theirs</span>
-            <span data-lang-content="zh">有理有据，独具见解</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 5: The Course -->
-  <section class="funnel-section bg-white">
     <div class="funnel-section-inner course-section">
       <h2 class="course-teaching-label">
         <span data-lang-content="en">Currently teaching:</span>
