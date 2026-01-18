@@ -225,6 +225,17 @@
       font-style: normal;
     }
 
+    .hero-tagline {
+      color: var(--slate-300);
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .hero-cta {
       display: inline-block;
       background: var(--blue);
@@ -254,6 +265,15 @@
       letter-spacing: -0.01em;
       line-height: 1.6;
       text-align: center;
+    }
+
+    .hero-headline .hero-line {
+      display: inline;
+    }
+
+    .hero-headline .cycling-author {
+      display: inline-block;
+      margin: 0 0.25rem;
     }
 
     body[data-lang="zh"] .hero-headline {
@@ -296,8 +316,8 @@
 
     /* Currently Teaching Marquee */
     .currently-teaching {
-      margin-top: 0.5rem;
-      margin-bottom: 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
       overflow: hidden;
       position: relative;
     }
@@ -1243,6 +1263,12 @@
         min-width: 120px;
       }
 
+      .hero-tagline {
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
       .teaching-label {
         font-size: 0.8rem;
       }
@@ -1335,16 +1361,17 @@
   <section class="hero">
     <div class="hero-content">
       <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
+      <!-- Layer 1: Main headline -->
       <h1 class="hero-headline" data-lang-content="en">
-        <span class="hero-line">In 5 lessons, write thematic essays on</span><br>
-        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span><br>
-        <span class="hero-line">that are informed, reasoned, and genuinely YOURS (not AI!).</span>
+        <span class="hero-line">In 5 lessons, write thematic essays on</span>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span>
       </h1>
       <h1 class="hero-headline" data-lang-content="zh">
-        <span class="hero-line">5周内，撰写关于</span><br>
-        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span><br>
-        <span class="hero-line">的主题论文——有理有据，独具见解。</span>
+        <span class="hero-line">5周内，撰写关于</span>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span>
+        <span class="hero-line">的主题论文</span>
       </h1>
+      <!-- Layer 2: Currently Teaching -->
       <div class="currently-teaching">
         <p class="teaching-label">
           <span data-lang-content="en">Currently Teaching</span>
@@ -1354,6 +1381,11 @@
           <!-- Populated by JavaScript -->
         </div>
       </div>
+      <!-- Layer 3: Tagline -->
+      <p class="hero-tagline">
+        <span data-lang-content="en">Develop perspectives that are informed, reasoned, and genuinely YOURS (not just copying AI!).</span>
+        <span data-lang-content="zh">培养有理有据、独具见解的观点——真正属于你自己（不只是复制AI！）。</span>
+      </p>
       <a href="course.html" class="hero-cta">
         <span data-lang-content="en">View Course Details</span>
         <span data-lang-content="zh">查看课程详情</span>
