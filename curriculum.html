@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum | LuminAIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      color: var(--cyan);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 0.5rem; }
+
+    .nav-link {
+      color: var(--slate-300);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+    .nav-link.active { color: var(--cyan); background: rgba(0, 212, 255, 0.1); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover { background: #2563eb; transform: translateY(-1px); }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      color: var(--slate-300);
+      font-size: 1.1rem;
+    }
+
+    /* Section */
+    .section {
+      padding: 3rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .bg-gray { background: var(--slate-100); }
+    .bg-white { background: white; }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      color: var(--slate-500);
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Course Options */
+    .course-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .course-option {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .course-option:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .course-option.selected {
+      border-color: var(--blue);
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    }
+
+    .option-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .option-badge.popular {
+      background: var(--emerald);
+    }
+
+    .option-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--slate-800);
+      margin-bottom: 0.5rem;
+    }
+
+    .option-desc {
+      color: var(--slate-500);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .option-output {
+      background: var(--slate-100);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    /* Timeline */
+    .timeline-container {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .timeline-phase {
+      margin-bottom: 2rem;
+    }
+
+    .timeline-phase:last-child {
+      margin-bottom: 0;
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .phase-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .phase-icon.reading { background: #dbeafe; }
+    .phase-icon.analysis { background: #fef3c7; }
+    .phase-icon.writing { background: #d1fae5; }
+    .phase-icon.synthesis { background: #e0e7ff; }
+
+    .phase-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--slate-800);
+    }
+
+    .phase-weeks {
+      font-size: 0.85rem;
+      color: var(--slate-500);
+    }
+
+    .week-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-left: 3.5rem;
+    }
+
+    .week-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      background: var(--slate-100);
+      border-radius: 8px;
+    }
+
+    .week-item.extension {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 1px solid #f59e0b;
+    }
+
+    .week-number {
+      font-weight: 700;
+      color: var(--blue);
+      font-size: 0.9rem;
+    }
+
+    .week-item.extension .week-number {
+      color: #b45309;
+    }
+
+    .week-content h4 {
+      font-size: 0.95rem;
+      color: var(--slate-800);
+      margin-bottom: 0.25rem;
+    }
+
+    .week-content p {
+      font-size: 0.85rem;
+      color: var(--slate-500);
+    }
+
+    .week-output {
+      background: white;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      white-space: nowrap;
+    }
+
+    .week-item.extension .week-output {
+      background: #fffbeb;
+    }
+
+    /* Extension marker */
+    .extension-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      margin-left: 3.5rem;
+    }
+
+    .extension-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .extension-label {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Output summary */
+    .output-summary {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      border: 2px solid var(--emerald);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .output-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      color: #065f46;
+      margin-bottom: 1rem;
+    }
+
+    .output-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .output-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .output-check {
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .output-text {
+      font-size: 0.9rem;
+      color: var(--slate-700);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-content p {
+      color: var(--slate-300);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    .cta-button:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .cta-links {
+      margin-top: 1.5rem;
+    }
+
+    .cta-links a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .cta-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--deep-navy);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--slate-400);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover { color: var(--cyan); }
+
+    .footer-contact {
+      color: var(--slate-500);
+      font-size: 0.85rem;
+    }
+
+    .footer-contact a {
+      color: var(--slate-400);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 1.75rem; }
+      .course-options { grid-template-columns: 1fr; }
+      .week-item { grid-template-columns: 60px 1fr; }
+      .week-output { display: none; }
+      .output-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .week-list { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="landing.html" class="nav-logo">LuminAIT</a>
+      <div class="nav-links">
+        <a href="guide.html" class="nav-link">Method</a>
+        <a href="progress.html" class="nav-link">Progress</a>
+        <a href="curriculum.html" class="nav-link active">Curriculum</a>
+        <a href="course.html" class="nav-cta">Enroll</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1>The Curriculum</h1>
+      <p>Exactly what your child will learn, week by week. Every week builds on the last.</p>
+    </div>
+  </header>
+
+  <!-- Course Options -->
+  <section class="section bg-gray">
+    <div class="section-inner">
+      <h2 class="section-title">Two pathways</h2>
+      <p class="section-subtitle">Choose based on your child's needs and timeline. Both use the same method — the extension goes deeper.</p>
+      
+      <div class="course-options">
+        <div class="course-option">
+          <span class="option-badge">Foundation</span>
+          <h3 class="option-title">5-Week Course</h3>
+          <p class="option-desc">Build the foundation: understand the text, develop a thesis, write the introduction.</p>
+          <div class="option-output">Output: Essay map + 300-word introduction</div>
+        </div>
+        <div class="course-option selected">
+          <span class="option-badge popular">Complete</span>
+          <h3 class="option-title">10-Week Course</h3>
+          <p class="option-desc">Go deeper: full body paragraphs, cohesion, and a complete essay.</p>
+          <div class="option-output">Output: Complete 800-1000 word essay</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section bg-white">
+    <div class="section-inner">
+      <div class="timeline-container">
+        
+        <!-- Phase 1: Reading -->
+        <div class="timeline-phase">
+          <div class="phase-header">
+            <div class="phase-icon reading">📖</div>
+            <div>
+              <div class="phase-title">Understanding the Text</div>
+              <div class="phase-weeks">Weeks 0–2</div>
+            </div>
+          </div>
+          <div class="week-list">
+            <div class="week-item">
+              <div class="week-number">Week 0</div>
+              <div class="week-content">
+                <h4>The Pattern</h4>
+                <p>How the text works — the organising principle that makes everything else make sense.</p>
+              </div>
+              <div class="week-output">Pattern map</div>
+            </div>
+            <div class="week-item">
+              <div class="week-number">Week 1</div>
+              <div class="week-content">
+                <h4>Reading (Part 1)</h4>
+                <p>Analytical reading with focus on devices and structure — not plot summary.</p>
+              </div>
+              <div class="week-output">Annotations</div>
+            </div>
+            <div class="week-item">
+              <div class="week-number">Week 2</div>
+              <div class="week-content">
+                <h4>Reading (Part 2)</h4>
+                <p>Complete the text, trace the pattern through to resolution.</p>
+              </div>
+              <div class="week-output">Timeline</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2: Analysis -->
+        <div class="timeline-phase">
+          <div class="phase-header">
+            <div class="phase-icon analysis">🔍</div>
+            <div>
+              <div class="phase-title">Building Analysis</div>
+              <div class="phase-weeks">Weeks 3–4</div>
+            </div>
+          </div>
+          <div class="week-list">
+            <div class="week-item">
+              <div class="week-number">Week 3</div>
+              <div class="week-content">
+                <h4>Device Analysis</h4>
+                <p>Analyze 3 theme-aligned devices using the TVODE method (Topic-Verb-Object-Detail-Effect).</p>
+              </div>
+              <div class="week-output">3 TVODE sentences</div>
+            </div>
+            <div class="week-item">
+              <div class="week-number">Week 4</div>
+              <div class="week-content">
+                <h4>Thesis Development</h4>
+                <p>Build the argument: connect devices to meaning, develop a thesis statement.</p>
+              </div>
+              <div class="week-output">Thesis + essay map</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3: Writing (Foundation) -->
+        <div class="timeline-phase">
+          <div class="phase-header">
+            <div class="phase-icon writing">✍️</div>
+            <div>
+              <div class="phase-title">Introduction Writing</div>
+              <div class="phase-weeks">Week 5</div>
+            </div>
+          </div>
+          <div class="week-list">
+            <div class="week-item">
+              <div class="week-number">Week 5</div>
+              <div class="week-content">
+                <h4>The Introduction</h4>
+                <p>Write the introduction using LFWF structure (Lead-Frame-Warrant-Focus-Features).</p>
+              </div>
+              <div class="week-output">300-word intro</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foundation Output -->
+        <div class="output-summary">
+          <div class="output-title">5-Week Foundation Output</div>
+          <div class="output-grid">
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">Pattern understanding</span>
+            </div>
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">3 analyzed devices</span>
+            </div>
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">Thesis statement</span>
+            </div>
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">300-word introduction</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extension Divider -->
+        <div class="extension-divider">
+          <div class="extension-line"></div>
+          <div class="extension-label">10-Week Extension</div>
+          <div class="extension-line"></div>
+        </div>
+
+        <!-- Phase 4: Body Paragraphs -->
+        <div class="timeline-phase">
+          <div class="phase-header">
+            <div class="phase-icon writing">📝</div>
+            <div>
+              <div class="phase-title">Body Paragraphs</div>
+              <div class="phase-weeks">Weeks 6–8</div>
+            </div>
+          </div>
+          <div class="week-list">
+            <div class="week-item extension">
+              <div class="week-number">Week 6</div>
+              <div class="week-content">
+                <h4>Body Paragraph 1</h4>
+                <p>First device → thesis connection using TEEL structure (Topic-Evidence-Explanation-Link).</p>
+              </div>
+              <div class="week-output">~200 words</div>
+            </div>
+            <div class="week-item extension">
+              <div class="week-number">Week 7</div>
+              <div class="week-content">
+                <h4>Body Paragraph 2</h4>
+                <p>Second device, building argument complexity.</p>
+              </div>
+              <div class="week-output">~200 words</div>
+            </div>
+            <div class="week-item extension">
+              <div class="week-number">Week 8</div>
+              <div class="week-content">
+                <h4>Body Paragraph 3</h4>
+                <p>Third device, completing the argument structure.</p>
+              </div>
+              <div class="week-output">~200 words</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 5: Synthesis -->
+        <div class="timeline-phase">
+          <div class="phase-header">
+            <div class="phase-icon synthesis">🎯</div>
+            <div>
+              <div class="phase-title">Synthesis & Assessment</div>
+              <div class="phase-weeks">Weeks 9–10</div>
+            </div>
+          </div>
+          <div class="week-list">
+            <div class="week-item extension">
+              <div class="week-number">Week 9</div>
+              <div class="week-content">
+                <h4>Cohesion & Conclusion</h4>
+                <p>Link paragraphs together, write the conclusion, review the full argument.</p>
+              </div>
+              <div class="week-output">Full draft</div>
+            </div>
+            <div class="week-item extension">
+              <div class="week-number">Week 10</div>
+              <div class="week-content">
+                <h4>Final Essay & Assessment</h4>
+                <p>Polish, submit, receive detailed feedback and progress report.</p>
+              </div>
+              <div class="week-output">Final essay</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Complete Output -->
+        <div class="output-summary" style="margin-top: 1.5rem;">
+          <div class="output-title">10-Week Complete Output</div>
+          <div class="output-grid">
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">Everything in Foundation</span>
+            </div>
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">3 body paragraphs</span>
+            </div>
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">Conclusion</span>
+            </div>
+            <div class="output-item">
+              <span class="output-check">✓</span>
+              <span class="output-text">800-1000 word essay</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to see how we measure progress?</h2>
+      <p>Every week has specific outputs. Every output gets scored. No guessing.</p>
+      <a href="course.html" class="cta-button">Enroll Now →</a>
+      <div class="cta-links">
+        <a href="progress.html">← See a sample progress report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="landing.html">Home</a>
+      <a href="guide.html">Method</a>
+      <a href="progress.html">Progress</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="course.html">Course</a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:hello@luminait.app">hello@luminait.app</a> · 
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+</body>
+</html>

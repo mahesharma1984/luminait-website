@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuminAIT Learning | Analytical Writing for Secondary Students</title>
+  <meta name="description" content="A 10-week course teaching literary analysis and logical writing for Years 7-12 students. Prepares for NAPLAN, VCE, IB and beyond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--slate-300);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: white;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    /* Language visibility */
+    [data-lang-content="zh"] { display: none !important; }
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"],
+    body[data-lang="zh"] h3[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="zh"],
+    body[data-lang="zh"] li[data-lang-content="zh"] { display: block !important; }
+    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 4rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 212, 255, 0.3));
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    body[data-lang="zh"] .hero h1 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .hero-subtitle {
+      color: var(--slate-300);
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-texts {
+      color: var(--slate-400);
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    body[data-lang="zh"] .hero-texts {
+      font-style: normal;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    .hero-cta:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Cycling Author Animation */
+    .hero-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-300);
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    body[data-lang="zh"] .hero-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .hero-line {
+      display: inline-block;
+    }
+
+    .cycling-author {
+      display: inline-block;
+      position: relative;
+      color: var(--cyan);
+      font-weight: 600;
+      min-width: 180px;
+      line-height: 1.6;
+    }
+
+    .cycling-author-text {
+      display: inline-block;
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      color: var(--cyan);
+      font-weight: 400;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    /* Currently Teaching Marquee */
+    .currently-teaching {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .currently-teaching::before,
+    .currently-teaching::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .currently-teaching::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--deep-navy) 0%, transparent 100%);
+    }
+
+    .currently-teaching::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--deep-navy) 0%, transparent 100%);
+    }
+
+    .teaching-label {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    .teaching-marquee {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+      will-change: transform;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .teaching-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .teaching-item {
+      color: var(--slate-700);
+      font-size: 1.5rem;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 0 1.5rem;
+    }
+
+    body[data-lang="zh"] .teaching-item {
+      font-style: normal;
+    }
+
+    .teaching-item::after {
+      content: '·';
+      margin-left: 2rem;
+      color: var(--cyan);
+    }
+
+    @keyframes marquee {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-gray {
+      background: var(--slate-100);
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    body[data-lang="zh"] .section-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .section-subtitle {
+      color: var(--slate-500);
+      text-align: center;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Map Cards */
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .map-card {
+      background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .map-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.12);
+    }
+
+    .map-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .map-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .map-card-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.35rem;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .map-card-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .map-card-desc {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .map-card-highlights {
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .map-card-highlights li {
+      padding: 0.35rem 0 0.35rem 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    .map-card-highlights li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .map-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .map-card-link::after {
+      content: '→';
+      transition: transform 0.2s ease;
+    }
+
+    .map-card:hover .map-card-link::after {
+      transform: translateX(4px);
+    }
+
+    /* Featured Card (Course) */
+    .map-card.featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      border: none;
+      color: white;
+    }
+
+    .map-card.featured .map-card-title {
+      color: var(--cyan);
+    }
+
+    .map-card.featured .map-card-desc {
+      color: var(--slate-300);
+    }
+
+    .map-card.featured .map-card-highlights li {
+      color: var(--slate-300);
+    }
+
+    .map-card.featured .map-card-link {
+      color: var(--cyan);
+    }
+
+    .map-card.featured::before {
+      background: var(--cyan);
+    }
+
+    .featured-content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .featured-stats {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .featured-stat {
+      text-align: center;
+    }
+
+    .featured-stat-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1;
+    }
+
+    .featured-stat-label {
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      margin-top: 0.25rem;
+    }
+
+    /* Quick Stats */
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .quick-stat {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .quick-stat-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--emerald);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .quick-stat-label {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .cta-content h2 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Funnel Sections */
+    .funnel-section {
+      padding: 4rem 2rem;
+    }
+
+    .funnel-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .funnel-section-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Section backgrounds */
+    .bg-gray {
+      background: var(--slate-100);
+    }
+
+    .bg-white {
+      background: white;
+    }
+
+    .bg-navy {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      overflow: hidden;
+    }
+
+    /* Problem Section */
+    .problem-section {
+      text-align: center;
+    }
+
+    .problem-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    body[data-lang="zh"] .problem-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .problem-body {
+      color: var(--slate-600);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Gap Diagram */
+    .gap-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .gap-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--slate-600);
+    }
+
+    .gap-step-icon {
+      font-size: 1.5rem;
+    }
+
+    .gap-arrow {
+      color: var(--slate-400);
+      font-size: 1.25rem;
+    }
+
+    .gap-step.gap-highlighted {
+      background: rgba(0, 212, 255, 0.1);
+      border: 2px dashed var(--cyan);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      color: var(--slate-700);
+    }
+
+    .gap-step.gap-filled {
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 2px solid var(--cyan);
+    }
+
+    /* Solution Section */
+    .solution-section {
+      text-align: center;
+    }
+
+    .solution-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    body[data-lang="zh"] .solution-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .solution-body {
+      color: var(--slate-600);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* How It Works Section */
+    .how-section {
+      text-align: center;
+    }
+
+    .how-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+    }
+
+    body[data-lang="zh"] .how-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .how-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .how-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .how-card-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.75rem;
+    }
+
+    .how-card-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    body[data-lang="zh"] .how-card-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .how-card-desc {
+      color: var(--slate-600);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* 5-Step Method Section */
+    .method-intro {
+      text-align: center;
+    }
+
+    .method-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    body[data-lang="zh"] .method-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .method-body {
+      color: var(--slate-600);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Steps Grid */
+    .steps-section {
+      padding-top: 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+    }
+
+    .step-card {
+      background: var(--slate-100);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-card-highlight {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+    }
+
+    .step-card-highlight .step-title,
+    .step-card-highlight .step-question,
+    .step-card-highlight .step-desc {
+      color: var(--slate-300);
+    }
+
+    .step-card-highlight .step-title {
+      color: var(--cyan);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .step-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    body[data-lang="zh"] .step-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .step-question {
+      color: var(--slate-500);
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    body[data-lang="zh"] .step-question {
+      font-style: normal;
+    }
+
+    .step-desc {
+      color: var(--slate-600);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive for Steps Grid */
+    @media (max-width: 1100px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .step-card:nth-child(4),
+      .step-card:nth-child(5) {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 1rem;
+        text-align: left;
+        padding: 1.25rem;
+      }
+
+      .step-number {
+        grid-row: span 2;
+        margin: 0;
+        align-self: center;
+      }
+
+      .step-title {
+        margin-bottom: 0.25rem;
+      }
+
+      .step-question {
+        display: none;
+      }
+
+      .step-desc {
+        grid-column: 2;
+      }
+
+      .method-headline {
+        font-size: 1.5rem;
+      }
+
+      .method-body {
+        font-size: 1rem;
+      }
+    }
+
+    /* Course Feature Section */
+    .course-section {
+      text-align: center;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .course-card-header {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1.5rem 2rem;
+    }
+
+    .course-card-heading {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .course-card-heading {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .course-card-body {
+      padding: 2rem;
+    }
+
+    .course-includes {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-includes li {
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      position: relative;
+      color: var(--slate-700);
+      font-size: 1rem;
+    }
+
+    .course-includes li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .course-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .course-price-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .course-price-label {
+      color: var(--slate-500);
+      font-size: 1rem;
+    }
+
+    .course-price-hourly {
+      color: var(--slate-500);
+      font-size: 0.95rem;
+    }
+
+    .course-teaching-label {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-800);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    body[data-lang="zh"] .course-teaching-label {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .course-section .currently-teaching::before {
+      background: linear-gradient(90deg, var(--slate-100) 0%, transparent 100%);
+    }
+
+    .course-section .currently-teaching::after {
+      background: linear-gradient(270deg, var(--slate-100) 0%, transparent 100%);
+    }
+
+    .course-section .teaching-item {
+      color: var(--slate-700);
+    }
+
+    .course-section .teaching-item::after {
+      color: var(--blue);
+    }
+
+    .course-cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-top: 1rem;
+    }
+
+    .course-cta:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* Stats/Proof Section */
+    .stats-section {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .stats-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    body[data-lang="zh"] .stats-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .stats-subheadline {
+      color: var(--slate-400);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--slate-300);
+      font-size: 1rem;
+    }
+
+    /* Stats and CTA separator */
+    .stats-cta-separator {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Final CTA Section */
+    .final-cta-section {
+      text-align: center;
+      position: relative;
+    }
+
+    .final-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .final-cta-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    body[data-lang="zh"] .final-cta-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .final-cta-button {
+      display: inline-block;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 212, 255, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta-button:hover {
+      background: #00e5ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Responsive for Funnel Sections */
+    @media (max-width: 768px) {
+      .funnel-section {
+        padding: 3rem 1.5rem;
+      }
+
+      .problem-headline,
+      .solution-headline,
+      .how-headline {
+        font-size: 1.5rem;
+      }
+
+      .problem-body,
+      .solution-body {
+        font-size: 1rem;
+      }
+
+      .how-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .gap-diagram {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .gap-arrow {
+        transform: rotate(90deg);
+      }
+
+      .course-card-body {
+        padding: 1.5rem;
+      }
+
+      .course-price-value {
+        font-size: 1.75rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+      }
+
+      .final-cta-headline {
+        font-size: 1.35rem;
+      }
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--slate-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-contact {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-content {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-stats {
+        justify-content: center;
+      }
+
+      .quick-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--deep-navy);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-content {
+        flex-wrap: wrap;
+      }
+
+      .lang-toggle {
+        order: 2;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-headline {
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+
+      .cycling-author {
+        min-width: 120px;
+      }
+
+      .teaching-label {
+        font-size: 0.8rem;
+      }
+
+      .teaching-item {
+        font-size: 0.9rem;
+        padding: 0 0.75rem;
+      }
+
+      .teaching-item::after {
+        margin-left: 1.5rem;
+      }
+
+      .hero-logo {
+        width: 150px;
+      }
+
+      .section {
+        padding: 2rem 1.25rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .map-card {
+        padding: 1.5rem;
+      }
+
+      .featured-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">
+          <span data-lang-content="en">Home</span>
+          <span data-lang-content="zh">首页</span>
+        </a>
+        <a href="course.html" class="nav-link">
+          <span data-lang-content="en">Course</span>
+          <span data-lang-content="zh">课程</span>
+        </a>
+        <a href="syllabus.html" class="nav-link">
+          <span data-lang-content="en">Curriculum</span>
+          <span data-lang-content="zh">课程大纲</span>
+        </a>
+        <a href="sample.html" class="nav-link">
+          <span data-lang-content="en">Sample</span>
+          <span data-lang-content="zh">练习样例</span>
+        </a>
+        <a href="progress.html" class="nav-link">
+          <span data-lang-content="en">Progress</span>
+          <span data-lang-content="zh">进度报告</span>
+        </a>
+        <a href="results.html" class="nav-link">
+          <span data-lang-content="en">Results</span>
+          <span data-lang-content="zh">学习成果</span>
+        </a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
+          <span data-lang-content="en">Enroll</span>
+          <span data-lang-content="zh">报名咨询</span>
+        </a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
+      <h1 class="hero-headline" data-lang-content="en">
+        <span class="hero-line">In 5 lessons, write thematic essays on</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">that are informed, reasoned, and genuinely YOURS (not AI!).</span>
+      </h1>
+      <h1 class="hero-headline" data-lang-content="zh">
+        <span class="hero-line">5周内，撰写关于</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">的主题论文——有理有据，独具见解。</span>
+      </h1>
+      <a href="course.html" class="hero-cta">
+        <span data-lang-content="en">View Course Details</span>
+        <span data-lang-content="zh">查看课程详情</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 2: The 5-Step Method -->
+  <section class="funnel-section bg-gray">
+    <div class="funnel-section-inner method-intro">
+      <h2 class="method-headline">
+        <span data-lang-content="en">The 5-Step Method</span>
+        <span data-lang-content="zh">五步教学法</span>
+      </h2>
+      <p class="method-body">
+        <span data-lang-content="en">Most tutoring teaches generic essay tricks. We teach your child to genuinely understand what the text is doing — and the ability to write about it comes naturally.</span>
+        <span data-lang-content="zh">大多数补习只教授通用的写作技巧。我们教您的孩子真正理解文本在做什么——写作能力自然而然就会跟上。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: 5-Step Cards -->
+  <section class="funnel-section bg-white">
+    <div class="funnel-section-wide steps-section">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Know the text</span>
+            <span data-lang-content="zh">认识文本</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">What world is this?</span>
+            <span data-lang-content="zh">这是什么样的世界？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">We start by understanding the text — its context, structure, and the world it creates.</span>
+            <span data-lang-content="zh">我们从理解文本开始——了解其背景、结构和它所创造的世界。</span>
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">See the pattern</span>
+            <span data-lang-content="zh">发现模式</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">What does it do to me?</span>
+            <span data-lang-content="zh">它对我产生什么影响？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">Then we decode what it does to readers — the pattern that creates its effect.</span>
+            <span data-lang-content="zh">然后我们解读它对读者的影响——产生效果的模式。</span>
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Find the proof</span>
+            <span data-lang-content="zh">寻找证据</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">How does it do that?</span>
+            <span data-lang-content="zh">它是如何做到的？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">Students learn to identify the techniques — the literary devices that execute the pattern.</span>
+            <span data-lang-content="zh">学生学会识别技巧——执行模式的文学手法。</span>
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Build the claim</span>
+            <span data-lang-content="zh">构建论点</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">What can I argue?</span>
+            <span data-lang-content="zh">我能论证什么？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">They build analytical arguments — moving from understanding to articulation.</span>
+            <span data-lang-content="zh">他们构建分析性论点——从理解走向表达。</span>
+          </p>
+        </div>
+        <div class="step-card step-card-highlight">
+          <div class="step-number">5</div>
+          <h3 class="step-title">
+            <span data-lang-content="en">Write the essay</span>
+            <span data-lang-content="zh">撰写文章</span>
+          </h3>
+          <p class="step-question">
+            <span data-lang-content="en">How do I write it?</span>
+            <span data-lang-content="zh">我该如何写？</span>
+          </p>
+          <p class="step-desc">
+            <span data-lang-content="en">And write essays that demonstrate genuine understanding — informed, reasoned, and theirs.</span>
+            <span data-lang-content="zh">最终写出展示真正理解的文章——有理有据，独具见解。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: The Course -->
+  <section class="funnel-section bg-gray">
+    <div class="funnel-section-inner course-section">
+      <h2 class="course-teaching-label">
+        <span data-lang-content="en">Currently teaching:</span>
+        <span data-lang-content="zh">正在教授：</span>
+      </h2>
+      <div class="currently-teaching" style="margin-top: 0; margin-bottom: 2rem;">
+        <div class="teaching-marquee" id="courseMarquee">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-header">
+          <h2 class="course-card-heading">
+            <span data-lang-content="en">5 weeks. One text. Complete essay.</span>
+            <span data-lang-content="zh">5周。一本书。完整文章。</span>
+          </h2>
+        </div>
+        <div class="course-card-body">
+          <ul class="course-includes">
+            <li>
+              <span data-lang-content="en">Weekly worksheets tailored to your child's text</span>
+              <span data-lang-content="zh">每周定制化练习，针对您孩子的文本</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Written feedback on every submission</span>
+              <span data-lang-content="zh">每次作业均有书面反馈</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Final essay and exam</span>
+              <span data-lang-content="zh">期末论文与考试</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Progress report for parents</span>
+              <span data-lang-content="zh">家长进度报告</span>
+            </li>
+          </ul>
+          <div class="course-price">
+            <span class="course-price-value">$275</span>
+            <span class="course-price-label">
+              <span data-lang-content="en">for 5 weeks</span>
+              <span data-lang-content="zh">5周课程</span>
+            </span>
+            <span class="course-price-hourly">
+              <span data-lang-content="en">(~$37/hour)</span>
+              <span data-lang-content="zh">(约$37/小时)</span>
+            </span>
+          </div>
+          <a href="course.html" class="course-cta">
+            <span data-lang-content="en">View Course Details</span>
+            <span data-lang-content="zh">查看课程详情</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Proof/Stats -->
+  <section class="funnel-section bg-navy">
+    <div class="funnel-section-wide stats-section">
+      <h2 class="stats-headline">
+        <span data-lang-content="en">Proven Results</span>
+        <span data-lang-content="zh">实证成果</span>
+      </h2>
+      <p class="stats-subheadline">
+        <span data-lang-content="en">From our previous cohorts</span>
+        <span data-lang-content="zh">来自往期学员</span>
+      </p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">of students improved</span>
+            <span data-lang-content="zh">学生取得进步</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">10-20%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">term improvement</span>
+            <span data-lang-content="zh">学期内提升</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">30-50%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">improvement with feedback</span>
+            <span data-lang-content="zh">运用反馈后提升</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Final CTA -->
+  <section class="funnel-section bg-navy stats-cta-separator">
+    <div class="funnel-section-inner final-cta-section">
+      <h2 class="final-cta-headline">
+        <span data-lang-content="en">Ready to help your child understand their English text?</span>
+        <span data-lang-content="zh">准备好帮助您的孩子理解英语文本了吗？</span>
+      </h2>
+      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="final-cta-button">
+        <span data-lang-content="en">Get in Touch</span>
+        <span data-lang-content="zh">联系我们</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">
+        <span data-lang-content="en">Home</span>
+        <span data-lang-content="zh">首页</span>
+      </a>
+      <a href="course.html">
+        <span data-lang-content="en">Course</span>
+        <span data-lang-content="zh">课程</span>
+      </a>
+      <a href="syllabus.html">
+        <span data-lang-content="en">Curriculum</span>
+        <span data-lang-content="zh">课程大纲</span>
+      </a>
+      <a href="sample.html">
+        <span data-lang-content="en">Sample</span>
+        <span data-lang-content="zh">练习样例</span>
+      </a>
+      <a href="progress.html">
+        <span data-lang-content="en">Progress</span>
+        <span data-lang-content="zh">进度报告</span>
+      </a>
+      <a href="results.html">
+        <span data-lang-content="en">Results</span>
+        <span data-lang-content="zh">学习成果</span>
+      </a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+
+  <script>
+    // ============================================
+    // CONFIGURABLE CONTENT - Edit these arrays
+    // ============================================
+
+    // Authors that cycle in the hero headline
+    const cyclingAuthors = {
+      en: [
+        'Lois Lowry',
+        'Shakespeare',
+        'Harper Lee',
+        'Steinbeck',
+        'Orwell',
+        'Fitzgerald',
+        'Golding'
+      ],
+      zh: [
+        '洛伊丝·劳里',
+        '莎士比亚',
+        '哈珀·李',
+        '斯坦贝克',
+        '奥威尔',
+        '菲茨杰拉德',
+        '戈尔丁'
+      ]
+    };
+
+    // Texts currently being taught (displayed in marquee)
+    const currentTexts = {
+      en: [
+        'Romeo and Juliet',
+        'To Kill a Mockingbird',
+        'The Giver',
+        'Of Mice and Men',
+        '1984',
+        'The Great Gatsby',
+        'Lord of the Flies'
+      ],
+      zh: [
+        '《罗密欧与朱丽叶》',
+        '《杀死一只知更鸟》',
+        '《记忆传授人》',
+        '《人鼠之间》',
+        '《1984》',
+        '《了不起的盖茨比》',
+        '《蝇王》'
+      ]
+    };
+
+    // ============================================
+    // END CONFIGURABLE CONTENT
+    // ============================================
+
+    // Language functions
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Typewriter effect for cycling author animation
+    let currentAuthorIndex = 0;
+    let typewriterTimeout;
+    let isRunning = false;
+
+    async function typeWriter(text, element, speed = 80) {
+      element.textContent = '';
+      
+      // Type out the text character by character
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await new Promise(resolve => setTimeout(resolve, speed));
+      }
+      
+      // Wait before starting to delete
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Delete the text character by character
+      for (let i = text.length; i > 0; i--) {
+        element.textContent = text.substring(0, i - 1);
+        await new Promise(resolve => setTimeout(resolve, speed / 2)); // Delete faster than typing
+      }
+    }
+
+    async function cycleAuthor() {
+      if (!isRunning) return;
+      
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+      
+      if (!authorEl || !authorElZh) return;
+      
+      // Move to next author
+      currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
+      
+      // Get next author texts
+      const nextAuthorEn = cyclingAuthors.en[currentAuthorIndex];
+      const nextAuthorZh = cyclingAuthors.zh[currentAuthorIndex];
+      
+      // Type out both versions simultaneously (they'll be shown/hidden by language system)
+      await Promise.all([
+        typeWriter(nextAuthorEn, authorEl, 80),
+        typeWriter(nextAuthorZh, authorElZh, 80)
+      ]);
+      
+      // Continue to next author if still running
+      if (isRunning) {
+        cycleAuthor();
+      }
+    }
+
+    function startAuthorCycle() {
+      isRunning = true;
+      
+      // Initialize with first author (Lois Lowry)
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+      
+      if (authorEl && authorElZh) {
+        authorEl.textContent = cyclingAuthors.en[0];
+        authorElZh.textContent = cyclingAuthors.zh[0];
+      }
+      
+      // Start cycling after initial delay
+      setTimeout(() => {
+        cycleAuthor();
+      }, 3000); // Wait 3 seconds before starting to cycle
+    }
+
+    function stopAuthorCycle() {
+      isRunning = false;
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+        typewriterTimeout = null;
+      }
+    }
+
+    // Populate teaching marquee
+    function populateTeachingMarquee() {
+      const marquees = [
+        document.getElementById('teachingMarquee'),
+        document.getElementById('courseMarquee')
+      ];
+
+      marquees.forEach(marquee => {
+        if (!marquee) return;
+
+        // Create content twice for seamless loop
+        let htmlEn = '';
+        let htmlZh = '';
+
+        for (let i = 0; i < 2; i++) {
+          currentTexts.en.forEach(text => {
+            htmlEn += `<span class="teaching-item" data-lang-content="en">${text}</span>`;
+          });
+          currentTexts.zh.forEach(text => {
+            htmlZh += `<span class="teaching-item" data-lang-content="zh">${text}</span>`;
+          });
+        }
+
+        marquee.innerHTML = htmlEn + htmlZh;
+
+        // Force a reflow on mobile to ensure width is calculated correctly
+        marquee.offsetWidth;
+      });
+    }
+
+    // Optional: Pause cycling on hover
+    function setupHoverPause() {
+      const heroHeadlines = document.querySelectorAll('.hero-headline');
+      heroHeadlines.forEach(headline => {
+        headline.addEventListener('mouseenter', () => {
+          stopAuthorCycle();
+        });
+        headline.addEventListener('mouseleave', () => {
+          startAuthorCycle();
+        });
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load saved language preference
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+
+      // Start cycling authors
+      startAuthorCycle();
+      setupHoverPause();
+
+      // Populate marquee
+      populateTeachingMarquee();
+    });
+  </script>
+
+
+</body>
+</html>

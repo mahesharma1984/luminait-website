@@ -26,7 +26,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -208,42 +207,6 @@
       font-family: 'Noto Sans SC', sans-serif;
     }
 
-    .hero-subtitle {
-      color: var(--slate-300);
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-texts {
-      color: var(--slate-400);
-      font-size: 1rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-
-    body[data-lang="zh"] .hero-texts {
-      font-style: normal;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-    }
-
-    .hero-cta:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
-    }
-
     /* Cycling Author Animation */
     .hero-headline {
       font-family: 'Fraunces', Georgia, serif;
@@ -286,133 +249,46 @@
     }
 
     @keyframes blink {
-      0%, 49% {
-        opacity: 1;
-      }
-      50%, 100% {
-        opacity: 0;
-      }
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
     }
 
-    /* Currently Teaching Marquee */
-    .currently-teaching {
-      margin-top: 0.5rem;
-      margin-bottom: 2rem;
-      overflow: hidden;
-      position: relative;
+    .hero-cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
     }
 
-    .currently-teaching::before,
-    .currently-teaching::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 60px;
-      z-index: 2;
-      pointer-events: none;
+    .hero-cta:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
     }
 
-    .currently-teaching::before {
-      left: 0;
-      background: linear-gradient(90deg, var(--deep-navy) 0%, transparent 100%);
-    }
-
-    .currently-teaching::after {
-      right: 0;
-      background: linear-gradient(270deg, var(--deep-navy) 0%, transparent 100%);
-    }
-
-    .teaching-label {
-      color: var(--slate-400);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 500;
-    }
-
-    .teaching-marquee {
-      display: flex;
-      animation: marquee 30s linear infinite;
-      width: max-content;
-      will-change: transform;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-
-    .teaching-marquee:hover {
-      animation-play-state: paused;
-    }
-
-    .teaching-item {
-      color: var(--slate-700);
-      font-size: 1.5rem;
-      font-weight: 500;
-      white-space: nowrap;
-      padding: 0 1.5rem;
-    }
-
-    body[data-lang="zh"] .teaching-item {
-      font-style: normal;
-    }
-
-    .teaching-item::after {
-      content: '·';
-      margin-left: 2rem;
-      color: var(--cyan);
-    }
-
-    @keyframes marquee {
-      0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-      }
-      100% {
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Sections */
+    /* Section Base */
     .section {
-      max-width: 1100px;
-      margin: 0 auto;
       padding: 3rem 2rem;
     }
 
-    .section-white {
-      background: white;
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .section-gray {
-      background: var(--slate-100);
+    .bg-gray { background: var(--slate-100); }
+    .bg-white { background: white; }
+    .bg-navy {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
     }
 
-    .section-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    body[data-lang="zh"] .section-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .section-subtitle {
-      color: var(--slate-500);
-      text-align: center;
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Map Cards */
+    /* Map Cards Grid */
     .map-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -579,577 +455,18 @@
       margin-top: 0.25rem;
     }
 
-    /* Quick Stats */
-    .quick-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .quick-stat {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .quick-stat-value {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--emerald);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-
-    .quick-stat-label {
-      font-size: 0.9rem;
-      color: var(--slate-600);
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .cta-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .cta-content h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    body[data-lang="zh"] .cta-content h2 {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: white;
-      color: var(--blue);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Funnel Sections */
-    .funnel-section {
-      padding: 4rem 2rem;
-    }
-
-    .funnel-section-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .funnel-section-wide {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* Section backgrounds */
-    .bg-gray {
-      background: var(--slate-100);
-    }
-
-    .bg-white {
-      background: white;
-    }
-
-    .bg-navy {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
-      overflow: hidden;
-    }
-
-    /* Problem Section */
-    .problem-section {
-      text-align: center;
-    }
-
-    .problem-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    body[data-lang="zh"] .problem-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .problem-body {
-      color: var(--slate-600);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Gap Diagram */
-    .gap-diagram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .gap-step {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--slate-600);
-    }
-
-    .gap-step-icon {
-      font-size: 1.5rem;
-    }
-
-    .gap-arrow {
-      color: var(--slate-400);
-      font-size: 1.25rem;
-    }
-
-    .gap-step.gap-highlighted {
-      background: rgba(0, 212, 255, 0.1);
-      border: 2px dashed var(--cyan);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      color: var(--slate-700);
-    }
-
-    .gap-step.gap-filled {
-      background: var(--cyan);
-      color: var(--deep-navy);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      border: 2px solid var(--cyan);
-    }
-
-    /* Solution Section */
-    .solution-section {
-      text-align: center;
-    }
-
-    .solution-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    body[data-lang="zh"] .solution-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .solution-body {
-      color: var(--slate-600);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* How It Works Section */
-    .how-section {
-      text-align: center;
-    }
-
-    .how-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 2.5rem;
-    }
-
-    body[data-lang="zh"] .how-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .how-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .how-card {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2e8f0;
-    }
-
-    .how-card-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--cyan);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      font-size: 1.75rem;
-    }
-
-    .how-card-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    body[data-lang="zh"] .how-card-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .how-card-desc {
-      color: var(--slate-600);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* 5-Step Method Section */
-    .method-intro {
-      text-align: center;
-    }
-
-    .method-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    body[data-lang="zh"] .method-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .method-body {
-      color: var(--slate-600);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Steps Grid */
-    .steps-section {
-      padding-top: 0;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.25rem;
-    }
-
-    .step-card {
-      background: var(--slate-100);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-align: center;
-      position: relative;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .step-card-highlight {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-    }
-
-    .step-card-highlight .step-title,
-    .step-card-highlight .step-question,
-    .step-card-highlight .step-desc {
-      color: var(--slate-300);
-    }
-
-    .step-card-highlight .step-title {
-      color: var(--cyan);
-    }
-
-    .step-number {
-      width: 40px;
-      height: 40px;
-      background: var(--cyan);
-      color: var(--deep-navy);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 0 auto 1rem;
-    }
-
-    .step-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    body[data-lang="zh"] .step-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .step-question {
-      color: var(--slate-500);
-      font-size: 0.9rem;
-      font-style: italic;
-      margin-bottom: 0.75rem;
-    }
-
-    body[data-lang="zh"] .step-question {
-      font-style: normal;
-    }
-
-    .step-desc {
-      color: var(--slate-600);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    /* Responsive for Steps Grid */
-    @media (max-width: 1100px) {
-      .steps-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .step-card:nth-child(4),
-      .step-card:nth-child(5) {
-        grid-column: span 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .step-card {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-        gap: 0 1rem;
-        text-align: left;
-        padding: 1.25rem;
-      }
-
-      .step-number {
-        grid-row: span 2;
-        margin: 0;
-        align-self: center;
-      }
-
-      .step-title {
-        margin-bottom: 0.25rem;
-      }
-
-      .step-question {
-        display: none;
-      }
-
-      .step-desc {
-        grid-column: 2;
-      }
-
-      .method-headline {
-        font-size: 1.5rem;
-      }
-
-      .method-body {
-        font-size: 1rem;
-      }
-    }
-
-    /* Course Feature Section */
-    .course-section {
-      text-align: center;
-    }
-
-    .course-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .course-card-header {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-      padding: 1.5rem 2rem;
-    }
-
-    .course-card-heading {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--cyan);
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    body[data-lang="zh"] .course-card-heading {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .course-card-body {
-      padding: 2rem;
-    }
-
-    .course-includes {
-      list-style: none;
-      margin-bottom: 1.5rem;
-    }
-
-    .course-includes li {
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      position: relative;
-      color: var(--slate-700);
-      font-size: 1rem;
-    }
-
-    .course-includes li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--emerald);
-      font-weight: 700;
-    }
-
-    .course-price {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .course-price-value {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: var(--slate-800);
-    }
-
-    .course-price-label {
-      color: var(--slate-500);
-      font-size: 1rem;
-    }
-
-    .course-price-hourly {
-      color: var(--slate-500);
-      font-size: 0.95rem;
-    }
-
-    .course-teaching-label {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    body[data-lang="zh"] .course-teaching-label {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .course-section .currently-teaching::before {
-      background: linear-gradient(90deg, var(--slate-100) 0%, transparent 100%);
-    }
-
-    .course-section .currently-teaching::after {
-      background: linear-gradient(270deg, var(--slate-100) 0%, transparent 100%);
-    }
-
-    .course-section .teaching-item {
-      color: var(--slate-700);
-    }
-
-    .course-section .teaching-item::after {
-      color: var(--blue);
-    }
-
-    .course-cta {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      margin-top: 1rem;
-    }
-
-    .course-cta:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    /* Stats/Proof Section */
+    /* Stats Section */
     .stats-section {
       text-align: center;
       position: relative;
-      overflow: hidden;
-    }
-
-    .stats-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
-      pointer-events: none;
     }
 
     .stats-headline {
       font-family: 'Fraunces', Georgia, serif;
-      color: white;
+      color: var(--cyan);
       font-size: 1.75rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      position: relative;
-      z-index: 1;
     }
 
     body[data-lang="zh"] .stats-headline {
@@ -1158,46 +475,37 @@
 
     .stats-subheadline {
       color: var(--slate-400);
-      font-size: 1rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 2rem;
     }
 
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      position: relative;
-      z-index: 1;
     }
 
     .stat-item {
-      text-align: center;
+      padding: 1.5rem;
     }
 
     .stat-value {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 3rem;
       font-weight: 700;
       color: var(--cyan);
-      line-height: 1;
-      margin-bottom: 0.5rem;
+      line-height: 1.1;
     }
 
     .stat-label {
-      color: var(--slate-300);
       font-size: 1rem;
+      color: var(--slate-300);
+      margin-top: 0.5rem;
     }
 
-    /* Stats and CTA separator */
-    .stats-cta-separator {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Final CTA Section */
+    /* Final CTA */
     .final-cta-section {
       text-align: center;
+      padding: 4rem 2rem;
       position: relative;
     }
 
@@ -1250,64 +558,10 @@
       box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
     }
 
-    /* Responsive for Funnel Sections */
-    @media (max-width: 768px) {
-      .funnel-section {
-        padding: 3rem 1.5rem;
-      }
-
-      .problem-headline,
-      .solution-headline,
-      .how-headline {
-        font-size: 1.5rem;
-      }
-
-      .problem-body,
-      .solution-body {
-        font-size: 1rem;
-      }
-
-      .how-cards {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .gap-diagram {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .gap-arrow {
-        transform: rotate(90deg);
-      }
-
-      .course-card-body {
-        padding: 1.5rem;
-      }
-
-      .course-price-value {
-        font-size: 1.75rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .stat-value {
-        font-size: 2.5rem;
-      }
-
-      .final-cta-headline {
-        font-size: 1.35rem;
-      }
-    }
-
     /* Footer */
     .footer {
       background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
       padding: 2rem;
-      color: white;
       text-align: center;
     }
 
@@ -1356,10 +610,6 @@
 
       .featured-stats {
         justify-content: center;
-      }
-
-      .quick-stats {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -1412,33 +662,17 @@
         min-width: 120px;
       }
 
-      .teaching-label {
-        font-size: 0.8rem;
-      }
-
-      .teaching-item {
-        font-size: 0.9rem;
-        padding: 0 0.75rem;
-      }
-
-      .teaching-item::after {
-        margin-left: 1.5rem;
-      }
-
       .hero-logo {
         width: 150px;
       }
 
-      .section {
-        padding: 2rem 1.25rem;
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
 
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .map-card {
-        padding: 1.5rem;
+      .stat-value {
+        font-size: 2.5rem;
       }
 
       .featured-stats {
@@ -1457,6 +691,7 @@
 </head>
 <body data-lang="en">
 
+  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-content">
       <a href="index.html">
@@ -1468,15 +703,11 @@
           <span data-lang-content="en">Home</span>
           <span data-lang-content="zh">首页</span>
         </a>
-        <a href="course.html" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <a href="syllabus.html" class="nav-link">
+        <a href="curriculum.html" class="nav-link">
           <span data-lang-content="en">Curriculum</span>
           <span data-lang-content="zh">课程大纲</span>
         </a>
-        <a href="sample.html" class="nav-link">
+        <a href="guide.html" class="nav-link">
           <span data-lang-content="en">Sample</span>
           <span data-lang-content="zh">练习样例</span>
         </a>
@@ -1484,11 +715,7 @@
           <span data-lang-content="en">Progress</span>
           <span data-lang-content="zh">进度报告</span>
         </a>
-        <a href="results.html" class="nav-link">
-          <span data-lang-content="en">Results</span>
-          <span data-lang-content="zh">学习成果</span>
-        </a>
-        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
+        <a href="course.html" class="nav-cta">
           <span data-lang-content="en">Enroll</span>
           <span data-lang-content="zh">报名咨询</span>
         </a>
@@ -1500,7 +727,7 @@
     </div>
   </nav>
 
-
+  <!-- Hero Section (from original index.html) -->
   <section class="hero">
     <div class="hero-content">
       <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
@@ -1515,170 +742,164 @@
         <span class="hero-line">的主题论文——有理有据，独具见解。</span>
       </h1>
       <a href="course.html" class="hero-cta">
-        <span data-lang-content="en">View Course Details</span>
+        <span data-lang-content="en">See the Course</span>
         <span data-lang-content="zh">查看课程详情</span>
       </a>
     </div>
   </section>
 
-  <!-- Section 2: The 5-Step Method -->
-  <section class="funnel-section bg-gray">
-    <div class="funnel-section-inner method-intro">
-      <h2 class="method-headline">
-        <span data-lang-content="en">The 5-Step Method</span>
-        <span data-lang-content="zh">五步教学法</span>
-      </h2>
-      <p class="method-body">
-        <span data-lang-content="en">Most tutoring teaches generic essay tricks. We teach your child to genuinely understand what the text is doing — and the ability to write about it comes naturally.</span>
-        <span data-lang-content="zh">大多数补习只教授通用的写作技巧。我们教您的孩子真正理解文本在做什么——写作能力自然而然就会跟上。</span>
-      </p>
-    </div>
-  </section>
+  <!-- Main Content Cards -->
+  <section class="section bg-gray">
+    <div class="section-inner">
+      <div class="map-grid">
 
-  <!-- Section 3: 5-Step Cards -->
-  <section class="funnel-section bg-white">
-    <div class="funnel-section-wide steps-section">
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Know the text</span>
-            <span data-lang-content="zh">认识文本</span>
+        <!-- Card 1: 5-Step Method -->
+        <a href="curriculum.html" class="map-card">
+          <div class="map-card-icon">📐</div>
+          <h3 class="map-card-title">
+            <span data-lang-content="en">5-Step Method</span>
+            <span data-lang-content="zh">五步教学法</span>
           </h3>
-          <p class="step-question">
-            <span data-lang-content="en">What world is this?</span>
-            <span data-lang-content="zh">这是什么样的世界？</span>
+          <p class="map-card-desc">
+            <span data-lang-content="en">A structured progression from understanding to writing. Each step builds on the last — no skipping ahead, no gaps.</span>
+            <span data-lang-content="zh">从理解到写作的结构化进阶。每一步都建立在前一步的基础上——不跳跃，不遗漏。</span>
           </p>
-          <p class="step-desc">
-            <span data-lang-content="en">We start by understanding the text — its context, structure, and the world it creates.</span>
-            <span data-lang-content="zh">我们从理解文本开始——了解其背景、结构和它所创造的世界。</span>
-          </p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">See the pattern</span>
-            <span data-lang-content="zh">发现模式</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">What does it do to me?</span>
-            <span data-lang-content="zh">它对我产生什么影响？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">Then we decode what it does to readers — the pattern that creates its effect.</span>
-            <span data-lang-content="zh">然后我们解读它对读者的影响——产生效果的模式。</span>
-          </p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Find the proof</span>
-            <span data-lang-content="zh">寻找证据</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">How does it do that?</span>
-            <span data-lang-content="zh">它是如何做到的？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">Students learn to identify the techniques — the literary devices that execute the pattern.</span>
-            <span data-lang-content="zh">学生学会识别技巧——执行模式的文学手法。</span>
-          </p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Build the claim</span>
-            <span data-lang-content="zh">构建论点</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">What can I argue?</span>
-            <span data-lang-content="zh">我能论证什么？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">They build analytical arguments — moving from understanding to articulation.</span>
-            <span data-lang-content="zh">他们构建分析性论点——从理解走向表达。</span>
-          </p>
-        </div>
-        <div class="step-card step-card-highlight">
-          <div class="step-number">5</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Write the essay</span>
-            <span data-lang-content="zh">撰写文章</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">How do I write it?</span>
-            <span data-lang-content="zh">我该如何写？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">And write essays that demonstrate genuine understanding — informed, reasoned, and theirs.</span>
-            <span data-lang-content="zh">最终写出展示真正理解的文章——有理有据，独具见解。</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: The Course -->
-  <section class="funnel-section bg-gray">
-    <div class="funnel-section-inner course-section">
-      <h2 class="course-teaching-label">
-        <span data-lang-content="en">Currently teaching:</span>
-        <span data-lang-content="zh">正在教授：</span>
-      </h2>
-      <div class="currently-teaching" style="margin-top: 0; margin-bottom: 2rem;">
-        <div class="teaching-marquee" id="courseMarquee">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-      <div class="course-card">
-        <div class="course-card-header">
-          <h2 class="course-card-heading">
-            <span data-lang-content="en">5 weeks. One text. Complete essay.</span>
-            <span data-lang-content="zh">5周。一本书。完整文章。</span>
-          </h2>
-        </div>
-        <div class="course-card-body">
-          <ul class="course-includes">
+          <ul class="map-card-highlights">
             <li>
-              <span data-lang-content="en">Weekly worksheets tailored to your child's text</span>
-              <span data-lang-content="zh">每周定制化练习，针对您孩子的文本</span>
+              <span data-lang-content="en">Pattern → Reading → Devices → Thesis → Essay</span>
+              <span data-lang-content="zh">模式 → 阅读 → 手法 → 论点 → 文章</span>
             </li>
             <li>
-              <span data-lang-content="en">Written feedback on every submission</span>
-              <span data-lang-content="zh">每次作业均有书面反馈</span>
+              <span data-lang-content="en">Clear output each week</span>
+              <span data-lang-content="zh">每周明确的学习成果</span>
             </li>
             <li>
-              <span data-lang-content="en">Final essay and exam</span>
-              <span data-lang-content="zh">期末论文与考试</span>
-            </li>
-            <li>
-              <span data-lang-content="en">Progress report for parents</span>
-              <span data-lang-content="zh">家长进度报告</span>
+              <span data-lang-content="en">5-week or 10-week pathway</span>
+              <span data-lang-content="zh">5周或10周课程路径</span>
             </li>
           </ul>
-          <div class="course-price">
-            <span class="course-price-value">$275</span>
-            <span class="course-price-label">
-              <span data-lang-content="en">for 5 weeks</span>
-              <span data-lang-content="zh">5周课程</span>
-            </span>
-            <span class="course-price-hourly">
-              <span data-lang-content="en">(~$37/hour)</span>
-              <span data-lang-content="zh">(约$37/小时)</span>
-            </span>
+          <span class="map-card-link">
+            <span data-lang-content="en">See the curriculum</span>
+            <span data-lang-content="zh">查看课程大纲</span>
+          </span>
+        </a>
+
+        <!-- Card 2: Making Learning Visible -->
+        <a href="progress.html" class="map-card">
+          <div class="map-card-icon">📊</div>
+          <h3 class="map-card-title">
+            <span data-lang-content="en">Making Learning Visible</span>
+            <span data-lang-content="zh">让学习看得见</span>
+          </h3>
+          <p class="map-card-desc">
+            <span data-lang-content="en">Track progress with weekly scores, rewrite improvements, essay breakdowns, and term reports. No guessing whether it's working.</span>
+            <span data-lang-content="zh">通过每周评分、修改进步、文章分析和学期报告追踪进度。不用猜测是否有效。</span>
+          </p>
+          <ul class="map-card-highlights">
+            <li>
+              <span data-lang-content="en">Weekly skill scores</span>
+              <span data-lang-content="zh">每周技能评分</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Essay & exam feedback</span>
+              <span data-lang-content="zh">文章和考试反馈</span>
+            </li>
+            <li>
+              <span data-lang-content="en">End-of-term progress report</span>
+              <span data-lang-content="zh">学期末进度报告</span>
+            </li>
+          </ul>
+          <span class="map-card-link">
+            <span data-lang-content="en">See a sample report</span>
+            <span data-lang-content="zh">查看报告样例</span>
+          </span>
+        </a>
+
+        <!-- Card 3: Analysis Guide -->
+        <a href="guide.html" class="map-card">
+          <div class="map-card-icon">📖</div>
+          <h3 class="map-card-title">
+            <span data-lang-content="en">How We Teach the Text</span>
+            <span data-lang-content="zh">我们如何教授文本</span>
+          </h3>
+          <p class="map-card-desc">
+            <span data-lang-content="en">Not plot summary — the underlying pattern that makes essays possible. Students learn to see how the text works, not just what happens.</span>
+            <span data-lang-content="zh">不是情节概述——而是让写作成为可能的深层模式。学生学会理解文本如何运作，而不仅仅是发生了什么。</span>
+          </p>
+          <ul class="map-card-highlights">
+            <li>
+              <span data-lang-content="en">The pattern driving the text</span>
+              <span data-lang-content="zh">驱动文本的核心模式</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Devices that create meaning</span>
+              <span data-lang-content="zh">创造意义的文学手法</span>
+            </li>
+            <li>
+              <span data-lang-content="en">From understanding to argument</span>
+              <span data-lang-content="zh">从理解到论证</span>
+            </li>
+          </ul>
+          <span class="map-card-link">
+            <span data-lang-content="en">See the Romeo & Juliet guide</span>
+            <span data-lang-content="zh">查看《罗密欧与朱丽叶》指南</span>
+          </span>
+        </a>
+
+        <!-- Card 4: Course (Featured) -->
+        <a href="course.html" class="map-card featured">
+          <div class="featured-content">
+            <div>
+              <div class="map-card-icon">🎯</div>
+              <h3 class="map-card-title">
+                <span data-lang-content="en">The Course</span>
+                <span data-lang-content="zh">课程</span>
+              </h3>
+              <p class="map-card-desc">
+                <span data-lang-content="en">Choose your pathway. Weekly worksheets, written feedback, progress tracking, and a clear output at the end.</span>
+                <span data-lang-content="zh">选择您的学习路径。每周练习、书面反馈、进度追踪，以及明确的最终成果。</span>
+              </p>
+              <ul class="map-card-highlights">
+                <li>
+                  <span data-lang-content="en">5-Week Foundation: Essay map + introduction — $275</span>
+                  <span data-lang-content="zh">5周基础课程：文章框架 + 引言 — $275</span>
+                </li>
+                <li>
+                  <span data-lang-content="en">10-Week Complete: Full 800-1000 word essay — $550</span>
+                  <span data-lang-content="zh">10周完整课程：完整800-1000字文章 — $550</span>
+                </li>
+              </ul>
+              <span class="map-card-link">
+                <span data-lang-content="en">See pricing & enroll</span>
+                <span data-lang-content="zh">查看价格并报名</span>
+              </span>
+            </div>
+            <div class="featured-stats">
+              <div class="featured-stat">
+                <div class="featured-stat-value">5</div>
+                <div class="featured-stat-label">
+                  <span data-lang-content="en">weeks min</span>
+                  <span data-lang-content="zh">周起</span>
+                </div>
+              </div>
+              <div class="featured-stat">
+                <div class="featured-stat-value">$275</div>
+                <div class="featured-stat-label">
+                  <span data-lang-content="en">starting</span>
+                  <span data-lang-content="zh">起</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="course.html" class="course-cta">
-            <span data-lang-content="en">View Course Details</span>
-            <span data-lang-content="zh">查看课程详情</span>
-          </a>
-        </div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- Section 6: Proof/Stats -->
-  <section class="funnel-section bg-navy">
-    <div class="funnel-section-wide stats-section">
+  <!-- Stats Section -->
+  <section class="section bg-navy">
+    <div class="section-inner stats-section">
       <h2 class="stats-headline">
         <span data-lang-content="en">Proven Results</span>
         <span data-lang-content="zh">实证成果</span>
@@ -1713,35 +934,30 @@
     </div>
   </section>
 
-  <!-- Section 8: Final CTA -->
-  <section class="funnel-section bg-navy stats-cta-separator">
-    <div class="funnel-section-inner final-cta-section">
-      <h2 class="final-cta-headline">
-        <span data-lang-content="en">Ready to help your child understand their English text?</span>
-        <span data-lang-content="zh">准备好帮助您的孩子理解英语文本了吗？</span>
-      </h2>
-      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="final-cta-button">
-        <span data-lang-content="en">Get in Touch</span>
-        <span data-lang-content="zh">联系我们</span>
-      </a>
-    </div>
+  <!-- Final CTA Section -->
+  <section class="section bg-navy final-cta-section">
+    <h2 class="final-cta-headline">
+      <span data-lang-content="en">Ready to help your child understand their English text?</span>
+      <span data-lang-content="zh">准备好帮助您的孩子理解英语文本了吗？</span>
+    </h2>
+    <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="final-cta-button">
+      <span data-lang-content="en">Get in Touch</span>
+      <span data-lang-content="zh">联系我们</span>
+    </a>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-links">
       <a href="index.html">
         <span data-lang-content="en">Home</span>
         <span data-lang-content="zh">首页</span>
       </a>
-      <a href="course.html">
-        <span data-lang-content="en">Course</span>
-        <span data-lang-content="zh">课程</span>
-      </a>
-      <a href="syllabus.html">
+      <a href="curriculum.html">
         <span data-lang-content="en">Curriculum</span>
         <span data-lang-content="zh">课程大纲</span>
       </a>
-      <a href="sample.html">
+      <a href="guide.html">
         <span data-lang-content="en">Sample</span>
         <span data-lang-content="zh">练习样例</span>
       </a>
@@ -1749,9 +965,9 @@
         <span data-lang-content="en">Progress</span>
         <span data-lang-content="zh">进度报告</span>
       </a>
-      <a href="results.html">
-        <span data-lang-content="en">Results</span>
-        <span data-lang-content="zh">学习成果</span>
+      <a href="course.html">
+        <span data-lang-content="en">Course</span>
+        <span data-lang-content="zh">课程</span>
       </a>
     </div>
     <p class="footer-contact">
@@ -1759,7 +975,6 @@
       <a href="tel:+61421213517">+61 421 213 517</a>
     </p>
   </footer>
-
 
   <script>
     // ============================================
@@ -1788,28 +1003,6 @@
       ]
     };
 
-    // Texts currently being taught (displayed in marquee)
-    const currentTexts = {
-      en: [
-        'Romeo and Juliet',
-        'To Kill a Mockingbird',
-        'The Giver',
-        'Of Mice and Men',
-        '1984',
-        'The Great Gatsby',
-        'Lord of the Flies'
-      ],
-      zh: [
-        '《罗密欧与朱丽叶》',
-        '《杀死一只知更鸟》',
-        '《记忆传授人》',
-        '《人鼠之间》',
-        '《1984》',
-        '《了不起的盖茨比》',
-        '《蝇王》'
-      ]
-    };
-
     // ============================================
     // END CONFIGURABLE CONTENT
     // ============================================
@@ -1835,16 +1028,16 @@
 
     async function typeWriter(text, element, speed = 80) {
       element.textContent = '';
-      
+
       // Type out the text character by character
       for (let i = 0; i < text.length; i++) {
         element.textContent += text[i];
         await new Promise(resolve => setTimeout(resolve, speed));
       }
-      
+
       // Wait before starting to delete
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
+
       // Delete the text character by character
       for (let i = text.length; i > 0; i--) {
         element.textContent = text.substring(0, i - 1);
@@ -1854,25 +1047,25 @@
 
     async function cycleAuthor() {
       if (!isRunning) return;
-      
+
       const authorEl = document.getElementById('cyclingAuthor');
       const authorElZh = document.getElementById('cyclingAuthorZh');
-      
+
       if (!authorEl || !authorElZh) return;
-      
+
       // Move to next author
       currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
-      
+
       // Get next author texts
       const nextAuthorEn = cyclingAuthors.en[currentAuthorIndex];
       const nextAuthorZh = cyclingAuthors.zh[currentAuthorIndex];
-      
+
       // Type out both versions simultaneously (they'll be shown/hidden by language system)
       await Promise.all([
         typeWriter(nextAuthorEn, authorEl, 80),
         typeWriter(nextAuthorZh, authorElZh, 80)
       ]);
-      
+
       // Continue to next author if still running
       if (isRunning) {
         cycleAuthor();
@@ -1881,16 +1074,16 @@
 
     function startAuthorCycle() {
       isRunning = true;
-      
+
       // Initialize with first author (Lois Lowry)
       const authorEl = document.getElementById('cyclingAuthor');
       const authorElZh = document.getElementById('cyclingAuthorZh');
-      
+
       if (authorEl && authorElZh) {
         authorEl.textContent = cyclingAuthors.en[0];
         authorElZh.textContent = cyclingAuthors.zh[0];
       }
-      
+
       // Start cycling after initial delay
       setTimeout(() => {
         cycleAuthor();
@@ -1903,36 +1096,6 @@
         clearTimeout(typewriterTimeout);
         typewriterTimeout = null;
       }
-    }
-
-    // Populate teaching marquee
-    function populateTeachingMarquee() {
-      const marquees = [
-        document.getElementById('teachingMarquee'),
-        document.getElementById('courseMarquee')
-      ];
-
-      marquees.forEach(marquee => {
-        if (!marquee) return;
-
-        // Create content twice for seamless loop
-        let htmlEn = '';
-        let htmlZh = '';
-
-        for (let i = 0; i < 2; i++) {
-          currentTexts.en.forEach(text => {
-            htmlEn += `<span class="teaching-item" data-lang-content="en">${text}</span>`;
-          });
-          currentTexts.zh.forEach(text => {
-            htmlZh += `<span class="teaching-item" data-lang-content="zh">${text}</span>`;
-          });
-        }
-
-        marquee.innerHTML = htmlEn + htmlZh;
-
-        // Force a reflow on mobile to ensure width is calculated correctly
-        marquee.offsetWidth;
-      });
     }
 
     // Optional: Pause cycling on hover
@@ -1959,12 +1122,8 @@
       // Start cycling authors
       startAuthorCycle();
       setupHoverPause();
-
-      // Populate marquee
-      populateTeachingMarquee();
     });
   </script>
-
 
 </body>
 </html>

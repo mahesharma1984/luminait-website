@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progress Reports | LuminAIT Learning</title>
-  <meta name="description" content="See how we track your child's development with detailed progress reports throughout the course.">
+  <title>Sample Progress Report | LuminAIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --deep-navy: #0a1628;
@@ -26,7 +25,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -35,10 +33,6 @@
       color: var(--slate-700);
       font-size: 16px;
       background: var(--slate-100);
-    }
-
-    body[data-lang="zh"] {
-      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     /* Navigation */
@@ -57,19 +51,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 2rem;
     }
 
     .nav-logo {
-      height: 40px;
-      width: auto;
+      color: var(--cyan);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    .nav-links { display: flex; align-items: center; gap: 0.5rem; }
 
     .nav-link {
       color: var(--slate-300);
@@ -81,15 +73,8 @@
       transition: all 0.2s ease;
     }
 
-    .nav-link:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-link.active {
-      color: var(--cyan);
-      background: rgba(0, 212, 255, 0.1);
-    }
+    .nav-link:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+    .nav-link.active { color: var(--cyan); background: rgba(0, 212, 255, 0.1); }
 
     .nav-cta {
       background: var(--blue);
@@ -102,59 +87,13 @@
       transition: all 0.2s ease;
     }
 
-    .nav-cta:hover {
-      background: #2563eb;
-      transform: translateY(-1px);
-    }
-
-    .lang-toggle {
-      display: flex;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 4px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .lang-btn {
-      padding: 0.4rem 0.8rem;
-      border: none;
-      background: transparent;
-      color: var(--slate-300);
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .lang-btn:hover {
-      color: white;
-    }
-
-    .lang-btn.active {
-      background: var(--cyan);
-      color: var(--deep-navy);
-    }
-
-    /* Language visibility */
-    [data-lang-content="zh"] { display: none !important; }
-    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
-    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
-    body[data-lang="zh"] p[data-lang-content="zh"],
-    body[data-lang="zh"] h1[data-lang-content="zh"],
-    body[data-lang="zh"] h2[data-lang-content="zh"],
-    body[data-lang="zh"] h3[data-lang-content="zh"],
-    body[data-lang="zh"] h4[data-lang-content="zh"],
-    body[data-lang="zh"] div[data-lang-content="zh"],
-    body[data-lang="zh"] li[data-lang-content="zh"] { display: block !important; }
-    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+    .nav-cta:hover { background: #2563eb; transform: translateY(-1px); }
 
     /* Page Header */
     .page-header {
       background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
-      padding: 3rem 2rem 4rem;
+      padding: 3rem 2rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
@@ -171,391 +110,360 @@
     }
 
     .page-header-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .page-header h1 {
       font-family: 'Fraunces', Georgia, serif;
       color: var(--cyan);
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       font-weight: 600;
       margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
     }
 
-    body[data-lang="zh"] .page-header h1 {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .page-header .subtitle {
+    .page-header p {
       color: var(--slate-300);
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }
 
-    /* Sections */
+    .page-header .meta {
+      color: var(--slate-400);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Content Section */
     .section {
-      max-width: 1100px;
-      margin: 0 auto;
       padding: 3rem 2rem;
     }
 
-    .section-white {
-      background: white;
-    }
-
-    .section-gray {
-      background: var(--slate-100);
-    }
-
-    .section-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    body[data-lang="zh"] .section-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    /* Intro */
-    .intro {
-      max-width: 800px;
+    .section-inner {
+      max-width: 900px;
       margin: 0 auto;
-      text-align: center;
     }
 
-    .intro p {
-      font-size: 1.1rem;
-      color: var(--slate-600);
-      line-height: 1.8;
-    }
+    .bg-gray { background: var(--slate-100); }
+    .bg-white { background: white; }
 
-    /* Sample Report */
-    .sample-report {
+    /* Report Panel */
+    .report-panel {
       background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-      margin-top: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
-    .report-header {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-      padding: 2rem;
-      text-align: center;
+    .panel-header {
+      background: var(--slate-800);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .report-badge {
-      display: inline-block;
-      background: rgba(0, 212, 255, 0.2);
-      color: var(--cyan);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(0, 212, 255, 0.3);
+    .panel-number {
+      background: var(--cyan);
+      color: var(--deep-navy);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
-    .report-title {
-      font-family: 'Fraunces', Georgia, serif;
+    .panel-title {
       color: white;
-      font-size: 1.5rem;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .panel-content {
+      padding: 1.5rem;
+    }
+
+    .panel-annotation {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-left: 4px solid var(--blue);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .annotation-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--blue);
       margin-bottom: 0.5rem;
     }
 
-    body[data-lang="zh"] .report-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .report-meta {
-      color: var(--slate-400);
+    .annotation-text {
+      color: var(--slate-700);
       font-size: 0.95rem;
     }
 
-    .report-body {
-      padding: 2rem;
-    }
-
-    .report-section {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .report-section:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .report-section-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--blue);
-      font-size: 1.15rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
+    /* Course Map Visual */
+    .course-map {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      padding: 1rem;
+      background: var(--slate-100);
+      border-radius: 8px;
+      overflow-x: auto;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    body[data-lang="zh"] .report-section-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .report-section-icon {
-      font-size: 1.25rem;
-    }
-
-    /* Skills Track */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .skill-card {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.25rem;
+    .map-week {
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
       text-align: center;
-    }
-
-    .skill-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-name {
+      min-width: 50px;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: var(--slate-700);
-      margin-bottom: 0.25rem;
     }
 
-    .skill-desc {
-      font-size: 0.85rem;
+    .map-week.completed {
+      background: var(--emerald);
+      color: white;
+    }
+
+    .map-week.current {
+      background: var(--blue);
+      color: white;
+    }
+
+    .map-week.future {
+      background: white;
       color: var(--slate-500);
+      border: 1px solid #e2e8f0;
+    }
+
+    .map-arrow {
+      color: var(--slate-400);
+      font-size: 0.9rem;
     }
 
     /* Score Table */
     .score-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .score-table th, .score-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .score-table th {
       background: var(--slate-100);
-      padding: 0.75rem 1rem;
-      text-align: left;
       font-weight: 600;
-      color: var(--slate-700);
-      border-bottom: 2px solid #e2e8f0;
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
 
     .score-table td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid #e2e8f0;
-      color: var(--slate-600);
-    }
-
-    .score-table tr:hover {
-      background: #f8fafc;
+      font-size: 0.95rem;
+      color: var(--slate-700);
     }
 
     .score-value {
       font-weight: 700;
-      color: var(--emerald);
+      color: var(--blue);
     }
 
     .score-improved {
       color: var(--emerald);
-      font-size: 0.8rem;
-    }
-
-    /* Rewrite Comparison */
-    .rewrite-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .rewrite-card {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-
-    .rewrite-card.original {
-      border-left: 4px solid var(--slate-400);
-    }
-
-    .rewrite-card.improved {
-      border-left: 4px solid var(--emerald);
-    }
-
-    .rewrite-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
     }
 
-    .rewrite-card.original .rewrite-label {
-      color: var(--slate-500);
+    .rewrite-badge {
+      background: #ecfdf5;
+      color: #059669;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
     }
 
-    .rewrite-card.improved .rewrite-label {
-      color: var(--emerald);
-    }
-
-    .rewrite-score {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .rewrite-card.original .rewrite-score {
-      color: var(--slate-600);
-    }
-
-    .rewrite-card.improved .rewrite-score {
-      color: var(--emerald);
-    }
-
-    .rewrite-note {
-      font-size: 0.9rem;
-      color: var(--slate-600);
-    }
-
-    .rewrite-improvement {
-      text-align: center;
-      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-      padding: 1rem;
-      border-radius: 12px;
+    /* Essay Breakdown */
+    .essay-breakdown {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
       margin-top: 1rem;
     }
 
-    .rewrite-improvement-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--emerald);
-    }
-
-    .rewrite-improvement-label {
-      font-size: 0.85rem;
-      color: #065f46;
-    }
-
-    /* Summary */
-    .summary-list {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .summary-item {
-      display: flex;
-      gap: 1rem;
+    .breakdown-card {
+      background: var(--slate-100);
+      border-radius: 8px;
       padding: 1rem;
-      background: #f8fafc;
-      border-radius: 12px;
+      text-align: center;
     }
 
-    .summary-icon {
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .summary-content h4 {
-      font-weight: 600;
-      color: var(--slate-700);
+    .breakdown-label {
+      font-size: 0.85rem;
+      color: var(--slate-500);
       margin-bottom: 0.25rem;
     }
 
-    .summary-content p {
-      font-size: 0.9rem;
-      color: var(--slate-600);
-      margin: 0;
-    }
-
-    /* Next Focus */
-    .next-focus {
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-      border-left: 4px solid var(--blue);
-      padding: 1.25rem;
-      border-radius: 0 12px 12px 0;
-    }
-
-    .next-focus h4 {
-      font-weight: 600;
+    .breakdown-score {
+      font-size: 1.75rem;
+      font-weight: 700;
       color: var(--blue);
-      margin-bottom: 0.5rem;
     }
 
-    .next-focus p {
-      color: #1e40af;
-      font-size: 0.95rem;
-      margin: 0;
+    .breakdown-max {
+      font-size: 0.85rem;
+      color: var(--slate-400);
     }
 
-    /* What Parents Receive */
-    .receive-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
       margin-top: 1rem;
     }
 
-    .receive-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 1.5rem;
+    .comparison-table th, .comparison-table td {
+      padding: 0.75rem 1rem;
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-bottom: 1px solid #e2e8f0;
     }
 
-    .receive-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+    .comparison-table th {
+      background: var(--slate-100);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--slate-600);
     }
 
-    .receive-icon {
-      font-size: 2.5rem;
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .change-positive {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    /* Developmental Stage */
+    .stage-box {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       margin-bottom: 1rem;
     }
 
-    .receive-title {
-      font-weight: 600;
-      color: var(--slate-700);
-      margin-bottom: 0.5rem;
+    .stage-number {
+      background: #f59e0b;
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
     }
 
-    .receive-timing {
-      font-size: 0.85rem;
-      color: var(--cyan);
+    .stage-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      color: #92400e;
       font-weight: 600;
-      margin-bottom: 0.5rem;
     }
 
-    .receive-desc {
+    .stage-subtitle {
       font-size: 0.9rem;
-      color: var(--slate-500);
+      color: #a16207;
+    }
+
+    .stage-desc {
+      color: #78350f;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .stage-next {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .stage-next-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .stage-next-text {
+      color: var(--slate-700);
+      font-size: 0.95rem;
+    }
+
+    /* Next Focus */
+    .focus-box {
+      background: #ecfdf5;
+      border: 2px solid var(--emerald);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .focus-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #059669;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .focus-text {
+      color: var(--slate-800);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .focus-detail {
+      color: var(--slate-600);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
     }
 
     /* CTA Section */
     .cta-section {
-      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
       padding: 3rem 2rem;
       text-align: center;
     }
@@ -567,57 +475,40 @@
 
     .cta-content h2 {
       font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      color: var(--cyan);
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
     }
 
-    body[data-lang="zh"] .cta-content h2 {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .cta-content p {
+      color: var(--slate-300);
+      margin-bottom: 1.5rem;
     }
 
     .cta-button {
       display: inline-block;
-      background: white;
-      color: var(--blue);
-      padding: 1rem 2rem;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2.5rem;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
     }
 
     .cta-button:hover {
+      background: #2563eb;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .cta-button.secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-      box-shadow: none;
-    }
-
-    .cta-button.secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
     }
 
     /* Footer */
     .footer {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      background: var(--deep-navy);
       padding: 2rem;
-      color: white;
       text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-links {
@@ -629,563 +520,325 @@
     }
 
     .footer-links a {
-      color: var(--slate-300);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--cyan);
-    }
-
-    .footer-contact {
       color: var(--slate-400);
+      text-decoration: none;
       font-size: 0.9rem;
     }
 
+    .footer-links a:hover { color: var(--cyan); }
+
+    .footer-contact {
+      color: var(--slate-500);
+      font-size: 0.85rem;
+    }
+
     .footer-contact a {
-      color: var(--cyan);
+      color: var(--slate-400);
       text-decoration: none;
     }
 
-    .footer-contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* Mobile Nav Toggle */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rewrite-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .receive-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--deep-navy);
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-content {
-        flex-wrap: wrap;
-      }
-
-      .lang-toggle {
-        order: 2;
-      }
-
-      .nav-cta {
-        width: 100%;
-        text-align: center;
-        margin-top: 0.5rem;
-      }
-
-      .page-header h1 {
-        font-size: 1.75rem;
-      }
-
-      .section {
-        padding: 2rem 1.25rem;
-      }
-
-      .report-body {
-        padding: 1.5rem;
-      }
-
-      .score-table {
-        font-size: 0.8rem;
-      }
-
-      .score-table th,
-      .score-table td {
-        padding: 0.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
+      .page-header h1 { font-size: 1.75rem; }
+      .essay-breakdown { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
-<body data-lang="en">
+<body>
 
-    <nav class="nav">
+  <!-- Navigation -->
+  <nav class="nav">
     <div class="nav-content">
-      <a href="index.html">
-        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
-      </a>
-      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" class="nav-link">
-          <span data-lang-content="en">Home</span>
-          <span data-lang-content="zh">首页</span>
-        </a>
-        <a href="course.html" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <a href="syllabus.html" class="nav-link">
-          <span data-lang-content="en">Curriculum</span>
-          <span data-lang-content="zh">课程大纲</span>
-        </a>
-        <a href="sample.html" class="nav-link">
-          <span data-lang-content="en">Sample</span>
-          <span data-lang-content="zh">练习样例</span>
-        </a>
-        <a href="progress.html" class="nav-link active">
-          <span data-lang-content="en">Progress</span>
-          <span data-lang-content="zh">进度报告</span>
-        </a>
-        <a href="results.html" class="nav-link">
-          <span data-lang-content="en">Results</span>
-          <span data-lang-content="zh">学习成果</span>
-        </a>
-        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">
-          <span data-lang-content="en">Enroll</span>
-          <span data-lang-content="zh">报名咨询</span>
-        </a>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      <a href="landing.html" class="nav-logo">LuminAIT</a>
+      <div class="nav-links">
+        <a href="guide.html" class="nav-link">Method</a>
+        <a href="progress.html" class="nav-link active">Progress</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="course.html" class="nav-cta">Enroll</a>
       </div>
     </div>
   </nav>
 
-
+  <!-- Page Header -->
   <header class="page-header">
     <div class="page-header-content">
-      <h1 data-lang-content="en">Progress Reports</h1>
-      <h1 data-lang-content="zh">进度报告</h1>
-      <p class="subtitle">
-        <span data-lang-content="en">How we track your child's development</span>
-        <span data-lang-content="zh">我们如何跟踪您孩子的发展</span>
-      </p>
+      <h1>Sample Progress Report</h1>
+      <p>This is what you receive each term — measurable progress, not vague improvement claims.</p>
+      <p class="meta">Example student: Desmond · Term 4, 2025 · Romeo and Juliet</p>
     </div>
   </header>
 
-  <section class="section-white">
-    <div class="section intro">
-      <p data-lang-content="en">
-        Every parent receives detailed progress reports showing exactly how their child is developing. We track three core skills — evidence, reasoning, and analysis — and provide clear, actionable feedback at every stage.
-      </p>
-      <p data-lang-content="zh">
-        每位家长都会收到详细的进度报告，清楚展示孩子的发展情况。我们跟踪三项核心技能——证据、推理和分析——并在每个阶段提供清晰、可操作的反馈。
-      </p>
-    </div>
-  </section>
+  <!-- Report Panels -->
+  <section class="section bg-gray">
+    <div class="section-inner">
 
-  <section class="section-gray">
-    <div class="section">
-      <h2 class="section-title">
-        <span data-lang-content="en">Sample Progress Report</span>
-        <span data-lang-content="zh">进度报告样例</span>
-      </h2>
-      <div class="sample-report">
-        <div class="report-header">
-          <div class="report-badge">
-            <span data-lang-content="en">Sample Report</span>
-            <span data-lang-content="zh">报告样例</span>
-          </div>
-          <h3 class="report-title">
-            <span data-lang-content="en">Student Progress Report</span>
-            <span data-lang-content="zh">学生进度报告</span>
-          </h3>
-          <p class="report-meta">
-            <span data-lang-content="en">[Sample Student] · Term 1, 2026 · Week 4</span>
-            <span data-lang-content="zh">[样例学生] · 2026年第一学期 · 第4周</span>
-          </p>
+      <!-- Panel 1: Course Map -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">1</span>
+          <h3 class="panel-title">Course Progress</h3>
         </div>
-        <div class="report-body">
-          <div class="report-section">
-            <h4 class="report-section-title">
-              <span class="report-section-icon">📊</span>
-              <span data-lang-content="en">Skills We Track</span>
-              <span data-lang-content="zh">我们跟踪的技能</span>
-            </h4>
-            <div class="skills-grid">
-              <div class="skill-card">
-                <div class="skill-icon">📖</div>
-                <div class="skill-name">
-                  <span data-lang-content="en">Evidence</span>
-                  <span data-lang-content="zh">证据</span>
-                </div>
-                <div class="skill-desc">
-                  <span data-lang-content="en">Supporting claims with text details</span>
-                  <span data-lang-content="zh">用文本细节支撑论点</span>
-                </div>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">🧠</div>
-                <div class="skill-name">
-                  <span data-lang-content="en">Reasoning</span>
-                  <span data-lang-content="zh">推理</span>
-                </div>
-                <div class="skill-desc">
-                  <span data-lang-content="en">Explaining why things matter</span>
-                  <span data-lang-content="zh">解释事物的重要性</span>
-                </div>
-              </div>
-              <div class="skill-card">
-                <div class="skill-icon">🔍</div>
-                <div class="skill-name">
-                  <span data-lang-content="en">Analysis</span>
-                  <span data-lang-content="zh">分析</span>
-                </div>
-                <div class="skill-desc">
-                  <span data-lang-content="en">Explaining author's choices</span>
-                  <span data-lang-content="zh">解释作者的选择</span>
-                </div>
-              </div>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">Your child always knows where they are in the progression. Weeks 1-4 build evidence skills. Weeks 5-6 build reasoning. Weeks 7-8 bring it together. <strong>No surprises.</strong></div>
+          </div>
+          <div class="course-map">
+            <div class="map-week completed">W1</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week completed">W2</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week completed">W3</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week completed">W4</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week completed">W5</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week completed">W6</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week completed">W7</div>
+            <span class="map-arrow">→</span>
+            <div class="map-week current">W8</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Weekly Scores (Evidence) -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">2</span>
+          <h3 class="panel-title">Evidence Skills (TVODE)</h3>
+        </div>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">We measure every week. Each score shows a specific skill. When they rewrite after feedback, we measure again — so you can <strong>see the improvement from feedback</strong>.</div>
+          </div>
+          <table class="score-table">
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Score</th>
+                <th>What They Did</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Week 1</td>
+                <td>
+                  <span class="score-value">3.4</span> → <span class="score-value">4.5</span>
+                  <span class="rewrite-badge">+32% rewrite</span>
+                </td>
+                <td>Analyzed dramatic irony in Act 1</td>
+              </tr>
+              <tr>
+                <td>Week 2</td>
+                <td><span class="score-value">3.8</span></td>
+                <td>Identified foreshadowing patterns</td>
+              </tr>
+              <tr>
+                <td>Week 3</td>
+                <td><span class="score-value">4.1</span></td>
+                <td>Mapped light/dark imagery across acts</td>
+              </tr>
+              <tr>
+                <td>Week 4</td>
+                <td><span class="score-value">4.2</span></td>
+                <td>Connected devices to thesis</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 1rem; color: var(--slate-500); font-size: 0.9rem;">Scores out of 5. Average: <strong>3.9</strong> (Essay: <strong>4.2</strong>)</p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Weekly Scores (Reasoning) -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">3</span>
+          <h3 class="panel-title">Reasoning Skills (Thesis)</h3>
+        </div>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">Once they can gather evidence, we teach them to build arguments. These scores show their <strong>reasoning development</strong> — can they explain why the evidence matters?</div>
+          </div>
+          <table class="score-table">
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Score</th>
+                <th>What They Did</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Week 5</td>
+                <td><span class="score-value">3.6</span></td>
+                <td>Developed thesis statement</td>
+              </tr>
+              <tr>
+                <td>Week 6</td>
+                <td><span class="score-value">4.0</span></td>
+                <td>Built argument structure</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 1rem; color: var(--slate-500); font-size: 0.9rem;">Scores out of 5. Average: <strong>3.8</strong> (Essay: <strong>4.0</strong>)</p>
+        </div>
+      </div>
+
+      <!-- Panel 4: Essay Breakdown -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">4</span>
+          <h3 class="panel-title">Final Essay Breakdown</h3>
+        </div>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">The essay is the test. We break it into three dimensions so you see <strong>exactly where their strengths and gaps are</strong>.</div>
+          </div>
+          <div class="essay-breakdown">
+            <div class="breakdown-card">
+              <div class="breakdown-label">Argument</div>
+              <div class="breakdown-score">4.0</div>
+              <div class="breakdown-max">/ 5</div>
+            </div>
+            <div class="breakdown-card">
+              <div class="breakdown-label">Evidence</div>
+              <div class="breakdown-score">4.2</div>
+              <div class="breakdown-max">/ 5</div>
+            </div>
+            <div class="breakdown-card">
+              <div class="breakdown-label">Structure</div>
+              <div class="breakdown-score">3.8</div>
+              <div class="breakdown-max">/ 5</div>
             </div>
           </div>
+          <p style="margin-top: 1rem; color: var(--slate-500); font-size: 0.9rem; text-align: center;">Overall Essay Score: <strong>4.0 / 5</strong></p>
+        </div>
+      </div>
 
-          <div class="report-section">
-            <h4 class="report-section-title">
-              <span class="report-section-icon">📈</span>
-              <span data-lang-content="en">Score Progression</span>
-              <span data-lang-content="zh">分数进展</span>
-            </h4>
-            <table class="score-table">
-              <thead>
-                <tr>
-                  <th>
-                    <span data-lang-content="en">Week</span>
-                    <span data-lang-content="zh">周次</span>
-                  </th>
-                  <th>
-                    <span data-lang-content="en">Focus</span>
-                    <span data-lang-content="zh">重点</span>
-                  </th>
-                  <th>
-                    <span data-lang-content="en">Score</span>
-                    <span data-lang-content="zh">分数</span>
-                  </th>
-                  <th>
-                    <span data-lang-content="en">Notes</span>
-                    <span data-lang-content="zh">备注</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>
-                    <span data-lang-content="en">Exposition Devices</span>
-                    <span data-lang-content="zh">开端手法</span>
-                  </td>
-                  <td><span class="score-value">2.5</span></td>
-                  <td>
-                    <span data-lang-content="en">Identifies devices, needs significance work</span>
-                    <span data-lang-content="zh">能识别手法，需加强意义阐述</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <span data-lang-content="en">Rising Action</span>
-                    <span data-lang-content="zh">情节上升</span>
-                  </td>
-                  <td><span class="score-value">2.8</span> <span class="score-improved">+0.3</span></td>
-                  <td>
-                    <span data-lang-content="en">Better evidence selection</span>
-                    <span data-lang-content="zh">证据选择有进步</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <span data-lang-content="en">Climax & Structure</span>
-                    <span data-lang-content="zh">高潮与结构</span>
-                  </td>
-                  <td><span class="score-value">3.2</span> <span class="score-improved">+0.4</span></td>
-                  <td>
-                    <span data-lang-content="en">Strong analysis emerging</span>
-                    <span data-lang-content="zh">分析能力开始显现</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>
-                    <span data-lang-content="en">Narrative Voice</span>
-                    <span data-lang-content="zh">叙述声音</span>
-                  </td>
-                  <td><span class="score-value">3.5</span> <span class="score-improved">+0.3</span></td>
-                  <td>
-                    <span data-lang-content="en">Excellent reasoning development</span>
-                    <span data-lang-content="zh">推理能力发展优秀</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <!-- Panel 5: Skills Comparison -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">5</span>
+          <h3 class="panel-title">Skills Comparison</h3>
+        </div>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">Did the practice translate? This table shows how weekly skill-building <strong>shows up in final performance</strong>. Desmond's evidence work jumped from 3.9 to 4.2 under essay conditions.</div>
           </div>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Weekly Avg</th>
+                <th>Essay Score</th>
+                <th>Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Evidence (TVODE)</td>
+                <td>3.9</td>
+                <td>4.2</td>
+                <td class="change-positive">+0.3</td>
+              </tr>
+              <tr>
+                <td>Reasoning (Thesis)</td>
+                <td>3.8</td>
+                <td>4.0</td>
+                <td class="change-positive">+0.2</td>
+              </tr>
+              <tr>
+                <td>Structure</td>
+                <td>—</td>
+                <td>3.8</td>
+                <td style="color: var(--slate-400);">New skill</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <div class="report-section">
-            <h4 class="report-section-title">
-              <span class="report-section-icon">🔄</span>
-              <span data-lang-content="en">Rewrite Impact</span>
-              <span data-lang-content="zh">修改效果</span>
-            </h4>
-            <div class="rewrite-grid">
-              <div class="rewrite-card original">
-                <div class="rewrite-label">
-                  <span data-lang-content="en">Original Submission</span>
-                  <span data-lang-content="zh">原始提交</span>
-                </div>
-                <div class="rewrite-score">2.8</div>
-                <p class="rewrite-note">
-                  <span data-lang-content="en">Week 2 worksheet before feedback</span>
-                  <span data-lang-content="zh">第2周练习，反馈前</span>
-                </p>
-              </div>
-              <div class="rewrite-card improved">
-                <div class="rewrite-label">
-                  <span data-lang-content="en">After Rewrite</span>
-                  <span data-lang-content="zh">修改后</span>
-                </div>
-                <div class="rewrite-score">3.8</div>
-                <p class="rewrite-note">
-                  <span data-lang-content="en">Same worksheet after applying feedback</span>
-                  <span data-lang-content="zh">应用反馈后的同一练习</span>
-                </p>
+      <!-- Panel 6: Developmental Stage -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">6</span>
+          <h3 class="panel-title">Developmental Profile</h3>
+        </div>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">We don't just score — we diagnose. Your child is placed on a developmental ladder so you know <strong>exactly what they can do now and what comes next</strong>.</div>
+          </div>
+          <div class="stage-box">
+            <div class="stage-header">
+              <div class="stage-number">3</div>
+              <div>
+                <div class="stage-title">Explaining How</div>
+                <div class="stage-subtitle">Analysis Level</div>
               </div>
             </div>
-            <div class="rewrite-improvement">
-              <div class="rewrite-improvement-value">+36%</div>
-              <div class="rewrite-improvement-label">
-                <span data-lang-content="en">Improvement from feedback application</span>
-                <span data-lang-content="zh">应用反馈后的提升</span>
-              </div>
+            <div class="stage-desc">
+              Desmond can identify relevant devices and explain how they work in the text. He's moving beyond description ("there is dramatic irony") toward analysis ("the dramatic irony creates dread by...").
             </div>
-          </div>
-
-          <div class="report-section">
-            <h4 class="report-section-title">
-              <span class="report-section-icon">📝</span>
-              <span data-lang-content="en">Summary</span>
-              <span data-lang-content="zh">总结</span>
-            </h4>
-            <div class="summary-list">
-              <div class="summary-item">
-                <span class="summary-icon">📖</span>
-                <div class="summary-content">
-                  <h4 data-lang-content="en">Evidence</h4>
-                  <h4 data-lang-content="zh">证据</h4>
-                  <p data-lang-content="en">Strong improvement in selecting relevant quotes. Now consistently chooses evidence that supports analytical claims.</p>
-                  <p data-lang-content="zh">在选择相关引用方面有明显进步。现在能持续选择支持分析论点的证据。</p>
-                </div>
-              </div>
-              <div class="summary-item">
-                <span class="summary-icon">🧠</span>
-                <div class="summary-content">
-                  <h4 data-lang-content="en">Reasoning</h4>
-                  <h4 data-lang-content="zh">推理</h4>
-                  <p data-lang-content="en">Developing ability to explain significance. Moving beyond description toward interpretation.</p>
-                  <p data-lang-content="zh">解释意义的能力正在发展。正在从描述向解读过渡。</p>
-                </div>
-              </div>
-              <div class="summary-item">
-                <span class="summary-icon">🔍</span>
-                <div class="summary-content">
-                  <h4 data-lang-content="en">Analysis</h4>
-                  <h4 data-lang-content="zh">分析</h4>
-                  <p data-lang-content="en">Beginning to connect devices to author intent. Ready to develop more sophisticated analytical sentences.</p>
-                  <p data-lang-content="zh">开始将文学手法与作者意图相连接。已准备好发展更复杂的分析句子。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="report-section">
-            <h4 class="report-section-title">
-              <span class="report-section-icon">🎯</span>
-              <span data-lang-content="en">Next Focus</span>
-              <span data-lang-content="zh">下一步重点</span>
-            </h4>
-            <div class="next-focus">
-              <h4 data-lang-content="en">Recommended Development Area</h4>
-              <h4 data-lang-content="zh">建议发展领域</h4>
-              <p data-lang-content="en">Focus on strengthening the connection between evidence and effect. Practice explaining how specific word choices create emotional impact on readers.</p>
-              <p data-lang-content="zh">重点加强证据与效果之间的联系。练习解释具体的词语选择如何对读者产生情感影响。</p>
+            <div class="stage-next">
+              <div class="stage-next-label">Next Stage: Explaining Why</div>
+              <div class="stage-next-text">Connecting device effects to the author's larger argument. Ask: "Why did Shakespeare choose this technique here?"</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section-white">
-    <div class="section">
-      <h2 class="section-title">
-        <span data-lang-content="en">What Parents Receive</span>
-        <span data-lang-content="zh">家长收到的内容</span>
-      </h2>
-      <div class="receive-grid">
-        <div class="receive-card">
-          <div class="receive-icon">📊</div>
-          <div class="receive-title">
-            <span data-lang-content="en">Progress Reports</span>
-            <span data-lang-content="zh">进度报告</span>
-          </div>
-          <div class="receive-timing">
-            <span data-lang-content="en">Weeks 4 & 8</span>
-            <span data-lang-content="zh">第4周和第8周</span>
-          </div>
-          <div class="receive-desc">
-            <span data-lang-content="en">Comprehensive reports showing skill development and trajectory</span>
-            <span data-lang-content="zh">展示技能发展和进步轨迹的综合报告</span>
-          </div>
+      <!-- Panel 7: Next Focus -->
+      <div class="report-panel">
+        <div class="panel-header">
+          <span class="panel-number">7</span>
+          <h3 class="panel-title">Next Focus</h3>
         </div>
-        <div class="receive-card">
-          <div class="receive-icon">💬</div>
-          <div class="receive-title">
-            <span data-lang-content="en">Written Feedback</span>
-            <span data-lang-content="zh">书面反馈</span>
+        <div class="panel-content">
+          <div class="panel-annotation">
+            <div class="annotation-label">What this shows you</div>
+            <div class="annotation-text">Not a vague "try harder" — a <strong>precise next step</strong> based on the data. One thing to work on, clearly stated.</div>
           </div>
-          <div class="receive-timing">
-            <span data-lang-content="en">Every Week</span>
-            <span data-lang-content="zh">每周</span>
-          </div>
-          <div class="receive-desc">
-            <span data-lang-content="en">Detailed feedback on every submission with specific improvement suggestions</span>
-            <span data-lang-content="zh">每次作业的详细反馈，包含具体改进建议</span>
-          </div>
-        </div>
-        <div class="receive-card">
-          <div class="receive-icon">📋</div>
-          <div class="receive-title">
-            <span data-lang-content="en">Final Assessment</span>
-            <span data-lang-content="zh">结业测评</span>
-          </div>
-          <div class="receive-timing">
-            <span data-lang-content="en">Week 10</span>
-            <span data-lang-content="zh">第10周</span>
-          </div>
-          <div class="receive-desc">
-            <span data-lang-content="en">Complete assessment with detailed breakdown of all skill areas</span>
-            <span data-lang-content="zh">完整测评，包含所有技能领域的详细分析</span>
+          <div class="focus-box">
+            <div class="focus-label">Priority for Term 1, 2026</div>
+            <div class="focus-text">Structure: Paragraph cohesion</div>
+            <div class="focus-detail">Desmond's evidence and argument scores are strong, but his paragraphs don't always flow logically from one to the next. Focus on linking sentences between paragraphs.</div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-content">
-      <h2 data-lang-content="en">Ready to see your child's progress?</h2>
-      <h2 data-lang-content="zh">准备好见证您孩子的进步了吗？</h2>
-      <div class="cta-buttons">
-        <a href="results.html" class="cta-button">
-          <span data-lang-content="en">See Our Results</span>
-          <span data-lang-content="zh">查看学习成果</span>
-        </a>
-        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button secondary">
-          <span data-lang-content="en">Enroll Now</span>
-          <span data-lang-content="zh">立即报名</span>
-        </a>
-      </div>
+      <h2>This is the visibility you get.</h2>
+      <p>No guessing whether it's working. Weekly scores, essay breakdowns, and a clear next step — every term.</p>
+      <a href="course.html" class="cta-button">See the Course →</a>
     </div>
   </section>
 
-    <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-links">
-      <a href="index.html">
-        <span data-lang-content="en">Home</span>
-        <span data-lang-content="zh">首页</span>
-      </a>
-      <a href="course.html">
-        <span data-lang-content="en">Course</span>
-        <span data-lang-content="zh">课程</span>
-      </a>
-      <a href="syllabus.html">
-        <span data-lang-content="en">Curriculum</span>
-        <span data-lang-content="zh">课程大纲</span>
-      </a>
-      <a href="sample.html">
-        <span data-lang-content="en">Sample</span>
-        <span data-lang-content="zh">练习样例</span>
-      </a>
-      <a href="progress.html">
-        <span data-lang-content="en">Progress</span>
-        <span data-lang-content="zh">进度报告</span>
-      </a>
-      <a href="results.html">
-        <span data-lang-content="en">Results</span>
-        <span data-lang-content="zh">学习成果</span>
-      </a>
+      <a href="landing.html">Home</a>
+      <a href="guide.html">Method</a>
+      <a href="progress.html">Progress</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="course.html">Course</a>
     </div>
     <p class="footer-contact">
-      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="mailto:hello@luminait.app">hello@luminait.app</a> · 
       <a href="tel:+61421213517">+61 421 213 517</a>
     </p>
   </footer>
-
-
-    <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Load saved language preference
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) {
-        setLanguage(savedLang);
-      }
-    });
-  </script>
-
 
 </body>
 </html>
