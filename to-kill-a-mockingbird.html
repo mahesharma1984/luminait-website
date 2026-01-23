@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Kill a Mockingbird Analysis Guide | LuminAIT Learning</title>
+  <meta name="description" content="To Kill a Mockingbird analysis guide coming soon. Text-specific English tutoring for Years 9-10 students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--deep-navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    [data-lang-content="zh"] { display: none !important; }
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"] { display: block !important; }
+
+    .nav {
+      background: transparent;
+      padding: 1.25rem 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo-text {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      color: var(--slate-400);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 3px;
+      margin-left: 0.5rem;
+    }
+
+    .lang-btn {
+      padding: 0.35rem 0.6rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-400);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover { color: white; }
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(165deg, var(--deep-navy) 0%, var(--navy) 40%, #0f2744 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 50%;
+      height: 160%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 212, 255, 0.15);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--cyan);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero .author {
+      color: var(--slate-400);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero .pattern {
+      color: var(--cyan);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon-box h2 {
+      color: var(--slate-300);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .coming-soon-box p {
+      color: var(--slate-500);
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      background: var(--deep-navy);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-contact {
+      color: var(--slate-500);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--slate-400);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover { color: var(--cyan); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 1rem; }
+      .nav-links { display: none; }
+      .hero { padding: 6rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo-text">LuminAIT</a>
+      <div class="nav-links">
+        <a href="curriculum.html" class="nav-link">
+          <span data-lang-content="en">How It Works</span>
+          <span data-lang-content="zh">课程方法</span>
+        </a>
+        <a href="course.html" class="nav-link">
+          <span data-lang-content="en">Course</span>
+          <span data-lang-content="zh">课程</span>
+        </a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">Y9-10</div>
+      <h1>To Kill a Mockingbird</h1>
+      <p class="author">Harper Lee</p>
+      <p class="pattern">
+        <span data-lang-content="en">Innocence & Injustice</span>
+        <span data-lang-content="zh">纯真与不公</span>
+      </p>
+      <div class="coming-soon-box">
+        <h2>
+          <span data-lang-content="en">Analysis guide coming soon</span>
+          <span data-lang-content="zh">分析指南即将推出</span>
+        </h2>
+        <p>
+          <span data-lang-content="en">We're building a comprehensive guide for this text. Check back soon or contact us to be notified.</span>
+          <span data-lang-content="zh">我们正在为这本书制作全面的指南。请稍后再来查看，或联系我们获取通知。</span>
+        </p>
+      </div>
+      <a href="index.html" class="back-link">
+        <span data-lang-content="en">← Back to all texts</span>
+        <span data-lang-content="zh">← 返回所有文本</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-contact">
+      <a href="mailto:hello@luminait.com.au">hello@luminait.com.au</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) setLanguage(savedLang);
+    });
+  </script>
+
+</body>
+</html>

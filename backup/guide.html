@@ -35,34 +35,6 @@
       background: var(--slate-100);
     }
 
-    /* Language Toggle */
-    .lang-toggle {
-      display: flex;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      padding: 3px;
-      margin-left: 0.5rem;
-    }
-
-    .lang-btn {
-      padding: 0.35rem 0.6rem;
-      border: none;
-      background: transparent;
-      color: var(--slate-300);
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .lang-btn:hover { color: white; }
-    .lang-btn.active {
-      background: var(--cyan);
-      color: var(--deep-navy);
-    }
-
     /* Navigation */
     .nav {
       background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
@@ -441,19 +413,17 @@
     }
   </style>
 </head>
-<body data-lang="en">
+<body>
 
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-content">
-      <a href="index.html" class="nav-logo">LuminAIT</a>
+      <a href="landing.html" class="nav-logo">LuminAIT</a>
       <div class="nav-links">
-        <a href="curriculum.html" class="nav-link">How It Works</a>
-        <a href="course.html" class="nav-cta">Course</a>
-        <div class="lang-toggle">
-          <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-          <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
-        </div>
+        <a href="guide.html" class="nav-link active">Method</a>
+        <a href="progress.html" class="nav-link">Progress</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="course.html" class="nav-cta">Enroll</a>
       </div>
     </div>
   </nav>
@@ -635,31 +605,17 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="curriculum.html">How It Works</a>
+      <a href="landing.html">Home</a>
+      <a href="guide.html">Method</a>
+      <a href="progress.html">Progress</a>
+      <a href="curriculum.html">Curriculum</a>
       <a href="course.html">Course</a>
     </div>
     <p class="footer-contact">
-      <a href="mailto:hello@luminait.com.au">hello@luminait.com.au</a> ·
+      <a href="mailto:hello@luminait.app">hello@luminait.app</a> · 
       <a href="tel:+61421213517">+61 421 213 517</a>
     </p>
   </footer>
-
-  <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) setLanguage(savedLang);
-    });
-  </script>
 
 </body>
 </html>

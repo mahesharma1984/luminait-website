@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuminAIT Learning | Analytical Writing for Secondary Students</title>
+  <meta name="description" content="A 10-week course teaching literary analysis and logical writing for Years 7-12 students. Prepares for NAPLAN, VCE, IB and beyond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: #00d4ff33;
+      --blue: #3b82f6;
+      --emerald: #10b981;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      font-size: 16px;
+      background: var(--slate-100);
+    }
+
+    body[data-lang="zh"] {
+      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Navigation */
+    .nav {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: var(--slate-300);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .lang-btn {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      background: transparent;
+      color: var(--slate-300);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: white;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+
+    /* Language visibility */
+    [data-lang-content="zh"] { display: none !important; }
+    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    body[data-lang="zh"] p[data-lang-content="zh"],
+    body[data-lang="zh"] h1[data-lang-content="zh"],
+    body[data-lang="zh"] h2[data-lang-content="zh"],
+    body[data-lang="zh"] h3[data-lang-content="zh"],
+    body[data-lang="zh"] div[data-lang-content="zh"],
+    body[data-lang="zh"] li[data-lang-content="zh"] { display: block !important; }
+    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 4rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 212, 255, 0.3));
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    body[data-lang="zh"] .hero h1 {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    /* Cycling Author Animation */
+    .hero-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--slate-300);
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    body[data-lang="zh"] .hero-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .hero-line {
+      display: inline-block;
+    }
+
+    .cycling-author {
+      display: inline-block;
+      position: relative;
+      color: var(--cyan);
+      font-weight: 600;
+      min-width: 180px;
+      line-height: 1.6;
+    }
+
+    .cycling-author-text {
+      display: inline-block;
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      color: var(--cyan);
+      font-weight: 400;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    .hero-cta:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Section Base */
+    .section {
+      padding: 3rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .bg-gray { background: var(--slate-100); }
+    .bg-white { background: white; }
+    .bg-navy {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+    }
+
+    /* Map Cards Grid */
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .map-card {
+      background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .map-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.12);
+    }
+
+    .map-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .map-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .map-card-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.35rem;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    body[data-lang="zh"] .map-card-title {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .map-card-desc {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .map-card-highlights {
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .map-card-highlights li {
+      padding: 0.35rem 0 0.35rem 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+
+    .map-card-highlights li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .map-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .map-card-link::after {
+      content: '→';
+      transition: transform 0.2s ease;
+    }
+
+    .map-card:hover .map-card-link::after {
+      transform: translateX(4px);
+    }
+
+    /* Featured Card (Course) */
+    .map-card.featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      border: none;
+      color: white;
+    }
+
+    .map-card.featured .map-card-title {
+      color: var(--cyan);
+    }
+
+    .map-card.featured .map-card-desc {
+      color: var(--slate-300);
+    }
+
+    .map-card.featured .map-card-highlights li {
+      color: var(--slate-300);
+    }
+
+    .map-card.featured .map-card-link {
+      color: var(--cyan);
+    }
+
+    .map-card.featured::before {
+      background: var(--cyan);
+    }
+
+    .featured-content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .featured-stats {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .featured-stat {
+      text-align: center;
+    }
+
+    .featured-stat-value {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1;
+    }
+
+    .featured-stat-label {
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      margin-top: 0.25rem;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      text-align: center;
+      position: relative;
+    }
+
+    .stats-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--cyan);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    body[data-lang="zh"] .stats-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .stats-subheadline {
+      color: var(--slate-400);
+      margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-item {
+      padding: 1.5rem;
+    }
+
+    .stat-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--cyan);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--slate-300);
+      margin-top: 0.5rem;
+    }
+
+    /* Final CTA */
+    .final-cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    .final-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .final-cta-headline {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    body[data-lang="zh"] .final-cta-headline {
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    .final-cta-button {
+      display: inline-block;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 212, 255, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-cta-button:hover {
+      background: #00e5ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--slate-300);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-contact {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+
+    .footer-contact a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-content {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-stats {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--deep-navy);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-content {
+        flex-wrap: wrap;
+      }
+
+      .lang-toggle {
+        order: 2;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-headline {
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+
+      .cycling-author {
+        min-width: 120px;
+      }
+
+      .hero-logo {
+        width: 150px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+      }
+
+      .featured-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html">
+        <img src="luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">
+          <span data-lang-content="en">Home</span>
+          <span data-lang-content="zh">首页</span>
+        </a>
+        <a href="curriculum.html" class="nav-link">
+          <span data-lang-content="en">Curriculum</span>
+          <span data-lang-content="zh">课程大纲</span>
+        </a>
+        <a href="guide.html" class="nav-link">
+          <span data-lang-content="en">Sample</span>
+          <span data-lang-content="zh">练习样例</span>
+        </a>
+        <a href="progress.html" class="nav-link">
+          <span data-lang-content="en">Progress</span>
+          <span data-lang-content="zh">进度报告</span>
+        </a>
+        <a href="course.html" class="nav-cta">
+          <span data-lang-content="en">Enroll</span>
+          <span data-lang-content="zh">报名咨询</span>
+        </a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section (from original index.html) -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="luminait_logo.png" alt="LuminAIT Learning" class="hero-logo">
+      <h1 class="hero-headline" data-lang-content="en">
+        <span class="hero-line">In 5 lessons, write thematic essays on</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">that are informed, reasoned, and genuinely YOURS (not AI!).</span>
+      </h1>
+      <h1 class="hero-headline" data-lang-content="zh">
+        <span class="hero-line">5周内，撰写关于</span><br>
+        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span><br>
+        <span class="hero-line">的主题论文——有理有据，独具见解。</span>
+      </h1>
+      <a href="course.html" class="hero-cta">
+        <span data-lang-content="en">See the Course</span>
+        <span data-lang-content="zh">查看课程详情</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Main Content Cards -->
+  <section class="section bg-gray">
+    <div class="section-inner">
+      <div class="map-grid">
+
+        <!-- Card 1: 5-Step Method -->
+        <a href="curriculum.html" class="map-card">
+          <div class="map-card-icon">📐</div>
+          <h3 class="map-card-title">
+            <span data-lang-content="en">5-Step Method</span>
+            <span data-lang-content="zh">五步教学法</span>
+          </h3>
+          <p class="map-card-desc">
+            <span data-lang-content="en">A structured progression from understanding to writing. Each step builds on the last — no skipping ahead, no gaps.</span>
+            <span data-lang-content="zh">从理解到写作的结构化进阶。每一步都建立在前一步的基础上——不跳跃，不遗漏。</span>
+          </p>
+          <ul class="map-card-highlights">
+            <li>
+              <span data-lang-content="en">Pattern → Reading → Devices → Thesis → Essay</span>
+              <span data-lang-content="zh">模式 → 阅读 → 手法 → 论点 → 文章</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Clear output each week</span>
+              <span data-lang-content="zh">每周明确的学习成果</span>
+            </li>
+            <li>
+              <span data-lang-content="en">5-week or 10-week pathway</span>
+              <span data-lang-content="zh">5周或10周课程路径</span>
+            </li>
+          </ul>
+          <span class="map-card-link">
+            <span data-lang-content="en">See the curriculum</span>
+            <span data-lang-content="zh">查看课程大纲</span>
+          </span>
+        </a>
+
+        <!-- Card 2: Making Learning Visible -->
+        <a href="progress.html" class="map-card">
+          <div class="map-card-icon">📊</div>
+          <h3 class="map-card-title">
+            <span data-lang-content="en">Making Learning Visible</span>
+            <span data-lang-content="zh">让学习看得见</span>
+          </h3>
+          <p class="map-card-desc">
+            <span data-lang-content="en">Track progress with weekly scores, rewrite improvements, essay breakdowns, and term reports. No guessing whether it's working.</span>
+            <span data-lang-content="zh">通过每周评分、修改进步、文章分析和学期报告追踪进度。不用猜测是否有效。</span>
+          </p>
+          <ul class="map-card-highlights">
+            <li>
+              <span data-lang-content="en">Weekly skill scores</span>
+              <span data-lang-content="zh">每周技能评分</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Essay & exam feedback</span>
+              <span data-lang-content="zh">文章和考试反馈</span>
+            </li>
+            <li>
+              <span data-lang-content="en">End-of-term progress report</span>
+              <span data-lang-content="zh">学期末进度报告</span>
+            </li>
+          </ul>
+          <span class="map-card-link">
+            <span data-lang-content="en">See a sample report</span>
+            <span data-lang-content="zh">查看报告样例</span>
+          </span>
+        </a>
+
+        <!-- Card 3: Analysis Guide -->
+        <a href="guide.html" class="map-card">
+          <div class="map-card-icon">📖</div>
+          <h3 class="map-card-title">
+            <span data-lang-content="en">How We Teach the Text</span>
+            <span data-lang-content="zh">我们如何教授文本</span>
+          </h3>
+          <p class="map-card-desc">
+            <span data-lang-content="en">Not plot summary — the underlying pattern that makes essays possible. Students learn to see how the text works, not just what happens.</span>
+            <span data-lang-content="zh">不是情节概述——而是让写作成为可能的深层模式。学生学会理解文本如何运作，而不仅仅是发生了什么。</span>
+          </p>
+          <ul class="map-card-highlights">
+            <li>
+              <span data-lang-content="en">The pattern driving the text</span>
+              <span data-lang-content="zh">驱动文本的核心模式</span>
+            </li>
+            <li>
+              <span data-lang-content="en">Devices that create meaning</span>
+              <span data-lang-content="zh">创造意义的文学手法</span>
+            </li>
+            <li>
+              <span data-lang-content="en">From understanding to argument</span>
+              <span data-lang-content="zh">从理解到论证</span>
+            </li>
+          </ul>
+          <span class="map-card-link">
+            <span data-lang-content="en">See the Romeo & Juliet guide</span>
+            <span data-lang-content="zh">查看《罗密欧与朱丽叶》指南</span>
+          </span>
+        </a>
+
+        <!-- Card 4: Course (Featured) -->
+        <a href="course.html" class="map-card featured">
+          <div class="featured-content">
+            <div>
+              <div class="map-card-icon">🎯</div>
+              <h3 class="map-card-title">
+                <span data-lang-content="en">The Course</span>
+                <span data-lang-content="zh">课程</span>
+              </h3>
+              <p class="map-card-desc">
+                <span data-lang-content="en">Choose your pathway. Weekly worksheets, written feedback, progress tracking, and a clear output at the end.</span>
+                <span data-lang-content="zh">选择您的学习路径。每周练习、书面反馈、进度追踪，以及明确的最终成果。</span>
+              </p>
+              <ul class="map-card-highlights">
+                <li>
+                  <span data-lang-content="en">5-Week Foundation: Essay map + introduction — $275</span>
+                  <span data-lang-content="zh">5周基础课程：文章框架 + 引言 — $275</span>
+                </li>
+                <li>
+                  <span data-lang-content="en">10-Week Complete: Full 800-1000 word essay — $550</span>
+                  <span data-lang-content="zh">10周完整课程：完整800-1000字文章 — $550</span>
+                </li>
+              </ul>
+              <span class="map-card-link">
+                <span data-lang-content="en">See pricing & enroll</span>
+                <span data-lang-content="zh">查看价格并报名</span>
+              </span>
+            </div>
+            <div class="featured-stats">
+              <div class="featured-stat">
+                <div class="featured-stat-value">5</div>
+                <div class="featured-stat-label">
+                  <span data-lang-content="en">weeks min</span>
+                  <span data-lang-content="zh">周起</span>
+                </div>
+              </div>
+              <div class="featured-stat">
+                <div class="featured-stat-value">$275</div>
+                <div class="featured-stat-label">
+                  <span data-lang-content="en">starting</span>
+                  <span data-lang-content="zh">起</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section bg-navy">
+    <div class="section-inner stats-section">
+      <h2 class="stats-headline">
+        <span data-lang-content="en">Proven Results</span>
+        <span data-lang-content="zh">实证成果</span>
+      </h2>
+      <p class="stats-subheadline">
+        <span data-lang-content="en">From our previous cohorts</span>
+        <span data-lang-content="zh">来自往期学员</span>
+      </p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">of students improved</span>
+            <span data-lang-content="zh">学生取得进步</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">10-20%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">term improvement</span>
+            <span data-lang-content="zh">学期内提升</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">30-50%</div>
+          <div class="stat-label">
+            <span data-lang-content="en">improvement with feedback</span>
+            <span data-lang-content="zh">运用反馈后提升</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="section bg-navy final-cta-section">
+    <h2 class="final-cta-headline">
+      <span data-lang-content="en">Ready to help your child understand their English text?</span>
+      <span data-lang-content="zh">准备好帮助您的孩子理解英语文本了吗？</span>
+    </h2>
+    <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="final-cta-button">
+      <span data-lang-content="en">Get in Touch</span>
+      <span data-lang-content="zh">联系我们</span>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">
+        <span data-lang-content="en">Home</span>
+        <span data-lang-content="zh">首页</span>
+      </a>
+      <a href="curriculum.html">
+        <span data-lang-content="en">Curriculum</span>
+        <span data-lang-content="zh">课程大纲</span>
+      </a>
+      <a href="guide.html">
+        <span data-lang-content="en">Sample</span>
+        <span data-lang-content="zh">练习样例</span>
+      </a>
+      <a href="progress.html">
+        <span data-lang-content="en">Progress</span>
+        <span data-lang-content="zh">进度报告</span>
+      </a>
+      <a href="course.html">
+        <span data-lang-content="en">Course</span>
+        <span data-lang-content="zh">课程</span>
+      </a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <script>
+    // ============================================
+    // CONFIGURABLE CONTENT - Edit these arrays
+    // ============================================
+
+    // Authors that cycle in the hero headline
+    const cyclingAuthors = {
+      en: [
+        'Lois Lowry',
+        'Shakespeare',
+        'Harper Lee',
+        'Steinbeck',
+        'Orwell',
+        'Fitzgerald',
+        'Golding'
+      ],
+      zh: [
+        '洛伊丝·劳里',
+        '莎士比亚',
+        '哈珀·李',
+        '斯坦贝克',
+        '奥威尔',
+        '菲茨杰拉德',
+        '戈尔丁'
+      ]
+    };
+
+    // ============================================
+    // END CONFIGURABLE CONTENT
+    // ============================================
+
+    // Language functions
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      localStorage.setItem('luminait-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    }
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Typewriter effect for cycling author animation
+    let currentAuthorIndex = 0;
+    let typewriterTimeout;
+    let isRunning = false;
+
+    async function typeWriter(text, element, speed = 80) {
+      element.textContent = '';
+
+      // Type out the text character by character
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await new Promise(resolve => setTimeout(resolve, speed));
+      }
+
+      // Wait before starting to delete
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Delete the text character by character
+      for (let i = text.length; i > 0; i--) {
+        element.textContent = text.substring(0, i - 1);
+        await new Promise(resolve => setTimeout(resolve, speed / 2)); // Delete faster than typing
+      }
+    }
+
+    async function cycleAuthor() {
+      if (!isRunning) return;
+
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+
+      if (!authorEl || !authorElZh) return;
+
+      // Move to next author
+      currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
+
+      // Get next author texts
+      const nextAuthorEn = cyclingAuthors.en[currentAuthorIndex];
+      const nextAuthorZh = cyclingAuthors.zh[currentAuthorIndex];
+
+      // Type out both versions simultaneously (they'll be shown/hidden by language system)
+      await Promise.all([
+        typeWriter(nextAuthorEn, authorEl, 80),
+        typeWriter(nextAuthorZh, authorElZh, 80)
+      ]);
+
+      // Continue to next author if still running
+      if (isRunning) {
+        cycleAuthor();
+      }
+    }
+
+    function startAuthorCycle() {
+      isRunning = true;
+
+      // Initialize with first author (Lois Lowry)
+      const authorEl = document.getElementById('cyclingAuthor');
+      const authorElZh = document.getElementById('cyclingAuthorZh');
+
+      if (authorEl && authorElZh) {
+        authorEl.textContent = cyclingAuthors.en[0];
+        authorElZh.textContent = cyclingAuthors.zh[0];
+      }
+
+      // Start cycling after initial delay
+      setTimeout(() => {
+        cycleAuthor();
+      }, 3000); // Wait 3 seconds before starting to cycle
+    }
+
+    function stopAuthorCycle() {
+      isRunning = false;
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+        typewriterTimeout = null;
+      }
+    }
+
+    // Optional: Pause cycling on hover
+    function setupHoverPause() {
+      const heroHeadlines = document.querySelectorAll('.hero-headline');
+      heroHeadlines.forEach(headline => {
+        headline.addEventListener('mouseenter', () => {
+          stopAuthorCycle();
+        });
+        headline.addEventListener('mouseleave', () => {
+          startAuthorCycle();
+        });
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load saved language preference
+      const savedLang = localStorage.getItem('luminait-lang');
+      if (savedLang) {
+        setLanguage(savedLang);
+      }
+
+      // Start cycling authors
+      startAuthorCycle();
+      setupHoverPause();
+    });
+  </script>
+
+</body>
+</html>
