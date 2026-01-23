@@ -183,23 +183,131 @@ function generateQuickStats() {
 }
 
 /**
+ * Generate SEO meta tags HTML for a page
+ */
+function generateSeoMetaTags(page) {
+  const siteUrl = config.site.url || 'https://luminait.app';
+  const pageTitle = page.pageTitle?.en || `${page.title.en} | ${config.site.name}`;
+  const metaDesc = page.metaDescription?.en || config.site.description.en;
+  const keywords = config.site.keywords?.en || '';
+  const keywordsZh = config.site.keywords?.zh || '';
+  const socialImage = config.site.socialImage || 'social-preview.png';
+
+  return `
+  <!-- SEO Meta Tags -->
+  <link rel="canonical" href="${siteUrl}/${page.file}">
+  <link rel="alternate" hreflang="en" href="${siteUrl}/${page.file}">
+  <link rel="alternate" hreflang="zh" href="${siteUrl}/${page.file}?lang=zh">
+  <link rel="alternate" hreflang="x-default" href="${siteUrl}/${page.file}">
+  <meta name="keywords" content="${keywords}, ${keywordsZh}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="${pageTitle}">
+  <meta property="og:description" content="${metaDesc}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${siteUrl}/${page.file}">
+  <meta property="og:image" content="${siteUrl}/${socialImage}">
+  <meta property="og:site_name" content="${config.site.name}">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:locale:alternate" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${pageTitle}">
+  <meta name="twitter:description" content="${metaDesc}">
+  <meta name="twitter:image" content="${siteUrl}/${socialImage}">`;
+}
+
+/**
+ * Generate EducationalOrganization schema for homepage
+ */
+function generateOrgSchema() {
+  const siteUrl = config.site.url || 'https://luminait.app';
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": config.site.name,
+    "description": config.site.description.en,
+    "url": siteUrl,
+    "email": config.site.contact.email,
+    "telephone": config.site.contact.phone,
+    "areaServed": {
+      "@type": "City",
+      "name": "Melbourne",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "English Tutoring Courses",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "5-Week Foundation Course",
+          "description": "Analytical writing fundamentals for secondary students",
+          "provider": {
+            "@type": "Organization",
+            "name": config.site.name
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "10-Week Complete Course",
+          "description": "Comprehensive analytical writing mastery",
+          "provider": {
+            "@type": "Organization",
+            "name": config.site.name
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": config.course.price.replace('$', ''),
+            "priceCurrency": "AUD"
+          }
+        }
+      ]
+    }
+  };
+  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+}
+
+/**
  * Replace all placeholders in content
  */
 function replacePlaceholders(content, pageId) {
+  // Find the page config for this pageId
+  const page = config.pages.find(p => p.id === pageId) || {};
+  const siteUrl = config.site.url || 'https://luminait.app';
+
+  // Get page-specific values with fallbacks
+  const pageTitle = page.pageTitle?.en || `${page.title?.en || 'Page'} | ${config.site.name}`;
+  const metaDesc = page.metaDescription?.en || config.site.description.en;
+
   const replacements = {
     '{{NAV_LINKS}}': generateNavLinks(pageId),
     '{{FOOTER_LINKS}}': generateFooterLinks(),
     '{{MAP_CARDS}}': generateMapCards(),
     '{{QUICK_STATS}}': generateQuickStats(),
+    '{{SEO_META_TAGS}}': generateSeoMetaTags(page),
+    '{{ORG_SCHEMA}}': pageId === 'home' ? generateOrgSchema() : '',
     '{{ENROLL_LINK}}': config.site.enrollLink,
     '{{SITE_NAME}}': config.site.name,
+    '{{SITE_URL}}': siteUrl,
     '{{SITE_TAGLINE_EN}}': config.site.tagline.en,
     '{{SITE_TAGLINE_ZH}}': config.site.tagline.zh,
-    '{{SITE_DESCRIPTION}}': config.site.description,
+    '{{SITE_DESCRIPTION}}': config.site.description.en,
+    '{{SITE_DESCRIPTION_EN}}': config.site.description.en,
+    '{{SITE_DESCRIPTION_ZH}}': config.site.description.zh,
+    '{{SITE_KEYWORDS_EN}}': config.site.keywords?.en || '',
+    '{{SITE_KEYWORDS_ZH}}': config.site.keywords?.zh || '',
     '{{SITE_SUBTITLE_EN}}': config.site.subtitle.en,
     '{{SITE_SUBTITLE_ZH}}': config.site.subtitle.zh,
     '{{SITE_TEXTS_EN}}': config.site.texts.en,
     '{{SITE_TEXTS_ZH}}': config.site.texts.zh,
+    '{{PAGE_TITLE}}': pageTitle,
+    '{{PAGE_META_DESC}}': metaDesc,
+    '{{PAGE_FILE}}': page.file || 'index.html',
     '{{CONTACT_EMAIL}}': config.site.contact.email,
     '{{CONTACT_PHONE}}': config.site.contact.phone,
     '{{CONTACT_PHONE_LINK}}': config.site.contact.phone.replace(/\s/g, ''),

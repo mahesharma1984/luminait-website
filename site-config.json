@@ -1,11 +1,19 @@
 {
   "site": {
     "name": "LuminAIT Learning",
+    "url": "https://luminait.app",
     "tagline": {
-      "en": "Analytical Writing for Secondary Students",
-      "zh": "中学生分析性写作课程"
+      "en": "Melbourne English Tutoring for VCE & Secondary Essay Writing",
+      "zh": "墨尔本VCE及中学英语写作辅导"
     },
-    "description": "A 10-week course teaching literary analysis and logical writing for Years 7-12 students. Prepares for NAPLAN, VCE, IB and beyond.",
+    "description": {
+      "en": "Melbourne English tutoring for Years 7-12. Text-specific analytical writing courses for Romeo and Juliet, Macbeth, To Kill a Mockingbird. VCE, NAPLAN & IB preparation. View free guides.",
+      "zh": "墨尔本7-12年级英语辅导。针对《罗密欧与朱丽叶》《麦克白》《杀死一只知更鸟》等文本的分析写作课程。备战VCE、NAPLAN、IB考试。"
+    },
+    "keywords": {
+      "en": "Melbourne English tutoring, VCE English, essay writing tutoring, analytical writing, secondary English tutor, NAPLAN preparation, IB English, literary analysis, Romeo and Juliet analysis, Macbeth essay, To Kill a Mockingbird study guide",
+      "zh": "墨尔本英语补习, VCE英语写作, 墨尔本补习班, 中学英语辅导, NAPLAN备考, IB英语, 文学分析, 英语作文辅导"
+    },
     "subtitle": {
       "en": "Years 7-12 · Aligned to school curriculum · Prepares for NAPLAN, VCE, IB",
       "zh": "7-12年级 · 对接学校课程 · 备战NAPLAN、VCE、IB考试"
@@ -19,7 +27,8 @@
       "phone": "+61 421 213 517",
       "wechat": "sharmeleon"
     },
-    "enrollLink": "mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning"
+    "enrollLink": "mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning",
+    "socialImage": "social-preview.png"
   },
   "course": {
     "price": "$550",
@@ -53,6 +62,14 @@
       "navTitle": {
         "en": "Home",
         "zh": "首页"
+      },
+      "pageTitle": {
+        "en": "LuminAIT | Melbourne English Tutoring for VCE & Secondary Students",
+        "zh": "LuminAIT | 墨尔本VCE及中学英语辅导"
+      },
+      "metaDescription": {
+        "en": "Melbourne English tutoring for Years 7-12. Text-specific analytical writing courses for Romeo and Juliet, Macbeth, To Kill a Mockingbird. VCE, NAPLAN & IB preparation.",
+        "zh": "墨尔本7-12年级英语辅导。针对特定文本的分析写作课程。备战VCE、NAPLAN、IB考试。"
       }
     },
     {
@@ -66,6 +83,14 @@
       "navTitle": {
         "en": "Course",
         "zh": "课程"
+      },
+      "pageTitle": {
+        "en": "Enroll in Analytical Writing Course | VCE English Tutoring | LuminAIT",
+        "zh": "报名分析写作课程 | VCE英语辅导 | LuminAIT"
+      },
+      "metaDescription": {
+        "en": "Enroll in our 5-week or 10-week analytical writing course. $550 for 10 weeks of text-specific tutoring with detailed feedback. Melbourne VCE & secondary English.",
+        "zh": "报名5周或10周分析写作课程。10周课程$550，包含针对性辅导和详细反馈。墨尔本VCE及中学英语。"
       },
       "icon": "📖",
       "cardTitle": {
@@ -108,6 +133,14 @@
         "en": "Curriculum",
         "zh": "课程大纲"
       },
+      "pageTitle": {
+        "en": "10-Week Essay Writing Curriculum | Analytical Writing | LuminAIT Melbourne",
+        "zh": "10周写作课程大纲 | 分析写作 | LuminAIT墨尔本"
+      },
+      "metaDescription": {
+        "en": "Our 10-week analytical writing curriculum: Pre-Analysis, Device Analysis, and Synthesis phases. Learn literary devices, textual evidence, and essay construction.",
+        "zh": "10周分析写作课程：分析准备、手法分析、综合写作三个阶段。学习文学手法、文本证据和文章构建。"
+      },
       "icon": "📋",
       "cardTitle": {
         "en": "10-Week Curriculum",
@@ -147,6 +180,14 @@
       "navTitle": {
         "en": "Sample",
         "zh": "练习样例"
+      },
+      "pageTitle": {
+        "en": "Sample Literary Analysis Worksheet | English Essay Practice | LuminAIT",
+        "zh": "文学分析练习样例 | 英语写作练习 | LuminAIT"
+      },
+      "metaDescription": {
+        "en": "See our 6-step literary analysis worksheet. Scaffolded approach from beginner to advanced. TVODE sentence construction for analytical writing.",
+        "zh": "查看我们的6步文学分析练习。从初级到高级的脚手架式教学。TVODE句子构建分析写作。"
       },
       "icon": "📝",
       "cardTitle": {
@@ -188,6 +229,14 @@
         "en": "Progress",
         "zh": "进度报告"
       },
+      "pageTitle": {
+        "en": "Student Progress Reports | Writing Skills Tracking | LuminAIT Melbourne",
+        "zh": "学生进度报告 | 写作技能跟踪 | LuminAIT墨尔本"
+      },
+      "metaDescription": {
+        "en": "Track your child's analytical writing progress. Detailed reports on evidence, reasoning, and analysis skills at weeks 4 and 8.",
+        "zh": "跟踪孩子的分析写作进展。第4周和第8周提供证据、推理和分析技能的详细报告。"
+      },
       "icon": "📊",
       "cardTitle": {
         "en": "Progress Reports",
@@ -227,6 +276,14 @@
       "navTitle": {
         "en": "Results",
         "zh": "学习成果"
+      },
+      "pageTitle": {
+        "en": "Student Results & Outcomes | 100% Improvement Rate | LuminAIT Melbourne",
+        "zh": "学习成果 | 100%学生进步 | LuminAIT墨尔本"
+      },
+      "metaDescription": {
+        "en": "100% of students show measurable improvement. 10-20% term improvement, 30-50% when feedback applied. See proven outcomes from our analytical writing course.",
+        "zh": "100%学生取得可量化进步。学期提升10-20%，运用反馈后提升30-50%。查看分析写作课程的实证成果。"
       },
       "icon": "🏆",
       "cardTitle": {

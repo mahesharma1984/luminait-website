@@ -1,0 +1,13 @@
+# Robots.txt for LuminAIT Learning
+# https://luminait.app
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://luminait.app/sitemap.xml
+
+# Disallow backup and internal directories
+Disallow: /backup/
+Disallow: /docs/
+Disallow: /src/
