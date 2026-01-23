@@ -1,0 +1,243 @@
+<!-- ============================================
+     CTA PANEL: Essay Bridge Component
+     
+     This panel bridges the analysis guide (spoke) to the 
+     course (hub). Offers a "lead magnet" (essay tips PDF)
+     in exchange for email capture.
+     
+     Usage: Include in guide pages after the main analysis
+     Placeholders: {{book_name}}, {{pattern_name}}, {{step_number}}
+     ============================================ -->
+
+<section class="essay-bridge-panel">
+  <div class="container-narrow">
+    <div class="bridge-content">
+      <span class="section-label">Step {{step_number}} → The Payoff</span>
+      <h3 class="bridge-title">Turn this analysis into a Thesis</h3>
+      <p class="bridge-intro">
+        You've explored the <strong>{{pattern_name}}</strong>. 
+        Now learn to write it.
+      </p>
+      
+      <div class="lead-magnet-box">
+        <div class="magnet-icon">📝</div>
+        <h4 class="magnet-title">Download the {{book_name}} Essay One-Sheet</h4>
+        <ul class="magnet-features">
+          <li>
+            <span class="feature-icon">✓</span>
+            5 Pre-written <strong>TVODE</strong> sentences
+          </li>
+          <li>
+            <span class="feature-icon">✓</span>
+            The <strong>DCCEPS</strong> Thesis Builder
+          </li>
+          <li>
+            <span class="feature-icon">✓</span>
+            Year 12 Exemplar Paragraph
+          </li>
+        </ul>
+        
+        <form class="magnet-form" id="leadMagnetForm">
+          <div class="form-row">
+            <input 
+              type="email" 
+              class="input magnet-input" 
+              placeholder="Your email for the PDF"
+              required
+              id="leadEmail"
+            >
+            <button type="submit" class="btn btn-primary magnet-btn">
+              Get the Tips
+            </button>
+          </div>
+          <p class="form-note">Free. No spam. Just the good stuff.</p>
+        </form>
+      </div>
+      
+      <p class="parent-note">
+        <span class="parent-icon">👨‍👩‍👧</span>
+        Driving the grade? 
+        <a href="/course.html" class="parent-link">See our 5-week mastery program →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* CTA Panel Styles */
+.essay-bridge-panel {
+  padding: var(--space-3xl) 0;
+  background: linear-gradient(135deg, #0a1628 0%, #0d2847 50%, #0a1628 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.essay-bridge-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.bridge-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.bridge-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--slate-100);
+  margin-bottom: var(--space-md);
+}
+
+.bridge-intro {
+  font-size: 1.1rem;
+  color: var(--slate-300);
+  margin-bottom: var(--space-xl);
+}
+
+/* Lead Magnet Box */
+.lead-magnet-box {
+  background: var(--glass-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+  text-align: left;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-fast);
+}
+
+.lead-magnet-box:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 8px 40px rgba(0, 212, 255, 0.1);
+}
+
+.magnet-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.magnet-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--slate-100);
+  margin-bottom: var(--space-lg);
+}
+
+.magnet-features {
+  list-style: none;
+  margin-bottom: var(--space-lg);
+}
+
+.magnet-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  color: var(--slate-300);
+  font-size: 0.95rem;
+}
+
+.feature-icon {
+  color: var(--cyan);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Form Styles */
+.magnet-form {
+  margin-top: var(--space-lg);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.magnet-input {
+  flex: 1;
+}
+
+.magnet-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+/* Parent Note */
+.parent-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  color: var(--slate-400);
+  font-size: 0.95rem;
+  margin-top: var(--space-xl);
+}
+
+.parent-icon {
+  font-size: 1.2rem;
+}
+
+.parent-link {
+  color: var(--cyan);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.parent-link:hover {
+  color: var(--blue);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .magnet-btn {
+    width: 100%;
+  }
+  
+  .parent-note {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+
+<script>
+// Lead Magnet Form Handler
+document.getElementById('leadMagnetForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('leadEmail').value;
+  
+  // TODO: Connect to email service (e.g., ConvertKit, Mailchimp)
+  console.log('Lead captured:', email);
+  
+  // Show success message
+  const form = this;
+  form.innerHTML = `
+    <div class="success-message">
+      <span class="success-icon">✓</span>
+      <p>Check your inbox! The Essay One-Sheet is on its way.</p>
+    </div>
+  `;
+  form.closest('.lead-magnet-box').style.borderColor = 'var(--emerald)';
+});
+</script>

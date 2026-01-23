@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{hook.title}}: {{meta.text_title}} {{pattern.name}} Analysis | LuminAIT</title>
+  <meta name="description" content="{{hook.tagline}}">
+  <meta name="keywords" content="{{meta.text_title}} analysis, {{pattern.name}}, {{meta.author}} literary devices, {{meta.text_title}} essay guide">
+  
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:title" content="{{hook.title}} — {{hook.subtitle}}">
+  <meta property="og:description" content="{{hook.tagline}}">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Article markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{hook.title}}: {{hook.subtitle}}",
+    "description": "{{hook.tagline}}",
+    "author": {
+      "@type": "Organization",
+      "name": "LuminAIT Learning"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LuminAIT Learning"
+    },
+    "inLanguage": "en",
+    "about": {
+      "@type": "CreativeWork",
+      "name": "{{meta.text_title}}",
+      "author": {
+        "@type": "Person",
+        "name": "{{meta.author}}"
+      }
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema for "People Also Ask" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {{#each faq}}
+      {
+        "@type": "Question",
+        "name": "{{question}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{answer_plain}}"
+        }
+      }{{#unless @last}},{{/unless}}
+      {{/each}}
+    ]
+  }
+  </script>
+  
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="/components/base.css">
+  
+  <style>
+    /* ============================================
+       GUIDE SPOKE SPECIFIC STYLES
+       ============================================ */
+    
+    /* Hero Section */
+    .guide-hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .guide-hero::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      margin-bottom: var(--space-md);
+      padding: var(--space-xs) var(--space-md);
+      background: var(--cyan-soft);
+      border-radius: var(--radius-full);
+    }
+    
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: var(--space-md);
+      line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      color: var(--slate-300);
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      line-height: 1.6;
+    }
+    
+    .hero-insight {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+    }
+    
+    .hero-insight p {
+      font-size: 1.1rem;
+      color: var(--slate-200);
+      margin: 0;
+    }
+    
+    .scroll-cue {
+      color: var(--slate-400);
+      font-size: 0.9rem;
+      margin-top: var(--space-2xl);
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    
+    /* 5-Step Progress Bar (fixed) */
+    .progress-bar-fixed {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(20px);
+      padding: var(--space-sm) var(--space-lg);
+      z-index: 999;
+      border-bottom: 1px solid var(--glass-border);
+      transform: translateY(-100%);
+      transition: transform var(--transition-fast);
+    }
+    
+    .progress-bar-fixed.visible {
+      transform: translateY(0);
+    }
+    
+    .progress-bar-fixed .progress-bar {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .progress-bar-fixed .progress-step-label {
+      display: none;
+    }
+    
+    .progress-bar-fixed .progress-step-marker {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+    
+    /* Pattern Reveal Section */
+    .reveal-section {
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    
+    .reveal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .reveal-card {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      transition: all var(--transition-fast);
+    }
+    
+    .reveal-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+    }
+    
+    .reveal-number {
+      width: 48px;
+      height: 48px;
+      background: var(--cyan);
+      color: var(--deep-navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: var(--space-md);
+    }
+    
+    .reveal-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--slate-100);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .reveal-text {
+      color: var(--slate-300);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* Anchor Quote */
+    .anchor-quote {
+      background: linear-gradient(135deg, #0a1628 0%, #0d2847 100%);
+      border-left: 4px solid var(--cyan);
+      padding: var(--space-xl);
+      margin: var(--space-2xl) 0;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+    
+    .anchor-quote blockquote {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-style: italic;
+      color: var(--slate-100);
+      margin-bottom: var(--space-md);
+      line-height: 1.4;
+    }
+    
+    .anchor-quote cite {
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-style: normal;
+    }
+    
+    .quote-analysis {
+      margin-top: var(--space-lg);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--glass-border);
+    }
+    
+    .quote-analysis p {
+      font-size: 0.95rem;
+      color: var(--slate-300);
+      margin-bottom: var(--space-sm);
+    }
+    
+    /* Knowledge Gap Section */
+    .knowledge-gap-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--slate-100);
+    }
+    
+    .knowledge-gap-section h2 {
+      color: var(--slate-800);
+    }
+    
+    .knowledge-gap-section .section-intro {
+      color: var(--slate-600);
+    }
+    
+    .knowledge-gap-visual {
+      max-width: 700px;
+      margin: var(--space-2xl) auto 0;
+    }
+    
+    .gap-slider-container {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .gap-labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+    
+    .gap-label {
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+    }
+    
+    .gap-label.audience {
+      background: var(--cyan-soft);
+      border: 1px solid var(--cyan);
+    }
+    
+    .gap-label.characters {
+      background: rgba(220, 38, 38, 0.1);
+      border: 1px solid var(--crimson);
+    }
+    
+    .gap-label-title {
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .gap-label.audience .gap-label-title {
+      color: var(--blue);
+    }
+    
+    .gap-label.characters .gap-label-title {
+      color: var(--crimson);
+    }
+    
+    .gap-label-text {
+      font-size: 1rem;
+      color: var(--slate-700);
+      transition: all var(--transition-fast);
+    }
+    
+    .gap-track {
+      margin: var(--space-lg) 0;
+    }
+    
+    .gap-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--slate-200);
+      appearance: none;
+      cursor: pointer;
+    }
+    
+    .gap-slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--blue);
+      cursor: grab;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+    }
+    
+    .dread-meter {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+    }
+    
+    .dread-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-left: var(--space-sm);
+      transition: color var(--transition-fast);
+    }
+    
+    /* Conflict Matrix Section */
+    .conflict-section {
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    
+    .conflict-visual {
+      display: flex;
+      align-items: stretch;
+      gap: var(--space-lg);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .conflict-side {
+      flex: 1;
+    }
+    
+    .conflict-card {
+      height: 100%;
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+    
+    .conflict-card.side-a {
+      border-color: var(--crimson);
+    }
+    
+    .conflict-card.side-b {
+      border-color: #a855f7;
+    }
+    
+    .conflict-icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-md);
+    }
+    
+    .conflict-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: var(--slate-100);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .conflict-evidence {
+      list-style: none;
+      text-align: left;
+    }
+    
+    .conflict-evidence li {
+      padding: var(--space-sm) 0;
+      color: var(--slate-300);
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    
+    .conflict-evidence li:last-child {
+      border-bottom: none;
+    }
+    
+    .conflict-vs {
+      display: flex;
+      align-items: center;
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: var(--slate-400);
+      padding: 0 var(--space-md);
+    }
+    
+    /* Devices Grid */
+    .devices-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--slate-100);
+    }
+    
+    .devices-section h2,
+    .devices-section .section-label {
+      color: var(--slate-800);
+    }
+    
+    .devices-section .section-label {
+      color: var(--blue);
+    }
+    
+    .devices-section .section-intro {
+      color: var(--slate-600);
+    }
+    
+    .devices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-2xl);
+    }
+    
+    .device-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+    }
+    
+    .device-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .device-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .device-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    
+    .device-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--slate-800);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .device-tagline {
+      font-size: 0.85rem;
+      color: var(--blue);
+      font-weight: 500;
+    }
+    
+    .device-quote {
+      background: var(--slate-100);
+      padding: var(--space-md);
+      border-radius: var(--radius-sm);
+      font-style: italic;
+      color: var(--slate-700);
+      margin-bottom: var(--space-md);
+    }
+    
+    .device-quote cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin-top: var(--space-sm);
+    }
+    
+    .device-effect {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      margin-bottom: var(--space-md);
+    }
+    
+    .device-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+    
+    /* Timeline / Tracker Section */
+    .timeline-section {
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    
+    .dread-tracker {
+      position: relative;
+      max-width: 800px;
+      margin: var(--space-2xl) auto 0;
+    }
+    
+    .tracker-progress {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--glass-border);
+      border-radius: 2px;
+      z-index: 0;
+    }
+    
+    .tracker-items {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .tracker-item {
+      display: flex;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+      cursor: pointer;
+    }
+    
+    .tracker-marker {
+      width: 44px;
+      height: 44px;
+      background: var(--glass-card);
+      border: 2px solid var(--glass-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: var(--slate-400);
+      flex-shrink: 0;
+      transition: all var(--transition-fast);
+    }
+    
+    .tracker-item.active .tracker-marker,
+    .tracker-item.passed .tracker-marker {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: var(--deep-navy);
+    }
+    
+    .tracker-item.active .tracker-marker {
+      box-shadow: 0 0 20px var(--cyan-glow);
+    }
+    
+    .tracker-content {
+      flex: 1;
+    }
+    
+    .tracker-card {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      transition: all var(--transition-fast);
+    }
+    
+    .tracker-item.active .tracker-card {
+      border-color: var(--cyan);
+    }
+    
+    .tracker-act {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--slate-100);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .tracker-event {
+      font-size: 0.9rem;
+      color: var(--slate-300);
+      margin-bottom: var(--space-md);
+    }
+    
+    .tracker-quote {
+      font-style: italic;
+      color: var(--cyan);
+      font-size: 0.9rem;
+      margin-bottom: var(--space-md);
+    }
+    
+    .tracker-dread {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.8rem;
+      color: var(--slate-400);
+    }
+    
+    .dread-dots {
+      display: flex;
+      gap: 4px;
+    }
+    
+    .dread-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--glass-border);
+    }
+    
+    .dread-dot.active {
+      background: var(--cyan);
+    }
+    
+    /* Toolkit Section */
+    .toolkit-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--slate-100);
+    }
+    
+    .toolkit-section h2,
+    .toolkit-section .section-label {
+      color: var(--slate-800);
+    }
+    
+    .toolkit-section .section-label {
+      color: var(--blue);
+    }
+    
+    .toolkit-section .section-intro {
+      color: var(--slate-600);
+    }
+    
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .toolkit-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .toolkit-icon {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .toolkit-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: var(--slate-800);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .toolkit-text {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+    
+    .toolkit-text code {
+      background: var(--slate-100);
+      color: var(--blue);
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      margin-top: var(--space-2xl);
+      padding-top: var(--space-2xl);
+      border-top: 1px solid var(--slate-200);
+    }
+    
+    .faq-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--slate-800);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .faq-question {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: var(--slate-800);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      margin: 0;
+    }
+    
+    /* Bibliography */
+    .bibliography-section {
+      margin-top: var(--space-2xl);
+      padding-top: var(--space-2xl);
+      border-top: 1px solid var(--slate-200);
+    }
+    
+    .bibliography-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--slate-800);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .bibliography-content {
+      display: grid;
+      gap: var(--space-lg);
+    }
+    
+    .bib-category-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .bib-item {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      margin-bottom: var(--space-xs);
+    }
+    
+    /* Modern Mirror Section */
+    .mirror-section {
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    
+    .mirror-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .mirror-card {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+    }
+    
+    .mirror-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .mirror-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--slate-100);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .mirror-text {
+      font-size: 0.9rem;
+      color: var(--slate-300);
+      margin: 0;
+    }
+    
+    /* CTA Section */
+    .guide-cta-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: linear-gradient(135deg, #0a1628 0%, #0d2847 100%);
+      text-align: center;
+    }
+    
+    .guide-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .guide-cta-content h2 {
+      margin-bottom: var(--space-md);
+    }
+    
+    .guide-cta-content p {
+      color: var(--slate-300);
+      margin-bottom: var(--space-xl);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .reveal-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .conflict-visual {
+        flex-direction: column;
+      }
+      
+      .conflict-vs {
+        padding: var(--space-md) 0;
+        justify-content: center;
+      }
+      
+      .progress-bar-fixed .progress-bar {
+        gap: var(--space-sm);
+      }
+      
+      .progress-bar-fixed .progress-step-marker {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="/">
+        <img src="/luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="#reveal" class="nav-link">The Pattern</a>
+        <a href="#tension" class="nav-link">The Tension</a>
+        <a href="#tools" class="nav-link">The Tools</a>
+        <a href="#trace" class="nav-link">The Trace</a>
+        <a href="#toolkit" class="nav-link">Essay Kit</a>
+        <a href="/course.html" class="nav-cta">Get Toolkit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 5-Step Progress Bar (Fixed) -->
+  <div class="progress-bar-fixed" id="progressBarFixed">
+    <div class="progress-bar">
+      <a href="#reveal" class="progress-step" data-step="1">
+        <div class="progress-step-marker">1</div>
+        <span class="progress-step-label">Context</span>
+      </a>
+      <a href="#gap" class="progress-step" data-step="2">
+        <div class="progress-step-marker">2</div>
+        <span class="progress-step-label">Pattern</span>
+      </a>
+      <a href="#tools" class="progress-step" data-step="3">
+        <div class="progress-step-marker">3</div>
+        <span class="progress-step-label">Evidence</span>
+      </a>
+      <a href="#toolkit" class="progress-step" data-step="4">
+        <div class="progress-step-marker">4</div>
+        <span class="progress-step-label">Analysis</span>
+      </a>
+      <a href="#cta" class="progress-step" data-step="5">
+        <div class="progress-step-marker">5</div>
+        <span class="progress-step-label">Synthesis</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="guide-hero">
+    <div class="hero-content">
+      <span class="hero-label">{{meta.text_title}} Analysis</span>
+      <h1 class="hero-title">{{hook.title}}</h1>
+      <p class="hero-subtitle">{{hook.tagline}}</p>
+      
+      <div class="hero-insight">
+        <p>{{{hook.insight}}}</p>
+      </div>
+      
+      <div class="scroll-cue">↓ Discover the pattern</div>
+    </div>
+  </section>
+
+  <!-- Step 1: The Reveal (Pattern Grid) -->
+  <section id="reveal" class="section section-dark reveal-section">
+    <div class="container">
+      <span class="section-label">Step 1 · The Master Mechanic</span>
+      <h2 class="section-title">{{pattern.name}}</h2>
+      <p class="section-intro">{{{pattern.core_dynamic}}}</p>
+
+      <div class="reveal-grid">
+        {{#each pattern.three_points}}
+        <div class="reveal-card">
+          <div class="reveal-number">{{number}}</div>
+          <h3 class="reveal-title">{{title}}</h3>
+          <p class="reveal-text">{{{text}}}</p>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Anchor Quote -->
+      <div class="anchor-quote">
+        <blockquote>"{{anchor_quote.text}}"</blockquote>
+        <cite>— {{anchor_quote.speaker}}, {{anchor_quote.location}}</cite>
+        <div class="quote-analysis">
+          <p><strong>{{anchor_quote.speaker}} means:</strong> "{{anchor_quote.surface_meaning}}"</p>
+          <p><strong>We hear:</strong> "{{anchor_quote.ironic_meaning}}"</p>
+          <p>{{anchor_quote.pattern_connection}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2: Knowledge Gap (Interactive) -->
+  <section id="gap" class="section knowledge-gap-section">
+    <div class="container">
+      <span class="section-label">Step 2 · Interactive</span>
+      <h2 class="section-title">The Knowledge Gap</h2>
+      <p class="section-intro">{{{pattern.reader_effect}}}</p>
+
+      <div class="knowledge-gap-visual">
+        <div class="gap-slider-container">
+          <div class="gap-labels">
+            <div class="gap-label audience">
+              <div class="gap-label-title">Audience</div>
+              <div class="gap-label-text" id="audienceText">{{gap_states.1.audience}}</div>
+            </div>
+            <div class="gap-label characters">
+              <div class="gap-label-title">Characters</div>
+              <div class="gap-label-text" id="charactersText">{{gap_states.1.characters}}</div>
+            </div>
+          </div>
+          
+          <div class="gap-track">
+            <input type="range" min="1" max="5" value="1" class="gap-slider" id="gapSlider">
+          </div>
+
+          <div class="dread-meter">
+            <span class="dread-label">{{meter_label}}:</span>
+            <span class="dread-value" id="dreadValue">{{dread_levels.1}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conflict Matrix (Tension) -->
+  <section id="tension" class="section section-dark conflict-section">
+    <div class="container">
+      <span class="section-label">The Conflict Matrix</span>
+      <h2 class="section-title">{{tension.title}}</h2>
+      <p class="section-intro">{{tension.intro}}</p>
+
+      <div class="conflict-visual">
+        <div class="conflict-side">
+          <div class="conflict-card side-a">
+            <div class="conflict-icon">{{tension.side_a.icon}}</div>
+            <h3 class="conflict-title">{{tension.side_a.name}}</h3>
+            <ul class="conflict-evidence">
+              {{#each tension.side_a.evidence}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+
+        <div class="conflict-vs">VS</div>
+
+        <div class="conflict-side">
+          <div class="conflict-card side-b">
+            <div class="conflict-icon">{{tension.side_b.icon}}</div>
+            <h3 class="conflict-title">{{tension.side_b.name}}</h3>
+            <ul class="conflict-evidence">
+              {{#each tension.side_b.evidence}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-insight">
+        <strong>The essay insight:</strong> {{tension.insight}}
+      </p>
+    </div>
+  </section>
+
+  <!-- Step 3: Devices Grid -->
+  <section id="tools" class="section devices-section">
+    <div class="container">
+      <span class="section-label">Step 3 · The Emotional Toolkit</span>
+      <h2 class="section-title">{{devices.length}} Devices That Create the {{effect_noun}}</h2>
+      <p class="section-intro">
+        These aren't just "techniques to identify." They're <em>impact tools</em>—each one {{pattern.device_function}}.
+      </p>
+
+      <div class="devices-grid">
+        {{#each devices}}
+        <div class="device-card">
+          <div class="device-header">
+            <div class="device-icon">{{icon}}</div>
+            <div class="device-info">
+              <h3 class="device-name">{{name}}</h3>
+              <span class="device-tagline">{{tagline}}</span>
+            </div>
+          </div>
+          <div class="device-body">
+            <div class="device-quote">
+              "{{quote}}"
+              <cite>{{location}}</cite>
+            </div>
+            <p class="device-effect">
+              <strong>Impact:</strong> {{impact}}
+            </p>
+            <a href="#{{link_section}}" class="device-link">See in context →</a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline (Dread Tracker) -->
+  <section id="trace" class="section section-dark timeline-section">
+    <div class="container">
+      <span class="section-label">The Countdown</span>
+      <h2 class="section-title">{{timeline.title}}</h2>
+      <p class="section-intro">{{timeline.intro}}</p>
+
+      <div class="dread-tracker">
+        <div class="tracker-progress"></div>
+        <div class="tracker-items">
+          {{#each timeline.acts}}
+          <div class="tracker-item" data-level="{{dread_level}}">
+            <div class="tracker-marker">{{number}}</div>
+            <div class="tracker-content">
+              <div class="tracker-card">
+                <div class="tracker-act">Act {{number}} — {{title}}</div>
+                <p class="tracker-event">{{event}}</p>
+                <div class="tracker-quote">"{{quote}}"</div>
+                <div class="tracker-dread">
+                  {{../meter_label}}:
+                  <div class="dread-dots">
+                    <!-- Dread dots generated by JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 4: Essay Toolkit -->
+  <section id="toolkit" class="section toolkit-section">
+    <div class="container">
+      <span class="section-label">Step 4 · The Practical Value</span>
+      <h2 class="section-title">Essay Toolkit</h2>
+      <p class="section-intro">
+        Turn this analysis into marks. Here's how to use {{pattern.name}} in your essays.
+      </p>
+
+      <div class="toolkit-grid">
+        {{#each toolkit}}
+        <div class="toolkit-card">
+          <div class="toolkit-icon">{{icon}}</div>
+          <h3 class="toolkit-title">{{title}}</h3>
+          <p class="toolkit-text">{{{text}}}</p>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <h3 class="faq-title">Frequently Asked Questions</h3>
+        <div class="faq-grid">
+          {{#each faq}}
+          <div class="faq-item">
+            <h4 class="faq-question">{{question}}</h4>
+            <p class="faq-answer">{{{answer}}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- Bibliography -->
+      <div class="bibliography-section">
+        <h3 class="bibliography-title">Sources & Further Reading</h3>
+        <div class="bibliography-content">
+          <div class="bib-category">
+            <h4 class="bib-category-title">Primary Text</h4>
+            <p class="bib-item">{{{bibliography.primary_text}}}</p>
+          </div>
+          <div class="bib-category">
+            <h4 class="bib-category-title">Line References</h4>
+            {{#each bibliography.line_references}}
+            <p class="bib-item">"{{quote}}" — {{ref}}</p>
+            {{/each}}
+          </div>
+          <div class="bib-category">
+            <h4 class="bib-category-title">Analysis Framework</h4>
+            <p class="bib-item">{{bibliography.framework}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Mirror -->
+  <section id="mirror" class="section section-dark mirror-section">
+    <div class="container">
+      <span class="section-label">The Modern Mirror</span>
+      <h2 class="section-title">Why This Pattern Still Works</h2>
+      <p class="section-intro">
+        "{{pattern.name}}" isn't a {{meta.era}}-old trick—it's the engine behind some of the most emotionally powerful stories of our time.
+      </p>
+
+      <div class="mirror-grid">
+        {{#each modern_mirror}}
+        <div class="mirror-card">
+          <div class="mirror-year">{{year}}</div>
+          <h3 class="mirror-title">{{title}}</h3>
+          <p class="mirror-text">{{{text}}}</p>
+        </div>
+        {{/each}}
+      </div>
+
+      <p class="section-insight">
+        <strong>The insight:</strong> Understanding "{{pattern.name}}" in {{meta.author}} gives you a lens for analyzing modern narratives in film, TV, and literature.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step 5: CTA Section -->
+  <section id="cta" class="guide-cta-section">
+    <div class="guide-cta-content">
+      <span class="section-label">Step 5 · The Next Step</span>
+      <h2>Want to write essays like this?</h2>
+      <p>Our structured course teaches the exact analytical method behind this guide—customized to whatever text you're studying at school.</p>
+      <a href="/course.html" class="btn btn-primary">See the 5-Week Program →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/course.html">Course</a>
+      <a href="/syllabus.html">Curriculum</a>
+      <a href="/results.html">Results</a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <a href="#hero" class="back-to-top" id="backToTop">↑</a>
+
+  <!-- Scripts -->
+  <script src="/components/tracker.js"></script>
+  <script>
+    // Guide data (injected by build script)
+    const guideData = {{{json_data}}};
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize tracker
+      if (guideData) {
+        initTracker(guideData);
+      }
+      
+      // Generate dread dots for timeline
+      document.querySelectorAll('.tracker-item').forEach(item => {
+        const level = parseInt(item.dataset.level);
+        const dotsContainer = item.querySelector('.dread-dots');
+        if (dotsContainer) {
+          let dots = '';
+          for (let i = 1; i <= 5; i++) {
+            dots += `<span class="dread-dot${i <= level ? ' active' : ''}"></span>`;
+          }
+          dotsContainer.innerHTML = dots;
+        }
+      });
+      
+      // Fixed progress bar visibility
+      const progressBar = document.getElementById('progressBarFixed');
+      const hero = document.getElementById('hero');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > hero.offsetHeight - 100) {
+          progressBar.classList.add('visible');
+        } else {
+          progressBar.classList.remove('visible');
+        }
+      });
+      
+      // Progress bar step tracking
+      const sections = ['reveal', 'gap', 'tools', 'toolkit', 'cta'];
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const stepIndex = sections.indexOf(entry.target.id) + 1;
+            updateProgressBar(stepIndex);
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' });
+      
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+      });
+      
+      function updateProgressBar(activeStep) {
+        document.querySelectorAll('.progress-step').forEach(step => {
+          const stepNum = parseInt(step.dataset.step);
+          step.classList.remove('active', 'completed');
+          
+          if (stepNum === activeStep) {
+            step.classList.add('active');
+          } else if (stepNum < activeStep) {
+            step.classList.add('completed');
+          }
+        });
+      }
+      
+      // Mobile nav toggle
+      window.toggleNav = function() {
+        document.getElementById('navLinks').classList.toggle('active');
+      };
+      
+      // Back to top button
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

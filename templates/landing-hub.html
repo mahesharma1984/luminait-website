@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Analytical Writing in 5-10 Weeks | LuminAIT Learning</title>
+  <meta name="description" content="A structured course teaching literary analysis and logical writing for Years 7-12 students. Transform how your child reads and writes about texts.">
+  <meta name="keywords" content="analytical writing course, literary analysis, Year 12 English, VCE English, IB English, essay writing course">
+  
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:title" content="Master Analytical Writing | LuminAIT Learning">
+  <meta property="og:description" content="Transform how your child reads and writes about texts in 5-10 weeks.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Course markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Analytical Writing Mastery",
+    "description": "A structured course teaching literary analysis and logical writing for Years 7-12 students",
+    "provider": {
+      "@type": "Organization",
+      "name": "LuminAIT Learning",
+      "sameAs": "https://luminait.app"
+    },
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "name": "5-Week Thematic Model",
+        "courseMode": "online",
+        "duration": "P5W"
+      },
+      {
+        "@type": "CourseInstance", 
+        "name": "10-Week Theoretical Model",
+        "courseMode": "online",
+        "duration": "P10W"
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "275",
+      "priceCurrency": "AUD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="/components/base.css">
+  
+  <style>
+    /* ============================================
+       LANDING HUB SPECIFIC STYLES
+       ============================================ */
+    
+    /* Hero Section */
+    .hub-hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: var(--space-4xl) var(--space-lg);
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hub-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: var(--space-lg);
+      line-height: 1.1;
+    }
+    
+    .hero-text h1 .text-gradient {
+      display: block;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--slate-300);
+      margin-bottom: var(--space-xl);
+      line-height: 1.6;
+    }
+    
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+    
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--slate-400);
+      font-size: 0.9rem;
+    }
+    
+    .hero-meta-item .icon {
+      color: var(--cyan);
+    }
+    
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+    
+    /* Pricing Toggle */
+    .pricing-toggle {
+      display: inline-flex;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      margin-bottom: var(--space-xl);
+    }
+    
+    .pricing-toggle-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-sm) var(--space-xl);
+      border: none;
+      background: transparent;
+      color: var(--slate-400);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: 'DM Sans', sans-serif;
+    }
+    
+    .pricing-toggle-btn:hover {
+      color: var(--slate-200);
+    }
+    
+    .pricing-toggle-btn.active {
+      background: var(--cyan);
+      color: var(--deep-navy);
+    }
+    
+    .toggle-label {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .toggle-subtitle {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+    
+    /* Hero Pricing Card */
+    .hero-pricing {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      backdrop-filter: blur(10px);
+    }
+    
+    .pricing-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    
+    .pricing-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--slate-100);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .pricing-target {
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .pricing-amount {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin: var(--space-lg) 0;
+    }
+    
+    .price-main {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--slate-100);
+    }
+    
+    .price-period {
+      color: var(--slate-400);
+      font-size: 1rem;
+    }
+    
+    .price-breakdown {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-lg);
+      font-size: 0.875rem;
+      color: var(--slate-400);
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin: var(--space-lg) 0;
+    }
+    
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-sm) 0;
+      color: var(--slate-300);
+    }
+    
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--cyan);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .pricing-cta {
+      width: 100%;
+      margin-top: var(--space-lg);
+    }
+    
+    /* 5-Step Framework Section */
+    .framework-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--slate-100);
+    }
+    
+    .framework-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .framework-section h2 {
+      color: var(--slate-800);
+    }
+    
+    .framework-section .section-intro {
+      color: var(--slate-600);
+    }
+    
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-2xl);
+    }
+    
+    .step-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+    
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .step-card::after {
+      content: '→';
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--slate-400);
+      font-size: 1.25rem;
+    }
+    
+    .step-card:last-child::after {
+      display: none;
+    }
+    
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: var(--blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto var(--space-md);
+    }
+    
+    .step-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: var(--slate-800);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+    }
+    
+    /* Curriculum Section */
+    .curriculum-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--gradient-hero);
+    }
+    
+    .curriculum-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .curriculum-weeks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-2xl);
+    }
+    
+    .curriculum-week {
+      padding: var(--space-lg);
+    }
+    
+    .week-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .week-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--slate-100);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .week-desc {
+      font-size: 0.9rem;
+      color: var(--slate-400);
+      margin: 0;
+    }
+    
+    /* Social Proof Section */
+    .proof-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: white;
+    }
+    
+    .proof-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .proof-section h2 {
+      color: var(--slate-800);
+      text-align: center;
+    }
+    
+    .proof-section .section-intro {
+      color: var(--slate-600);
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: var(--space-xl);
+      background: var(--slate-100);
+      border-radius: var(--radius-lg);
+    }
+    
+    .stat-card .stat-value {
+      color: var(--blue);
+    }
+    
+    .stat-card .stat-label {
+      color: var(--slate-600);
+    }
+    
+    /* Guide Preview Section */
+    .preview-section {
+      padding: var(--space-3xl) var(--space-lg);
+      background: var(--slate-100);
+    }
+    
+    .preview-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .preview-section h2,
+    .preview-section .section-label {
+      color: var(--slate-800);
+      text-align: center;
+    }
+    
+    .preview-section .section-label {
+      color: var(--blue);
+    }
+    
+    .preview-section .section-intro {
+      color: var(--slate-600);
+      text-align: center;
+    }
+    
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-2xl);
+    }
+    
+    .guide-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+    
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .guide-card-header {
+      background: var(--gradient-hero);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+    
+    .guide-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .guide-card-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--slate-100);
+      margin: 0;
+    }
+    
+    .guide-card-body {
+      padding: var(--space-lg);
+    }
+    
+    .guide-card-meta {
+      font-size: 0.875rem;
+      color: var(--slate-600);
+      margin-bottom: var(--space-md);
+    }
+    
+    .guide-card-pattern {
+      display: inline-block;
+      background: var(--slate-100);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      color: var(--blue);
+      font-weight: 500;
+    }
+    
+    .guide-card-link {
+      display: block;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: var(--space-md);
+    }
+    
+    /* Final CTA Section */
+    .final-cta {
+      padding: var(--space-4xl) var(--space-lg);
+      background: var(--gradient-hero);
+      text-align: center;
+    }
+    
+    .final-cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .final-cta h2 {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .final-cta p {
+      color: var(--slate-300);
+      font-size: 1.1rem;
+      margin-bottom: var(--space-xl);
+    }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .step-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .step-card::after {
+        display: none;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .pricing-toggle {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .pricing-toggle-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="/">
+        <img src="/luminait_logo.png" alt="LuminAIT Learning" class="nav-logo">
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="#framework" class="nav-link">The Method</a>
+        <a href="#curriculum" class="nav-link">Curriculum</a>
+        <a href="#guides" class="nav-link">Free Guides</a>
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="nav-cta">Enroll Now</a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hub-hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          Master Analytical Writing
+          <span class="text-gradient">in <span class="program-hours">10 Weeks</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          We teach your child to understand the text. The writing follows naturally. 
+          Our structured framework transforms how students read, analyze, and write about literature.
+        </p>
+        
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="icon">📚</span>
+            <span>Years 7-12</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="icon">💻</span>
+            <span>Online, small group</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="icon">📝</span>
+            <span>Weekly feedback</span>
+          </div>
+        </div>
+        
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-primary">View Pricing</a>
+          <a href="#guides" class="btn btn-secondary">Try a Free Guide</a>
+        </div>
+      </div>
+      
+      <div class="hero-pricing" id="pricing">
+        <!-- Pricing Toggle -->
+        <div class="pricing-toggle">
+          <button class="pricing-toggle-btn" data-program="5-week">
+            <span class="toggle-label">5 Weeks</span>
+            <span class="toggle-subtitle">Yr 7-9</span>
+          </button>
+          <button class="pricing-toggle-btn active" data-program="10-week">
+            <span class="toggle-label">10 Weeks</span>
+            <span class="toggle-subtitle">Yr 10-12</span>
+          </button>
+        </div>
+        
+        <div class="pricing-header">
+          <h3 class="pricing-name program-name">10-Week Theoretical Model</h3>
+          <p class="pricing-target program-target">Year 10-12</p>
+        </div>
+        
+        <div class="pricing-amount">
+          <span class="price-main program-price">$550</span>
+          <span class="price-period">total</span>
+        </div>
+        
+        <div class="price-breakdown">
+          <span><span class="program-price-per-week">$55</span>/week</span>
+          <span><span class="program-price-per-hour">~$37</span>/hour</span>
+        </div>
+        
+        <ul class="pricing-features">
+          <li>1.5 hour weekly sessions</li>
+          <li>Text-specific worksheets</li>
+          <li>Detailed written feedback</li>
+          <li>Progress reports at midpoint & end</li>
+          <li data-program="10-week">Complete essay mastery</li>
+          <li data-program="5-week">Foundation analytical skills</li>
+        </ul>
+        
+        <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="btn btn-primary pricing-cta">
+          Enroll Now — <span class="program-price">$550</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Step Framework Section -->
+  <section class="framework-section" id="framework">
+    <div class="framework-content">
+      <span class="section-label">The Method</span>
+      <h2 class="section-title">The 5-Step Analytical Framework</h2>
+      <p class="section-intro">
+        Most students jump straight to writing. We teach them to build understanding first. 
+        Each step creates the foundation for the next.
+      </p>
+      
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4 class="step-title">Context</h4>
+          <p class="step-desc">Understand the author's world and structural choices</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4 class="step-title">Pattern</h4>
+          <p class="step-desc">Identify the core pattern driving the text</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4 class="step-title">Evidence</h4>
+          <p class="step-desc">Find and organize textual evidence</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4 class="step-title">Analysis</h4>
+          <p class="step-desc">Connect evidence to effect with TVODE sentences</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h4 class="step-title">Synthesis</h4>
+          <p class="step-desc">Build thesis and complete analytical essays</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section class="curriculum-section" id="curriculum">
+    <div class="curriculum-content">
+      <span class="section-label">Week-by-Week</span>
+      <h2 class="section-title">Curriculum Breakdown</h2>
+      <p class="section-intro program-description">
+        Master the complete analytical essay framework from thesis to conclusion.
+      </p>
+      
+      <div class="curriculum-weeks">
+        <!-- Dynamically populated by pricing-toggle.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Section -->
+  <section class="proof-section">
+    <div class="proof-content">
+      <span class="section-label">Results</span>
+      <h2 class="section-title">What Students Achieve</h2>
+      <p class="section-intro">
+        Measurable improvement in analytical writing skills.
+      </p>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">of students show measurable improvement</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10-20%</div>
+          <div class="stat-label">score improvement over the term</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">30-50%</div>
+          <div class="stat-label">improvement when feedback applied</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Preview Section -->
+  <section class="preview-section" id="guides">
+    <div class="preview-content">
+      <span class="section-label">Free Resources</span>
+      <h2 class="section-title">Try Our Analysis Guides</h2>
+      <p class="section-intro">
+        These in-depth guides use the same methodology as our course. 
+        See the quality of analysis your child will learn to produce.
+      </p>
+      
+      <div class="guide-grid">
+        <a href="/analysis/romeo-and-juliet/the-dread-engine/" class="guide-card">
+          <div class="guide-card-header">
+            <div class="guide-card-label">Shakespeare</div>
+            <h3 class="guide-card-title">Romeo and Juliet</h3>
+          </div>
+          <div class="guide-card-body">
+            <p class="guide-card-meta">Tragedy • Year 10-12</p>
+            <span class="guide-card-pattern">The Dread Engine</span>
+            <span class="guide-card-link">Explore the analysis →</span>
+          </div>
+        </a>
+        
+        <a href="/analysis/to-kill-a-mockingbird/the-innocence-lens/" class="guide-card">
+          <div class="guide-card-header">
+            <div class="guide-card-label">Harper Lee</div>
+            <h3 class="guide-card-title">To Kill a Mockingbird</h3>
+          </div>
+          <div class="guide-card-body">
+            <p class="guide-card-meta">Novel • Year 9-11</p>
+            <span class="guide-card-pattern">The Innocence Lens</span>
+            <span class="guide-card-link">Explore the analysis →</span>
+          </div>
+        </a>
+        
+        <a href="/guides/" class="guide-card">
+          <div class="guide-card-header">
+            <div class="guide-card-label">More Texts</div>
+            <h3 class="guide-card-title">View All Guides</h3>
+          </div>
+          <div class="guide-card-body">
+            <p class="guide-card-meta">The Giver, Macbeth, and more</p>
+            <span class="guide-card-pattern">Coming Soon</span>
+            <span class="guide-card-link">See all available texts →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta">
+    <div class="final-cta-content">
+      <h2>Ready to transform your child's writing?</h2>
+      <p>
+        Term 1 starts the week of January 19. Small groups fill quickly.
+      </p>
+      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="btn btn-primary">
+        Enroll Now — Starting at $275
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/course.html">Course</a>
+      <a href="/syllabus.html">Curriculum</a>
+      <a href="/results.html">Results</a>
+    </div>
+    <p class="footer-contact">
+      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a> ·
+      <a href="tel:+61421213517">+61 421 213 517</a>
+    </p>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+  <!-- Scripts -->
+  <script src="/components/pricing-toggle.js"></script>
+  <script>
+    // Initialize pricing toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      initPricingToggle();
+      
+      // Mobile nav toggle
+      window.toggleNav = function() {
+        document.getElementById('navLinks').classList.toggle('active');
+      };
+      
+      // Back to top button
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      
+      // Language toggle (placeholder)
+      window.setLanguage = function(lang) {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        // TODO: Implement full language switching
+      };
+    });
+  </script>
+</body>
+</html>
