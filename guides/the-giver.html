@@ -1,325 +1,1005 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Giver Analysis Guide | LuminAIT Learning</title>
-  <meta name="description" content="The Giver analysis guide coming soon. Text-specific English tutoring for Years 7-8 students.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --deep-navy: #0a1628;
-      --navy: #0d1b2a;
-      --cyan: #00d4ff;
-      --cyan-glow: #00d4ff33;
-      --blue: #3b82f6;
-      --slate-100: #f1f5f9;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth social analysis of The Giver. Discover the key patterns, literary devices, and essay strategies for understanding this classic text.">
+    <meta name="keywords" content="The Giver, analysis, social lens, literary devices, essay tips, book analysis">
+    <meta name="author" content="Literary Analysis Automation">
+    <meta name="robots" content="index, follow">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Giver - Social Lens Analysis Guide">
+    <meta property="og:description" content="Master the social analysis of The Giver with our comprehensive guide.">
+
+    <title>The Giver Analysis - Social Lens Guide | Literary Analysis</title>
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Giver - Social Lens Analysis Guide",
+        "description": "Comprehensive literary analysis of The Giver through the social lens, including key patterns, literary devices, and essay tips.",
+        "articleSection": "Literary Analysis",
+        "keywords": "The Giver, analysis, literary devices, essay, social analysis, literature guide"
+    }
+    </script>
+    
+
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: var(--slate-700);
-      font-size: 16px;
-      background: var(--deep-navy);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                     'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #1e293b;
+        background: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
-    body[data-lang="zh"] {
-      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    .container {
+        background: white;
+        min-height: 100vh;
     }
 
-    [data-lang-content="zh"] { display: none !important; }
-    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
-    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
-    body[data-lang="zh"] p[data-lang-content="zh"],
-    body[data-lang="zh"] h1[data-lang-content="zh"],
-    body[data-lang="zh"] h2[data-lang-content="zh"] { display: block !important; }
-
-    .nav {
-      background: transparent;
-      padding: 1.25rem 2rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
+    main {
+        padding-bottom: 60px;
     }
 
-    .nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
+    /* Summary marker for details/FAQ */
+    summary::-webkit-details-marker {
+        display: none;
     }
 
-    .nav-logo-text {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--cyan);
-      text-decoration: none;
+    summary {
+        list-style: none;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
     }
 
-    .nav-link {
-      color: var(--slate-400);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
+    /* Focus states for accessibility */
+    a:focus,
+    button:focus,
+    input:focus,
+    details:focus,
+    summary:focus {
+        outline: 2px solid #06b6d4;
+        outline-offset: 2px;
     }
 
-    .nav-link:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.05);
+    /* Link styles */
+    a {
+        color: #0891b2;
+        text-decoration: none;
     }
 
-    .lang-toggle {
-      display: flex;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 6px;
-      padding: 3px;
-      margin-left: 0.5rem;
+    a:hover {
+        text-decoration: underline;
     }
 
-    .lang-btn {
-      padding: 0.35rem 0.6rem;
-      border: none;
-      background: transparent;
-      color: var(--slate-400);
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      font-family: inherit;
+    /* Button hover states */
+    button:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
     }
 
-    .lang-btn:hover { color: white; }
-    .lang-btn.active {
-      background: var(--cyan);
-      color: var(--deep-navy);
+    /* Input focus states */
+    input:focus {
+        border-color: #06b6d4 !important;
     }
 
-    .hero {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-      background: linear-gradient(165deg, var(--deep-navy) 0%, var(--navy) 40%, #0f2744 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -15%;
-      width: 50%;
-      height: 160%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 600px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(0, 212, 255, 0.15);
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      color: var(--cyan);
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero .author {
-      color: var(--slate-400);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero .pattern {
-      color: var(--cyan);
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-
-    .coming-soon-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .coming-soon-box h2 {
-      color: var(--slate-300);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .coming-soon-box p {
-      color: var(--slate-500);
-      font-size: 0.95rem;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--cyan);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      background: var(--deep-navy);
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-contact {
-      color: var(--slate-500);
-      font-size: 0.9rem;
-    }
-
-    .footer-contact a {
-      color: var(--slate-400);
-      text-decoration: none;
-    }
-
-    .footer-contact a:hover { color: var(--cyan); }
-
+    /* Responsive typography */
     @media (max-width: 768px) {
-      .nav { padding: 1rem; }
-      .nav-links { display: none; }
-      .hero { padding: 6rem 1.25rem 3rem; }
+        h1 { font-size: 2rem !important; }
+        h2 { font-size: 1.5rem !important; }
+        h3 { font-size: 1.25rem !important; }
+
+        section {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+        }
     }
-  </style>
+
+    /* Print styles */
+    @media print {
+        .container {
+            max-width: 100%;
+            background: white;
+        }
+
+        section {
+            page-break-inside: avoid;
+        }
+
+        header {
+            background: #0f172a !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        details {
+            display: block !important;
+        }
+
+        details > summary {
+            display: none;
+        }
+
+        details > div {
+            display: block !important;
+        }
+
+        /* Hide CTA in print */
+        section:has(input[type="email"]) {
+            display: none;
+        }
+    }
+
+    /* Animation for hover effects */
+    @media (prefers-reduced-motion: no-preference) {
+        button,
+        a,
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+        }
+    }
+    </style>
 </head>
-<body data-lang="en">
+<body>
+    <div class="container">
+        
+    <header style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                   padding: 60px 20px; text-align: center; position: relative; overflow: hidden;">
+        <!-- Decorative gradient overlay -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                    background: radial-gradient(circle at 30% 20%, #06b6d415 0%, transparent 50%);
+                    pointer-events: none;"></div>
 
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="../index.html" class="nav-logo-text">LuminAIT</a>
-      <div class="nav-links">
-        <a href="../curriculum.html" class="nav-link">
-          <span data-lang-content="en">How It Works</span>
-          <span data-lang-content="zh">课程方法</span>
-        </a>
-        <a href="../course.html" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <div class="lang-toggle">
-          <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-          <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+        <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto;">
+            <!-- Step indicator -->
+            <div style="margin-bottom: 24px;">
+                <span style="display: inline-block; padding: 6px 16px; background: #06b6d4;
+                            color: #0f172a; border-radius: 20px; font-size: 12px;
+                            font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+                    Step 1: Discover the Pattern
+                </span>
+            </div>
+
+            <!-- Lens badge -->
+            <span style="display: inline-block; padding: 4px 12px; background: #1e293b;
+                        color: #06b6d4; border-radius: 20px; font-size: 13px;
+                        border: 1px solid #06b6d440; margin-bottom: 16px;">
+                Social Lens
+            </span>
+
+            <!-- Book title -->
+            <h1 style="margin: 0 0 8px 0; font-size: 2.75rem; color: #ffffff;
+                       font-weight: 800; line-height: 1.2;">
+                The Giver
+            </h1>
+
+            <!-- Pattern title (catchy name) -->
+            <h2 style="margin: 0 0 12px 0; font-size: 1.75rem; color: #06b6d4;
+                       font-weight: 600;">
+                The Control Machine
+            </h2>
+
+            <!-- Hook subtitle -->
+            <h3 style="margin: 0 0 20px 0; font-size: 1.25rem; color: #cbd5e1;
+                       font-weight: 400;">
+                How Perfect Societies Hide Their Dark Secrets
+            </h3>
+
+            <!-- Author -->
+            <p style="margin: 0 0 24px 0; font-size: 1rem; color: #94a3b8;">
+                by Lois Lowry
+            </p>
+
+            <!-- Context tags -->
+            <div style="margin-bottom: 32px;">
+                <span style="display: inline-block; padding: 4px 12px; background: #1e293b; color: #cbd5e1; border-radius: 16px; font-size: 12px; margin: 4px;">Dystopian Fiction</span><span style="display: inline-block; padding: 4px 12px; background: #1e293b; color: #cbd5e1; border-radius: 16px; font-size: 12px; margin: 4px;">Totalitarian Control</span><span style="display: inline-block; padding: 4px 12px; background: #1e293b; color: #cbd5e1; border-radius: 16px; font-size: 12px; margin: 4px;">Memory Suppression</span><span style="display: inline-block; padding: 4px 12px; background: #1e293b; color: #cbd5e1; border-radius: 16px; font-size: 12px; margin: 4px;">Childhood Innocence</span>
+            </div>
+
+            <!-- Tagline -->
+            <p style="margin: 0 0 24px 0; font-size: 1.1rem; color: #e2e8f0;
+                      font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto;
+                      line-height: 1.6;">
+                "Lois Lowry reveals how totalitarian systems disguise violence as kindness through euphemistic language and emotional suppression."
+            </p>
+
+            <!-- Insight question -->
+            <div style="background: #06b6d415; border: 1px solid #06b6d440;
+                        border-radius: 12px; padding: 20px; max-width: 600px; margin: 0 auto;">
+                <p style="margin: 0; font-size: 1rem; color: #22d3ee; font-style: italic;">
+                    Most dystopian stories ask how freedom dies. The Giver asks how oppression disguises itself as perfection.
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-content">
-      <div class="badge">Y7-8</div>
-      <h1>The Giver</h1>
-      <p class="author">Lois Lowry</p>
-      <p class="pattern">
-        <span data-lang-content="en">Memory as Resistance</span>
-        <span data-lang-content="zh">记忆即抵抗</span>
-      </p>
-      <div class="coming-soon-box">
-        <h2>
-          <span data-lang-content="en">Analysis guide coming soon</span>
-          <span data-lang-content="zh">分析指南即将推出</span>
+    </header>
+    
+        <main>
+            
+    <section style="padding: 0 20px; max-width: 1000px; margin: 0 auto;">
+        
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-top: 40px;">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+                    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                    font-size: 1.25rem; font-weight: 700; color: #0f172a;">
+            2
+        </div>
+        <h2 style="margin: 0; font-size: 1.75rem; color: #0f172a; font-weight: 700;">
+            Understanding The Control Machine
         </h2>
-        <p>
-          <span data-lang-content="en">We're building a comprehensive guide for this text. Check back soon or contact us to be notified.</span>
-          <span data-lang-content="zh">我们正在为这本书制作全面的指南。请稍后再来查看，或联系我们获取通知。</span>
-        </p>
-      </div>
-      <a href="../index.html" class="back-link">
-        <span data-lang-content="en">← Back to all texts</span>
-        <span data-lang-content="zh">← 返回所有文本</span>
-      </a>
     </div>
-  </section>
+    
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            
+        <div style="background: #ffffff; border-radius: 12px; padding: 28px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;
+                    transition: transform 0.2s, box-shadow 0.2s;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">🔍</div>
+            <h4 style="margin: 0 0 12px 0; color: #0f172a; font-size: 1.2rem; font-weight: 700;">
+                Language Masks
+            </h4>
+            <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+                The community transforms murder into &quot;release&quot; and execution into &quot;celebration.&quot; Euphemistic language allows citizens to participate in violence without recognizing their complicity.
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 28px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;
+                    transition: transform 0.2s, box-shadow 0.2s;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">⚡</div>
+            <h4 style="margin: 0 0 12px 0; color: #0f172a; font-size: 1.2rem; font-weight: 700;">
+                Ignorance Shield
+            </h4>
+            <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+                Jonas starts as the perfect citizen, accepting every rule without question. His gradual awakening exposes how totalitarian systems depend on citizen ignorance to maintain power.
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 28px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;
+                    transition: transform 0.2s, box-shadow 0.2s;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">🎭</div>
+            <h4 style="margin: 0 0 12px 0; color: #0f172a; font-size: 1.2rem; font-weight: 700;">
+                Violence Veneer
+            </h4>
+            <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+                The community presents systematic killing as mercy and compassion. This reveals how oppressive societies reframe brutality as benevolence to maintain social compliance.
+            </p>
+        </div>
+        
+        </div>
+    </section>
+    
+            
+    <section style="padding: 40px 20px; max-width: 1000px; margin: 40px auto;">
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                    border-radius: 16px; padding: 40px; position: relative; overflow: hidden;">
+            <!-- Decorative element -->
+            <div style="position: absolute; top: 20px; right: 20px; font-size: 4rem; opacity: 0.1; color: #06b6d4;">
+                "
+            </div>
 
-  <footer class="footer">
-    <p class="footer-contact">
-      <a href="mailto:hello@luminait.com.au">hello@luminait.com.au</a> ·
-      <a href="tel:+61421213517">+61 421 213 517</a>
-    </p>
-  </footer>
+            <div style="position: relative; z-index: 1;">
+                <span style="display: inline-block; padding: 4px 12px; background: #06b6d420;
+                            color: #06b6d4; border-radius: 16px; font-size: 12px;
+                            margin-bottom: 20px; font-weight: 600;">
+                    Anchor Quote • Dramatic Irony
+                </span>
 
-  <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
+                <blockquote style="margin: 0 0 30px 0; font-size: 1.35rem; color: #ffffff;
+                                   font-style: italic; line-height: 1.6; border-left: 3px solid #06b6d4;
+                                   padding-left: 24px;">
+                    "to be released. It’s usually not hard, though. Usually it’s just a matter of birthweight. We release the smaller of the two .” Jonas, listening, thought suddenly about the bridge and how, standing there, he had wondered"
+                </blockquote>
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) setLanguage(savedLang);
-    });
-  </script>
+                <p style="margin: 0 0 24px 0; color: #94a3b8; font-size: 0.9rem;">
+                    — Climax (64%)
+                </p>
 
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div style="background: #ffffff08; border-radius: 8px; padding: 16px;">
+                        <h4 style="margin: 0 0 8px 0; color: #06b6d4; font-size: 12px;
+                                   text-transform: uppercase; letter-spacing: 1px;">
+                            On the Surface
+                        </h4>
+                        <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem; line-height: 1.5;">
+                            Jonas&#x27;s father casually explains that they &quot;release&quot; the smaller twin as standard procedure for newborn selection.
+                        </p>
+                    </div>
+                    <div style="background: #ffffff08; border-radius: 8px; padding: 16px;">
+                        <h4 style="margin: 0 0 8px 0; color: #f59e0b; font-size: 12px;
+                                   text-transform: uppercase; letter-spacing: 1px;">
+                            The Deeper Meaning
+                        </h4>
+                        <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem; line-height: 1.5;">
+                            The clinical, matter-of-fact discussion of infanticide reveals how euphemistic language enables ordinary people to commit systematic murder.
+                        </p>
+                    </div>
+                    <div style="background: #ffffff08; border-radius: 8px; padding: 16px;">
+                        <h4 style="margin: 0 0 8px 0; color: #8b5cf6; font-size: 12px;
+                                   text-transform: uppercase; letter-spacing: 1px;">
+                            Pattern Connection
+                        </h4>
+                        <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem; line-height: 1.5;">
+                            This quote demonstrates how totalitarian control operates through linguistic manipulation that obscures institutional violence behind pleasant terminology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+            
+    <section style="padding: 0 20px; max-width: 1000px; margin: 0 auto;">
+        
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-top: 40px;">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+                    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                    font-size: 1.25rem; font-weight: 700; color: #0f172a;">
+            3
+        </div>
+        <h2 style="margin: 0; font-size: 1.75rem; color: #0f172a; font-weight: 700;">
+            Literary Devices in Action
+        </h2>
+    </div>
+    
+        <div style="display: grid; gap: 20px;">
+            
+        <div style="background: #ffffff; border-radius: 12px; padding: 24px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+                    border-left: 4px solid #06b6d4;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                        Dramatic Irony
+                    </h4>
+                    <p style="margin: 0; color: #0891b2; font-size: 0.85rem; font-style: italic;">
+                        The Warning Signal
+                    </p>
+                </div>
+                <span style="padding: 4px 10px; background: #f1f5f9; border-radius: 12px;
+                            font-size: 11px; color: #475569;">
+                    Exposition (8%)
+                </span>
+            </div>
+            <blockquote style="margin: 0 0 12px 0; padding: 12px; background: #f1f5f9;
+                               border-radius: 8px; font-style: italic; color: #334155;
+                               font-size: 0.9rem; line-height: 1.5; border: none;">
+                "error was noticed. NEEDLESSTO SAY, HE WILLBE RELEASED, the voice had said, followed by silence. There was an ironic tone to that final message , as if the Speaker found it amusing; and Jonas had smile..."
+            </blockquote>
+            <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.5;">
+                <strong style="color: #0f172a;">Effect:</strong> Jonas recognizes something unsettling in the Speaker&#x27;s tone without understanding its sinister implications, creating dramatic irony that hints at the community&#x27;s hidden darkness
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 24px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+                    border-left: 4px solid #06b6d4;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                        Dramatic Irony
+                    </h4>
+                    <p style="margin: 0; color: #0891b2; font-size: 0.85rem; font-style: italic;">
+                        Death Celebration
+                    </p>
+                </div>
+                <span style="padding: 4px 10px; background: #f1f5f9; border-radius: 12px;
+                            font-size: 11px; color: #475569;">
+                    Rising Action (38%)
+                </span>
+            </div>
+            <blockquote style="margin: 0 0 12px 0; padding: 12px; background: #f1f5f9;
+                               border-radius: 8px; font-style: italic; color: #334155;
+                               font-size: 0.9rem; line-height: 1.5; border: none;">
+                "him well. I didn’t, though. I’ve never been fond of public speaking. “He was thrilled. You should have seen the look on his face when they let him go .” Jonas slowed the strokes of his hand on her bac..."
+            </blockquote>
+            <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.5;">
+                <strong style="color: #0f172a;">Effect:</strong> Jonas and readers don&#x27;t yet understand that &#x27;release&#x27; means death, while the totalitarian system maintains control through citizens&#x27; ignorance of institutional violence
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 24px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+                    border-left: 4px solid #06b6d4;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                        Euphemism
+                    </h4>
+                    <p style="margin: 0; color: #0891b2; font-size: 0.85rem; font-style: italic;">
+                        Murder Makeover
+                    </p>
+                </div>
+                <span style="padding: 4px 10px; background: #f1f5f9; border-radius: 12px;
+                            font-size: 11px; color: #475569;">
+                    Rising Action (38%)
+                </span>
+            </div>
+            <blockquote style="margin: 0 0 12px 0; padding: 12px; background: #f1f5f9;
+                               border-radius: 8px; font-style: italic; color: #334155;
+                               font-size: 0.9rem; line-height: 1.5; border: none;">
+                "we celebrated the release of Roberto ,” she told him. “It was wonderful.” “I knew Roberto!” Jonas said. “I helped with"
+            </blockquote>
+            <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.5;">
+                <strong style="color: #0f172a;">Effect:</strong> The word &#x27;release&#x27; masks the reality of execution, demonstrating how totalitarian language obscures institutional violence to maintain citizen compliance
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 24px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+                    border-left: 4px solid #06b6d4;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                        Dramatic Irony
+                    </h4>
+                    <p style="margin: 0; color: #0891b2; font-size: 0.85rem; font-style: italic;">
+                        Casual Killing
+                    </p>
+                </div>
+                <span style="padding: 4px 10px; background: #f1f5f9; border-radius: 12px;
+                            font-size: 11px; color: #475569;">
+                    Climax (64%)
+                </span>
+            </div>
+            <blockquote style="margin: 0 0 12px 0; padding: 12px; background: #f1f5f9;
+                               border-radius: 8px; font-style: italic; color: #334155;
+                               font-size: 0.9rem; line-height: 1.5; border: none;">
+                "to be released. It’s usually not hard, though. Usually it’s just a matter of birthweight. We release the smaller of the two .” Jonas, listening, thought suddenly about the bridge and how, standing the..."
+            </blockquote>
+            <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.5;">
+                <strong style="color: #0f172a;">Effect:</strong> Jonas and readers understand &#x27;release&#x27; means death while his family speaks casually about killing newborns, exposing how euphemistic language enables citizens to participate unknow...
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 24px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+                    border-left: 4px solid #06b6d4;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                        Juxtaposition
+                    </h4>
+                    <p style="margin: 0; color: #0891b2; font-size: 0.85rem; font-style: italic;">
+                        Pleasant Horror
+                    </p>
+                </div>
+                <span style="padding: 4px 10px; background: #f1f5f9; border-radius: 12px;
+                            font-size: 11px; color: #475569;">
+                    Climax (64%)
+                </span>
+            </div>
+            <blockquote style="margin: 0 0 12px 0; padding: 12px; background: #f1f5f9;
+                               border-radius: 8px; font-style: italic; color: #334155;
+                               font-size: 0.9rem; line-height: 1.5; border: none;">
+                "her sparkling eyes, her soft voice, her low chuckle. Fiona had told him recently that Larissa had been released at a wonderful ceremony . But he knew that the Old were not given children to raise. Lar..."
+            </blockquote>
+            <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.5;">
+                <strong style="color: #0f172a;">Effect:</strong> The contrast between Fiona&#x27;s cheerful description of Larissa&#x27;s &#x27;release&#x27; and Jonas&#x27;s dawning knowledge that it means death reveals how the community&#x27;s pleasant facade conceals inst...
+            </p>
+        </div>
+        
+        <div style="background: #ffffff; border-radius: 12px; padding: 24px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
+                    border-left: 4px solid #06b6d4;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                        Euphemism
+                    </h4>
+                    <p style="margin: 0; color: #0891b2; font-size: 0.85rem; font-style: italic;">
+                        Mercy Mask
+                    </p>
+                </div>
+                <span style="padding: 4px 10px; background: #f1f5f9; border-radius: 12px;
+                            font-size: 11px; color: #475569;">
+                    Resolution (97%)
+                </span>
+            </div>
+            <blockquote style="margin: 0 0 12px 0; padding: 12px; background: #f1f5f9;
+                               border-radius: 8px; font-style: italic; color: #334155;
+                               font-size: 0.9rem; line-height: 1.5; border: none;">
+                "Kira shuddered. It was the way, the custom, and it was the merciful thing, to give an unnamed, imperfect infant back to the earth before its spirit had filled it and made it human. But it made her shu..."
+            </blockquote>
+            <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.5;">
+                <strong style="color: #0f172a;">Effect:</strong> Masks the institutional violence of infanticide with gentle, natural language, revealing how totalitarian systems use euphemistic language to normalize brutal practices of eliminat...
+            </p>
+        </div>
+        
+        </div>
+    </section>
+    
+            
+    <section style="padding: 0 20px; max-width: 1000px; margin: 0 auto;">
+        
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-top: 40px;">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+                    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                    font-size: 1.25rem; font-weight: 700; color: #0f172a;">
+            4
+        </div>
+        <h2 style="margin: 0; font-size: 1.75rem; color: #0f172a; font-weight: 700;">
+            The Central Conflict
+        </h2>
+    </div>
+    
+
+        <div style="background: #ffffff; border-radius: 16px; padding: 32px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+
+            <!-- VS Header -->
+            <div style="display: flex; justify-content: center; align-items: center; gap: 24px; margin-bottom: 32px;">
+                <div style="text-align: right; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.75rem; color: #0891b2; font-weight: 700;">
+                        Control
+                    </h3>
+                </div>
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                            font-size: 1.25rem; font-weight: 700; color: #ffffff;">
+                    VS
+                </div>
+                <div style="text-align: left; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.75rem; color: #f43f5e; font-weight: 700;">
+                        Freedom
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Evidence Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px;">
+                <div style="background: #06b6d408; border-radius: 12px; padding: 20px;
+                            border: 1px solid #06b6d420;">
+                    <h4 style="margin: 0 0 12px 0; color: #0891b2; font-size: 0.85rem;
+                               text-transform: uppercase; letter-spacing: 1px;">
+                        Evidence for Control
+                    </h4>
+                    <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">The community eliminates weather, color, and emotion to prevent unpredictable human responses</li><li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">Citizens must take daily pills to suppress natural feelings and desires</li><li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">Information about the past is restricted to a single Receiver to prevent questioning current systems</li><li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">Euphemistic language masks all forms of institutional violence as beneficial procedures</li>
+                    </ul>
+                </div>
+                <div style="background: #f43f5e08; border-radius: 12px; padding: 20px;
+                            border: 1px solid #f43f5e20;">
+                    <h4 style="margin: 0 0 12px 0; color: #f43f5e; font-size: 0.85rem;
+                               text-transform: uppercase; letter-spacing: 1px;">
+                        Evidence for Freedom
+                    </h4>
+                    <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">Jonas experiences authentic emotions like love and grief through transferred memories</li><li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">The memories reveal a world where people made individual choices about careers, relationships, and lifestyle</li><li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">Natural human experiences like seeing color represent the beauty lost through systematic control</li><li style="margin-bottom: 8px; color: #475569; font-size: 0.9rem;">Jonas&#x27;s escape attempts to restore choice and authentic experience to the community</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insight -->
+            <div style="background: #f1f5f9; border-radius: 12px; padding: 20px; text-align: center;">
+                <p style="margin: 0; color: #0f172a; font-size: 1rem; font-style: italic; line-height: 1.6;">
+                    💡 The Giver exposes how totalitarian societies maintain power by convincing citizens that freedom is dangerous and control is compassionate.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+            
+    <section style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+        <h2 style="margin: 0 0 8px 0; font-size: 1.5rem; color: #0f172a; font-weight: 700; text-align: center;">
+            📈 Narrative Arc
+        </h2>
+        <p style="margin: 0 0 32px 0; color: #64748b; text-align: center;">
+            How the story unfolds
+        </p>
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+            
+        <div style="flex: 17; min-width: 70px; text-align: center;">
+            <div style="background: #10b981; height: 60px; border-radius: 6px;
+                        display: flex; align-items: center; justify-content: center;
+                        box-shadow: 0 2px 8px #10b98140;">
+                <span style="color: white; font-weight: 700; font-size: 14px;">17%</span>
+            </div>
+            <p style="margin: 10px 0 4px 0; font-size: 11px; font-weight: 700; color: #0f172a;
+                      text-transform: uppercase; letter-spacing: 0.5px;">
+                Exposition
+            </p>
+            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.3;">
+                Naive Acceptance
+            </p>
+        </div>
+        
+        <div style="flex: 43; min-width: 70px; text-align: center;">
+            <div style="background: #06b6d4; height: 60px; border-radius: 6px;
+                        display: flex; align-items: center; justify-content: center;
+                        box-shadow: 0 2px 8px #06b6d440;">
+                <span style="color: white; font-weight: 700; font-size: 14px;">43%</span>
+            </div>
+            <p style="margin: 10px 0 4px 0; font-size: 11px; font-weight: 700; color: #0f172a;
+                      text-transform: uppercase; letter-spacing: 0.5px;">
+                Rising Action
+            </p>
+            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.3;">
+                Gradual Awakening
+            </p>
+        </div>
+        
+        <div style="flex: 9; min-width: 70px; text-align: center;">
+            <div style="background: #f43f5e; height: 60px; border-radius: 6px;
+                        display: flex; align-items: center; justify-content: center;
+                        box-shadow: 0 2px 8px #f43f5e40;">
+                <span style="color: white; font-weight: 700; font-size: 14px;">9%</span>
+            </div>
+            <p style="margin: 10px 0 4px 0; font-size: 11px; font-weight: 700; color: #0f172a;
+                      text-transform: uppercase; letter-spacing: 0.5px;">
+                Climax
+            </p>
+            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.3;">
+                Truth Revelation
+            </p>
+        </div>
+        
+        <div style="flex: 26; min-width: 70px; text-align: center;">
+            <div style="background: #f59e0b; height: 60px; border-radius: 6px;
+                        display: flex; align-items: center; justify-content: center;
+                        box-shadow: 0 2px 8px #f59e0b40;">
+                <span style="color: white; font-weight: 700; font-size: 14px;">26%</span>
+            </div>
+            <p style="margin: 10px 0 4px 0; font-size: 11px; font-weight: 700; color: #0f172a;
+                      text-transform: uppercase; letter-spacing: 0.5px;">
+                Falling Action
+            </p>
+            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.3;">
+                Active Rebellion
+            </p>
+        </div>
+        
+        <div style="flex: 4; min-width: 70px; text-align: center;">
+            <div style="background: #8b5cf6; height: 60px; border-radius: 6px;
+                        display: flex; align-items: center; justify-content: center;
+                        box-shadow: 0 2px 8px #8b5cf640;">
+                <span style="color: white; font-weight: 700; font-size: 14px;">4%</span>
+            </div>
+            <p style="margin: 10px 0 4px 0; font-size: 11px; font-weight: 700; color: #0f172a;
+                      text-transform: uppercase; letter-spacing: 0.5px;">
+                Resolution
+            </p>
+            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.3;">
+                Uncertain Liberation
+            </p>
+        </div>
+        
+        </div>
+    </section>
+    
+            
+    <section style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+        <h2 style="margin: 0 0 8px 0; font-size: 1.5rem; color: #0f172a; font-weight: 700; text-align: center;">
+            📚 Essay Toolkit
+        </h2>
+        <p style="margin: 0 0 32px 0; color: #64748b; text-align: center;">
+            Pro tips for writing about this text
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+            
+            <div style="display: flex; gap: 16px; padding: 20px; background: #ffffff;
+                        border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                        border: 1px solid #e2e8f0;">
+                <div style="font-size: 1.5rem; flex-shrink: 0;">🎯</div>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Start With Pattern
+                    </h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                        Begin by identifying how the community&#x27;s &quot;perfection&quot; systematically eliminates human freedom. Show how Lowry uses Jonas&#x27;s awakening to reveal the true cost of totalitarian control.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 16px; padding: 20px; background: #ffffff;
+                        border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                        border: 1px solid #e2e8f0;">
+                <div style="font-size: 1.5rem; flex-shrink: 0;">📝</div>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Quote Selection
+                    </h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                        Focus on moments where euphemistic language masks violence, like &quot;release&quot; meaning death. These quotes demonstrate how linguistic manipulation enables oppression.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 16px; padding: 20px; background: #ffffff;
+                        border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                        border: 1px solid #e2e8f0;">
+                <div style="font-size: 1.5rem; flex-shrink: 0;">⚙️</div>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Show the Mechanism
+                    </h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                        Explain how dramatic irony works throughout the novel. Readers gradually understand what Jonas doesn&#x27;t, creating tension as we recognize the community&#x27;s hidden brutality.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 16px; padding: 20px; background: #ffffff;
+                        border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                        border: 1px solid #e2e8f0;">
+                <div style="font-size: 1.5rem; flex-shrink: 0;">🔗</div>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Connect to Theme
+                    </h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                        Link each literary device to Lowry&#x27;s central message about totalitarian control. Show how euphemism, symbolism, and irony all serve to expose systematic oppression.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 16px; padding: 20px; background: #ffffff;
+                        border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                        border: 1px solid #e2e8f0;">
+                <div style="font-size: 1.5rem; flex-shrink: 0;">⚖️</div>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Address Counterarguments
+                    </h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                        Acknowledge that the community appears peaceful and orderly. Then explain how this apparent perfection depends on eliminating human dignity and individual choice.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 16px; padding: 20px; background: #ffffff;
+                        border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                        border: 1px solid #e2e8f0;">
+                <div style="font-size: 1.5rem; flex-shrink: 0;">🏁</div>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Nail the Conclusion
+                    </h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                        End by connecting Jonas&#x27;s awakening to broader questions about freedom versus security. Emphasize how the novel warns against trading humanity for artificial peace.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+            
+    <section style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;
+                    background: #f1f5f9; border-radius: 16px;">
+        <h2 style="margin: 0 0 8px 0; font-size: 1.5rem; color: #0f172a; font-weight: 700; text-align: center;">
+            🪞 Modern Mirror
+        </h2>
+        <p style="margin: 0 0 32px 0; color: #64748b; text-align: center;">
+            See these themes in today's world
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 20px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <h4 style="margin: 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Social Media Algorithms
+                    </h4>
+                    <span style="padding: 2px 10px; background: #06b6d415; border-radius: 12px;
+                                font-size: 12px; color: #0891b2; font-weight: 600;">
+                        2020
+                    </span>
+                </div>
+                <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                    Platforms curate content to eliminate uncomfortable truths, creating echo chambers that mirror the community&#x27;s information control.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 20px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <h4 style="margin: 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Dystopian TV Popularity
+                    </h4>
+                    <span style="padding: 2px 10px; background: #06b6d415; border-radius: 12px;
+                                font-size: 12px; color: #0891b2; font-weight: 600;">
+                        2016
+                    </span>
+                </div>
+                <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                    Shows like Black Mirror and The Handmaid&#x27;s Tale reflect modern anxieties about surveillance and authoritarian control disguised as protection.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 20px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <h4 style="margin: 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Edward Snowden Revelations
+                    </h4>
+                    <span style="padding: 2px 10px; background: #06b6d415; border-radius: 12px;
+                                font-size: 12px; color: #0891b2; font-weight: 600;">
+                        2013
+                    </span>
+                </div>
+                <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                    Government surveillance programs operated under euphemistic names while systematically violating privacy rights in the name of security.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 20px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <h4 style="margin: 0; color: #0f172a; font-size: 1rem; font-weight: 700;">
+                        Corporate Wellness Programs
+                    </h4>
+                    <span style="padding: 2px 10px; background: #06b6d415; border-radius: 12px;
+                                font-size: 12px; color: #0891b2; font-weight: 600;">
+                        2021
+                    </span>
+                </div>
+                <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                    Companies monitor employee health and behavior under the guise of care, echoing the community&#x27;s intrusive control disguised as benevolence.
+                </p>
+            </div>
+            
+        </div>
+    </section>
+    
+            
+    <section style="padding: 40px 20px; max-width: 800px; margin: 0 auto;">
+        <h2 style="margin: 0 0 8px 0; font-size: 1.5rem; color: #0f172a; font-weight: 700; text-align: center;">
+            ❓ Frequently Asked Questions
+        </h2>
+        <p style="margin: 0 0 32px 0; color: #64748b; text-align: center;">
+            Quick answers to common questions
+        </p>
+        
+            <details style="margin-bottom: 12px; background: #ffffff; border-radius: 12px;
+                           border: 1px solid #e2e8f0; overflow: hidden;">
+                <summary style="padding: 20px; cursor: pointer; font-weight: 600; color: #0f172a;
+                                font-size: 1rem; list-style: none; display: flex; justify-content: space-between;
+                                align-items: center;">
+                    What is the main theme of The Giver?
+                    <span style="color: #06b6d4; font-size: 1.25rem;">+</span>
+                </summary>
+                <div style="padding: 0 20px 20px 20px; color: #475569; line-height: 1.6;">
+                    The Giver explores how totalitarian societies maintain control through emotional suppression, information restriction, and euphemistic language that masks violence as kindness. The novel warns against trading individual freedom for artificial security and perfection.
+                </div>
+            </details>
+            
+            <details style="margin-bottom: 12px; background: #ffffff; border-radius: 12px;
+                           border: 1px solid #e2e8f0; overflow: hidden;">
+                <summary style="padding: 20px; cursor: pointer; font-weight: 600; color: #0f172a;
+                                font-size: 1rem; list-style: none; display: flex; justify-content: space-between;
+                                align-items: center;">
+                    What literary devices are used in The Giver?
+                    <span style="color: #06b6d4; font-size: 1.25rem;">+</span>
+                </summary>
+                <div style="padding: 0 20px 20px 20px; color: #475569; line-height: 1.6;">
+                    Lowry primarily uses dramatic irony to reveal the community&#x27;s true nature gradually, euphemism to show how language masks violence, and symbolism to represent lost human experiences. Free indirect discourse allows readers to experience Jonas&#x27;s awakening firsthand.
+                </div>
+            </details>
+            
+            <details style="margin-bottom: 12px; background: #ffffff; border-radius: 12px;
+                           border: 1px solid #e2e8f0; overflow: hidden;">
+                <summary style="padding: 20px; cursor: pointer; font-weight: 600; color: #0f172a;
+                                font-size: 1rem; list-style: none; display: flex; justify-content: space-between;
+                                align-items: center;">
+                    How do I write an essay about The Giver?
+                    <span style="color: #06b6d4; font-size: 1.25rem;">+</span>
+                </summary>
+                <div style="padding: 0 20px 20px 20px; color: #475569; line-height: 1.6;">
+                    Focus on how the community&#x27;s apparent perfection depends on systematic oppression, using specific quotes where euphemistic language masks violence. Analyze how Jonas&#x27;s awakening exposes the true cost of eliminating human choice and authentic emotion.
+                </div>
+            </details>
+            
+            <details style="margin-bottom: 12px; background: #ffffff; border-radius: 12px;
+                           border: 1px solid #e2e8f0; overflow: hidden;">
+                <summary style="padding: 20px; cursor: pointer; font-weight: 600; color: #0f172a;
+                                font-size: 1rem; list-style: none; display: flex; justify-content: space-between;
+                                align-items: center;">
+                    What makes The Giver a classic?
+                    <span style="color: #06b6d4; font-size: 1.25rem;">+</span>
+                </summary>
+                <div style="padding: 0 20px 20px 20px; color: #475569; line-height: 1.6;">
+                    The novel&#x27;s exploration of totalitarian control through seemingly benevolent systems remains relevant to modern concerns about surveillance, social control, and the balance between security and freedom. Its warning about language manipulation and emotional suppression speaks to contemporary political dynamics.
+                </div>
+            </details>
+            
+    </section>
+    
+            
+    <section style="padding: 0 20px 40px 20px; max-width: 1000px; margin: 0 auto;">
+        
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-top: 40px;">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+                    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                    font-size: 1.25rem; font-weight: 700; color: #0f172a;">
+            5
+        </div>
+        <h2 style="margin: 0; font-size: 1.75rem; color: #0f172a; font-weight: 700;">
+            Get the Complete Guide
+        </h2>
+    </div>
+    
+
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                    border-radius: 16px; padding: 48px 32px; text-align: center; position: relative; overflow: hidden;">
+            <!-- Decorative gradient -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                        background: radial-gradient(circle at 70% 80%, #06b6d420 0%, transparent 50%);
+                        pointer-events: none;"></div>
+
+            <div style="position: relative; z-index: 1;">
+                <h3 style="margin: 0 0 16px 0; font-size: 1.75rem; color: #ffffff; font-weight: 700;">
+                    📧 Want the Full Analysis?
+                </h3>
+                <p style="margin: 0 0 24px 0; color: #cbd5e1; font-size: 1.1rem;
+                          max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    Get comprehensive character analysis, essay prompts, and detailed literary device breakdowns to master every aspect of Lowry&#x27;s dystopian masterpiece.
+                </p>
+
+                <!-- Email form placeholder -->
+                <div style="display: flex; gap: 12px; max-width: 450px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" placeholder="Enter your email"
+                           style="flex: 1; min-width: 200px; padding: 14px 20px; border: 2px solid #475569;
+                                  border-radius: 8px; font-size: 1rem; background: #1e293b;
+                                  color: #ffffff; outline: none;">
+                    <button style="padding: 14px 28px; background: #06b6d4; color: #0f172a;
+                                   border: none; border-radius: 8px; font-size: 1rem; font-weight: 700;
+                                   cursor: pointer;">
+                        Get Free Guide
+                    </button>
+                </div>
+
+                <p style="margin: 16px 0 0 0; color: #64748b; font-size: 0.85rem;">
+                    No spam. Unsubscribe anytime.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+            
+    <section style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+        <div style="background: #8b5cf608; border: 2px dashed #8b5cf640;
+                    border-radius: 16px; padding: 32px; text-align: center;">
+            <h3 style="margin: 0 0 12px 0; color: #8b5cf6; font-size: 1.25rem; font-weight: 700;">
+                🔄 Explore the Relational Lens
+            </h3>
+            <p style="margin: 0 0 20px 0; color: #475569; max-width: 500px;
+                      margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Discover how Jonas&#x27;s relationships with The Giver, his family, and Fiona reveal the personal cost of systematic emotional suppression and the power of authentic human connection.
+            </p>
+            <a href="the-giver-rel.html"
+               style="display: inline-block; padding: 12px 28px; background: #8b5cf6;
+                      color: #ffffff; text-decoration: none; border-radius: 8px;
+                      font-weight: 600; font-size: 1rem;">
+                View Relational Lens Guide →
+            </a>
+        </div>
+    </section>
+    
+        </main>
+        <footer style="padding: 40px 20px; text-align: center; background: #0f172a; color: #94a3b8;">
+            <p style="margin: 0 0 8px 0; font-size: 14px;">
+                Generated by Literary Analysis Automation
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #64748b;">
+                SEO Analysis Guide • Kernel v7.0+
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
