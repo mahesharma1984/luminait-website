@@ -315,7 +315,7 @@
     },
     {
       "id": "romeo-and-juliet",
-      "file": "romeo-and-juliet.html",
+      "file": "guides/romeo-and-juliet.html",
       "template": "romeo-and-juliet.html",
       "title": {
         "en": "Romeo and Juliet Analysis Guide",
