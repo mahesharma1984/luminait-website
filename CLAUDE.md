@@ -9,6 +9,7 @@ Key documents:
 - `FUNNEL_ARCHITECTURE_v2_0.md` - Two-funnel strategy (student + parent)
 - `SITE_ARCHITECTURE_v2_0.md` - URL structure for both funnels
 - `METHODOLOGY_DEMO_SPEC_v1_0.md` - Parent-facing demo page spec
+- `UX_VALIDATION_CHECKLIST_v1_0.md` - Page development checklist
 
 ## Project Structure
 
