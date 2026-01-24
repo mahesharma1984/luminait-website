@@ -6,6 +6,9 @@ Key documents:
 - `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core methodology
 - `GUIDE_TEMPLATE_SPEC.md` - How guide pages work
 - `GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides
+- `FUNNEL_ARCHITECTURE_v2_0.md` - Two-funnel strategy (student + parent)
+- `SITE_ARCHITECTURE_v2_0.md` - URL structure for both funnels
+- `METHODOLOGY_DEMO_SPEC_v1_0.md` - Parent-facing demo page spec
 
 ## Project Structure
 
