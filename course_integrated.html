@@ -499,39 +499,43 @@
                 <span class="section-number">1</span>
                 <h2 class="section-title">Find your child's text</h2>
             </div>
-
+            
             <div class="text-grid" id="textGrid">
                 <div class="text-card" data-text="tkam">
                     <div class="text-card-title">To Kill a Mockingbird</div>
                     <div class="text-card-author">Harper Lee</div>
                     <span class="text-card-level">Y9–10</span>
-                    <a href="/guides/curriculum_tkam.html" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
+                    <a href="/curriculum/tkam/" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
                 </div>
                 <div class="text-card" data-text="romeo">
                     <div class="text-card-title">Romeo and Juliet</div>
                     <div class="text-card-author">William Shakespeare</div>
                     <span class="text-card-level">Y9–10</span>
+                    <a href="/curriculum/romeo-and-juliet/" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
                 </div>
                 <div class="text-card" data-text="macbeth">
                     <div class="text-card-title">Macbeth</div>
                     <div class="text-card-author">William Shakespeare</div>
                     <span class="text-card-level">Y10–VCE</span>
+                    <a href="/curriculum/macbeth/" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
                 </div>
                 <div class="text-card" data-text="gatsby">
                     <div class="text-card-title">The Great Gatsby</div>
                     <div class="text-card-author">F. Scott Fitzgerald</div>
                     <span class="text-card-level">VCE</span>
+                    <a href="/curriculum/gatsby/" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
                 </div>
                 <div class="text-card" data-text="giver">
                     <div class="text-card-title">The Giver</div>
                     <div class="text-card-author">Lois Lowry</div>
                     <span class="text-card-level">Y7–8</span>
-                    <a href="/guides/curriculum_the-giver.html" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
+                    <a href="/curriculum/the-giver/" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
                 </div>
                 <div class="text-card" data-text="animal-farm">
                     <div class="text-card-title">Animal Farm</div>
                     <div class="text-card-author">George Orwell</div>
                     <span class="text-card-level">Y9–10</span>
+                    <a href="/curriculum/animal-farm/" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
                 </div>
             </div>
 
@@ -683,15 +687,15 @@
             card.addEventListener('click', () => {
                 // Remove previous selection
                 textCards.forEach(c => c.classList.remove('selected'));
-
+                
                 // Select this card
                 card.classList.add('selected');
                 selectedText = card.dataset.text;
-
+                
                 // Update display
                 selectedTextName.textContent = textNames[selectedText];
                 selectedDisplay.classList.add('visible');
-
+                
                 // Update enrol button
                 enrolBtn.disabled = false;
                 enrolHeading.textContent = `Enrol for ${textNames[selectedText]}`;
