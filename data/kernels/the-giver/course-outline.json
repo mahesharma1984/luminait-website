@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "The Giver",
+    "author": "Lois Lowry",
+    "year_level": "Year 7-8",
+    "slug": "the-giver"
+  },
+  "course": {
+    "overview": "In this 10-week course, students learn to analyze how Lowry uses euphemistic language and dramatic irony to critique totalitarian control. We move beyond plot summary to examine the 'Control Machine'—the specific mechanisms this society uses to disguise oppression as perfection.",
+    "duration": "10 Weeks",
+    "price": "$550"
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "chapters": "Chapters 1-2",
+      "focus": "The Perfect Society",
+      "device": "Euphemism",
+      "skill": "Identifying how language masks reality (e.g., 'Release')"
+    },
+    {
+      "week": 2,
+      "chapters": "Chapters 3-5",
+      "focus": "The Rules of Control",
+      "device": "Symbolism",
+      "skill": "Analyzing the Pale Eyes and the Apple as symbols of difference"
+    },
+    {
+      "week": 3,
+      "chapters": "Chapters 6-9",
+      "focus": "The Ceremony",
+      "device": "Juxtaposition",
+      "skill": "Contrasting the community's order with Jonas's inner uncertainty"
+    },
+    {
+      "week": 4,
+      "chapters": "Chapters 10-12",
+      "focus": "The Awakening",
+      "device": "Sensory Imagery",
+      "skill": "Analyzing the introduction of color and memory"
+    },
+    {
+      "week": 5,
+      "chapters": "Chapters 13-16",
+      "focus": "The Burden of Truth",
+      "device": "Dramatic Irony",
+      "skill": "Understanding what Jonas knows that his family does not"
+    },
+    {
+      "week": 6,
+      "chapters": "Chapters 17-19",
+      "focus": "The Climax",
+      "device": "The 'Release' Scene",
+      "skill": "Analyzing the pivotal moment of realization (Video analysis)"
+    },
+    {
+      "week": 7,
+      "chapters": "Chapters 20-23",
+      "focus": "The Escape",
+      "device": "Narrative pacing",
+      "skill": "Tracking the shift from passive acceptance to active rebellion"
+    },
+    {
+      "week": 8,
+      "chapters": "Essay Planning",
+      "focus": "Thesis Construction",
+      "device": "Argument Structure",
+      "skill": "Formulating a claim about Freedom vs. Security"
+    },
+    {
+      "week": 9,
+      "chapters": "Essay Drafting",
+      "focus": "Evidence Integration",
+      "device": "TEEL Structure",
+      "skill": "Embedding quotes seamlessly into analysis"
+    },
+    {
+      "week": 10,
+      "chapters": "Final Assessment",
+      "focus": "Complete Essay",
+      "device": "Polishing",
+      "skill": "Submitting a completed analytical essay"
+    }
+  ],
+  "sample_output": {
+    "context": "Student analysis of the 'Release' scene",
+    "text": "Lowry uses the Father's casual tone during the twin's release to create a chilling contrast between his gentle actions and the brutality of infanticide. This euphemistic language reveals how the community has stripped death of its meaning to maintain compliant order."
+  }
+}

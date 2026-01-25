@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>English Tutoring by Text | LuminAIT Melbourne</title>
-  <meta name="description" content="Text-specific English tutoring in Melbourne. Find your child's book, see what's included, enrol. Years 7-12.">
+  <meta name="description"
+    content="Text-specific English tutoring in Melbourne. Find your child's book, see what's included, enrol. Years 7-12.">
 
   <!-- SEO Meta Tags -->
   <link rel="canonical" href="https://luminait.app/">
-  <meta name="keywords" content="Melbourne English tutoring, VCE English, essay writing tutoring, analytical writing, secondary English tutor, text-specific tutoring">
+  <meta name="keywords"
+    content="Melbourne English tutoring, VCE English, essay writing tutoring, analytical writing, secondary English tutor, text-specific tutoring">
 
   <!-- Open Graph -->
   <meta property="og:title" content="English Tutoring by Text | LuminAIT Melbourne">
-  <meta property="og:description" content="Text-specific English tutoring in Melbourne. Find your child's book, see what's included, enrol.">
+  <meta property="og:description"
+    content="Text-specific English tutoring in Melbourne. Find your child's book, see what's included, enrol.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://luminait.app/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --deep-navy: #0a1628;
@@ -43,8 +49,15 @@
       --glass-card: rgba(255, 255, 255, 0.05);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -60,14 +73,28 @@
     }
 
     /* Language visibility */
-    [data-lang-content="zh"] { display: none !important; }
-    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
-    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+    [data-lang-content="zh"] {
+      display: none !important;
+    }
+
+    body[data-lang="zh"] [data-lang-content="zh"] {
+      display: inline !important;
+    }
+
+    body[data-lang="zh"] [data-lang-content="en"] {
+      display: none !important;
+    }
+
     body[data-lang="zh"] p[data-lang-content="zh"],
     body[data-lang="zh"] h1[data-lang-content="zh"],
     body[data-lang="zh"] h2[data-lang-content="zh"],
-    body[data-lang="zh"] div[data-lang-content="zh"] { display: block !important; }
-    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
+    body[data-lang="zh"] div[data-lang-content="zh"] {
+      display: block !important;
+    }
+
+    body[data-lang="zh"] span[data-lang-content="zh"] {
+      display: inline !important;
+    }
 
     /* Navigation */
     .nav {
@@ -139,7 +166,9 @@
       font-family: inherit;
     }
 
-    .lang-btn:hover { color: white; }
+    .lang-btn:hover {
+      color: white;
+    }
 
     .lang-btn.active {
       background: var(--cyan);
@@ -213,7 +242,9 @@
       line-height: 1.15;
     }
 
-    .hero h1 span { color: var(--cyan); }
+    .hero h1 span {
+      color: var(--cyan);
+    }
 
     .hero-subtitle {
       color: var(--slate-400);
@@ -290,7 +321,9 @@
       transform: translateY(-2px);
     }
 
-    .text-card:hover::before { opacity: 1; }
+    .text-card:hover::before {
+      opacity: 1;
+    }
 
     .text-card.selected {
       border-color: var(--cyan);
@@ -298,7 +331,9 @@
       box-shadow: 0 0 20px var(--cyan-glow);
     }
 
-    .text-card.selected::before { opacity: 1; }
+    .text-card.selected::before {
+      opacity: 1;
+    }
 
     .text-card-header {
       display: flex;
@@ -347,7 +382,9 @@
       transition: color 0.2s;
     }
 
-    .text-card-link:hover { color: var(--cyan); }
+    .text-card-link:hover {
+      color: var(--cyan);
+    }
 
     .text-note {
       margin-top: 1.25rem;
@@ -361,7 +398,9 @@
       text-decoration: none;
     }
 
-    .text-note a:hover { text-decoration: underline; }
+    .text-note a:hover {
+      text-decoration: underline;
+    }
 
     /* Selected Display */
     .selected-display {
@@ -405,7 +444,9 @@
       transition: color 0.2s;
     }
 
-    .change-btn:hover { color: var(--cyan); }
+    .change-btn:hover {
+      color: var(--cyan);
+    }
 
     /* Light Sections */
     .section-light {
@@ -413,7 +454,9 @@
       padding: 4rem 2rem;
     }
 
-    .section-light .section-title { color: var(--slate-800); }
+    .section-light .section-title {
+      color: var(--slate-800);
+    }
 
     .section-light-inner {
       max-width: 900px;
@@ -428,7 +471,9 @@
     }
 
     @media (max-width: 600px) {
-      .includes-grid { grid-template-columns: 1fr; }
+      .includes-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .includes-item {
@@ -486,7 +531,9 @@
       padding: 4rem 2rem;
     }
 
-    .section-white .section-title { color: var(--slate-800); }
+    .section-white .section-title {
+      color: var(--slate-800);
+    }
 
     .pricing-options {
       display: grid;
@@ -497,7 +544,9 @@
     }
 
     @media (max-width: 600px) {
-      .pricing-options { grid-template-columns: 1fr; }
+      .pricing-options {
+        grid-template-columns: 1fr;
+      }
     }
 
     .pricing-card {
@@ -631,7 +680,9 @@
       text-decoration: none;
     }
 
-    .enrol-note a:hover { text-decoration: underline; }
+    .enrol-note a:hover {
+      text-decoration: underline;
+    }
 
     /* Footer */
     .footer {
@@ -656,7 +707,9 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--cyan); }
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
 
     .footer-contact {
       color: var(--slate-500);
@@ -668,32 +721,46 @@
       text-decoration: none;
     }
 
-    .footer-contact a:hover { color: var(--cyan); }
+    .footer-contact a:hover {
+      color: var(--cyan);
+    }
 
     /* Mobile Responsive */
     @media (max-width: 768px) {
-      .nav { padding: 1rem; }
-      .nav-link { display: none; }
+      .nav {
+        padding: 1rem;
+      }
+
+      .nav-link {
+        display: none;
+      }
 
       .hero {
         padding: 6rem 1.25rem 3rem;
         min-height: auto;
       }
 
-      .hero-header { margin-bottom: 2rem; }
-      .hero-subtitle { font-size: 1rem; }
+      .hero-header {
+        margin-bottom: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
 
       .text-grid {
         grid-template-columns: 1fr;
         gap: 0.75rem;
       }
 
-      .section-light, .section-white {
+      .section-light,
+      .section-white {
         padding: 3rem 1.25rem;
       }
     }
   </style>
 </head>
+
 <body data-lang="en">
 
   <!-- Navigation -->
@@ -748,7 +815,8 @@
               <span class="text-card-badge">Y9-10</span>
             </div>
             <p class="text-card-author">Harper Lee</p>
-            <a href="/guides/curriculum_tkam.html" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
+            <a href="/guides/curriculum_tkam.html" class="text-card-link" onclick="event.stopPropagation()">See
+              curriculum →</a>
           </div>
           <div class="text-card" data-text="romeo">
             <div class="text-card-header">
@@ -777,7 +845,7 @@
               <span class="text-card-badge">Y7-8</span>
             </div>
             <p class="text-card-author">Lois Lowry</p>
-            <a href="/guides/curriculum_the-giver.html" class="text-card-link" onclick="event.stopPropagation()">See curriculum →</a>
+            <a href="/the-giver/" class="text-card-link" onclick="event.stopPropagation()">See course outline →</a>
           </div>
           <div class="text-card" data-text="animal-farm">
             <div class="text-card-header">
@@ -789,7 +857,8 @@
         </div>
 
         <p class="text-note">
-          <span data-lang-content="en">Don't see your child's text? <a href="mailto:hello@luminait.app">Let us know</a> — we may be able to help.</span>
+          <span data-lang-content="en">Don't see your child's text? <a href="mailto:hello@luminait.app">Let us know</a>
+            — we may be able to help.</span>
           <span data-lang-content="zh">没有找到您孩子的文本？<a href="mailto:hello@luminait.app">告诉我们</a>——我们也许能帮到您。</span>
         </p>
 
@@ -1090,4 +1159,5 @@
   </script>
 
 </body>
+
 </html>

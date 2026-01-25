@@ -4,6 +4,7 @@
 **Status:** Active — canonical reference for all funnel design  
 **Supersedes:** FUNNEL_SPEC_v1_0.md (student-led only)  
 **Related:** Distribution_Strategy_v1_0, PMF_Addendum_v1_0, PLG_PMF_Alignment_v2_0
+**Superseded/Modified By (Funnel 2):** FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md
 
 ---
 
@@ -171,6 +172,10 @@ Parent lands on /course/ via student referral.
 ### 4.1 Summary
 
 Parent-facing entry point for all year levels. Parents see text-match and methodology quality, enroll directly. No bridge needed.
+
+> [!WARNING]
+> **Strategy Update (Jan 25, 2026):** REFINED TO "TEXT-SPECIFIC OUTLINE".
+> See `FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md`. The "Methodology Demo" concept is being replaced by a highly structured "Course Outline" that proves preparation rather than just showing method.
 
 **Best for:** All year levels (7-12), parents who know their child needs help and are evaluating options.
 

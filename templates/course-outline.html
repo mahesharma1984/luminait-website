@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta.title}} Analysis Course | LuminAIT</title>
+    <meta name="description" content="10-week text-specific English course for {{meta.title}}. Learn to analyze {{meta.author}}'s work with depth and precision.">
+    <link rel="stylesheet" href="/components/base.css">
+    <style>
+        .outline-hero {
+            background: var(--gradient-hero);
+            padding: var(--space-3xl) var(--space-lg);
+            text-align: center;
+        }
+        
+        .outline-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: var(--space-xl);
+        }
+
+        .week-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--slate-200);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-lg);
+            align-items: start;
+        }
+
+        .week-number {
+            background: var(--cyan-soft);
+            color: var(--blue);
+            font-weight: 700;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .week-content h3 {
+            margin: 0 0 var(--space-xs) 0;
+            font-size: 1.1rem;
+            color: var(--slate-800);
+        }
+
+        .week-meta {
+            font-size: 0.9rem;
+            color: var(--slate-500);
+            margin-bottom: var(--space-sm);
+        }
+
+        .week-skill {
+            font-size: 0.95rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+
+        .sample-output {
+            background: var(--slate-50);
+            border-left: 4px solid var(--blue);
+            padding: var(--space-lg);
+            margin: var(--space-2xl) auto;
+            max-width: 800px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+
+        .cta-section {
+            background: var(--deep-navy);
+            color: white;
+            padding: var(--space-3xl) var(--space-lg);
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin: var(--space-3xl) 0;
+        }
+
+        @media (max-width: 600px) {
+            .week-card {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav style="padding: 20px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" style="font-weight: 700; color: var(--slate-900); text-decoration: none;">LuminAIT</a>
+        <a href="/course-new.html" class="button" style="padding: 8px 16px; font-size: 0.9rem;">Course Details</a>
+    </nav>
+
+    <header class="outline-hero">
+        <span style="display: inline-block; padding: 4px 12px; background: var(--cyan-soft); color: var(--blue); border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 16px;">{{meta.year_level}}</span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 16px; line-height: 1.1;">{{meta.title}}</h1>
+        <p style="font-size: 1.2rem; color: var(--slate-600); max-width: 600px; margin: 0 auto;">{{meta.author}}</p>
+    </header>
+
+    <main style="padding: 0 var(--space-lg);">
+        
+        <section style="max-width: 800px; margin: 0 auto var(--space-3xl); text-align: center;">
+            <p style="font-size: 1.1rem; line-height: 1.6; color: var(--slate-700);">{{course.overview}}</p>
+        </section>
+
+        <section class="outline-grid">
+            <h2 style="text-align: center; margin-bottom: var(--space-lg);">10-Week Course Breakdown</h2>
+            
+            {{#each weeks}}
+            <div class="week-card">
+                <div class="week-number">Week {{week}}</div>
+                <div class="week-content">
+                    <h3>{{focus}}</h3>
+                    <div class="week-meta">{{chapters}} • Focus: {{device}}</div>
+                    <div class="week-skill">{{skill}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </section>
+
+        <section class="sample-output">
+            <h3 style="margin-top: 0; color: var(--slate-800); font-size: 1.1rem;">What Students Produce</h3>
+            <p style="font-size: 0.9rem; color: var(--slate-500); margin-bottom: var(--space-md);">{{sample_output.context}}</p>
+            <p style="font-size: 1.05rem; line-height: 1.6; font-style: italic; color: var(--slate-700); margin: 0;">"{{sample_output.text}}"</p>
+        </section>
+
+        <div class="cta-section">
+            <h2 style="color: white; margin-bottom: var(--space-md);">Ready to master {{meta.title}}?</h2>
+            <p style="color: var(--slate-300); margin-bottom: var(--space-xl);">Join the {{course.duration}} course for {{course.price}}.</p>
+            <a href="/course-new.html" class="button button-primary" style="font-size: 1.2rem; padding: 16px 32px;">View Course Details</a>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #e2e8f0; color: var(--slate-500);">
+        <p>&copy; 2026 LuminAIT Learning</p>
+    </footer>
+
+</body>
+</html>

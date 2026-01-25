@@ -326,6 +326,20 @@
         "zh": "罗密欧与朱丽叶"
       },
       "showInNav": false
+    },
+    {
+      "id": "the-giver",
+      "file": "the-giver/index.html",
+      "template": "course-outline.html",
+      "title": {
+        "en": "The Giver Course Outline",
+        "zh": "《记忆传授人》课程大纲"
+      },
+      "navTitle": {
+        "en": "The Giver",
+        "zh": "记忆传授人"
+      },
+      "showInNav": false
     }
   ]
 }

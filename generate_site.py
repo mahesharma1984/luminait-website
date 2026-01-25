@@ -280,6 +280,37 @@ def discover_guides(data_dir: Path, guides_dir: Path) -> list:
     return guides
 
 
+
+def generate_outline(
+    slug: str,
+    data_dir: Path,
+    templates_dir: Path,
+    output_dir: Path
+) -> bool:
+    """Generate a course outline page."""
+    data_file = data_dir / 'kernels' / slug / 'course-outline.json'
+    
+    if not data_file.exists():
+        return False
+        
+    template_file = templates_dir / 'course-outline.html'
+    if not template_file.exists():
+        print(f"✗ Template not found: {template_file}")
+        return False
+        
+    data = load_json(data_file)
+    with open(template_file, 'r', encoding='utf-8') as f:
+        template = f.read()
+        
+    engine = TemplateEngine(data)
+    html_content = engine.render(template)
+    
+    # Save to root/[slug]/index.html
+    output_path = output_dir / slug / 'index.html'
+    save_html(output_path, html_content)
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description='LuminAIT Site Generator')
     parser.add_argument('--guide', type=str, help='Generate specific guide by slug')
@@ -322,20 +353,32 @@ def main():
     
     if args.guide:
         print(f"\n[Guide: {args.guide}]")
-        if generate_guide(args.guide, data_dir, templates_dir, output_dir):
+        # Try generating both guide and outline
+        guide_success = generate_guide(args.guide, data_dir, templates_dir, output_dir)
+        outline_success = generate_outline(args.guide, data_dir, templates_dir, output_dir)
+        
+        if guide_success: success_count += 1 
+        else: fail_count += 1
+            
+        if outline_success:
+            print(f"✓ Generated Outline: {args.guide}")
             success_count += 1
-        else:
-            fail_count += 1
     elif args.all or not args.hub:
         guides = discover_guides(data_dir, guides_dir)
         print(f"\n[Generating {len(guides)} guides]")
         
         for guide_slug in guides:
-            print(f"\n[Guide: {guide_slug}]")
+            print(f"\n[Processing: {guide_slug}]")
+            # Generate Guide
             if generate_guide(guide_slug, data_dir, templates_dir, output_dir):
                 success_count += 1
             else:
                 fail_count += 1
+                
+            # Generate Outline
+            if generate_outline(guide_slug, data_dir, templates_dir, output_dir):
+                print(f"✓ Generated Outline: {guide_slug}")
+                success_count += 1
     
     print("\n" + "=" * 40)
     print(f"Complete: {success_count} succeeded, {fail_count} failed")

@@ -4,6 +4,7 @@
 
 Key documents:
 - `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core methodology
+- `FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md` - Parent funnel strategy (supersedes methodology demo)
 - `GUIDE_TEMPLATE_SPEC.md` - How guide pages work
 - `GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides
 - `FUNNEL_ARCHITECTURE_v2_0.md` - Two-funnel strategy (student + parent)

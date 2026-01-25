@@ -4,6 +4,7 @@
 **Status:** Active — canonical reference for URL structure  
 **Supersedes:** site_architecture_full.md  
 **Related:** FUNNEL_ARCHITECTURE_v2_0, METHODOLOGY_DEMO_SPEC_v1_0
+**Superseded/Modified By (Parent Funnel):** FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md
 
 ---
 
@@ -106,6 +107,10 @@ luminait.app/
 ### 2.2 Methodology Demo `/guides/[text]/`
 
 **Role:** Shows HOW you teach this text. Demonstrates quality without giving away full guide.
+
+> [!WARNING]
+> **Strategy Update (Jan 25, 2026):** PROPOSED TO BE REPLACED BY "TEXT-SPECIFIC OUTLINE".
+> See `FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md` for the new strategy which prioritizes "Preparation Proof" over "Methodology Demo".
 
 **Audience:** Parent evaluating whether you're right for their child.
 
