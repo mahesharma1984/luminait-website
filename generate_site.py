@@ -267,8 +267,9 @@ def discover_guides(data_dir: Path, guides_dir: Path) -> list:
     kernels_dir = data_dir / 'kernels'
     if kernels_dir.exists():
         for guide_path in kernels_dir.iterdir():
-            if guide_path.is_dir() and (guide_path / 'data.json').exists():
-                guides.append(guide_path.name)
+            if guide_path.is_dir():
+                 if (guide_path / 'data.json').exists() or (guide_path / 'course-outline.json').exists():
+                    guides.append(guide_path.name)
     
     # Check old location: guides/
     if guides_dir.exists():
