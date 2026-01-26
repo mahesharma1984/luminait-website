@@ -4,296 +4,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Giver Analysis Course | LuminAIT</title>
+    <title>The Giver Curriculum | LuminAIT</title>
     <meta name="description"
-        content="10-week text-specific English course for The Giver. Learn to analyze Lois Lowry's work with depth and precision.">
+        content="Parent curriculum guide for The Giver. See what your child will learn week by week.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/components/base.css">
-
     <style>
+        :root {
+            /* Mapping to Site Theme (Warm/Primary) */
+            --cyan: var(--primary);
+            /* Foundation Phase -> Primary Blue */
+            --cyan-soft: var(--primary-light);
+            --blue: #4F46E5;
+            /* Analysis Phase -> Indigo */
+            --purple: #9333ea;
+            /* Writing Phase -> Purple */
+            --amber: var(--warm);
+            /* Body Phase -> Amber */
+            --emerald: var(--accent);
+            /* Completion Phase -> Emerald */
 
-        .outline-hero {
+            --slate-100: var(--bg-paper-dark);
+            --slate-200: #e2e8f0;
+            --slate-500: var(--text-light);
+            --slate-600: var(--text-main);
+            --slate-700: var(--text-main);
+            --slate-800: var(--text-dark);
+        }
+
+        /* Hero Adaptation */
+        .hero {
             background: var(--bg-paper);
-            padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+            padding: 140px 2rem 60px;
+            /* Account for fixed nav */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-tagline {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-top: 1rem;
+            font-family: 'Fraunces', serif;
+        }
+
+        /* Toggle Section */
+        .toggle-section {
+            background: var(--bg-white);
+            padding: 1.5rem 2rem;
             text-align: center;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .outline-grid {
+        .toggle-buttons {
+            display: inline-flex;
+            background: var(--bg-paper-dark);
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .toggle-btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            background: transparent;
+            color: var(--text-light);
+        }
+
+        .toggle-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Grid Layout */
+        .main {
             max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            gap: var(--space-lg);
+            padding: 3rem 1.5rem;
+        }
+
+        .weeks-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
         }
 
         .week-card {
             background: white;
-            border-radius: var(--radius-md);
-            padding: var(--space-lg);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: var(--space-lg);
-            align-items: start;
+            border-radius: 12px;
+            padding: 1.5rem;
             box-shadow: var(--shadow-sm);
-            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--cyan);
+            transition: all 0.2s;
         }
 
         .week-card:hover {
-            transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .week-card.phase-foundation {
+            border-left-color: var(--cyan);
+        }
+
+        .week-card.phase-analysis {
+            border-left-color: var(--blue);
+        }
+
+        .week-card.phase-writing {
+            border-left-color: var(--purple);
+        }
+
+        .week-card.phase-body {
+            border-left-color: var(--amber);
+        }
+
+        .week-card.phase-completion {
+            border-left-color: var(--emerald);
+        }
+
+        .week-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .week-number {
-            background: var(--bg-paper-dark);
-            color: var(--primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
             font-weight: 700;
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            white-space: nowrap;
-            height: fit-content;
+            font-size: 1.1rem;
+            color: white;
         }
 
-        .week-content h3 {
-            margin: 0 0 var(--space-xs) 0;
-            font-size: 1.1rem;
+        .phase-foundation .week-number {
+            background: var(--cyan);
+        }
+
+        .phase-analysis .week-number {
+            background: var(--blue);
+        }
+
+        .phase-writing .week-number {
+            background: var(--purple);
+        }
+
+        .phase-body .week-number {
+            background: var(--amber);
+        }
+
+        .phase-completion .week-number {
+            background: var(--emerald);
+        }
+
+        .week-info {
+            flex: 1;
+        }
+
+        .week-phase {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .phase-foundation .week-phase {
+            color: var(--cyan);
+        }
+
+        .phase-analysis .week-phase {
+            color: var(--blue);
+        }
+
+        .phase-writing .week-phase {
+            color: var(--purple);
+        }
+
+        .phase-body .week-phase {
+            color: var(--amber);
+        }
+
+        .phase-completion .week-phase {
+            color: var(--emerald);
+        }
+
+        .week-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
             color: var(--text-dark);
         }
 
-        .week-meta {
-            font-size: 0.9rem;
+        .week-description {
             color: var(--text-light);
-            margin-bottom: var(--space-sm);
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        .week-skill {
             font-size: 0.95rem;
-            color: var(--text-main);
-            line-height: 1.5;
+            margin-bottom: 0.75rem;
         }
 
-        .sample-output {
+        .week-topics {
+            list-style: none;
+            padding: 0;
+        }
+
+        .week-topics li {
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .week-topics li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--text-light);
+        }
+
+        .technique-box {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-paper-dark);
+            border-radius: 8px;
+            border-left: 3px solid var(--amber);
+        }
+
+        .extended-week {
+            display: none;
+        }
+
+        .outcomes-section {
             background: white;
-            border-left: 4px solid var(--primary);
-            padding: var(--space-xl);
-            margin: var(--space-2xl) auto;
-            max-width: 800px;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            box-shadow: var(--shadow-md);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .outcomes-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .cta-section {
             background: var(--bg-paper-dark);
-            padding: var(--space-3xl) var(--space-lg);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            margin-top: 2rem;
             text-align: center;
-            border-radius: var(--radius-lg);
-            margin: var(--space-3xl) 0;
-            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        @media (max-width: 600px) {
-            .week-card {
-                grid-template-columns: 1fr;
-                gap: var(--space-sm);
-            }
+        .cta-section h3 {
+            color: var(--text-dark);
         }
-    
     </style>
 </head>
 
 <body>
 
-
     <nav class="nav">
         <div class="nav-content">
             <a href="/" class="nav-logo">LuminAIT</a>
-            <div class="nav-links">
-                <a href="mailto:hello@luminait.app" class="nav-link">Contact</a>
-                <a href="/course.html" class="nav-cta">Course Details</a>
-            </div>
+            <a href="/" class="nav-back" style="display:flex; align-items:center; gap:6px; color:var(--text-light);">←
+                Back to texts</a>
         </div>
     </nav>
-    
 
-
-    <header class="outline-hero">
-        <div class="container">
-            <span
-                style="display: inline-block; padding: 4px 12px; background: var(--warm-light); color: var(--warm); border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px;">
-                Years 7-8
-            </span>
-            <h1 style="margin-bottom: 16px;">The Giver</h1>
-            <p style="font-size: 1.25rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">
-                10-week analysis course for Lois Lowry&#x27;s text.
-            </p>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Parent Curriculum Guide</span>
+            <h1>The Giver</h1>
+            <p class="hero-meta">Lois Lowry · Years 7-8</p>
+            <p class="hero-tagline">Developmental Awakening</p>
         </div>
     </header>
-    
 
-    <main class="container section">
-
-
-    <section style="max-width: 800px; margin: 0 auto var(--space-3xl); text-align: center;">
-        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-main);">In this 10-week course, students develop the skills to analyze Lowry&#x27;s craft with depth and precision. We move beyond plot summary to examine the specific techniques and patterns that make this text work.</p>
-    </section>
-    
-
-
-        <section class="outline-grid">
-            <h2 style="text-align: center; margin-bottom: var(--space-xl);">Course Breakdown</h2>
-
-            
-            <div class="week-card">
-                <div class="week-number">Week 1</div>
-                <div class="week-content">
-                    <h3>Entering the Text</h3>
-                    <div class="week-meta">Chapters 1-4 &bull; <span style="color: var(--primary);">Focus: Narrative Voice</span>
-                    </div>
-                    <div class="week-skill">Identifying how Lowry establishes the narrative world</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 2</div>
-                <div class="week-content">
-                    <h3>Building Tensions</h3>
-                    <div class="week-meta">Chapters 5-8 &bull; <span style="color: var(--primary);">Focus: Symbolism</span>
-                    </div>
-                    <div class="week-skill">Analyzing how conflict and tension develop through symbolism</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 3</div>
-                <div class="week-content">
-                    <h3>Patterns Emerge</h3>
-                    <div class="week-meta">Chapters 9-11 &bull; <span style="color: var(--primary);">Focus: Characterization</span>
-                    </div>
-                    <div class="week-skill">Recognizing recurring patterns and their significance</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 4</div>
-                <div class="week-content">
-                    <h3>The Turning Point</h3>
-                    <div class="week-meta">Chapters 12-14 &bull; <span style="color: var(--primary);">Focus: Imagery</span>
-                    </div>
-                    <div class="week-skill">Understanding how Lowry creates pivotal moments</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 5</div>
-                <div class="week-content">
-                    <h3>Rising Stakes</h3>
-                    <div class="week-meta">Chapters 15-17 &bull; <span style="color: var(--primary);">Focus: Structure</span>
-                    </div>
-                    <div class="week-skill">Analyzing how tension escalates through authorial choices</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 6</div>
-                <div class="week-content">
-                    <h3>The Climax</h3>
-                    <div class="week-meta">Chapters 18-20 &bull; <span style="color: var(--primary);">Focus: Theme Development</span>
-                    </div>
-                    <div class="week-skill">Examining the text&#x27;s pivotal revelation or confrontation</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 7</div>
-                <div class="week-content">
-                    <h3>Resolution</h3>
-                    <div class="week-meta">Chapters 21-23 &bull; <span style="color: var(--primary);">Focus: Narrative Closure</span>
-                    </div>
-                    <div class="week-skill">Understanding how Lowry brings the narrative to a close</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 8</div>
-                <div class="week-content">
-                    <h3>Thesis Construction</h3>
-                    <div class="week-meta">Essay Planning &bull; <span style="color: var(--primary);">Focus: Argument Structure</span>
-                    </div>
-                    <div class="week-skill">Formulating a clear analytical claim about The Giver</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 9</div>
-                <div class="week-content">
-                    <h3>Evidence Integration</h3>
-                    <div class="week-meta">Essay Drafting &bull; <span style="color: var(--primary);">Focus: TEEL Structure</span>
-                    </div>
-                    <div class="week-skill">Embedding quotes seamlessly into analysis</div>
-                </div>
-            </div>
-            
-
-            <div class="week-card">
-                <div class="week-number">Week 10</div>
-                <div class="week-content">
-                    <h3>Complete Essay</h3>
-                    <div class="week-meta">Final Assessment &bull; <span style="color: var(--primary);">Focus: Polishing</span>
-                    </div>
-                    <div class="week-skill">Submitting a completed analytical essay</div>
-                </div>
-            </div>
-            
-        </section>
-    
-
-
-        <section class="sample-output">
-            <h3 style="margin-top: 0; color: var(--text-dark); font-size: 1.1rem; margin-bottom: var(--space-md);">What
-                Students Produce</h3>
-            <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: var(--space-md);">
-                Student analysis of a key passage
-            </p>
-            <p
-                style="font-size: 1.1rem; line-height: 1.7; font-family: 'Fraunces', serif; color: var(--text-dark); margin: 0;">
-                "Lowry&#x27;s careful use of language creates a layered effect, revealing how specific authorial choices shape the reader&#x27;s understanding and emotional response to the text."
-            </p>
-        </section>
-    
-
-
-        <div class="cta-section">
-            <h2 style="margin-bottom: var(--space-md);">Ready to master The Giver?</h2>
-            <p style="color: var(--text-light); margin-bottom: var(--space-xl); font-size: 1.1rem;">
-                Join the 10 Weeks course for $550.
-            </p>
-            <a href="mailto:hello@luminait.app?subject=Enrolment: The Giver" class="btn btn-primary">
-                Enquire to Enrol
-            </a>
+    <section class="toggle-section">
+        <div class="toggle-buttons">
+            <button id="btn-5week" class="toggle-btn active" onclick="showView('5week')">5-Week Course</button>
+            <button id="btn-10week" class="toggle-btn" onclick="showView('10week')">10-Week Course</button>
         </div>
-    
+        <p class="toggle-hint">Choose the course length to see the curriculum</p>
+    </section>
+
+    <main class="main">
+        <div class="weeks-grid">
+            <!-- Week 1 -->
+            <div class="week-card phase-foundation">
+                <div class="week-header">
+                    <div class="week-number">1</div>
+                    <div class="week-info">
+                        <div class="week-phase">Foundation</div>
+                        <h3 class="week-title">Understanding the Text</h3>
+                    </div>
+                </div>
+                <p class="week-description">Building foundational understanding of the text's world</p>
+                <ul class="week-topics">
+                    <li>Introduction to The Giver and its historical/social context</li>
+                    <li>Understanding the setting, time period, and cultural background</li>
+                    <li>Meeting the key characters and their initial situations</li>
+                    <li>Identifying the narrative voice and point of view</li>
+                </ul>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="week-card phase-foundation">
+                <div class="week-header">
+                    <div class="week-number">2</div>
+                    <div class="week-info">
+                        <div class="week-phase">Foundation</div>
+                        <h3 class="week-title">How the Text Works</h3>
+                    </div>
+                </div>
+                <p class="week-description">Discovering how Lowry constructs meaning</p>
+                <ul class="week-topics">
+                    <li>Exploring the central pattern: Developmental Awakening</li>
+                    <li>Understanding how the narrative structure creates meaning</li>
+                    <li>Recognising recurring motifs and their significance</li>
+                    <li>Analysing how form supports content</li>
+                </ul>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="week-card phase-analysis">
+                <div class="week-header">
+                    <div class="week-number">3</div>
+                    <div class="week-info">
+                        <div class="week-phase">Analysis</div>
+                        <h3 class="week-title">Analysing Key Techniques</h3>
+                    </div>
+                </div>
+                <p class="week-description">Learning to identify and analyse Lowry's literary techniques</p>
+                <ul class="week-topics">
+                    <li>Technique 1: Free Indirect Discourse</li>
+                    <li>Technique 2: Internal Monologue</li>
+                    <li>Technique 3: Third-Person Limited</li>
+                    <li>Collecting textual evidence for each technique</li>
+                </ul>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="week-card phase-analysis">
+                <div class="week-header">
+                    <div class="week-number">4</div>
+                    <div class="week-info">
+                        <div class="week-phase">Analysis</div>
+                        <h3 class="week-title">Building the Argument</h3>
+                    </div>
+                </div>
+                <p class="week-description">Developing a thesis and analytical argument</p>
+                <ul class="week-topics">
+                    <li>Exploring the guiding question: How does Lowry craft the pattern of developmental awakening to
+                        shape readers' understanding?</li>
+                    <li>Forming a clear thesis statement</li>
+                    <li>Connecting techniques to thematic concerns</li>
+                    <li>Planning the essay structure</li>
+                </ul>
+            </div>
+
+            <!-- Week 5 -->
+            <div class="week-card phase-writing">
+                <div class="week-header">
+                    <div class="week-number">5</div>
+                    <div class="week-info">
+                        <div class="week-phase">Writing</div>
+                        <h3 class="week-title">Writing the Introduction</h3>
+                    </div>
+                </div>
+                <p class="week-description">Crafting a compelling essay opening</p>
+                <ul class="week-topics">
+                    <li>Contextualising the text effectively</li>
+                    <li>Presenting the thesis statement</li>
+                    <li>Previewing the analytical approach</li>
+                    <li>Drafting and refining the introduction paragraph</li>
+                </ul>
+            </div>
+
+            <!-- Extended Weeks (10-week) -->
+            <div class="week-card phase-body extended-week">
+                <div class="week-header">
+                    <div class="week-number">6</div>
+                    <div class="week-info">
+                        <div class="week-phase">Body Paragraphs</div>
+                        <h3 class="week-title">Body Paragraph 1</h3>
+                    </div>
+                </div>
+                <p class="week-description">Deep analysis of Free Indirect Discourse</p>
+                <ul class="week-topics">
+                    <li>Crafting a clear topic sentence</li>
+                    <li>Integrating textual evidence effectively</li>
+                    <li>Analysing the technique's effect on meaning</li>
+                    <li>Linking analysis back to thesis</li>
+                </ul>
+                <div class="technique-box">
+                    <strong>Free Indirect Discourse</strong>
+                    <p>The narrative voice blends with character thoughts, creating intimacy while maintaining narrative
+                        distance.</p>
+                </div>
+            </div>
+
+            <div class="week-card phase-body extended-week">
+                <div class="week-header">
+                    <div class="week-number">7</div>
+                    <div class="week-info">
+                        <div class="week-phase">Body Paragraphs</div>
+                        <h3 class="week-title">Body Paragraph 2</h3>
+                    </div>
+                </div>
+                <p class="week-description">Deep analysis of Internal Monologue</p>
+                <ul class="week-topics">
+                    <li>Building on analytical skills from Week 6</li>
+                    <li>Developing more sophisticated quote integration</li>
+                    <li>Exploring how techniques work together</li>
+                    <li>Strengthening the analytical voice</li>
+                </ul>
+                <div class="technique-box">
+                    <strong>Internal Monologue</strong>
+                    <p>The character's private thoughts reveal their psychological journey, showing how they process
+                        experiences and grow through reflection.</p>
+                </div>
+            </div>
+
+            <div class="week-card phase-body extended-week">
+                <div class="week-header">
+                    <div class="week-number">8</div>
+                    <div class="week-info">
+                        <div class="week-phase">Body Paragraphs</div>
+                        <h3 class="week-title">Body Paragraph 3</h3>
+                    </div>
+                </div>
+                <p class="week-description">Deep analysis of Third-Person Limited</p>
+                <ul class="week-topics">
+                    <li>Mastering the TEEL paragraph structure</li>
+                    <li>Demonstrating sophisticated literary analysis</li>
+                    <li>Connecting all three techniques thematically</li>
+                    <li>Preparing for the essay conclusion</li>
+                </ul>
+                <div class="technique-box">
+                    <strong>Third-Person Limited</strong>
+                    <p>The narrative follows one character's perspective, limiting readers to their knowledge while
+                        creating dramatic tension about what they don't yet understand.</p>
+                </div>
+            </div>
+
+            <div class="week-card phase-completion extended-week">
+                <div class="week-header">
+                    <div class="week-number">9</div>
+                    <div class="week-info">
+                        <div class="week-phase">Completion</div>
+                        <h3 class="week-title">Cohesion & Conclusion</h3>
+                    </div>
+                </div>
+                <p class="week-description">Creating a unified, polished essay</p>
+                <ul class="week-topics">
+                    <li>Writing a powerful conclusion</li>
+                    <li>Adding transitions between paragraphs</li>
+                    <li>Reviewing and strengthening argument flow</li>
+                    <li>Proofreading for expression and accuracy</li>
+                </ul>
+            </div>
+
+            <div class="week-card phase-completion extended-week">
+                <div class="week-header">
+                    <div class="week-number">10</div>
+                    <div class="week-info">
+                        <div class="week-phase">Completion</div>
+                        <h3 class="week-title">Complete Essay</h3>
+                    </div>
+                </div>
+                <p class="week-description">Final polish and submission</p>
+                <ul class="week-topics">
+                    <li>Final draft completion</li>
+                    <li>Peer review and feedback</li>
+                    <li>Self-assessment against criteria</li>
+                    <li>Celebration of analytical achievement</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Outcomes -->
+        <section class="outcomes-section">
+            <h3>What Your Child Will Learn</h3>
+            <p>Through studying <strong>The Giver</strong>, students will develop skills in:</p>
+            <ul class="outcomes-list">
+                <li>Identifying and analysing free indirect discourse</li>
+                <li>Identifying and analysing internal monologue</li>
+                <li>Identifying and analysing third-person limited</li>
+                <li>Crafting evidence-based analytical arguments</li>
+                <li>Writing structured literary essays</li>
+                <li>Connecting textual analysis to broader themes</li>
+            </ul>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h3>Ready to enrol?</h3>
+            <p>Give your child the skills to write confidently about this text.</p>
+            <a href="/" class="btn btn-primary">Enrol Now →</a>
+        </section>
 
     </main>
 
-
     <footer class="footer">
-        <div class="footer-links">
-            <a href="/">Home</a>
-            <a href="mailto:hello@luminait.app">Contact</a>
-        </div>
-        <div class="footer-copy">&copy; 2026 LuminAIT Learning</div>
+        <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
     </footer>
-    
+
+    <script>
+        function showView(view) {
+            const btn5 = document.getElementById('btn-5week');
+            const btn10 = document.getElementById('btn-10week');
+            const extendedWeeks = document.querySelectorAll('.extended-week');
+
+            if (view === '5week') {
+                btn5.classList.add('active');
+                btn10.classList.remove('active');
+                extendedWeeks.forEach(el => el.style.display = 'none');
+            } else {
+                btn10.classList.add('active');
+                btn5.classList.remove('active');
+                extendedWeeks.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
 
 </body>
 

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Christmas Carol Curriculum | LuminAIT</title>
+  <meta name="description" content="Parent curriculum guide for A Christmas Carol. See what your child will learn week by week.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-navy: #0a1628;
+      --navy: #0d1b2a;
+      --cyan: #00d4ff;
+      --cyan-glow: rgba(0, 212, 255, 0.2);
+      --cyan-soft: rgba(0, 212, 255, 0.1);
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --emerald: #10b981;
+      --purple: #7c3aed;
+      --amber: #f59e0b;
+      --red: #dc2626;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--slate-700);
+      background: var(--slate-100);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav {
+      background: var(--deep-navy);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      color: var(--slate-400);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--cyan); }
+
+    .hero {
+      background: linear-gradient(165deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: var(--cyan-soft);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: white;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-meta {
+      color: var(--slate-400);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-tagline {
+      color: var(--slate-300);
+      font-size: 1.1rem;
+      font-style: italic;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .toggle-section {
+      background: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .toggle-buttons {
+      display: inline-flex;
+      background: var(--slate-100);
+      border-radius: 8px;
+      padding: 4px;
+    }
+
+    .toggle-btn {
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--slate-600);
+    }
+
+    .toggle-btn.active {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .toggle-btn:hover:not(.active) {
+      color: var(--slate-800);
+    }
+
+    .toggle-hint {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--slate-500);
+    }
+
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .weeks-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .week-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border-left: 4px solid var(--cyan);
+      transition: all 0.2s;
+    }
+
+    .week-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .week-card.phase-foundation { border-left-color: var(--cyan); }
+    .week-card.phase-analysis { border-left-color: var(--blue); }
+    .week-card.phase-writing { border-left-color: var(--purple); }
+    .week-card.phase-body { border-left-color: var(--amber); }
+    .week-card.phase-completion { border-left-color: var(--emerald); }
+
+    .week-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .week-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .phase-foundation .week-number { background: var(--cyan); }
+    .phase-analysis .week-number { background: var(--blue); }
+    .phase-writing .week-number { background: var(--purple); }
+    .phase-body .week-number { background: var(--amber); }
+    .phase-completion .week-number { background: var(--emerald); }
+
+    .week-info { flex: 1; }
+
+    .week-phase {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.25rem;
+    }
+
+    .phase-foundation .week-phase { color: var(--cyan); }
+    .phase-analysis .week-phase { color: var(--blue); }
+    .phase-writing .week-phase { color: var(--purple); }
+    .phase-body .week-phase { color: var(--amber); }
+    .phase-completion .week-phase { color: var(--emerald); }
+
+    .week-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--slate-800);
+    }
+
+    .week-description {
+      color: var(--slate-500);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .week-topics {
+      list-style: none;
+      padding: 0;
+    }
+
+    .week-topics li {
+      padding: 0.35rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      color: var(--slate-600);
+      font-size: 0.9rem;
+    }
+
+    .week-topics li::before {
+      content: "\2192";
+      position: absolute;
+      left: 0;
+      color: var(--slate-400);
+    }
+
+    .technique-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--slate-100);
+      border-radius: 8px;
+      border-left: 3px solid var(--amber);
+    }
+
+    .technique-box strong {
+      color: var(--slate-800);
+      font-size: 0.9rem;
+    }
+
+    .technique-box p {
+      margin-top: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--slate-600);
+    }
+
+    .extended-week {
+      display: none;
+    }
+
+    .outcomes-section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .outcomes-section h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--slate-800);
+      margin-bottom: 1rem;
+    }
+
+    .outcomes-section p {
+      color: var(--slate-600);
+      margin-bottom: 1rem;
+    }
+
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .outcomes-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--slate-700);
+      font-size: 0.9rem;
+    }
+
+    .outcomes-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    .cta-section {
+      background: var(--deep-navy);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .cta-section h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-section p {
+      color: var(--slate-400);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    .cta-btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--slate-500);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .nav { padding: 1rem; }
+      .hero { padding: 2rem 1.25rem; }
+      .main { padding: 1.5rem 1rem; }
+      .week-card { padding: 1.25rem; }
+      .outcomes-section, .cta-section { padding: 1.5rem; }
+    }
+
+    @media print {
+      .nav, .toggle-section, .cta-section { display: none; }
+      .extended-week { display: block !important; }
+      .week-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="/" class="nav-logo">LuminAIT</a>
+      <a href="/" class="nav-back">&larr; Back to texts</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">Parent Curriculum Guide</span>
+      <h1>A Christmas Carol</h1>
+      <p class="hero-meta">Charles Dickens &middot; Years 7-8</p>
+      <p class="hero-tagline">Transformative Witnessing</p>
+    </div>
+  </header>
+
+  <section class="toggle-section">
+    <div class="toggle-buttons">
+      <button id="btn-5week" class="toggle-btn active" onclick="showView('5week')">5-Week Course</button>
+      <button id="btn-10week" class="toggle-btn" onclick="showView('10week')">10-Week Course</button>
+    </div>
+    <p class="toggle-hint">Choose the course length to see the curriculum</p>
+  </section>
+
+  <main class="main">
+    <div class="weeks-grid">
+
+      <!-- Week 1 -->
+      <div class="week-card phase-foundation">
+        <div class="week-header">
+          <div class="week-number">1</div>
+          <div class="week-info">
+            <div class="week-phase">Foundation</div>
+            <h3 class="week-title">Understanding the Text</h3>
+          </div>
+        </div>
+        <p class="week-description">Building foundational understanding of the text's world</p>
+        <ul class="week-topics">
+          <li>Introduction to A Christmas Carol and its historical/social context</li>
+          <li>Understanding the setting, time period, and cultural background</li>
+          <li>Meeting the key characters and their initial situations</li>
+          <li>Identifying the narrative voice and point of view</li>
+        </ul>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="week-card phase-foundation">
+        <div class="week-header">
+          <div class="week-number">2</div>
+          <div class="week-info">
+            <div class="week-phase">Foundation</div>
+            <h3 class="week-title">How the Text Works</h3>
+          </div>
+        </div>
+        <p class="week-description">Discovering how Dickens constructs meaning</p>
+        <ul class="week-topics">
+          <li>Exploring the central pattern: Transformative Witnessing</li>
+          <li>Understanding how the narrative structure creates meaning</li>
+          <li>Recognising recurring motifs and their significance</li>
+          <li>Analysing how form supports content</li>
+        </ul>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="week-card phase-analysis">
+        <div class="week-header">
+          <div class="week-number">3</div>
+          <div class="week-info">
+            <div class="week-phase">Analysis</div>
+            <h3 class="week-title">Analysing Key Techniques</h3>
+          </div>
+        </div>
+        <p class="week-description">Learning to identify and analyse Dickens's literary techniques</p>
+        <ul class="week-topics">
+          <li>Technique 1: Third-Person Omniscient</li>
+          <li>Technique 2: Free Indirect Discourse</li>
+          <li>Technique 3: Internal Monologue</li>
+          <li>Collecting textual evidence for each technique</li>
+        </ul>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="week-card phase-analysis">
+        <div class="week-header">
+          <div class="week-number">4</div>
+          <div class="week-info">
+            <div class="week-phase">Analysis</div>
+            <h3 class="week-title">Building the Argument</h3>
+          </div>
+        </div>
+        <p class="week-description">Developing a thesis and analytical argument</p>
+        <ul class="week-topics">
+          <li>Exploring the guiding question: How does Dickens craft the pattern of transformative witnessing to shape readers&#x27; understanding?</li>
+          <li>Forming a clear thesis statement</li>
+          <li>Connecting techniques to thematic concerns</li>
+          <li>Planning the essay structure</li>
+        </ul>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="week-card phase-writing">
+        <div class="week-header">
+          <div class="week-number">5</div>
+          <div class="week-info">
+            <div class="week-phase">Writing</div>
+            <h3 class="week-title">Writing the Introduction</h3>
+          </div>
+        </div>
+        <p class="week-description">Crafting a compelling essay opening</p>
+        <ul class="week-topics">
+          <li>Contextualising the text effectively</li>
+          <li>Presenting the thesis statement</li>
+          <li>Previewing the analytical approach</li>
+          <li>Drafting and refining the introduction paragraph</li>
+        </ul>
+      </div>
+
+      <!-- Week 6 (10-week only) -->
+      <div class="week-card phase-body extended-week">
+        <div class="week-header">
+          <div class="week-number">6</div>
+          <div class="week-info">
+            <div class="week-phase">Body Paragraphs</div>
+            <h3 class="week-title">Body Paragraph 1</h3>
+          </div>
+        </div>
+        <p class="week-description">Deep analysis of Third-Person Omniscient</p>
+        <ul class="week-topics">
+          <li>Crafting a clear topic sentence</li>
+          <li>Integrating textual evidence effectively</li>
+          <li>Analysing the technique's effect on meaning</li>
+          <li>Linking analysis back to thesis</li>
+        </ul>
+        <div class="technique-box">
+          <strong>Third-Person Omniscient</strong>
+          <p>This technique shapes how readers experience and understand the text&#x27;s central concerns.</p>
+        </div>
+      </div>
+
+      <!-- Week 7 (10-week only) -->
+      <div class="week-card phase-body extended-week">
+        <div class="week-header">
+          <div class="week-number">7</div>
+          <div class="week-info">
+            <div class="week-phase">Body Paragraphs</div>
+            <h3 class="week-title">Body Paragraph 2</h3>
+          </div>
+        </div>
+        <p class="week-description">Deep analysis of Free Indirect Discourse</p>
+        <ul class="week-topics">
+          <li>Building on analytical skills from Week 6</li>
+          <li>Developing more sophisticated quote integration</li>
+          <li>Exploring how techniques work together</li>
+          <li>Strengthening the analytical voice</li>
+        </ul>
+        <div class="technique-box">
+          <strong>Free Indirect Discourse</strong>
+          <p>The narrative voice blends with character thoughts, creating intimacy while maintaining narrative distance.</p>
+        </div>
+      </div>
+
+      <!-- Week 8 (10-week only) -->
+      <div class="week-card phase-body extended-week">
+        <div class="week-header">
+          <div class="week-number">8</div>
+          <div class="week-info">
+            <div class="week-phase">Body Paragraphs</div>
+            <h3 class="week-title">Body Paragraph 3</h3>
+          </div>
+        </div>
+        <p class="week-description">Deep analysis of Internal Monologue</p>
+        <ul class="week-topics">
+          <li>Mastering the TEEL paragraph structure</li>
+          <li>Demonstrating sophisticated literary analysis</li>
+          <li>Connecting all three techniques thematically</li>
+          <li>Preparing for the essay conclusion</li>
+        </ul>
+        <div class="technique-box">
+          <strong>Internal Monologue</strong>
+          <p>The character&#x27;s private thoughts reveal their psychological journey, showing how they process experiences and grow through reflection.</p>
+        </div>
+      </div>
+
+      <!-- Week 9 (10-week only) -->
+      <div class="week-card phase-completion extended-week">
+        <div class="week-header">
+          <div class="week-number">9</div>
+          <div class="week-info">
+            <div class="week-phase">Completion</div>
+            <h3 class="week-title">Cohesion &amp; Conclusion</h3>
+          </div>
+        </div>
+        <p class="week-description">Creating a unified, polished essay</p>
+        <ul class="week-topics">
+          <li>Writing a powerful conclusion</li>
+          <li>Adding transitions between paragraphs</li>
+          <li>Reviewing and strengthening argument flow</li>
+          <li>Proofreading for expression and accuracy</li>
+        </ul>
+      </div>
+
+      <!-- Week 10 (10-week only) -->
+      <div class="week-card phase-completion extended-week">
+        <div class="week-header">
+          <div class="week-number">10</div>
+          <div class="week-info">
+            <div class="week-phase">Completion</div>
+            <h3 class="week-title">Complete Essay</h3>
+          </div>
+        </div>
+        <p class="week-description">Final polish and submission</p>
+        <ul class="week-topics">
+          <li>Final draft completion</li>
+          <li>Peer review and feedback</li>
+          <li>Self-assessment against criteria</li>
+          <li>Celebration of analytical achievement</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Learning Outcomes -->
+    <section class="outcomes-section">
+      <h3>What Your Child Will Learn</h3>
+      <p>Through studying <strong>A Christmas Carol</strong>, students will develop skills in:</p>
+      <ul class="outcomes-list">
+        <li>Identifying and analysing third-person omniscient</li>
+        <li>Identifying and analysing free indirect discourse</li>
+        <li>Identifying and analysing internal monologue</li>
+        <li>Crafting evidence-based analytical arguments</li>
+        <li>Writing structured literary essays</li>
+        <li>Connecting textual analysis to broader themes</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h3>Ready to enrol?</h3>
+      <p>Give your child the skills to write confidently about this text.</p>
+      <a href="/" class="cta-btn">Enrol Now &rarr;</a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 <a href="/">LuminAIT</a> &middot; Melbourne</p>
+  </footer>
+
+  <script>
+    function showView(view) {
+      const btn5 = document.getElementById('btn-5week');
+      const btn10 = document.getElementById('btn-10week');
+      const extendedWeeks = document.querySelectorAll('.extended-week');
+
+      if (view === '5week') {
+        btn5.classList.add('active');
+        btn10.classList.remove('active');
+        extendedWeeks.forEach(el => el.style.display = 'none');
+      } else {
+        btn10.classList.add('active');
+        btn5.classList.remove('active');
+        extendedWeeks.forEach(el => el.style.display = 'block');
+      }
+    }
+  </script>
+
+</body>
+</html>
