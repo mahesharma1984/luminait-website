@@ -188,76 +188,6 @@
         grid-template-columns: 1fr;
       }
     }
-
-    /* Results Preview Section */
-    .results-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .result-preview-card {
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: left;
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .result-preview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-      border-color: var(--primary);
-    }
-
-    .result-growth {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      /* Emerald/Green usually better for growth, but sticking to primary for consistency or use emerald if defined */
-      color: #10b981;
-      /* Hardcoded emerald for growth stat */
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .result-label {
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      color: var(--text-light);
-      margin-bottom: 1.5rem;
-    }
-
-    .result-quote {
-      font-family: 'Fraunces', serif;
-      font-size: 1.15rem;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-
-    .result-student {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .result-student::before {
-      content: '';
-      width: 24px;
-      height: 24px;
-      background: #e2e8f0;
-      border-radius: 50%;
-      display: block;
-    }
   </style>
 </head>
 
@@ -403,48 +333,6 @@
             Analysis Level: Year 8 (Week 9)
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Latest Results Teaser -->
-  <section class="section section-gray">
-    <div class="container" style="text-align: center;">
-      <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Real Outcomes</span>
-      <h2 style="margin-bottom: 1rem;">See what 10 weeks can do.</h2>
-      <p style="color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-        Our students don't just "improve". They make meaningful leaps in analytical thinking.
-      </p>
-
-      <div class="results-preview-grid">
-        <!-- Card 1 -->
-        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
-          <div class="result-growth">+34%</div>
-          <div class="result-label">Improvement in 1 Term</div>
-          <div class="result-quote">"From being confused about the text to writing sophisticated analytical essays."
-          </div>
-          <div class="result-student">Jordan, Year 9</div>
-        </a>
-
-        <!-- Card 2 -->
-        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
-          <div class="result-growth">+32%</div>
-          <div class="result-label">Improvement in 1 Term</div>
-          <div class="result-quote">"Finally understands how to connect evidence to the author's intent."</div>
-          <div class="result-student">Taylor, Year 10</div>
-        </a>
-
-        <!-- Card 3 -->
-        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
-          <div class="result-growth">+19%</div>
-          <div class="result-label">Improvement in 1 Term</div>
-          <div class="result-quote">"Developed a clear argument with cause-and-effect reasoning."</div>
-          <div class="result-student">Alex, Year 8</div>
-        </a>
-      </div>
-
-      <div style="margin-top: 3rem;">
-        <a href="/progress.html" class="btn btn-primary" style="padding: 12px 28px;">View All Case Studies</a>
       </div>
     </div>
   </section>
