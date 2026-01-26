@@ -1,1942 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{PAGE_TITLE}}</title>
-  <meta name="description" content="{{PAGE_META_DESC}}">
-  {{SEO_META_TAGS}}
+  <title>LuminAIT Learning | English Tutoring by Text</title>
+  <meta name="description"
+    content="Text-specific English tutoring in Melbourne. Find your child's book (The Giver, Macbeth, etc) and see our 10-week preparation plan.">
+
+  <!-- Fonts & Base Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/components/base.css">
+
   <style>
-    :root {
-      --deep-navy: #0a1628;
-      --navy: #0d1b2a;
-      --cyan: #00d4ff;
-      --cyan-glow: #00d4ff33;
-      --blue: #3b82f6;
-      --emerald: #10b981;
-      --slate-100: #f1f5f9;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-    }
+    /* Homepage Specific Styles */
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* Screen reader only - for SEO keywords */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: var(--slate-700);
-      font-size: 16px;
-      background: var(--slate-100);
-    }
-
-    body[data-lang="zh"] {
-      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    /* Navigation */
-    .nav {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    .nav-logo {
-      height: 40px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .nav-link {
-      color: var(--slate-300);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .nav-link:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-link.active {
-      color: var(--cyan);
-      background: rgba(0, 212, 255, 0.1);
-    }
-
-    .nav-cta {
-      background: var(--blue);
-      color: white;
-      padding: 0.5rem 1.25rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .nav-cta:hover {
-      background: #2563eb;
-      transform: translateY(-1px);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    /* Language Toggle */
-    .lang-toggle {
-      display: flex;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 4px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .lang-btn {
-      padding: 0.4rem 0.8rem;
-      border: none;
-      background: transparent;
-      color: var(--slate-300);
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .lang-btn:hover {
-      color: white;
-    }
-
-    .lang-btn.active {
-      background: var(--cyan);
-      color: var(--deep-navy);
-    }
-
-    /* Language visibility */
-    [data-lang-content="zh"] { display: none !important; }
-    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
-    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
-    body[data-lang="zh"] p[data-lang-content="zh"],
-    body[data-lang="zh"] h1[data-lang-content="zh"],
-    body[data-lang="zh"] h2[data-lang-content="zh"],
-    body[data-lang="zh"] h3[data-lang-content="zh"],
-    body[data-lang="zh"] div[data-lang-content="zh"],
-    body[data-lang="zh"] li[data-lang-content="zh"] { display: block !important; }
-    body[data-lang="zh"] span[data-lang-content="zh"] { display: inline !important; }
-
-    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
-      padding: 4rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
+      padding-top: 120px;
+      padding-bottom: 60px;
+      text-align: center;
       max-width: 900px;
       margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
     }
 
-    .hero-logo {
-      width: 200px;
-      height: auto;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 4px 12px rgba(0, 212, 255, 0.3));
-    }
-
-    .hero h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--cyan);
-      font-size: 2.5rem;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warm-light);
+      color: var(--warm);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
       font-weight: 600;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    body[data-lang="zh"] .hero h1 {
-      font-family: 'Noto Sans SC', sans-serif;
+      margin-bottom: var(--space-md);
     }
 
     .hero-subtitle {
-      color: var(--slate-300);
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: var(--space-md) auto var(--space-xl);
     }
 
-    .hero-texts {
-      color: var(--slate-400);
-      font-size: 1rem;
-      font-style: italic;
-      margin-bottom: 2rem;
+    /* Text Grid Section (Stage 1) */
+    .text-selection {
+      background: var(--bg-white);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-warm);
     }
 
-    body[data-lang="zh"] .hero-texts {
-      font-style: normal;
+    .text-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
     }
 
-    .hero-cta {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
+    .text-card {
+      background: var(--bg-paper);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-lg);
+      text-align: left;
+      cursor: pointer;
       text-decoration: none;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-    }
-
-    .hero-cta:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
-    }
-
-    /* Cycling Author Animation */
-    .hero-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-300);
-      font-size: 1.75rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    body[data-lang="zh"] .hero-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .hero-line {
-      display: inline-block;
-    }
-
-    .cycling-author {
-      display: inline-block;
-      position: relative;
-      color: var(--cyan);
-      font-weight: 600;
-      min-width: 180px;
-      line-height: 1.6;
-    }
-
-    .cycling-author-text {
-      display: inline-block;
-    }
-
-    .typewriter-cursor {
-      display: inline-block;
-      color: var(--cyan);
-      font-weight: 400;
-      animation: blink 1s infinite;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      0%, 49% {
-        opacity: 1;
-      }
-      50%, 100% {
-        opacity: 0;
-      }
-    }
-
-    /* Currently Teaching Marquee */
-    .currently-teaching {
-      margin-top: 0.5rem;
-      margin-bottom: 2rem;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .currently-teaching::before,
-    .currently-teaching::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 60px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .currently-teaching::before {
-      left: 0;
-      background: linear-gradient(90deg, var(--deep-navy) 0%, transparent 100%);
-    }
-
-    .currently-teaching::after {
-      right: 0;
-      background: linear-gradient(270deg, var(--deep-navy) 0%, transparent 100%);
-    }
-
-    .teaching-label {
-      color: var(--slate-400);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 500;
-    }
-
-    .teaching-marquee {
-      display: flex;
-      animation: marquee 30s linear infinite;
-      width: max-content;
-      will-change: transform;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-
-    .teaching-marquee:hover {
-      animation-play-state: paused;
-    }
-
-    .teaching-item {
-      color: var(--slate-700);
-      font-size: 1.5rem;
-      font-weight: 500;
-      white-space: nowrap;
-      padding: 0 1.5rem;
-    }
-
-    body[data-lang="zh"] .teaching-item {
-      font-style: normal;
-    }
-
-    .teaching-item::after {
-      content: '·';
-      margin-left: 2rem;
-      color: var(--cyan);
-    }
-
-    @keyframes marquee {
-      0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-      }
-      100% {
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Sections */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .section-white {
-      background: white;
-    }
-
-    .section-gray {
-      background: var(--slate-100);
-    }
-
-    .section-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    body[data-lang="zh"] .section-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .section-subtitle {
-      color: var(--slate-500);
-      text-align: center;
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Map Cards */
-    .map-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .map-card {
-      background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      padding: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      position: relative;
-      overflow: hidden;
+      justify-content: space-between;
+      height: 100%;
     }
 
-    .map-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--cyan), var(--blue));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .map-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.12);
-    }
-
-    .map-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .map-card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .map-card-title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.35rem;
-      color: var(--blue);
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-
-    body[data-lang="zh"] .map-card-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .map-card-desc {
-      color: var(--slate-600);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-      flex-grow: 1;
-    }
-
-    .map-card-highlights {
-      list-style: none;
-      margin-bottom: 1.25rem;
-    }
-
-    .map-card-highlights li {
-      padding: 0.35rem 0 0.35rem 1.25rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: var(--slate-600);
-    }
-
-    .map-card-highlights li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--cyan);
-      font-weight: 600;
-    }
-
-    .map-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--blue);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .map-card-link::after {
-      content: '→';
-      transition: transform 0.2s ease;
-    }
-
-    .map-card:hover .map-card-link::after {
-      transform: translateX(4px);
-    }
-
-    /* Featured Card (Course) */
-    .map-card.featured {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-      border: none;
-      color: white;
-    }
-
-    .map-card.featured .map-card-title {
-      color: var(--cyan);
-    }
-
-    .map-card.featured .map-card-desc {
-      color: var(--slate-300);
-    }
-
-    .map-card.featured .map-card-highlights li {
-      color: var(--slate-300);
-    }
-
-    .map-card.featured .map-card-link {
-      color: var(--cyan);
-    }
-
-    .map-card.featured::before {
-      background: var(--cyan);
-    }
-
-    .featured-content {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .featured-stats {
-      display: flex;
-      gap: 2rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .featured-stat {
-      text-align: center;
-    }
-
-    .featured-stat-value {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--cyan);
-      line-height: 1;
-    }
-
-    .featured-stat-label {
-      font-size: 0.85rem;
-      color: var(--slate-400);
-      margin-top: 0.25rem;
-    }
-
-    /* Quick Stats */
-    .quick-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .quick-stat {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .quick-stat-value {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--emerald);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-
-    .quick-stat-label {
-      font-size: 0.9rem;
-      color: var(--slate-600);
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .cta-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .cta-content h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    body[data-lang="zh"] .cta-content h2 {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: white;
-      color: var(--blue);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    }
-
-    .cta-button:hover {
+    .text-card:hover {
+      border-color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-md);
     }
 
-    /* Funnel Sections */
-    .funnel-section {
-      padding: 4rem 2rem;
-    }
-
-    .funnel-section-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .funnel-section-wide {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* Section backgrounds */
-    .bg-gray {
-      background: var(--slate-100);
-    }
-
-    .bg-white {
-      background: white;
-    }
-
-    .bg-navy {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
-      overflow: hidden;
-    }
-
-    /* Problem Section */
-    .problem-section {
-      text-align: center;
-    }
-
-    .problem-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    body[data-lang="zh"] .problem-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .problem-body {
-      color: var(--slate-600);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Gap Diagram */
-    .gap-diagram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .gap-step {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .text-title {
+      font-family: 'Fraunces', serif;
       font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--slate-600);
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      display: block;
     }
 
-    .gap-step-icon {
-      font-size: 1.5rem;
+    .text-author {
+      font-size: 0.9rem;
+      color: var(--text-light);
     }
 
-    .gap-arrow {
-      color: var(--slate-400);
-      font-size: 1.25rem;
-    }
-
-    .gap-step.gap-highlighted {
-      background: rgba(0, 212, 255, 0.1);
-      border: 2px dashed var(--cyan);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      color: var(--slate-700);
-    }
-
-    .gap-step.gap-filled {
-      background: var(--cyan);
-      color: var(--deep-navy);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      border: 2px solid var(--cyan);
-    }
-
-    /* Solution Section */
-    .solution-section {
-      text-align: center;
-    }
-
-    .solution-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
+    .text-badge {
+      display: inline-block;
+      font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 8px;
     }
 
-    body[data-lang="zh"] .solution-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .solution-body {
-      color: var(--slate-600);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 700px;
+    /* Teacher / About Section */
+    .about-section {
+      text-align: center;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    /* How It Works Section */
-    .how-section {
-      text-align: center;
+    .avatars {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
     }
 
-    .how-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 2.5rem;
-    }
-
-    body[data-lang="zh"] .how-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .how-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .how-card {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2e8f0;
-    }
-
-    .how-card-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--cyan);
+    .avatar-placeholder {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
+      background: var(--bg-paper-dark);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1.25rem;
-      font-size: 1.75rem;
-    }
-
-    .how-card-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    body[data-lang="zh"] .how-card-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .how-card-desc {
-      color: var(--slate-600);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* 5-Step Method Section */
-    .method-intro {
-      text-align: center;
-    }
-
-    .method-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
       font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+      color: var(--text-light);
+      border: 2px solid white;
+      box-shadow: var(--shadow-sm);
     }
 
-    body[data-lang="zh"] .method-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .method-body {
-      color: var(--slate-600);
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Steps Grid */
-    .steps-section {
-      padding-top: 0;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.25rem;
-    }
-
-    .step-card {
-      background: var(--slate-100);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-align: center;
-      position: relative;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .step-card-highlight {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-    }
-
-    .step-card-highlight .step-title,
-    .step-card-highlight .step-question,
-    .step-card-highlight .step-desc {
-      color: var(--slate-300);
-    }
-
-    .step-card-highlight .step-title {
-      color: var(--cyan);
-    }
-
-    .step-number {
-      width: 40px;
-      height: 40px;
-      background: var(--cyan);
-      color: var(--deep-navy);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 0 auto 1rem;
-    }
-
-    .step-title {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    body[data-lang="zh"] .step-title {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .step-question {
-      color: var(--slate-500);
-      font-size: 0.9rem;
-      font-style: italic;
-      margin-bottom: 0.75rem;
-    }
-
-    body[data-lang="zh"] .step-question {
-      font-style: normal;
-    }
-
-    .step-desc {
-      color: var(--slate-600);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    /* Responsive for Steps Grid */
-    @media (max-width: 1100px) {
-      .steps-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .step-card:nth-child(4),
-      .step-card:nth-child(5) {
-        grid-column: span 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .step-card {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-        gap: 0 1rem;
-        text-align: left;
-        padding: 1.25rem;
-      }
-
-      .step-number {
-        grid-row: span 2;
-        margin: 0;
-        align-self: center;
-      }
-
-      .step-title {
-        margin-bottom: 0.25rem;
-      }
-
-      .step-question {
-        display: none;
-      }
-
-      .step-desc {
-        grid-column: 2;
-      }
-
-      .method-headline {
-        font-size: 1.5rem;
-      }
-
-      .method-body {
-        font-size: 1rem;
-      }
-    }
-
-    /* Course Feature Section */
-    .course-section {
-      text-align: center;
-    }
-
-    .course-card {
+    /* Testimonials */
+    .testimonial-card {
       background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      max-width: 700px;
-      margin: 0 auto;
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      box-shadow: var(--shadow-sm);
       text-align: left;
     }
 
-    .course-card-header {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-      padding: 1.5rem 2rem;
-    }
-
-    .course-card-heading {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--cyan);
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    body[data-lang="zh"] .course-card-heading {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .course-card-body {
-      padding: 2rem;
-    }
-
-    .course-includes {
-      list-style: none;
-      margin-bottom: 1.5rem;
-    }
-
-    .course-includes li {
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      position: relative;
-      color: var(--slate-700);
-      font-size: 1rem;
-    }
-
-    .course-includes li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--emerald);
-      font-weight: 700;
-    }
-
-    .course-price {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .course-price-value {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: var(--slate-800);
-    }
-
-    .course-price-label {
-      color: var(--slate-500);
-      font-size: 1rem;
-    }
-
-    .course-price-hourly {
-      color: var(--slate-500);
-      font-size: 0.95rem;
-    }
-
-    .course-teaching-label {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--slate-800);
+    .quote-icon {
       font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    body[data-lang="zh"] .course-teaching-label {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .course-section .currently-teaching::before {
-      background: linear-gradient(90deg, var(--slate-100) 0%, transparent 100%);
-    }
-
-    .course-section .currently-teaching::after {
-      background: linear-gradient(270deg, var(--slate-100) 0%, transparent 100%);
-    }
-
-    .course-section .teaching-item {
-      color: var(--slate-700);
-    }
-
-    .course-section .teaching-item::after {
-      color: var(--blue);
-    }
-
-    .course-cta {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      margin-top: 1rem;
-    }
-
-    .course-cta:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    /* Stats/Proof Section */
-    .stats-section {
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stats-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .stats-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    body[data-lang="zh"] .stats-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .stats-subheadline {
-      color: var(--slate-400);
-      font-size: 1rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-value {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--cyan);
+      color: var(--primary-light);
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--space-xs);
     }
 
-    .stat-label {
-      color: var(--slate-300);
-      font-size: 1rem;
+    .quote-text {
+      font-style: italic;
+      color: var(--text-main);
+      margin-bottom: var(--space-md);
     }
 
-    /* Stats and CTA separator */
-    .stats-cta-separator {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Final CTA Section */
-    .final-cta-section {
-      text-align: center;
-      position: relative;
-    }
-
-    .final-cta-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .final-cta-headline {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: 1.75rem;
+    .quote-author {
       font-weight: 600;
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    body[data-lang="zh"] .final-cta-headline {
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    .final-cta-button {
-      display: inline-block;
-      background: var(--cyan);
-      color: var(--deep-navy);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 212, 255, 0.4);
-      position: relative;
-      z-index: 1;
-    }
-
-    .final-cta-button:hover {
-      background: #00e5ff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
-    }
-
-    /* Responsive for Funnel Sections */
-    @media (max-width: 768px) {
-      .funnel-section {
-        padding: 3rem 1.5rem;
-      }
-
-      .problem-headline,
-      .solution-headline,
-      .how-headline {
-        font-size: 1.5rem;
-      }
-
-      .problem-body,
-      .solution-body {
-        font-size: 1rem;
-      }
-
-      .how-cards {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .gap-diagram {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .gap-arrow {
-        transform: rotate(90deg);
-      }
-
-      .course-card-body {
-        padding: 1.5rem;
-      }
-
-      .course-price-value {
-        font-size: 1.75rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .stat-value {
-        font-size: 2.5rem;
-      }
-
-      .final-cta-headline {
-        font-size: 1.35rem;
-      }
-    }
-
-    /* Footer */
-    .footer {
-      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
-      padding: 2rem;
-      color: white;
-      text-align: center;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--slate-300);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--cyan);
-    }
-
-    .footer-contact {
-      color: var(--slate-400);
+      color: var(--text-dark);
       font-size: 0.9rem;
     }
 
-    .footer-contact a {
-      color: var(--cyan);
-      text-decoration: none;
+    /* Sample Output Preview */
+    .sample-preview {
+      background: white;
+      border-left: 4px solid var(--primary);
+      padding: var(--space-lg);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      box-shadow: var(--shadow-sm);
+      margin-top: var(--space-lg);
+      text-align: left;
     }
 
-    .footer-contact a:hover {
-      text-decoration: underline;
-    }
+    /* Mobile */
+    @media(max-width: 600px) {
+      .hero {
+        padding-top: 100px;
+      }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .map-grid {
+      .text-grid {
         grid-template-columns: 1fr;
-      }
-
-      .featured-content {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-stats {
-        justify-content: center;
-      }
-
-      .quick-stats {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--deep-navy);
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-content {
-        flex-wrap: wrap;
-      }
-
-      .lang-toggle {
-        order: 2;
-      }
-
-      .nav-cta {
-        width: 100%;
-        text-align: center;
-        margin-top: 0.5rem;
-      }
-
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-
-      .hero-headline {
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      .cycling-author {
-        min-width: 120px;
-      }
-
-      .teaching-label {
-        font-size: 0.8rem;
-      }
-
-      .teaching-item {
-        font-size: 0.9rem;
-        padding: 0 0.75rem;
-      }
-
-      .teaching-item::after {
-        margin-left: 1.5rem;
-      }
-
-      .hero-logo {
-        width: 150px;
-      }
-
-      .section {
-        padding: 2rem 1.25rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .map-card {
-        padding: 1.5rem;
-      }
-
-      .featured-stats {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .footer-links {
-        flex-direction: column;
-        gap: 1rem;
       }
     }
   </style>
-  {{ORG_SCHEMA}}
 </head>
-<body data-lang="en">
 
+<body>
+
+  <!-- Nav -->
   <nav class="nav">
     <div class="nav-content">
-      <a href="index.html">
-        <img src="luminait_logo.png" alt="{{SITE_NAME}}" class="nav-logo">
-      </a>
-      <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
-      <div class="nav-links" id="navLinks">
-{{NAV_LINKS}}
-        <a href="{{ENROLL_LINK}}" class="nav-cta">
-          <span data-lang-content="en">Enroll</span>
-          <span data-lang-content="zh">报名咨询</span>
-        </a>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
+      <a href="/" class="nav-logo">LuminAIT</a>
+      <div class="nav-links">
+        <a href="#how-it-works" class="nav-link">How it Works</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
       </div>
     </div>
   </nav>
 
+  <!-- Hero -->
+  <header class="section hero">
+    <div class="hero-badge">Melbourne · Years 7-12</div>
+    <h1>English tutoring built around <span style="color: var(--primary);">your child's text</span>.</h1>
+    <p class="hero-subtitle">Generic tutoring doesn't work. We build the entire 10-week course around the specific book
+      they are studying at school.</p>
 
-  <section class="hero">
-    <div class="hero-content">
-      <img src="luminait_logo.png" alt="{{SITE_NAME}} - Melbourne English Tutoring" class="hero-logo">
-      <!-- SEO H1 - visually styled as hero text -->
-      <h1 class="hero-headline" data-lang-content="en">
-        <span class="sr-only">Melbourne English Tutoring for VCE & Secondary Essay Writing - </span>
-        <span class="hero-line">In 5 lessons, write thematic essays on</span><br>
-        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthor"></span><span class="typewriter-cursor">|</span></span><br>
-        <span class="hero-line">that are informed, reasoned, and genuinely YOURS (not AI!).</span>
-      </h1>
-      <h1 class="hero-headline" data-lang-content="zh">
-        <span class="sr-only">墨尔本VCE及中学英语写作辅导 - </span>
-        <span class="hero-line">5周内，撰写关于</span><br>
-        <span class="cycling-author"><span class="cycling-author-text" id="cyclingAuthorZh"></span><span class="typewriter-cursor">|</span></span><br>
-        <span class="hero-line">的主题论文——有理有据，独具见解。</span>
-      </h1>
-      <a href="course.html" class="hero-cta">
-        <span data-lang-content="en">View Course Details</span>
-        <span data-lang-content="zh">查看课程详情</span>
-      </a>
-    </div>
-  </section>
+    <!-- Stage 1: Text Match Grid -->
+    <div class="text-selection">
+      <h3 style="font-size: 1.25rem; margin-bottom: var(--space-xs);">Select their text to see the course plan</h3>
+      <p class="text-light" style="font-size: 0.95rem;">Finding your book helps us show you exactly what we cover.</p>
 
-  <!-- Section 2: The 5-Step Method -->
-  <section class="funnel-section bg-gray">
-    <div class="funnel-section-inner method-intro">
-      <h2 class="method-headline">
-        <span data-lang-content="en">The 5-Step Method</span>
-        <span data-lang-content="zh">五步教学法</span>
-      </h2>
-      <p class="method-body">
-        <span data-lang-content="en">Most tutoring teaches generic essay tricks. We teach your child to genuinely understand what the text is doing — and the ability to write about it comes naturally.</span>
-        <span data-lang-content="zh">大多数补习只教授通用的写作技巧。我们教您的孩子真正理解文本在做什么——写作能力自然而然就会跟上。</span>
-      </p>
-    </div>
-  </section>
+      <div class="text-grid">
+        <a href="/the-giver/" class="text-card">
+          <div>
+            <span class="text-title">The Giver</span>
+            <span class="text-author">Lois Lowry</span>
+          </div>
+          <span class="text-badge">Year 7-8</span>
+        </a>
+        <a href="/romeo-and-juliet/" class="text-card">
+          <div>
+            <span class="text-title">Romeo and Juliet</span>
+            <span class="text-author">William Shakespeare</span>
+          </div>
+          <span class="text-badge">Year 9-10</span>
+        </a>
+        <a href="/to-kill-a-mockingbird/" class="text-card">
+          <div>
+            <span class="text-title">To Kill a Mockingbird</span>
+            <span class="text-author">Harper Lee</span>
+          </div>
+          <span class="text-badge">Year 9-10</span>
+        </a>
+        <a href="/macbeth/" class="text-card">
+          <div>
+            <span class="text-title">Macbeth</span>
+            <span class="text-author">William Shakespeare</span>
+          </div>
+          <span class="text-badge">VCE</span>
+        </a>
+        <a href="/animal-farm/" class="text-card">
+          <div>
+            <span class="text-title">Animal Farm</span>
+            <span class="text-author">George Orwell</span>
+          </div>
+          <span class="text-badge">Year 9-10</span>
+        </a>
 
-  <!-- Section 3: 5-Step Cards -->
-  <section class="funnel-section bg-white">
-    <div class="funnel-section-wide steps-section">
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Know the text</span>
-            <span data-lang-content="zh">认识文本</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">What world is this?</span>
-            <span data-lang-content="zh">这是什么样的世界？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">We start by understanding the text — its context, structure, and the world it creates.</span>
-            <span data-lang-content="zh">我们从理解文本开始——了解其背景、结构和它所创造的世界。</span>
-          </p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">See the pattern</span>
-            <span data-lang-content="zh">发现模式</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">What does it do to me?</span>
-            <span data-lang-content="zh">它对我产生什么影响？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">Then we decode what it does to readers — the pattern that creates its effect.</span>
-            <span data-lang-content="zh">然后我们解读它对读者的影响——产生效果的模式。</span>
-          </p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Find the proof</span>
-            <span data-lang-content="zh">寻找证据</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">How does it do that?</span>
-            <span data-lang-content="zh">它是如何做到的？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">Students learn to identify the techniques — the literary devices that execute the pattern.</span>
-            <span data-lang-content="zh">学生学会识别技巧——执行模式的文学手法。</span>
-          </p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Build the claim</span>
-            <span data-lang-content="zh">构建论点</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">What can I argue?</span>
-            <span data-lang-content="zh">我能论证什么？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">They build analytical arguments — moving from understanding to articulation.</span>
-            <span data-lang-content="zh">他们构建分析性论点——从理解走向表达。</span>
-          </p>
-        </div>
-        <div class="step-card step-card-highlight">
-          <div class="step-number">5</div>
-          <h3 class="step-title">
-            <span data-lang-content="en">Write the essay</span>
-            <span data-lang-content="zh">撰写文章</span>
-          </h3>
-          <p class="step-question">
-            <span data-lang-content="en">How do I write it?</span>
-            <span data-lang-content="zh">我该如何写？</span>
-          </p>
-          <p class="step-desc">
-            <span data-lang-content="en">And write essays that demonstrate genuine understanding — informed, reasoned, and theirs.</span>
-            <span data-lang-content="zh">最终写出展示真正理解的文章——有理有据，独具见解。</span>
-          </p>
-        </div>
+        <a href="/a-christmas-carol/" class="text-card">
+          <div>
+            <span class="text-title">A Christmas Carol</span>
+            <span class="text-author">Charles Dickens</span>
+          </div>
+          <span class="text-badge">Year 9-10</span>
+        </a>
+        <a href="/blueback/" class="text-card">
+          <div>
+            <span class="text-title">Blueback</span>
+            <span class="text-author">Tim Winton</span>
+          </div>
+          <span class="text-badge">Year 9-10</span>
+        </a>
+        <a href="/the-outsiders/" class="text-card">
+          <div>
+            <span class="text-title">The Outsiders</span>
+            <span class="text-author">S.E. Hinton</span>
+          </div>
+          <span class="text-badge">Year 9-10</span>
+        </a>
+
+        <!-- Placeholder for 'Other' -->
+        <a href="mailto:hello@luminait.app?subject=Other Text Enquiry" class="text-card"
+          style="background: var(--bg-paper-dark); border-style: dashed;">
+          <div>
+            <span class="text-title" style="color: var(--text-light);">Other Text?</span>
+            <span class="text-author">Let us know</span>
+          </div>
+        </a>
+      </div>
+      <div
+        style="text-align: center; margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid rgba(0,0,0,0.05);">
+        <span style="color: var(--text-light); font-size: 0.9rem;">Looking for your school's full booklist?</span>
+        <a href="/schools/"
+          style="color: var(--primary); font-weight: 600; text-decoration: none; margin-left: 8px;">Browse Schools →</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Section 4: The Course -->
-  <section class="funnel-section bg-gray">
-    <div class="funnel-section-inner course-section">
-      <h2 class="course-teaching-label">
-        <span data-lang-content="en">Currently teaching:</span>
-        <span data-lang-content="zh">正在教授：</span>
-      </h2>
-      <div class="currently-teaching" style="margin-top: 0; margin-bottom: 2rem;">
-        <div class="teaching-marquee" id="courseMarquee">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-      <div class="course-card">
-        <div class="course-card-header">
-          <h2 class="course-card-heading">
-            <span data-lang-content="en">5 weeks. One text. Complete essay.</span>
-            <span data-lang-content="zh">5周。一本书。完整文章。</span>
-          </h2>
-        </div>
-        <div class="course-card-body">
-          <ul class="course-includes">
-            <li>
-              <span data-lang-content="en">Weekly worksheets tailored to your child's text</span>
-              <span data-lang-content="zh">每周定制化练习，针对您孩子的文本</span>
+  <!-- Value Prop / Sample (What else to include: Sample Snippet) -->
+  <section class="section section-paper" id="how-it-works">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <span
+            style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">The
+            Difference</span>
+          <h2 style="margin-top: 8px;">We don't just "help with English". We prepare them for <i>this</i> book.</h2>
+          <p style="font-size: 1.1rem; color: var(--text-main);">Most tutors teach generic essay structure. We teach the
+            specific themes, symbols, and analysis required for their exact text.</p>
+
+          <ul style="list-style: none; margin-top: var(--space-lg);">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+              <span style="color: var(--accent);">✓</span> Chapter-by-chapter breakdown
             </li>
-            <li>
-              <span data-lang-content="en">Written feedback on every submission</span>
-              <span data-lang-content="zh">每次作业均有书面反馈</span>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+              <span style="color: var(--accent);">✓</span> Pre-written analysis bank
             </li>
-            <li>
-              <span data-lang-content="en">Final essay and exam</span>
-              <span data-lang-content="zh">期末论文与考试</span>
-            </li>
-            <li>
-              <span data-lang-content="en">Progress report for parents</span>
-              <span data-lang-content="zh">家长进度报告</span>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+              <span style="color: var(--accent);">✓</span> 10 weeks of structured worksheets
             </li>
           </ul>
-          <div class="course-price">
-            <span class="course-price-value">$275</span>
-            <span class="course-price-label">
-              <span data-lang-content="en">for 5 weeks</span>
-              <span data-lang-content="zh">5周课程</span>
-            </span>
-            <span class="course-price-hourly">
-              <span data-lang-content="en">(~$37/hour)</span>
-              <span data-lang-content="zh">(约$37/小时)</span>
-            </span>
+        </div>
+
+        <!-- Placeholder: Sample Essay Excerpt -->
+        <div class="sample-preview">
+          <small
+            style="text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); font-weight: 600;">Student
+            Output Example</small>
+          <p
+            style="margin-top: 12px; font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.6; color: var(--text-dark);">
+            "In <i>The Giver</i>, Lowry constructs the Community as a 'utopia' founded on the suppression of memory,
+            suggesting that safety without suffering renders human experience meaningless."
+          </p>
+          <div style="margin-top: 16px; font-size: 0.9rem; color: var(--primary); font-weight: 500;">
+            Analysis Level: Year 8 (Week 9)
           </div>
-          <a href="course.html" class="course-cta">
-            <span data-lang-content="en">View Course Details</span>
-            <span data-lang-content="zh">查看课程详情</span>
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 6: Proof/Stats -->
-  <section class="funnel-section bg-navy">
-    <div class="funnel-section-wide stats-section">
-      <h2 class="stats-headline">
-        <span data-lang-content="en">Proven Results</span>
-        <span data-lang-content="zh">实证成果</span>
-      </h2>
-      <p class="stats-subheadline">
-        <span data-lang-content="en">From our previous cohorts</span>
-        <span data-lang-content="zh">来自往期学员</span>
+  <!-- Social Proof (What else to include: Testimonials) -->
+  <link rel="stylesheet" href="/components/marquee.css">
+
+  <section class="section section-white">
+    <div class="container" style="overflow: hidden;">
+      <h2 style="text-align: center; margin-bottom: var(--space-xl);">What parents & students say</h2>
+
+      <!-- Infinite Marquee -->
+      <div class="marquee-container">
+        <!-- Track (duplicated content for seamless loop) -->
+        <div class="marquee-track">
+
+          <!-- SET 1 -->
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">His English performance at school improved from a C to a B in Year 7 after taking the
+              course for three terms. When writing speeches... his writing has become more structured.</p>
+            <div class="quote-author">— Parent (Year 7)</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">Happy Teacher's Day! We are so grateful to be in your class, your humor and concise
+              lessons make English not only fun but also meaningful. We genuinely love it.</p>
+            <div class="quote-author">— Adele & Bella, Students</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">You were teaching me how to pronounce every single English alphabet... My self esteem
+              has been improved a lot... You are the most unforgettable teacher in my life.</p>
+            <div class="quote-author">— Jinyoung, Year 10 Student</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">Dear Mahesh, Thank you for dedication to our students. You are an amazing teacher!</p>
+            <div class="quote-author">— Student Note</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">It's awesome to see his writing progress. Thanks for all your help. Hope he keeps it
+              up.</p>
+            <div class="quote-author">— Parent (Email)</div>
+          </div>
+
+          <!-- SET 2 (Clone for loop) -->
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">His English performance at school improved from a C to a B in Year 7 after taking the
+              course for three terms. When writing speeches... his writing has become more structured.</p>
+            <div class="quote-author">— Parent (Year 7)</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">Happy Teacher's Day! We are so grateful to be in your class, your humor and concise
+              lessons make English not only fun but also meaningful. We genuinely love it.</p>
+            <div class="quote-author">— Adele & Bella, Students</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">You were teaching me how to pronounce every single English alphabet... My self esteem
+              has been improved a lot... You are the most unforgettable teacher in my life.</p>
+            <div class="quote-author">— Jinyoung, Year 10 Student</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">Dear Mahesh, Thank you for dedication to our students. You are an amazing teacher!</p>
+            <div class="quote-author">— Student Note</div>
+          </div>
+
+          <div class="marquee-card">
+            <div class="quote-icon">“</div>
+            <p class="quote-text">It's awesome to see his writing progress. Thanks for all your help. Hope he keeps it
+              up.</p>
+            <div class="quote-author">— Parent (Email)</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About / Teacher Profile (What else to include: Human Element) -->
+  <!-- About / Teacher Profile -->
+  <section class="section section-soft">
+    <div class="container about-section">
+      <div style="margin-bottom: var(--space-md);">
+        <img src="/images/mahesh-bio.jpg" alt="Mahesh Sharma"
+          style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: var(--shadow-md);">
+      </div>
+      <h2>Meet Your Guide</h2>
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 16px auto; color: var(--text-main);">
+        <b>Mahesh Sharma</b> has spent 25 years bridging the gap between technical journalism and IB English teaching.
       </p>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-value">100%</div>
-          <div class="stat-label">
-            <span data-lang-content="en">of students improved</span>
-            <span data-lang-content="zh">学生取得进步</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">10-20%</div>
-          <div class="stat-label">
-            <span data-lang-content="en">term improvement</span>
-            <span data-lang-content="zh">学期内提升</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">30-50%</div>
-          <div class="stat-label">
-            <span data-lang-content="en">improvement with feedback</span>
-            <span data-lang-content="zh">运用反馈后提升</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <p style="color: var(--text-light); max-width: 600px; margin: 0 auto var(--space-lg);">
+        "I believe that analytical writing isn't magic—it's a system. And to teach it, you need both scientific
+        precision and deep relational understanding."
+      </p>
 
-  <!-- Section 8: Final CTA -->
-  <section class="funnel-section bg-navy stats-cta-separator">
-    <div class="funnel-section-inner final-cta-section">
-      <h2 class="final-cta-headline">
-        <span data-lang-content="en">Ready to help your child understand their English text?</span>
-        <span data-lang-content="zh">准备好帮助您的孩子理解英语文本了吗？</span>
-      </h2>
-      <a href="mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning" class="final-cta-button">
-        <span data-lang-content="en">Get in Touch</span>
-        <span data-lang-content="zh">联系我们</span>
-      </a>
+      <div>
+        <a href="/about.html" class="btn btn-primary">Read Bio & Philosophy</a>
+      </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-links">
-{{FOOTER_LINKS}}
+      <a href="/">Home</a>
+      <a href="/schools/">Schools</a>
+      <a href="mailto:hello@luminait.app">Contact</a>
+      <a href="/privacy">Privacy</a>
     </div>
-    <p class="footer-contact">
-      <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a> ·
-      <a href="tel:{{CONTACT_PHONE_LINK}}">{{CONTACT_PHONE}}</a>
-    </p>
+    <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
   </footer>
 
-
-  <script>
-    // ============================================
-    // CONFIGURABLE CONTENT - Edit these arrays
-    // ============================================
-
-    // Authors that cycle in the hero headline
-    const cyclingAuthors = {
-      en: [
-        'Lois Lowry',
-        'Shakespeare',
-        'Harper Lee',
-        'Steinbeck',
-        'Orwell',
-        'Fitzgerald',
-        'Golding'
-      ],
-      zh: [
-        '洛伊丝·劳里',
-        '莎士比亚',
-        '哈珀·李',
-        '斯坦贝克',
-        '奥威尔',
-        '菲茨杰拉德',
-        '戈尔丁'
-      ]
-    };
-
-    // Texts currently being taught (displayed in marquee)
-    const currentTexts = {
-      en: [
-        'Romeo and Juliet',
-        'To Kill a Mockingbird',
-        'The Giver',
-        'Of Mice and Men',
-        '1984',
-        'The Great Gatsby',
-        'Lord of the Flies'
-      ],
-      zh: [
-        '《罗密欧与朱丽叶》',
-        '《杀死一只知更鸟》',
-        '《记忆传授人》',
-        '《人鼠之间》',
-        '《1984》',
-        '《了不起的盖茨比》',
-        '《蝇王》'
-      ]
-    };
-
-    // ============================================
-    // END CONFIGURABLE CONTENT
-    // ============================================
-
-    // Language functions
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Typewriter effect for cycling author animation
-    let currentAuthorIndex = 0;
-    let typewriterTimeout;
-    let isRunning = false;
-
-    async function typeWriter(text, element, speed = 80) {
-      element.textContent = '';
-      
-      // Type out the text character by character
-      for (let i = 0; i < text.length; i++) {
-        element.textContent += text[i];
-        await new Promise(resolve => setTimeout(resolve, speed));
-      }
-      
-      // Wait before starting to delete
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Delete the text character by character
-      for (let i = text.length; i > 0; i--) {
-        element.textContent = text.substring(0, i - 1);
-        await new Promise(resolve => setTimeout(resolve, speed / 2)); // Delete faster than typing
-      }
-    }
-
-    async function cycleAuthor() {
-      if (!isRunning) return;
-      
-      const authorEl = document.getElementById('cyclingAuthor');
-      const authorElZh = document.getElementById('cyclingAuthorZh');
-      
-      if (!authorEl || !authorElZh) return;
-      
-      // Move to next author
-      currentAuthorIndex = (currentAuthorIndex + 1) % cyclingAuthors.en.length;
-      
-      // Get next author texts
-      const nextAuthorEn = cyclingAuthors.en[currentAuthorIndex];
-      const nextAuthorZh = cyclingAuthors.zh[currentAuthorIndex];
-      
-      // Type out both versions simultaneously (they'll be shown/hidden by language system)
-      await Promise.all([
-        typeWriter(nextAuthorEn, authorEl, 80),
-        typeWriter(nextAuthorZh, authorElZh, 80)
-      ]);
-      
-      // Continue to next author if still running
-      if (isRunning) {
-        cycleAuthor();
-      }
-    }
-
-    function startAuthorCycle() {
-      isRunning = true;
-      
-      // Initialize with first author (Lois Lowry)
-      const authorEl = document.getElementById('cyclingAuthor');
-      const authorElZh = document.getElementById('cyclingAuthorZh');
-      
-      if (authorEl && authorElZh) {
-        authorEl.textContent = cyclingAuthors.en[0];
-        authorElZh.textContent = cyclingAuthors.zh[0];
-      }
-      
-      // Start cycling after initial delay
-      setTimeout(() => {
-        cycleAuthor();
-      }, 3000); // Wait 3 seconds before starting to cycle
-    }
-
-    function stopAuthorCycle() {
-      isRunning = false;
-      if (typewriterTimeout) {
-        clearTimeout(typewriterTimeout);
-        typewriterTimeout = null;
-      }
-    }
-
-    // Populate teaching marquee
-    function populateTeachingMarquee() {
-      const marquees = [
-        document.getElementById('teachingMarquee'),
-        document.getElementById('courseMarquee')
-      ];
-
-      marquees.forEach(marquee => {
-        if (!marquee) return;
-
-        // Create content twice for seamless loop
-        let htmlEn = '';
-        let htmlZh = '';
-
-        for (let i = 0; i < 2; i++) {
-          currentTexts.en.forEach(text => {
-            htmlEn += `<span class="teaching-item" data-lang-content="en">${text}</span>`;
-          });
-          currentTexts.zh.forEach(text => {
-            htmlZh += `<span class="teaching-item" data-lang-content="zh">${text}</span>`;
-          });
-        }
-
-        marquee.innerHTML = htmlEn + htmlZh;
-
-        // Force a reflow on mobile to ensure width is calculated correctly
-        marquee.offsetWidth;
-      });
-    }
-
-    // Optional: Pause cycling on hover
-    function setupHoverPause() {
-      const heroHeadlines = document.querySelectorAll('.hero-headline');
-      heroHeadlines.forEach(headline => {
-        headline.addEventListener('mouseenter', () => {
-          stopAuthorCycle();
-        });
-        headline.addEventListener('mouseleave', () => {
-          startAuthorCycle();
-        });
-      });
-    }
-
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      // Load saved language preference
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) {
-        setLanguage(savedLang);
-      }
-
-      // Start cycling authors
-      startAuthorCycle();
-      setupHoverPause();
-
-      // Populate marquee
-      populateTeachingMarquee();
-    });
-  </script>
-
-
 </body>
+
 </html>
