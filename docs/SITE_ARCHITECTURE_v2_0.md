@@ -1,9 +1,9 @@
 # SITE ARCHITECTURE v2.0
 
-**Date:** January 24, 2026  
+**Date:** January 27, 2026  
 **Status:** Active — canonical reference for URL structure  
-**Supersedes:** site_architecture_full.md  
-**Related:** FUNNEL_ARCHITECTURE_v2_0, METHODOLOGY_DEMO_SPEC_v1_0
+**Supersedes:** SITE_ARCHITECTURE_v2_0.md  
+**Related:** FUNNEL_ARCHITECTURE_v2_0, METHODOLOGY_DEMO_SPEC_v1_0  
 **Superseded/Modified By (Parent Funnel):** FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md
 
 ---
@@ -18,6 +18,8 @@ luminait.app/
 ├── FUNNEL 2: PARENT-DIRECT ─────────────────────────────────
 │   │
 │   ├── /                     → Homepage (text grid, parent-facing)
+│   ├── /schools/             → School-first entry point (NEW)
+│   │   └── /schools/[school]/→ Text lists by school
 │   ├── /guides/[text]/       → Methodology demo pages
 │   └── /course/              → Enrollment
 │
@@ -104,7 +106,25 @@ luminait.app/
 
 ---
 
-### 2.2 Text-Specific Outline `/[text-slug]/`
+### 2.2 School Directory `/schools/` (NEW)
+
+**Role:** High-relevance entry point. Targets parents searching by school name.
+
+**Audience:** Parents who know their child's school but not necessarily the text details, or who trust school-specific alignment.
+
+**Content Structure:**
+- **Index:** List of verified schools + "Request Your School" form (Lead Gen).
+- **School Page:** `/schools/[school-slug]/`
+    - Hero: "English Tutoring for [School Name]"
+    - List: 2026 Text List by Year Level
+    - Status: Available / Waitlist
+    - CTA: Link to Text Page or Enquire
+
+**SEO Target:** "[School Name] English tutoring", "[School Name] booklist help"
+
+---
+
+### 2.3 Text-Specific Outline `/[text-slug]/`
 
 **Role:** The core proof point (Stage 2 of Credence Framework). Proves detailed preparation for the specific text.
 
@@ -299,6 +319,7 @@ Logo: LuminAIT          How It Works | Course       [EN | 中文]
 - Logo links to `/`
 - "How It Works" links to `/curriculum/`
 - "Course" links to `/course/`
+- "Schools" links to `/schools/`
 - Language toggle on all pages
 
 ### 5.2 Footer (All Pages)
@@ -465,6 +486,7 @@ Analysis Guide
 |---------|------|---------|
 | 1.0 | Dec 11, 2025 | Initial architecture (student-led only) |
 | 2.0 | Jan 24, 2026 | Two-funnel architecture |
+| 2.1 | Jan 27, 2026 | Added Schools Directory (/schools/) |
 
 ---
 

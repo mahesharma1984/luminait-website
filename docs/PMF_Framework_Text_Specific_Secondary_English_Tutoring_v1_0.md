@@ -1,7 +1,8 @@
 # PMF Framework: Text-Specific Secondary English Tutoring
 
 **Version:** 1.0  
-**Date:** January 2026
+**Date:** January 27, 2026 (Updated)
+**Supersedes:** V1.0
 
 ---
 
@@ -133,6 +134,25 @@ Parent decision-maker, high LTV (4 years)
 **Scale mechanism:** Build materials for top 15 texts → recruit across schools
 
 **Key advantage:** Parent is buyer, LTV is high, methodology fits
+
+---
+
+### Strategy C: School-Led Entry (The "McKinnon Model")
+
+**Target:** Parents who identify primarily by school community ("My child goes to McKinnon SC").
+
+**Model:** Hyper-local landing pages ("McKinnon SC 2026 Booklist").
+
+**Entry:** "McKinnon SC English tutor", "Melbourne Girls College booklist".
+
+**Offer:** "We teach the EXACT text list your school has chosen."
+
+**Mechanism:** 
+1. Verify school booklist.
+2. Build school-specific landing page.
+3. Aggregate demand (waitlist texts not yet built).
+
+**Key Advantage:** Highest possible trust. "They know my child's school."
 
 ---
 

@@ -1,7 +1,8 @@
 # FRAMEWORK: Credence Good Conversion Through Multi-Touchpoint Credibility Building
 
 **Version:** 1.2  
-**Date:** January 25, 2026  
+**Date:** January 27, 2026 (Updated)
+**Supersedes:** V1.2  
 **Status:** Active  
 **Builds on:** PMF_Addendum_v1_0, Distribution_Strategy_v1_0, FUNNEL_ARCHITECTURE_v2_0, FRAMEWORK_Workbook_Production_v1  
 **Theoretical basis:** SEC Classification (Darby & Karni 1973), Hierarchy of Effects (Lavidge & Steiner 1961)
@@ -53,6 +54,8 @@ Parents cannot evaluate pedagogical quality. They rely on **signals** that proxy
 | Signal Type | What It Shows | Credibility Impact |
 |-------------|---------------|-------------------|
 | Text match | "They teach this book" | Entry (binary) |
+| Text match | "They teach this book" | Entry (binary) |
+| School match | "They know MY school" | Entry + Trust (High) |
 | Method visible | "They have a system" | Medium |
 | Text-specific preparation | "They've done the work for THIS book" | High |
 | Outcomes | "It worked for others" | High (if available) |
@@ -69,6 +72,7 @@ WEAKEST
     ├── "We teach The Giver" (specific claim, no proof)
     ├── "Here's our 10-week method" (generic proof of capability)
     ├── "Here's our 10-week plan FOR The Giver" (specific proof) ← TARGET
+    ├── "Here's the booklist for McKinnon SC" (school-specific proof) ← NEW TARGET
     ├── "Here's a worksheet FROM The Giver" (specific artifact)
     ├── "Here's student work ON The Giver" (specific outcome)
     │
@@ -86,6 +90,7 @@ The goal: Move from generic proof to text-specific proof without giving away the
 | Stage | Parent Question | What Resolves It | Text-Specific? |
 |-------|-----------------|------------------|----------------|
 | 1. Text Match | "Do they teach this book?" | Homepage text grid | Yes (list) |
+| 1.5. School Match | "Do they know my child's context?" | School-specific landing page | **Yes (context)** |
 | 2. Preparation Proof | "Have they prepared for THIS book?" | Text-specific course outline | **Yes (new)** |
 | 3. Method Confidence | "Do they have a real system?" | Generic pedagogy pages | No |
 | 4. Action | "What do I get? How much?" | Course page | No |
@@ -199,6 +204,9 @@ COURSE PAGE (Stage 4: Action)
 ├── /the-giver/             Text-specific course outline ← NEW
 ├── /animal-farm/           Text-specific course outline ← NEW
 ├── /macbeth/               Text-specific course outline ← NEW
+│
+├── /schools/               School Directory (School Match) ← NEW
+│   └── /schools/[school]/  School Landing Page
 │
 ├── /syllabus               Generic method overview (supporting)
 ├── /sample                 Generic worksheet preview (supporting)
