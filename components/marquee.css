@@ -1,0 +1,50 @@
+/* Marquee Container */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 40px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
+
+/* Marquee Card Override */
+.marquee-card {
+    width: 350px;
+    background: white;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+    white-space: normal;
+    /* Ensure text wraps */
+}
+
+.marquee-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+}
