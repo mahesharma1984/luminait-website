@@ -413,6 +413,21 @@ Homepage (text match) → Text outline (preparation proof) → Course (enroll)
 
 ---
 
+## 11. ADDENDUM: TRUST & AESTHETICS (v1.3)
+
+### 11.1 The "Natural" Aesthetic
+To counter the "AI/Tech" stigma, the visual design must signal "Academic/Human" rather than "SaaS/Algorithm".
+- **Asset:** "Warm Paper" background (#FDFCF8) + Serif Typography (Fraunces).
+- **Effect:** Feels like a university press or high-end textbook.
+
+### 11.2 Human Trust Signals
+Framework v1.2 focused on *competence* (text match). v1.3 adds *connection*:
+- **Teacher Profiles:** Real human faces are mandatory to prove it's not just a bot.
+- **Testimonials:** Specific "Parent Stories" reinforce the competence claims.
+- **Sample Output:** Visual snippets of student writing prove the "Natural" outcome.
+
+---
+
 ## VERSION HISTORY
 
 | Version | Date | Changes |
@@ -420,6 +435,7 @@ Homepage (text match) → Text outline (preparation proof) → Course (enroll)
 | 1.0 | Jan 25, 2026 | Initial framework |
 | 1.1 | Jan 25, 2026 | Simplified: removed text-specific methodology demos |
 | 1.2 | Jan 25, 2026 | Added text-specific course outline as Stage 2 proof point |
+| 1.3 | Jan 25, 2026 | Added "Natural" aesthetic and Human Trust signals (Profiles, Testimonials) |
 
 ---
 
