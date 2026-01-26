@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Mahesh Sharma | LuminAIT Learning</title>
+    <meta name="description"
+        content="Meet Mahesh Sharma, Founder of LuminAIT. 25 years of experience bridging journalism and education to teach analytical writing with scientific precision.">
+
+    <!-- Fonts & Base Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/components/base.css">
+
+    <style>
+        /* Bio Hero */
+        .bio-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(to bottom, #fff, var(--bg-paper));
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .bio-image-container {
+            position: relative;
+        }
+
+        .bio-image {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            transform: rotate(-2deg);
+            border: 8px solid white;
+        }
+
+        .bio-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            transform: rotate(2deg);
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 80px 0;
+        }
+
+        .philosophy-card {
+            background: var(--bg-paper);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border-left: 6px solid var(--primary);
+            margin-top: 40px;
+        }
+
+        /* Awards Bar */
+        .awards-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding: 30px;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .award-icon {
+            color: #FFD700;
+            /* Gold */
+            font-size: 1.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto;
+            padding-left: 30px;
+            border-left: 2px solid var(--primary-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -37px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 1px var(--primary-light);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-year {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .timeline-desc {
+            color: var(--text-light);
+            margin-top: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Grid override */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .bio-image-container {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="/" class="nav-logo">LuminAIT</a>
+            <div class="nav-links">
+                <a href="/#how-it-works" class="nav-link">How it Works</a>
+                <a href="/about.html" class="nav-link nav-active">About</a>
+                <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bio Hero -->
+    <section class="bio-hero">
+        <div class="container">
+            <div class="bio-grid">
+                <div class="bio-content">
+                    <div
+                        style="text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px;">
+                        Meet Your Guide</div>
+                    <h1 style="font-size: 3rem; line-height: 1.1; margin-bottom: 24px;">The Precision of Science.
+                        <br><span
+                            style="color: var(--text-light); font-family: 'DM Sans', sans-serif; font-weight: 400; font-style: italic;">The
+                            Connection of Relation.</span></h1>
+                    <p style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 32px;">
+                        I've spent 25 years bridging the gap between searching for truth as a journalist and spreading
+                        understanding as a teacher.
+                    </p>
+
+                    <div class="awards-bar"
+                        style="margin-left: 0; justify-content: flex-start; padding: 20px 0; background: transparent; border: none; box-shadow: none;">
+                        <div class="award-item">
+                            <span class="award-icon">★</span>
+                            <span>Best Teacher Award (EF)</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon">★</span>
+                            <span>Best News Journalist Award</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-image-container">
+                    <img src="/images/mahesh-bio.jpg" alt="Mahesh Sharma" class="bio-image">
+                    <div class="bio-badge">25 Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy-section">
+        <div class="container" style="max-width: 800px;">
+            <h2 style="text-align: center;">Why "Scientific & Relational"?</h2>
+            <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-top: 16px;">
+                Most tutoring fails because it's either too rigid or too vague. LuminAIT combines evidence-based
+                analysis with deep student connection.
+            </p>
+
+            <div class="philosophy-card">
+                <h3 style="margin-bottom: 16px;">The Scientific Bent</h3>
+                <p style="margin-bottom: 24px;">
+                    Analytical writing isn't magic; it's a system. My background in technical journalism taught me to
+                    deconstruct complex ideas into clear, verifiable parts. At LuminAIT, we treat texts like
+                    data—mapping every chapter, device, and theme (our "Kernel" method) so students have concrete
+                    evidence to build their arguments, not just "vibes."
+                </p>
+
+                <h3 style="margin-bottom: 16px;">The Relational Bent</h3>
+                <p>
+                    But data means nothing without connection. Teaching in IB schools across the world (Xi'an,
+                    EtonHouse) showed me that confidence is the biggest variable. By understanding your child's specific
+                    school context—their book, their assessment, their pressure—we build the trust needed to take
+                    intellectual risks.
+                </p>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">Jan 2025 – Present</div>
+                        <div class="timeline-title">Founder & CEO, LuminAIT Learning</div>
+                        <div class="timeline-desc">Developing the "narrative intelligence platform" for personalized
+                            learning.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024 – 2025</div>
+                        <div class="timeline-title">IB English Teacher, Xi'an Hanova International</div>
+                        <div class="timeline-desc">Specializing in IB Language A & B (MYP and DP).</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021 – 2022</div>
+                        <div class="timeline-title">IB English Teacher, EtonHouse International</div>
+                        <div class="timeline-desc">Delivering high-performance outcomes in rigorous academic settings.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">Prior to 2019</div>
+                        <div class="timeline-title">Tech Journalist & Editor</div>
+                        <div class="timeline-desc">Award-winning journalism covering startups and technology. Focusing
+                            on truth and clarity.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-white">
+        <div class="container">
+            <h2 style="text-align: center;">Impact Stories</h2>
+            <p style="text-align: center; max-width: 600px; margin: 16px auto; color: var(--text-light);">
+                Real feedback from students and parents.
+            </p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="quote-text">
+                        I am writing to express my gratitude... You were teaching me how to pronounce every single
+                        English alphabet, and formats of many kinds of writing... Your compliments about my works and
+                        feedbacks... my self esteem has been improved a lot... You are the most unforgettable teacher in
+                        my life.
+                    </p>
+                    <div class="quote-author">— Jinyoung, Year 10 Student</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="quote-text">
+                        Happy Teacher's Day, Mr. Mahesh! We are so grateful to be in your class, your humor and concise
+                        lessons make English not only fun but also meaningful. We really appreciate the effort you put
+                        into every homework and class.
+                    </p>
+                    <div class="quote-author">— Adele & Bella, Students</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="quote-text">
+                        His English performance at school improved from a C to a B in Year 7 after taking the course for
+                        three terms. When writing speeches, debate paragraphs, or text analyses, his writing has become
+                        more structured than before... you encourage them to think in more detail.
+                    </p>
+                    <div class="quote-author">— Parent (via WeChat)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/schools/">Schools</a>
+            <a href="mailto:hello@luminait.app">Contact</a>
+        </div>
+        <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
+    </footer>
+
+</body>
+
+</html>
