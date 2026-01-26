@@ -5,48 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Kill a Mockingbird Curriculum | LuminAIT</title>
   <meta name="description" content="Parent curriculum guide for To Kill a Mockingbird. See what your child will learn week by week.">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- LuminAIT Base Styles -->
+  <link rel="stylesheet" href="../../base.css">
+
   <style>
-    :root {
-      --deep-navy: #0a1628;
-      --navy: #0d1b2a;
-      --cyan: #00d4ff;
-      --cyan-glow: rgba(0, 212, 255, 0.2);
-      --cyan-soft: rgba(0, 212, 255, 0.1);
-      --blue: #3b82f6;
-      --blue-dark: #2563eb;
-      --emerald: #10b981;
-      --purple: #7c3aed;
-      --amber: #f59e0b;
-      --red: #dc2626;
-      --slate-100: #f1f5f9;
-      --slate-200: #e2e8f0;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-      --glass: rgba(255, 255, 255, 0.03);
-      --glass-border: rgba(255, 255, 255, 0.08);
-    }
+    /* Page-specific styles for parent guide v2 */
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: var(--slate-700);
-      background: var(--slate-100);
-      -webkit-font-smoothing: antialiased;
-    }
-
+    /* Navigation overrides */
     .nav {
-      background: var(--deep-navy);
+      background: var(--text-dark);
       padding: 1rem 2rem;
-      border-bottom: 1px solid var(--glass-border);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-content {
@@ -61,12 +36,12 @@
       font-family: 'Fraunces', Georgia, serif;
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--cyan);
+      color: var(--primary);
       text-decoration: none;
     }
 
     .nav-back {
-      color: var(--slate-400);
+      color: var(--text-light);
       text-decoration: none;
       font-size: 0.9rem;
       display: flex;
@@ -75,10 +50,11 @@
       transition: color 0.2s;
     }
 
-    .nav-back:hover { color: var(--cyan); }
+    .nav-back:hover { color: var(--primary); }
 
+    /* Hero section with warm gradient */
     .hero {
-      background: linear-gradient(165deg, var(--deep-navy) 0%, var(--navy) 50%, #0f2744 100%);
+      background: linear-gradient(135deg, var(--text-dark) 0%, #1e3a5f 100%);
       padding: 3rem 2rem;
       text-align: center;
       position: relative;
@@ -106,13 +82,13 @@
     .hero-badge {
       display: inline-block;
       padding: 0.4rem 1rem;
-      background: var(--cyan-soft);
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      background: var(--warm-light);
+      border: 1px solid var(--warm);
       border-radius: 50px;
       font-size: 0.8rem;
-      color: var(--cyan);
+      color: var(--warm);
       margin-bottom: 1.25rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .hero h1 {
@@ -125,62 +101,64 @@
     }
 
     .hero-meta {
-      color: var(--slate-400);
+      color: #94a3b8;
       font-size: 1rem;
       margin-bottom: 1rem;
     }
 
     .hero-tagline {
-      color: var(--slate-300);
+      color: #cbd5e1;
       font-size: 1.1rem;
       font-style: italic;
       max-width: 500px;
       margin: 0 auto;
     }
 
+    /* Toggle section */
     .toggle-section {
       background: white;
       padding: 1.5rem 2rem;
       text-align: center;
-      border-bottom: 1px solid var(--slate-200);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     .toggle-buttons {
       display: inline-flex;
-      background: var(--slate-100);
-      border-radius: 8px;
+      background: var(--bg-paper-dark);
+      border-radius: var(--radius-md);
       padding: 4px;
     }
 
     .toggle-btn {
       padding: 0.6rem 1.5rem;
       border: none;
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
       font-weight: 600;
       font-size: 0.9rem;
       font-family: inherit;
-      transition: all 0.2s;
+      transition: all var(--transition-fast);
       background: transparent;
-      color: var(--slate-600);
+      color: var(--text-light);
     }
 
     .toggle-btn.active {
-      background: var(--blue);
+      background: var(--primary);
       color: white;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
     }
 
     .toggle-btn:hover:not(.active) {
-      color: var(--slate-800);
+      color: var(--text-dark);
     }
 
     .toggle-hint {
       margin-top: 0.75rem;
       font-size: 0.85rem;
-      color: var(--slate-500);
+      color: var(--text-light);
     }
 
+    /* Main content area */
     .main {
       max-width: 900px;
       margin: 0 auto;
@@ -193,25 +171,26 @@
       gap: 1.25rem;
     }
 
+    /* Week cards */
     .week-card {
       background: white;
-      border-radius: 12px;
+      border-radius: var(--radius-md);
       padding: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      border-left: 4px solid var(--cyan);
-      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--primary);
+      transition: all var(--transition-fast);
     }
 
     .week-card:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-md);
       transform: translateY(-2px);
     }
 
-    .week-card.phase-foundation { border-left-color: var(--cyan); }
-    .week-card.phase-analysis { border-left-color: var(--blue); }
-    .week-card.phase-writing { border-left-color: var(--purple); }
-    .week-card.phase-body { border-left-color: var(--amber); }
-    .week-card.phase-completion { border-left-color: var(--emerald); }
+    .week-card.phase-foundation { border-left-color: var(--primary); }
+    .week-card.phase-analysis { border-left-color: #3b82f6; }
+    .week-card.phase-writing { border-left-color: #8b5cf6; }
+    .week-card.phase-body { border-left-color: var(--warm); }
+    .week-card.phase-completion { border-left-color: var(--accent); }
 
     .week-header {
       display: flex;
@@ -233,11 +212,11 @@
       color: white;
     }
 
-    .phase-foundation .week-number { background: var(--cyan); }
-    .phase-analysis .week-number { background: var(--blue); }
-    .phase-writing .week-number { background: var(--purple); }
-    .phase-body .week-number { background: var(--amber); }
-    .phase-completion .week-number { background: var(--emerald); }
+    .phase-foundation .week-number { background: var(--primary); }
+    .phase-analysis .week-number { background: #3b82f6; }
+    .phase-writing .week-number { background: #8b5cf6; }
+    .phase-body .week-number { background: var(--warm); }
+    .phase-completion .week-number { background: var(--accent); }
 
     .week-info { flex: 1; }
 
@@ -249,21 +228,21 @@
       margin-bottom: 0.25rem;
     }
 
-    .phase-foundation .week-phase { color: var(--cyan); }
-    .phase-analysis .week-phase { color: var(--blue); }
-    .phase-writing .week-phase { color: var(--purple); }
-    .phase-body .week-phase { color: var(--amber); }
-    .phase-completion .week-phase { color: var(--emerald); }
+    .phase-foundation .week-phase { color: var(--primary); }
+    .phase-analysis .week-phase { color: #3b82f6; }
+    .phase-writing .week-phase { color: #8b5cf6; }
+    .phase-body .week-phase { color: var(--warm); }
+    .phase-completion .week-phase { color: var(--accent); }
 
     .week-title {
       font-family: 'Fraunces', Georgia, serif;
       font-size: 1.15rem;
       font-weight: 600;
-      color: var(--slate-800);
+      color: var(--text-dark);
     }
 
     .week-description {
-      color: var(--slate-500);
+      color: var(--text-light);
       font-size: 0.9rem;
       margin-bottom: 0.75rem;
     }
@@ -277,7 +256,7 @@
       padding: 0.35rem 0;
       padding-left: 1.25rem;
       position: relative;
-      color: var(--slate-600);
+      color: var(--text-main);
       font-size: 0.9rem;
     }
 
@@ -285,49 +264,50 @@
       content: "\2192";
       position: absolute;
       left: 0;
-      color: var(--slate-400);
+      color: var(--text-light);
     }
 
     .technique-box {
       margin-top: 1rem;
       padding: 1rem;
-      background: var(--slate-100);
-      border-radius: 8px;
-      border-left: 3px solid var(--amber);
+      background: var(--warm-light);
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--warm);
     }
 
     .technique-box strong {
-      color: var(--slate-800);
+      color: var(--text-dark);
       font-size: 0.9rem;
     }
 
     .technique-box p {
       margin-top: 0.25rem;
       font-size: 0.85rem;
-      color: var(--slate-600);
+      color: var(--text-main);
     }
 
     .extended-week {
       display: none;
     }
 
+    /* Learning outcomes section */
     .outcomes-section {
       background: white;
-      border-radius: 12px;
+      border-radius: var(--radius-md);
       padding: 2rem;
       margin-top: 2rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      box-shadow: var(--shadow-sm);
     }
 
     .outcomes-section h3 {
       font-family: 'Fraunces', Georgia, serif;
       font-size: 1.25rem;
-      color: var(--slate-800);
+      color: var(--text-dark);
       margin-bottom: 1rem;
     }
 
     .outcomes-section p {
-      color: var(--slate-600);
+      color: var(--text-main);
       margin-bottom: 1rem;
     }
 
@@ -343,7 +323,7 @@
       padding: 0.5rem 0;
       padding-left: 1.5rem;
       position: relative;
-      color: var(--slate-700);
+      color: var(--text-main);
       font-size: 0.9rem;
     }
 
@@ -351,27 +331,29 @@
       content: "\2713";
       position: absolute;
       left: 0;
-      color: var(--emerald);
+      color: var(--accent);
       font-weight: 600;
     }
 
+    /* CTA section */
     .cta-section {
-      background: var(--deep-navy);
-      border-radius: 12px;
+      background: var(--bg-paper-dark);
+      border-radius: var(--radius-lg);
       padding: 2.5rem 2rem;
       margin-top: 2rem;
       text-align: center;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .cta-section h3 {
       font-family: 'Fraunces', Georgia, serif;
       font-size: 1.5rem;
-      color: white;
+      color: var(--text-dark);
       margin-bottom: 0.5rem;
     }
 
     .cta-section p {
-      color: var(--slate-400);
+      color: var(--text-light);
       margin-bottom: 1.5rem;
     }
 
@@ -379,37 +361,40 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--blue);
-      color: white;
+      background: var(--primary);
+      color: white !important;
       padding: 0.9rem 2rem;
-      border-radius: 50px;
+      border-radius: var(--radius-full);
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.2s;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-md);
     }
 
     .cta-btn:hover {
-      background: var(--blue-dark);
+      background: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+      box-shadow: var(--shadow-lg);
+      text-decoration: none;
     }
 
+    /* Footer */
     .footer {
       text-align: center;
       padding: 2rem;
-      color: var(--slate-500);
+      color: var(--text-light);
       font-size: 0.85rem;
     }
 
     .footer a {
-      color: var(--blue);
+      color: var(--primary);
       text-decoration: none;
     }
 
     .footer a:hover { text-decoration: underline; }
 
+    /* Responsive design */
     @media (max-width: 768px) {
       .nav { padding: 1rem; }
       .hero { padding: 2rem 1.25rem; }
@@ -418,6 +403,7 @@
       .outcomes-section, .cta-section { padding: 1.5rem; }
     }
 
+    /* Print styles */
     @media print {
       .nav, .toggle-section, .cta-section { display: none; }
       .extended-week { display: block !important; }
