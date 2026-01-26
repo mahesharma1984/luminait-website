@@ -1,39 +1,22 @@
 # LuminAIT Brand Style Guide
 
-**Version:** 1.0
-**Date:** January 17, 2026
+**Version:** 2.0  
+**Date:** January 25, 2026
+**Theme:** Natural / Paper / Academic
 
 ---
 
-## 1. Logo
+## 1. Brand Philosophy
 
-### Logo Elements
+**"The Natural Path to Brilliance"**
 
-The LuminAIT logo consists of:
-- **Wordmark:** "LuminAIT" in two-tone gradient
-- **Icon:** Three light rays emanating upward from the dot of the "i"
-- **Color transition:** Cyan ("Lumin") → Blue ("AIT")
+LuminAIT has shifted from a "Tech/AI" aesthetic to a "Human/Academic" aesthetic. We want to feel like a high-end university press or a well-designed textbook, not a SaaS dashboard.
 
-### Logo Concept
-
-The name combines:
-- **Lumin** — light, illumination, clarity
-- **AIT** — shorthand suggesting "AI Teaching" or simply the brand suffix
-
-The light rays above the "i" reinforce the illumination concept — understanding dawning, clarity emerging.
-
-### Logo Usage
-
-| Context | Version |
-|---------|---------|
-| Dark backgrounds | Primary (cyan-to-blue on navy) |
-| Light backgrounds | Inverted (navy-to-dark blue on white) |
-| Single color | Cyan only or navy only |
-| Minimum size | 120px wide for digital |
-
-### Clear Space
-
-Maintain clear space around the logo equal to the height of the "i" dot on all sides.
+**Key Attributes:**
+- **Warm & Organic:** Use off-whites and paper textures, not stark white or dark mode.
+- **Academic Authority:** Serif headings (Fraunces) convey literary depth.
+- **Human Connection:** Focus on student work, teacher faces, and testimonials. 
+- **Tech-Enabled, Not Tech-Forward:** AI is the engine, not the showroom.
 
 ---
 
@@ -43,48 +26,30 @@ Maintain clear space around the logo equal to the height of the "i" dot on all s
 
 | Name | Hex | CSS Variable | Usage |
 |------|-----|--------------|-------|
-| **Deep Navy** | `#0a1628` | `--deep-navy` | Primary background, headers |
-| **Navy** | `#0d1b2a` | `--navy` | Secondary background, gradients |
-| **Cyan** | `#00d4ff` | `--cyan` | Primary accent, "Lumin" text, highlights |
-| **Blue** | `#3b82f6` | `--blue` | Secondary accent, "AIT" text, CTAs |
-
-### Supporting Colors
-
-| Name | Hex | CSS Variable | Usage |
-|------|-----|--------------|-------|
-| **Slate 100** | `#f1f5f9` | `--slate-100` | Light backgrounds |
-| **Slate 300** | `#cbd5e1` | `--slate-300` | Body text on dark |
-| **Slate 400** | `#94a3b8` | `--slate-400` | Secondary text on dark |
-| **Slate 500** | `#64748b` | `--slate-500` | Labels, muted text |
-| **Slate 600** | `#475569` | `--slate-600` | Body text (secondary) |
-| **Slate 700** | `#334155` | `--slate-700` | Body text on light |
-| **Slate 800** | `#1e293b` | `--slate-800` | Headings on light |
-| **Emerald** | `#10b981` | `--emerald` | Success states, positive indicators |
+| **Warm Paper** | `#FDFCF8` | `--bg-paper` | Primary background. Warm off-white. |
+| **Paper Dark** | `#F3F4F6` | `--bg-paper-dark` | Secondary background, sections. |
+| **Charcoal** | `#334155` | `--text-main` | Primary body text. Softer than black. |
+| **Ink Black** | `#111827` | `--text-dark` | Headings. Strong contrast. |
+| **Royal Blue** | `#2563EB` | `--primary` | Primary accent, Buttons, Links. |
+| **Amber** | `#D97706` | `--warm` | Trust signals, badges, warmth. |
 
 ### Color Relationships
 
 ```
-DARK THEME (primary):
-Background: Deep Navy (#0a1628)
-Primary accent: Cyan (#00d4ff)
-Secondary accent: Blue (#3b82f6)
-Body text: Slate 300 (#cbd5e1)
-Muted text: Slate 400 (#94a3b8)
+BACKGROUNDS:
+Primary: Warm Paper (#FDFCF8) - Creates the "book page" feel.
+Secondary: Paper Dark (#F3F4F6) - Used for distinct sections.
+Surface: White (#FFFFFF) - Used for cards to create lift.
 
-LIGHT THEME (sections):
-Background: Slate 100 (#f1f5f9) or White
-Primary accent: Blue (#3b82f6)
-Body text: Slate 700 (#334155)
-Headings: Slate 800 (#1e293b)
+TEXT:
+Headings: Ink Black (#111827) - Sharp, legible, authoritative.
+Body: Charcoal (#334155) - Legible but not harsh.
+Meta/Labels: Slate 500 (#64748B) - Subtle supporting text.
+
+ACCENTS:
+Action: Royal Blue (#2563EB) - Clickable elements.
+Highlight: Amber (#D97706) - "Recommended", "Popular", or academic highlights.
 ```
-
-### Gradients
-
-| Name | CSS | Usage |
-|------|-----|-------|
-| **Hero gradient** | `linear-gradient(135deg, #0a1628 0%, #0d1b2a 50%, #0f2744 100%)` | Hero sections, dark headers |
-| **Cyan glow** | `radial-gradient(ellipse, #00d4ff33 0%, transparent 70%)` | Subtle background accent |
-| **Text gradient** | `linear-gradient(90deg, #00d4ff 0%, #3b82f6 100%)` | Special headings (sparingly) |
 
 ---
 
@@ -92,289 +57,66 @@ Headings: Slate 800 (#1e293b)
 
 ### Font Stack
 
-| Role | Font | Fallback | Google Fonts |
-|------|------|----------|--------------|
-| **Display** | Fraunces | Georgia, serif | `family=Fraunces:ital,wght@0,600;0,700;1,400` |
-| **Body** | DM Sans | -apple-system, BlinkMacSystemFont, sans-serif | `family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700` |
-| **Chinese** | Noto Sans SC | sans-serif | `family=Noto+Sans+SC:wght@400;500;600;700` |
+| Role | Font | Fallback | Rationale |
+|------|------|----------|-----------|
+| **Display** | **Fraunces** | Georgia, serif | Variable serif. Classic, literary, academic. |
+| **Body** | **DM Sans** | sans-serif | Clean, modern, high readability for UI. |
+| **Quote** | **Georgia** | serif | Used for student essay samples to look like typewritten text. |
 
 ### Type Scale
 
-| Element | Size | Weight | Line Height | Font |
-|---------|------|--------|-------------|------|
-| H1 (hero) | 2.5rem (40px) | 600 | 1.2 | Fraunces |
-| H2 (section) | 1.75rem (28px) | 600 | 1.3 | Fraunces |
-| H3 (card) | 1.25rem (20px) | 600 | 1.4 | Fraunces |
-| Body | 1rem (16px) | 400 | 1.6 | DM Sans |
-| Small | 0.875rem (14px) | 400 | 1.5 | DM Sans |
-| Stat number | 3rem (48px) | 700 | 1.1 | DM Sans |
-
-### Typography Rules
-
-- **Headlines:** Fraunces for display, DM Sans for UI headings
-- **Body:** DM Sans throughout
-- **Letter spacing:** -0.02em for large display text, normal for body
-- **Emphasis:** Use weight (600) rather than italics for emphasis
-- **Links:** Cyan on dark, Blue on light, no underline until hover
+| Element | Size | Weight | Font | Usage |
+|---------|------|--------|------|-------|
+| H1 | 2.5rem+ | 600 | Fraunces | Page titles. |
+| H2 | 2rem | 600 | Fraunces | Section headers. |
+| H3 | 1.5rem | 600 | Fraunces | Card titles. |
+| Body | 1rem | 400 | DM Sans | Standard reading text. |
+| Label | 0.85rem | 500 | DM Sans | Badges, meta info. |
 
 ---
 
-## 4. Iconography
+## 4. UI Components
 
-### Icon Style
+### Cards ("The Clean Card")
+Instead of glassmorphism, we use clean, white cards that sit on the warm background.
 
-| Attribute | Specification |
-|-----------|---------------|
-| Style | Outline or minimal filled |
-| Stroke | 1.5-2px |
-| Corners | Rounded (2-4px radius) |
-| Size | 24px standard, 32px for feature cards |
-| Color | Cyan on dark, Blue on light |
-
-### Icon Sources
-
-Recommended: Lucide, Heroicons, or Phosphor (outline variants)
-
-### Custom Icon: Light Rays
-
-The logo's light ray motif can be used as a standalone icon or decorative element:
-- Three rays emanating upward at ~30° angles
-- Central ray vertical
-- Dot at base (optional)
-
----
-
-## 5. Spacing
-
-### Base Unit
-
-8px grid system
-
-### Spacing Scale
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| xs | 4px | Tight spacing, inline elements |
-| sm | 8px | Related elements |
-| md | 16px | Standard padding |
-| lg | 24px | Section internal padding |
-| xl | 32px | Card padding |
-| 2xl | 48px | Section gaps |
-| 3xl | 64px | Major section separation |
-| 4xl | 80px | Hero padding |
-
-### Section Rhythm
-
-- Section vertical padding: 3-4rem (48-64px) minimum
-- Between major sections: 0 (backgrounds create separation)
-- Card gaps: 1.5rem (24px)
-
----
-
-## 6. Components
-
-### Buttons
-
-**Primary (CTA):**
-```css
-background: var(--blue);           /* #3b82f6 */
-color: white;
-padding: 1rem 2.5rem;
-border-radius: 50px;
-font-weight: 600;
-box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-```
-
-**Primary hover:**
-```css
-background: #2563eb;
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
-```
-
-**Secondary:**
-```css
-background: transparent;
-color: var(--cyan);                /* #00d4ff */
-border: 1px solid var(--cyan);
-padding: 0.75rem 1.5rem;
-border-radius: 50px;
-```
-
-### Cards
-
-**Card on light:**
 ```css
 background: white;
-border-radius: 12-20px;
-padding: 2rem;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+border: 1px solid rgba(0,0,0,0.03);
+border-radius: 12px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Soft, natural shadow */
 ```
 
-**Card on dark:**
-```css
-background: rgba(255, 255, 255, 0.05);
-border: 1px solid rgba(255, 255, 255, 0.1);
-backdrop-filter: blur(10px);
-```
+### Buttons
+Rounded, friendly, clickable.
 
-### Stats
+*   **Primary:** Royal Blue background, White text.
+*   **Secondary:** White background, Dark text, Border.
 
-```css
-.stat-value {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--cyan);              /* #00d4ff */
-}
-.stat-label {
-  font-size: 1rem;
-  color: var(--slate-300);         /* #cbd5e1 */
-}
-```
+### Trust Signals (The "Human" Touch)
+To counter the "AI" stigma, we explicitly visualize human elements:
+*   **Teacher Profiles:** Circular avatars, real names.
+*   **Testimonials:** Quote design with "serif" quotation marks.
+*   **Sample Output:** Visual snippets of student writing (serif font, blue vertical bar).
 
 ---
 
-## 7. Section Backgrounds
+## 5. Layout & Spacing
 
-### Alternating Pattern
-
-| Section | Background |
-|---------|------------|
-| Hero | Navy gradient |
-| Problem | Slate 100 (light gray) |
-| Solution | White |
-| How It Works | Slate 100 |
-| Course | White |
-| Stats/Proof | Navy gradient |
-| CTA | Navy gradient |
-
-### Background Effects
-
-- **Cyan glow:** Subtle radial gradient in hero, positioned top-right
-- **No images:** Rely on color and typography, not stock photos
+*   **Grid:** 8px baseline. 
+*   **Breathing Room:** generous whitespace (64px+) between sections.
+*   **Container:** Max-width 1200px for main content, 800px for reading text.
 
 ---
 
-## 8. Motion
+## 6. Do's and Don'ts
 
-### Transitions
-
-| Property | Duration | Easing |
-|----------|----------|--------|
-| Color/background | 0.2s | ease |
-| Transform | 0.2s-0.3s | ease |
-| Opacity | 0.3s | ease-in-out |
-
-### Hover States
-
-- Buttons: lift (translateY -2px) + shadow increase
-- Cards: subtle lift (translateY -4px to -6px) + shadow increase
-- Links: color shift to lighter variant
-
-### Animations
-
-- **Typewriter:** Hero author cycling (80ms per character)
-- **Marquee:** Currently teaching scroll (30s loop, linear)
-- **Fade in:** Sections on scroll (optional, 0.6s ease-out)
+*   **DO** use "Warm Paper" (#FDFCF8) as the default background.
+*   **DO** use Fraunces for all major headings.
+*   **DO** show real content (essay snippets) over abstract icons.
+*   **DON'T** use dark mode or neon gradients (deprecated v1.0).
+*   **DON'T** use "tech" jargon. Speak like a supportive teacher.
 
 ---
 
-## 9. Voice & Tone
-
-### Brand Voice
-
-| Attribute | Description |
-|-----------|-------------|
-| **Clear** | No jargon, no edu-speak. Say what you mean. |
-| **Confident** | We know this works. Not boastful, but assured. |
-| **Warm** | We care about students. Not corporate, not cold. |
-| **Direct** | Short sentences. Active voice. Get to the point. |
-
-### Writing Guidelines
-
-- Lead with outcomes, not features
-- Use "your child" not "students" (parent-facing)
-- Avoid superlatives ("best," "revolutionary")
-- Be specific: "5 weeks" not "short course"
-- One idea per sentence
-
-### Example Tone
-
-**Not this:** "Our innovative pedagogical methodology leverages systematic frameworks to optimize analytical writing outcomes."
-
-**This:** "We teach your child to understand the text. The writing follows naturally."
-
----
-
-## 10. Application Examples
-
-### Hero Section
-
-- Deep navy background with subtle cyan glow
-- Logo centered or top-left
-- Headline in Cyan, subtitle in Slate 300
-- Single blue CTA button
-
-### Feature Cards
-
-- White background on light section
-- Icon in accent color
-- Fraunces heading (600 weight)
-- Slate 600/700 body text
-- Subtle shadow, no border
-
-### Stats Section
-
-- Navy gradient background
-- Numbers in Cyan (3rem)
-- Labels in Slate 300
-
----
-
-## 11. Don'ts
-
-- ❌ Don't use colors outside the palette
-- ❌ Don't stretch or distort the logo
-- ❌ Don't use the logo on busy backgrounds
-- ❌ Don't use stock photos of students/classrooms
-- ❌ Don't use more than two type weights per page
-- ❌ Don't center body text (headings only)
-- ❌ Don't use pure black (#000) — use Deep Navy
-- ❌ Don't use pure white (#fff) for large background areas — use Slate 100
-
----
-
-## 12. CSS Implementation
-
-### CSS Variables (defined in `:root`)
-
-```css
-:root {
-  /* Primary colors */
-  --deep-navy: #0a1628;
-  --navy: #0d1b2a;
-  --cyan: #00d4ff;
-  --cyan-glow: #00d4ff33;
-  --blue: #3b82f6;
-  --emerald: #10b981;
-
-  /* Slate scale */
-  --slate-100: #f1f5f9;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1e293b;
-}
-```
-
-### Google Fonts Import
-
-```html
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-```
-
----
-
-**END OF STYLE GUIDE**
+**END OF STYLE GUIDE v2.0**

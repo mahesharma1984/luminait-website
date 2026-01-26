@@ -104,13 +104,19 @@ luminait.app/
 
 ---
 
-### 2.2 Methodology Demo `/guides/[text]/`
+### 2.2 Text-Specific Outline `/[text-slug]/`
 
-**Role:** Shows HOW you teach this text. Demonstrates quality without giving away full guide.
+**Role:** The core proof point (Stage 2 of Credence Framework). Proves detailed preparation for the specific text.
 
-> [!WARNING]
-> **Strategy Update (Jan 25, 2026):** PROPOSED TO BE REPLACED BY "TEXT-SPECIFIC OUTLINE".
-> See `FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md` for the new strategy which prioritizes "Preparation Proof" over "Methodology Demo".
+**Supersedes:** Methodology Demo (`/guides/[text]`) - Now deprecated.
+
+**Audience:** Parent verifying if you are "ready" for their child's specific book.
+
+**Content Structure:**
+1.  **Hero:** Title, Author, Year Level.
+2.  **Course Breakdown:** 10-week plan mapped to chapters.
+3.  **Sample Output:** Visual snippet of a high-quality student sentence/paragraph.
+4.  **CTA:** Enquire to Enroll (Course).
 
 **Audience:** Parent evaluating whether you're right for their child.
 
