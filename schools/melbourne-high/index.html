@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melbourne High English Tutoring | 2026 Booklist Guides</title>
+    <meta name="description"
+        content="Specific English tutoring for Melbourne High. We cover Frankenstein and Paper Menagerie.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/components/base.css">
+    <style>
+        .hero {
+            background: var(--bg-paper);
+            padding-top: 100px;
+            padding-bottom: 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .school-badge {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .year-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .year-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--primary-light);
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .book-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .book-card:hover {
+            transform: translateX(4px);
+            border-color: var(--primary);
+        }
+
+        .book-info h4 {
+            font-family: 'Fraunces', serif;
+            margin: 0 0 4px 0;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .book-info span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .tag-eal {
+            font-size: 0.75rem;
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        .status-available {
+            color: #059669;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-waitlist {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="/" class="nav-logo">LuminAIT</a>
+            <div class="nav-links">
+                <a href="/schools/" class="nav-link">All Schools</a>
+                <a href="/course/" class="nav-link">Course</a>
+                <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="container">
+            <span class="school-badge">Melbourne High School</span>
+            <h1>2026 English Booklist Support</h1>
+            <p style="max-width: 600px; margin: 16px auto 0; color: var(--text-light);">We have aligned our tutoring
+                courses to the 2026 MHS text list.</p>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <a href="/schools/" class="back-link">← Back to Schools</a>
+
+            <div class="year-section">
+                <h3 class="year-title">Year 9</h3>
+                <div class="book-list">
+                    <div class="book-card" style="opacity: 0.7; cursor: default;">
+                        <div class="book-info">
+                            <h4>Frankenstein</h4><span>Mary Shelley</span>
+                        </div>
+                        <div class="status-waitlist">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-title">Year 10</h3>
+                <div class="book-list">
+                    <div class="book-card" style="opacity: 0.7; cursor: default;">
+                        <div class="book-info">
+                            <h4>Paper Menagerie...</h4><span>Ken Liu</span>
+                        </div>
+                        <div class="status-waitlist">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-links"><a href="/">Home</a><a href="mailto:hello@luminait.app">Contact</a><a
+                href="/privacy">Privacy</a></div>
+        <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
+    </footer>
+</body>
+
+</html>
