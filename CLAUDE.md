@@ -41,8 +41,32 @@ Key documents:
 
 1. **Main pages**: Edit `/src/templates/`, run `node build.js`
 2. **Guide pages**: Edit `/templates/`, run `python generate_site.py`
-3. **Parent curriculum guides**: Edit `/data/parent-guides/*.json`, run `node build-parent-guides.js`
+3. **Parent curriculum guides**:
+   - **Content changes**: Edit `/data/parent-guides/*.json`
+   - **Layout changes**: Edit `/src/templates/_parent-guide-template.html`
+   - Run `node build-parent-guides.js`
+   - Output: `/curriculum/[slug]/index.html` (auto-generated, DO NOT edit)
 4. **Config changes**: Edit `site-config.json`, rebuild affected pages
+
+### Parent Curriculum Guide Pipeline
+
+**Source of Truth**: JSON files in `/data/parent-guides/`
+
+```
+/data/parent-guides/*.json  →  build-parent-guides.js  →  /curriculum/*/index.html
+                   ↓                                            ↑
+    _parent-guide-template.html ──────────────────────────────┘
+    (single template for all guides)
+```
+
+**To add a new guide:**
+1. Create `data/parent-guides/[text-slug].json` with curriculum data
+2. Run `node build-parent-guides.js`
+3. Output appears at `/curriculum/[text-slug]/index.html`
+
+**Legacy files (DO NOT USE):**
+- `/src/templates/curriculum_*.html` - Old approach, unmigrated guides
+- All content should be in JSON format going forward
 
 ## Dev Guidelines (Added Jan 27, 2026)
 

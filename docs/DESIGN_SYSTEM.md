@@ -260,6 +260,81 @@ Always use CSS variables instead of hardcoded colors:
 
 **Data source:** JSON files in `/data/parent-guides/`
 
+**Template:** Single template at `/src/templates/_parent-guide-template.html` with placeholders
+
+**Build Pipeline:**
+
+```
+JSON data files                    Template                      Output
+────────────────                   ────────                      ──────
+/data/parent-guides/               /src/templates/               /curriculum/
+├── jane-eyre.json        ──┐                                    ├── jane-eyre/
+├── dracula.json          ──┤      _parent-guide-template.html  │   └── index.html
+├── the-giver.json        ──┤      with {{PLACEHOLDERS}}        ├── dracula/
+└── [etc].json            ──┘                                    │   └── index.html
+                                    +                            └── ...
+                                    build-parent-guides.js
+                                    (merges data + template)     + /curriculum/index.html
+```
+
+**How It Works:**
+
+1. **Data Files** (`/data/parent-guides/*.json`)
+   - Each JSON file contains structured curriculum data for one text
+   - Fields: `title`, `author`, `yearLevel`, `pattern`, `weeks[]`, `outcomes[]`, `slug`, `metaDescription`
+   - Example: `jane-eyre.json` contains all content for Jane Eyre curriculum guide
+
+2. **Single Template** (`/src/templates/_parent-guide-template.html`)
+   - One HTML template file used for ALL parent guides
+   - Contains placeholders: `{{TEXT_TITLE}}`, `{{AUTHOR}}`, `{{YEAR_LEVEL}}`, `{{WEEKS_CONTENT}}`, etc.
+   - Defines structure, design, and styling (imports `page-parent-guide.css`)
+   - **Source of truth for layout and design**
+
+3. **Build Script** (`build-parent-guides.js`)
+   - Reads all JSON files from `/data/parent-guides/`
+   - For each JSON file:
+     - Loads the template
+     - Replaces placeholders with data from JSON
+     - Generates week cards, outcomes list, etc.
+     - Writes output to `/curriculum/[slug]/index.html`
+   - Also generates index page at `/curriculum/index.html` with links to all guides
+
+**Adding a New Parent Guide:**
+
+```bash
+# 1. Create JSON data file
+cat > data/parent-guides/frankenstein.json <<EOF
+{
+  "title": "Frankenstein",
+  "author": "Mary Shelley",
+  "slug": "frankenstein",
+  "yearLevel": "Year 10",
+  "pattern": "Creation & Responsibility",
+  "metaDescription": "...",
+  "weeks": [ ... ],
+  "outcomes": [ ... ]
+}
+EOF
+
+# 2. Run build script
+node build-parent-guides.js
+
+# 3. Output appears at:
+#    /curriculum/frankenstein/index.html
+#    /curriculum/index.html (updated)
+```
+
+**DO NOT:**
+- ✗ Create individual HTML files in `/src/templates/curriculum_*.html` (legacy approach)
+- ✗ Edit generated files in `/curriculum/` directly (they get overwritten)
+- ✗ Add inline styles to the template (use `page-parent-guide.css` component classes)
+
+**DO:**
+- ✓ Edit JSON data files for content changes
+- ✓ Edit `_parent-guide-template.html` for layout/structure changes
+- ✓ Run `node build-parent-guides.js` after any changes
+- ✓ Use design system tokens and component classes
+
 ### Future: Student Guide Pages (page-guide.css) [TODO]
 
 **Used by:** Student analysis guide pages (`/vce/`, `/hsc/`, `/ib/`)
