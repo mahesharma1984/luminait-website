@@ -7,6 +7,44 @@ This document specifies how to create "Dread Engine"-style analysis guides from 
 
 ---
 
+## 0. STYLING REQUIREMENTS
+
+> **Reference:** All guide pages must follow `docs/DESIGN_SYSTEM.md`
+
+### CSS Import Order
+
+```html
+<!-- In <head> of guide templates -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/components/base.css">
+<link rel="stylesheet" href="/components/page-components.css">
+<link rel="stylesheet" href="/components/page-guide.css">  <!-- When created -->
+```
+
+### Component Classes to Use
+
+| Guide Section | Recommended Classes |
+|---------------|---------------------|
+| Hero/Hook | `.hero-standard`, `.badge-warm` |
+| The Reveal | `.content-card`, `.card-grid` |
+| Anchor Quote | `.sample-preview`, `.quote-text` |
+| Devices | `.card-grid-dense`, `.content-card-compact` |
+| Timeline | Custom (in page-guide.css) |
+| Toolkit | `.content-section`, `.sample-preview` |
+| FAQ | Accordion pattern (TBD) |
+
+### Design Tokens
+
+Use CSS variables for all colors, spacing, shadows:
+- Colors: `var(--primary)`, `var(--warm)`, `var(--accent)`, `var(--text-dark)`
+- Spacing: `var(--space-md)`, `var(--space-lg)`, `var(--space-xl)`
+- Shadows: `var(--shadow-sm)`, `var(--shadow-md)`
+
+**Do NOT hardcode hex colors or pixel values.**
+
+---
+
 ## 1. SOURCE DOCUMENT MAPPING
 
 Each section of the guide template pulls from specific kernel stages:
