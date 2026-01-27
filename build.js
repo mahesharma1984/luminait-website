@@ -373,6 +373,58 @@ function processTemplate(page) {
 }
 
 /**
+ * Validate template styles for design system consistency
+ */
+function validateTemplateStyles(templatePath, pageId) {
+  const content = fs.readFileSync(templatePath, 'utf8');
+  const warnings = [];
+
+  // Check for hardcoded colors (not using CSS variables)
+  const hexColorRegex = /#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3}(?![0-9a-fA-F])/g;
+  const hexMatches = content.match(hexColorRegex);
+  if (hexMatches) {
+    const uniqueColors = [...new Set(hexMatches)];
+    if (uniqueColors.length > 3) {
+      warnings.push(`  ⚠ Found ${uniqueColors.length} hardcoded hex colors. Consider using CSS variables from base.css`);
+    }
+  }
+
+  // Check for large inline style blocks
+  const styleBlockRegex = /<style>([\s\S]*?)<\/style>/g;
+  const styleMatches = content.match(styleBlockRegex);
+  if (styleMatches) {
+    const totalStyleLines = styleMatches.join('\n').split('\n').length;
+    if (totalStyleLines > 200) {
+      warnings.push(`  ⚠ Large inline style block (${totalStyleLines} lines). Consider extracting to component CSS files`);
+    }
+  }
+
+  // Check for inline styles in HTML
+  const inlineStyleRegex = /style="[^"]+"/g;
+  const inlineStyleMatches = content.match(inlineStyleRegex);
+  if (inlineStyleMatches && inlineStyleMatches.length > 15) {
+    warnings.push(`  ⚠ Found ${inlineStyleMatches.length} inline style attributes. Consider using CSS classes`);
+  }
+
+  // Check if using component CSS files
+  const hasPageComponents = content.includes('/components/page-components.css');
+  const hasPageMarketing = content.includes('/components/page-marketing.css');
+  const hasPageReport = content.includes('/components/page-report.css');
+
+  if (!hasPageComponents && styleMatches && styleMatches.length > 0) {
+    warnings.push('  ℹ Consider importing /components/page-components.css for shared patterns');
+  }
+
+  // Display warnings
+  if (warnings.length > 0) {
+    console.log(`\n📋 Style recommendations for ${pageId}:`);
+    warnings.forEach(w => console.log(w));
+  }
+
+  return warnings.length;
+}
+
+/**
  * Main build function
  */
 function build() {
@@ -388,12 +440,25 @@ function build() {
     process.exit(1);
   }
 
+  let totalWarnings = 0;
+
   // Process each page
   for (const page of config.pages) {
     processTemplate(page);
+
+    // Validate styles
+    const templatePath = path.join(TEMPLATES_DIR, page.template);
+    if (fs.existsSync(templatePath)) {
+      totalWarnings += validateTemplateStyles(templatePath, page.id);
+    }
   }
 
-  console.log('\nBuild complete!');
+  console.log('\n✓ Build complete!');
+
+  if (totalWarnings > 0) {
+    console.log(`\n💡 Design System Tip: ${totalWarnings} style recommendation(s) found.`);
+    console.log('   See docs/DESIGN_SYSTEM.md for guidelines on using component CSS files.\n');
+  }
 }
 
 // Run build
