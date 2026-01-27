@@ -28,7 +28,8 @@ components/
 ├── base.css              # Design tokens (colors, spacing, typography)
 ├── page-components.css   # Shared patterns (cards, badges, heroes)
 ├── page-marketing.css    # All page styles (light, warm, consistent)
-└── page-guide.css        # Guide pages (analysis guides) [TODO]
+├── page-parent-guide.css # Parent curriculum guide pages (/curriculum/)
+└── page-guide.css        # Student guide pages (analysis guides) [TODO]
 ```
 
 ### Import Order
@@ -235,9 +236,33 @@ Always use CSS variables instead of hardcoded colors:
 </div>
 ```
 
-### Future: Guide Pages (page-guide.css) [TODO]
+### Parent Curriculum Guides (page-parent-guide.css)
 
-**Used by:** Analysis guide pages (`/vce/`, `/hsc/`, `/ib/`)
+**Used by:** Parent curriculum guide pages (`/curriculum/[text-slug]/`)
+
+**Visual identity:** Light, warm, parent-facing (matches site design system)
+
+**Key components:**
+- Light hero with warm badge
+- Toggle buttons for 5-week/10-week views
+- Week cards with phase-colored borders (foundation, analysis, writing, body, completion)
+- Technique highlight boxes
+- Learning outcomes grid
+- CTA section
+
+```html
+<link rel="stylesheet" href="/components/base.css">
+<link rel="stylesheet" href="/components/page-components.css">
+<link rel="stylesheet" href="/components/page-parent-guide.css">
+```
+
+**Build command:** `node build-parent-guides.js`
+
+**Data source:** JSON files in `/data/parent-guides/`
+
+### Future: Student Guide Pages (page-guide.css) [TODO]
+
+**Used by:** Student analysis guide pages (`/vce/`, `/hsc/`, `/ib/`)
 
 **Visual identity:** Student-facing, clean, content-focused (but still following the same warm aesthetic)
 
@@ -377,6 +402,7 @@ Build will warn if:
 | Page Type | CSS File | Voice | Examples |
 |-----------|----------|-------|----------|
 | Marketing (parent-facing) | `page-marketing.css` | Warm, parent-focused | index.html, course.html |
+| Parent curriculum guide | `page-parent-guide.css` | Warm, parent-focused | /curriculum/jane-eyre/ |
 | Guide (student-facing) | `page-guide.css` [TODO] | Direct, useful | /vce/tkam/ |
 | Curriculum outline | `page-marketing.css` | Parent-focused | curriculum_*.html |
 
@@ -430,7 +456,8 @@ Build will warn if:
 
 ## 11. FUTURE ENHANCEMENTS
 
-- [ ] Create `page-guide.css` for analysis guide pages
+- [x] Create `page-parent-guide.css` for parent curriculum guides (Jan 27, 2026)
+- [ ] Create `page-guide.css` for student analysis guide pages
 - [ ] Add dark mode support with color scheme override
 - [ ] Create interactive component documentation
 - [ ] Add visual regression testing
@@ -442,6 +469,7 @@ Build will warn if:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1 | Jan 27, 2026 | Added page-parent-guide.css for /curriculum/ pages |
 | 1.0 | Jan 27, 2026 | Initial design system specification |
 
 ---
