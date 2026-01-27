@@ -28,6 +28,10 @@ Key documents:
 ├── /templates/             # Templates for generate_site.py
 ├── generate_site.py        # Generates analysis guide pages
 │
+├── /data/parent-guides/    # JSON data for parent curriculum guides
+├── build-parent-guides.js  # Generates parent curriculum pages
+├── /curriculum/            # Generated parent guide pages
+│
 ├── /components/            # Shared JS/CSS
 ├── /guides/                # Generated guide pages
 ├── /docs/                  # Methodology (READ FIRST)
@@ -37,7 +41,8 @@ Key documents:
 
 1. **Main pages**: Edit `/src/templates/`, run `node build.js`
 2. **Guide pages**: Edit `/templates/`, run `python generate_site.py`
-3. **Config changes**: Edit `site-config.json`, rebuild affected pages
+3. **Parent curriculum guides**: Edit `/data/parent-guides/*.json`, run `node build-parent-guides.js`
+4. **Config changes**: Edit `site-config.json`, rebuild affected pages
 
 ## Dev Guidelines (Added Jan 27, 2026)
 
