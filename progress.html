@@ -40,23 +40,42 @@
   <meta name="twitter:image" content="https://luminait.app/social-preview.png">
 
   <style>
-    /* Page Specific Styles - Using v2.0 warm theme */
+    /* Page Specific Styles */
+    :root {
+      --report-navy: #1e3a5f;
+      --report-cyan: #2d9cdb;
+      --report-green: #27ae60;
+    }
 
-    /* Page Header */
+    /* Page Header Override */
     .page-header {
-      background: var(--bg-paper);
-      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--report-navy) 0%, #0f2744 100%);
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
       text-align: center;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(45, 156, 219, 0.15) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .page-header-content {
       max-width: 800px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .page-header h1 {
-      color: var(--text-dark);
+      color: var(--report-cyan);
       margin-bottom: 1rem;
     }
 
@@ -85,7 +104,7 @@
     }
 
     .report-header {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--report-navy) 0%, #0f2744 100%);
       padding: 2rem;
       text-align: center;
       color: white;
@@ -93,14 +112,14 @@
 
     .report-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
+      background: rgba(45, 156, 219, 0.2);
+      color: var(--report-cyan);
       padding: 0.5rem 1rem;
       border-radius: 50px;
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(45, 156, 219, 0.3);
     }
 
     .report-title {
@@ -111,7 +130,7 @@
     }
 
     .report-meta {
-      color: rgba(255, 255, 255, 0.8);
+      color: #94a3b8;
       font-size: 0.95rem;
     }
 
@@ -411,7 +430,7 @@
 
 <body>
 
-  <nav class="nav">
+    <nav class="nav">
     <div class="nav-content">
       <a href="/" class="nav-logo">LuminAIT</a>
       <div class="nav-links">
