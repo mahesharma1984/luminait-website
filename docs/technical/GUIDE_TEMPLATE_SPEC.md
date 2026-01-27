@@ -9,7 +9,7 @@ This document specifies how to create "Dread Engine"-style analysis guides from 
 
 ## 0. STYLING REQUIREMENTS
 
-> **Reference:** All guide pages must follow `docs/DESIGN_SYSTEM.md`
+> **Reference:** All guide pages must follow `DESIGN_SYSTEM.md` (this directory)
 
 ### CSS Import Order
 

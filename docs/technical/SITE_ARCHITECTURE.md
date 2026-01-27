@@ -2,9 +2,9 @@
 
 **Date:** January 27, 2026  
 **Status:** Active — canonical reference for URL structure  
-**Supersedes:** SITE_ARCHITECTURE_v2_0.md  
-**Related:** FUNNEL_ARCHITECTURE_v2_0, METHODOLOGY_DEMO_SPEC_v1_0  
-**Superseded/Modified By (Parent Funnel):** FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md
+**Supersedes:** Previous site architecture docs
+**Related:** [Customer Journey](../theory/02_CUSTOMER_JOURNEY.md) (funnel design), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md) (proof point strategy)
+**Archived sources:** `../_archive/FUNNEL_ARCHITECTURE_v2_0.md`, `../_archive/METHODOLOGY_DEMO_SPEC_v1_0.md`, `../_archive/FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md`
 
 ---
 
@@ -169,7 +169,7 @@ luminait.app/
 
 **Voice:** Parent-facing. "Your child will learn...", "Week-by-week breakdown"
 
-**Technical Details:** See `BUILD_SYSTEM.md` for build process documentation.
+**Technical Details:** See `BUILD_SYSTEM.md` (this directory) for build process documentation.
 
 ---
 
@@ -497,14 +497,14 @@ Analysis Guide
 
 ### 9.5 Styling
 
-All pages must follow the unified design system. See `docs/DESIGN_SYSTEM.md`.
+All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this directory).
 
 | Page Type | CSS File | Voice |
 |-----------|----------|-------|
 | Parent-facing (Funnel 2) | `page-marketing.css` | Warm, parent-focused |
 | Student-facing (Funnel 1) | `page-guide.css` [TODO] | Direct, useful |
 
-**Adding new pages:** Follow `DESIGN_SYSTEM.md` Section 8 for complete procedure.
+**Adding new pages:** Follow `DESIGN_SYSTEM.md` (this directory) Section 8 for complete procedure.
 
 ---
 

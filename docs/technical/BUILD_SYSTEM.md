@@ -305,7 +305,7 @@ All generated pages follow the unified design system:
 - ✅ Import component CSS files
 - ✅ Keep page-specific overrides minimal
 
-**Reference:** See `docs/DESIGN_SYSTEM.md` for complete specification.
+**Reference:** See `DESIGN_SYSTEM.md` (this directory) for complete specification.
 
 ### 5.2 Page Length Benchmark
 
@@ -490,10 +490,10 @@ git diff the-giver/index.html curriculum/dracula/index.html
 
 ## 10. RELATED DOCUMENTATION
 
-- **Design System:** `docs/DESIGN_SYSTEM.md`
-- **Site Architecture:** `docs/SITE_ARCHITECTURE_v2_0.md`
-- **Dev Guidelines:** `CLAUDE.md` (root)
-- **Credence Framework:** `docs/FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md`
+- **Design System:** `DESIGN_SYSTEM.md` (this directory)
+- **Site Architecture:** `SITE_ARCHITECTURE.md` (this directory)
+- **Dev Guidelines:** `CLAUDE.md` (repo root)
+- **Credence Theory:** `../theory/01_CREDENCE_PROBLEM.md`
 
 ---
 
