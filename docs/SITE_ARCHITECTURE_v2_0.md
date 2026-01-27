@@ -478,6 +478,17 @@ Analysis Guide
 - [ ] EN/ZH toggle on all Funnel 2 pages
 - [ ] Chinese translations for homepage, course, methodology demos
 
+### 9.5 Styling
+
+All pages must follow the unified design system. See `docs/DESIGN_SYSTEM.md`.
+
+| Page Type | CSS File | Voice |
+|-----------|----------|-------|
+| Parent-facing (Funnel 2) | `page-marketing.css` | Warm, parent-focused |
+| Student-facing (Funnel 1) | `page-guide.css` [TODO] | Direct, useful |
+
+**Adding new pages:** Follow `DESIGN_SYSTEM.md` Section 8 for complete procedure.
+
 ---
 
 ## 10. VERSION HISTORY

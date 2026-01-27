@@ -278,20 +278,107 @@ Run `node build.js` to see validation warnings.
 
 ---
 
-## 8. ADDING NEW PAGES
+## 8. ADDING NEW PAGES — COMPLETE PROCEDURE
 
-### Checklist
+Adding a new page requires coordination across multiple docs. This is the single source of truth.
 
-1. **Import correct CSS files**:
-   ```html
-   <link rel="stylesheet" href="/components/base.css">
-   <link rel="stylesheet" href="/components/page-components.css">
-   <link rel="stylesheet" href="/components/page-marketing.css">
-   ```
-2. **Use existing components**: Check `page-components.css` first
-3. **Minimal custom styles**: Only add unique styles in `<style>` block
-4. **Run validation**: `node build.js` to check for style issues
-5. **Verify consistency**: All pages should have the same light, warm aesthetic
+### Overview
+
+```
+Step 1: Define the page (UX_VALIDATION_CHECKLIST)
+Step 2: Document in site architecture (SITE_ARCHITECTURE)
+Step 3: Create template with correct CSS
+Step 4: Build and validate
+Step 5: Test and commit
+```
+
+### Step 1: Define the Page
+
+**Reference:** `docs/UX_VALIDATION_CHECKLIST_v1_0.md` Stages 2-4
+
+Before touching any code:
+- [ ] Define user journey (who lands here, what they need)
+- [ ] Define page purpose and content sections
+- [ ] Sketch wireframe or content outline
+
+### Step 2: Document in Site Architecture
+
+**Reference:** `docs/SITE_ARCHITECTURE_v2_0.md`
+
+- [ ] Add page to URL structure in appropriate funnel
+- [ ] Define page type (marketing, guide, report)
+- [ ] Add to navigation if needed
+
+### Step 3: Create Template
+
+**Location:** `src/templates/` for main pages
+
+#### 3a. CSS Imports (Required — ALWAYS in this order)
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/components/base.css">
+<link rel="stylesheet" href="/components/page-components.css">
+<link rel="stylesheet" href="/components/page-marketing.css">
+```
+
+#### 3b. Use Existing Components
+
+Check `page-components.css` FIRST. Available patterns:
+- Hero: `.hero-standard`
+- Badges: `.badge`, `.badge-warm`, `.badge-primary`, `.badge-accent`
+- Cards: `.content-card`, `.card-grid`, `.card-grid-dense`
+- Sections: `.content-section`, `.content-section-wide`
+- Previews: `.sample-preview`, `.content-container`
+- Typography: `.text-title`, `.text-subtitle`, `.text-label`, `.text-kicker`
+
+#### 3c. Use Design Tokens (NEVER hardcode values)
+
+| Instead of... | Use... |
+|---------------|--------|
+| `#2563EB` | `var(--primary)` |
+| `#D97706` | `var(--warm)` |
+| `#059669` | `var(--accent)` |
+| `16px` | `var(--space-md)` |
+| `margin: 24px` | `margin: var(--space-lg)` |
+
+#### 3d. Minimize Custom Styles
+
+- Custom `<style>` block: < 50 lines
+- Inline `style=""`: < 5 per page
+- If pattern repeats, add to `page-components.css`
+
+### Step 4: Build and Validate
+
+```bash
+node build.js
+```
+
+Build will warn if:
+- ⚠ Too many hardcoded colors (> 3 hex values)
+- ⚠ Large inline style block (> 200 lines)
+- ⚠ Excessive inline styles (> 15 attributes)
+- ℹ Missing component CSS imports
+
+**Fix all warnings before committing.**
+
+### Step 5: Final Validation
+
+**Reference:** `docs/UX_VALIDATION_CHECKLIST_v1_0.md` Stages 5-6
+
+- [ ] Design system compliance (colors, spacing, components)
+- [ ] Component consistency with existing pages
+- [ ] Responsive behavior (mobile, tablet, desktop)
+- [ ] Accessibility (semantic HTML, alt text, keyboard nav)
+
+### Quick Reference by Page Type
+
+| Page Type | CSS File | Voice | Examples |
+|-----------|----------|-------|----------|
+| Marketing (parent-facing) | `page-marketing.css` | Warm, parent-focused | index.html, course.html |
+| Guide (student-facing) | `page-guide.css` [TODO] | Direct, useful | /vce/tkam/ |
+| Curriculum outline | `page-marketing.css` | Parent-focused | curriculum_*.html |
 
 ---
 

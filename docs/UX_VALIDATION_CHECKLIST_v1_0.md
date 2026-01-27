@@ -93,19 +93,38 @@ Ask these three questions before touching any code:
 
 ## STAGE 5: VISUAL DESIGN VALIDATION
 
-### 5.1 Style Guide Compliance
+> **Reference:** `docs/DESIGN_SYSTEM.md` is the canonical source for all styling decisions.
 
-- [ ] **Colors correct:** Using defined palette (navy, cyan, slate)?
-- [ ] **Typography correct:** Using defined fonts (DM Sans, Fraunces)?
-- [ ] **Spacing consistent:** Using consistent padding/margins?
+### 5.1 Design System Compliance
+
+- [ ] **CSS imports correct:** Using correct import order?
+  ```html
+  1. base.css (tokens)
+  2. page-components.css (shared patterns)
+  3. page-marketing.css (page styles)
+  ```
+- [ ] **Colors from tokens:** Using CSS variables (`var(--primary)`, `var(--warm)`, etc.)?
+  - NOT hardcoded hex values like `#2563EB`
+  - See `DESIGN_SYSTEM.md` Section 3 for full color list
+- [ ] **Typography correct:** Using defined fonts (DM Sans body, Fraunces headings)?
+- [ ] **Spacing from tokens:** Using `var(--space-md)` etc., not arbitrary values?
 
 ### 5.2 Component Consistency
 
-- [ ] **Buttons match:** Do buttons look like other pages?
-- [ ] **Cards match:** Do card styles match other pages?
-- [ ] **Forms match:** Do form elements match other pages?
+- [ ] **Using shared components?** Check `page-components.css` before creating new styles
+- [ ] **Buttons match:** Using `.btn`, `.btn-primary`, `.btn-secondary`?
+- [ ] **Cards match:** Using `.content-card`, `.card-grid`?
+- [ ] **Badges match:** Using `.badge`, `.badge-warm`, `.badge-primary`?
+- [ ] **Heroes match:** Using `.hero-standard` for marketing pages?
 
-### 5.3 Voice & Tone
+### 5.3 Style Validation
+
+- [ ] **Run build validation:** `node build.js` checks for style issues
+- [ ] **Minimal inline styles:** < 5 `style=""` attributes per page
+- [ ] **Minimal custom CSS:** Custom `<style>` block < 50 lines
+- [ ] **No hardcoded colors:** Build will warn if > 3 hex colors found
+
+### 5.4 Voice & Tone
 
 - [ ] **Audience-appropriate:** Is copy written for the right user?
 - [ ] **Consistent voice:** Does it sound like other pages?
