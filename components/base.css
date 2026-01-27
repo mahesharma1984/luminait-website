@@ -85,7 +85,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 body {
@@ -178,14 +177,8 @@ a:hover {
    NAVIGATION
    ============================================ */
 .nav {
-  background: rgba(253, 252, 248, 0.9);
-  backdrop-filter: blur(12px);
+  background: var(--bg-paper);
   padding: var(--space-md) 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
