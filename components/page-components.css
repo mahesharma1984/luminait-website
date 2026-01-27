@@ -1,0 +1,257 @@
+/**
+ * LuminAIT Page Components
+ *
+ * Shared components used across all page types
+ * Import after base.css in templates
+ */
+
+/* ============================================
+   HERO SECTIONS
+   ============================================ */
+
+/* Standard light hero (for marketing pages) */
+.hero-standard {
+  padding: 60px 2rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .hero-standard {
+    padding-top: 40px;
+  }
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: var(--space-md) auto var(--space-xl);
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.badge-warm {
+  background: var(--warm-light);
+  color: var(--warm);
+}
+
+.badge-primary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-accent {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Small badges for cards */
+.badge-sm {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* ============================================
+   CARD GRIDS
+   ============================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card-grid-dense {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+  .card-grid,
+  .card-grid-dense {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   CONTENT CARDS
+   ============================================ */
+
+.content-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.content-card-compact {
+  background: var(--bg-paper);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.content-card-compact:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   TESTIMONIALS / QUOTES
+   ============================================ */
+
+.quote-icon {
+  font-size: 2rem;
+  color: var(--primary-light);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.quote-text {
+  font-style: italic;
+  color: var(--text-main);
+  margin-bottom: var(--space-md);
+}
+
+.quote-author {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-section-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   SAMPLE / PREVIEW BOXES
+   ============================================ */
+
+.sample-preview {
+  background: white;
+  border-left: 4px solid var(--primary);
+  padding: var(--space-lg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow: var(--shadow-sm);
+  margin-top: var(--space-lg);
+  text-align: left;
+}
+
+.content-container {
+  background: var(--bg-white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-warm);
+}
+
+/* ============================================
+   TYPOGRAPHY HELPERS
+   ============================================ */
+
+.text-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.text-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.text-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.text-kicker {
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}

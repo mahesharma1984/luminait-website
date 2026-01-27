@@ -14,394 +14,41 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/components/base.css">
+  <link rel="stylesheet" href="/components/page-components.css">
+  <link rel="stylesheet" href="/components/page-marketing.css">
 
   {{SEO_META_TAGS}}
 
   <style>
-    /* Page Specific Styles */
-    :root {
-      --report-navy: #1e3a5f;
-      --report-cyan: #2d9cdb;
-      --report-green: #27ae60;
-    }
-
-    /* Page Header Override */
-    .page-header {
-      background: linear-gradient(135deg, var(--report-navy) 0%, #0f2744 100%);
-      padding: 4rem 2rem;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .page-header::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, rgba(45, 156, 219, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .page-header-content {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .page-header h1 {
-      color: var(--report-cyan);
-      margin-bottom: 1rem;
-    }
-
-    .page-header .subtitle {
-      color: #cbd5e1;
-      font-size: 1.15rem;
-    }
-
-    /* Intro */
-    .intro {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 1.1rem;
-      color: var(--text-main);
-    }
-
-    /* Sample Report */
-    .sample-report {
-      background: white;
-      border: 1px solid var(--border, #e2e8f0);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      margin-top: 2rem;
-    }
-
+    /* Page Specific Styles - Override report components for light theme */
     .report-header {
-      background: linear-gradient(135deg, var(--report-navy) 0%, #0f2744 100%);
+      background: var(--primary-light);
       padding: 2rem;
       text-align: center;
-      color: white;
     }
 
     .report-badge {
       display: inline-block;
-      background: rgba(45, 156, 219, 0.2);
-      color: var(--report-cyan);
+      background: white;
+      color: var(--primary);
       padding: 0.5rem 1rem;
       border-radius: 50px;
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 1rem;
-      border: 1px solid rgba(45, 156, 219, 0.3);
+      border: 1px solid var(--primary);
     }
 
     .report-title {
       font-family: 'Fraunces', serif;
-      color: white;
+      color: var(--text-dark);
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
 
     .report-meta {
-      color: #94a3b8;
+      color: var(--text-light);
       font-size: 0.95rem;
-    }
-
-    .report-body {
-      padding: 2rem;
-    }
-
-    .report-section {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .report-section:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-
-    .report-section-title {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .report-section-icon {
-      font-size: 1.25rem;
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .skill-card {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.25rem;
-      text-align: center;
-    }
-
-    .skill-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-name {
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 0.25rem;
-    }
-
-    .skill-desc {
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    /* Score Table */
-    .score-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-
-    .score-table th {
-      background: #f8fafc;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-      color: var(--text-dark);
-      border-bottom: 2px solid #e2e8f0;
-    }
-
-    .score-table td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid #e2e8f0;
-      color: var(--text-main);
-    }
-
-    .score-value {
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .score-improved {
-      color: var(--accent);
-      font-size: 0.8rem;
-    }
-
-    /* Rewrite Comparison */
-    .rewrite-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .rewrite-card {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-
-    .rewrite-card.original {
-      border-left: 4px solid var(--text-light);
-    }
-
-    .rewrite-card.improved {
-      border-left: 4px solid var(--accent);
-    }
-
-    .rewrite-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .rewrite-card.original .rewrite-label {
-      color: var(--text-light);
-    }
-
-    .rewrite-card.improved .rewrite-label {
-      color: var(--accent);
-    }
-
-    .rewrite-score {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .rewrite-card.original .rewrite-score {
-      color: var(--text-main);
-    }
-
-    .rewrite-card.improved .rewrite-score {
-      color: var(--accent);
-    }
-
-    .rewrite-improvement {
-      text-align: center;
-      background: var(--accent-light);
-      padding: 1rem;
-      border-radius: 12px;
-      margin-top: 1rem;
-    }
-
-    .rewrite-improvement-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    /* Summary */
-    .summary-list {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .summary-item {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem;
-      background: #f8fafc;
-      border-radius: 12px;
-    }
-
-    .summary-icon {
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    /* Next Focus */
-    .next-focus {
-      background: var(--primary-light);
-      border-left: 4px solid var(--primary);
-      padding: 1.25rem;
-      border-radius: 0 12px 12px 0;
-    }
-
-    .next-focus h4 {
-      color: var(--primary-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .next-focus p {
-      color: var(--primary-dark);
-      margin: 0;
-    }
-
-    /* What Parents Receive */
-    .receive-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .receive-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .receive-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .receive-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .receive-title {
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .receive-timing {
-      font-size: 0.85rem;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    /* CTA Section - Keeping specific look */
-    .cta-section {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      padding: 4rem 2rem;
-      text-align: center;
-      color: white;
-    }
-
-    .cta-content h2 {
-      color: white;
-      margin-bottom: 1rem;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-button {
-      background: white;
-      color: var(--primary);
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .cta-button.secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-      box-shadow: none;
-    }
-
-    .cta-button.secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-
-      .skills-grid,
-      .receive-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rewrite-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -410,19 +57,17 @@
 
   {{>nav.html}}
 
-  <header class="page-header">
-    <div class="page-header-content">
-      <h1 data-lang-content="en">Progress Reports</h1>
-      <h1 data-lang-content="zh">进度报告</h1>
-      <p class="subtitle">
-        <span data-lang-content="en">How we track your child's development</span>
-        <span data-lang-content="zh">我们如何跟踪您孩子的发展</span>
-      </p>
-    </div>
+  <header class="section hero-standard">
+    <h1 data-lang-content="en">Progress Reports</h1>
+    <h1 data-lang-content="zh">进度报告</h1>
+    <p class="hero-subtitle">
+      <span data-lang-content="en">How we track your child's development</span>
+      <span data-lang-content="zh">我们如何跟踪您孩子的发展</span>
+    </p>
   </header>
 
   <section class="section section-white">
-    <div class="container intro">
+    <div class="container content-section">
       <p data-lang-content="en">
         Every parent receives detailed progress reports showing exactly how their child is developing. We track three
         core skills — evidence, reasoning, and analysis — and provide clear, actionable feedback at every stage.
@@ -733,16 +378,16 @@
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="cta-content">
+  <section class="section section-soft">
+    <div class="container content-section">
       <h2 data-lang-content="en">Ready to see your child's progress?</h2>
       <h2 data-lang-content="zh">准备好见证您孩子的进步了吗？</h2>
-      <div class="cta-buttons">
-        <a href="results.html" class="cta-button">
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="results.html" class="btn btn-primary">
           <span data-lang-content="en">See Our Results</span>
           <span data-lang-content="zh">查看学习成果</span>
         </a>
-        <a href="mailto:{{CONTACT_EMAIL}}?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button secondary">
+        <a href="mailto:{{CONTACT_EMAIL}}?subject=Enquiry%20about%20LuminAIT%20Learning" class="btn btn-secondary">
           <span data-lang-content="en">Enroll Now</span>
           <span data-lang-content="zh">立即报名</span>
         </a>
