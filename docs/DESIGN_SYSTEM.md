@@ -27,8 +27,7 @@ This document defines the LuminAIT design system - a unified approach to styling
 components/
 ├── base.css              # Design tokens (colors, spacing, typography)
 ├── page-components.css   # Shared patterns (cards, badges, heroes)
-├── page-marketing.css    # Marketing pages (homepage, course)
-├── page-report.css       # Report pages (progress, results)
+├── page-marketing.css    # All page styles (light, warm, consistent)
 └── page-guide.css        # Guide pages (analysis guides) [TODO]
 ```
 
@@ -47,10 +46,8 @@ Always import CSS in this order in your templates:
 <!-- 3. Shared components -->
 <link rel="stylesheet" href="/components/page-components.css">
 
-<!-- 4. Page archetype (choose one) -->
+<!-- 4. Page styles (all pages use same style) -->
 <link rel="stylesheet" href="/components/page-marketing.css">
-<!-- OR -->
-<link rel="stylesheet" href="/components/page-report.css">
 
 <!-- 5. Page-specific overrides (minimal, in <style> if needed) -->
 <style>
@@ -205,11 +202,11 @@ Always use CSS variables instead of hardcoded colors:
 
 ---
 
-## 5. PAGE ARCHETYPES
+## 5. PAGE STYLING
 
-### Marketing Pages (page-marketing.css)
+### Unified Style (page-marketing.css)
 
-**Used by:** `index.html`, `course.html`
+**Used by:** All pages (`index.html`, `course.html`, `progress.html`, `results.html`, etc.)
 
 **Visual identity:** Light, warm, inviting, parent-facing
 
@@ -218,8 +215,9 @@ Always use CSS variables instead of hardcoded colors:
 - Text selection grid
 - Feature lists with checkmarks
 - Pricing cards
+- Hero sections
 
-**When to use:** Parent-facing conversion pages that need warm, approachable styling
+**Design philosophy:** All pages follow the same consistent, warm styling to create a unified brand experience
 
 ```html
 <link rel="stylesheet" href="/components/page-marketing.css">
@@ -237,58 +235,11 @@ Always use CSS variables instead of hardcoded colors:
 </div>
 ```
 
-### Report Pages (page-report.css)
-
-**Used by:** `progress.html`, `results.html`
-
-**Visual identity:** Dark navy headers, formal, data-focused
-
-**Key components:**
-- Dark gradient page header
-- Sample report cards
-- Skills grid
-- Score tables
-- Rewrite comparison cards
-- CTA sections
-
-**When to use:** Progress tracking, data visualization, formal reporting
-
-**Color overrides:**
-```css
---report-navy: #1e3a5f
---report-cyan: #2d9cdb
---report-green: #27ae60
-```
-
-```html
-<link rel="stylesheet" href="/components/page-report.css">
-```
-
-**Example:**
-```html
-<header class="page-header">
-  <div class="page-header-content">
-    <h1>Progress Reports</h1>
-    <p class="subtitle">How we track development</p>
-  </div>
-</header>
-
-<div class="sample-report">
-  <div class="report-header">
-    <div class="report-badge">Sample Report</div>
-    <h3 class="report-title">Student Progress Report</h3>
-  </div>
-  <div class="report-body">
-    <!-- Report sections -->
-  </div>
-</div>
-```
-
-### Guide Pages (page-guide.css) [TODO]
+### Future: Guide Pages (page-guide.css) [TODO]
 
 **Used by:** Analysis guide pages (`/vce/`, `/hsc/`, `/ib/`)
 
-**Visual identity:** Student-facing, clean, content-focused
+**Visual identity:** Student-facing, clean, content-focused (but still following the same warm aesthetic)
 
 **Status:** To be created when guide pages are built
 
@@ -331,17 +282,16 @@ Run `node build.js` to see validation warnings.
 
 ### Checklist
 
-1. **Choose page archetype**: Marketing, Report, or Guide?
-2. **Import correct CSS files**:
+1. **Import correct CSS files**:
    ```html
    <link rel="stylesheet" href="/components/base.css">
    <link rel="stylesheet" href="/components/page-components.css">
-   <link rel="stylesheet" href="/components/page-[archetype].css">
+   <link rel="stylesheet" href="/components/page-marketing.css">
    ```
-3. **Use existing components**: Check `page-components.css` first
-4. **Minimal custom styles**: Only add unique styles in `<style>` block
-5. **Run validation**: `node build.js` to check for style issues
-6. **Document differences**: If styling differs significantly, document why
+2. **Use existing components**: Check `page-components.css` first
+3. **Minimal custom styles**: Only add unique styles in `<style>` block
+4. **Run validation**: `node build.js` to check for style issues
+5. **Verify consistency**: All pages should have the same light, warm aesthetic
 
 ---
 
@@ -351,12 +301,12 @@ Run `node build.js` to see validation warnings.
 
 | Page | Status | Component CSS | Notes |
 |------|--------|---------------|-------|
-| index.html | ⚠ Needs migration | None | 228 lines inline styles |
-| progress.html | ⚠ Needs migration | None | 386 lines inline styles |
-| course.html | ⚠ Needs migration | None | Inline styles |
-| syllabus.html | ⚠ Needs migration | None | Inline styles |
-| sample.html | ⚠ Needs migration | None | Inline styles |
-| results.html | ⚠ Needs migration | None | Inline styles |
+| index.html | ✓ Migrated | page-marketing.css | Using unified style |
+| progress.html | ✓ Migrated | page-marketing.css | Using unified style |
+| course.html | ⚠ Needs migration | None | 446 lines inline styles |
+| syllabus.html | ⚠ Needs migration | None | 217 lines inline styles |
+| sample.html | ⚠ Needs migration | None | 311 lines inline styles |
+| results.html | ⚠ Needs migration | None | 327 lines inline styles |
 
 ### Migration Steps
 

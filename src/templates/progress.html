@@ -15,12 +15,41 @@
     rel="stylesheet">
   <link rel="stylesheet" href="/components/base.css">
   <link rel="stylesheet" href="/components/page-components.css">
-  <link rel="stylesheet" href="/components/page-report.css">
+  <link rel="stylesheet" href="/components/page-marketing.css">
 
   {{SEO_META_TAGS}}
 
   <style>
-    /* Page Specific Styles - All common styles moved to page-report.css */
+    /* Page Specific Styles - Override report components for light theme */
+    .report-header {
+      background: var(--primary-light);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .report-badge {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border: 1px solid var(--primary);
+    }
+
+    .report-title {
+      font-family: 'Fraunces', serif;
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .report-meta {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 
@@ -28,19 +57,17 @@
 
   {{>nav.html}}
 
-  <header class="page-header">
-    <div class="page-header-content">
-      <h1 data-lang-content="en">Progress Reports</h1>
-      <h1 data-lang-content="zh">进度报告</h1>
-      <p class="subtitle">
-        <span data-lang-content="en">How we track your child's development</span>
-        <span data-lang-content="zh">我们如何跟踪您孩子的发展</span>
-      </p>
-    </div>
+  <header class="section hero-standard">
+    <h1 data-lang-content="en">Progress Reports</h1>
+    <h1 data-lang-content="zh">进度报告</h1>
+    <p class="hero-subtitle">
+      <span data-lang-content="en">How we track your child's development</span>
+      <span data-lang-content="zh">我们如何跟踪您孩子的发展</span>
+    </p>
   </header>
 
   <section class="section section-white">
-    <div class="container intro">
+    <div class="container content-section">
       <p data-lang-content="en">
         Every parent receives detailed progress reports showing exactly how their child is developing. We track three
         core skills — evidence, reasoning, and analysis — and provide clear, actionable feedback at every stage.
@@ -351,16 +378,16 @@
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="cta-content">
+  <section class="section section-soft">
+    <div class="container content-section">
       <h2 data-lang-content="en">Ready to see your child's progress?</h2>
       <h2 data-lang-content="zh">准备好见证您孩子的进步了吗？</h2>
-      <div class="cta-buttons">
-        <a href="results.html" class="cta-button">
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="results.html" class="btn btn-primary">
           <span data-lang-content="en">See Our Results</span>
           <span data-lang-content="zh">查看学习成果</span>
         </a>
-        <a href="mailto:{{CONTACT_EMAIL}}?subject=Enquiry%20about%20LuminAIT%20Learning" class="cta-button secondary">
+        <a href="mailto:{{CONTACT_EMAIL}}?subject=Enquiry%20about%20LuminAIT%20Learning" class="btn btn-secondary">
           <span data-lang-content="en">Enroll Now</span>
           <span data-lang-content="zh">立即报名</span>
         </a>
