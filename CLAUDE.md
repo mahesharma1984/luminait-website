@@ -3,14 +3,26 @@
 **Before doing any work, read `/docs/` first.**
 
 Key documents:
-- `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core methodology
-- `FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md` - Parent funnel strategy (supersedes methodology demo)
-- `GUIDE_TEMPLATE_SPEC.md` - How guide pages work
-- `GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides
-- `FUNNEL_ARCHITECTURE_v2_0.md` - Two-funnel strategy (student + parent)
-- `SITE_ARCHITECTURE_v2_0.md` - URL structure for both funnels
-- `METHODOLOGY_DEMO_SPEC_v1_0.md` - Parent-facing demo page spec
-- `UX_VALIDATION_CHECKLIST_v1_0.md` - Page development checklist
+
+**Theory** (read in order — problem → journey → mechanism → content):
+- `docs/theory/01_CREDENCE_PROBLEM.md` - Why education is hard to sell
+- `docs/theory/02_CUSTOMER_JOURNEY.md` - Parent + student funnel design
+- `docs/theory/03_VALIDATION_LOOP.md` - Handling friction/hesitation
+- `docs/theory/04_CONTENT_DERIVATION.md` - Deriving messaging from text analysis
+
+**Technical:**
+- `docs/technical/SITE_ARCHITECTURE.md` - URL structure for both funnels
+- `docs/technical/DESIGN_SYSTEM.md` - CSS variables, components, visual standards
+- `docs/technical/BUILD_SYSTEM.md` - Build scripts, templates, partial injection
+- `docs/technical/UX_PROCESS.md` - Page development checklist + journey mapping
+- `docs/technical/GUIDE_TEMPLATE_SPEC.md` - How analysis guide pages work
+- `docs/technical/GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides from kernels
+
+**Operational** (at docs root):
+- `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core dev methodology
+- `RALPH_Readiness_Assessment_v3_1.md` - Automation readiness
+- `P_GTM_Partnership_v3_0.md` - Partnership strategy
+- `FRAMEWORK_Scientific_Relational_Pedagogy_v1_0.md` - Pedagogy IP
 
 ## Project Structure
 
@@ -35,6 +47,9 @@ Key documents:
 ├── /components/            # Shared JS/CSS
 ├── /guides/                # Generated guide pages
 ├── /docs/                  # Methodology (READ FIRST)
+│   ├── /theory/            # Why: credence problem → journey → loop → derivation
+│   ├── /technical/         # How: site arch, design system, build, UX process, guides
+│   └── /_archive/          # Superseded strategy docs (reference only)
 ```
 
 ## Workflow

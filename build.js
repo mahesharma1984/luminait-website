@@ -457,7 +457,7 @@ function build() {
 
   if (totalWarnings > 0) {
     console.log(`\n💡 Design System Tip: ${totalWarnings} style recommendation(s) found.`);
-    console.log('   See docs/DESIGN_SYSTEM.md for guidelines on using component CSS files.\n');
+    console.log('   See docs/technical/DESIGN_SYSTEM.md for guidelines on using component CSS files.\n');
   }
 }
 

@@ -15,7 +15,7 @@ Before starting extraction, ensure you have:
 - [ ] Stage 5: `{text}_stage5_device_evidence.md`
 - [ ] Stage 6: `{text}_stage6_reasoning_document.md`
 
-**Styling Reference:** See `docs/GUIDE_TEMPLATE_SPEC.md` Section 0 for CSS requirements.
+**Styling Reference:** See `GUIDE_TEMPLATE_SPEC.md` (this directory) Section 0 for CSS requirements.
 
 ---
 

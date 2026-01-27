@@ -421,7 +421,7 @@ Step 5: Test and commit
 
 ### Step 1: Define the Page
 
-**Reference:** `docs/UX_VALIDATION_CHECKLIST_v1_0.md` Stages 2-4
+**Reference:** `UX_PROCESS.md` (this directory) Stages 2-4
 
 Before touching any code:
 - [ ] Define user journey (who lands here, what they need)
@@ -430,7 +430,7 @@ Before touching any code:
 
 ### Step 2: Document in Site Architecture
 
-**Reference:** `docs/SITE_ARCHITECTURE_v2_0.md`
+**Reference:** `SITE_ARCHITECTURE.md` (this directory)
 
 - [ ] Add page to URL structure in appropriate funnel
 - [ ] Define page type (marketing, guide, report)
@@ -492,7 +492,7 @@ Build will warn if:
 
 ### Step 5: Final Validation
 
-**Reference:** `docs/UX_VALIDATION_CHECKLIST_v1_0.md` Stages 5-6
+**Reference:** `UX_PROCESS.md` (this directory) Stages 5-6
 
 - [ ] Design system compliance (colors, spacing, components)
 - [ ] Component consistency with existing pages
