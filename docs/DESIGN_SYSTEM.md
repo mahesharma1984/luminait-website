@@ -238,44 +238,71 @@ Always use CSS variables instead of hardcoded colors:
 
 ### Parent Curriculum Guides (page-parent-guide.css)
 
-**Used by:** Parent curriculum guide pages (`/curriculum/[text-slug]/`)
+**Used by:** Parent curriculum guide pages at both root level and `/curriculum/` directory
 
 **Visual identity:** Light, warm, parent-facing (matches site design system)
 
 **Key components:**
-- Light hero with warm badge
-- Toggle buttons for 5-week/10-week views
+- Light hero with warm badge ("Parent Curriculum Guide")
+- Learning outcomes list
+- 10-week course breakdown with phase-colored cards
 - Week cards with phase-colored borders (foundation, analysis, writing, body, completion)
-- Technique highlight boxes
-- Learning outcomes grid
-- CTA section
+- Toggle buttons for 5-week condensed / 10-week extended views
+- Technique highlight boxes (weeks 6-8)
+- CTA section ("Ready to get started?")
 
+**CSS Import:**
 ```html
 <link rel="stylesheet" href="/components/base.css">
 <link rel="stylesheet" href="/components/page-components.css">
 <link rel="stylesheet" href="/components/page-parent-guide.css">
 ```
 
-**Build command:** `node build-parent-guides.js`
+**Dual Build System:**
 
-**Data source:** JSON files in `/data/parent-guides/`
+There are TWO build scripts for parent guides, outputting to different locations:
 
-**Template:** Single template at `/src/templates/_parent-guide-template.html` with placeholders
+**1. Homepage Books** (8 texts at root level):
+- **Build command:** `node build-homepage-guides.js`
+- **Output:** `/[text-slug]/index.html` (root level)
+- **Books:** the-giver, macbeth, animal-farm, romeo-and-juliet, to-kill-a-mockingbird, a-christmas-carol, blueback, the-outsiders
+- **Purpose:** Direct parent funnel from homepage text grid
 
-**Build Pipeline:**
+**2. Additional Curriculum Guides** (10 texts in /curriculum/):
+- **Build command:** `node build-parent-guides.js`
+- **Output:** `/curriculum/[text-slug]/index.html` + `/curriculum/index.html`
+- **Books:** dracula, jane-eyre, the-simple-gift, the-white-girl, catching-teller-crow, catherine-called-birdy, convenience-store-woman, his-name-was-walter, my-life-as-an-alphabet, the-curious-incident
+- **Purpose:** Secondary parent resource accessed via "View Parent Curriculum Guides" link
+
+**Data Source:** JSON files in `/data/parent-guides/` (shared by both build scripts)
+
+**Template:** `/src/templates/_parent-guide-template.html` with `{{PLACEHOLDERS}}`
+
+**Build Pipeline Diagram:**
 
 ```
-JSON data files                    Template                      Output
-────────────────                   ────────                      ──────
-/data/parent-guides/               /src/templates/               /curriculum/
-├── jane-eyre.json        ──┐                                    ├── jane-eyre/
-├── dracula.json          ──┤      _parent-guide-template.html  │   └── index.html
-├── the-giver.json        ──┤      with {{PLACEHOLDERS}}        ├── dracula/
-└── [etc].json            ──┘                                    │   └── index.html
-                                    +                            └── ...
-                                    build-parent-guides.js
-                                    (merges data + template)     + /curriculum/index.html
+JSON Data Files (18 total)         Build Scripts                  Output
+──────────────────────             ─────────────                  ──────
+
+/data/parent-guides/               build-homepage-guides.js       ROOT LEVEL
+├── the-giver.json        ───┐     (homepage books only)          ├── /the-giver/
+├── macbeth.json          ───┤                                    │   └── index.html
+├── animal-farm.json      ───┤                                    ├── /macbeth/
+├── romeo-and-juliet.json ───┤                                    │   └── index.html
+├── [4 more homepage]     ───┘                                    └── ...
+
+├── dracula.json          ───┐     build-parent-guides.js         /curriculum/
+├── jane-eyre.json        ───┤     (curriculum directory)         ├── dracula/
+├── the-simple-gift.json  ───┤                                    │   └── index.html
+└── [7 more curriculum]   ───┘                                    ├── jane-eyre/
+                                                                   │   └── index.html
+        BOTH USE:                                                  ├── index.html
+        ────────────                                               └── ...
+        /src/templates/_parent-guide-template.html
+        (same template, same styling, same structure)
 ```
+
+**Result:** 18 total parent curriculum guide pages, all using identical design system and structure.
 
 **How It Works:**
 

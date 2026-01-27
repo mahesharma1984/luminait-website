@@ -1,11 +1,19 @@
 # FRAMEWORK: Credence Good Conversion Through Multi-Touchpoint Credibility Building
 
-**Version:** 1.2  
+**Version:** 1.2
 **Date:** January 27, 2026 (Updated)
-**Supersedes:** V1.2  
-**Status:** Active  
-**Builds on:** PMF_Addendum_v1_0, Distribution_Strategy_v1_0, FUNNEL_ARCHITECTURE_v2_0, FRAMEWORK_Workbook_Production_v1  
+**Supersedes:** V1.2
+**Status:** Active — **Stage 2 Implementation COMPLETE**
+**Builds on:** PMF_Addendum_v1_0, Distribution_Strategy_v1_0, FUNNEL_ARCHITECTURE_v2_0, FRAMEWORK_Workbook_Production_v1
 **Theoretical basis:** SEC Classification (Darby & Karni 1973), Hierarchy of Effects (Lavidge & Steiner 1961)
+
+**Implementation Status:**
+- ✅ **Stage 1 (Text Match):** Homepage with text grid — LIVE
+- ✅ **Stage 2 (Preparation Proof):** 18 text-specific course outlines — **COMPLETE (Jan 27, 2026)**
+- ⏳ **Stage 3 (Method Confidence):** Generic pedagogy pages — Existing
+- ✅ **Stage 4 (Action):** Course page with enrollment — LIVE
+
+**Key Achievement:** The core credibility gap (Stage 2) has been closed. Parents can now verify text-specific preparation before committing.
 
 ---
 
@@ -159,14 +167,36 @@ From project knowledge, for texts like The Giver:
 | Results | /results | Stage 3 | Outcome stats |
 | Course | /course | Stage 4 | Enrollment |
 
-### 4.3 What's Missing
+### 4.3 What's Missing → What's Been Implemented
 
-| Asset | Stage | Purpose | Priority |
-|-------|-------|---------|----------|
-| Text-specific course outline | Stage 2 | Prove preparation | **HIGH** |
-| Text-specific sample output | Stage 2 | Show what student produces | **HIGH** |
-| Parent testimonials | Stage 3 | Social proof | Medium |
-| Text-specific outcomes | Stage 3 | "Students studying X achieved..." | Low (need data) |
+**Status as of January 27, 2026:**
+
+| Asset | Stage | Purpose | Priority | Status |
+|-------|-------|---------|----------|--------|
+| Text-specific course outline | Stage 2 | Prove preparation | **HIGH** | ✅ **DONE** - 18 guides live |
+| Text-specific sample output | Stage 2 | Show what student produces | **HIGH** | ⚠️ Partial - in outcomes list, needs visual |
+| Parent testimonials | Stage 3 | Social proof | Medium | ⏳ Planned |
+| Text-specific outcomes | Stage 3 | "Students studying X achieved..." | Low | ⏳ Need data |
+
+**Implementation Details:**
+
+**✅ Text-Specific Course Outlines (COMPLETE)**
+- **Location 1:** 8 homepage books at root level (`/the-giver/`, `/macbeth/`, etc.)
+- **Location 2:** 10 additional guides in `/curriculum/` directory
+- **Total:** 18 parent curriculum guides
+- **Content:** 10-week breakdown with topics, techniques, phases, outcomes
+- **Build System:** `build-homepage-guides.js` and `build-parent-guides.js`
+- **Design:** Fully design-system compliant (288 lines vs old 682 lines)
+- **Template:** `/src/templates/_parent-guide-template.html`
+- **Data:** JSON files in `/data/parent-guides/`
+
+**What This Achieves:**
+- ✅ Stage 2 credibility: Proves text-specific preparation
+- ✅ Parent can see: "They've mapped every week for this book"
+- ✅ SEO: Text-specific URLs rank for "[book] tutoring"
+- ✅ Conversion: Clear path from homepage → text page → course
+
+**See:** `docs/BUILD_SYSTEM.md` for complete build documentation.
 
 ---
 

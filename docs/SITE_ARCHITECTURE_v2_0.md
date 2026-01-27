@@ -20,22 +20,26 @@ luminait.app/
 │   ├── /                     → Homepage (text grid, parent-facing)
 │   ├── /schools/             → School-first entry point (NEW)
 │   │   └── /schools/[school]/→ Text lists by school
-│   ├── /guides/[text]/       → Methodology demo pages
+│   ├── /[text-slug]/         → ✅ Text-specific course outlines (8 books)
+│   │                            (the-giver, macbeth, animal-farm, etc.)
 │   └── /course/              → Enrollment
 │
 ├── FUNNEL 1: ANALYSIS GUIDES ───────────────────────────────
 │   │
-│   ├── /vce/                 → VCE hub
+│   ├── /vce/                 → VCE hub (not implemented)
 │   │   └── /vce/[text]/      → Full analysis guides
-│   ├── /hsc/                 → HSC hub
+│   ├── /hsc/                 → HSC hub (not implemented)
 │   │   └── /hsc/[text]/      → Full analysis guides
-│   └── /ib/                  → IB hub
+│   └── /ib/                  → IB hub (not implemented)
 │       └── /ib/[text]/       → Full analysis guides
 │
-└── SHARED ──────────────────────────────────────────────────
+└── SHARED / SUPPORTING ─────────────────────────────────────
     │
-    ├── /curriculum/          → How It Works (methodology explanation)
-    └── /about/               → About (optional)
+    ├── /curriculum/          → ✅ Additional parent guides (10 texts)
+    │   └── /curriculum/[slug]/ (dracula, jane-eyre, the-simple-gift, etc.)
+    ├── /about/               → About page
+    ├── /progress/            → Progress reports showcase
+    └── /results/             → Student outcomes
 ```
 
 ---
@@ -124,35 +128,48 @@ luminait.app/
 
 ---
 
-### 2.3 Text-Specific Outline `/[text-slug]/`
+### 2.3 Text-Specific Course Outline `/[text-slug]/`
 
 **Role:** The core proof point (Stage 2 of Credence Framework). Proves detailed preparation for the specific text.
+
+**Status:** ✅ IMPLEMENTED (Jan 27, 2026)
 
 **Supersedes:** Methodology Demo (`/guides/[text]`) - Now deprecated.
 
 **Audience:** Parent verifying if you are "ready" for their child's specific book.
 
+**Implementation:**
+- 8 homepage books at root level: `/the-giver/`, `/macbeth/`, `/animal-farm/`, etc.
+- 10 additional curriculum guides at `/curriculum/[slug]/`
+- Built from JSON data using `build-homepage-guides.js` and `build-parent-guides.js`
+- Design system compliant (uses `/components/page-parent-guide.css`)
+
 **Content Structure:**
-1.  **Hero:** Title, Author, Year Level.
-2.  **Course Breakdown:** 10-week plan mapped to chapters.
-3.  **Sample Output:** Visual snippet of a high-quality student sentence/paragraph.
-4.  **CTA:** Enquire to Enroll (Course).
+1. **Hero:** Title, Author, Year Level, Badge ("Parent Curriculum Guide")
+2. **What They'll Learn:** List of learning outcomes for the 10-week course
+3. **10-Week Breakdown:**
+   - Week-by-week cards with phase indicators (Foundation, Analysis, Writing, Body, Completion)
+   - Weekly topics and skills
+   - Technique highlight boxes for body paragraph weeks
+   - Toggle between 5-week condensed and 10-week extended views
+4. **CTA:** "Ready to get started?" → Link to `/course.html`
 
-**Audience:** Parent evaluating whether you're right for their child.
+**What It Proves:**
+- "They've mapped every week to this text"
+- "They know what techniques matter in THIS book"
+- "They've thought through the skill progression"
+- "This is what my child will learn"
 
-**Content Structure:** See METHODOLOGY_DEMO_SPEC_v1_0 for full specification.
+**What It Doesn't Give Away:**
+- The actual worksheets
+- The full analysis bank
+- Teaching method implementation details
 
-**Summary sections:**
-1. Hero (text title, year level, what students learn)
-2. What We Cover (themes, devices, structure — high level)
-3. How We Teach It (methodology preview — enough to signal sophistication)
-4. Sample Insight (one sophisticated observation from the text)
-5. What Students Produce (outcome preview)
-6. CTA (Enroll in the course)
+**SEO Target:** "[text] tutoring", "[text] English help", "[text] curriculum"
 
-**SEO Target:** "[text] tutoring", "[text] English help"
+**Voice:** Parent-facing. "Your child will learn...", "Week-by-week breakdown"
 
-**Voice:** Parent-facing. "Your child will learn...", "We teach students to..."
+**Technical Details:** See `BUILD_SYSTEM.md` for build process documentation.
 
 ---
 
@@ -491,13 +508,43 @@ All pages must follow the unified design system. See `docs/DESIGN_SYSTEM.md`.
 
 ---
 
-## 10. VERSION HISTORY
+---
+
+## 10. IMPLEMENTATION NOTES
+
+### 10.1 Dual Parent Guide System
+
+**Why two locations for parent guides?**
+
+- **Root level** (`/the-giver/`, `/macbeth/`, etc.): Homepage books
+  - 8 texts featured on homepage text grid
+  - Direct parent funnel: homepage → text page → course
+  - Built with: `build-homepage-guides.js`
+
+- **Curriculum directory** (`/curriculum/dracula/`, `/curriculum/jane-eyre/`, etc.): Additional guides
+  - 10 additional texts not on homepage
+  - Accessed via "View Parent Curriculum Guides" link on homepage
+  - Includes curriculum index page at `/curriculum/`
+  - Built with: `build-parent-guides.js`
+
+**Both use the same:**
+- JSON data format (`/data/parent-guides/[slug].json`)
+- Template (`/src/templates/_parent-guide-template.html`)
+- Design system (`/components/page-parent-guide.css`)
+- 10-week course outline structure
+
+**Future consolidation:** Once all texts have parent guides, consider moving homepage to use `/curriculum/` links instead of root-level pages. Current structure optimizes for SEO ([text] vs /curriculum/[text]).
+
+---
+
+## 11. VERSION HISTORY
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | Dec 11, 2025 | Initial architecture (student-led only) |
 | 2.0 | Jan 24, 2026 | Two-funnel architecture |
 | 2.1 | Jan 27, 2026 | Added Schools Directory (/schools/) |
+| 2.2 | Jan 27, 2026 | Implemented text-specific course outlines (18 total guides: 8 at root + 10 in /curriculum/) |
 
 ---
 
