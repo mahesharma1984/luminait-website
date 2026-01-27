@@ -3,322 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animal Farm Analysis Guide | LuminAIT Learning</title>
-  <meta name="description" content="Animal Farm analysis guide coming soon. Text-specific English tutoring for Years 9-10 students.">
+  <title>Animal Farm Curriculum | LuminAIT</title>
+  <meta name="description" content="Parent curriculum guide for Animal Farm. See what your child will learn week by week.">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --deep-navy: #0a1628;
-      --navy: #0d1b2a;
-      --cyan: #00d4ff;
-      --cyan-glow: #00d4ff33;
-      --blue: #3b82f6;
-      --slate-100: #f1f5f9;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: var(--slate-700);
-      font-size: 16px;
-      background: var(--deep-navy);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    body[data-lang="zh"] {
-      font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    [data-lang-content="zh"] { display: none !important; }
-    body[data-lang="zh"] [data-lang-content="zh"] { display: inline !important; }
-    body[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
-    body[data-lang="zh"] p[data-lang-content="zh"],
-    body[data-lang="zh"] h1[data-lang-content="zh"],
-    body[data-lang="zh"] h2[data-lang-content="zh"] { display: block !important; }
-
-    .nav {
-      background: transparent;
-      padding: 1.25rem 2rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-    }
-
-    .nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    .nav-logo-text {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--cyan);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    .nav-link {
-      color: var(--slate-400);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .nav-link:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .lang-toggle {
-      display: flex;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 6px;
-      padding: 3px;
-      margin-left: 0.5rem;
-    }
-
-    .lang-btn {
-      padding: 0.35rem 0.6rem;
-      border: none;
-      background: transparent;
-      color: var(--slate-400);
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .lang-btn:hover { color: white; }
-    .lang-btn.active {
-      background: var(--cyan);
-      color: var(--deep-navy);
-    }
-
-    .hero {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-      background: linear-gradient(165deg, var(--deep-navy) 0%, var(--navy) 40%, #0f2744 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -15%;
-      width: 50%;
-      height: 160%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 600px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(0, 212, 255, 0.15);
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      color: var(--cyan);
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero .author {
-      color: var(--slate-400);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero .pattern {
-      color: var(--cyan);
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-
-    .coming-soon-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .coming-soon-box h2 {
-      color: var(--slate-300);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .coming-soon-box p {
-      color: var(--slate-500);
-      font-size: 0.95rem;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--cyan);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      background: var(--deep-navy);
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-contact {
-      color: var(--slate-500);
-      font-size: 0.9rem;
-    }
-
-    .footer-contact a {
-      color: var(--slate-400);
-      text-decoration: none;
-    }
-
-    .footer-contact a:hover { color: var(--cyan); }
-
-    @media (max-width: 768px) {
-      .nav { padding: 1rem; }
-      .nav-links { display: none; }
-      .hero { padding: 6rem 1.25rem 3rem; }
-    }
-  </style>
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="/components/base.css">
+  <link rel="stylesheet" href="/components/page-components.css">
+  <link rel="stylesheet" href="/components/page-parent-guide.css">
 </head>
-<body data-lang="en">
+<body>
 
   <nav class="nav">
     <div class="nav-content">
-      <a href="../index.html" class="nav-logo-text">LuminAIT</a>
+      <a href="/" class="nav-logo">LuminAIT</a>
       <div class="nav-links">
-        <a href="../curriculum.html" class="nav-link">
-          <span data-lang-content="en">How It Works</span>
-          <span data-lang-content="zh">课程方法</span>
-        </a>
-        <a href="../course.html" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <div class="lang-toggle">
-          <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-          <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">中文</button>
-        </div>
+        <a href="/curriculum/" class="nav-link">&larr; All Texts</a>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="badge">Y9-10</div>
+  <header class="guide-hero">
+    <div class="guide-hero-content">
+      <div class="badge badge-warm">Parent Curriculum Guide</div>
       <h1>Animal Farm</h1>
-      <p class="author">George Orwell</p>
-      <p class="pattern">
-        <span data-lang-content="en">Revolution Betrayed</span>
-        <span data-lang-content="zh">被背叛的革命</span>
-      </p>
-      <div class="coming-soon-box">
-        <h2>
-          <span data-lang-content="en">Analysis guide coming soon</span>
-          <span data-lang-content="zh">分析指南即将推出</span>
-        </h2>
-        <p>
-          <span data-lang-content="en">We're building a comprehensive guide for this text. Check back soon or contact us to be notified.</span>
-          <span data-lang-content="zh">我们正在为这本书制作全面的指南。请稍后再来查看，或联系我们获取通知。</span>
-        </p>
-      </div>
-      <a href="../index.html" class="back-link">
-        <span data-lang-content="en">← Back to all texts</span>
-        <span data-lang-content="zh">← 返回所有文本</span>
-      </a>
+      <p class="guide-hero-meta">George Orwell &middot; Years 9-10</p>
+      <p class="guide-hero-pattern">Allegorical Power Corruption</p>
     </div>
+  </header>
+
+  <section class="guide-toggle-section">
+    <div class="guide-toggle-buttons">
+      <button id="btn-5week" class="guide-toggle-btn active" onclick="showView('5week')">5-Week Course</button>
+      <button id="btn-10week" class="guide-toggle-btn" onclick="showView('10week')">10-Week Course</button>
+    </div>
+    <p class="guide-toggle-hint">Choose the course length to see the curriculum</p>
   </section>
 
+  <main class="guide-main">
+    <div class="guide-weeks-grid">
+      <!-- Week 1 -->
+      <div class="guide-week-card phase-foundation">
+        <div class="guide-week-header">
+          <div class="guide-week-number">1</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Foundation</div>
+            <h3 class="guide-week-title">Understanding the Text</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Building foundational understanding of the allegory</p>
+        <ul class="guide-week-topics">
+          <li>Introduction to Animal Farm and Russian Revolution context</li>
+          <li>Understanding the farm setting and character parallels</li>
+          <li>Meeting the animals and their symbolic roles</li>
+          <li>Identifying the allegorical structure</li>
+        </ul>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="guide-week-card phase-foundation">
+        <div class="guide-week-header">
+          <div class="guide-week-number">2</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Foundation</div>
+            <h3 class="guide-week-title">How the Text Works</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Discovering how Orwell constructs political satire</p>
+        <ul class="guide-week-topics">
+          <li>Exploring the central pattern: Power Corruption</li>
+          <li>Understanding how revolution becomes tyranny</li>
+          <li>Recognising recurring motifs (Seven Commandments, songs, slogans)</li>
+          <li>Analysing how allegory conveys political critique</li>
+        </ul>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="guide-week-card phase-analysis">
+        <div class="guide-week-header">
+          <div class="guide-week-number">3</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Analysis</div>
+            <h3 class="guide-week-title">Analysing Key Techniques</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Learning to identify and analyse Orwell&#x27;s techniques</p>
+        <ul class="guide-week-topics">
+          <li>Technique 1: Allegory (animal characters as historical figures)</li>
+          <li>Technique 2: Satire (mocking totalitarianism)</li>
+          <li>Technique 3: Propaganda Language (Squealer&#x27;s manipulation)</li>
+          <li>Collecting textual evidence for each technique</li>
+        </ul>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="guide-week-card phase-analysis">
+        <div class="guide-week-header">
+          <div class="guide-week-number">4</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Analysis</div>
+            <h3 class="guide-week-title">Building the Argument</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Developing a thesis and analytical argument</p>
+        <ul class="guide-week-topics">
+          <li>Exploring the guiding question: How does Orwell use allegory to reveal how revolutionary ideals are corrupted by those who seize power?</li>
+          <li>Forming a clear thesis statement</li>
+          <li>Connecting techniques to political themes</li>
+          <li>Planning the essay structure</li>
+        </ul>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="guide-week-card phase-writing">
+        <div class="guide-week-header">
+          <div class="guide-week-number">5</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Writing</div>
+            <h3 class="guide-week-title">Writing the Introduction</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Crafting a compelling essay opening</p>
+        <ul class="guide-week-topics">
+          <li>Contextualising the novella effectively</li>
+          <li>Presenting the thesis statement</li>
+          <li>Previewing the analytical approach</li>
+          <li>Drafting and refining the introduction paragraph</li>
+        </ul>
+      </div>
+
+      <!-- Week 6 -->
+      <div class="guide-week-card phase-body guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">6</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Body Paragraphs</div>
+            <h3 class="guide-week-title">Body Paragraph 1</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Deep analysis of Allegory</p>
+        <ul class="guide-week-topics">
+          <li>Crafting a clear topic sentence</li>
+          <li>Integrating textual evidence effectively</li>
+          <li>Analysing allegorical parallels</li>
+          <li>Linking analysis back to thesis</li>
+        </ul>
+        <div class="guide-technique-box">
+          <strong>Allegory</strong>
+          <p>Each animal character represents historical figures and social classes, allowing Orwell to critique Stalinism through accessible narrative.</p>
+        </div>
+      </div>
+
+      <!-- Week 7 -->
+      <div class="guide-week-card phase-body guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">7</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Body Paragraphs</div>
+            <h3 class="guide-week-title">Body Paragraph 2</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Deep analysis of Satire</p>
+        <ul class="guide-week-topics">
+          <li>Building on analytical skills from Week 6</li>
+          <li>Developing sophisticated quote integration</li>
+          <li>Exploring how satire exposes hypocrisy</li>
+          <li>Strengthening the analytical voice</li>
+        </ul>
+        <div class="guide-technique-box">
+          <strong>Satire</strong>
+          <p>Orwell&#x27;s satirical tone mocks totalitarian rhetoric, exposing the gap between revolutionary promises and dictatorial reality.</p>
+        </div>
+      </div>
+
+      <!-- Week 8 -->
+      <div class="guide-week-card phase-body guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">8</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Body Paragraphs</div>
+            <h3 class="guide-week-title">Body Paragraph 3</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Deep analysis of Propaganda Language</p>
+        <ul class="guide-week-topics">
+          <li>Mastering the TEEL paragraph structure</li>
+          <li>Demonstrating sophisticated literary analysis</li>
+          <li>Connecting all three techniques thematically</li>
+          <li>Preparing for the essay conclusion</li>
+        </ul>
+        <div class="guide-technique-box">
+          <strong>Propaganda Language</strong>
+          <p>Squealer&#x27;s manipulative language demonstrates how propaganda distorts truth and maintains power through deception.</p>
+        </div>
+      </div>
+
+      <!-- Week 9 -->
+      <div class="guide-week-card phase-completion guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">9</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Completion</div>
+            <h3 class="guide-week-title">Cohesion &amp; Conclusion</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Creating a unified, polished essay</p>
+        <ul class="guide-week-topics">
+          <li>Writing a powerful conclusion</li>
+          <li>Adding transitions between paragraphs</li>
+          <li>Reviewing and strengthening argument flow</li>
+          <li>Proofreading for expression and accuracy</li>
+        </ul>
+      </div>
+
+      <!-- Week 10 -->
+      <div class="guide-week-card phase-completion guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">10</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Completion</div>
+            <h3 class="guide-week-title">Complete Essay</h3>
+          </div>
+        </div>
+        <p class="guide-week-description">Final polish and submission</p>
+        <ul class="guide-week-topics">
+          <li>Final draft completion</li>
+          <li>Peer review and feedback</li>
+          <li>Self-assessment against criteria</li>
+          <li>Celebration of analytical achievement</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Learning Outcomes -->
+    <section class="guide-outcomes-section">
+      <h3>What Your Child Will Learn</h3>
+      <p>Through studying <strong>Animal Farm</strong>, students will develop skills in:</p>
+      <ul class="guide-outcomes-list">
+        <li>Identifying and analysing allegorical structures</li>
+        <li>Understanding satire and political commentary</li>
+        <li>Analysing propaganda and manipulative language</li>
+        <li>Crafting evidence-based analytical arguments</li>
+        <li>Writing structured literary essays</li>
+        <li>Connecting textual analysis to historical context</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="guide-cta-section">
+      <h3>Ready to enrol?</h3>
+      <p>Give your child the skills to write confidently about this text.</p>
+      <a href="/course.html" class="guide-cta-btn">Enrol Now &rarr;</a>
+    </section>
+
+  </main>
+
   <footer class="footer">
-    <p class="footer-contact">
-      <a href="mailto:hello@luminait.com.au">hello@luminait.com.au</a> ·
-      <a href="tel:+61421213517">+61 421 213 517</a>
-    </p>
+    <p class="footer-copy">&copy; 2026 <a href="/">LuminAIT</a> &middot; Melbourne</p>
   </footer>
 
   <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-      localStorage.setItem('luminait-lang', lang);
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
+    function showView(view) {
+      const btn5 = document.getElementById('btn-5week');
+      const btn10 = document.getElementById('btn-10week');
+      const extendedWeeks = document.querySelectorAll('.guide-extended-week');
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('luminait-lang');
-      if (savedLang) setLanguage(savedLang);
-    });
+      if (view === '5week') {
+        btn5.classList.add('active');
+        btn10.classList.remove('active');
+        extendedWeeks.forEach(el => el.style.display = 'none');
+      } else {
+        btn10.classList.add('active');
+        btn5.classList.remove('active');
+        extendedWeeks.forEach(el => el.style.display = 'block');
+      }
+    }
   </script>
 
 </body>

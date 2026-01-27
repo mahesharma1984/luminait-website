@@ -1,0 +1,161 @@
+{
+  "slug": "a-christmas-carol",
+  "title": "A Christmas Carol",
+  "author": "Charles Dickens",
+  "yearLevel": "Years 9-10",
+  "pattern": "Moral Transformation",
+  "metaDescription": "Parent curriculum guide for A Christmas Carol. See what your child will learn week by week.",
+  "techniques": ["Characterization", "Symbolism", "Social Critique"],
+  "outcomes": [
+    "Identifying and analysing character transformation",
+    "Understanding symbolism (ghosts, chains, light)",
+    "Analysing social critique of Victorian society",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to moral redemption"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the novella",
+      "topics": [
+        "Introduction to A Christmas Carol and Victorian context",
+        "Understanding social conditions and poverty",
+        "Meeting Scrooge and key characters",
+        "Identifying the redemption narrative structure"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Dickens constructs moral transformation",
+      "topics": [
+        "Exploring the central pattern: Moral Transformation",
+        "Understanding how the three ghosts catalyze change",
+        "Recognising recurring motifs (light, cold, chains)",
+        "Analysing how structure supports redemption"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Dickens's techniques",
+      "topics": [
+        "Technique 1: Characterization (Scrooge's transformation)",
+        "Technique 2: Symbolism (ghosts, chains, light)",
+        "Technique 3: Social Critique (exposing inequality)",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Dickens use the three ghosts to demonstrate that moral transformation requires confronting past, present, and future?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to redemption themes",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the novella effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of Characterization",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating textual evidence effectively",
+        "Analysing Scrooge's transformation arc",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "Characterization",
+        "description": "Dickens charts Scrooge's transformation from miserly isolation to generous community participation through vivid characterization."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of Symbolism",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing sophisticated quote integration",
+        "Exploring symbolic meaning of ghosts and chains",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "Symbolism",
+        "description": "The ghosts symbolize different aspects of moral awakening, while chains represent spiritual bondage created by selfishness."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Social Critique",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Social Critique",
+        "description": "Dickens critiques Victorian society's neglect of the poor, using Scrooge's transformation to advocate for social responsibility."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}

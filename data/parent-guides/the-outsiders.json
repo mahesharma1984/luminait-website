@@ -1,0 +1,161 @@
+{
+  "slug": "the-outsiders",
+  "title": "The Outsiders",
+  "author": "S.E. Hinton",
+  "yearLevel": "Years 9-10",
+  "pattern": "Class Division and Brotherhood",
+  "metaDescription": "Parent curriculum guide for The Outsiders. See what your child will learn week by week.",
+  "techniques": ["First-Person Narration", "Symbolism", "Characterization"],
+  "outcomes": [
+    "Identifying and analysing first-person narration",
+    "Understanding symbolism (sunsets, hair, fire)",
+    "Analysing characterization and social class",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to themes of identity and belonging"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the novel",
+      "topics": [
+        "Introduction to The Outsiders and 1960s context",
+        "Understanding the Greasers vs Socs divide",
+        "Meeting Ponyboy and the gang",
+        "Identifying the class conflict structure"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Hinton constructs social commentary",
+      "topics": [
+        "Exploring the central pattern: Class Division and Brotherhood",
+        "Understanding how appearance defines identity",
+        "Recognising recurring motifs (sunsets, hair, gold)",
+        "Analysing how perspective shapes sympathy"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Hinton's techniques",
+      "topics": [
+        "Technique 1: First-Person Narration (Ponyboy's voice)",
+        "Technique 2: Symbolism (sunsets, gold, hair)",
+        "Technique 3: Characterization (humanizing both sides)",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Hinton use first-person narration to reveal that class division obscures our common humanity?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to social themes",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the novel effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of First-Person Narration",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating textual evidence effectively",
+        "Analysing Ponyboy's perspective",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "First-Person Narration",
+        "description": "Ponyboy's narration creates empathy for Greasers while revealing his growing awareness that Socs face similar struggles."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of Symbolism",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing sophisticated quote integration",
+        "Exploring symbolic meaning of sunsets and gold",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "Symbolism",
+        "description": "Sunsets symbolize shared human experience across class divides, while 'staying gold' represents preserving innocence."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Characterization",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Characterization",
+        "description": "Hinton humanizes both Greasers and Socs, revealing that class labels obscure individual complexity and shared humanity."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}

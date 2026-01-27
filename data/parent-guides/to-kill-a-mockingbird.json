@@ -1,0 +1,161 @@
+{
+  "slug": "to-kill-a-mockingbird",
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "yearLevel": "Years 9-10",
+  "pattern": "Moral Awakening Through Loss of Innocence",
+  "metaDescription": "Parent curriculum guide for To Kill a Mockingbird. See what your child will learn week by week.",
+  "techniques": ["Symbolism", "First-Person Retrospective Narration", "Social Commentary"],
+  "outcomes": [
+    "Identifying and analysing symbolism (mockingbird, rabid dog)",
+    "Understanding first-person retrospective narration",
+    "Analysing social commentary on racism and injustice",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to moral themes"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the novel",
+      "topics": [
+        "Introduction to To Kill a Mockingbird and 1930s Alabama context",
+        "Understanding Maycomb's social hierarchy",
+        "Meeting Scout, Jem, Atticus, and key characters",
+        "Identifying the dual narrative structure"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Lee constructs moral education",
+      "topics": [
+        "Exploring the central pattern: Moral Awakening",
+        "Understanding how innocence is lost through understanding injustice",
+        "Recognising recurring motifs (mockingbird, Boo Radley, court)",
+        "Analysing how perspective shapes meaning"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Lee's techniques",
+      "topics": [
+        "Technique 1: Symbolism (mockingbird as innocence destroyed)",
+        "Technique 2: First-Person Retrospective Narration (adult Scout reflecting)",
+        "Technique 3: Social Commentary (exposing systemic racism)",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Lee use retrospective narration to show moral awakening through confronting injustice?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to moral themes",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the novel effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of Symbolism",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating textual evidence effectively",
+        "Analysing the mockingbird as symbol",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "Symbolism",
+        "description": "The mockingbird symbolizes innocent individuals destroyed by societal cruelty, particularly Tom Robinson and Boo Radley."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of First-Person Retrospective Narration",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing sophisticated quote integration",
+        "Exploring dual perspective (child Scout vs adult Scout)",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "First-Person Retrospective Narration",
+        "description": "Adult Scout narrates childhood events, revealing moral understanding gained through experience and time."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Social Commentary",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Social Commentary",
+        "description": "Lee critiques systemic racism and moral hypocrisy through Tom Robinson's trial and Maycomb's response."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}

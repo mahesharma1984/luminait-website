@@ -1,0 +1,161 @@
+{
+  "slug": "romeo-and-juliet",
+  "title": "Romeo and Juliet",
+  "author": "William Shakespeare",
+  "yearLevel": "Years 9-10",
+  "pattern": "Prophetic Witnessing",
+  "metaDescription": "Parent curriculum guide for Romeo and Juliet. See what your child will learn week by week.",
+  "techniques": ["Dramatic Irony", "Foreshadowing", "Oxymoron"],
+  "outcomes": [
+    "Identifying and analysing dramatic irony in tragedy",
+    "Understanding foreshadowing and prophetic structure",
+    "Analysing oxymoron and paradoxical language",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to tragic inevitability"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the tragedy",
+      "topics": [
+        "Introduction to Romeo and Juliet and Elizabethan context",
+        "Understanding the feud between Montagues and Capulets",
+        "Meeting the star-crossed lovers",
+        "Identifying the Prologue's spoiler"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Shakespeare creates dread",
+      "topics": [
+        "Exploring the central pattern: Prophetic Witnessing",
+        "Understanding how the ending is revealed in the Prologue",
+        "Recognising recurring motifs (fate, free will, light/dark)",
+        "Analysing how knowledge creates tragic inevitability"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Shakespeare's techniques",
+      "topics": [
+        "Technique 1: Dramatic Irony (audience knowledge vs character knowledge)",
+        "Technique 2: Foreshadowing (characters predict their doom)",
+        "Technique 3: Oxymoron (love-death collision)",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Shakespeare use dramatic irony to create dread by revealing the ending before the play begins?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to tragic structure",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the play effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of Dramatic Irony",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating Shakespearean quotations effectively",
+        "Analysing the gap between character hope and audience knowledge",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "Dramatic Irony",
+        "description": "The audience knows the lovers' fate from the Prologue, creating dread as they watch characters pursue hope toward inevitable doom."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of Foreshadowing",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing sophisticated quote integration",
+        "Exploring how characters speak more truly than they know",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "Foreshadowing",
+        "description": "Characters repeatedly predict their own deaths, intensifying dramatic irony and tragic inevitability."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Oxymoron",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Oxymoron",
+        "description": "Paradoxical language (loving hate, heavy lightness) reflects the collision of love and death that defines the tragedy."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}

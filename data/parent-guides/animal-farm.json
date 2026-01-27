@@ -1,0 +1,161 @@
+{
+  "slug": "animal-farm",
+  "title": "Animal Farm",
+  "author": "George Orwell",
+  "yearLevel": "Years 9-10",
+  "pattern": "Allegorical Power Corruption",
+  "metaDescription": "Parent curriculum guide for Animal Farm. See what your child will learn week by week.",
+  "techniques": ["Allegory", "Satire", "Propaganda Language"],
+  "outcomes": [
+    "Identifying and analysing allegorical structures",
+    "Understanding satire and political commentary",
+    "Analysing propaganda and manipulative language",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to historical context"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the allegory",
+      "topics": [
+        "Introduction to Animal Farm and Russian Revolution context",
+        "Understanding the farm setting and character parallels",
+        "Meeting the animals and their symbolic roles",
+        "Identifying the allegorical structure"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Orwell constructs political satire",
+      "topics": [
+        "Exploring the central pattern: Power Corruption",
+        "Understanding how revolution becomes tyranny",
+        "Recognising recurring motifs (Seven Commandments, songs, slogans)",
+        "Analysing how allegory conveys political critique"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Orwell's techniques",
+      "topics": [
+        "Technique 1: Allegory (animal characters as historical figures)",
+        "Technique 2: Satire (mocking totalitarianism)",
+        "Technique 3: Propaganda Language (Squealer's manipulation)",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Orwell use allegory to reveal how revolutionary ideals are corrupted by those who seize power?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to political themes",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the novella effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of Allegory",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating textual evidence effectively",
+        "Analysing allegorical parallels",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "Allegory",
+        "description": "Each animal character represents historical figures and social classes, allowing Orwell to critique Stalinism through accessible narrative."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of Satire",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing sophisticated quote integration",
+        "Exploring how satire exposes hypocrisy",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "Satire",
+        "description": "Orwell's satirical tone mocks totalitarian rhetoric, exposing the gap between revolutionary promises and dictatorial reality."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Propaganda Language",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Propaganda Language",
+        "description": "Squealer's manipulative language demonstrates how propaganda distorts truth and maintains power through deception."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}

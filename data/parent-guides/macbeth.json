@@ -1,0 +1,161 @@
+{
+  "slug": "macbeth",
+  "title": "Macbeth",
+  "author": "William Shakespeare",
+  "yearLevel": "VCE",
+  "pattern": "Tragic Ambition",
+  "metaDescription": "Parent curriculum guide for Macbeth. See what your child will learn week by week.",
+  "techniques": ["Soliloquy", "Imagery", "Dramatic Irony"],
+  "outcomes": [
+    "Identifying and analysing soliloquy in Shakespearean tragedy",
+    "Understanding dramatic irony and its effects",
+    "Analysing dark imagery (blood, darkness, disorder)",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to tragic structure"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the tragedy",
+      "topics": [
+        "Introduction to Macbeth and Jacobean context",
+        "Understanding the play's historical setting",
+        "Meeting the key characters and their motivations",
+        "Identifying the tragic structure"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Shakespeare constructs tragedy",
+      "topics": [
+        "Exploring the central pattern: Tragic Ambition",
+        "Understanding how ambition leads to downfall",
+        "Recognising recurring motifs (blood, darkness, sleep)",
+        "Analysing tragic arc from hero to villain"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Shakespeare's techniques",
+      "topics": [
+        "Technique 1: Soliloquy (revealing inner conflict)",
+        "Technique 2: Imagery (blood, darkness, disorder)",
+        "Technique 3: Dramatic Irony (audience knowledge vs character knowledge)",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Shakespeare use soliloquy to chart Macbeth's psychological descent from loyal thane to tyrannical murderer?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to tragic themes",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the play effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of Soliloquy",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating Shakespearean quotations effectively",
+        "Analysing the technique's effect on meaning",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "Soliloquy",
+        "description": "Macbeth's soliloquies reveal his inner turmoil, allowing audiences to witness his moral decline and psychological fragmentation."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of Imagery",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing sophisticated quote integration",
+        "Exploring how techniques work together",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "Imagery",
+        "description": "Dark imagery of blood, darkness, and disorder tracks Macbeth's moral corruption and Scotland's descent into chaos."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Dramatic Irony",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Dramatic Irony",
+        "description": "The gap between what characters believe and what audiences know intensifies tragic inevitability and moral judgment."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}

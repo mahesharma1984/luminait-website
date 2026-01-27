@@ -9,604 +9,210 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
 
-  <!-- LuminAIT Base Styles -->
+  <!-- Design System CSS -->
   <link rel="stylesheet" href="/components/base.css">
-
-  <style>
-    /* Page-specific styles for parent guide v2 */
-
-    /* Navigation overrides */
-    .nav {
-      background: var(--text-dark);
-      padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav-content {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .nav-back {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s;
-    }
-
-    .nav-back:hover { color: var(--primary); }
-
-    /* Hero section with warm gradient */
-    .hero {
-      background: linear-gradient(135deg, var(--text-dark) 0%, #1e3a5f 100%);
-      padding: 3rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background: var(--warm-light);
-      border: 1px solid var(--warm);
-      border-radius: 50px;
-      font-size: 0.8rem;
-      color: var(--warm);
-      margin-bottom: 1.25rem;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: white;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-meta {
-      color: #94a3b8;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-tagline {
-      color: #cbd5e1;
-      font-size: 1.1rem;
-      font-style: italic;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    /* Toggle section */
-    .toggle-section {
-      background: white;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .toggle-buttons {
-      display: inline-flex;
-      background: var(--bg-paper-dark);
-      border-radius: var(--radius-md);
-      padding: 4px;
-    }
-
-    .toggle-btn {
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      font-family: inherit;
-      transition: all var(--transition-fast);
-      background: transparent;
-      color: var(--text-light);
-    }
-
-    .toggle-btn.active {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-    }
-
-    .toggle-btn:hover:not(.active) {
-      color: var(--text-dark);
-    }
-
-    .toggle-hint {
-      margin-top: 0.75rem;
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    /* Main content area */
-    .main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    .weeks-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    /* Week cards */
-    .week-card {
-      background: white;
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-sm);
-      border-left: 4px solid var(--primary);
-      transition: all var(--transition-fast);
-    }
-
-    .week-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    .week-card.phase-foundation { border-left-color: var(--primary); }
-    .week-card.phase-analysis { border-left-color: #3b82f6; }
-    .week-card.phase-writing { border-left-color: #8b5cf6; }
-    .week-card.phase-body { border-left-color: var(--warm); }
-    .week-card.phase-completion { border-left-color: var(--accent); }
-
-    .week-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .week-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: white;
-    }
-
-    .phase-foundation .week-number { background: var(--primary); }
-    .phase-analysis .week-number { background: #3b82f6; }
-    .phase-writing .week-number { background: #8b5cf6; }
-    .phase-body .week-number { background: var(--warm); }
-    .phase-completion .week-number { background: var(--accent); }
-
-    .week-info { flex: 1; }
-
-    .week-phase {
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.25rem;
-    }
-
-    .phase-foundation .week-phase { color: var(--primary); }
-    .phase-analysis .week-phase { color: #3b82f6; }
-    .phase-writing .week-phase { color: #8b5cf6; }
-    .phase-body .week-phase { color: var(--warm); }
-    .phase-completion .week-phase { color: var(--accent); }
-
-    .week-title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text-dark);
-    }
-
-    .week-description {
-      color: var(--text-light);
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .week-topics {
-      list-style: none;
-      padding: 0;
-    }
-
-    .week-topics li {
-      padding: 0.35rem 0;
-      padding-left: 1.25rem;
-      position: relative;
-      color: var(--text-main);
-      font-size: 0.9rem;
-    }
-
-    .week-topics li::before {
-      content: "\2192";
-      position: absolute;
-      left: 0;
-      color: var(--text-light);
-    }
-
-    .technique-box {
-      margin-top: 1rem;
-      padding: 1rem;
-      background: var(--warm-light);
-      border-radius: var(--radius-md);
-      border-left: 3px solid var(--warm);
-    }
-
-    .technique-box strong {
-      color: var(--text-dark);
-      font-size: 0.9rem;
-    }
-
-    .technique-box p {
-      margin-top: 0.25rem;
-      font-size: 0.85rem;
-      color: var(--text-main);
-    }
-
-    .extended-week {
-      display: none;
-    }
-
-    /* Learning outcomes section */
-    .outcomes-section {
-      background: white;
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .outcomes-section h3 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.25rem;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-    }
-
-    .outcomes-section p {
-      color: var(--text-main);
-      margin-bottom: 1rem;
-    }
-
-    .outcomes-list {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 0.5rem;
-    }
-
-    .outcomes-list li {
-      padding: 0.5rem 0;
-      padding-left: 1.5rem;
-      position: relative;
-      color: var(--text-main);
-      font-size: 0.9rem;
-    }
-
-    .outcomes-list li::before {
-      content: "\2713";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* CTA section */
-    .cta-section {
-      background: var(--bg-paper-dark);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem 2rem;
-      margin-top: 2rem;
-      text-align: center;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .cta-section h3 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.5rem;
-      color: var(--text-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .cta-section p {
-      color: var(--text-light);
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--primary);
-      color: white !important;
-      padding: 0.9rem 2rem;
-      border-radius: var(--radius-full);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all var(--transition-fast);
-      box-shadow: var(--shadow-md);
-    }
-
-    .cta-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-      text-decoration: none;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-light);
-      font-size: 0.85rem;
-    }
-
-    .footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .footer a:hover { text-decoration: underline; }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
-      .nav { padding: 1rem; }
-      .hero { padding: 2rem 1.25rem; }
-      .main { padding: 1.5rem 1rem; }
-      .week-card { padding: 1.25rem; }
-      .outcomes-section, .cta-section { padding: 1.5rem; }
-    }
-
-    /* Print styles */
-    @media print {
-      .nav, .toggle-section, .cta-section { display: none; }
-      .extended-week { display: block !important; }
-      .week-card { break-inside: avoid; }
-    }
-  </style>
+  <link rel="stylesheet" href="/components/page-components.css">
+  <link rel="stylesheet" href="/components/page-parent-guide.css">
 </head>
 <body>
 
   <nav class="nav">
     <div class="nav-content">
       <a href="/" class="nav-logo">LuminAIT</a>
-      <a href="/" class="nav-back">&larr; Back to texts</a>
+      <div class="nav-links">
+        <a href="/curriculum/" class="nav-link">&larr; All Texts</a>
+      </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <span class="hero-badge">Parent Curriculum Guide</span>
+  <header class="guide-hero">
+    <div class="guide-hero-content">
+      <div class="badge badge-warm">Parent Curriculum Guide</div>
       <h1>The Outsiders</h1>
-      <p class="hero-meta">S.E. Hinton &middot; Years 9-10</p>
-      <p class="hero-tagline">Fraternal Mediation</p>
+      <p class="guide-hero-meta">S.E. Hinton &middot; Years 9-10</p>
+      <p class="guide-hero-pattern">Class Division and Brotherhood</p>
     </div>
   </header>
 
-  <section class="toggle-section">
-    <div class="toggle-buttons">
-      <button id="btn-5week" class="toggle-btn active" onclick="showView('5week')">5-Week Course</button>
-      <button id="btn-10week" class="toggle-btn" onclick="showView('10week')">10-Week Course</button>
+  <section class="guide-toggle-section">
+    <div class="guide-toggle-buttons">
+      <button id="btn-5week" class="guide-toggle-btn active" onclick="showView('5week')">5-Week Course</button>
+      <button id="btn-10week" class="guide-toggle-btn" onclick="showView('10week')">10-Week Course</button>
     </div>
-    <p class="toggle-hint">Choose the course length to see the curriculum</p>
+    <p class="guide-toggle-hint">Choose the course length to see the curriculum</p>
   </section>
 
-  <main class="main">
-    <div class="weeks-grid">
-
+  <main class="guide-main">
+    <div class="guide-weeks-grid">
       <!-- Week 1 -->
-      <div class="week-card phase-foundation">
-        <div class="week-header">
-          <div class="week-number">1</div>
-          <div class="week-info">
-            <div class="week-phase">Foundation</div>
-            <h3 class="week-title">Understanding the Text</h3>
+      <div class="guide-week-card phase-foundation">
+        <div class="guide-week-header">
+          <div class="guide-week-number">1</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Foundation</div>
+            <h3 class="guide-week-title">Understanding the Text</h3>
           </div>
         </div>
-        <p class="week-description">Building foundational understanding of the text's world</p>
-        <ul class="week-topics">
-          <li>Introduction to The Outsiders and its historical/social context</li>
-          <li>Understanding the setting, time period, and cultural background</li>
-          <li>Meeting the key characters and their initial situations</li>
-          <li>Identifying the narrative voice and point of view</li>
+        <p class="guide-week-description">Building foundational understanding of the novel</p>
+        <ul class="guide-week-topics">
+          <li>Introduction to The Outsiders and 1960s context</li>
+          <li>Understanding the Greasers vs Socs divide</li>
+          <li>Meeting Ponyboy and the gang</li>
+          <li>Identifying the class conflict structure</li>
         </ul>
       </div>
 
       <!-- Week 2 -->
-      <div class="week-card phase-foundation">
-        <div class="week-header">
-          <div class="week-number">2</div>
-          <div class="week-info">
-            <div class="week-phase">Foundation</div>
-            <h3 class="week-title">How the Text Works</h3>
+      <div class="guide-week-card phase-foundation">
+        <div class="guide-week-header">
+          <div class="guide-week-number">2</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Foundation</div>
+            <h3 class="guide-week-title">How the Text Works</h3>
           </div>
         </div>
-        <p class="week-description">Discovering how Hinton constructs meaning</p>
-        <ul class="week-topics">
-          <li>Exploring the central pattern: Fraternal Mediation</li>
-          <li>Understanding how the narrative structure creates meaning</li>
-          <li>Recognising recurring motifs and their significance</li>
-          <li>Analysing how form supports content</li>
+        <p class="guide-week-description">Discovering how Hinton constructs social commentary</p>
+        <ul class="guide-week-topics">
+          <li>Exploring the central pattern: Class Division and Brotherhood</li>
+          <li>Understanding how appearance defines identity</li>
+          <li>Recognising recurring motifs (sunsets, hair, gold)</li>
+          <li>Analysing how perspective shapes sympathy</li>
         </ul>
       </div>
 
       <!-- Week 3 -->
-      <div class="week-card phase-analysis">
-        <div class="week-header">
-          <div class="week-number">3</div>
-          <div class="week-info">
-            <div class="week-phase">Analysis</div>
-            <h3 class="week-title">Analysing Key Techniques</h3>
+      <div class="guide-week-card phase-analysis">
+        <div class="guide-week-header">
+          <div class="guide-week-number">3</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Analysis</div>
+            <h3 class="guide-week-title">Analysing Key Techniques</h3>
           </div>
         </div>
-        <p class="week-description">Learning to identify and analyse Hinton's literary techniques</p>
-        <ul class="week-topics">
-          <li>Technique 1: First-Person Narration</li>
-          <li>Technique 2: Internal Monologue</li>
-          <li>Technique 3: Flashback</li>
+        <p class="guide-week-description">Learning to identify and analyse Hinton&#x27;s techniques</p>
+        <ul class="guide-week-topics">
+          <li>Technique 1: First-Person Narration (Ponyboy&#x27;s voice)</li>
+          <li>Technique 2: Symbolism (sunsets, gold, hair)</li>
+          <li>Technique 3: Characterization (humanizing both sides)</li>
           <li>Collecting textual evidence for each technique</li>
         </ul>
       </div>
 
       <!-- Week 4 -->
-      <div class="week-card phase-analysis">
-        <div class="week-header">
-          <div class="week-number">4</div>
-          <div class="week-info">
-            <div class="week-phase">Analysis</div>
-            <h3 class="week-title">Building the Argument</h3>
+      <div class="guide-week-card phase-analysis">
+        <div class="guide-week-header">
+          <div class="guide-week-number">4</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Analysis</div>
+            <h3 class="guide-week-title">Building the Argument</h3>
           </div>
         </div>
-        <p class="week-description">Developing a thesis and analytical argument</p>
-        <ul class="week-topics">
-          <li>Exploring the guiding question: How does Hinton craft the pattern of fraternal mediation to shape readers&#x27; understanding?</li>
+        <p class="guide-week-description">Developing a thesis and analytical argument</p>
+        <ul class="guide-week-topics">
+          <li>Exploring the guiding question: How does Hinton use first-person narration to reveal that class division obscures our common humanity?</li>
           <li>Forming a clear thesis statement</li>
-          <li>Connecting techniques to thematic concerns</li>
+          <li>Connecting techniques to social themes</li>
           <li>Planning the essay structure</li>
         </ul>
       </div>
 
       <!-- Week 5 -->
-      <div class="week-card phase-writing">
-        <div class="week-header">
-          <div class="week-number">5</div>
-          <div class="week-info">
-            <div class="week-phase">Writing</div>
-            <h3 class="week-title">Writing the Introduction</h3>
+      <div class="guide-week-card phase-writing">
+        <div class="guide-week-header">
+          <div class="guide-week-number">5</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Writing</div>
+            <h3 class="guide-week-title">Writing the Introduction</h3>
           </div>
         </div>
-        <p class="week-description">Crafting a compelling essay opening</p>
-        <ul class="week-topics">
-          <li>Contextualising the text effectively</li>
+        <p class="guide-week-description">Crafting a compelling essay opening</p>
+        <ul class="guide-week-topics">
+          <li>Contextualising the novel effectively</li>
           <li>Presenting the thesis statement</li>
           <li>Previewing the analytical approach</li>
           <li>Drafting and refining the introduction paragraph</li>
         </ul>
       </div>
 
-      <!-- Week 6 (10-week only) -->
-      <div class="week-card phase-body extended-week">
-        <div class="week-header">
-          <div class="week-number">6</div>
-          <div class="week-info">
-            <div class="week-phase">Body Paragraphs</div>
-            <h3 class="week-title">Body Paragraph 1</h3>
+      <!-- Week 6 -->
+      <div class="guide-week-card phase-body guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">6</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Body Paragraphs</div>
+            <h3 class="guide-week-title">Body Paragraph 1</h3>
           </div>
         </div>
-        <p class="week-description">Deep analysis of First-Person Narration</p>
-        <ul class="week-topics">
+        <p class="guide-week-description">Deep analysis of First-Person Narration</p>
+        <ul class="guide-week-topics">
           <li>Crafting a clear topic sentence</li>
           <li>Integrating textual evidence effectively</li>
-          <li>Analysing the technique's effect on meaning</li>
+          <li>Analysing Ponyboy&#x27;s perspective</li>
           <li>Linking analysis back to thesis</li>
         </ul>
-        <div class="technique-box">
+        <div class="guide-technique-box">
           <strong>First-Person Narration</strong>
-          <p>The narrator&#x27;s direct voice places readers inside their experience, creating intimate access to thoughts and feelings as understanding deepens.</p>
+          <p>Ponyboy&#x27;s narration creates empathy for Greasers while revealing his growing awareness that Socs face similar struggles.</p>
         </div>
       </div>
 
-      <!-- Week 7 (10-week only) -->
-      <div class="week-card phase-body extended-week">
-        <div class="week-header">
-          <div class="week-number">7</div>
-          <div class="week-info">
-            <div class="week-phase">Body Paragraphs</div>
-            <h3 class="week-title">Body Paragraph 2</h3>
+      <!-- Week 7 -->
+      <div class="guide-week-card phase-body guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">7</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Body Paragraphs</div>
+            <h3 class="guide-week-title">Body Paragraph 2</h3>
           </div>
         </div>
-        <p class="week-description">Deep analysis of Internal Monologue</p>
-        <ul class="week-topics">
+        <p class="guide-week-description">Deep analysis of Symbolism</p>
+        <ul class="guide-week-topics">
           <li>Building on analytical skills from Week 6</li>
-          <li>Developing more sophisticated quote integration</li>
-          <li>Exploring how techniques work together</li>
+          <li>Developing sophisticated quote integration</li>
+          <li>Exploring symbolic meaning of sunsets and gold</li>
           <li>Strengthening the analytical voice</li>
         </ul>
-        <div class="technique-box">
-          <strong>Internal Monologue</strong>
-          <p>The character&#x27;s private thoughts reveal their psychological journey, showing how they process experiences and grow through reflection.</p>
+        <div class="guide-technique-box">
+          <strong>Symbolism</strong>
+          <p>Sunsets symbolize shared human experience across class divides, while &#x27;staying gold&#x27; represents preserving innocence.</p>
         </div>
       </div>
 
-      <!-- Week 8 (10-week only) -->
-      <div class="week-card phase-body extended-week">
-        <div class="week-header">
-          <div class="week-number">8</div>
-          <div class="week-info">
-            <div class="week-phase">Body Paragraphs</div>
-            <h3 class="week-title">Body Paragraph 3</h3>
+      <!-- Week 8 -->
+      <div class="guide-week-card phase-body guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">8</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Body Paragraphs</div>
+            <h3 class="guide-week-title">Body Paragraph 3</h3>
           </div>
         </div>
-        <p class="week-description">Deep analysis of Flashback</p>
-        <ul class="week-topics">
+        <p class="guide-week-description">Deep analysis of Characterization</p>
+        <ul class="guide-week-topics">
           <li>Mastering the TEEL paragraph structure</li>
           <li>Demonstrating sophisticated literary analysis</li>
           <li>Connecting all three techniques thematically</li>
           <li>Preparing for the essay conclusion</li>
         </ul>
-        <div class="technique-box">
-          <strong>Flashback</strong>
-          <p>This technique shapes how readers experience and understand the text&#x27;s central concerns.</p>
+        <div class="guide-technique-box">
+          <strong>Characterization</strong>
+          <p>Hinton humanizes both Greasers and Socs, revealing that class labels obscure individual complexity and shared humanity.</p>
         </div>
       </div>
 
-      <!-- Week 9 (10-week only) -->
-      <div class="week-card phase-completion extended-week">
-        <div class="week-header">
-          <div class="week-number">9</div>
-          <div class="week-info">
-            <div class="week-phase">Completion</div>
-            <h3 class="week-title">Cohesion &amp; Conclusion</h3>
+      <!-- Week 9 -->
+      <div class="guide-week-card phase-completion guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">9</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Completion</div>
+            <h3 class="guide-week-title">Cohesion &amp; Conclusion</h3>
           </div>
         </div>
-        <p class="week-description">Creating a unified, polished essay</p>
-        <ul class="week-topics">
+        <p class="guide-week-description">Creating a unified, polished essay</p>
+        <ul class="guide-week-topics">
           <li>Writing a powerful conclusion</li>
           <li>Adding transitions between paragraphs</li>
           <li>Reviewing and strengthening argument flow</li>
@@ -614,58 +220,57 @@
         </ul>
       </div>
 
-      <!-- Week 10 (10-week only) -->
-      <div class="week-card phase-completion extended-week">
-        <div class="week-header">
-          <div class="week-number">10</div>
-          <div class="week-info">
-            <div class="week-phase">Completion</div>
-            <h3 class="week-title">Complete Essay</h3>
+      <!-- Week 10 -->
+      <div class="guide-week-card phase-completion guide-extended-week">
+        <div class="guide-week-header">
+          <div class="guide-week-number">10</div>
+          <div class="guide-week-info">
+            <div class="guide-week-phase">Completion</div>
+            <h3 class="guide-week-title">Complete Essay</h3>
           </div>
         </div>
-        <p class="week-description">Final polish and submission</p>
-        <ul class="week-topics">
+        <p class="guide-week-description">Final polish and submission</p>
+        <ul class="guide-week-topics">
           <li>Final draft completion</li>
           <li>Peer review and feedback</li>
           <li>Self-assessment against criteria</li>
           <li>Celebration of analytical achievement</li>
         </ul>
       </div>
-
     </div>
 
     <!-- Learning Outcomes -->
-    <section class="outcomes-section">
+    <section class="guide-outcomes-section">
       <h3>What Your Child Will Learn</h3>
       <p>Through studying <strong>The Outsiders</strong>, students will develop skills in:</p>
-      <ul class="outcomes-list">
+      <ul class="guide-outcomes-list">
         <li>Identifying and analysing first-person narration</li>
-        <li>Identifying and analysing internal monologue</li>
-        <li>Identifying and analysing flashback</li>
+        <li>Understanding symbolism (sunsets, hair, fire)</li>
+        <li>Analysing characterization and social class</li>
         <li>Crafting evidence-based analytical arguments</li>
         <li>Writing structured literary essays</li>
-        <li>Connecting textual analysis to broader themes</li>
+        <li>Connecting textual analysis to themes of identity and belonging</li>
       </ul>
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="guide-cta-section">
       <h3>Ready to enrol?</h3>
       <p>Give your child the skills to write confidently about this text.</p>
-      <a href="/" class="cta-btn">Enrol Now &rarr;</a>
+      <a href="/course.html" class="guide-cta-btn">Enrol Now &rarr;</a>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 <a href="/">LuminAIT</a> &middot; Melbourne</p>
+    <p class="footer-copy">&copy; 2026 <a href="/">LuminAIT</a> &middot; Melbourne</p>
   </footer>
 
   <script>
     function showView(view) {
       const btn5 = document.getElementById('btn-5week');
       const btn10 = document.getElementById('btn-10week');
-      const extendedWeeks = document.querySelectorAll('.extended-week');
+      const extendedWeeks = document.querySelectorAll('.guide-extended-week');
 
       if (view === '5week') {
         btn5.classList.add('active');
