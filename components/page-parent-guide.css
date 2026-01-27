@@ -1,0 +1,393 @@
+/**
+ * LuminAIT Parent Guide Page Styles
+ *
+ * Used by: /curriculum/[text]/ pages
+ * Design: Light, warm, inviting (matches design system)
+ * Purpose: Parent-facing curriculum overview pages
+ *
+ * Import order:
+ * 1. base.css
+ * 2. page-components.css
+ * 3. page-parent-guide.css
+ */
+
+/* ============================================
+   PARENT GUIDE HERO
+   Light hero with warm accent, matching site style
+   ============================================ */
+
+.guide-hero {
+  background: var(--bg-paper);
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.guide-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.guide-hero h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--text-dark);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.guide-hero-meta {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.guide-hero-pattern {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ============================================
+   COURSE TOGGLE
+   ============================================ */
+
+.guide-toggle-section {
+  background: var(--bg-white);
+  padding: var(--space-lg) var(--space-lg);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.guide-toggle-buttons {
+  display: inline-flex;
+  background: var(--bg-paper-dark);
+  border-radius: var(--radius-md);
+  padding: 4px;
+}
+
+.guide-toggle-btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+  background: transparent;
+  color: var(--text-light);
+}
+
+.guide-toggle-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.guide-toggle-btn:hover:not(.active) {
+  color: var(--text-dark);
+}
+
+.guide-toggle-hint {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+.guide-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.guide-weeks-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ============================================
+   WEEK CARDS
+   ============================================ */
+
+.guide-week-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary);
+  transition: all var(--transition-fast);
+}
+
+.guide-week-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Phase colors for week cards */
+.guide-week-card.phase-foundation { border-left-color: var(--primary); }
+.guide-week-card.phase-analysis { border-left-color: #3b82f6; }
+.guide-week-card.phase-writing { border-left-color: #8b5cf6; }
+.guide-week-card.phase-body { border-left-color: var(--warm); }
+.guide-week-card.phase-completion { border-left-color: var(--accent); }
+
+.guide-week-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.guide-week-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+}
+
+/* Phase colors for week numbers */
+.phase-foundation .guide-week-number { background: var(--primary); }
+.phase-analysis .guide-week-number { background: #3b82f6; }
+.phase-writing .guide-week-number { background: #8b5cf6; }
+.phase-body .guide-week-number { background: var(--warm); }
+.phase-completion .guide-week-number { background: var(--accent); }
+
+.guide-week-info {
+  flex: 1;
+}
+
+.guide-week-phase {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+/* Phase colors for phase labels */
+.phase-foundation .guide-week-phase { color: var(--primary); }
+.phase-analysis .guide-week-phase { color: #3b82f6; }
+.phase-writing .guide-week-phase { color: #8b5cf6; }
+.phase-body .guide-week-phase { color: var(--warm); }
+.phase-completion .guide-week-phase { color: var(--accent); }
+
+.guide-week-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.guide-week-description {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-week-topics {
+  list-style: none;
+  padding: 0;
+}
+
+.guide-week-topics li {
+  padding: 0.35rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.guide-week-topics li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  color: var(--text-light);
+}
+
+/* Technique highlight box */
+.guide-technique-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--warm-light);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--warm);
+}
+
+.guide-technique-box strong {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.guide-technique-box p {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+/* Extended weeks (10-week course only) */
+.guide-extended-week {
+  display: none;
+}
+
+/* ============================================
+   LEARNING OUTCOMES SECTION
+   ============================================ */
+
+.guide-outcomes-section {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.guide-outcomes-section h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.guide-outcomes-section p {
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.guide-outcomes-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+}
+
+.guide-outcomes-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.guide-outcomes-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.guide-cta-section {
+  background: var(--bg-paper-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  margin-top: var(--space-xl);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.guide-cta-section h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.guide-cta-section p {
+  color: var(--text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.guide-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: white !important;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.guide-cta-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .guide-hero {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .guide-main {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .guide-week-card {
+    padding: var(--space-md);
+  }
+
+  .guide-outcomes-section,
+  .guide-cta-section {
+    padding: var(--space-lg);
+  }
+
+  .guide-outcomes-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .nav,
+  .guide-toggle-section,
+  .guide-cta-section {
+    display: none;
+  }
+
+  .guide-extended-week {
+    display: block !important;
+  }
+
+  .guide-week-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .guide-hero {
+    padding: var(--space-lg);
+    border-bottom: 2px solid #000;
+  }
+}
