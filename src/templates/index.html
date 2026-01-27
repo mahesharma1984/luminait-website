@@ -193,17 +193,7 @@
 
 <body>
 
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="/" class="nav-logo">LuminAIT</a>
-      <div class="nav-links">
-        <a href="#how-it-works" class="nav-link">How it Works</a>
-        <a href="/about.html" class="nav-link">About</a>
-        <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
-      </div>
-    </div>
-  </nav>
+  {{>nav.html}}
 
   <!-- Hero -->
   <header class="section hero">
@@ -448,15 +438,9 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/schools/">Schools</a>
-      <a href="mailto:hello@luminait.app">Contact</a>
-      <a href="/privacy">Privacy</a>
-    </div>
-    <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
-  </footer>
+  {{>footer-simple.html}}
+
+  {{>scripts.html}}
 
 </body>
 
