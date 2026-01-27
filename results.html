@@ -42,27 +42,41 @@
       font-family: 'Noto Sans SC', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* Page Header - Warm */
+    /* Page Header - Dark */
     .page-header {
-      background: var(--bg-paper);
-      padding: 3rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background: linear-gradient(135deg, var(--text-dark) 0%, #1e3a5f 50%, #0f2744 100%);
+      padding: 3rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .page-header-content {
       max-width: 800px;
       margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .page-header h1 {
-      color: var(--text-dark);
+      color: var(--primary);
       font-size: 2.5rem;
       margin-bottom: 0.75rem;
     }
 
     .page-header .subtitle {
-      color: var(--text-light);
+      color: #cbd5e1;
       font-size: 1.15rem;
     }
 
@@ -351,7 +365,7 @@
 </head>
 <body data-lang="en">
 
-  <nav class="nav">
+    <nav class="nav">
     <div class="nav-content">
       <a href="/" class="nav-logo">LuminAIT</a>
       <div class="nav-links">
