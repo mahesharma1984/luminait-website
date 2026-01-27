@@ -20,7 +20,7 @@
     /* Homepage Specific Styles */
 
     .hero {
-      padding-top: 120px;
+      padding-top: 60px;
       padding-bottom: 60px;
       text-align: center;
       max-width: 900px;
@@ -117,37 +117,7 @@
       margin: 0 auto;
     }
 
-    .avatars {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-md);
-      margin-top: var(--space-lg);
-    }
-
-    .avatar-placeholder {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: var(--bg-paper-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: var(--text-light);
-      border: 2px solid white;
-      box-shadow: var(--shadow-sm);
-    }
-
     /* Testimonials */
-    .testimonial-card {
-      background: white;
-      padding: var(--space-lg);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      box-shadow: var(--shadow-sm);
-      text-align: left;
-    }
-
     .quote-icon {
       font-size: 2rem;
       color: var(--primary-light);
@@ -181,12 +151,79 @@
     /* Mobile */
     @media(max-width: 600px) {
       .hero {
-        padding-top: 100px;
+        padding-top: 40px;
       }
 
       .text-grid {
         grid-template-columns: 1fr;
       }
+    }
+
+    /* Results Preview Section */
+    .results-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .result-preview-card {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: left;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+      border-color: var(--primary);
+    }
+
+    .result-growth {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #10b981;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .result-quote {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .result-student {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .result-student::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: #e2e8f0;
+      border-radius: 50%;
+      display: block;
     }
   </style>
 </head>
@@ -327,6 +364,48 @@
     </div>
   </section>
 
+  <!-- Latest Results Teaser -->
+  <section class="section section-gray">
+    <div class="container" style="text-align: center;">
+      <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Real Outcomes</span>
+      <h2 style="margin-bottom: 1rem;">See what 10 weeks can do.</h2>
+      <p style="color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        Our students don't just "improve". They make meaningful leaps in analytical thinking.
+      </p>
+
+      <div class="results-preview-grid">
+        <!-- Card 1 -->
+        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
+          <div class="result-growth">+34%</div>
+          <div class="result-label">Improvement in 1 Term</div>
+          <div class="result-quote">"From being confused about the text to writing sophisticated analytical essays."
+          </div>
+          <div class="result-student">Jordan, Year 9</div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
+          <div class="result-growth">+32%</div>
+          <div class="result-label">Improvement in 1 Term</div>
+          <div class="result-quote">"Finally understands how to connect evidence to the author's intent."</div>
+          <div class="result-student">Taylor, Year 10</div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
+          <div class="result-growth">+19%</div>
+          <div class="result-label">Improvement in 1 Term</div>
+          <div class="result-quote">"Developed a clear argument with cause-and-effect reasoning."</div>
+          <div class="result-student">Alex, Year 8</div>
+        </a>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <a href="/progress.html" class="btn btn-primary" style="padding: 12px 28px;">View All Case Studies</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Social Proof (What else to include: Testimonials) -->
   <link rel="stylesheet" href="/components/marquee.css">
 
@@ -341,34 +420,34 @@
 
           <!-- SET 1 -->
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">His English performance at school improved from a C to a B in Year 7 after taking the
               course for three terms. When writing speeches... his writing has become more structured.</p>
             <div class="quote-author">— Parent (Year 7)</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">Happy Teacher's Day! We are so grateful to be in your class, your humor and concise
               lessons make English not only fun but also meaningful. We genuinely love it.</p>
             <div class="quote-author">— Adele & Bella, Students</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">You were teaching me how to pronounce every single English alphabet... My self esteem
               has been improved a lot... You are the most unforgettable teacher in my life.</p>
             <div class="quote-author">— Jinyoung, Year 10 Student</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">Dear Mahesh, Thank you for dedication to our students. You are an amazing teacher!</p>
             <div class="quote-author">— Student Note</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">It's awesome to see his writing progress. Thanks for all your help. Hope he keeps it
               up.</p>
             <div class="quote-author">— Parent (Email)</div>
@@ -376,34 +455,34 @@
 
           <!-- SET 2 (Clone for loop) -->
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">His English performance at school improved from a C to a B in Year 7 after taking the
               course for three terms. When writing speeches... his writing has become more structured.</p>
             <div class="quote-author">— Parent (Year 7)</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">Happy Teacher's Day! We are so grateful to be in your class, your humor and concise
               lessons make English not only fun but also meaningful. We genuinely love it.</p>
             <div class="quote-author">— Adele & Bella, Students</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">You were teaching me how to pronounce every single English alphabet... My self esteem
               has been improved a lot... You are the most unforgettable teacher in my life.</p>
             <div class="quote-author">— Jinyoung, Year 10 Student</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">Dear Mahesh, Thank you for dedication to our students. You are an amazing teacher!</p>
             <div class="quote-author">— Student Note</div>
           </div>
 
           <div class="marquee-card">
-            <div class="quote-icon">“</div>
+            <div class="quote-icon">"</div>
             <p class="quote-text">It's awesome to see his writing progress. Thanks for all your help. Hope he keeps it
               up.</p>
             <div class="quote-author">— Parent (Email)</div>
@@ -415,7 +494,6 @@
     </div>
   </section>
 
-  <!-- About / Teacher Profile (What else to include: Human Element) -->
   <!-- About / Teacher Profile -->
   <section class="section section-soft">
     <div class="container about-section">
@@ -438,9 +516,15 @@
     </div>
   </section>
 
-  {{>footer-simple.html}}
-
-  {{>scripts.html}}
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/schools/">Schools</a>
+      <a href="mailto:hello@luminait.app">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
+  </footer>
 
 </body>
 
