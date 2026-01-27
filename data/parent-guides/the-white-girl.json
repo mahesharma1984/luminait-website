@@ -1,0 +1,161 @@
+{
+  "slug": "the-white-girl",
+  "title": "The White Girl",
+  "author": "Tony Birch",
+  "yearLevel": "Years 9-10",
+  "pattern": "Protective Vigilance",
+  "metaDescription": "Parent curriculum guide for The White Girl. See what your child will learn week by week.",
+  "techniques": ["Third-Person Limited", "Free Indirect Discourse", "Internal Monologue"],
+  "outcomes": [
+    "Identifying and analysing third-person limited",
+    "Identifying and analysing free indirect discourse",
+    "Identifying and analysing internal monologue",
+    "Crafting evidence-based analytical arguments",
+    "Writing structured literary essays",
+    "Connecting textual analysis to broader themes"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "Understanding the Text",
+      "description": "Building foundational understanding of the text's world",
+      "topics": [
+        "Introduction to The White Girl and its historical/social context",
+        "Understanding the setting, time period, and cultural background",
+        "Meeting the key characters and their initial situations",
+        "Identifying the narrative voice and point of view"
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "foundation",
+      "phaseName": "Foundation",
+      "title": "How the Text Works",
+      "description": "Discovering how Birch constructs meaning",
+      "topics": [
+        "Exploring the central pattern: Protective Vigilance",
+        "Understanding how the narrative structure creates meaning",
+        "Recognising recurring motifs and their significance",
+        "Analysing how form supports content"
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Analysing Key Techniques",
+      "description": "Learning to identify and analyse Birch's literary techniques",
+      "topics": [
+        "Technique 1: Third-Person Limited",
+        "Technique 2: Free Indirect Discourse",
+        "Technique 3: Internal Monologue",
+        "Collecting textual evidence for each technique"
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "analysis",
+      "phaseName": "Analysis",
+      "title": "Building the Argument",
+      "description": "Developing a thesis and analytical argument",
+      "topics": [
+        "Exploring the guiding question: How does Birch craft the pattern of protective vigilance to shape readers' understanding?",
+        "Forming a clear thesis statement",
+        "Connecting techniques to thematic concerns",
+        "Planning the essay structure"
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "writing",
+      "phaseName": "Writing",
+      "title": "Writing the Introduction",
+      "description": "Crafting a compelling essay opening",
+      "topics": [
+        "Contextualising the text effectively",
+        "Presenting the thesis statement",
+        "Previewing the analytical approach",
+        "Drafting and refining the introduction paragraph"
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 1",
+      "description": "Deep analysis of Third-Person Limited",
+      "topics": [
+        "Crafting a clear topic sentence",
+        "Integrating textual evidence effectively",
+        "Analysing the technique's effect on meaning",
+        "Linking analysis back to thesis"
+      ],
+      "technique": {
+        "name": "Third-Person Limited",
+        "description": "The narrative follows one character's perspective, limiting readers to their knowledge while creating dramatic tension about what they don't yet understand."
+      }
+    },
+    {
+      "week": 7,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 2",
+      "description": "Deep analysis of Free Indirect Discourse",
+      "topics": [
+        "Building on analytical skills from Week 6",
+        "Developing more sophisticated quote integration",
+        "Exploring how techniques work together",
+        "Strengthening the analytical voice"
+      ],
+      "technique": {
+        "name": "Free Indirect Discourse",
+        "description": "The narrative voice blends with character thoughts, creating intimacy while maintaining narrative distance."
+      }
+    },
+    {
+      "week": 8,
+      "phase": "body",
+      "phaseName": "Body Paragraphs",
+      "title": "Body Paragraph 3",
+      "description": "Deep analysis of Internal Monologue",
+      "topics": [
+        "Mastering the TEEL paragraph structure",
+        "Demonstrating sophisticated literary analysis",
+        "Connecting all three techniques thematically",
+        "Preparing for the essay conclusion"
+      ],
+      "technique": {
+        "name": "Internal Monologue",
+        "description": "The character's private thoughts reveal their psychological journey, showing how they process experiences and grow through reflection."
+      }
+    },
+    {
+      "week": 9,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Cohesion & Conclusion",
+      "description": "Creating a unified, polished essay",
+      "topics": [
+        "Writing a powerful conclusion",
+        "Adding transitions between paragraphs",
+        "Reviewing and strengthening argument flow",
+        "Proofreading for expression and accuracy"
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "completion",
+      "phaseName": "Completion",
+      "title": "Complete Essay",
+      "description": "Final polish and submission",
+      "topics": [
+        "Final draft completion",
+        "Peer review and feedback",
+        "Self-assessment against criteria",
+        "Celebration of analytical achievement"
+      ]
+    }
+  ]
+}
