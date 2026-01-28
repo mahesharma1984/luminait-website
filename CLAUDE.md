@@ -44,6 +44,15 @@ Key documents:
 ├── build-parent-guides.js  # Generates parent curriculum pages
 ├── /curriculum/            # Generated parent guide pages
 │
+├── /data/video-scenes/     # JSON data for video scene pages
+├── build-video-scenes.js   # Generates video scene HTML
+├── /studio/                # Video Studio (animation tool)
+│   ├── /assets/            # Images for video scenes
+│   ├── /scenes/            # Generated scene pages (DO NOT edit)
+│   ├── /scripts/           # Video specs and voiceover scripts
+│   ├── script.js           # Shared animation controller
+│   └── styles.css          # Shared studio styles
+│
 ├── /components/            # Shared JS/CSS
 ├── /guides/                # Generated guide pages
 ├── /docs/                  # Methodology (READ FIRST)
@@ -62,6 +71,11 @@ Key documents:
    - Run `node build-parent-guides.js`
    - Output: `/curriculum/[slug]/index.html` (auto-generated, DO NOT edit)
 4. **Config changes**: Edit `site-config.json`, rebuild affected pages
+5. **Video scenes**:
+   - **Content changes**: Edit `/data/video-scenes/*.json`
+   - **Layout changes**: Edit `/src/templates/_video-scene-template.html`
+   - Run `node build-video-scenes.js`
+   - Output: `/studio/scenes/[slug].html` (auto-generated, DO NOT edit)
 
 ### Parent Curriculum Guide Pipeline
 
@@ -82,6 +96,27 @@ Key documents:
 **Legacy files (DO NOT USE):**
 - `/src/templates/curriculum_*.html` - Old approach, unmigrated guides
 - All content should be in JSON format going forward
+
+### Video Scene Pipeline
+
+**Source of Truth**: JSON files in `/data/video-scenes/`
+
+```
+/data/video-scenes/*.json  →  build-video-scenes.js  →  /studio/scenes/*.html
+                   ↓                                            ↑
+    _video-scene-template.html ─────────────────────────────────┘
+    (single template for all scenes)
+```
+
+**To add a new video scene:**
+1. Create `data/video-scenes/[slug].json` with scene data
+2. Add required assets (cover image, etc.) to `/studio/assets/`
+3. Run `node build-video-scenes.js`
+4. Output appears at `/studio/scenes/[slug].html`
+
+**Legacy files (hand-built, kept for reference):**
+- `studio/outsiders-scene.html` - Original hand-built scene
+- `studio/annotation-giver.html` - Annotation format (not yet templated)
 
 ## Dev Guidelines (Added Jan 27, 2026)
 

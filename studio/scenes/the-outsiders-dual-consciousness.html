@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio: The Outsiders (Scene 1)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+        /* LAYER MANAGEMENT */
+        .stage-layer {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stage-layer.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* INTRO */
+        #layer-intro { background: #2c3e50; }
+        #layer-intro img { height: 80%; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+        /* CONTEXT */
+        #layer-context { background: #000; }
+        #layer-context img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: transform 10s ease-out; transform: scale(1.1);
+        }
+        .context-pan { transform: scale(1.0) !important; }
+
+        .context-overlay {
+            position: absolute;
+            bottom: 10%; left: 5%;
+            color: white;
+            font-family: 'Helvetica Neue', sans-serif;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 4rem;
+            text-shadow: 0 2px 10px black;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        .context-overlay.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* TEXT */
+        #layer-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4rem;
+            line-height: 2.2;
+            color: #333;
+            padding: 100px;
+            box-sizing: border-box;
+            background: url('../assets/paper-texture.jpg'), #fffdf5;
+            transform-origin: top left;
+            transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .book-text { max-width: 800px; margin: 0 auto; }
+
+        /* HIGHLIGHTS */
+        .highlight-mark {
+            position: absolute;
+            pointer-events: none;
+            z-index: 20;
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .highlight-mark.type-yellow {
+            mix-blend-mode: multiply;
+        }
+        .highlight-mark.type-yellow.draw-stroke { opacity: 0.6; }
+        .highlight-mark.type-underline.draw-stroke { opacity: 1; }
+
+        /* LABELS (scene overrides) */
+        .annotation-label {
+            border-left: 4px solid #3498db;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            font-family: sans-serif;
+            font-size: 1rem;
+            z-index: 30;
+        }
+
+        /* SUBTITLES */
+        .subtitle-layer {
+            position: absolute;
+            bottom: 8%; left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .subtitle-layer.show { opacity: 1; }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+
+        <!-- INTRO LAYER (always present) -->
+        <div id="layer-intro" class="stage-layer active">
+            <img src="../assets/outsiders-cover.png" alt="Book Cover">
+        </div>
+
+        
+        <!-- OUTRO LAYER -->
+        <div id="layer-outro" class="stage-layer" style="background: #1e3a5f;">
+            <img src="../assets/course-cta.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Call to Action">
+        </div>
+
+        
+        <!-- CONTEXT LAYER -->
+        <div id="layer-context" class="stage-layer">
+            <img src="../assets/paul-newman.png" id="img-context" alt="Context Image">
+            <div class="context-overlay" id="txt-context">THE IDOL</div>
+        </div>
+
+        <!-- TEXT ANALYSIS LAYER -->
+        <div id="layer-text" class="stage-layer">
+            <div class="book-text">
+                <p>When I stepped out into the bright sunlight from the darkness of the movie house, <span id="target-1">I had only two things on my mind: Paul Newman and a ride home.</span></p>
+
+                <p>I was wishing I looked like Paul Newman — he looks tough and I don't — but I have to be content with what I have. My hair is longer than a lot of boys wear theirs, squared off in back and long at the front and sides, but I am a greaser and most of my neighborhood rarely bothers to get a haircut. Besides, I look better with long hair. <span id="target-2">I had a long walk home and no company, but I usually lone it anyway</span>, for no reason except that I like to watch movies undisturbed so I can get into them and live them with the actors.</p>
+            </div>
+
+            <div class="highlight-mark type-yellow" id="hl-1" style="top: 14.4%; left: 14.3%; width: 41.4%; height: 1.6%; background: #ffeb3b;"></div>
+            <div class="highlight-mark type-underline" id="hl-2" style="top: 25.6%; left: 7.1%; width: 21.4%; height: 0.4%; background: #3498db;"></div>
+
+            <div class="annotation-label" id="lbl-1" style="top: 15%; left: 60%; border-left-color: #3498db;">
+                <strong>The 14-Year Old</strong><br>Immediate Concerns
+            </div>
+
+            <div class="annotation-label" id="lbl-2" style="top: 30%; left: 10%; border-left-color: #e74c3c;">
+                <strong>PATTERN: Dual Consciousness</strong><br>Retrospective Voice
+            </div>
+        </div>
+
+        <div id="step-debug" class="controls-hint">Step: 0</div>
+
+        <!-- SUBTITLE LAYER -->
+        <div id="subtitle-container" class="subtitle-layer"></div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        window.sceneSteps = [
+        {
+                "duration": 7000,
+                "text": "Take the very first page. 'I wished I looked like Paul Newman.' To us, that's just a name. To a greaser in 1967, he was power."
+        },
+        {
+                "duration": 3000,
+                "text": "He represents the world Ponyboy can't have. It sets the stakes immediately."
+        },
+        {
+                "duration": 6000,
+                "text": "Now, look at the writing. 'I had only two things on my mind...' He's worrying about a ride home."
+        },
+        {
+                "duration": 5000,
+                "text": "That's the 14-year-old kid in the moment."
+        },
+        {
+                "duration": 5000,
+                "text": "But the voice telling the story? That's the older, wiser Ponyboy looking back."
+        },
+        {
+                "duration": 5000,
+                "text": "We call this 'Dual Consciousness'. The gap between what he felt then and what he knows now."
+        },
+        {
+                "duration": 10000,
+                "text": "This pattern is what we cover in Week 1. Enquire below for Term 1."
+        }
+];
+
+        window.addEventListener('studio-step', function(e) {
+            var step = e.detail.step;
+
+            // RESET
+            if (step === 0) {
+                document.getElementById('layer-intro').classList.add('active');
+                var el_context = document.getElementById('layer-context');
+                if (el_context) el_context.classList.remove('active');
+                var el_text = document.getElementById('layer-text');
+                if (el_text) el_text.classList.remove('active');
+                var el_outro = document.getElementById('layer-outro');
+                if (el_outro) el_outro.classList.remove('active');
+                var rh_hl_1 = document.getElementById('hl-1');
+                if (rh_hl_1) { rh_hl_1.classList.remove('draw-stroke'); rh_hl_1.style.opacity = ''; }
+                var rh_hl_2 = document.getElementById('hl-2');
+                if (rh_hl_2) { rh_hl_2.classList.remove('draw-stroke'); rh_hl_2.style.opacity = ''; }
+                var rl_lbl_1 = document.getElementById('lbl-1');
+                if (rl_lbl_1) { rl_lbl_1.classList.remove('show'); rl_lbl_1.style.opacity = ''; }
+                var rl_lbl_2 = document.getElementById('lbl-2');
+                if (rl_lbl_2) { rl_lbl_2.classList.remove('show'); rl_lbl_2.style.opacity = ''; }
+                var textLayer = document.getElementById('layer-text');
+                if (textLayer) textLayer.style.transform = '';
+                var ctxImg = document.getElementById('img-context');
+                if (ctxImg) ctxImg.classList.remove('context-pan');
+                var ctxTxt = document.getElementById('txt-context');
+                if (ctxTxt) ctxTxt.classList.remove('show');
+            }
+
+            // Step 1
+            if (step === 1) {
+                document.getElementById('layer-intro').classList.remove('active');
+                document.getElementById('layer-context').classList.add('active');
+                setTimeout(function() { document.getElementById('img-context').classList.add('context-pan'); }, 100);
+            }
+
+            // Step 2
+            if (step === 2) {
+                document.getElementById('txt-context').classList.add('show');
+            }
+
+            // Step 3
+            if (step === 3) {
+                document.getElementById('layer-context').classList.remove('active');
+                document.getElementById('layer-text').classList.add('active');
+                document.getElementById('layer-text').style.transform = 'scale(1.2)';
+            }
+
+            // Step 4
+            if (step === 4) {
+                document.getElementById('hl-1').classList.add('draw-stroke');
+                document.getElementById('lbl-1').classList.add('show');
+            }
+
+            // Step 5
+            if (step === 5) {
+                document.getElementById('layer-text').style.transform = 'scale(1.5) translate(0px, -100px)';
+                document.getElementById('hl-1').style.opacity = '0.3';
+                document.getElementById('lbl-1').style.opacity = '0.3';
+            }
+
+            // Step 6
+            if (step === 6) {
+                document.getElementById('hl-2').classList.add('draw-stroke');
+                document.getElementById('lbl-2').classList.add('show');
+            }
+
+            // Step 7
+            if (step === 7) {
+                document.getElementById('layer-text').classList.remove('active');
+                document.getElementById('layer-outro').classList.add('active');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

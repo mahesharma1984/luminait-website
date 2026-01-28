@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio: {{SCENE_TITLE}}</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        {{SCENE_STYLES}}
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+
+        <!-- INTRO LAYER (always present) -->
+        <div id="layer-intro" class="stage-layer active">
+            <img src="../assets/{{COVER_IMAGE}}" alt="Book Cover">
+        </div>
+
+        {{OUTRO_LAYER_HTML}}
+
+        {{CONTEXT_LAYER_HTML}}
+
+        <!-- TEXT ANALYSIS LAYER -->
+        <div id="layer-text" class="stage-layer">
+            <div class="book-text">
+{{TEXT_PARAGRAPHS}}
+            </div>
+
+{{HIGHLIGHTS_HTML}}
+
+{{LABELS_HTML}}
+        </div>
+
+        <div id="step-debug" class="controls-hint">Step: 0</div>
+
+        <!-- SUBTITLE LAYER -->
+        <div id="subtitle-container" class="subtitle-layer"></div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        window.sceneSteps = {{SCENE_STEPS_JSON}};
+
+{{STEP_HANDLER_JS}}
+    </script>
+</body>
+
+</html>
