@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio: The Outsiders (Scene 1)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* SCENE SPECIFIC STYLES */
+
+        /* 1. LAYER MANAGEMENT */
+        .stage-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4ecda;
+            /* Paper Tone */
+        }
+
+        .stage-layer.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* 2. INTRO PHASE */
+        #layer-intro {
+            background: #2c3e50;
+        }
+
+        #layer-intro img {
+            height: 80%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 3. CONTEXT PHASE */
+        #layer-context {
+            background: #000;
+        }
+
+        #layer-context img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: transform 10s ease-out;
+            transform: scale(1.1);
+        }
+
+        .context-pan {
+            transform: scale(1.0) !important;
+        }
+
+        .context-overlay {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            color: white;
+            font-family: 'Helvetica Neue', sans-serif;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 4rem;
+            text-shadow: 0 2px 10px black;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .context-overlay.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 4. TEXT PHASE */
+        #layer-text {
+            /* Simulating the Book Page */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4rem;
+            line-height: 2.2;
+            color: #333;
+            padding: 100px;
+            box-sizing: border-box;
+            background: url('assets/paper-texture.jpg'), #fffdf5;
+            /* Fallback */
+            transform-origin: top left;
+            transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .book-text {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Highlighting SVG */
+        .svg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .highlighter-path {
+            fill: none;
+            stroke: #ffeb3b;
+            /* Highlighter Yellow */
+            stroke-width: 14;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            mix-blend-mode: multiply;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.6;
+        }
+
+        .connector-line {
+            stroke: #3498db;
+            /* Blue Pen */
+            stroke-width: 3;
+            opacity: 1;
+            mix-blend-mode: normal;
+        }
+
+        .draw-stroke {
+            stroke-dashoffset: 0;
+        }
+
+        /* LABELS */
+        .annotation-label {
+            position: absolute;
+            background: white;
+            padding: 12px 20px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            font-family: sans-serif;
+            font-size: 1rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+            z-index: 30;
+        }
+
+        .annotation-label.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+
+        <!-- PHASE 0: INTRO -->
+        <div id="layer-intro" class="stage-layer active">
+            <img src="assets/outsiders-cover.png" alt="Book Cover">
+        </div>
+
+        <!-- PHASE 4: OUTRO (Service CTA) -->
+        <div id="layer-outro" class="stage-layer" style="background: #1e3a5f;">
+            <img src="assets/course-cta.png" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+        <!-- PHASE 1: CONTEXT -->
+        <div id="layer-context" class="stage-layer">
+            <img src="assets/paul-newman.png" id="img-newman" alt="Paul Newman">
+            <div class="context-overlay" id="txt-context">THE IDOL</div>
+        </div>
+
+        <!-- PHASE 2: TEXT ANALYSIS -->
+        <div id="layer-text" class="stage-layer">
+            <div class="book-text">
+                <p>When I stepped out into the bright sunlight from the darkness of the movie house, <span
+                        id="target-1">I had only two things on my mind: Paul Newman and a ride home.</span></p>
+
+                <p>I was wishing I looked like Paul Newman — he looks tough and I don't — but I have to be content with
+                    what I have. My hair is longer than a lot of boys wear theirs, squared off in back and long at the
+                    front and sides, but I am a greaser and most of my neighborhood rarely bothers to get a haircut.
+                    Besides, I look better with long hair. <span id="target-2">I had a long walk home and no company,
+                        but I usually lone it anyway</span>, for no reason except that I like to watch movies
+                    undisturbed so I can get into them and live them with the actors.</p>
+            </div>
+
+            <svg class="svg-overlay" id="highlights" viewBox="0 0 1400 900">
+                <!-- Highlight 1: "Two things on my mind..." -->
+                <path id="stroke-1" class="highlighter-path" d="M 200 130 L 780 130" />
+
+                <!-- Highlight 2: "Wishing I looked like..." (Blue Underline) -->
+                <path id="stroke-2" class="highlighter-path connector-line" d="M 100 230 L 400 230"
+                    style="stroke: #3498db; stroke-width: 4;" />
+            </svg>
+
+            <div class="annotation-label" id="label-1" style="top: 15%; left: 60%;">
+                <strong>The 14-Year Old</strong><br>Immediate Concerns
+            </div>
+
+            <div class="annotation-label" id="label-2" style="top: 30%; left: 10%; border-left-color: #e74c3c;">
+                <strong>PATTERN: Dual Consciousness</strong><br>Retrospective Voice
+            </div>
+
+        </div>
+
+        <div id="step-debug" class="controls-hint">Step: 0</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const layerIntro = document.getElementById('layer-intro');
+        const layerContext = document.getElementById('layer-context');
+        const layerText = document.getElementById('layer-text');
+
+        const imgNewman = document.getElementById('img-newman');
+        const txtContext = document.getElementById('txt-context');
+
+        const stroke1 = document.getElementById('stroke-1');
+        const stroke2 = document.getElementById('stroke-2');
+        const label1 = document.getElementById('label-1');
+        const label2 = document.getElementById('label-2');
+
+        // SCENE LOGIC
+        window.addEventListener('studio-step', (e) => {
+            const step = e.detail.step;
+
+            // RESET
+            if (step === 0) {
+                layerIntro.classList.add('active');
+                layerContext.classList.remove('active');
+                layerText.classList.remove('active');
+            }
+
+            // 1. CONTEXT: Paul Newman
+            if (step === 1) {
+                layerIntro.classList.remove('active');
+                layerContext.classList.add('active');
+
+                // Trigger Pan Effect
+                setTimeout(() => imgNewman.classList.add('context-pan'), 100);
+            }
+
+            // 2. TEXT OVERLAY: "The Idol"
+            if (step === 2) {
+                txtContext.classList.add('show');
+            }
+
+            // 3. TEXT PHASE: Enter the Book
+            if (step === 3) {
+                layerContext.classList.remove('active');
+                layerText.classList.add('active');
+
+                // Initial Zoom
+                layerText.style.transform = "scale(1.2)";
+            }
+
+            // 4. HIGHLIGHT: Surface Concern
+            if (step === 4) {
+                stroke1.classList.add('draw-stroke');
+                label1.classList.add('show');
+            }
+
+            // 5. ZOOM & PIVOT: The Pattern
+            if (step === 5) {
+                // Focus on the second paragraph
+                layerText.style.transform = "scale(1.5) translate(0px, -100px)";
+
+                // Fade out previous
+                stroke1.style.opacity = "0.3";
+                label1.style.opacity = "0.3";
+            }
+
+            // 6. METALANGUAGE
+            if (step === 6) {
+                stroke2.classList.add('draw-stroke');
+                label2.classList.add('show');
+            }
+
+        });
+    </script>
+</body>
+
+</html>
