@@ -78,23 +78,51 @@ Before producing any content, read these in order:
 
 ### Stage 2: Video Scenes
 
-**What they are:** Visual demonstrations of a single device from a single arc position.
+**What they are:** Visual demonstrations of a single technique from Week 3 of the curriculum.
 
 **Where they live:**
 - Hand-built scenes: `studio/` (e.g., `outsiders-scene-week3-first-person.html`)
 - Templated scenes: `studio/scenes/` (generated from `data/video-scenes/*.json`)
 - Scripts: `studio/scripts/`
 
+**Production requirement:**
+- **3 videos per text**, one for each of the 3 techniques listed in Week 3 of that text's curriculum guide (`data/parent-guides/[text].json`)
+- Example (The Outsiders): Technique 1 = First-Person Narration, Technique 2 = Symbolism, Technique 3 = Characterization
+- Example (To Kill a Mockingbird): Technique 1 = Symbolism, Technique 2 = First-Person Retrospective Narration, Technique 3 = Social Commentary
+
 **What they contain:**
-- A 4-phase structure: Hook → Context/Text → Deconstruction → Conclusion
+- A pedagogical structure: **Setup → Demonstration → Reinforcement**
 - Highlights and labels on specific words in the quote
 - Voiceover script synchronised to visual actions
+- Duration: 60-90 seconds total
+
+**Required pedagogical structure:**
+
+1. **Setup (15-20 seconds):**
+   - Step 1: Name the text, author, and technique being demonstrated
+   - Step 2: Explain what the technique is in simple terms
+   - Step 3: State what this scene will show (preview the learning)
+
+2. **Demonstration (35-50 seconds):**
+   - Step 4: Provide context for the passage (where in the novel, what's happening)
+   - Step 5: Transition to the text layer
+   - Step 6-10: **Read the quote aloud**, then analyze it piece by piece
+     - CRITICAL: You must narrate the actual quote, not just reference it
+     - Read dialogue if present
+     - Read the narrator's observations
+     - Highlight specific phrases as you analyze them
+     - Use labels to identify what each phrase reveals
+
+3. **Reinforcement (10-15 seconds):**
+   - Step 11-12: Name the technique again, summarize what it reveals
+   - Step 13: Connect to curriculum week with factual CTA (no pressure, no urgency)
 
 **What you need to get right:**
-- The device, quote, and explanation must match the teacher guide entry for that arc position. See Alignment Spec §B.
-- Multiple scenes across an arc must show pattern reinforcement: the same pattern through different devices, with escalating intensity. Not repetition. See Alignment Spec §B.
-- Each scene must connect to a specific curriculum week technique. See Alignment Spec §C.
-- The hook should state what the scene demonstrates. Not a dramatic aphorism. See Style Guide §1 and §2.
+- **Quote narration is mandatory.** The viewer must hear the actual text read aloud, not just see it on screen.
+- **Pedagogical setup is mandatory.** Tell them what they'll learn before showing them. This serves both teaching and sales purposes.
+- **Clean sentence construction.** No paired simple sentences for dramatic effect ("X is this. Y is that."). Use complete thoughts or complex sentences.
+- The device, quote, and explanation must match the teacher guide entry for that arc position (if teacher guide exists). See Alignment Spec §B.
+- Each scene must connect to one of the 3 techniques listed in Week 3 of the curriculum guide for that text.
 - The CTA should state what exists (the course, the week). Not pressure the viewer. See Style Guide §4.
 
 ### Stage 3: Full Package (not yet built)
@@ -127,6 +155,13 @@ Full rules with before/after examples are in `studio/STYLE_GUIDE.md`. The short 
 5. **No vague abstraction.** Name the quote, the word, the technique. If you cannot be specific, the sentence is too vague.
    - Bad: "The narrator's insider status allows readers to experience conflict through lived experience."
 
+6. **No paired simple sentences for dramatic effect.** This is a common AI writing trick. Use complete thoughts or complex sentences instead.
+   - Bad: "Courage isn't just standing up. Sometimes it's turning away."
+   - Bad: "He doesn't triumph. He turns away."
+   - Bad: "He looks physically ill. The truth hurts him."
+   - Good: "His body betrays the emotional cost of questioning a vulnerable witness, even when pursuing justice."
+   - Good: "He turns away, which breaks his usual courtesy and signals internal conflict."
+
 **Write in Australian English.** Analyse, recognise, colour, characterisation.
 
 **Sentence construction:** Simple or complex sentences. No theatrical fragments. One idea per sentence. Ground every claim in specific textual evidence.
@@ -153,6 +188,26 @@ These terms have specific meanings in this project. Use them precisely.
 
 ## Workflow
 
+### When asked to produce Week 3 videos for a text:
+
+1. **Check the curriculum guide:** Open `data/parent-guides/[text-slug].json`
+2. **Find Week 3:** Look for the week object where `"week": 3`
+3. **Extract the 3 techniques:** Week 3's `topics` array will list 3 techniques (Technique 1, Technique 2, Technique 3)
+4. **Produce 3 videos:** One video per technique, following the pedagogical structure specified in Stage 2 above
+5. **Verify alignment:** Each video must demonstrate the specific technique listed in the curriculum
+
+**Example - The Outsiders:**
+```json
+"week": 3,
+"topics": [
+  "Technique 1: First-Person Narration (Ponyboy's voice)",
+  "Technique 2: Symbolism (sunsets, gold, hair)",
+  "Technique 3: Characterization (humanizing both sides)",
+  ...
+]
+```
+→ Produce 3 videos: one on First-Person Narration, one on Symbolism, one on Characterization
+
 ### When asked to create a teacher guide:
 
 1. Identify the text, the lens (Relational or Social), and the pattern
@@ -164,14 +219,29 @@ These terms have specific meanings in this project. Use them precisely.
 
 ### When asked to create a video scene spec or script:
 
-1. Identify which teacher guide entry this scene is based on (which device, which arc position)
-2. Use the same quote from the teacher guide
-3. Write the hook as a clear statement of what the scene demonstrates
-4. Write the deconstruction by naming specific words from the quote and explaining what they reveal
-5. Write the conclusion by referencing the curriculum week and technique
-6. Write the CTA as a factual statement
-7. Run the alignment checklist (Alignment Spec §D)
-8. If part of a multi-scene set, verify pattern reinforcement: does this scene build on the previous one?
+1. **Setup (Steps 1-3):**
+   - Step 1: Name the text, author, and technique (e.g., "In To Kill a Mockingbird, Harper Lee uses Indirect Characterization to reveal what characters won't say directly.")
+   - Step 2: Explain what the technique is in simple terms
+   - Step 3: Preview what this scene will show
+
+2. **Demonstration (Steps 4-10):**
+   - Step 4: Provide context (where in the novel, what's happening)
+   - Step 5: Transition to text layer
+   - Steps 6-10: **Read the quote aloud first**, then analyze it
+     - Read dialogue if present
+     - Read the narrator's observations
+     - Highlight specific phrases as you analyze
+     - Use labels to show what each phrase reveals
+     - CRITICAL: Never skip reading the actual quote. The viewer must hear it, not just see it.
+
+3. **Reinforcement (Steps 11-13):**
+   - Step 11-12: Name the technique again, summarize what it reveals
+   - Step 13: Connect to curriculum week with factual CTA (no pressure)
+
+4. **Verify:**
+   - Run the alignment checklist (Alignment Spec §D)
+   - Check that sentences follow prohibition #6 (no paired simple sentences)
+   - If the scene is based on a teacher guide entry, verify the device and quote match
 
 ### When asked to create a full video package:
 
