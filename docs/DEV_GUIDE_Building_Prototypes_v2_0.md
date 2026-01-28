@@ -94,7 +94,23 @@ Define the pattern/schema/structure before populating it.
 
 The pattern: Always define the schema before populating instances.
 
-### 1.5 Claude's Output Is Hypothesis
+### 1.6 Simplest First
+
+Build the manual version before automating. If the problem can be solved by copying a file and editing it, do that first. Only add abstraction (build scripts, JSON schemas, pipelines) when the manual approach has proven painful through repeated use.
+
+| Wrong | Right |
+|-------|-------|
+| "Let's build a JSON → HTML pipeline" | "Let's copy the template and edit it for 3 books, then see if a script is worth it" |
+| "I'll create a build system with defaults" | "I'll make one working page by hand first" |
+| "This needs a declarative action schema" | "Let me write the JS directly for 2 scenes, then extract the pattern" |
+
+The automation threshold: If you've done it manually 3+ times and the pattern is clear and stable, then automate. Not before.
+
+**Claude should present both options.** When asked to build something, Claude should describe the simple version (manual, copy-and-edit) and the complex version (automated, abstracted), then let the author choose. Don't default to the complex version just because it's more "engineered."
+
+**Incident:** On Jan 28, a JSON → build-script → HTML pipeline was built for video scenes when a copyable HTML template would have sufficed. The automation was premature — only one scene existed, and the pattern wasn't yet proven through manual repetition.
+
+### 1.7 Claude's Output Is Hypothesis
 
 "This should work" from Claude means:
 - The logic seems sound
@@ -817,6 +833,7 @@ Expected: [What success looks like]
 |---------|------|---------|
 | 1.0 | Jan 16, 2026 | Initial guide — exploration to handoff |
 | 2.0 | Jan 16, 2026 | Consolidated: absorbs Exploration-First, LLM Capabilities, Iterative Fix, Pattern-First |
+| 2.1 | Jan 28, 2026 | Added §1.6 "Simplest First" — build manual before automating; Claude should present simple + complex options |
 
 **Replaces:**
 - DEV_GUIDE_ADDENDUM_Exploration_First_v2_0.md
