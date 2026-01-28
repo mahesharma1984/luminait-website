@@ -85,6 +85,10 @@ All three of these imply the parent is currently failing ("don't let them miss",
 **Good:**
 > "Week 3 of the curriculum covers first-person narration, symbolism, and characterisation. Details are on the course page."
 
+**Good (video outro end card):**
+> "See the full 10-week course plan"
+> luminait.app/[text-slug]
+
 State what exists. Let the parent decide.
 
 ---
@@ -135,7 +139,9 @@ This sentence contains no information. What insider status? Which conflict? What
 The "Pattern Function" column in device/quote tables is where most problems occur. Replace "executes the pattern by..." with a plain explanation of what the device does at this moment in the novel and why the author chose it here.
 
 ### Video Scripts
-The Phase 1 hook and Phase 4 CTA are where antithesis and sales language concentrate. Write the hook as a clear statement of what the scene will demonstrate. Write the CTA as a factual reference to the curriculum.
+The pedagogical setup (Steps 1-3) and the final CTA (Step 13) are where antithesis and sales language concentrate. Write the setup as a clear statement of what the scene will demonstrate. Write the CTA as a factual reference to the curriculum.
+
+**Outro end card (Step 14):** Every video must end with a minimal text-only end card showing: book title, week/technique, and the factual CTA "See the full 10-week course plan" with the course URL. No images, no pressure language, no "Enrol now" or "Help your child" phrasing.
 
 ### Scene Specs
 Labels and annotations should name the device and explain it in one sentence. Do not use labels as opportunities for dramatic copywriting.

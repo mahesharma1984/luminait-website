@@ -247,6 +247,7 @@
 
         <!-- P2: TEXT -->
         <div id="layer-text" class="stage-layer">
+
             <div class="book-text">
                 <p>"Why don’t you tell the truth, child, didn’t Bob Ewell beat you up?"</p>
 
@@ -266,6 +267,16 @@
                 <path id="stroke-1" class="highlighter-path" d="" />
                 <path id="stroke-2" class="highlighter-path" d="" style="stroke: #e74c3c;" />
             </svg>
+        </div>
+
+        <!-- P3: OUTRO -->
+        <div id="layer-outro" class="stage-layer">
+            <div style="text-align: center; color: white;">
+                <h1 style="font-family: 'Times New Roman', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #f1c40f;">To Kill a Mockingbird</h1>
+                <p style="font-size: 1.5rem; margin-bottom: 2rem; color: #e0e0e0;">Week 2: Indirect Characterization</p>
+                <p style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #b0b0b0;">See the full 10-week course plan</p>
+                <p style="font-size: 1.3rem; color: #3498db; font-weight: 600;">luminait.app/to-kill-a-mockingbird</p>
+            </div>
         </div>
 
         <div id="subtitle-container" class="subtitle-layer"></div>
@@ -397,7 +408,16 @@
                 duration: 5000,
                 text: "This technique appears in Week 2 of our curriculum, where students learn to identify how authors reveal character through action.",
                 action: () => {
-                    // Could fade to outro or keep final annotation visible
+                    // Reinforcement step - keep annotations visible
+                }
+            },
+            {
+                duration: 5000,
+                text: "",
+                action: () => {
+                    // Transition to outro
+                    document.getElementById('layer-text').classList.remove('active');
+                    document.getElementById('layer-outro').classList.add('active');
                 }
             }
         ];

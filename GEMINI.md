@@ -116,11 +116,33 @@ Before producing any content, read these in order:
 3. **Reinforcement (10-15 seconds):**
    - Step 11-12: Name the technique again, summarize what it reveals
    - Step 13: Connect to curriculum week with factual CTA (no pressure, no urgency)
+   - Step 14: Transition to outro end card (no subtitle, visual only)
+
+**Outro end card (Step 14):**
+
+A minimal, text-only end card with centered content on a dark background:
+
+```html
+<div id="layer-outro" class="stage-layer">
+    <div style="text-align: center; color: white;">
+        <h1 style="font-family: serif; font-size: 2.5rem; margin-bottom: 1rem; color: #f1c40f;">[Book Title]</h1>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem; color: #e0e0e0;">Week [X]: [Technique Name]</p>
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #b0b0b0;">See the full 10-week course plan</p>
+        <p style="font-size: 1.3rem; color: #3498db; font-weight: 600;">luminait.app/[text-slug]</p>
+    </div>
+</div>
+```
+
+- Background: Same dark color as context layer (e.g., #000 or #1a1a1a)
+- Duration: 5 seconds
+- No subtitle (subtitle layer hidden)
+- Factual, no pressure: "See the full 10-week course plan" (not "Enrol now" or "Help your child")
 
 **What you need to get right:**
 - **Quote narration is mandatory.** The viewer must hear the actual text read aloud, not just see it on screen.
 - **Pedagogical setup is mandatory.** Tell them what they'll learn before showing them. This serves both teaching and sales purposes.
 - **Clean sentence construction.** No paired simple sentences for dramatic effect ("X is this. Y is that."). Use complete thoughts or complex sentences.
+- **Outro end card is mandatory.** Every video must end with the minimal end card showing book title, week/technique, and course URL.
 - The device, quote, and explanation must match the teacher guide entry for that arc position (if teacher guide exists). See Alignment Spec §B.
 - Each scene must connect to one of the 3 techniques listed in Week 3 of the curriculum guide for that text.
 - The CTA should state what exists (the course, the week). Not pressure the viewer. See Style Guide §4.
