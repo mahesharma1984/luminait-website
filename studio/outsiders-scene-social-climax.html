@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio: The Outsiders (Scene 3 - Climax)</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: sans-serif;
+        }
+
+        /* STAGE */
+        .stage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LAYERS */
+        .stage-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+
+        .stage-layer.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* IMAGES */
+        img {
+            max-height: 90vh;
+            max-width: 90vw;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* SPECIFIC LAYERS */
+        #layer-context {
+            background: #000;
+        }
+
+        #layer-context img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.5) sepia(0.3);
+            /* Fire aesthetic */
+            opacity: 0.5;
+            transition: transform 10s ease-out;
+            transform: scale(1.1);
+        }
+
+        .context-pan {
+            transform: scale(1.0) !important;
+        }
+
+        .context-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff4d4d;
+            /* Red for Urgent/Fire */
+            font-family: 'Impact', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 5rem;
+            border: 4px solid #ff4d4d;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .context-overlay.show {
+            opacity: 1;
+        }
+
+        /* TEXT LAYER */
+        #layer-text {
+            background: #fdfbf7;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            line-height: 2.2;
+            padding: 80px;
+            transform-origin: center center;
+            transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .book-text {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* HIGHLIGHTS (SVG) */
+        .svg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .highlighter-path {
+            fill: none;
+            stroke: #ffeb3b;
+            stroke-width: 14;
+            stroke-linecap: round;
+            mix-blend-mode: multiply;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.6;
+        }
+
+        .box-highlight {
+            fill: none;
+            stroke: #e74c3c;
+            stroke-width: 4;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.8;
+        }
+
+        .draw-stroke {
+            stroke-dashoffset: 0;
+        }
+
+        /* LABELS */
+        .annotation-label {
+            position: absolute;
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 20px;
+            border-left: 4px solid #ff4d4d;
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+            z-index: 30;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .annotation-label.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SUBTITLES */
+        .subtitle-layer {
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 4px black;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .subtitle-layer.show {
+            opacity: 1;
+        }
+
+        /* CONTROLS */
+        #play-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        #step-debug {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            opacity: 0.5;
+            font-family: monospace;
+        }
+
+        /* THEME INDICATOR */
+        #theme-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ff4d4d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            z-index: 50;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        #theme-tag.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+
+        <div id="theme-tag">Theme: Heroes or Criminals</div>
+
+        <!-- P0: INTRO -->
+        <div id="layer-intro" class="stage-layer active">
+            <img src="assets/outsiders-cover.png" alt="Book Cover">
+        </div>
+
+        <!-- P1: CONTEXT -->
+        <div id="layer-context" class="stage-layer">
+            <!-- Using Greasers as placeholder, darkened heavily for 'Smoke/Fire' vibe -->
+            <img src="assets/greasers.png" id="img-context">
+            <div class="context-overlay" id="txt-context">LABELS</div>
+        </div>
+
+        <!-- P2: TEXT -->
+        <div id="layer-text" class="stage-layer">
+            <div class="book-text">
+                <p>"I swear, you three are the bravest kids I've seen in a long time.
+                    First you, then the other one... <span id="target-1">Are you sent from heaven?</span>"</p>
+
+                <p>I looked at the man. Jerry Wood. He was too heavy to get in the window,
+                    so he had stayed out.</p>
+
+                <p>"<span id="target-2">No,</span>" I said. "<span id="target-3">We're greasers.</span>"</p>
+
+                <p>Jerry didn't seem to know what I was talking about.</p>
+            </div>
+
+            <div class="annotation-label" id="label-1"></div>
+            <div class="annotation-label" id="label-2"></div>
+            <div class="annotation-label" id="label-3" style="bottom: 20%; left: 50%; transform: translateX(-50%);">
+                <strong>Situational Irony</strong><br>The Sticky Label
+            </div>
+
+            <!-- SVG Container for Lines -->
+            <svg class="svg-overlay" id="highlights" width="100%" height="100%">
+                <path id="stroke-1" class="highlighter-path" d="" style="stroke: #ffbd2e;" /> <!-- Gold for Heaven -->
+                <path id="stroke-2" class="box-highlight" style="stroke: #555;" /> <!-- Grey/Dark for Greaser -->
+            </svg>
+        </div>
+
+        <div id="subtitle-container" class="subtitle-layer"></div>
+        <div id="step-debug">Step: 0</div>
+    </div>
+
+    <div id="play-overlay" onclick="startSequence()">
+        <div style="font-size: 2rem;">▶ Start Climax Scene</div>
+        <div style="margin-top: 10px; opacity: 0.7;">Audio: assets/music.mp3</div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // --- NARRATIVE SCRIPT (THE SIMPLE TRUTH) ---
+        // Section: Climax
+        // Theme: Heroes or Criminals
+        const sequence = [
+            {
+                duration: 4000,
+                text: "What happens when a 'criminal' saves a life? Does he become a hero?",
+                action: () => {
+                    playMusic();
+                    document.getElementById('theme-tag').classList.add('show');
+                }
+            },
+            {
+                duration: 5000,
+                text: "The church is on fire. Ponyboy and Johnny run in. They save the children. They do the impossible.",
+                action: () => {
+                    document.getElementById('layer-intro').classList.remove('active');
+                    document.getElementById('layer-context').classList.add('active');
+                    setTimeout(() => document.getElementById('img-context').classList.add('context-pan'), 100);
+                    // Overlay Text
+                    const txt = document.getElementById('txt-context');
+                    txt.innerText = "HERO?";
+                    setTimeout(() => txt.classList.add('show'), 1000);
+                }
+            },
+            {
+                duration: 4000,
+                text: "The teacher, Jerry, is shocked. He looks at these boys and asks the ultimate question.",
+                action: () => {
+                    document.getElementById('layer-context').classList.remove('active');
+                    document.getElementById('layer-text').classList.add('active');
+                    document.getElementById('layer-text').style.transform = "scale(1.1)";
+                }
+            },
+            {
+                duration: 5000,
+                text: "'Are you sent from heaven?' He calls them angels.",
+                action: () => {
+                    // Highlight 1: "Sent from heaven" (Gold)
+                    document.getElementById('stroke-1').classList.add('draw-stroke');
+
+                    const l1 = document.getElementById('label-1');
+                    l1.innerHTML = "<strong>The Action</strong><br>Heroism";
+                    // Dynamic Pos
+                    const t1 = getCoords('target-1');
+                    l1.style.top = (t1.y - 70) + 'px';
+                    l1.style.left = (t1.x) + 'px';
+                    l1.style.borderLeftColor = "#ffbd2e"; // Match gold
+                    l1.classList.add('show');
+                }
+            },
+            {
+                duration: 4000,
+                text: "But look at Ponyboy's answer. He doesn't say 'Thank you'.",
+                action: () => {
+                    // Zoom in on the answer
+                    document.getElementById('layer-text').style.transform = "scale(1.3) translateY(-50px)";
+                }
+            },
+            {
+                duration: 6000,
+                text: "He says, 'No. We're greasers.' He corrects the compliment.",
+                action: () => {
+                    // Highlight 2: "No" ... "We're greasers"
+                    // We'll box the whole phrase "No... We're greasers"
+                    document.getElementById('stroke-2').style.opacity = 1;
+                    document.getElementById('stroke-2').classList.add('draw-stroke');
+
+                    const l2 = document.getElementById('label-2');
+                    l2.innerHTML = "<strong>The Label</strong><br>Criminal";
+                    // Dynamic Pos
+                    const t3 = getCoords('target-3');
+                    l2.style.top = (t3.y + 60) + 'px';
+                    l2.style.left = (t3.x - 50) + 'px';
+                    l2.style.borderLeftColor = "#555";
+                    l2.classList.add('show');
+
+                    // Fade old
+                    document.getElementById('stroke-1').style.opacity = 0.3;
+                    document.getElementById('label-1').style.opacity = 0.3;
+                }
+            },
+            {
+                duration: 7000,
+                text: "Because he knows the simple truth: The label is sticky. Even when you're a hero, you're still trash.",
+                action: () => {
+                    // Just hold visuals
+                }
+            },
+            {
+                duration: 6000,
+                text: "This is Situational Irony. The action says 'Angel', but the society says 'Greaser'. And the Greaser wins.",
+                action: () => {
+                    document.getElementById('layer-text').style.transform = "scale(1.0)";
+                    document.getElementById('label-3').classList.add('show');
+                }
+            }
+        ];
+
+        // --- HELPER: DYNAMIC ALIGNMENT ---
+        function getCoords(id) {
+            const el = document.getElementById(id);
+            const r = el.getBoundingClientRect();
+            return { x: r.left, y: r.top, w: r.width, h: r.height };
+        }
+
+        function updateHighlights() {
+            // 1. Line Underline (Stroke 1) -> Target 1 (Heaven)
+            const c1 = getCoords('target-1');
+            const path = document.getElementById('stroke-1');
+            const y = c1.y + c1.h + 5;
+            path.setAttribute('d', `M ${c1.x} ${y} L ${c1.x + c1.w} ${y}`);
+
+            // 2. Box (Stroke 2) -> "No" to "Greasers"
+            // We need to cover Target 2 ("No") and Target 3 ("We're greasers")
+            // Assuming they are on the same line for this demo, or we just box Target 3 for simplicity.
+            // Let's box Target 3 heavily.
+            const c3 = getCoords('target-3');
+            const rect = document.getElementById('stroke-2');
+            rect.setAttribute('x', c3.x - 10);
+            rect.setAttribute('y', c3.y - 5);
+            rect.setAttribute('width', c3.w + 20);
+            rect.setAttribute('height', c3.h + 10);
+        }
+
+        window.addEventListener('resize', updateHighlights);
+
+        // --- ENGINE ---
+        let step = -1;
+        function playMusic() {
+            const m = document.getElementById('bg-music');
+            if (m) { m.volume = 0.5; m.play().catch(e => console.log("Audio waiting for interaction")); }
+        }
+
+        function startSequence() {
+            document.getElementById('play-overlay').style.display = 'none';
+            updateHighlights();
+            next();
+        }
+
+        function next() {
+            step++;
+            if (step >= sequence.length) return;
+            const s = sequence[step];
+            document.getElementById('step-debug').innerText = `Step: ${step + 1}/${sequence.length}`;
+            const sub = document.getElementById('subtitle-container');
+            if (s.text) { sub.innerText = s.text; sub.classList.add('show'); }
+            else { sub.classList.remove('show'); }
+            if (s.action) s.action();
+            if (s.duration) setTimeout(next, s.duration);
+        }
+
+    </script>
+</body>
+
+</html>
