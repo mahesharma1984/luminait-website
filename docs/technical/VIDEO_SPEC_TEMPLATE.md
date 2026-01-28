@@ -14,11 +14,16 @@
 
 ---
 
-## Required Assets
-*   **Book Cover**: `assets/[book]-cover.jpg`
-*   **Context Image**: `assets/[context].jpg` (Who/What/Where)
-*   **Text Page**: `assets/[book]-text-[ch].jpg`
-*   **CTA Overlay**: `assets/course-cta.png`
+## Scripting Guidelines: The "Simple Truth" Translation
+**CRITICAL**: Do not paste the "Pattern Function" directly into the script. It is too academic. You must translate it into "Simple English" (The "Paul Newman" Style).
+
+| Academic Source (The Guide) | The Simple Truth (The Script) |
+|-----------------------------|-------------------------------|
+| "Establishes insider skills to authenticate membership." | "You don't get in by being nice. You get in by being useful." |
+| "Contrasts privilege with insider knowledge of threat." | "To us, 20 vs 22 is fair. To him, it's a slaughter. He knows the math is a lie." |
+| "Disoriented consciousness establishes perspective." | "Wake up with him. He flinches. He lives waiting for the next blow." |
+
+**Rule**: Focus on **Power**, **Survival**, and **Stakes**. Avoid words like "authenticates", "juxtaposes", or "demonstrates" in the *voiceover* (keep them in the labels).
 
 ---
 

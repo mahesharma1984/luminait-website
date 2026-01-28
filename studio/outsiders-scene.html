@@ -154,6 +154,54 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* SUBTITLES */
+        .subtitle-layer {
+            position: absolute;
+            bottom: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .subtitle-layer.show {
+            opacity: 1;
+        }
+
+        /* PLAY BUTTON OVERLAY */
+        #play-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 2rem;
+            flex-direction: column;
+        }
+
+        #play-overlay small {
+            font-size: 1rem;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
     </style>
 </head>
 
@@ -210,80 +258,194 @@
 
         </div>
 
-        <div id="step-debug" class="controls-hint">Step: 0</div>
+        <div id="step-debug" class="controls-hint"
+            style="position: absolute; top: 10px; right: 10px; color: white; opacity: 0.5;">Step: 0</div>
+
+        <!-- SUBTITLE LAYER -->
+        <div id="subtitle-container" class="subtitle-layer show"></div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- CLICK TO START OVERLAY -->
+    <div id="play-overlay" onclick="startSequence()">
+        <div>▶ Click to Start Sequence</div>
+        <small>F11 for Fullscreen first</small>
+    </div>
+
+    <!-- AUDIO LAYER -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        const layerIntro = document.getElementById('layer-intro');
-        const layerContext = document.getElementById('layer-context');
-        const layerText = document.getElementById('layer-text');
+        // --- CONFIGURATION: SCRIPT & TIMING ---
+        // Edit this array to change the video flow.
+        const sequence = [
+            {
+                duration: 6000,
+                text: "Take the very first page. 'I wished I looked like Paul Newman.' To us, that's just a name. To a greaser in 1967, he was power.",
+                action: () => {
+                    // Intro is already active by default
+                    playMusic();
+                }
+            },
+            {
+                duration: 4000,
+                text: "He represents the world Ponyboy can't have. It sets the stakes immediately.",
+                action: () => {
+                    // Activate Context Layer: Paul Newman
+                    document.getElementById('layer-intro').classList.remove('active');
+                    document.getElementById('layer-context').classList.add('active');
+                    setTimeout(() => document.getElementById('img-newman').classList.add('context-pan'), 100);
+                }
+            },
+            {
+                duration: 3000,
+                text: "THE IDOL.",
+                action: () => {
+                    // Text Overlay
+                    document.getElementById('txt-context').classList.add('show');
+                }
+            },
+            {
+                duration: 6000,
+                text: "Now, look at the writing. 'I had only two things on my mind...' He's worrying about a ride home.",
+                action: () => {
+                    // Switch to Book Text
+                    document.getElementById('layer-context').classList.remove('active');
+                    const layerText = document.getElementById('layer-text');
+                    layerText.classList.add('active');
+                    layerText.style.transform = "scale(1.2)"; // Initial Zoom
+                }
+            },
+            {
+                duration: 5000,
+                text: "That's the 14-year-old kid in the moment.",
+                action: () => {
+                    // Highlight 1
+                    document.getElementById('stroke-1').classList.add('draw-stroke');
+                    document.getElementById('label-1').classList.add('show');
+                }
+            },
+            {
+                duration: 6000,
+                text: "But the voice telling the story? That's the older, wiser Ponyboy looking back.",
+                action: () => {
+                    // Zoom & Pivot
+                    const layerText = document.getElementById('layer-text');
+                    layerText.style.transform = "scale(1.5) translate(0px, -100px)";
 
-        const imgNewman = document.getElementById('img-newman');
-        const txtContext = document.getElementById('txt-context');
+                    // Fade out previous
+                    document.getElementById('stroke-1').style.opacity = "0.3";
+                    document.getElementById('label-1').style.opacity = "0.3";
+                }
+            },
+            {
+                duration: 6000,
+                text: "We call this 'Dual Consciousness'. The gap between what he felt then and what he knows now.",
+                action: () => {
+                    // Metalanguage Highlight
+                    document.getElementById('stroke-2').classList.add('draw-stroke');
+                    document.getElementById('label-2').classList.add('show');
+                }
+            },
+            {
+                duration: 8000,
+                text: "This pattern is what we cover in Week 1. Enquire below for Term 1.",
+                action: () => {
+                    // Outro
+                    document.getElementById('layer-text').classList.remove('active');
+                    document.getElementById('layer-outro').classList.add('active');
+                }
+            }
+        ];
 
-        const stroke1 = document.getElementById('stroke-1');
-        const stroke2 = document.getElementById('stroke-2');
-        const label1 = document.getElementById('label-1');
-        const label2 = document.getElementById('label-2');
+        // --- DYNAMIC ALIGNMENT ---
+        function updateHighlights() {
+            const svg = document.getElementById('highlights');
+            const svgRect = svg.getBoundingClientRect();
 
-        // SCENE LOGIC
-        window.addEventListener('studio-step', (e) => {
-            const step = e.detail.step;
-
-            // RESET
-            if (step === 0) {
-                layerIntro.classList.add('active');
-                layerContext.classList.remove('active');
-                layerText.classList.remove('active');
+            // Helper to get relative coordinates
+            function getCoords(activeId, padding = 0) {
+                const el = document.getElementById(activeId);
+                const rect = el.getBoundingClientRect();
+                return {
+                    x: rect.left - svgRect.left - padding,
+                    y: rect.top - svgRect.top - padding,
+                    w: rect.width + (padding * 2),
+                    h: rect.height + (padding * 2),
+                    centerY: (rect.top - svgRect.top) + (rect.height / 2)
+                };
             }
 
-            // 1. CONTEXT: Paul Newman
-            if (step === 1) {
-                layerIntro.classList.remove('active');
-                layerContext.classList.add('active');
+            // 1. Highlight 1 (Stroke 1) -> Target 1
+            const t1 = getCoords('target-1');
+            const stroke1 = document.getElementById('stroke-1');
+            // Draw underline
+            stroke1.setAttribute('d', `M ${t1.x} ${t1.centerY + 10} L ${t1.x + t1.w} ${t1.centerY + 5}`);
 
-                // Trigger Pan Effect
-                setTimeout(() => imgNewman.classList.add('context-pan'), 100);
+            // 2. Highlight 2 (Stroke 2, Connector) -> Target 2
+            // Note: Stroke 2 in this file is a path underlining text, so we calculate for Target 2
+            const t2 = getCoords('target-2');
+            const stroke2 = document.getElementById('stroke-2');
+            stroke2.setAttribute('d', `M ${t2.x} ${t2.centerY + 10} L ${t2.x + t2.w} ${t2.centerY + 8}`);
+        }
+
+        // Run alignment on load and resize
+        window.addEventListener('load', updateHighlights);
+        window.addEventListener('resize', updateHighlights);
+
+        // --- ENGINE (Do not edit below unless changing functionality) ---
+        let stepIndex = -1;
+        const subContainer = document.getElementById('subtitle-container');
+        const debug = document.getElementById('step-debug');
+
+        function playMusic() {
+            const music = document.getElementById('bg-music');
+            if (music) {
+                music.volume = 0.5;
+                music.play().catch(console.error);
+            }
+        }
+
+        function startSequence() {
+            // Remove overlay
+            document.getElementById('play-overlay').style.display = 'none';
+            // Align before start
+            updateHighlights();
+            // Start loop
+            nextStep();
+        }
+
+        function nextStep() {
+            stepIndex++;
+
+            // Check for end
+            if (stepIndex >= sequence.length) {
+                console.log("Sequence Complete");
+                return;
             }
 
-            // 2. TEXT OVERLAY: "The Idol"
-            if (step === 2) {
-                txtContext.classList.add('show');
+            const step = sequence[stepIndex];
+            debug.innerText = `Step: ${stepIndex + 1} / ${sequence.length}`;
+
+            // 1. Update Subtitles
+            if (step.text) {
+                subContainer.innerText = step.text;
+                subContainer.classList.add('show');
+            } else {
+                subContainer.classList.remove('show');
             }
 
-            // 3. TEXT PHASE: Enter the Book
-            if (step === 3) {
-                layerContext.classList.remove('active');
-                layerText.classList.add('active');
-
-                // Initial Zoom
-                layerText.style.transform = "scale(1.2)";
+            // 2. Execute Visuals
+            if (step.action) {
+                step.action();
             }
 
-            // 4. HIGHLIGHT: Surface Concern
-            if (step === 4) {
-                stroke1.classList.add('draw-stroke');
-                label1.classList.add('show');
+            // 3. Schedule next step
+            if (step.duration) {
+                setTimeout(nextStep, step.duration);
             }
-
-            // 5. ZOOM & PIVOT: The Pattern
-            if (step === 5) {
-                // Focus on the second paragraph
-                layerText.style.transform = "scale(1.5) translate(0px, -100px)";
-
-                // Fade out previous
-                stroke1.style.opacity = "0.3";
-                label1.style.opacity = "0.3";
-            }
-
-            // 6. METALANGUAGE
-            if (step === 6) {
-                stroke2.classList.add('draw-stroke');
-                label2.classList.add('show');
-            }
-
-        });
+        }
     </script>
 </body>
 
