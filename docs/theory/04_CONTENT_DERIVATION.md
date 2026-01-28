@@ -77,10 +77,13 @@ Each channel has ONE job. Mixing jobs dilutes effectiveness.
 | Channel | Job | Message Type | Asset |
 |---------|-----|-------------|-------|
 | SEO | Capture text-specific search | Reading-led | Guide pages |
-| Social | Drive to entry point | Reading-led hooks | Text insights |
+| Social (text) | Drive to entry point | Reading-led hooks | Text insights (posts) |
+| **Social (video)** | **Demonstrate expertise at scale** | **Pattern-specific analysis** | **30-sec videos (Funnel 3)** |
 | Email | Nurture toward conversion | Method → outcomes | Sequence |
 | Consultation | Convert to enrollment | Trust-building | Personal |
 | Progress reports | Retain through value | Outcome visibility | Reports |
+
+**Note on social video vs. social text:** These are separate channel jobs. Text-based social posts drive clicks to an entry point (guide page). Video demonstrates expertise directly in the feed — the proof is delivered *before* the click. Video's job is not "drive traffic" but "pre-convince." The click-through that follows carries higher intent because the credence work is already done.
 
 ---
 
@@ -119,23 +122,64 @@ The kernel IS the content (Funnel 1 analysis guides):
 | Devices (Top 5) | Stage 4 priorities + Stage 5 evidence |
 | Essay Toolkit | Stage 4 + Stage 6 applications |
 
+### For Video Content (Funnel 3)
+
+Each kernel generates multiple 30-second videos. One text = 3-5 pattern-specific videos. The derivation follows the same "derive, don't impose" principle as written content.
+
+| Video Element | Kernel Source | Example (The Outsiders) |
+|---------------|--------------|------------------------|
+| Hook (opening line) | Pattern name + reader effect | "Hinton doesn't describe Ponyboy. She makes him describe himself." |
+| Visual anchor | Stage 5 anchor quote + text page | Page image with highlighted passage |
+| Pattern reveal | Stage 4 core dynamic | "Direct characterisation — the narrator reveals character through first-person observation" |
+| Device demonstration | Stage 4 device priorities | Annotation overlay showing adjective choices, sentence rhythm |
+| CTA | Channel-dependent | Social: "Follow for more" / Service: "Link in bio for the full 10-week course" |
+
+**Video spec derivation process:**
+
+```
+Kernel (text analysis)
+    ↓
+Pattern selection: Pick ONE pattern per video (not the whole kernel)
+    ↓
+Pedagogical logic: Why does this pattern matter for the student?
+    ↓
+Visual flow: Book cover → context image → text page → annotation overlay
+    ↓
+Voiceover script: 30-second narration (analytical, authoritative tone)
+    ↓
+Scene template: HTML animation synchronised to voiceover
+```
+
+**Video types by purpose:**
+
+| Type | Purpose | CTA | Derived From |
+|------|---------|-----|-------------|
+| Pattern analysis (social) | Demonstrate expertise in feed | Follow / See more | Stage 4 pattern + Stage 5 evidence |
+| Annotation method | Show teaching technique | "Try this with your text" | Stage 5 evidence + TVODE method |
+| Service-focused | Drive enrollment | "Link to 10-week course" | Stage 4 pattern + course outline |
+
+**Scale implication:** 18 texts × 3-5 patterns each = 54-90+ unique videos from existing kernel material. This volume creates consistent social posting for months without generating new source analysis.
+
 ---
 
 ## 6. Content Strategy: The Strategic Sequence
 
 ```
-READING pulls them in → METHODOLOGY builds trust → WRITING keeps them there
+VIDEO catches attention → READING pulls them in → METHODOLOGY builds trust → WRITING keeps them there
 ```
 
 Applied to assets:
 
 | Asset Type | Lead With | Support With | CTA To |
 |------------|-----------|-------------|--------|
+| **Video (social)** | **Pattern-specific insight (30 sec)** | **Visible analysis method** | **Guide page / Course outline** |
 | SEO / Guides | Text-specific insight | Method visibility | Diagnostic / Download |
-| Social | Text hooks | Method demos | Guide page |
+| Social (text) | Text hooks | Method demos | Guide page |
 | Flyers | Text list | Method mention | Guide QR |
 | Landing page | Method + outcomes | Credibility | Enrollment |
 | Progress reports | Outcomes observed | Next term preview | Retention |
+
+Video sits upstream of SEO in the sequence. Where SEO captures existing intent ("I need help with The Outsiders"), video *creates* intent ("I didn't know someone could teach The Outsiders like this"). This is the difference between demand capture and demand generation.
 
 ---
 
@@ -148,6 +192,8 @@ Applied to assets:
 | Imposing message frameworks | Misses kernel-derived angles that are authentically differentiated |
 | Mixing channel jobs | Dilutes effectiveness — each channel does ONE thing |
 | Giving away full analysis | Removes incentive to enroll |
+| Making videos about "our method" generically | Same credence trap as written copy — must be text-specific |
+| Cramming multiple patterns into one video | One video = one pattern. Volume comes from more videos, not longer ones |
 
 ---
 

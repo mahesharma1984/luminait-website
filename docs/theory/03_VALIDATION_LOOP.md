@@ -103,6 +103,25 @@ Loops assume that "Not Ready" often means "Needs More Proof."
 - **Ideally:** Results shouldn't require page navigation (which risks loss).
 - **Implementation:** "See Case Studies" opens a modal/overlay *over* the pricing page. The user never leaves the "Checkout" mental state.
 
+### 4.4 Video as Productive Reassurance
+
+**Definition:** A short-form video (30 seconds) embedded at or near the friction point, demonstrating text-specific analytical expertise.
+
+Video is a uniquely effective reassurance format because it delivers proof without requiring the user to read, evaluate, or navigate. At the moment of price friction, the parent's internal question is: *"Is this worth $550? Do they actually know what they're doing?"* A 30-second analysis video answers that question viscerally — the parent can *see* the expertise.
+
+**Implementation options:**
+
+1. **Embedded near price:** A "Watch how we teach [Text]" video placed adjacent to the $550 price point. The parent watches without leaving the conversion context (similar to modal injection).
+
+2. **In the escape hatch:** Instead of (or alongside) "Read the Impact Report," offer "Watch a 30-second analysis of [your child's text]." This is lower friction than reading a report — it costs the user 30 seconds, not 5 minutes.
+
+3. **Pre-loop exposure (Funnel 3 users):** Parents who arrived via social video have already received video-based reassurance. For these users, the validation loop may be shorter or unnecessary — they've seen the proof before reaching the price point. This is a structural advantage of Funnel 3 (see [02_CUSTOMER_JOURNEY.md](02_CUSTOMER_JOURNEY.md), §4).
+
+**Why video works here (Fogg model):**
+- Text on a page spikes Motivation gradually (requires reading effort)
+- Video spikes Motivation instantly (passive consumption, high signal density)
+- At the friction point, the user's patience is low — they need fast reassurance, not deep content
+
 ---
 
 ## 5. Metrics of Success
@@ -120,6 +139,15 @@ How to measure if the loop is working:
 3. **Conversion Lift:**
    - Conversion rate of "Loopers" vs. "Linear Users".
    - *Theory:* Loopers should have higher conversion because they self-validated.
+
+4. **Video Reassurance Engagement:**
+   - % of users at friction point who watch an embedded video.
+   - Watch completion rate (did they watch the full 30 seconds?).
+   - *Theory:* Video watchers should convert at higher rates than non-watchers, and should require fewer loop iterations.
+
+5. **Funnel 3 Loop Bypass:**
+   - Compare loop usage: Funnel 3 arrivals (via social video) vs. Funnel 2 arrivals (via search).
+   - *Theory:* Funnel 3 users should need the validation loop less often — they arrived pre-reassured.
 
 ---
 

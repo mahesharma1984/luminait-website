@@ -70,6 +70,7 @@ WEAKEST
     ├── "We teach The Giver" (specific claim, no proof)
     ├── "Here's our 10-week method" (generic proof of capability)
     ├── "Here's our 10-week plan FOR The Giver" (specific proof) ← TARGET
+    ├── "Watch us analyze The Giver in 30 seconds" (specific demonstration) ← VIDEO
     ├── "Here's the booklist for McKinnon SC" (school-specific proof)
     ├── "Here's a worksheet FROM The Giver" (specific artifact)
     ├── "Here's student work ON The Giver" (specific outcome)
@@ -78,6 +79,19 @@ STRONGEST
 ```
 
 The goal: move from generic proof to text-specific proof without giving away the product.
+
+### Video as Credence-to-Experience Conversion
+
+Video occupies a unique position in the hierarchy. Written proof (course outlines, guides) asks the parent to *trust* preparation. Video converts that credence moment into something closer to an **experience attribute** — the parent can directly observe the methodology in action.
+
+A 30-second analysis video demonstrates:
+- **Text knowledge** — the tutor clearly knows this book
+- **Analytical depth** — the insight is non-obvious, specific
+- **Teaching method** — TVODE structure visible in how the analysis unfolds
+
+This is stronger than a course outline (which proves preparation but not ability) and weaker than student work samples (which prove outcomes). But critically, video requires **zero trust and zero effort** from the parent — they don't need to read a page or evaluate a document. They just watch.
+
+This matters because the credibility bypass mechanism (§5) depends on substituting visible methodology for traditional credentials. Video makes methodology visible in the lowest-friction format possible.
 
 ---
 
@@ -88,11 +102,14 @@ Instead of proving credibility, reduce the need for it:
 | Traditional Credibility | Substitute | How It Works |
 |------------------------|------------|--------------|
 | Degree/qualification | Visible methodology | TVODE structure shown in guides |
+| Degree/qualification | **Video demonstration** | 30-sec analysis proves competence visually |
 | School reputation | Text-specific match | "We teach [Text]" = search attribute |
 | Years of experience | Before/after samples | Student work demonstrates outcomes |
 | Testimonials | Progress reports | Parent observes improvement directly |
 
 The reading entry point sidesteps credibility. Parent doesn't need to trust your pedagogy — they only need to verify you teach the right book. Once enrolled, methodology becomes visible through delivery.
+
+Video accelerates this bypass. Where a course outline requires the parent to click through, read, and evaluate, a social video delivers the credibility substitute *before the parent even visits the site*. The methodology becomes visible at the point of discovery, not the point of evaluation.
 
 ---
 
