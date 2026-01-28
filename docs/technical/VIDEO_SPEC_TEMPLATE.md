@@ -9,6 +9,7 @@
 ## Pedagogical Logic (The "Why")
 *   **Quote**: `[The text snippet]`
 *   **Device**: `[e.g. Metaphor, Irony]`
+*   **Curriculum Alignment**: `[e.g. "Week 6: Internal Monologue", "Week 3: Symbolism"]`
 *   **Pattern Function**: `[Copy from Guide: How this device executes the pattern]`
 *   **Scaffolding Goal**: `[What plain English concept bridges to the technical term?]`
 

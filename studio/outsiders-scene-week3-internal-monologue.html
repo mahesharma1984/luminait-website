@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio: The Outsiders (Week 3 - Internal Monologue)</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: sans-serif;
+        }
+
+        /* STAGE */
+        .stage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LAYERS */
+        .stage-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+
+        .stage-layer.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* IMAGES */
+        img {
+            max-height: 90vh;
+            max-width: 90vw;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* SPECIFIC LAYERS */
+        #layer-context {
+            background: #000;
+        }
+
+        #layer-context img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(8px) contrast(1.2) brightness(0.6);
+            opacity: 0.8;
+            transition: filter 2s ease;
+        }
+
+        .context-clear {
+            filter: blur(0px) contrast(1.2) brightness(0.8) !important;
+        }
+
+        .context-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Impact', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 4rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .context-overlay.show {
+            opacity: 1;
+        }
+
+        /* TEXT LAYER */
+        #layer-text {
+            background: #fdfbf7;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            line-height: 2.2;
+            padding: 80px;
+            transform-origin: center center;
+            transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .book-text {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* HIGHLIGHTS (SVG) */
+        .svg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .highlight-red-zigzag {
+            fill: none;
+            stroke: #e74c3c;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.6;
+        }
+
+        .highlight-blue-box {
+            fill: none;
+            stroke: #3498db;
+            stroke-width: 5;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.8;
+            mix-blend-mode: multiply;
+        }
+
+        .draw-stroke {
+            stroke-dashoffset: 0;
+        }
+
+        /* LABELS */
+        .annotation-label {
+            position: absolute;
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 20px;
+            border-left: 4px solid #3498db;
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+            z-index: 30;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .annotation-label.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* OUTRO */
+        #layer-outro {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        /* SUBTITLES */
+        .subtitle-layer {
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 4px black;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .subtitle-layer.show {
+            opacity: 1;
+        }
+
+        /* CONTROLS */
+        #play-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        #step-debug {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            opacity: 0.5;
+            font-family: monospace;
+        }
+
+        /* WEEK TAG */
+        #week-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            z-index: 50;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        #week-tag.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+
+        <div id="week-tag">Week 3: Internal Monologue</div>
+
+        <!-- P0: INTRO -->
+        <div id="layer-intro" class="stage-layer active">
+            <img src="assets/outsiders-cover.png" alt="Book Cover">
+        </div>
+
+        <!-- P1: CONTEXT -->
+        <div id="layer-context" class="stage-layer">
+            <img src="assets/greasers.png" id="img-context" alt="Context">
+            <div class="context-overlay" id="txt-context">
+                <div id="txt-panic" style="color: #e74c3c;">PANIC IS LOUD</div>
+                <div id="txt-silence" style="color: #3498db; margin-top: 20px; opacity: 0; transition: opacity 1s;">
+                    TRAUMA IS SILENT</div>
+            </div>
+        </div>
+
+        <!-- P2: TEXT -->
+        <div id="layer-text" class="stage-layer">
+            <div class="book-text">
+                <p>I tried to think but there was a <span id="target-1">high-pitched screaming</span> going on,
+                    and I couldn't tell whether it was inside my head or out.</p>
+
+                <p>Then I realized it was a siren.</p>
+
+                <p>"The fuzz," I <span id="target-2">thought dully</span>.
+                    "The cops have come for us."</p>
+
+                <p>I tried to swallow a groan and wished wildly for Soda.</p>
+            </div>
+
+            <div class="annotation-label" id="label-1"></div>
+            <div class="annotation-label" id="label-2"></div>
+
+            <svg class="svg-overlay" id="highlights" width="100%" height="100%">
+                <path id="stroke-1" class="highlight-red-zigzag" d="" />
+                <path id="stroke-2" class="highlight-blue-box" d="" />
+            </svg>
+        </div>
+
+        <!-- P3: OUTRO -->
+        <div id="layer-outro" class="stage-layer">
+            <div>
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">Week 3 Analysis</h1>
+                <p style="font-size: 1.5rem; color: #ccc;">Internal Monologue</p>
+                <div
+                    style="margin-top: 40px; padding: 15px 30px; background: #3498db; color: white; font-weight: bold; border-radius: 50px; display: inline-block;">
+                    LuminAIT.app
+                </div>
+            </div>
+        </div>
+
+        <div id="subtitle-container" class="subtitle-layer"></div>
+        <div id="step-debug">Step: 0</div>
+    </div>
+
+    <div id="play-overlay" onclick="startSequence()">
+        <div style="font-size: 2rem;">▶ Start Climax Scene</div>
+        <div style="margin-top: 10px; opacity: 0.7;">Week 3 Alignment: Internal Monologue</div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // --- NARRATIVE SCRIPT (WEEK 3) ---
+        // Scene: Climax
+        // Device: Internal Monologue
+        // Theme: Trauma & Dissociation
+        const sequence = [
+            {
+                duration: 5000,
+                text: "In The Outsiders, S.E. Hinton doesn't just show us what happens. She shows us how it feels to stop feeling.",
+                action: () => {
+                    playMusic();
+                    document.getElementById('week-tag').classList.add('show');
+                }
+            },
+            {
+                duration: 6000,
+                text: "'I tried to think but there was a high-pitched screaming going on... Then I realized it was a siren.'",
+                action: () => {
+                    document.getElementById('layer-intro').classList.remove('active');
+                    document.getElementById('layer-text').classList.add('active');
+                }
+            },
+            {
+                duration: 5000,
+                text: "'The fuzz,' I thought dully. 'The cops have come for us.'",
+                action: () => {
+                    // Continue reading
+                }
+            },
+            {
+                duration: 4000,
+                text: "First, the panic. 'High-pitched screaming.' It's loud.",
+                action: () => {
+                    // Highlight 1: Scream
+                    document.getElementById('stroke-1').classList.add('draw-stroke');
+
+                    const l1 = document.getElementById('label-1');
+                    l1.innerHTML = "<strong>Panic</strong><br>Loud & Unfocused";
+                    const t1 = getCoords('target-1');
+                    l1.style.top = (t1.y - 70) + 'px';
+                    l1.style.left = (t1.x) + 'px';
+                    l1.style.borderLeftColor = "#e74c3c";
+                    l1.classList.add('show');
+                }
+            },
+            {
+                duration: 5000,
+                text: "But then, look at this. 'The fuzz, I thought dully'. Panic is loud. But Trauma? Trauma is silent.",
+                action: () => {
+                    // Highlight 2: Dully
+                    document.getElementById('stroke-2').classList.add('draw-stroke');
+
+                    const l2 = document.getElementById('label-2');
+                    l2.innerHTML = "<strong>Trauma</strong><br>Silent & Numb";
+                    const t2 = getCoords('target-2');
+                    l2.style.top = (t2.y + 40) + 'px';
+                    l2.style.left = (t2.x) + 'px';
+                    l2.classList.add('show');
+
+                    document.getElementById('stroke-1').style.opacity = 0.2;
+                }
+            },
+            {
+                duration: 6000,
+                text: "That one word—'dully'—is the sound of a brain shutting down to survive.",
+                action: () => {
+                    document.getElementById('layer-text').style.transform = "scale(1.15)";
+                }
+            },
+            {
+                duration: 5000,
+                text: "We call this Internal Monologue. It reveals the gap between what's happening outside, and the dissociation inside.",
+                action: () => {
+                    document.getElementById('layer-text').classList.remove('active');
+                    document.getElementById('layer-outro').classList.add('active');
+                }
+            },
+            {
+                duration: 4000,
+                text: "Give your child the words to explain the silence. Enquire now.",
+                action: () => {
+                    // End
+                }
+            }
+        ];
+
+        // --- HELPER: DYNAMIC ALIGNMENT ---
+        function getCoords(id) {
+            const el = document.getElementById(id);
+            const r = el.getBoundingClientRect();
+            return { x: r.left, y: r.top, w: r.width, h: r.height };
+        }
+
+        function updateHighlights() {
+            // 1. ZigZag for Scream
+            const c1 = getCoords('target-1');
+            const path = document.getElementById('stroke-1');
+            const y = c1.y + c1.h + 2;
+            const step = 5;
+            let d = `M ${c1.x} ${y}`;
+            for (let i = 0; i < c1.w; i += step) {
+                d += ` L ${c1.x + i + (step / 2)} ${y + ((i % 10 === 0) ? -3 : 3)}`;
+            }
+            path.setAttribute('d', d);
+
+            // 2. Box for Dully
+            const c2 = getCoords('target-2');
+            const rect = document.getElementById('stroke-2');
+            const pad = 5;
+            const d2 = `M ${c2.x - pad} ${c2.y - pad} 
+                       L ${c2.x + c2.w + pad} ${c2.y - pad} 
+                       L ${c2.x + c2.w + pad} ${c2.y + c2.h + pad} 
+                       L ${c2.x - pad} ${c2.y + c2.h + pad} Z`;
+            rect.setAttribute('d', d2);
+        }
+
+        window.addEventListener('resize', updateHighlights);
+
+        // --- ENGINE ---
+        let step = -1;
+        function playMusic() {
+            const m = document.getElementById('bg-music');
+            if (m) { m.volume = 0.5; m.play().catch(e => console.log("Audio waiting for interaction")); }
+        }
+
+        function startSequence() {
+            document.getElementById('play-overlay').style.display = 'none';
+            updateHighlights();
+            next();
+        }
+
+        function next() {
+            step++;
+            if (step >= sequence.length) return;
+            const s = sequence[step];
+            document.getElementById('step-debug').innerText = `Step: ${step + 1}/${sequence.length}`;
+            const sub = document.getElementById('subtitle-container');
+            if (s.text) { sub.innerText = s.text; sub.classList.add('show'); }
+            else { sub.classList.remove('show'); }
+            if (s.action) s.action();
+            if (s.duration) setTimeout(next, s.duration);
+        }
+
+    </script>
+</body>
+
+</html>
