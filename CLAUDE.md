@@ -50,6 +50,9 @@ Key documents:
 │   ├── /assets/            # Images for video scenes
 │   ├── /scenes/            # Generated scene pages (DO NOT edit)
 │   ├── /scripts/           # Video specs and voiceover scripts
+│   ├── /teacher-guides/    # Teacher curriculum guides (HTML)
+│   ├── ALIGNMENT_SPEC.md   # How guides, scenes, and curriculum connect
+│   ├── STYLE_GUIDE.md      # Tone and writing rules for video content
 │   ├── script.js           # Shared animation controller
 │   └── styles.css          # Shared studio styles
 │
@@ -117,6 +120,12 @@ Key documents:
 **Legacy files (hand-built, kept for reference):**
 - `studio/outsiders-scene.html` - Original hand-built scene
 - `studio/annotation-giver.html` - Annotation format (not yet templated)
+
+### Video Production Documentation
+
+- `GEMINI.md` - Instructions for Google Gemini (video content production)
+- `studio/ALIGNMENT_SPEC.md` - How teacher guides, video scenes, and curriculum align
+- `studio/STYLE_GUIDE.md` - Tone and writing rules for all video production artifacts
 
 ## Dev Guidelines (Added Jan 27, 2026)
 
