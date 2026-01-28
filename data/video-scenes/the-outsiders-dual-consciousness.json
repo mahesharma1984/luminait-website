@@ -1,0 +1,149 @@
+{
+  "slug": "the-outsiders-dual-consciousness",
+  "sceneTitle": "The Outsiders (Scene 1)",
+  "bookTitle": "The Outsiders",
+  "author": "S.E. Hinton",
+  "description": "First-person narration reveals dual consciousness through Paul Newman reference.",
+
+  "assets": {
+    "coverImage": "outsiders-cover.png",
+    "contextImage": "paul-newman.png",
+    "ctaImage": "course-cta.png",
+    "paperTexture": "paper-texture.jpg"
+  },
+
+  "layers": {
+    "intro": {
+      "background": "#2c3e50"
+    },
+    "context": {
+      "background": "#000",
+      "imageOpacity": 0.8,
+      "panEffect": true,
+      "panDuration": "10s",
+      "overlayText": "THE IDOL",
+      "overlayPosition": { "bottom": "10%", "left": "5%" }
+    },
+    "text": {
+      "background": "#fffdf5",
+      "fontFamily": "'Courier New', Courier, monospace",
+      "fontSize": "1.4rem",
+      "lineHeight": 2.2,
+      "textColor": "#333",
+      "padding": "100px"
+    },
+    "outro": {
+      "background": "#1e3a5f"
+    }
+  },
+
+  "textContent": [
+    {
+      "html": "When I stepped out into the bright sunlight from the darkness of the movie house, <span id=\"target-1\">I had only two things on my mind: Paul Newman and a ride home.</span>"
+    },
+    {
+      "html": "I was wishing I looked like Paul Newman — he looks tough and I don't — but I have to be content with what I have. My hair is longer than a lot of boys wear theirs, squared off in back and long at the front and sides, but I am a greaser and most of my neighborhood rarely bothers to get a haircut. Besides, I look better with long hair. <span id=\"target-2\">I had a long walk home and no company, but I usually lone it anyway</span>, for no reason except that I like to watch movies undisturbed so I can get into them and live them with the actors."
+    }
+  ],
+
+  "highlights": [
+    {
+      "id": "hl-1",
+      "type": "yellow",
+      "color": "#ffeb3b",
+      "top": "14.4%",
+      "left": "14.3%",
+      "width": "41.4%",
+      "height": "1.6%"
+    },
+    {
+      "id": "hl-2",
+      "type": "underline",
+      "color": "#3498db",
+      "top": "25.6%",
+      "left": "7.1%",
+      "width": "21.4%",
+      "height": "0.4%"
+    }
+  ],
+
+  "labels": [
+    {
+      "id": "lbl-1",
+      "title": "The 14-Year Old",
+      "body": "Immediate Concerns",
+      "top": "15%",
+      "left": "60%",
+      "borderColor": "#3498db"
+    },
+    {
+      "id": "lbl-2",
+      "title": "PATTERN: Dual Consciousness",
+      "body": "Retrospective Voice",
+      "top": "30%",
+      "left": "10%",
+      "borderColor": "#e74c3c"
+    }
+  ],
+
+  "steps": [
+    {
+      "duration": 7000,
+      "subtitle": "Take the very first page. 'I wished I looked like Paul Newman.' To us, that's just a name. To a greaser in 1967, he was power.",
+      "actions": [
+        { "type": "hideLayer", "target": "intro" },
+        { "type": "showLayer", "target": "context" },
+        { "type": "panImage" }
+      ]
+    },
+    {
+      "duration": 3000,
+      "subtitle": "He represents the world Ponyboy can't have. It sets the stakes immediately.",
+      "actions": [
+        { "type": "showOverlay" }
+      ]
+    },
+    {
+      "duration": 6000,
+      "subtitle": "Now, look at the writing. 'I had only two things on my mind...' He's worrying about a ride home.",
+      "actions": [
+        { "type": "hideLayer", "target": "context" },
+        { "type": "showLayer", "target": "text" },
+        { "type": "zoomText", "transform": "scale(1.2)" }
+      ]
+    },
+    {
+      "duration": 5000,
+      "subtitle": "That's the 14-year-old kid in the moment.",
+      "actions": [
+        { "type": "showHighlight", "target": "hl-1" },
+        { "type": "showLabel", "target": "lbl-1" }
+      ]
+    },
+    {
+      "duration": 5000,
+      "subtitle": "But the voice telling the story? That's the older, wiser Ponyboy looking back.",
+      "actions": [
+        { "type": "zoomText", "transform": "scale(1.5) translate(0px, -100px)" },
+        { "type": "fadeElement", "target": "hl-1", "opacity": "0.3" },
+        { "type": "fadeElement", "target": "lbl-1", "opacity": "0.3" }
+      ]
+    },
+    {
+      "duration": 5000,
+      "subtitle": "We call this 'Dual Consciousness'. The gap between what he felt then and what he knows now.",
+      "actions": [
+        { "type": "showHighlight", "target": "hl-2" },
+        { "type": "showLabel", "target": "lbl-2" }
+      ]
+    },
+    {
+      "duration": 10000,
+      "subtitle": "This pattern is what we cover in Week 1. Enquire below for Term 1.",
+      "actions": [
+        { "type": "hideLayer", "target": "text" },
+        { "type": "showLayer", "target": "outro" }
+      ]
+    }
+  ]
+}
