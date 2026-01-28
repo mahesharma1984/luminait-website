@@ -10,7 +10,7 @@
 
 ## 1. OVERVIEW
 
-Site structure supporting two distinct funnels:
+Site structure supporting three distinct funnels:
 
 ```
 luminait.app/
@@ -32,6 +32,15 @@ luminait.app/
 │   │   └── /hsc/[text]/      → Full analysis guides
 │   └── /ib/                  → IB hub (not implemented)
 │       └── /ib/[text]/       → Full analysis guides
+│
+├── FUNNEL 3: VIDEO-TO-PARENT (Social Discovery) ───────────
+│   │
+│   └── /studio/              → Video Studio (scene playback)
+│       ├── /studio/scenes/   → ✅ Auto-generated scene pages
+│       │   └── /studio/scenes/[slug].html
+│       ├── outsiders-scene.html → Legacy hand-built scene
+│       ├── script.js         → StudioController (keyboard/playback)
+│       └── styles.css        → Shared studio styles
 │
 └── SHARED / SUPPORTING ─────────────────────────────────────
     │
@@ -310,23 +319,56 @@ Step 5: Write the Essay (gated — email capture)
 
 ---
 
-## 4. SHARED PAGES
+## 4. FUNNEL 3 PAGES (Video-to-Parent)
 
-### 4.1 How It Works `/curriculum/`
+### 4.1 Video Studio `/studio/`
+
+**Role:** Hosts 30-second animated video scenes that demonstrate text analysis. These are recorded as screen captures for social media (Instagram Reels, TikTok, YouTube Shorts).
+
+**Audience:** Parents encountering LuminAIT through social media video. The video creates instant credibility by showing what analysis looks like in practice — bypassing the credence problem through specific demonstration.
+
+**How it works:**
+- Each scene is a self-contained HTML page with layered animations (intro → context → text analysis → outro)
+- `script.js` (StudioController) handles SPACE/ArrowRight to advance steps, R to reset, A for auto-play
+- Scene pages define `window.sceneSteps` (timing/subtitles) and a `studio-step` event handler (visual actions per step)
+- Scenes are opened in Chrome fullscreen (F11), screen-recorded, then exported for social
+
+**Scene structure:**
+```
+Step 0: Book cover (intro layer)
+Step 1-2: Context image with overlay text
+Step 3-6: Text passage with highlights, annotations, zoom effects
+Step 7: Call-to-action (outro layer)
+```
+
+**Content pipeline:**
+```
+/data/video-scenes/*.json → build-video-scenes.js → /studio/scenes/[slug].html
+```
+
+See `BUILD_SYSTEM.md` for the full build pipeline documentation.
+
+**Not a public-facing URL** — `/studio/` is a production tool, not a page visitors navigate to.
+
+---
+
+## 5. SHARED PAGES
+
+### 5.1 How It Works `/curriculum/`
 
 **Role:** Methodology explanation. Supports both funnels.
 
 **Content:** The 5-step system explained. How reading leads to writing.
 
-### 4.2 About `/about/` (Optional)
+### 5.2 About `/about/` (Optional)
 
 **Role:** Background, credibility. Low priority.
 
 ---
 
-## 5. NAVIGATION
+## 6. NAVIGATION
 
-### 5.1 Header (All Pages)
+### 6.1 Header (All Pages)
 
 ```
 Logo: LuminAIT          How It Works | Course       [EN | 中文]
@@ -339,7 +381,7 @@ Logo: LuminAIT          How It Works | Course       [EN | 中文]
 - "Schools" links to `/schools/`
 - Language toggle on all pages
 
-### 5.2 Footer (All Pages)
+### 6.2 Footer (All Pages)
 
 ```
 LuminAIT
@@ -356,9 +398,9 @@ The Giver                VCE Guides
 
 ---
 
-## 6. URL PATTERNS
+## 7. URL PATTERNS
 
-### 6.1 Summary Table
+### 7.1 Summary Table
 
 | URL | Funnel | Page Type | Audience |
 |-----|--------|-----------|----------|
@@ -373,8 +415,10 @@ The Giver                VCE Guides
 | `/hsc/[text]/` | 1 | Full analysis guide | Student |
 | `/ib/` | 1 | Curriculum hub | Student |
 | `/ib/[text]/` | 1 | Full analysis guide | Student |
+| `/studio/` | 3 | Video studio (internal) | Production |
+| `/studio/scenes/[slug].html` | 3 | Auto-generated scene | Production |
 
-### 6.2 Text Slugs
+### 7.2 Text Slugs
 
 | Text | Slug |
 |------|------|
@@ -387,9 +431,9 @@ The Giver                VCE Guides
 
 ---
 
-## 7. SEO STRATEGY
+## 8. SEO STRATEGY
 
-### 7.1 By Page Type
+### 8.1 By Page Type
 
 | Page Type | Primary Keywords | Intent |
 |-----------|------------------|--------|
@@ -399,7 +443,7 @@ The Giver                VCE Guides
 | Curriculum hub | "[curriculum] English texts" | Informational |
 | Analysis guide | "[text] themes", "[text] analysis" | Informational |
 
-### 7.2 Internal Linking
+### 8.2 Internal Linking
 
 ```
 Homepage
@@ -423,7 +467,7 @@ Analysis Guide
 
 ---
 
-## 8. BUILD PHASES
+## 9. BUILD PHASES
 
 ### Phase 1: Funnel 2 MVP (Now)
 
@@ -466,9 +510,9 @@ Analysis Guide
 
 ---
 
-## 9. TECHNICAL REQUIREMENTS
+## 10. TECHNICAL REQUIREMENTS
 
-### 9.1 SEO
+### 10.1 SEO
 
 - [ ] XML sitemap (auto-generated)
 - [ ] robots.txt
@@ -477,25 +521,25 @@ Analysis Guide
 - [ ] Schema markup: Organization, Article, Book
 - [ ] Canonical URLs
 
-### 9.2 Performance
+### 10.2 Performance
 
 - [ ] Static HTML (current approach)
 - [ ] Minimal JS
 - [ ] Core Web Vitals passing
 
-### 9.3 Analytics
+### 10.3 Analytics
 
 - [ ] Page views, time on page, scroll depth
 - [ ] Track: text card clicks (which texts get interest)
 - [ ] Track: course page visits by source
 - [ ] Search Console: queries, impressions, CTR
 
-### 9.4 Language
+### 10.4 Language
 
 - [ ] EN/ZH toggle on all Funnel 2 pages
 - [ ] Chinese translations for homepage, course, methodology demos
 
-### 9.5 Styling
+### 10.5 Styling
 
 All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this directory).
 
@@ -510,9 +554,9 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 
 ---
 
-## 10. IMPLEMENTATION NOTES
+## 11. IMPLEMENTATION NOTES
 
-### 10.1 Dual Parent Guide System
+### 11.1 Dual Parent Guide System
 
 **Why two locations for parent guides?**
 
@@ -537,7 +581,7 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 
 ---
 
-## 11. VERSION HISTORY
+## 12. VERSION HISTORY
 
 | Version | Date | Changes |
 |---------|------|---------|
@@ -545,6 +589,7 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 | 2.0 | Jan 24, 2026 | Two-funnel architecture |
 | 2.1 | Jan 27, 2026 | Added Schools Directory (/schools/) |
 | 2.2 | Jan 27, 2026 | Implemented text-specific course outlines (18 total guides: 8 at root + 10 in /curriculum/) |
+| 3.0 | Jan 28, 2026 | Three-funnel architecture: added Funnel 3 (Video-to-Parent) with /studio/ and /studio/scenes/ |
 
 ---
 

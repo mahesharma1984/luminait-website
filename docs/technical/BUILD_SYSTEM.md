@@ -20,16 +20,19 @@ Build System
 │
 ├── Data
 │   ├── /data/parent-guides/       Parent guide JSON data
+│   ├── /data/video-scenes/        Video scene JSON data
 │   └── site-config.json           Shared configuration
 │
 ├── Build Scripts
 │   ├── build.js                   Main pages (index, course, progress, etc.)
 │   ├── build-parent-guides.js     Curriculum directory guides
-│   └── build-homepage-guides.js   Homepage book guides
+│   ├── build-homepage-guides.js   Homepage book guides
+│   └── build-video-scenes.js      Video scene pages
 │
 └── Output (generated, DO NOT EDIT)
     ├── /[text-slug]/              Homepage books (8 pages)
     ├── /curriculum/               Additional guides (10 pages + index)
+    ├── /studio/scenes/            Video scene pages (auto-generated)
     └── /*.html                    Main pages (index, course, etc.)
 ```
 
@@ -173,9 +176,150 @@ Both build scripts use the SAME template with placeholder replacement:
 
 ---
 
-## 4. JSON DATA FORMAT
+## 4. VIDEO SCENE BUILD SYSTEM
 
-### 4.1 Parent Guide JSON Structure
+### 4.1 Build Script: `build-video-scenes.js`
+
+**Purpose:** Generate video scene HTML pages from JSON data files for the Studio video production tool.
+
+**Pipeline:**
+```
+/data/video-scenes/*.json  →  build-video-scenes.js  →  /studio/scenes/{slug}.html
+        ↓                                                       ↑
+_video-scene-template.html ─────────────────────────────────────┘
+```
+
+**Input:**
+- Data: `/data/video-scenes/*.json`
+- Template: `/src/templates/_video-scene-template.html`
+
+**Output:**
+- `/studio/scenes/[slug].html` (one page per JSON file)
+
+**Run:**
+```bash
+node build-video-scenes.js
+```
+
+**What it does:**
+1. Loads the template once
+2. Reads all JSON files from `/data/video-scenes/`
+3. For each file: applies defaults (deep merge), runs generator functions, replaces `{{PLACEHOLDERS}}`, writes output
+4. Skips files missing required fields (`slug`, `sceneTitle`, `assets.coverImage`)
+
+### 4.2 Template: `_video-scene-template.html`
+
+Uses `{{PLACEHOLDER}}` syntax (same as parent guide template):
+
+| Placeholder | Generator | Description |
+|-------------|-----------|-------------|
+| `{{SCENE_TITLE}}` | Direct | Page title |
+| `{{COVER_IMAGE}}` | Direct | Cover image filename |
+| `{{SCENE_STYLES}}` | `generateSceneStyles()` | CSS for layers, highlights, subtitles |
+| `{{CONTEXT_LAYER_HTML}}` | `generateContextLayer()` | Context image + overlay (or empty) |
+| `{{OUTRO_LAYER_HTML}}` | `generateOutroLayer()` | CTA image (or empty) |
+| `{{TEXT_PARAGRAPHS}}` | `generateTextParagraphs()` | Book passage `<p>` tags |
+| `{{HIGHLIGHTS_HTML}}` | `generateHighlights()` | CSS-positioned highlight divs |
+| `{{LABELS_HTML}}` | `generateLabels()` | Annotation label divs |
+| `{{SCENE_STEPS_JSON}}` | `generateSceneStepsJSON()` | `window.sceneSteps` array |
+| `{{STEP_HANDLER_JS}}` | `generateStepHandler()` | Event listener with per-step actions |
+
+### 4.3 Video Scene JSON Schema
+
+**Location:** `/data/video-scenes/[slug].json`
+
+**Required fields:**
+```json
+{
+  "slug": "the-outsiders-dual-consciousness",
+  "sceneTitle": "The Outsiders (Scene 1)",
+  "bookTitle": "The Outsiders",
+  "author": "S.E. Hinton",
+  "assets": {
+    "coverImage": "outsiders-cover.png"
+  },
+  "textContent": [
+    { "html": "Passage text with <span id=\"target-1\">highlight anchors</span>." }
+  ],
+  "highlights": [
+    { "id": "hl-1", "top": "14.4%", "left": "14.3%", "width": "41.4%" }
+  ],
+  "labels": [
+    { "id": "lbl-1", "title": "Label Title", "body": "Label body", "top": "15%", "left": "60%" }
+  ],
+  "steps": [
+    {
+      "duration": 5000,
+      "subtitle": "Narrator text shown as subtitle.",
+      "actions": [
+        { "type": "showLayer", "target": "text" },
+        { "type": "showHighlight", "target": "hl-1" }
+      ]
+    }
+  ]
+}
+```
+
+**Optional fields** (defaults applied by build script):
+- `description` (default: "")
+- `assets.contextImage` (null → skips context layer entirely)
+- `assets.ctaImage` (null → skips outro layer)
+- `assets.paperTexture` (null → solid background)
+- `layers.intro.background` ("#2c3e50")
+- `layers.context.*` (background, imageOpacity, panEffect, panDuration, overlayText, overlayPosition)
+- `layers.text.*` (background, fontFamily, fontSize, lineHeight, textColor, padding)
+- `layers.outro.*` (background, imageStyle)
+- `highlights[].type` ("yellow" or "underline", default: "yellow")
+- `highlights[].color`, `highlights[].height`
+- `labels[].borderColor`
+
+### 4.4 Declarative Action Types
+
+Each step has an `actions` array. The build script converts these to imperative JavaScript:
+
+| Action Type | Fields | Generated JS |
+|-------------|--------|--------------|
+| `showLayer` | `target` | `getElementById('layer-X').classList.add('active')` |
+| `hideLayer` | `target` | `getElementById('layer-X').classList.remove('active')` |
+| `panImage` | — | Triggers context image pan CSS |
+| `showOverlay` | — | Shows context overlay text |
+| `showHighlight` | `target` | Adds `.draw-stroke` class |
+| `showLabel` | `target` | Adds `.show` class |
+| `zoomText` | `transform` | Sets CSS transform on text layer |
+| `fadeElement` | `target`, `opacity` | Sets element opacity |
+| `hideElement` | `target` | Sets opacity to 0 |
+| `addClass` | `target`, `class` | Generic class add (escape hatch) |
+| `removeClass` | `target`, `class` | Generic class remove (escape hatch) |
+
+### 4.5 Adding a New Video Scene
+
+1. **Create JSON data file:**
+   ```bash
+   cp data/video-scenes/the-outsiders-dual-consciousness.json data/video-scenes/new-scene.json
+   ```
+
+2. **Edit with scene-specific content:**
+   - Update `slug`, `sceneTitle`, `bookTitle`, `author`
+   - Set `assets` (place image files in `/studio/assets/`)
+   - Write `textContent` with `<span id="target-N">` anchors for highlights
+   - Position `highlights` using CSS percentages (relative to the text layer)
+   - Position `labels` similarly
+   - Define `steps` with `duration`, `subtitle`, and `actions`
+
+3. **Build:**
+   ```bash
+   node build-video-scenes.js
+   ```
+
+4. **Preview:** Open `/studio/scenes/[slug].html` in Chrome, press F11 for fullscreen, SPACE to advance steps.
+
+5. **Record:** Screen-capture the auto-play (press A) for social media export.
+
+---
+
+## 5. JSON DATA FORMAT
+
+### 5.1 Parent Guide JSON Structure
 
 **Location:** `/data/parent-guides/[slug].json`
 
@@ -231,7 +375,7 @@ Both build scripts use the SAME template with placeholder replacement:
 - `body` (weeks 6-8) - includes `technique` object
 - `completion` (weeks 9-10)
 
-### 4.2 Adding a New Parent Guide
+### 5.2 Adding a New Parent Guide
 
 **Steps:**
 
@@ -272,9 +416,9 @@ Both build scripts use the SAME template with placeholder replacement:
 
 ---
 
-## 5. DESIGN SYSTEM COMPLIANCE
+## 6. DESIGN SYSTEM COMPLIANCE
 
-### 5.1 CSS Architecture
+### 6.1 CSS Architecture
 
 All generated pages follow the unified design system:
 
@@ -307,7 +451,7 @@ All generated pages follow the unified design system:
 
 **Reference:** See `DESIGN_SYSTEM.md` (this directory) for complete specification.
 
-### 5.2 Page Length Benchmark
+### 6.2 Page Length Benchmark
 
 **Good design-system compliance:**
 - Main pages: ~300-400 lines
@@ -320,9 +464,9 @@ The Jan 27 refactor reduced page sizes by ~60% by moving CSS to component files.
 
 ---
 
-## 6. TROUBLESHOOTING
+## 7. TROUBLESHOOTING
 
-### 6.1 "My changes disappeared after running build.js"
+### 7.1 "My changes disappeared after running build.js"
 
 **Problem:** You edited a root-level HTML file directly.
 
@@ -335,7 +479,7 @@ The Jan 27 refactor reduced page sizes by ~60% by moving CSS to component files.
 
 **Prevention:** Always edit templates, not output files.
 
-### 6.2 "Parent guide page shows old content"
+### 7.2 "Parent guide page shows old content"
 
 **Problem:** JSON data updated but pages not rebuilt.
 
@@ -351,7 +495,7 @@ node build-parent-guides.js
 git diff [slug]/index.html
 ```
 
-### 6.3 "New book not appearing in curriculum index"
+### 7.3 "New book not appearing in curriculum index"
 
 **Problem:** `build-parent-guides.js` needs to run to regenerate index.
 
@@ -364,7 +508,7 @@ node build-parent-guides.js
 git diff curriculum/index.html
 ```
 
-### 6.4 "Homepage book not building"
+### 7.4 "Homepage book not building"
 
 **Problem:** Slug not in `HOMEPAGE_BOOKS` array.
 
@@ -379,11 +523,23 @@ const HOMEPAGE_BOOKS = [
 ];
 ```
 
+### 7.5 "Video scene not generating"
+
+**Problem:** `build-video-scenes.js` skips a JSON file.
+
+**Solution:** Check the console output for SKIP messages. Required fields are `slug`, `sceneTitle`, and `assets.coverImage`. Ensure all three are present in the JSON.
+
+### 7.6 "Video scene highlights are misaligned"
+
+**Problem:** Highlight divs don't align with the text passage.
+
+**Solution:** Highlights use CSS percentage positioning relative to the text layer. Open the scene in Chrome, use DevTools to inspect and adjust `top`, `left`, `width` percentages in the JSON, then rebuild.
+
 ---
 
-## 7. WORKFLOW REFERENCE
+## 8. WORKFLOW REFERENCE
 
-### 7.1 Daily Development
+### 8.1 Daily Development
 
 ```bash
 # 1. Edit template or data
@@ -407,7 +563,7 @@ git commit -m "description"
 git push origin main
 ```
 
-### 7.2 Adding New Content
+### 8.2 Adding New Content
 
 **New main page:**
 1. Create template: `src/templates/new-page.html`
@@ -426,7 +582,7 @@ git push origin main
 
 ---
 
-## 8. BUILD SCRIPT REFERENCE
+## 9. BUILD SCRIPT REFERENCE
 
 ### Complete Build Command List
 
@@ -440,8 +596,11 @@ node build-homepage-guides.js
 # Curriculum directory guides (10 pages + index in /curriculum/)
 node build-parent-guides.js
 
+# Video scene pages (in /studio/scenes/)
+node build-video-scenes.js
+
 # Rebuild everything
-node build.js && node build-homepage-guides.js && node build-parent-guides.js
+node build.js && node build-homepage-guides.js && node build-parent-guides.js && node build-video-scenes.js
 ```
 
 ### When to Run Each Script
@@ -455,12 +614,14 @@ node build.js && node build-homepage-guides.js && node build-parent-guides.js
 | `/data/parent-guides/dracula.json` | `node build-parent-guides.js` |
 | `/src/templates/_parent-guide-template.html` | Both parent guide scripts |
 | `/src/templates/curriculum-index.html` | `node build-parent-guides.js` |
+| `/data/video-scenes/*.json` | `node build-video-scenes.js` |
+| `/src/templates/_video-scene-template.html` | `node build-video-scenes.js` |
 
 ---
 
-## 9. MAINTENANCE
+## 10. MAINTENANCE
 
-### 9.1 Consolidation Considerations
+### 10.1 Consolidation Considerations
 
 **Future optimization:** Consider consolidating to single parent guide system.
 
@@ -474,7 +635,7 @@ node build.js && node build-homepage-guides.js && node build-parent-guides.js
 
 **Decision:** Defer until all texts have parent guides. Current system works well.
 
-### 9.2 Template Updates
+### 10.2 Template Updates
 
 When updating `/src/templates/_parent-guide-template.html`:
 
@@ -488,7 +649,7 @@ git diff the-giver/index.html curriculum/dracula/index.html
 
 ---
 
-## 10. RELATED DOCUMENTATION
+## 11. RELATED DOCUMENTATION
 
 - **Design System:** `DESIGN_SYSTEM.md` (this directory)
 - **Site Architecture:** `SITE_ARCHITECTURE.md` (this directory)
