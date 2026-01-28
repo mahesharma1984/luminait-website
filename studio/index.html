@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminAIT Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .scene-card {
+            background: #333;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s, background 0.2s;
+            border: 1px solid #444;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-4px);
+            background: #444;
+            border-color: #666;
+        }
+
+        .scene-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .scene-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.4;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <header>
+            <h1>LuminAIT Digital Studio</h1>
+            <p style="color: #888;">Production tools for social/video assets</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Scene 1: Giver Annotation -->
+            <a href="annotation-giver.html" class="scene-card">
+                <span class="scene-title">1. The Giver: Annotation</span>
+                <span class="scene-desc">Chapter 1 analysis. Features spotlight and highlighter effects.</span>
+            </a>
+
+            <!-- Placeholder for Scene 2 -->
+            <a href="#" class="scene-card" style="opacity: 0.5; cursor: default;">
+                <span class="scene-title">2. Giver Worksheet (Coming Soon)</span>
+                <span class="scene-desc">Student filing out analysis columns.</span>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
