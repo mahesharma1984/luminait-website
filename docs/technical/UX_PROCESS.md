@@ -133,6 +133,7 @@ Ask these three questions before touching any code:
 - [ ] **Cards match:** Using `.content-card`, `.card-grid`?
 - [ ] **Badges match:** Using `.badge`, `.badge-warm`, `.badge-primary`?
 - [ ] **Heroes match:** Using `.hero-standard` for marketing pages?
+- [ ] **Video/Demo cards match:** Using `.video-demo-card`, `.video-demo-grid`?
 
 ### 5.3 Style Validation
 
@@ -283,6 +284,7 @@ Use this when completing page work:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 2.1 | Jan 30, 2026 | Added validation check for Video/Demo components |
 | 2.0 | Jan 27, 2026 | Renamed to UX_PROCESS; added journey stage mapping; updated doc references |
 | 1.0 | Jan 24, 2026 | Initial checklist (as UX_VALIDATION_CHECKLIST_v1_0) |
 
