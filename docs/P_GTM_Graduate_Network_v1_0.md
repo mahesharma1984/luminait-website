@@ -18,10 +18,22 @@
 | Non-rivalrous (scales infinitely) | Exclusive (McKinnon grad has McKinnon trust you don't) |
 | Marginal cost ≈ $0 once created | High marginal cost (time + delivery) |
 
+**Dual-Value Channel:**
+
+The graduate network delivers two types of value simultaneously:
+
+1. **Delivery Capacity** — They fulfill local demand you can't serve directly
+2. **Content Engine** — Each graduate generates authentic, school-specific content that feeds your social media
+
+The content angle is particularly powerful because:
+- They have natural credibility ("I went to McKinnon, scored 45 in English")
+- Their content reaches their network organically (no ad spend)
+- It's non-rivalrous for you — 5 graduates = 5x content output, same IP input
+
 **The Exchange:**
-- You provide: Materials, training, brand, methodology, QA systems
-- Graduate provides: Local delivery, school network access, student recruitment
-- Revenue split: 20% you, 80% graduate (reflects operational burden)
+- You provide: Materials, training, brand, methodology, QA systems, payment collection
+- Graduate provides: Local delivery, school network access, student recruitment, content creation
+- Revenue model: Graduated hourly rate (see Section 3)
 
 ### 1.2 Why This Works
 
@@ -65,59 +77,82 @@
 
 ## 3. BUSINESS MODEL
 
-### 3.1 Revenue Structure
+### 3.1 Building Phase: Graduated Hourly Rate
 
-**Franchise Model (Recommended):**
+**Philosophy:** During the building phase, there are no upfront payments on either side. You collect course fees from parents and pay graduates weekly at a graduated hourly rate that increases with class size.
+
+**Why graduated rate (not flat %):**
+- Small classes: Graduate keeps more → incentive to start
+- Larger classes: You keep more → fair since same work, more revenue
+- Each additional student adds meaningful income → no disincentive ceiling
+
+**Payment Structure:**
+
+| Students | Revenue/Term | Graduate $/hr | Graduate Total | You Keep | Your % |
+|----------|--------------|---------------|----------------|----------|--------|
+| 1 | $550 | $55 | $550 | $0 | 0% |
+| 2 | $1,100 | $65 | $650 | $450 | 41% |
+| 3 | $1,650 | $75 | $750 | $900 | 55% |
+| 4 | $2,200 | $85 | $850 | $1,350 | 61% |
+| 5 | $2,750 | $100 | $1,000 | $1,750 | 64% |
+
+*Assumptions: $550/student/term (10 weeks × $55), 1 group session/week, 10 hours total work*
+
+**Graduate Earnings Growth (per additional student):**
+- 1→2: +$100/term
+- 2→3: +$100/term
+- 3→4: +$100/term
+- 4→5: +$150/term (bonus for filling class)
+
+**Key mechanics:**
+- You collect fees upfront from parents
+- You pay graduate weekly ($10-15/week at full class)
+- Graduate never handles money → simpler compliance
+- At 1 student, graduate gets 100% → zero barrier to start
+
+### 3.2 Revenue Projections
+
+**Scenario: One Graduate (McKinnon) - Building Phase**
+
+| Term | Students | Revenue | You Keep | Graduate Keeps |
+|------|----------|---------|----------|----------------|
+| Term 1 | 2 | $1,100 | $450 | $650 |
+| Term 2 | 4 | $2,200 | $1,350 | $850 |
+| Term 3 | 5 | $2,750 | $1,750 | $1,000 |
+| **Year 1** | — | **$6,050** | **$3,550** | **$2,500** |
+
+**Scenario: Network of 5 Graduates at Scale (5 students each)**
+
+| Graduates | Students | Revenue/Term | You Keep/Term | Annual (3 terms) |
+|-----------|----------|--------------|---------------|------------------|
+| 1 | 5 | $2,750 | $1,750 | $5,250 |
+| 3 | 15 | $8,250 | $5,250 | $15,750 |
+| 5 | 25 | $13,750 | $8,750 | $26,250 |
+
+**Effective economics:**
+- Your time: ~60 hours/year per graduate (training + QA)
+- Revenue per graduate at scale: $5,250/year
+- Effective rate: $87/hour for QA work
+- But: Zero delivery time + content generation value (see Section 3.3)
+
+**Key advantage:** Scales without linear time investment. At 5 graduates, you're earning $26K/year for ~300 hours of support work (~$87/hr), plus getting 5x content output for social media.
+
+### 3.3 Future Phase: Upfront Licensing
+
+Once model is proven (Year 2+), consider adding:
 
 ```
 Graduate Investment:
   - $2,500 upfront (training + materials licensing)
-  - 20% ongoing revenue share
+  - Graduated hourly rate continues
 
-Your Investment:
-  - 2 weeks initial training (first cohort)
-  - 4 hours/month QA + support (ongoing)
-  - Curriculum updates (shared across network)
-  - Marketing materials + video support
-
-Graduate Keeps:
-  - 80% of course revenue
-  - Direct student relationships
-  - Scheduling flexibility
+Unlocks:
+  - Priority access to new texts/materials
+  - Co-branded marketing materials
+  - Featured placement on school pages
 ```
 
-**Why franchise vs. licensing:**
-- Licensing (one-time fee) = no ongoing quality incentive
-- White-label (their brand) = defeats local authority moat
-- Franchise = maintains brand control + quality gates + network effects
-
-### 3.2 Revenue Projections
-
-**Scenario: One Graduate (McKinnon)**
-
-| Metric | Year 1 | Year 2 | Year 3 |
-|--------|--------|--------|--------|
-| Cohorts/year | 3 | 3 | 3 |
-| Students/cohort | 15 | 18 | 20 |
-| Course fee | $3,000 | $3,000 | $3,000 |
-| **Total tuition** | **$135K** | **$162K** | **$180K** |
-| Your cut (20%) | $27K | $32K | $36K |
-| Graduate cut (80%) | $108K | $130K | $144K |
-
-**Scenario: Network of 5 Graduates (Year 3)**
-
-| Year | Schools | Total Tuition | Your Revenue (20%) |
-|------|---------|---------------|-------------------|
-| 1 | 1 | $135K | $27K |
-| 2 | 3 | $486K | $97K |
-| 3 | 5 | $900K | $180K |
-
-**Effective economics:**
-- Your time: ~60 hours/year per graduate (training + QA)
-- Revenue per graduate: $27K - $36K/year
-- Effective rate: $450/hour (vs. $270/hour teaching directly)
-
-**Key advantage:** Scales without linear time investment (materials are non-rivalrous)
+This is optional and only for proven graduates who want to formalize the relationship.
 
 ---
 
@@ -169,6 +204,91 @@ Graduate Keeps:
 - Lesson Plan Templates (week-by-week for each text)
 - Observation Rubric
 - Franchise Agreement (legal)
+
+---
+
+## 4A. GRADUATE CONTENT PROGRAM
+
+### 4A.1 Strategic Value of Graduate Content
+
+The graduate network isn't just a delivery channel—it's a content engine. Each graduate produces authentic, school-specific content that feeds your social media presence.
+
+**Why graduate content is powerful:**
+
+| Factor | Graduate Content | Your Content |
+|--------|------------------|--------------|
+| Credibility | "I went to McKinnon, scored 45" | External authority |
+| Reach | Organic to their school network | Requires ad spend |
+| Volume | 5 graduates = 5x output | Limited by your time |
+| Authenticity | Alumni identity = local trust | Outsider positioning |
+
+**Key insight:** Content creation is non-rivalrous for you. 5 graduates = 5x content output for the same IP input.
+
+### 4A.2 Content Types and Expectations
+
+**Required content (per term):**
+
+| Content Type | Frequency | Purpose | Example |
+|--------------|-----------|---------|---------|
+| **30-sec analysis video** | 2/term | Demonstrate TVODE methodology | "How I'd approach Macbeth's 'unsex me' soliloquy" |
+| **Before/after framing** | 1/term | Show transformation | "Before LuminAIT I couldn't... now I can..." |
+| **Student success story** | 1/term | Proof of outcomes | "My student improved from C to A" |
+
+**Optional content (encouraged):**
+
+| Content Type | Frequency | Purpose |
+|--------------|-----------|---------|
+| Study tips for specific text | Weekly | SEO + engagement |
+| Exam prep content | Before SACs/exams | High-intent audience |
+| Behind-the-scenes teaching | Monthly | Humanize the brand |
+
+### 4A.3 Content Guidelines
+
+**Must show:**
+1. **Visible methodology** — TVODE structure, not generic advice
+2. **Text-specific application** — "How to analyze Macbeth" not "How to write essays"
+3. **Before/after framing** — Transformation narrative that credits the system
+
+**Must avoid:**
+1. **Pure polish** — If it just shows "smart analysis," parent thinks "this grad is talented" not "this system works"
+2. **Generic tips** — Recreates commoditized tutoring positioning
+3. **Off-brand messaging** — Follow tone/style guidelines
+
+**Content review process:**
+- Graduate drafts content
+- You review before posting (first 3 months)
+- After 3 months: graduate posts directly, you spot-check
+
+### 4A.4 Content Distribution
+
+**Channels:**
+
+| Channel | Owner | Purpose |
+|---------|-------|---------|
+| Graduate's personal social | Graduate | Reach their school network |
+| LuminAIT main channels | You | Aggregate best content |
+| School landing pages | You | Embed in `/schools/[slug]/` |
+
+**Cross-posting flow:**
+1. Graduate posts to their Instagram/TikTok
+2. Best content repurposed to LuminAIT channels
+3. Analysis videos embedded in relevant school pages
+
+**Network effect:** Graduate content drives discovery → Parents enroll → More graduates → More content
+
+### 4A.5 Content Program Metrics
+
+| Metric | Target (per graduate/term) |
+|--------|---------------------------|
+| Videos posted | 3+ |
+| Combined reach | 500+ views |
+| Engagement rate | 3%+ |
+| Inquiries attributed | 2+ |
+
+**Tracking:**
+- UTM links in graduate bios
+- "How did you hear about us?" on enrollment form
+- Monthly content performance review
 
 ---
 
@@ -557,6 +677,7 @@ IP OWNERSHIP:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | Jan 30, 2026 | Initial graduate network franchise strategy |
+| 1.1 | Jan 30, 2026 | Revised financial model (graduated hourly rate $55→$100), added dual-value channel concept, added Graduate Content Program section (4A) |
 
 ---
 
