@@ -1,0 +1,39 @@
+{
+  "slug": "scotch-college",
+  "schoolName": "Scotch College",
+  "shortName": "Scotch",
+  "location": {
+    "suburb": "Hawthorn",
+    "state": "VIC",
+    "coordinates": {
+      "lat": -37.8289,
+      "lng": 145.0345
+    }
+  },
+  "type": "Independent",
+  "gender": "Boys",
+  "booklist": {
+    "year7": [
+      { "slug": "the-giver", "title": "The Giver" }
+    ],
+    "year8": [
+      { "slug": "blueback", "title": "Blueback" }
+    ],
+    "year9": [
+      { "slug": "animal-farm", "title": "Animal Farm" },
+      { "slug": "the-outsiders", "title": "The Outsiders" }
+    ],
+    "year10": [
+      { "slug": "macbeth", "title": "Macbeth" }
+    ],
+    "vce": [
+      { "slug": "dracula", "title": "Dracula" }
+    ]
+  },
+  "verifiedDate": "January 2026",
+  "testimonial": {
+    "quote": "My son finally understood how to write about Macbeth instead of just summarizing the plot.",
+    "parent": "David K.",
+    "year": "Year 10 parent"
+  }
+}

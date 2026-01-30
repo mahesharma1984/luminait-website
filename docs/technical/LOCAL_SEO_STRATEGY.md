@@ -2,231 +2,384 @@
 
 **Date:** January 30, 2026
 **Status:** Active — canonical reference for local SEO implementation
-**Related:** [Site Architecture](./SITE_ARCHITECTURE.md), [Graduate Network Strategy](../P_GTM_Graduate_Network_v1_0.md), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md)
+**Related:** [Site Architecture](./SITE_ARCHITECTURE.md) (URL structure), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md) (proof point hierarchy), [Customer Journey](../theory/02_CUSTOMER_JOURNEY.md) (funnel design)
 
 ---
 
 ## 1. STRATEGIC FOUNDATION
 
-### 1.1 School-by-School Local SEO Model
+### 1.1 Why Local SEO Matters for Education
 
-**Core insight:** Parents search by school name, not just by subject.
+Education is a **credence good** — parents cannot evaluate quality before or after purchase. Local SEO solves this by converting credibility signals into **verifiable, binary proof**:
 
-**Search behavior:**
-- Generic: "English tutoring Melbourne" (broad, competitive)
-- School-specific: "McKinnon English tutor" (hyper-local, low competition)
+| Traditional Credibility | Local SEO Proof |
+|------------------------|-----------------|
+| "We're experienced tutors" | "We teach at McKinnon SC" (verifiable) |
+| "We know the curriculum" | "Here's McKinnon's 2026 booklist" (binary) |
+| "We serve Melbourne" | Google shows our address + reviews |
 
-**The McKinnon Model:** Build landing pages for each school showing their 2026 booklist + which texts you cover.
+**Core insight:** Parents who search by school name ("McKinnon SC English tutor") have already self-identified. They trust providers who speak their language.
 
-**Why this creates a moat:**
-- Competitors optimize for generic keywords
-- You own school-specific long-tail keywords
-- Each school page builds local authority
-- Hard to replicate (requires systematic booklist tracking + alumni network)
+### 1.2 The McKinnon Model
 
-### 1.2 Integration with Graduate Network Strategy
+**Strategy C from PMF Framework** — School-Led Entry creates the highest-trust proof point:
 
-**Capital exchange:**
-- Your IP: Text-specific methodology + materials
-- Graduate's capital: School network + local trust
-- Local SEO: Amplifies both (page ranks → graduate delivers → reviews strengthen SEO)
-
-**Compounding effect:**
 ```
-School page ranks for "[School] English tutor"
-    ↓
-Parent discovers LuminAIT
-    ↓
-Enrolls with local graduate (McKinnon grad teaches McKinnon students)
-    ↓
-Leaves Google review mentioning school
-    ↓
-Page ranks higher → cycle repeats
+PROOF HIERARCHY (weakest → strongest):
+├── "We teach English" (generic)
+├── "We teach The Giver" (text-specific)
+├── "Here's our 10-week plan for The Giver" (text-specific proof) ← CURRENT
+├── "Here's McKinnon SC's 2026 booklist" (school-specific proof) ← LOCAL SEO
+└── "Here's actual student work" (outcome proof)
 ```
 
----
+School-specific proof ranks **second only to showing student work**. It's verifiable (parent can check school's actual booklist), local (signals deep knowledge of specific curriculum), and frictionless (no interpretation required).
 
-## 2. IMPLEMENTATION STATUS
+### 1.3 The Defensible Moat
 
-### 2.1 Completed (January 2026)
+Why this strategy cannot be easily replicated:
 
-✅ **School pages build system:**
-- `build-school-pages.js` — Generates pages from JSON data
-- `_school-page-template.html` — Template with LocalBusiness schema
-- `schools-index.html` — Directory listing
+| Requirement | LuminAIT | Generic Tutor |
+|-------------|----------|---------------|
+| Systematic booklist tracking | Build system + JSON data | Manual, ad-hoc |
+| 100+ school pages | Template-based generation | Would need 3+ months |
+| Text-specific content to anchor | 18 text guides already built | None |
+| Annual update infrastructure | `build-school-pages.js` | Manual rewrites |
+| Local review accumulation | Compounding over time | Starting from zero |
 
-✅ **Pilot schools (5):**
-- McKinnon Secondary College
-- Melbourne Girls College
-- Lauriston Girls' School
-- Korowa Anglican Girls' School
-- Scotch College
-
-✅ **Homepage integration:**
-- Schools section added below text grid
-- "Or find by school" fold
-- 5-column grid (responsive)
-
-✅ **Technical SEO:**
-- Organization schema on homepage (EducationalOrganization)
-- LocalBusiness schema on each school page
-- NAP in footer (Melbourne, VIC, Australia + email)
-- Meta title: "Text-Specific English Tutoring Melbourne | LuminAIT"
-
-### 2.2 Pending
-
-⚠️ **Google Business Profile:**
-- Set up account
-- Claim Melbourne location
-- Add service areas
-- Weekly posting schedule (30-sec videos)
-
-⚠️ **Review collection:**
-- Progress report email → Google review CTA
-- Response templates with keywords
-- Track review count + ratings
-
-⚠️ **Saturation (20 schools):**
-- Expand from 5 → 20 Melbourne schools
-- Cover top selective + state schools
-- Build `/schools/` index page prominence
+**Result:** First-mover advantage compounds. Each school page builds authority that reinforces the next.
 
 ---
 
-## 3. KEYWORD STRATEGY
+## 2. KEYWORD STRATEGY
 
-### 3.1 School-Specific Clustering
+### 2.1 School-Specific Clustering
 
-**Each school generates 5-10 keyword targets:**
+**Generic competitor optimizes for:**
+- "English tutoring Melbourne" (broad, high competition)
+- "Macbeth tutoring" (national, competitive)
 
-| Keyword Type | Example | Competition | Intent |
-|--------------|---------|-------------|--------|
-| School + subject | "McKinnon English tutor" | Low | High (parent knows school + need) |
-| School + booklist | "McKinnon 2026 booklist help" | Very low | Medium (informational → transactional) |
-| School + year level | "McKinnon Year 10 English" | Low | Medium |
-| School + curriculum | "McKinnon VCE English tutor" | Low | High |
-| School + text | "McKinnon Macbeth tutoring" | Very low | Very high |
+**LuminAIT optimizes for:**
+- "[School Name] English tutor" (hyper-local, low competition)
+- "[School Name] booklist help" (intent-specific)
+- "[School Name] [Year Level] English" (granular)
+- "[School Name] VCE English tutor" (curriculum-specific)
 
-**Network effect:**
-- 20 schools × 7 keyword clusters = 140 unique targets
-- Minimal competition on each
-- Local intent = high conversion
+### 2.2 Keyword Map by Page Type
 
-### 3.2 vs. Generic Keywords
+| Page | Primary Keywords | Secondary Keywords |
+|------|------------------|-------------------|
+| Homepage `/` | "English tutoring Melbourne", branded | "text-specific tutoring", "Melbourne English tutor" |
+| School page `/schools/[school]/` | "[School] English tutor", "[School] booklist" | "[School] VCE/Y9/Y10 English", "[School] tutoring" |
+| Text page `/[text-slug]/` | "[text] tutoring Melbourne", "[text] English help" | "[text] essay help", "[text] analysis tutoring" |
+| Course `/course/` | Branded, "[text] course" | "English tutoring course Melbourne" |
 
-| Generic Keyword | Competition | Your Rank | School-Specific Keyword | Competition | Your Rank |
-|-----------------|-------------|-----------|------------------------|-------------|-----------|
-| "English tutoring Melbourne" | High | Unknown | "McKinnon SC English tutor" | Low | Top 3 (target) |
-| "Macbeth tutoring" | High | Unknown | "McKinnon Macbeth tutoring" | Very low | Top 1 (target) |
-| "VCE English help" | High | Unknown | "Lauriston VCE English tutor" | Low | Top 3 (target) |
+### 2.3 Long-Tail Advantage
 
-**Strategic focus:** Own the long tail, not the head.
+Each school generates 5-10 keyword clusters:
+- McKinnon SC English tutor
+- McKinnon SC booklist 2026
+- McKinnon SC Year 9 English
+- McKinnon SC Year 10 English
+- McKinnon SC VCE English tutor
+- McKinnon SC Macbeth tutoring
+- McKinnon SC Animal Farm help
+
+**20 schools × 7 clusters = 140 unique keyword targets** with minimal competition.
 
 ---
 
-## 4. ON-PAGE SEO ELEMENTS
+## 3. TECHNICAL IMPLEMENTATION
 
-### 4.1 School Page Template
+### 3.1 Schema Markup
 
-**URL:** `/schools/[school-slug]/`
-
-**Key elements:**
-- **Title tag:** "English Tutoring for [School Name] | LuminAIT Melbourne"
-- **Meta description:** "Text-specific English tutoring for [School] students. Courses for [Text 1], [Text 2], [Text 3]. Melbourne."
-- **H1:** "English Tutoring for [School Name]"
-- **Content:** 2026 booklist by year level, links to text pages, verification date
-
-### 4.2 Schema Markup
-
-**Site-wide (Homepage):**
+**Organization (site-wide, in `<head>`):**
 ```json
 {
+  "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "LuminAIT",
+  "description": "Text-specific English tutoring for Melbourne secondary students",
+  "url": "https://luminait.app",
+  "logo": "https://luminait.app/assets/logo.png",
   "address": {
+    "@type": "PostalAddress",
     "addressLocality": "Melbourne",
     "addressRegion": "VIC",
     "addressCountry": "AU"
   },
-  "areaServed": "Melbourne",
-  "email": "hello@luminait.app"
-}
-```
-
-**School pages:**
-```json
-{
-  "@type": "LocalBusiness",
-  "name": "LuminAIT - English Tutoring for [School Name]",
-  "address": {...},
-  "areaServed": "[School Suburb], Melbourne",
-  "makesOffer": [
-    {"@type": "Service", "name": "[Text] Tutoring"}
+  "areaServed": {
+    "@type": "City",
+    "name": "Melbourne"
+  },
+  "sameAs": [
+    "https://www.instagram.com/luminait",
+    "https://www.facebook.com/luminait"
   ]
 }
 ```
 
-### 4.3 NAP Consistency
+**LocalBusiness (school pages):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "LuminAIT - English Tutoring for [School Name]",
+  "description": "Text-specific English tutoring aligned with [School Name]'s 2026 curriculum",
+  "url": "https://luminait.app/schools/[school-slug]/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Melbourne",
+    "addressRegion": "VIC",
+    "addressCountry": "AU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "[school-lat]",
+    "longitude": "[school-lng]"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "[School Suburb], Melbourne"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "[Text] Tutoring",
+        "description": "10-week course for [Text]"
+      }
+    }
+  ]
+}
+```
+
+**Course (text pages):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "[Text] English Tutoring",
+  "description": "10-week text-specific English course for [Text]",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "LuminAIT"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "duration": "P10W"
+  }
+}
+```
+
+### 3.2 Google Business Profile
+
+**Setup requirements:**
+- Business name: LuminAIT
+- Category: Educational Service (primary), Tutor (secondary)
+- Address: Melbourne business address (required for local pack)
+- Service area: Melbourne metropolitan area
+- Services: List each text as a service ("Macbeth Tutoring", "The Giver Tutoring", etc.)
+
+**Weekly posting schedule:**
+- Monday: 30-second video from `/studio/scenes/` (repurposed)
+- Thursday: Text tip or analysis snippet
+- Content includes keywords: "Melbourne", school names, text names
+
+**Review strategy:**
+- Request reviews after course completion (via progress report email)
+- Response template with keywords:
+  > "Thank you for your review! We loved helping [Student] with their [Text] analysis at [School]. Our text-specific approach to Melbourne secondary English continues to deliver results."
+
+### 3.3 NAP Consistency
 
 **NAP = Name, Address, Phone**
 
-**Must match exactly across:**
+Must be identical across:
 - Website footer
 - Google Business Profile
-- Schema markup
 - All directory listings
+- Schema markup
 
-**Current NAP:**
-```
-Name: LuminAIT
-Address: Melbourne, VIC, Australia
-Email: hello@luminait.app
+**Footer template (update in `src/partials/footer.html`):**
+```html
+<footer>
+  <div class="footer-nap">
+    <strong>LuminAIT</strong><br>
+    Melbourne, VIC<br>
+    <a href="tel:+61XXXXXXXXX">04XX XXX XXX</a><br>
+    <a href="mailto:hello@luminait.app">hello@luminait.app</a>
+  </div>
+</footer>
 ```
 
-*Note: Physical address to be added when office established*
+**Note:** Format must match exactly. "Melbourne, VIC" not "Melbourne VIC" or "Melbourne, Victoria".
 
 ---
 
-## 5. OFF-PAGE SEO ELEMENTS
+## 4. CONTENT STRATEGY
 
-### 5.1 Google Business Profile
+### 4.1 School Page Structure
 
-**Setup:**
-- Business name: LuminAIT
-- Category: Educational Service (primary), Tutor (secondary)
-- Service area: Melbourne metropolitan area
-- Services: List each text ("Macbeth Tutoring", "The Giver Tutoring", etc.)
+**URL:** `/schools/[school-slug]/`
 
-**Weekly posting schedule:**
-- Monday: 30-second analysis video (repurposed from `/studio/`)
-- Thursday: Text tip or curriculum update
-- Include keywords: Melbourne, school names, text names
-
-### 5.2 Review Strategy
-
-**Collection:**
-- Post-course email: "Please leave a Google review"
-- Progress report showcase → review CTA
-- Target: 10+ reviews, 5-star average
-
-**Response template:**
+**Template structure:**
 ```
-Thank you for your review! We loved helping [Student] with their
-[Text] analysis at [School]. Our text-specific approach to Melbourne
-secondary English continues to deliver results.
+┌─────────────────────────────────────────────────────────────┐
+│ H1: English Tutoring for [School Name]                      │
+│ Subhead: 2026 Booklist · Text-Specific Courses              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ HERO                                                        │
+│ "We teach the exact texts [School Name] has chosen"         │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ 2026 BOOKLIST                                               │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ Year 9          │ Year 10         │ VCE               │ │
+│ │ • Animal Farm   │ • Macbeth       │ • The Great Gatsby│ │
+│ │ • [Text]        │ • [Text]        │ • [Text]          │ │
+│ │ [View Course]   │ [View Course]   │ [View Course]     │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ WHY [SCHOOL] PARENTS CHOOSE US                              │
+│ • Curriculum-aligned: We follow [School]'s exact texts      │
+│ • Text-specific: 10-week courses built for each book        │
+│ • Proven results: [Testimonial from school parent]          │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ CTA: "See Your Child's Text" → links to text grid           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ FOOTER (with NAP)                                           │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-**Why:** Keywords in review responses feed Google's algorithm
+**SEO elements:**
+- Title: "English Tutoring for [School Name] | LuminAIT Melbourne"
+- Meta description: "Text-specific English tutoring aligned with [School Name]'s 2026 booklist. Courses for [Text 1], [Text 2], [Text 3]. Melbourne."
+- H1: "English Tutoring for [School Name]"
+- Schema: LocalBusiness + Course markup
 
-### 5.3 Local Citations
+### 4.2 Booklist Verification Process
 
-**Where to list:**
-- Education directories (Australia-specific tutoring platforms)
-- VCE/HSC provider directories
-- Local chambers of commerce
-- School partner portals (if applicable)
+**Annual cycle (December-January):**
+1. Check school websites for 2026 booklists
+2. Update `/data/schools/[school].json`
+3. Run `node build-school-pages.js`
+4. Verify pages updated correctly
+5. Post "2026 booklists updated" to Google Business Profile
 
-**Ensure NAP consistency across all listings**
+**Verification sources:**
+- School website (booklist section)
+- Campion or other booklist providers
+- Direct contact with school (if needed)
+
+**Data freshness signal:**
+- Include "Last verified: [Date]" on school pages
+- Shows Google the content is maintained
+
+### 4.3 Internal Linking
+
+```
+School Page (/schools/[school]/)
+    ├── → /[text-slug]/ (each text in booklist)
+    ├── → /course/ (enrollment CTA)
+    └── → / (homepage, "See all texts")
+
+Text Page (/[text-slug]/)
+    ├── → /schools/[school]/ ("Schools that teach [Text]")
+    ├── → /course/ (CTA)
+    └── → / (back to homepage)
+
+Homepage (/)
+    ├── → /schools/ (school directory index)
+    ├── → /[text-slug]/ (text cards)
+    └── → /course/ (CTA)
+```
+
+---
+
+## 5. SCALING PLAYBOOK
+
+### Phase 1: Pilot (5 Schools)
+
+**Timeline:** 2 weeks
+
+**Goal:** Validate school page template + SEO tracking
+
+**Schools:**
+1. McKinnon Secondary College (state, high-performing)
+2. Melbourne Girls College (state, girls)
+3. Lauriston Girls' School (private, girls)
+4. Korowa Anglican Girls' School (private, girls)
+5. Scotch College (private, boys)
+
+**Deliverables:**
+- [ ] Verify 5 school booklists
+- [ ] Create `/data/schools/[school].json` for each
+- [ ] Build `build-school-pages.js`
+- [ ] Deploy 5 school pages
+- [ ] Add LocalBusiness schema
+- [ ] Set up Google Search Console tracking for school keywords
+
+### Phase 2: Saturation (20 Schools)
+
+**Timeline:** 4 weeks after Phase 1
+
+**Goal:** Dominate "[School] English tutor" queries for Melbourne
+
+**Expansion criteria:**
+- Top 20 Melbourne secondary schools by enrollment
+- Mix of state, private, single-sex, co-ed
+- Priority: Schools whose booklists include our existing 18 texts
+
+**Deliverables:**
+- [ ] Verify 15 additional booklists
+- [ ] Generate 15 additional school pages
+- [ ] Build `/schools/` index page (directory of all schools)
+- [ ] Add "Schools we serve" section to homepage
+- [ ] Start weekly Google Business Profile posts
+
+### Phase 3: Partnership Leverage
+
+**Timeline:** After 3 months of organic traffic
+
+**Goal:** Convert local authority into official partnerships
+
+**Trigger:** When a school page reaches 50+ monthly visits
+
+**Approach:**
+1. Compile traffic data: "100+ parents from [School] found us"
+2. Contact school: "We're the most-visited tutoring resource for your parents"
+3. Offer: Newsletter mention, parent night sponsorship, or official recommendation
+
+**Partnership tiers:**
+- Tier 1: School links to our school page (backlink)
+- Tier 2: Newsletter mention or parent portal listing
+- Tier 3: Official tutoring partner (highest trust)
+
+### Phase 4: Geographic Expansion
+
+**Timeline:** After Melbourne saturation (20+ schools)
+
+**Markets:**
+- Sydney (HSC curriculum) — different texts, same strategy
+- Brisbane (Queensland curriculum)
+- Adelaide, Perth (smaller markets)
+
+**Per-market playbook:**
+1. Identify top 20 schools
+2. Verify curriculum/booklists
+3. Create text guides for market-specific texts (if new)
+4. Deploy school pages
+5. Set up market-specific Google Business Profile (or service area)
 
 ---
 
@@ -238,10 +391,10 @@ secondary English continues to deliver results.
 |--------|------|--------|
 | "[School] English tutor" rankings | Google Search Console | Top 3 for each school |
 | School page impressions | Google Search Console | 100+/month per school |
-| School page → text page CTR | Google Analytics | 30%+ |
-| GBP views | GBP Dashboard | 500+/month |
-| Review count | GBP Dashboard | 10+ (5-star avg) |
-| Conversion: school page → course | Google Analytics | 5%+ |
+| School page → text page clicks | Google Analytics | 30%+ CTR |
+| Google Business Profile views | GBP Dashboard | 500+/month |
+| Review count | GBP Dashboard | 10+ reviews (5-star average) |
+| Conversion: school page → course inquiry | Google Analytics | 5%+ |
 
 ### 6.2 Tracking Setup
 
@@ -249,7 +402,6 @@ secondary English continues to deliver results.
 - Add property: luminait.app
 - Filter by page: `/schools/`
 - Track queries containing school names
-- Monitor position changes for target keywords
 
 **Google Analytics:**
 - Event: `school_page_view` (page, school name)
@@ -257,98 +409,110 @@ secondary English continues to deliver results.
 - Goal: Course page visit from school page
 
 **Google Business Profile:**
-- Weekly check: views, searches, actions (calls, website visits)
-- Monthly: review count + rating + response rate
+- Weekly check: views, searches, actions
+- Monthly: review count + response rate
+
+### 6.3 Competitive Monitoring
+
+**Monthly audit:**
+1. Search "[School] English tutor" for each school
+2. Record: Our position, top 3 competitors
+3. Identify: New competitors entering school-specific keywords
+4. Action: If competitor appears, strengthen that school page (more content, internal links)
 
 ---
 
-## 7. SCALING ROADMAP
+## 7. BUILD SYSTEM INTEGRATION
 
-### Phase 1: Pilot (5 Schools) — COMPLETE
+### 7.1 Data Structure
 
-✅ McKinnon, Melbourne Girls, Lauriston, Korowa, Scotch
-✅ Pages built, schema added, indexed
-✅ Homepage integration complete
+**File:** `/data/schools/[school-slug].json`
 
-**Next:** Monitor rankings for 30 days, collect baseline data
+```json
+{
+  "slug": "mckinnon-sc",
+  "schoolName": "McKinnon Secondary College",
+  "shortName": "McKinnon SC",
+  "location": {
+    "suburb": "McKinnon",
+    "state": "VIC",
+    "coordinates": {
+      "lat": -37.9012,
+      "lng": 145.0456
+    }
+  },
+  "type": "state",
+  "gender": "co-ed",
+  "booklist2026": {
+    "year7": ["The Giver"],
+    "year8": ["The Outsiders"],
+    "year9": ["Animal Farm", "Romeo and Juliet"],
+    "year10": ["Macbeth", "To Kill a Mockingbird"],
+    "vce": ["The Great Gatsby", "Ransom"]
+  },
+  "verifiedDate": "2026-01-15",
+  "testimonial": {
+    "quote": "Finally, a tutor who knows exactly what my daughter is studying.",
+    "parent": "Sarah M.",
+    "year": "Year 10 parent"
+  }
+}
+```
 
-### Phase 2: Saturation (20 Schools) — Q1 2026
+### 7.2 Build Script
 
-**Expansion criteria:**
-- Top 20 Melbourne schools by enrollment
-- Mix of state/private, single-sex/co-ed
-- Priority: Schools whose booklists match existing 18 texts
+**File:** `build-school-pages.js`
 
-**Deliverables:**
-- [ ] Verify 15 additional school booklists
-- [ ] Generate 15 additional school pages
-- [ ] Build `/schools/` index prominence
-- [ ] Set up Google Business Profile
-- [ ] Start weekly posting schedule
+**Pattern:** Follow `build-parent-guides.js` structure
 
-### Phase 3: Partnership Leverage — Q2-Q3 2026
+```
+/data/schools/*.json  →  build-school-pages.js  →  /schools/[slug]/index.html
+                ↓                                          ↑
+  _school-page-template.html ──────────────────────────────┘
+```
 
-**Trigger:** When school page reaches 50+ monthly visits
+**Features:**
+- Read all JSON files from `/data/schools/`
+- Generate `/schools/[slug]/index.html` for each
+- Generate `/schools/index.html` (directory listing)
+- Inject LocalBusiness schema into each page
+- Link texts to existing `/[text-slug]/` pages
 
-**Approach:**
-1. Compile traffic data: "100+ parents from [School] found us"
-2. Contact school: "We're the most-visited tutoring resource for your parents"
-3. Offer: Newsletter mention, parent night sponsorship, official recommendation
+### 7.3 Template
 
-### Phase 4: Geographic Expansion — Q4 2026+
+**File:** `/src/templates/_school-page-template.html`
 
-**Markets:** Sydney (HSC), Brisbane, Adelaide
-
-**Per-market playbook:**
-1. Identify top 20 schools
-2. Verify curriculum/booklists
-3. Deploy school pages
-4. Set up market-specific GBP (or expand service area)
-
----
-
-## 8. INTEGRATION WITH GRADUATE NETWORK
-
-**From P_GTM_Graduate_Network_v1_0.md:**
-
-| SEO Element | Graduate Network Enhancement |
-|-------------|------------------------------|
-| School landing page | Graduate teaches at that school → authentic presence |
-| Local reviews | Parents from specific school → geo-targeted credibility |
-| Video content | Graduate creates analysis videos → embedded in school pages |
-| Word-of-mouth | Graduate's network amplifies SEO discovery |
-
-**The moat:**
-- SEO captures intent ("McKinnon English tutor")
-- Graduate delivers with local credibility (McKinnon alumni)
-- Reviews strengthen SEO ranking
-- Cycle compounds
-
-**Competitor challenge:**
-- To replicate, they need: (1) School pages, (2) Alumni at each school, (3) Text-specific materials, (4) Local reviews
-- Hard to copy one; impossible to copy all four
-
----
-
-## 9. "THE SEO GUY" CHECKLIST STATUS
-
-Reference: Local business SEO best practices
-
-| Tactic | Status | Implementation |
-|--------|--------|----------------|
-| ✅ Meta title = keyword + city | DONE | "Text-Specific English Tutoring Melbourne \| LuminAIT" |
-| ✅ Address in footer (NAP) | DONE | Melbourne, VIC, Australia + email |
-| ✅ H1 = service + location | DONE | School pages: "English Tutoring for [School]" |
-| ✅ Location pages | DONE | 5 schools live, 15 more pending |
-| ✅ Schema markup | DONE | EducationalOrganization + LocalBusiness |
-| ⚠️ GBP setup | TODO | Account creation + weekly posts |
-| ⚠️ Review responses | TODO | Template ready, need active reviews |
-| ⚠️ Photos weekly | TODO | 30-sec videos from `/studio/` |
-| ⚠️ NAP citations | TODO | Education directories |
+**Variables:**
+- `{{schoolName}}` — Full school name
+- `{{shortName}}` — Short name for headings
+- `{{suburb}}` — Location for schema
+- `{{booklist}}` — Rendered year-by-year text grid
+- `{{testimonial}}` — Parent quote (if available)
+- `{{verifiedDate}}` — Last booklist verification
+- `{{schema}}` — JSON-LD LocalBusiness markup
 
 ---
 
-## 10. VERSION HISTORY
+## 8. REFERENCE: "THE SEO GUY" CHECKLIST
+
+The following local SEO tactics (from practitioner consensus) map to our strategy:
+
+| Tactic | LuminAIT Implementation | Status |
+|--------|------------------------|--------|
+| **Meta title = keyword + city** | "English Tutoring for [School] \| LuminAIT Melbourne" | Template |
+| **Address in footer** | NAP in footer partial | TODO |
+| **H1 = service + location** | "English Tutoring for [School Name]" | Template |
+| **Location pages for each area** | `/schools/[school]/` for 20+ schools | Phase 1-2 |
+| **Schema markup** | LocalBusiness + Course + EducationalOrganization | Template |
+| **GBP category correct** | Educational Service + Tutor | Setup |
+| **GBP photos weekly** | 30-second videos from `/studio/scenes/` | Ongoing |
+| **Review responses with keywords** | Template with school + text names | Ongoing |
+| **Consistent NAP** | Single source of truth in site-config.json | TODO |
+| **Niche directories** | Education directories, VCE/HSC platforms | Phase 3 |
+
+---
+
+## 9. VERSION HISTORY
 
 | Version | Date | Changes |
 |---------|------|---------|

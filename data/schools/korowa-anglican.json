@@ -1,0 +1,33 @@
+{
+  "slug": "korowa-anglican",
+  "schoolName": "Korowa Anglican Girls' School",
+  "shortName": "Korowa",
+  "location": {
+    "suburb": "Glen Iris",
+    "state": "VIC",
+    "coordinates": {
+      "lat": -37.8612,
+      "lng": 145.0623
+    }
+  },
+  "type": "Independent",
+  "gender": "Girls",
+  "booklist": {
+    "year7": [
+      { "slug": "the-giver", "title": "The Giver" }
+    ],
+    "year8": [
+      { "slug": "the-outsiders", "title": "The Outsiders" }
+    ],
+    "year9": [
+      { "slug": "animal-farm", "title": "Animal Farm" }
+    ],
+    "year10": [
+      { "slug": "to-kill-a-mockingbird", "title": "To Kill a Mockingbird" }
+    ],
+    "vce": [
+      { "slug": "convenience-store-woman", "title": "Convenience Store Woman" }
+    ]
+  },
+  "verifiedDate": "January 2026"
+}

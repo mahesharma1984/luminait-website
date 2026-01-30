@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Tutoring for {{SCHOOL_NAME}} | LuminAIT Melbourne</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+
+  <!-- Fonts & Base Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/components/base.css">
+  <link rel="stylesheet" href="/components/page-components.css">
+  <link rel="stylesheet" href="/components/page-marketing.css">
+
+  <!-- LocalBusiness Schema Markup -->
+  <script type="application/ld+json">
+{{SCHEMA_MARKUP}}
+  </script>
+
+  <style>
+    /* School Page Styles */
+    .school-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .school-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warm-light);
+      color: var(--warm);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    .school-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+    }
+
+    /* Booklist Section */
+    .school-booklist {
+      padding: 60px 0;
+      background: var(--section-soft);
+    }
+
+    .school-booklist-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .school-booklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .school-year-group {
+      background: var(--bg-paper);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .school-year-group h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .school-text-link {
+      display: block;
+      padding: 10px 0;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      transition: color 0.2s ease;
+    }
+
+    .school-text-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .school-text-link:last-child {
+      border-bottom: none;
+    }
+
+    .school-text-unavailable {
+      display: block;
+      padding: 10px 0;
+      color: var(--text-light);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .school-text-unavailable:last-child {
+      border-bottom: none;
+    }
+
+    /* Why Section */
+    .school-why {
+      padding: 60px 0;
+    }
+
+    .school-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .school-why-card {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .school-why-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .school-why-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .school-why-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* Testimonial */
+    .school-testimonial {
+      background: var(--section-paper);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 600px;
+      margin: 40px auto 0;
+    }
+
+    .school-testimonial blockquote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+
+    .school-testimonial cite {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: normal;
+    }
+
+    /* CTA Section */
+    .school-cta {
+      padding: 60px 0;
+      background: var(--section-soft);
+      text-align: center;
+    }
+
+    .school-cta h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .school-cta p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: var(--space-lg);
+    }
+
+    /* Verified badge */
+    .school-verified {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: var(--space-xl);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .school-why-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .school-booklist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">LuminAIT</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/schools/" class="active">Schools</a>
+        <a href="/course.html">Course</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="section school-hero">
+    <div class="school-badge">{{SUBURB}} · {{SCHOOL_TYPE}}</div>
+    <h1>English Tutoring for <span style="color: var(--primary);">{{SCHOOL_NAME}}</span></h1>
+    <p class="school-subtitle">We teach the exact texts your school has chosen for 2026.</p>
+  </header>
+
+  <!-- Booklist Section -->
+  <section class="section school-booklist">
+    <div class="container">
+      <div class="school-booklist-header">
+        <h2>2026 Booklist</h2>
+        <p class="text-light">Click any text to see the 10-week course plan.</p>
+      </div>
+
+      <div class="school-booklist-grid">
+{{BOOKLIST_HTML}}
+      </div>
+
+      {{TESTIMONIAL}}
+
+      <p class="school-verified">Last verified: {{VERIFIED_DATE}}</p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section school-why">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--space-xl);">Why {{SHORT_NAME}} Parents Choose Us</h2>
+
+      <div class="school-why-grid">
+        <div class="school-why-card">
+          <div class="school-why-icon">📚</div>
+          <h4>Curriculum-Aligned</h4>
+          <p>We follow {{SHORT_NAME}}'s exact texts, so your child studies what they're learning in class.</p>
+        </div>
+
+        <div class="school-why-card">
+          <div class="school-why-icon">📝</div>
+          <h4>Text-Specific</h4>
+          <p>10-week courses built for each book—not generic essay templates that don't fit their text.</p>
+        </div>
+
+        <div class="school-why-card">
+          <div class="school-why-icon">📈</div>
+          <h4>Proven Results</h4>
+          <p>Students improve their analytical writing by an average of 25% in one term.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section school-cta">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Find your child's text above, or explore all our courses.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn btn-secondary">See All Texts</a>
+        <a href="/course.html" class="btn btn-primary">View Course Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/schools/">Schools</a>
+      <a href="mailto:hello@luminait.app">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
+  </footer>
+
+</body>
+
+</html>

@@ -433,6 +433,8 @@ The Giver                VCE Guides
 
 ## 8. SEO STRATEGY
 
+**For detailed local SEO implementation, see [LOCAL_SEO_STRATEGY.md](./LOCAL_SEO_STRATEGY.md)**
+
 ### 8.1 By Page Type
 
 | Page Type | Primary Keywords | Intent |
