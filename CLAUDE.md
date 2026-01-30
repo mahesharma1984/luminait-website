@@ -17,11 +17,13 @@ Key documents:
 - `docs/technical/UX_PROCESS.md` - Page development checklist + journey mapping
 - `docs/technical/GUIDE_TEMPLATE_SPEC.md` - How analysis guide pages work
 - `docs/technical/GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides from kernels
+- `docs/technical/LOCAL_SEO_STRATEGY.md` - School-by-school local SEO implementation
 
 **Operational** (at docs root):
 - `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core dev methodology
 - `RALPH_Readiness_Assessment_v3_1.md` - Automation readiness
 - `P_GTM_Partnership_v3_0.md` - Partnership strategy
+- `P_GTM_Graduate_Network_v1_0.md` - Graduate network franchise strategy
 - `FRAMEWORK_Scientific_Relational_Pedagogy_v1_0.md` - Pedagogy IP
 
 ## Project Structure
