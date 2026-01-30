@@ -36,9 +36,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="/components/base.css">
-  <link rel="stylesheet" href="/components/page-components.css">
-  <link rel="stylesheet" href="/components/page-marketing.css">
+  <link rel="stylesheet" href="components/base.css">
+  <link rel="stylesheet" href="components/page-components.css">
+  <link rel="stylesheet" href="components/page-marketing.css">
 
   <style>
     /* Homepage Specific Styles - Minimal overrides only */
@@ -150,7 +150,17 @@
 
 <body>
 
-  {{>nav.html}}
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="/" class="nav-logo">LuminAIT</a>
+      <div class="nav-links">
+        <a href="/#how-it-works" class="nav-link">How it Works</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
 
   <!-- Hero -->
   <header class="section hero">
@@ -235,72 +245,6 @@
     </div>
   </header>
 
-  <!-- Video Demonstration Section -->
-  <section class="section video-demo-section">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: var(--space-lg);">
-        <span class="hero-badge">The Method</span>
-        <h2 style="margin-top: 12px;">See how we teach close reading</h2>
-        <p style="color: var(--text-light); max-width: 600px; margin: 12px auto 0;">
-          We break down complex skills into visual, tangible steps.
-        </p>
-      </div>
-
-      <div class="video-demo-grid">
-        <!-- Card 1: Annotation -->
-        <div class="video-demo-card">
-          <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-              <source src="/studio/assets/clips/demo-annotation.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-card-content">
-            <h3>1. Annotating the Text</h3>
-            <p>We trace the patterns live, showing exactly how devices create meaning.</p>
-            <div style="margin-top: 10px;">
-              <a href="/studio/demos/demo-annotation.html" target="_blank"
-                style="font-size: 0.8rem; color: var(--primary); text-decoration: none;">View Interactive Demo →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Worksheet -->
-        <div class="video-demo-card">
-          <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-              <source src="/studio/assets/clips/demo-worksheet.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-card-content">
-            <h3>2. Structured Activities</h3>
-            <p>Interactive worksheets build understanding step by step, not all at once.</p>
-            <div style="margin-top: 10px;">
-              <a href="/studio/demos/demo-worksheet.html" target="_blank"
-                style="font-size: 0.8rem; color: var(--primary); text-decoration: none;">View Interactive Demo →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Analysis -->
-        <div class="video-demo-card">
-          <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-              <source src="/studio/assets/clips/demo-analysis.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-card-content">
-            <h3>3. Constructing Analysis</h3>
-            <p>We show them how to turn observations into sophisticated sentences.</p>
-            <div style="margin-top: 10px;">
-              <a href="/studio/demos/demo-analysis.html" target="_blank"
-                style="font-size: 0.8rem; color: var(--primary); text-decoration: none;">View Interactive Demo →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Schools Section -->
   <section class="section schools-section">
     <div class="container">
@@ -357,45 +301,53 @@
     </div>
   </section>
 
-  <!-- Value Prop / Sample (What else to include: Sample Snippet) -->
-  <section class="section section-paper" id="how-it-works">
+  <!-- Methodology Section (Consolidated) -->
+  <section class="section section-paper">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <span
-            style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">The
-            Difference</span>
-          <h2 style="margin-top: 8px;">We don't just "help with English". We prepare them for <i>this</i> book.</h2>
-          <p style="font-size: 1.1rem; color: var(--text-main);">Most tutors teach generic essay structure. We teach the
-            specific themes, symbols, and analysis required for their exact text.</p>
+      <div class="grid grid-2" style="align-items: center;">
 
-          <ul style="list-style: none; margin-top: var(--space-lg);">
-            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
-              <span style="color: var(--accent);">✓</span> Chapter-by-chapter breakdown
+        <!-- Left: Value Prop & Logic -->
+        <div>
+          <span class="hero-badge">The Method</span>
+          <h2 style="margin-top: 12px; margin-bottom: 1rem;">We don't just "help with English". We prepare them for
+            <i>this</i> book.
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.5rem;">
+            Generic tutoring fails because it misses the details. We build the entire 10-week course around the specific
+            text they are studying at school.
+          </p>
+
+          <ul style="list-style: none; margin-bottom: 2rem;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: start;">
+              <span style="color: var(--accent); font-weight: bold;">✓</span>
+              <span><b>Chapter-by-chapter breakdown</b> mapped to their exact school timeline.</span>
             </li>
-            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
-              <span style="color: var(--accent);">✓</span> Pre-written analysis bank
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: start;">
+              <span style="color: var(--accent); font-weight: bold;">✓</span>
+              <span><b>Pre-written analysis bank</b> so they know exactly what to look for.</span>
             </li>
-            <li style="margin-bottom: 12px; display: flex; gap: 10px;">
-              <span style="color: var(--accent);">✓</span> 10 weeks of structured worksheets
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: start;">
+              <span style="color: var(--accent); font-weight: bold;">✓</span>
+              <span><b>10 weeks of structured worksheets</b> building from observation to argument.</span>
             </li>
           </ul>
+
+          <a href="method.html" class="btn btn-secondary">See the full 3-step method →</a>
         </div>
 
-        <!-- Placeholder: Sample Essay Excerpt -->
-        <div class="sample-preview">
-          <small
-            style="text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); font-weight: 600;">Student
-            Output Example</small>
-          <p
-            style="margin-top: 12px; font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.6; color: var(--text-dark);">
-            "In <i>The Giver</i>, Lowry constructs the Community as a 'utopia' founded on the suppression of memory,
-            suggesting that safety without suffering renders human experience meaningless."
-          </p>
-          <div style="margin-top: 16px; font-size: 0.9rem; color: var(--primary); font-weight: 500;">
-            Analysis Level: Year 8 (Week 9)
+        <!-- Right: Single Hero Video -->
+        <div class="video-wrapper"
+          style="box-shadow: var(--shadow-lg); border-radius: 12px; overflow: hidden; background: #000;">
+          <video autoplay muted loop playsinline style="width: 100%; display: block;">
+            <source src="studio/assets/clips/demo-annotation.mp4" type="video/mp4">
+          </video>
+          <div style="padding: 12px; background: white; border-top: 1px solid #eee;">
+            <strong style="color: var(--primary);">Step 1: Annotation</strong>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin: 4px 0 0 0;">We trace patterns live, showing
+              exactly how devices create meaning.</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
