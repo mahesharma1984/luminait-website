@@ -1,0 +1,38 @@
+{
+  "slug": "lauriston-girls",
+  "schoolName": "Lauriston Girls' School",
+  "shortName": "Lauriston",
+  "location": {
+    "suburb": "Armadale",
+    "state": "VIC",
+    "coordinates": {
+      "lat": -37.8556,
+      "lng": 145.0178
+    }
+  },
+  "type": "Independent",
+  "gender": "Girls",
+  "booklist": {
+    "year7": [
+      { "slug": "the-giver", "title": "The Giver" }
+    ],
+    "year8": [
+      { "slug": "a-christmas-carol", "title": "A Christmas Carol" }
+    ],
+    "year9": [
+      { "slug": "romeo-and-juliet", "title": "Romeo and Juliet" }
+    ],
+    "year10": [
+      { "slug": "macbeth", "title": "Macbeth" }
+    ],
+    "vce": [
+      { "slug": "the-simple-gift", "title": "The Simple Gift" }
+    ]
+  },
+  "verifiedDate": "January 2026",
+  "testimonial": {
+    "quote": "The text-specific approach made all the difference. She went from struggling to confident in 10 weeks.",
+    "parent": "Jennifer L.",
+    "year": "Year 9 parent"
+  }
+}

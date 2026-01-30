@@ -1,0 +1,37 @@
+{
+  "slug": "mckinnon-sc",
+  "schoolName": "McKinnon Secondary College",
+  "shortName": "McKinnon SC",
+  "location": {
+    "suburb": "McKinnon",
+    "state": "VIC",
+    "coordinates": {
+      "lat": -37.9012,
+      "lng": 145.0456
+    }
+  },
+  "type": "State",
+  "gender": "Co-ed",
+  "booklist": {
+    "year7": [
+      { "slug": "the-giver", "title": "The Giver" }
+    ],
+    "year8": [
+      { "slug": "the-outsiders", "title": "The Outsiders" }
+    ],
+    "year9": [
+      { "slug": "animal-farm", "title": "Animal Farm" },
+      { "slug": "romeo-and-juliet", "title": "Romeo and Juliet" }
+    ],
+    "year10": [
+      { "slug": "macbeth", "title": "Macbeth" },
+      { "slug": "to-kill-a-mockingbird", "title": "To Kill a Mockingbird" }
+    ]
+  },
+  "verifiedDate": "January 2026",
+  "testimonial": {
+    "quote": "Finally, a tutor who knows exactly what my daughter is studying at school.",
+    "parent": "Sarah M.",
+    "year": "Year 10 parent"
+  }
+}

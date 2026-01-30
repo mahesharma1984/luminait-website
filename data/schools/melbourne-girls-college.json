@@ -1,0 +1,34 @@
+{
+  "slug": "melbourne-girls-college",
+  "schoolName": "Melbourne Girls College",
+  "shortName": "MGC",
+  "location": {
+    "suburb": "Richmond",
+    "state": "VIC",
+    "coordinates": {
+      "lat": -37.8234,
+      "lng": 145.0012
+    }
+  },
+  "type": "State",
+  "gender": "Girls",
+  "booklist": {
+    "year7": [
+      { "slug": "the-giver", "title": "The Giver" }
+    ],
+    "year8": [
+      { "slug": "the-outsiders", "title": "The Outsiders" }
+    ],
+    "year9": [
+      { "slug": "animal-farm", "title": "Animal Farm" }
+    ],
+    "year10": [
+      { "slug": "macbeth", "title": "Macbeth" },
+      { "slug": "jane-eyre", "title": "Jane Eyre" }
+    ],
+    "vce": [
+      { "slug": "the-curious-incident", "title": "The Curious Incident of the Dog in the Night-Time" }
+    ]
+  },
+  "verifiedDate": "January 2026"
+}
