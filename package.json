@@ -1,0 +1,32 @@
+{
+  "name": "luminait-website",
+  "version": "1.0.0",
+  "description": "Marketing landing page for LuminAIT Learning - Analytical Writing Course.",
+  "main": "build-homepage-guides.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahesharma1984/luminait-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mahesharma1984/luminait-website/issues"
+  },
+  "homepage": "https://github.com/mahesharma1984/luminait-website#readme",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "dotenv": "^17.2.3",
+    "fluent-ffmpeg": "^2.1.3",
+    "openai": "^6.16.0",
+    "puppeteer": "^24.36.1",
+    "yargs": "^18.0.0"
+  }
+}

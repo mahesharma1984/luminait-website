@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+temp_visual.mp4
+temp_frames/
+studio/cache_audio/
+studio/experiments/temp_frames/

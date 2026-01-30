@@ -578,6 +578,23 @@
     <div class="footer-copy">© 2026 LuminAIT Learning. Text-specific English tutoring in Melbourne.</div>
   </footer>
 
+  <script>
+    // Control video playback speed for demo section
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('.video-demo-section video');
+      videos.forEach(video => {
+        // Target: 5 seconds per loop
+        // playbackRate = actual duration / desired duration
+        video.addEventListener('loadedmetadata', function() {
+          const actualDuration = video.duration;
+          const desiredDuration = 5; // seconds
+          const playbackRate = actualDuration / desiredDuration;
+          video.playbackRate = playbackRate;
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
