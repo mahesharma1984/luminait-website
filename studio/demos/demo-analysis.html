@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Analysis Construction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #fff;
+            font-family: 'Georgia', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .editor-container {
+            width: 700px;
+            padding: 50px;
+            background: white;
+            /* Minimal paper look */
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: #333;
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            min-height: 200px;
+            position: relative;
+        }
+
+        .highlight-overlay {
+            background: rgba(241, 196, 15, 0.3);
+            position: absolute;
+            height: 1.4em;
+            z-index: -1;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .tag {
+            position: absolute;
+            background: #2ecc71;
+            color: white;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="editor-container">
+        <p id="content"><span class="cursor"></span></p>
+    </div>
+
+    <script>
+        const text = "Hinton uses first-person narration to bridge the gap between Ponyboy's immediate fear and his retrospective understanding. This creates a dual consciousness where the reader feels the danger while knowing the narrator survives.";
+
+        // Simulation params
+        const typeSpeed = 40;
+
+        async function run() {
+            const el = document.getElementById('content');
+            el.innerHTML = '<span class="cursor"></span>';
+
+            // TYPING
+            let currentText = "";
+            for (let i = 0; i < text.length; i++) {
+                currentText += text[i];
+                el.innerHTML = currentText + '<span class="cursor"></span>';
+                await new Promise(r => setTimeout(r, typeSpeed + (Math.random() * 20)));
+            }
+
+            await new Promise(r => setTimeout(r, 1000));
+
+            // HIGHLIGHTING EFFECT (Simulated by wrapping text)
+            // "bridge the gap"
+            const targetPhrase = "bridge the gap";
+            const index = currentText.indexOf(targetPhrase);
+            if (index !== -1) {
+                const before = currentText.substring(0, index);
+                const during = currentText.substring(index, index + targetPhrase.length);
+                const after = currentText.substring(index + targetPhrase.length);
+
+                el.innerHTML = `${before}<span style="background: rgba(241, 196, 15, 0.3);">${during}</span>${after}<span class="cursor"></span>`;
+            }
+
+            await new Promise(r => setTimeout(r, 800));
+
+            // "dual consciousness"
+            const phrase2 = "dual consciousness";
+            const index2 = currentText.indexOf(phrase2);
+            if (index2 !== -1) {
+                const before = currentText.substring(0, index); // Use original split point relative
+                // Reconstruct with both highlights. Lazy way for demo:
+                el.innerHTML = currentText
+                    .replace("bridge the gap", `<span style="background: rgba(241, 196, 15, 0.3);">bridge the gap</span>`)
+                    .replace("dual consciousness", `<span style="background: rgba(46, 204, 113, 0.3);">dual consciousness</span>`)
+                    + '<span class="cursor"></span>';
+            }
+
+            await new Promise(r => setTimeout(r, 3000));
+            run(); // Loop
+        }
+
+        window.onload = run;
+    </script>
+</body>
+
+</html>
