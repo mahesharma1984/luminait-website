@@ -38,6 +38,7 @@ luminait.app/
 │   └── /studio/              → Video Studio (scene playback)
 │       ├── /studio/scenes/   → ✅ Auto-generated scene pages
 │       │   └── /studio/scenes/[slug].html
+│       ├── /studio/demos/    → ✅ Interactive demo files (Annotation/Worksheet/Analysis)
 │       ├── outsiders-scene.html → Legacy hand-built scene
 │       ├── script.js         → StudioController (keyboard/playback)
 │       └── styles.css        → Shared studio styles
@@ -64,7 +65,7 @@ luminait.app/
 **Content Structure:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ NAV: Logo          How It Works | Course       [EN | 中文]  │
+│ NAV: Logo          How It Works | About        [Enquire]    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  HERO                                                       │
@@ -74,39 +75,62 @@ luminait.app/
 │  English tutoring built around                              │
 │  your child's text                                          │
 │                                                             │
-│  Find their book below.                                     │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  TEXT GRID                                                  │
+│  TEXT GRID (Select text to see course plan)                 │
 │  ─────────                                                  │
 │  ┌─────────┐ ┌─────────┐ ┌─────────┐                       │
-│  │ Romeo & │ │ Macbeth │ │ The     │                       │
-│  │ Juliet  │ │         │ │ Giver   │                       │
-│  │ Y9-10   │ │ VCE     │ │ Y7-8    │                       │
+│  │ The     │ │ Romeo & │ │ TKAM    │                       │
+│  │ Giver   │ │ Juliet  │ │         │                       │
+│  │ Y7-8    │ │ Y9-10   │ │ Y9-10   │                       │
 │  └─────────┘ └─────────┘ └─────────┘                       │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐                       │
-│  │ Animal  │ │ TKAM    │ │ Gatsby  │                       │
-│  │ Farm    │ │         │ │         │                       │
-│  │ Y9-10   │ │ Y9-10   │ │ VCE     │                       │
-│  └─────────┘ └─────────┘ └─────────┘                       │
-│                                                             │
-│  Don't see your text? Let us know.                         │
+│  ... (8 books total + "Other Text?" link)                   │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  HOW IT WORKS (3 steps)                                     │
+│  VIDEO DEMO SECTION (NEW Jan 30)                            │
+│  ──────────────────────────────                             │
+│  "See how we teach close reading"                           │
+│  3 looping video cards:                                     │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐           │
+│  │ Annotating  │ │ Structured  │ │ Constructing│           │
+│  │ the Text    │ │ Activities  │ │ Analysis    │           │
+│  │ (video)     │ │ (video)     │ │ (video)     │           │
+│  │ → Demo link │ │ → Demo link │ │ → Demo link │           │
+│  └─────────────┘ └─────────────┘ └─────────────┘           │
+│                                                             │
+│  Videos: /studio/assets/clips/demo-*.mp4                    │
+│  Demos: /studio/demos/demo-*.html                           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  SCHOOLS SECTION                                            │
+│  ──────────────                                             │
+│  "Or find by school" - 5 featured schools                   │
+│  → View all schools | → Parent Curriculum Guides            │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  VALUE PROP / SAMPLE                                        │
 │  ─────────────────────                                      │
-│  1. Find your text                                          │
-│  2. Work through the guide                                  │
-│  3. Get support (course enrollment)                         │
+│  "The Difference" - text-specific preparation               │
+│  Sample student output example                              │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  PARENT CTA                                                 │
-│  ──────────                                                 │
-│  Looking for structured tutoring?                           │
-│  → See Course Details                                       │
+│  RESULTS TEASER                                             │
+│  ──────────────                                             │
+│  3 outcome cards → View All Case Studies                    │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  TESTIMONIALS (Marquee)                                     │
+│  ─────────────────────                                      │
+│  Auto-scrolling parent/student quotes                       │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ABOUT / TEACHER PROFILE                                    │
+│  ───────────────────────                                    │
+│  → Read Bio & Philosophy                                    │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │ FOOTER                                                      │
@@ -350,6 +374,24 @@ See `BUILD_SYSTEM.md` for the full build pipeline documentation.
 
 **Not a public-facing URL** — `/studio/` is a production tool, not a page visitors navigate to.
 
+### 4.2 Interactive Demos `/studio/demos/` (NEW)
+
+**Role:** Dual-purpose pages that serve as (1) source for video screen capture and (2) interactive demonstrations linked from the homepage.
+
+**Audience:**
+1. **Production:** Video creator recording clips for the homepage/social.
+2. **Homepage Visitor:** Viewing the "The Method" section and clicking "View Interactive Demo".
+
+**Pages:**
+*   `/studio/demos/demo-annotation.html` (The Outsiders loop)
+*   `/studio/demos/demo-worksheet.html` (Interactive sorting/sequencing)
+*   `/studio/demos/demo-analysis.html` (Essay typing simulator)
+
+**Technical Implementation:**
+*   Standalone HTML files (no build step necessary).
+*   Auto-play on load (for video recording).
+*   Looping animations.
+
 ---
 
 ## 5. SHARED PAGES
@@ -592,6 +634,7 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 | 2.1 | Jan 27, 2026 | Added Schools Directory (/schools/) |
 | 2.2 | Jan 27, 2026 | Implemented text-specific course outlines (18 total guides: 8 at root + 10 in /curriculum/) |
 | 3.0 | Jan 28, 2026 | Three-funnel architecture: added Funnel 3 (Video-to-Parent) with /studio/ and /studio/scenes/ |
+| 3.1 | Jan 30, 2026 | Updated homepage structure to reflect Video Demo Section integration |
 
 ---
 

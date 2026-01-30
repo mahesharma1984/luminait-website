@@ -35,6 +35,6 @@ Panic is loud. But Trauma? Trauma is silent."
 **Audio**: 
 "We call this Internal Monologue. It reveals the gap between what's happening outside, and the dissociation happening inside. We cover this technique in Week 3 of our Parent Curriculum."
 
-**Visual**: "LuminAIT / Enquire Now"
+**Visual**: "LuminAIT.app" end card
 **Audio**:
-"Give your child the words to explain the silence. Enquire now."
+"This is what Week 3 covers. The course page has details."

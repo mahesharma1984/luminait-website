@@ -34,6 +34,6 @@
 **Audio**: 
 "We call this Retrospective Narration. It's the engine of the whole book. We interpret this in Week 3 of our Parent Curriculum."
 
-**Visual**: "LuminAIT / Enquire Now"
+**Visual**: "LuminAIT.app" end card
 **Audio**:
-"Help your child see the difference. Enquire now."
+"This is what Week 3 covers. The course page has details."
