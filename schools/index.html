@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melbourne Schools | LuminAIT English Tutoring</title>
+  <meta name="description"
+    content="Text-specific English tutoring for Melbourne secondary schools. Find your school and see which texts we teach.">
+
+  <!-- Fonts & Base Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/components/base.css">
+  <link rel="stylesheet" href="/components/page-components.css">
+  <link rel="stylesheet" href="/components/page-marketing.css">
+
+  <style>
+    /* Schools Index Styles */
+    .schools-hero {
+      padding: 60px 0;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .schools-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warm-light);
+      color: var(--warm);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    .schools-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+    }
+
+    /* School Cards Grid */
+    .schools-grid-section {
+      padding: 60px 0;
+      background: var(--section-soft);
+    }
+
+    .schools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .school-card {
+      background: var(--bg-paper);
+      border-radius: 8px;
+      padding: 24px;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: block;
+    }
+
+    .school-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .school-card-header {
+      margin-bottom: 12px;
+    }
+
+    .school-card-name {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .school-card-suburb {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .school-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .school-card-type {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+
+    .school-card-texts {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* Request School Section */
+    .schools-request {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .schools-request h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .schools-request p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: var(--space-lg);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .schools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">LuminAIT</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/schools/" class="active">Schools</a>
+        <a href="/course.html">Course</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="section schools-hero">
+    <div class="schools-badge">Melbourne · 5 Schools</div>
+    <h1>Find Your <span style="color: var(--primary);">School</span></h1>
+    <p class="schools-subtitle">We align our courses with your school's exact booklist. Select your school to see which texts we cover.</p>
+  </header>
+
+  <!-- Schools Grid -->
+  <section class="section schools-grid-section">
+    <div class="container">
+      <div class="schools-grid">
+          <a href="/schools/korowa-anglican/" class="school-card">
+            <div class="school-card-header">
+              <span class="school-card-name">Korowa Anglican Girls&#x27; School</span>
+              <span class="school-card-suburb">Glen Iris</span>
+            </div>
+            <div class="school-card-meta">
+              <span class="school-card-type">Independent</span>
+              <span class="school-card-texts">5 texts available</span>
+            </div>
+          </a>
+          <a href="/schools/lauriston-girls/" class="school-card">
+            <div class="school-card-header">
+              <span class="school-card-name">Lauriston Girls&#x27; School</span>
+              <span class="school-card-suburb">Armadale</span>
+            </div>
+            <div class="school-card-meta">
+              <span class="school-card-type">Independent</span>
+              <span class="school-card-texts">5 texts available</span>
+            </div>
+          </a>
+          <a href="/schools/mckinnon-sc/" class="school-card">
+            <div class="school-card-header">
+              <span class="school-card-name">McKinnon Secondary College</span>
+              <span class="school-card-suburb">McKinnon</span>
+            </div>
+            <div class="school-card-meta">
+              <span class="school-card-type">State</span>
+              <span class="school-card-texts">6 texts available</span>
+            </div>
+          </a>
+          <a href="/schools/melbourne-girls-college/" class="school-card">
+            <div class="school-card-header">
+              <span class="school-card-name">Melbourne Girls College</span>
+              <span class="school-card-suburb">Richmond</span>
+            </div>
+            <div class="school-card-meta">
+              <span class="school-card-type">State</span>
+              <span class="school-card-texts">6 texts available</span>
+            </div>
+          </a>
+          <a href="/schools/scotch-college/" class="school-card">
+            <div class="school-card-header">
+              <span class="school-card-name">Scotch College</span>
+              <span class="school-card-suburb">Hawthorn</span>
+            </div>
+            <div class="school-card-meta">
+              <span class="school-card-type">Independent</span>
+              <span class="school-card-texts">6 texts available</span>
+            </div>
+          </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request Your School -->
+  <section class="section schools-request">
+    <div class="container">
+      <h2>Don't See Your School?</h2>
+      <p>We're adding new schools regularly. Let us know which school you'd like us to cover.</p>
+      <a href="mailto:hello@luminait.app?subject=School Request" class="btn btn-primary">Request Your School</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/schools/">Schools</a>
+      <a href="mailto:hello@luminait.app">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 LuminAIT Learning. Melbourne, Australia.</div>
+  </footer>
+
+</body>
+
+</html>
