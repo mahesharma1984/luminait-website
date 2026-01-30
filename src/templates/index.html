@@ -49,10 +49,78 @@
       margin: 0 auto;
     }
 
+    /* Schools Section */
+    .schools-section {
+      padding: 60px 0;
+      background: var(--section-soft);
+    }
+
+    .schools-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .school-card-home {
+      background: var(--bg-paper);
+      border-radius: 8px;
+      padding: 20px 16px;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .school-card-home:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .school-card-name {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .school-card-suburb {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
     /* Mobile */
+    @media(max-width: 900px) {
+      .schools-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media(max-width: 600px) {
       .hero {
         padding-top: 40px;
+      }
+
+      .schools-section {
+        padding: 40px 0;
+      }
+
+      .schools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .school-card-home {
+        padding: 16px 12px;
+      }
+
+      .school-card-name {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -142,21 +210,61 @@
           </div>
         </a>
       </div>
-      <div
-        style="text-align: center; margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid rgba(0,0,0,0.05);">
-        <div style="margin-bottom: 12px;">
-          <span style="color: var(--text-light); font-size: 0.9rem;">Want to understand our teaching approach?</span>
-          <a href="/curriculum/"
-            style="color: var(--primary); font-weight: 600; text-decoration: none; margin-left: 8px;">View Parent Curriculum Guides →</a>
-        </div>
-        <div>
-          <span style="color: var(--text-light); font-size: 0.9rem;">Looking for your school's full booklist?</span>
-          <a href="/schools/"
-            style="color: var(--primary); font-weight: 600; text-decoration: none; margin-left: 8px;">Browse Schools →</a>
-        </div>
-      </div>
     </div>
   </header>
+
+  <!-- Schools Section -->
+  <section class="section schools-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-lg);">
+        <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">
+          Or find by school
+        </h3>
+        <p class="text-light" style="font-size: 0.95rem;">
+          See your school's 2026 booklist and which texts we cover.
+        </p>
+      </div>
+
+      <div class="schools-grid">
+        <a href="/schools/mckinnon-sc/" class="school-card-home">
+          <span class="school-card-name">McKinnon SC</span>
+          <span class="school-card-suburb">McKinnon</span>
+        </a>
+        <a href="/schools/melbourne-girls-college/" class="school-card-home">
+          <span class="school-card-name">Melbourne Girls</span>
+          <span class="school-card-suburb">Richmond</span>
+        </a>
+        <a href="/schools/lauriston-girls/" class="school-card-home">
+          <span class="school-card-name">Lauriston</span>
+          <span class="school-card-suburb">Armadale</span>
+        </a>
+        <a href="/schools/korowa-anglican/" class="school-card-home">
+          <span class="school-card-name">Korowa</span>
+          <span class="school-card-suburb">Glen Iris</span>
+        </a>
+        <a href="/schools/scotch-college/" class="school-card-home">
+          <span class="school-card-name">Scotch</span>
+          <span class="school-card-suburb">Hawthorn</span>
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-lg);">
+        <a href="/schools/" style="color: var(--primary); font-weight: 600; text-decoration: none;">
+          View all schools →
+        </a>
+        <span style="color: var(--text-light); margin: 0 12px;">·</span>
+        <a href="mailto:hello@luminait.app?subject=School Request" style="color: var(--text-light); text-decoration: none;">
+          Don't see your school?
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(0,0,0,0.05);">
+        <span style="color: var(--text-light); font-size: 0.9rem;">Want to understand our teaching approach?</span>
+        <a href="/curriculum/"
+          style="color: var(--primary); font-weight: 600; text-decoration: none; margin-left: 8px;">View Parent Curriculum Guides →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Value Prop / Sample (What else to include: Sample Snippet) -->
   <section class="section section-paper" id="how-it-works">
