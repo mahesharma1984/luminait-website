@@ -250,7 +250,7 @@
         <!-- Card 1: Annotation -->
         <div class="video-demo-card">
           <div class="video-wrapper">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop playsinline>
               <source src="/studio/assets/clips/demo-annotation.mp4" type="video/mp4">
             </video>
           </div>
@@ -267,7 +267,7 @@
         <!-- Card 2: Worksheet -->
         <div class="video-demo-card">
           <div class="video-wrapper">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop playsinline>
               <source src="/studio/assets/clips/demo-worksheet.mp4" type="video/mp4">
             </video>
           </div>
@@ -284,7 +284,7 @@
         <!-- Card 3: Analysis -->
         <div class="video-demo-card">
           <div class="video-wrapper">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop playsinline>
               <source src="/studio/assets/clips/demo-analysis.mp4" type="video/mp4">
             </video>
           </div>
@@ -568,7 +568,14 @@
     <div class="footer-copy">© 2026 LuminAIT Learning. Text-specific English tutoring in Melbourne.</div>
   </footer>
 
-
+  <script>
+    // Slow down videos to 5 seconds per loop
+    document.querySelectorAll('.video-demo-section video').forEach(v => {
+      v.addEventListener('loadedmetadata', () => {
+        v.playbackRate = v.duration / 5;
+      });
+    });
+  </script>
 
 </body>
 
