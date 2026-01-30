@@ -73,6 +73,27 @@
       }
     },
     {
+      "id": "method",
+      "file": "method.html",
+      "template": "method.html",
+      "title": {
+        "en": "The Method",
+        "zh": "教学方法"
+      },
+      "navTitle": {
+        "en": "The Method",
+        "zh": "方法"
+      },
+      "pageTitle": {
+        "en": "How We Teach Text-Specific Analysis | LuminAIT Methodology",
+        "zh": "我们的教学方法 | LuminAIT"
+      },
+      "metaDescription": {
+        "en": "See our 3-step process: Annotation, Structured Activity, and Analysis. We break down analytical writing into visual, tangible steps.",
+        "zh": "了解我们的三步教学法：标注、结构化练习和分析。我们将分析写作分解为可视化的具体步骤。"
+      }
+    },
+    {
       "id": "course",
       "file": "course.html",
       "template": "course.html",

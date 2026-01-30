@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_META_DESC}}">
+    {{SEO_META_TAGS}}
+
+    <!-- Fonts & Base Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="components/base.css">
+    <link rel="stylesheet" href="components/page-components.css">
+    <link rel="stylesheet" href="components/page-marketing.css">
+
+    <style>
+        .method-step {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .video-card-large {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>nav.html}}
+
+    <!-- Hero -->
+    <header class="section hero" style="padding-bottom: 20px;">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <div class="hero-badge">The Method</div>
+            <h1>How we teach <span style="color: var(--primary);">analytical writing</span>.</h1>
+            <p class="hero-subtitle">
+                Most students struggle because they don't have a system. We break down the complex process of literary
+                analysis into three visual, tangible steps.
+            </p>
+        </div>
+    </header>
+
+    <!-- Step 1: Annotation -->
+    <section class="section method-step">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+
+                <div>
+                    <span class="step-number">01</span>
+                    <h2>Annotating the Text</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-main);">
+                        Analysis starts with reading. We don't just tell students "this is a metaphor". We show them
+                        <i>how</i> to find it.
+                    </p>
+                    <p class="text-light">
+                        In our live demonstrations, we trace the patterns on screen, highlighting the exact words and
+                        devices the author uses. This trains the student's eye to spot these patterns themselves.
+                    </p>
+                </div>
+
+                <div class="video-card-large">
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="studio/assets/clips/demo-annotation.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 2: Worksheets -->
+    <section class="section method-step" style="background: var(--section-soft);">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+
+                <div style="order: 2;"> <!-- Swap order for visual variety -->
+                    <span class="step-number">02</span>
+                    <h2>Structured Activities</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-main);">
+                        Understanding isn't enough; they need to practice.
+                    </p>
+                    <p class="text-light">
+                        Our worksheets aren't just quizzes. They are scaffolded activities that guide students to link
+                        the <b>Device</b> (what the author used) to the <b>Meaning</b> (why they used it).
+                    </p>
+                </div>
+
+                <div class="video-card-large" style="order: 1;">
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="studio/assets/clips/demo-worksheet.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 3: Analysis -->
+    <section class="section method-step">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+
+                <div>
+                    <span class="step-number">03</span>
+                    <h2>Constructing Analysis</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-main);">
+                        Finally, we turn observations into arguments.
+                    </p>
+                    <p class="text-light">
+                        We use a sentence-building framework (T-V-O-D-E) that helps students construct sophisticated
+                        analytical paragraphs. They learn to weave evidence and explanation together seamlessly.
+                    </p>
+                </div>
+
+                <div class="video-card-large">
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="studio/assets/clips/demo-analysis.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-primary" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Ready to see it applied to <i>their</i> book?</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;">
+                Find your child's text to see the 10-week plan built specifically for them.
+            </p>
+            <a href="/#text-selection" class="btn btn-white">Find Your Text</a>
+        </div>
+    </section>
+
+    {{>footer-simple.html}}
+
+    <script switch-video-speed>
+        // Play videos at half speed for clarity
+        document.querySelectorAll('video').forEach(v => {
+            v.playbackRate = 0.75;
+        });
+    </script>
+
+</body>
+
+</html>
