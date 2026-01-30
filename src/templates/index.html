@@ -568,6 +568,15 @@
     <div class="footer-copy">© 2026 LuminAIT Learning. Text-specific English tutoring in Melbourne.</div>
   </footer>
 
+  <script>
+    // Slow down videos to 5 seconds per loop
+    document.querySelectorAll('.video-demo-section video').forEach(v => {
+      v.addEventListener('loadedmetadata', () => {
+        v.playbackRate = v.duration / 5;
+      });
+    });
+  </script>
+
 </body>
 
 </html>
