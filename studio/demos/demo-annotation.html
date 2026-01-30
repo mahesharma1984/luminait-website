@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Annotation</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: sans-serif;
+        }
+
+        /* STAGE */
+        .stage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LAYERS */
+        .stage-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+
+        .stage-layer.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* IMAGES */
+        img {
+            max-height: 90vh;
+            max-width: 90vw;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* TEXT LAYER */
+        #layer-text {
+            background: #fdfbf7;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            line-height: 2.2;
+            padding: 80px;
+            transform-origin: center center;
+            transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .book-text {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* HIGHLIGHTS (SVG) */
+        .svg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .highlight-yellow {
+            fill: none;
+            stroke: #f1c40f;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.6;
+        }
+
+        .highlight-green-box {
+            fill: none;
+            stroke: #2ecc71;
+            stroke-width: 4;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.8s ease-out;
+            opacity: 0.8;
+        }
+
+        .draw-stroke {
+            stroke-dashoffset: 0;
+        }
+
+        /* LABELS */
+        .annotation-label {
+            position: absolute;
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 20px;
+            border-left: 4px solid #f1c40f;
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+            z-index: 30;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .annotation-label.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+        <!-- P2: TEXT -->
+        <div id="layer-text" class="stage-layer active">
+            <div class="book-text">
+                <p>When I stepping out into the bright sunlight from the darkness of the movie house,
+                    I <span id="target-1">had only two things on my mind:</span> Paul Newman and a ride home.</p>
+
+                <p><span id="target-2">I was wishing I looked like Paul Newman</span>—he looks tough and I don't.</p>
+            </div>
+
+            <div class="annotation-label" id="label-1"></div>
+            <div class="annotation-label" id="label-2"></div>
+
+            <svg class="svg-overlay" id="highlights" width="100%" height="100%">
+                <path id="stroke-1" class="highlight-yellow" d="" />
+                <path id="stroke-2" class="highlight-green-box" d="" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        const sequence = [
+            {
+                duration: 1000,
+                action: () => {
+                    // Reset
+                    document.getElementById('stroke-1').classList.remove('draw-stroke');
+                    document.getElementById('stroke-2').classList.remove('draw-stroke');
+                    document.getElementById('label-1').classList.remove('show');
+                    document.getElementById('label-2').classList.remove('show');
+                }
+            },
+            {
+                duration: 2000,
+                action: () => {
+                    // Highlight 1: "had only two things" (Yellow)
+                    document.getElementById('stroke-1').classList.add('draw-stroke');
+
+                    const l1 = document.getElementById('label-1');
+                    l1.innerHTML = "<strong>The Kid</strong><br>Scared & Alone";
+                    const t1 = getCoords('target-1');
+                    l1.style.top = (t1.y - 70) + 'px';
+                    l1.style.left = (t1.x) + 'px';
+                    l1.classList.add('show');
+                }
+            },
+            {
+                duration: 2500,
+                action: () => {
+                    // Highlight 2: "Wishing I looked like..." (Green Box)
+                    document.getElementById('stroke-2').classList.add('draw-stroke');
+
+                    const l2 = document.getElementById('label-2');
+                    l2.innerHTML = "<strong>The Narrator</strong><br>Reflective & Safe";
+                    l2.style.borderLeftColor = "#2ecc71";
+                    const t2 = getCoords('target-2');
+                    l2.style.top = (t2.y + t2.h + 20) + 'px';
+                    l2.style.left = (t2.x) + 'px';
+                    l2.classList.add('show');
+                }
+            },
+            {
+                duration: 3000,
+                action: () => {
+                    // Hold then restart
+                }
+            }
+        ];
+
+        function getCoords(id) {
+            const el = document.getElementById(id);
+            const r = el.getBoundingClientRect();
+            return { x: r.left, y: r.top, w: r.width, h: r.height };
+        }
+
+        function updateHighlights() {
+            // 1. Yellow Underline for Target 1
+            const c1 = getCoords('target-1');
+            const path = document.getElementById('stroke-1');
+            const y = c1.y + c1.h + 5;
+            path.setAttribute('d', `M ${c1.x} ${y} L ${c1.x + c1.w} ${y}`);
+
+            // 2. Green Box for Target 2
+            const c2 = getCoords('target-2');
+            const rect = document.getElementById('stroke-2');
+            const pad = 5;
+            const d = `M ${c2.x - pad} ${c2.y - pad} 
+                       L ${c2.x + c2.w + pad} ${c2.y - pad} 
+                       L ${c2.x + c2.w + pad} ${c2.y + c2.h + pad} 
+                       L ${c2.x - pad} ${c2.y + c2.h + pad} Z`;
+            rect.setAttribute('d', d);
+        }
+
+        window.addEventListener('resize', updateHighlights);
+
+        let step = -1;
+        function next() {
+            step++;
+            if (step >= sequence.length) {
+                step = -1;
+                next(); // Loop
+                return;
+            }
+            const s = sequence[step];
+            if (s.action) s.action();
+            if (s.duration) setTimeout(next, s.duration);
+        }
+
+        window.onload = () => {
+            updateHighlights();
+            setTimeout(next, 500);
+        };
+    </script>
+</body>
+
+</html>

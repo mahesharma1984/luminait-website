@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Worksheet</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #f0f4f8;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .worksheet-container {
+            width: 800px;
+            height: 500px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide.exit {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Q1: CHOICE */
+        .choice-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .choice-card {
+            flex: 1;
+            padding: 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .choice-card.selected {
+            border-color: #3498db;
+            background: #ebf5fb;
+        }
+
+        .choice-card.correct {
+            border-color: #2ecc71;
+            background: #eafaf1;
+            color: #27ae60;
+        }
+
+        /* Q2: SEQUENCING */
+        .seq-item {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            opacity: 0.5;
+            transform: translateY(10px);
+            transition: all 0.5s;
+        }
+
+        .seq-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .seq-num {
+            width: 30px;
+            height: 30px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* Q3: SORTING */
+        .sort-area {
+            display: flex;
+            height: 100%;
+            gap: 20px;
+        }
+
+        .sort-col {
+            flex: 1;
+            background: #f4f6f8;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .sort-col h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .sort-card {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.4s;
+        }
+
+        .sort-card.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="worksheet-container">
+
+        <!-- SLIDE 1: MULTIPLE CHOICE -->
+        <div class="slide" id="slide-1">
+            <h2>Activity 1: Identify Tone</h2>
+            <p class="instructions">"I had only two things on my mind: Paul Newman and a ride home."</p>
+            <div class="choice-container">
+                <div class="choice-card" id="c1">Hyper-Aware (Anxious)</div>
+                <div class="choice-card" id="c2">Detached (Cool)</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: SEQUENCING -->
+        <div class="slide" id="slide-2">
+            <h2>Activity 2: Order Logic</h2>
+            <p class="instructions">Sequence Ponyboy's realization.</p>
+            <div class="seq-container">
+                <div class="seq-item" id="s1">
+                    <div class="seq-num">1</div>
+                    <p>Narrator is older.</p>
+                </div>
+                <div class="seq-item" id="s2">
+                    <div class="seq-num">2</div>
+                    <p>He sees his past self.</p>
+                </div>
+                <div class="seq-item" id="s3">
+                    <div class="seq-num">3</div>
+                    <p>He judges his past fear.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: SORTING -->
+        <div class="slide" id="slide-3">
+            <h2>Activity 3: Sort Voices</h2>
+            <div class="sort-area">
+                <div class="sort-col">
+                    <h3>The Kid</h3>
+                    <div class="sort-card" id="card-1">"I was scared."</div>
+                    <div class="sort-card" id="card-3">"Am I tough?"</div>
+                </div>
+                <div class="sort-col">
+                    <h3>The Narrator</h3>
+                    <div class="sort-card" id="card-2">"I remember."</div>
+                    <div class="sort-card" id="card-4">"He didn't know."</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ENGINE
+        function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+        async function runSequence() {
+            // SLIDE 1
+            const s1 = document.getElementById('slide-1');
+            s1.classList.add('active');
+            await sleep(1000);
+
+            // Hover effect
+            document.getElementById('c2').classList.add('selected');
+            await sleep(500);
+            // Error
+            document.getElementById('c2').style.borderColor = '#e74c3c';
+            document.getElementById('c2').style.background = '#fadbd8';
+            await sleep(800);
+            // Correct
+            document.getElementById('c2').classList.remove('selected');
+            document.getElementById('c2').style = '';
+            document.getElementById('c1').classList.add('correct');
+            await sleep(1500);
+
+            // TRANSITION
+            s1.classList.remove('active');
+            s1.classList.add('exit');
+            await sleep(500);
+            s1.classList.remove('exit');
+
+            // SLIDE 2
+            const s2 = document.getElementById('slide-2');
+            s2.classList.add('active');
+            await sleep(500);
+            document.getElementById('s1').classList.add('show');
+            await sleep(600);
+            document.getElementById('s2').classList.add('show');
+            await sleep(600);
+            document.getElementById('s3').classList.add('show');
+            await sleep(1500);
+
+            // TRANSITION
+            s2.classList.remove('active');
+            s2.classList.add('exit');
+            await sleep(500);
+            s2.classList.remove('exit');
+
+
+            // SLIDE 3
+            const s3 = document.getElementById('slide-3');
+            s3.classList.add('active');
+            await sleep(500);
+            document.getElementById('card-1').classList.add('show');
+            await sleep(400);
+            document.getElementById('card-2').classList.add('show');
+            await sleep(400);
+            document.getElementById('card-3').classList.add('show');
+            await sleep(400);
+            document.getElementById('card-4').classList.add('show');
+            await sleep(2000);
+
+            // RESET
+            s3.classList.remove('active');
+            s3.classList.add('exit');
+
+            // Reset states
+            document.getElementById('c1').classList.remove('correct');
+            document.querySelectorAll('.seq-item').forEach(e => e.classList.remove('show'));
+            document.querySelectorAll('.sort-card').forEach(e => e.classList.remove('show'));
+
+            await sleep(500);
+            s3.classList.remove('exit');
+
+            runSequence(); // LOOP
+        }
+
+        window.onload = runSequence;
+    </script>
+</body>
+
+</html>

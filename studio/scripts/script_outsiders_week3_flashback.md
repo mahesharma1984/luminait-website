@@ -34,6 +34,6 @@
 **Audio**: 
 "We analyze how time works in the novel in Week 3 of our Parent Curriculum."
 
-**Visual**: "LuminAIT / Enquire Now"
+**Visual**: "LuminAIT.app" end card
 **Audio**:
-"Don't let them miss the deeper meaning. Enquire now."
+"This is what Week 3 covers. The course page has details."

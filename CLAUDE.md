@@ -11,13 +11,14 @@ Key documents:
 - `docs/theory/04_CONTENT_DERIVATION.md` - Deriving messaging from text analysis
 
 **Technical:**
-- `docs/technical/SITE_ARCHITECTURE.md` - URL structure for both funnels
+- `docs/technical/SITE_ARCHITECTURE.md` - URL structure for all three funnels
 - `docs/technical/DESIGN_SYSTEM.md` - CSS variables, components, visual standards
 - `docs/technical/BUILD_SYSTEM.md` - Build scripts, templates, partial injection
 - `docs/technical/UX_PROCESS.md` - Page development checklist + journey mapping
 - `docs/technical/GUIDE_TEMPLATE_SPEC.md` - How analysis guide pages work
 - `docs/technical/GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides from kernels
 - `docs/technical/LOCAL_SEO_STRATEGY.md` - School-by-school local SEO implementation
+- `docs/technical/VEO_PROMPTS.md` - AI video generation prompts (hybrid text/motion strategy)
 
 **Operational** (at docs root):
 - `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core dev methodology
