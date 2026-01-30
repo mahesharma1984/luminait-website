@@ -579,11 +579,9 @@
   </footer>
 
   <script>
-    // Slow down videos to 5 seconds per loop
+    // Play videos at half speed
     document.querySelectorAll('.video-demo-section video').forEach(v => {
-      v.addEventListener('loadedmetadata', () => {
-        v.playbackRate = v.duration / 5;
-      });
+      v.playbackRate = 0.5;
     });
   </script>
 
