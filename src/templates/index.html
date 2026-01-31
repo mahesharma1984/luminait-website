@@ -150,16 +150,7 @@
 
 <body>
 
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="/" class="nav-logo">LuminAIT</a>
-      <div class="nav-links">
-        <a href="/#how-it-works" class="nav-link">How it Works</a>
-        <a href="/about.html" class="nav-link">About</a>
-        <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
-      </div>
-    </div>
-  </nav>
+  {{>nav.html}}
 
 
   <!-- Hero -->
@@ -170,7 +161,7 @@
       they are studying at school.</p>
 
     <!-- Stage 1: Text Match Grid -->
-    <div class="text-selection">
+    <div class="text-selection" id="text-selection">
       <h3 style="font-size: 1.25rem; margin-bottom: var(--space-xs);">Select their text to see the course plan</h3>
       <p class="text-light" style="font-size: 0.95rem;">Finding your book helps us show you exactly what we cover.</p>
 
