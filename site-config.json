@@ -107,7 +107,6 @@
     {
       "id": "schools",
       "file": "schools/index.html",
-      "template": "schools-index.html",
       "showInNav": true,
       "title": {
         "en": "Schools",
