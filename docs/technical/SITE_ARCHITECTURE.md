@@ -412,16 +412,34 @@ See `BUILD_SYSTEM.md` for the full build pipeline documentation.
 
 ### 6.1 Header (All Pages)
 
+**Current Implementation:** Nav is generated from `site-config.json` via the build system.
+
 ```
-Logo: LuminAIT          How It Works | Course       [EN | 中文]
+Logo: LuminAIT    The Method | Texts | Schools | Course | Results | About    [Enquire]
 ```
 
-**Notes:**
-- Logo links to `/`
-- "How It Works" links to `/curriculum/`
-- "Course" links to `/course/`
-- "Schools" links to `/schools/`
-- Language toggle on all pages
+**Navigation Structure:**
+- Logo → `/` (homepage)
+- The Method → `/method/` (teaching methodology)
+- Texts → `/#text-selection` (jump to text grid on homepage)
+- Schools → `/schools/` (school directory)
+- Course → `/course/` (enrollment page)
+- Results → `/results/` (student outcomes)
+- About → `/about/` (teacher profile & philosophy)
+- Enquire → `mailto:hello@luminait.app` (CTA button)
+
+**Technical Implementation:**
+- Nav partial: `/src/partials/nav.html`
+- Generated via: `{{NAV_LINKS}}` placeholder in build system
+- Controlled by: `showInNav` flag in `site-config.json`
+- Bilingual support: EN/ZH text for all links
+- Active state: Current page highlighted with `.active` class
+
+**Managing Nav:**
+- To add/remove nav items: Update `showInNav: true/false` in `site-config.json`
+- To reorder nav: Reorder pages array in `site-config.json`
+- To change nav text: Update `navTitle` in page config
+- After changes: Run `node build.js` to regenerate pages
 
 ### 6.2 Footer (All Pages)
 

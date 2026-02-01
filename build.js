@@ -32,7 +32,15 @@ function generateNavLinks(currentPageId) {
     .filter(page => page.showInNav !== false)
     .map(page => {
       const isActive = page.id === currentPageId ? ' active' : '';
-      return `        <a href="${page.file}" class="nav-link${isActive}">
+      // Convert file paths to clean URLs
+      let href = page.file;
+      if (href && !href.includes('#') && !href.includes('mailto:')) {
+        href = '/' + href.replace('.html', '/').replace('/index/', '/');
+      } else if (href && href.includes('#')) {
+        // Handle hash links (e.g., index.html#text-selection → /#text-selection)
+        href = '/' + href.replace('index.html', '');
+      }
+      return `        <a href="${href}" class="nav-link${isActive}">
           <span data-lang-content="en">${page.navTitle.en}</span>
           <span data-lang-content="zh">${page.navTitle.zh}</span>
         </a>`;
@@ -361,6 +369,11 @@ function loadPartial(name) {
  * Process a template file
  */
 function processTemplate(page) {
+  // Skip pages without templates (e.g., hash links, standalone pages)
+  if (!page.template) {
+    return;
+  }
+
   const templatePath = path.join(TEMPLATES_DIR, page.template);
 
   if (!fs.existsSync(templatePath)) {
@@ -458,10 +471,12 @@ function build() {
   for (const page of config.pages) {
     processTemplate(page);
 
-    // Validate styles
-    const templatePath = path.join(TEMPLATES_DIR, page.template);
-    if (fs.existsSync(templatePath)) {
-      totalWarnings += validateTemplateStyles(templatePath, page.id);
+    // Validate styles (only for pages with templates)
+    if (page.template) {
+      const templatePath = path.join(TEMPLATES_DIR, page.template);
+      if (fs.existsSync(templatePath)) {
+        totalWarnings += validateTemplateStyles(templatePath, page.id);
+      }
     }
   }
 
