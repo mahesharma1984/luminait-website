@@ -183,6 +183,17 @@ function generateQuickStats() {
 }
 
 /**
+ * Convert page.file to clean URL path
+ * index.html → /
+ * course.html → /course/
+ */
+function getCleanUrl(pageFile) {
+  if (!pageFile) return '/';
+  if (pageFile === 'index.html') return '/';
+  return '/' + pageFile.replace('.html', '') + '/';
+}
+
+/**
  * Generate SEO meta tags HTML for a page
  */
 function generateSeoMetaTags(page) {
@@ -192,20 +203,21 @@ function generateSeoMetaTags(page) {
   const keywords = config.site.keywords?.en || '';
   const keywordsZh = config.site.keywords?.zh || '';
   const socialImage = config.site.socialImage || 'social-preview.png';
+  const cleanUrl = getCleanUrl(page.file);
 
   return `
   <!-- SEO Meta Tags -->
-  <link rel="canonical" href="${siteUrl}/${page.file}">
-  <link rel="alternate" hreflang="en" href="${siteUrl}/${page.file}">
-  <link rel="alternate" hreflang="zh" href="${siteUrl}/${page.file}?lang=zh">
-  <link rel="alternate" hreflang="x-default" href="${siteUrl}/${page.file}">
+  <link rel="canonical" href="${siteUrl}${cleanUrl}">
+  <link rel="alternate" hreflang="en" href="${siteUrl}${cleanUrl}">
+  <link rel="alternate" hreflang="zh" href="${siteUrl}${cleanUrl}?lang=zh">
+  <link rel="alternate" hreflang="x-default" href="${siteUrl}${cleanUrl}">
   <meta name="keywords" content="${keywords}, ${keywordsZh}">
 
   <!-- Open Graph -->
   <meta property="og:title" content="${pageTitle}">
   <meta property="og:description" content="${metaDesc}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="${siteUrl}/${page.file}">
+  <meta property="og:url" content="${siteUrl}${cleanUrl}">
   <meta property="og:image" content="${siteUrl}/${socialImage}">
   <meta property="og:site_name" content="${config.site.name}">
   <meta property="og:locale" content="en_AU">

@@ -168,6 +168,7 @@ function generateSchoolPage(data) {
   html = html.replace(/\{\{SCHOOL_TYPE\}\}/g, escapeHtml(data.type || 'secondary'));
   html = html.replace(/\{\{VERIFIED_DATE\}\}/g, escapeHtml(data.verifiedDate || ''));
   html = html.replace(/\{\{SLUG\}\}/g, escapeHtml(data.slug));
+  html = html.replace(/\{\{SCHOOL_SLUG\}\}/g, data.slug);
 
   // Meta description
   const textTitles = [];
