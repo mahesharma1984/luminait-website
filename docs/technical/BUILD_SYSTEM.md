@@ -27,11 +27,13 @@ Build System
 │   ├── build.js                   Main pages (index, course, progress, etc.)
 │   ├── build-parent-guides.js     Curriculum directory guides
 │   ├── build-homepage-guides.js   Homepage book guides
-│   └── build-video-scenes.js      Video scene pages
+│   ├── build-video-scenes.js      Video scene pages
+│   └── build-school-pages.js      School-specific landing pages
 │
 └── Output (generated, DO NOT EDIT)
     ├── /[text-slug]/              Homepage books (8 pages)
     ├── /curriculum/               Additional guides (10 pages + index)
+    ├── /schools/                  School pages (auto-generated + index)
     ├── /studio/scenes/            Video scene pages (auto-generated)
     └── /*.html                    Main pages (index, course, etc.)
 ```
@@ -317,7 +319,92 @@ Each step has an `actions` array. The build script converts these to imperative 
 
 ---
 
-## 5. JSON DATA FORMAT
+## 5. SCHOOL PAGES BUILD SYSTEM
+
+### 5.1 Build Script: `build-school-pages.js`
+
+**Purpose:** Generate school-specific landing pages for local SEO targeting.
+
+**Pipeline:**
+```
+/data/schools/*.json  →  build-school-pages.js  →  /schools/[slug]/index.html
+        ↓                                                  ↑
+_school-page-template.html ────────────────────────────────┘
+        ↓                                                  ↑
+schools-index.html ─────────────────────────→  /schools/index.html
+```
+
+**Input:**
+- Data: `/data/schools/*.json`
+- Templates: `/src/templates/_school-page-template.html`, `/src/templates/schools-index.html`
+
+**Output:**
+- `/schools/[slug]/index.html` (one page per school)
+- `/schools/index.html` (index page listing all schools)
+
+**Run:**
+```bash
+node build-school-pages.js
+```
+
+**What it does:**
+1. Reads all JSON files from `/data/schools/`
+2. For each school: generates a landing page with school-specific curriculum content
+3. Generates schools index page at `/schools/index.html`
+4. Includes LocalBusiness schema markup for local SEO
+
+### 5.2 School Page JSON Schema
+
+**Location:** `/data/schools/[slug].json`
+
+**Required fields:**
+```json
+{
+  "slug": "melbourne-girls-college",
+  "schoolName": "Melbourne Girls' College",
+  "metaTitle": "Melbourne Girls' College English Tutoring | VCE Essay Writing",
+  "metaDescription": "English tutoring for Melbourne Girls' College students...",
+  "yearLevels": {
+    "Year 7": [
+      { "slug": "the-giver", "title": "The Giver" }
+    ],
+    "Year 8": [
+      { "slug": "blueback", "title": "Blueback" }
+    ]
+  }
+}
+```
+
+**Features:**
+- Text-slug-to-URL mapping (homepage texts vs curriculum texts)
+- LocalBusiness schema with school location data
+- Year-level-specific text organization
+- Links to parent curriculum guides
+
+### 5.3 Adding a New School Page
+
+1. **Create JSON data file:**
+   ```bash
+   cp data/schools/melbourne-girls-college.json data/schools/new-school.json
+   ```
+
+2. **Edit with school-specific content:**
+   - Update `slug`, `schoolName`, `metaTitle`, `metaDescription`
+   - Map year levels to texts from the school's curriculum
+   - Ensure text slugs match existing parent guides
+
+3. **Build:**
+   ```bash
+   node build-school-pages.js
+   ```
+
+4. **Verify:** Check `/schools/[slug]/index.html` and `/schools/index.html`
+
+**Reference:** See `docs/technical/LOCAL_SEO_STRATEGY.md` for local SEO implementation strategy.
+
+---
+
+## 6. JSON DATA FORMAT
 
 ### 5.1 Parent Guide JSON Structure
 
@@ -551,6 +638,7 @@ vim data/parent-guides/the-giver.json
 node build.js                  # Main pages
 node build-homepage-guides.js  # Homepage books
 node build-parent-guides.js    # Curriculum directory
+node build-school-pages.js     # School landing pages
 
 # 3. Verify changes
 open index.html                # Main pages
@@ -599,8 +687,11 @@ node build-parent-guides.js
 # Video scene pages (in /studio/scenes/)
 node build-video-scenes.js
 
+# School landing pages (in /schools/)
+node build-school-pages.js
+
 # Rebuild everything
-node build.js && node build-homepage-guides.js && node build-parent-guides.js && node build-video-scenes.js
+node build.js && node build-homepage-guides.js && node build-parent-guides.js && node build-video-scenes.js && node build-school-pages.js
 ```
 
 ### When to Run Each Script
@@ -616,6 +707,9 @@ node build.js && node build-homepage-guides.js && node build-parent-guides.js &&
 | `/src/templates/curriculum-index.html` | `node build-parent-guides.js` |
 | `/data/video-scenes/*.json` | `node build-video-scenes.js` |
 | `/src/templates/_video-scene-template.html` | `node build-video-scenes.js` |
+| `/data/schools/*.json` | `node build-school-pages.js` |
+| `/src/templates/_school-page-template.html` | `node build-school-pages.js` |
+| `/src/templates/schools-index.html` | `node build-school-pages.js` |
 
 ---
 
