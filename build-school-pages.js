@@ -22,6 +22,10 @@ const DATA_DIR = path.join(__dirname, 'data', 'schools');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
 const PARTIALS_DIR = path.join(__dirname, 'src', 'partials');
 const OUTPUT_DIR = path.join(__dirname, 'schools');
+const CONFIG_PATH = path.join(__dirname, 'site-config.json');
+
+// Load config for navigation links
+const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 
 /**
  * Load a partial file
@@ -42,6 +46,34 @@ function processPartials(content) {
   return content.replace(/\{\{>([^}]+)\}\}/g, (match, partialName) => {
     return loadPartial(partialName.trim());
   });
+}
+
+/**
+ * Convert page.file to a clean URL (matches build.js behavior)
+ */
+function formatNavHref(pageFile) {
+  if (!pageFile) return '/';
+  if (pageFile.includes('mailto:')) return pageFile;
+  if (pageFile.includes('#')) {
+    return '/' + pageFile.replace('index.html', '');
+  }
+  return '/' + pageFile.replace('.html', '/').replace('/index/', '/');
+}
+
+/**
+ * Generate navigation links HTML
+ */
+function generateNavLinks(currentPageId) {
+  return config.pages
+    .filter(page => page.showInNav !== false)
+    .map(page => {
+      const isActive = page.id === currentPageId ? ' active' : '';
+      const href = formatNavHref(page.file);
+      return `        <a href="${href}" class="nav-link${isActive}">
+          <span data-lang-content="en">${page.navTitle.en}</span>
+          <span data-lang-content="zh">${page.navTitle.zh}</span>
+        </a>`;
+    }).join('\n');
 }
 
 // Load templates
@@ -186,6 +218,7 @@ function generateSchemaMarkup(data) {
  */
 function generateSchoolPage(data) {
   let html = schoolTemplate;
+  html = html.replace('{{NAV_LINKS}}', generateNavLinks('schools'));
 
   // Basic replacements
   html = html.replace(/\{\{SCHOOL_NAME\}\}/g, escapeHtml(data.schoolName));
@@ -247,6 +280,7 @@ function generateSchoolCard(data) {
  */
 function generateIndexPage(allSchools) {
   let html = indexTemplate;
+  html = html.replace('{{NAV_LINKS}}', generateNavLinks('schools'));
 
   // Sort schools alphabetically
   const sortedSchools = allSchools.sort((a, b) => a.schoolName.localeCompare(b.schoolName));
