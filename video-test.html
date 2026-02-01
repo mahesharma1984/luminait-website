@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Autoplay Test</title>
+</head>
+<body>
+  <h1>Video Autoplay Test</h1>
+
+  <h2>With autoplay muted loop (should play automatically):</h2>
+  <video autoplay muted loop playsinline style="width: 300px; border: 2px solid green;">
+    <source src="studio/assets/clips/demo-annotation.mp4" type="video/mp4">
+  </video>
+
+  <h2>With controls only (requires click):</h2>
+  <video controls playsinline style="width: 300px; border: 2px solid red;">
+    <source src="studio/assets/clips/demo-annotation.mp4" type="video/mp4">
+  </video>
+</body>
+</html>
