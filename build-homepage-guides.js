@@ -101,6 +101,8 @@ function generateGuidePage(data) {
   html = html.replace(/\{\{YEAR_LEVEL\}\}/g, escapeHtml(data.yearLevel));
   html = html.replace(/\{\{PATTERN_NAME\}\}/g, escapeHtml(data.pattern));
   html = html.replace(/\{\{META_DESCRIPTION\}\}/g, escapeHtml(data.metaDescription));
+  html = html.replace(/\{\{TEXT_SLUG\}\}/g, data.slug);
+  html = html.replace(/\{\{CANONICAL_PATH\}\}/g, `/${data.slug}/`);
 
   // Generate dynamic content
   html = html.replace('{{WEEKS_CONTENT}}', generateWeeksContent(data.weeks));

@@ -7,3 +7,52 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+
+# Redirect .html URLs to clean URLs (301 permanent)
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/course.html"
+  to = "/course/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/method.html"
+  to = "/method/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/progress.html"
+  to = "/progress/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/results.html"
+  to = "/results/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sample.html"
+  to = "/sample/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/syllabus.html"
+  to = "/syllabus/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
+  force = true
