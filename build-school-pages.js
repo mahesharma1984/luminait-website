@@ -197,11 +197,12 @@ function generateSchemaMarkup(data) {
     'name': `LuminAIT - English Tutoring for ${data.schoolName}`,
     'description': `Text-specific English tutoring aligned with ${data.schoolName}'s ${new Date().getFullYear()} curriculum`,
     'url': `https://luminait.app/schools/${data.slug}/`,
+    'telephone': config.site.contact.phone,
     'address': {
       '@type': 'PostalAddress',
-      'addressLocality': 'Melbourne',
-      'addressRegion': 'VIC',
-      'addressCountry': 'AU'
+      'addressLocality': config.site.address?.locality || 'Melbourne',
+      'addressRegion': config.site.address?.region || 'VIC',
+      'addressCountry': config.site.address?.country || 'AU'
     },
     'areaServed': {
       '@type': 'Place',
@@ -209,6 +210,15 @@ function generateSchemaMarkup(data) {
     },
     'makesOffer': services.slice(0, 5) // Limit to avoid overly long schema
   };
+
+  // Add geo coordinates if available
+  if (data.location.coordinates && data.location.coordinates.lat && data.location.coordinates.lng) {
+    schema.geo = {
+      '@type': 'GeoCoordinates',
+      'latitude': data.location.coordinates.lat,
+      'longitude': data.location.coordinates.lng
+    };
+  }
 
   return JSON.stringify(schema, null, 2);
 }

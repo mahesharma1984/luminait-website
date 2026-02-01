@@ -27,6 +27,12 @@
       "phone": "+61 421 213 517",
       "wechat": "sharmeleon"
     },
+    "address": {
+      "locality": "Melbourne",
+      "region": "VIC",
+      "country": "AU",
+      "displayFormat": "Melbourne, VIC"
+    },
     "enrollLink": "mailto:mahesh@luminait.app?subject=Enquiry%20about%20LuminAIT%20Learning",
     "socialImage": "social-preview.png"
   },
