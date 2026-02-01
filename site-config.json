@@ -55,6 +55,7 @@
       "id": "home",
       "file": "index.html",
       "template": "index.html",
+      "showInNav": false,
       "title": {
         "en": "Home",
         "zh": "首页"
@@ -76,6 +77,7 @@
       "id": "method",
       "file": "method.html",
       "template": "method.html",
+      "showInNav": true,
       "title": {
         "en": "The Method",
         "zh": "教学方法"
@@ -94,9 +96,41 @@
       }
     },
     {
+      "id": "texts",
+      "file": "index.html#text-selection",
+      "showInNav": true,
+      "navTitle": {
+        "en": "Texts",
+        "zh": "文本"
+      }
+    },
+    {
+      "id": "schools",
+      "file": "schools/index.html",
+      "template": "schools-index.html",
+      "showInNav": true,
+      "title": {
+        "en": "Schools",
+        "zh": "学校"
+      },
+      "navTitle": {
+        "en": "Schools",
+        "zh": "学校"
+      },
+      "pageTitle": {
+        "en": "English Tutoring by School | Melbourne Booklists | LuminAIT",
+        "zh": "按学校查找英语辅导 | 墨尔本学校书单 | LuminAIT"
+      },
+      "metaDescription": {
+        "en": "Find English tutoring aligned to your school's 2026 booklist. We cover texts from Melbourne's top schools including McKinnon SC, Melbourne Girls College, Lauriston, and more.",
+        "zh": "查找与您学校2026年书单对应的英语辅导。我们涵盖墨尔本顶尖学校的文本，包括McKinnon SC、Melbourne Girls College、Lauriston等。"
+      }
+    },
+    {
       "id": "course",
       "file": "course.html",
       "template": "course.html",
+      "showInNav": true,
       "title": {
         "en": "Course Details",
         "zh": "课程详情"
@@ -146,6 +180,7 @@
       "id": "syllabus",
       "file": "syllabus.html",
       "template": "syllabus.html",
+      "showInNav": false,
       "title": {
         "en": "Curriculum",
         "zh": "课程大纲"
@@ -194,6 +229,7 @@
       "id": "sample",
       "file": "sample.html",
       "template": "sample.html",
+      "showInNav": false,
       "title": {
         "en": "Sample Worksheet",
         "zh": "练习样例"
@@ -242,6 +278,7 @@
       "id": "progress",
       "file": "progress.html",
       "template": "progress.html",
+      "showInNav": false,
       "title": {
         "en": "Progress Reports",
         "zh": "进度报告"
@@ -290,6 +327,7 @@
       "id": "results",
       "file": "results.html",
       "template": "results.html",
+      "showInNav": true,
       "title": {
         "en": "Results & Outcomes",
         "zh": "学习成果"
@@ -332,6 +370,27 @@
       "linkText": {
         "en": "View detailed results",
         "zh": "查看详细成果"
+      }
+    },
+    {
+      "id": "about",
+      "file": "about.html",
+      "showInNav": true,
+      "title": {
+        "en": "About",
+        "zh": "关于我们"
+      },
+      "navTitle": {
+        "en": "About",
+        "zh": "关于"
+      },
+      "pageTitle": {
+        "en": "About LuminAIT | Teaching Philosophy | Melbourne English Tutor",
+        "zh": "关于LuminAIT | 教学理念 | 墨尔本英语导师"
+      },
+      "metaDescription": {
+        "en": "Learn about LuminAIT's teaching philosophy and approach to analytical writing instruction for Melbourne secondary students.",
+        "zh": "了解LuminAIT的教学理念以及为墨尔本中学生提供分析写作指导的方法。"
       }
     }
   ]

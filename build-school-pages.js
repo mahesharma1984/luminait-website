@@ -20,7 +20,29 @@ const path = require('path');
 // Paths
 const DATA_DIR = path.join(__dirname, 'data', 'schools');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
+const PARTIALS_DIR = path.join(__dirname, 'src', 'partials');
 const OUTPUT_DIR = path.join(__dirname, 'schools');
+
+/**
+ * Load a partial file
+ */
+function loadPartial(name) {
+  const filePath = path.join(PARTIALS_DIR, name);
+  if (fs.existsSync(filePath)) {
+    return fs.readFileSync(filePath, 'utf8');
+  }
+  console.warn(`Warning: Partial not found: ${name}`);
+  return '';
+}
+
+/**
+ * Process partials in template content
+ */
+function processPartials(content) {
+  return content.replace(/\{\{>([^}]+)\}\}/g, (match, partialName) => {
+    return loadPartial(partialName.trim());
+  });
+}
 
 // Load templates
 let schoolTemplate, indexTemplate;
@@ -34,6 +56,10 @@ try {
     path.join(TEMPLATES_DIR, 'schools-index.html'),
     'utf8'
   );
+
+  // Process partials
+  schoolTemplate = processPartials(schoolTemplate);
+  indexTemplate = processPartials(indexTemplate);
 } catch (err) {
   console.error('Error: Template files not found.');
   console.error('Required templates:');
