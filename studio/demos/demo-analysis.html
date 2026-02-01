@@ -59,7 +59,7 @@
             height: 1.4em;
             z-index: -1;
             width: 0;
-            transition: width 0.5s ease;
+            transition: width var(--t-fast, 0.5s) ease;
         }
 
         .tag {
@@ -71,7 +71,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             opacity: 0;
-            transition: opacity 0.5s;
+            transition: opacity var(--t-fast, 0.5s);
         }
     </style>
 </head>
@@ -89,6 +89,9 @@
         const typeSpeed = 40;
 
         async function run() {
+            const mult = window.SPEED_MULTIPLIER || 1;
+            const delay = (ms) => new Promise(r => setTimeout(r, ms * mult));
+
             const el = document.getElementById('content');
             el.innerHTML = '<span class="cursor"></span>';
 
@@ -97,10 +100,10 @@
             for (let i = 0; i < text.length; i++) {
                 currentText += text[i];
                 el.innerHTML = currentText + '<span class="cursor"></span>';
-                await new Promise(r => setTimeout(r, typeSpeed + (Math.random() * 20)));
+                await delay(typeSpeed + (Math.random() * 20));
             }
 
-            await new Promise(r => setTimeout(r, 1000));
+            await delay(1000);
 
             // HIGHLIGHTING EFFECT (Simulated by wrapping text)
             // "bridge the gap"
@@ -114,7 +117,7 @@
                 el.innerHTML = `${before}<span style="background: rgba(241, 196, 15, 0.3);">${during}</span>${after}<span class="cursor"></span>`;
             }
 
-            await new Promise(r => setTimeout(r, 800));
+            await delay(800);
 
             // "dual consciousness"
             const phrase2 = "dual consciousness";
@@ -128,7 +131,7 @@
                     + '<span class="cursor"></span>';
             }
 
-            await new Promise(r => setTimeout(r, 3000));
+            await delay(3000);
             run(); // Loop
         }
 

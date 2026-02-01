@@ -34,6 +34,20 @@ async function recordScene(filename, outputName, durationMs = 10000) {
 
     // Ensure transparent/clean background if possible
     await page.evaluate(() => {
+        // SPEED CONTROL
+        window.SPEED_MULTIPLIER = 2; // Half Speed
+
+        // Inject CSS Variables for 2x slower animations
+        const style = document.createElement('style');
+        style.textContent = `
+            :root {
+                --t-fast: 1.0s;
+                --t-medium: 1.6s;
+                --t-long: 3.0s;
+            }
+        `;
+        document.head.appendChild(style);
+
         document.body.style.background = 'transparent';
         if (document.body.style.backgroundColor) {
             document.body.style.backgroundColor = 'transparent'; // unexpected but safe
@@ -91,11 +105,11 @@ async function recordScene(filename, outputName, durationMs = 10000) {
 async function main() {
     await ensureDirs();
 
-    // Config for each demo
+    // Config for each demo (Doubled durations for half speed)
     const demos = [
-        { file: 'demo-annotation.html', out: 'demo-annotation.mp4', duration: 8500 },
-        { file: 'demo-worksheet.html', out: 'demo-worksheet.mp4', duration: 8500 },
-        { file: 'demo-analysis.html', out: 'demo-analysis.mp4', duration: 8500 }
+        { file: 'demo-annotation.html', out: 'demo-annotation.mp4', duration: 17000 },
+        { file: 'demo-worksheet.html', out: 'demo-worksheet.mp4', duration: 17000 },
+        { file: 'demo-analysis.html', out: 'demo-analysis.mp4', duration: 17000 }
     ];
 
     for (const demo of demos) {

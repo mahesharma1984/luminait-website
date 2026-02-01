@@ -43,7 +43,7 @@
             padding: 40px;
             opacity: 0;
             transform: translateX(50px);
-            transition: all 0.5s ease;
+            transition: all var(--t-fast, 0.5s) ease;
             display: flex;
             flex-direction: column;
         }
@@ -83,7 +83,7 @@
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all var(--t-fast, 0.3s);
         }
 
         .choice-card.selected {
@@ -108,7 +108,7 @@
             align-items: center;
             opacity: 0.5;
             transform: translateY(10px);
-            transition: all 0.5s;
+            transition: all var(--t-fast, 0.5s);
         }
 
         .seq-item.show {
@@ -157,7 +157,7 @@
             margin-bottom: 10px;
             opacity: 0;
             transform: scale(0.9);
-            transition: all 0.4s;
+            transition: all var(--t-fast, 0.4s);
         }
 
         .sort-card.show {
@@ -222,7 +222,10 @@
 
     <script>
         // ENGINE
-        function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+        function sleep(ms) {
+            const mult = window.SPEED_MULTIPLIER || 1;
+            return new Promise(r => setTimeout(r, ms * mult));
+        }
 
         async function runSequence() {
             // SLIDE 1
