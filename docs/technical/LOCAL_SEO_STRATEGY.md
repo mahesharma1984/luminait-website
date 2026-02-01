@@ -203,19 +203,21 @@ Must be identical across:
 - All directory listings
 - Schema markup
 
-**Footer template (update in `src/partials/footer.html`):**
+**Footer template (implemented in `src/partials/footer-simple.html` and `footer-course.html`):**
 ```html
-<footer>
-  <div class="footer-nap">
-    <strong>LuminAIT</strong><br>
-    Melbourne, VIC<br>
-    <a href="tel:+61XXXXXXXXX">04XX XXX XXX</a><br>
-    <a href="mailto:hello@luminait.app">hello@luminait.app</a>
-  </div>
-</footer>
+<div class="footer-nap">
+  <strong>{{SITE_NAME}}</strong><br>
+  {{ADDRESS_DISPLAY}}<br>
+  <a href="tel:{{CONTACT_PHONE_LINK}}">{{CONTACT_PHONE}}</a><br>
+  <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>
+</div>
 ```
 
-**Note:** Format must match exactly. "Melbourne, VIC" not "Melbourne VIC" or "Melbourne, Victoria".
+**Implementation notes:**
+- All NAP fields sourced from `site-config.json` for consistency
+- Address format defined in `site.address.displayFormat` (currently "Melbourne, VIC")
+- Build scripts (`build.js`, `build-school-pages.js`) inject config values into templates
+- Schema markup (EducationalOrganization, LocalBusiness) uses same config source
 
 ---
 
@@ -500,14 +502,14 @@ The following local SEO tactics (from practitioner consensus) map to our strateg
 | Tactic | LuminAIT Implementation | Status |
 |--------|------------------------|--------|
 | **Meta title = keyword + city** | "English Tutoring for [School] \| LuminAIT Melbourne" | Template |
-| **Address in footer** | NAP in footer partial | TODO |
+| **Address in footer** | NAP in footer partial | ✓ Done |
 | **H1 = service + location** | "English Tutoring for [School Name]" | Template |
 | **Location pages for each area** | `/schools/[school]/` for 20+ schools | Phase 1-2 |
 | **Schema markup** | LocalBusiness + Course + EducationalOrganization | Template |
 | **GBP category correct** | Educational Service + Tutor | Setup |
 | **GBP photos weekly** | 30-second videos from `/studio/scenes/` | Ongoing |
 | **Review responses with keywords** | Template with school + text names | Ongoing |
-| **Consistent NAP** | Single source of truth in site-config.json | TODO |
+| **Consistent NAP** | Single source of truth in site-config.json | ✓ Done |
 | **Niche directories** | Education directories, VCE/HSC platforms | Phase 3 |
 
 ---

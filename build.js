@@ -251,6 +251,12 @@ function generateOrgSchema() {
     "url": siteUrl,
     "email": config.site.contact.email,
     "telephone": config.site.contact.phone,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": config.site.address?.locality || "Melbourne",
+      "addressRegion": config.site.address?.region || "VIC",
+      "addressCountry": config.site.address?.country || "AU"
+    },
     "areaServed": {
       "@type": "City",
       "name": "Melbourne",
@@ -332,6 +338,10 @@ function replacePlaceholders(content, pageId) {
     '{{CONTACT_PHONE}}': config.site.contact.phone,
     '{{CONTACT_PHONE_LINK}}': config.site.contact.phone.replace(/\s/g, ''),
     '{{CONTACT_WECHAT}}': config.site.contact.wechat,
+    '{{ADDRESS_DISPLAY}}': config.site.address?.displayFormat || 'Melbourne, VIC',
+    '{{ADDRESS_LOCALITY}}': config.site.address?.locality || 'Melbourne',
+    '{{ADDRESS_REGION}}': config.site.address?.region || 'VIC',
+    '{{ADDRESS_COUNTRY}}': config.site.address?.country || 'AU',
     '{{COURSE_PRICE}}': config.course.price,
     '{{COURSE_DURATION}}': config.course.duration,
     '{{COURSE_HOURS_PER_LESSON}}': config.course.hoursPerLesson,
