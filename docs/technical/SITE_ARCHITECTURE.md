@@ -10,12 +10,14 @@
 
 ## 1. OVERVIEW
 
-Site structure supporting three distinct funnels:
+Site structure supporting three distinct funnels.
+
+**Funnel Priority:** Funnel 2 (Parent-Direct) is the **PRIMARY** conversion path. Funnels 1 and 3 are secondary entry points that feed into the parent-direct flow.
 
 ```
 luminait.app/
 │
-├── FUNNEL 2: PARENT-DIRECT ─────────────────────────────────
+├── FUNNEL 2: PARENT-DIRECT [PRIMARY] ──────────────────────
 │   │
 │   ├── /                     → Homepage (text grid, parent-facing)
 │   ├── /schools/             → School-first entry point (NEW)
@@ -86,39 +88,30 @@ luminait.app/
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  VIDEO DEMO SECTION (NEW Jan 30)                            │
-│  ──────────────────────────────                             │
-│  "See how we teach close reading"                           │
-│  3 looping video cards:                                     │
-│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐           │
-│  │ Annotating  │ │ Structured  │ │ Constructing│           │
-│  │ the Text    │ │ Activities  │ │ Analysis    │           │
-│  │ (video)     │ │ (video)     │ │ (video)     │           │
-│  │ → Demo link │ │ → Demo link │ │ → Demo link │           │
-│  └─────────────┘ └─────────────┘ └─────────────┘           │
-│                                                             │
-│  Videos: /studio/assets/clips/demo-*.mp4                    │
-│  Demos: /studio/demos/demo-*.html                           │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  SCHOOLS SECTION                                            │
-│  ──────────────                                             │
-│  "Or find by school" - 5 featured schools                   │
-│  → View all schools | → Parent Curriculum Guides            │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  VALUE PROP / SAMPLE                                        │
-│  ─────────────────────                                      │
-│  "The Difference" - text-specific preparation               │
-│  Sample student output example                              │
+│  METHODOLOGY SECTION                                        │
+│  ──────────────────                                         │
+│  "The Method" - Text-specific preparation explained         │
+│  • Chapter-by-chapter breakdown                             │
+│  • Pre-written analysis bank                                │
+│  • 10 weeks of structured worksheets                        │
+│  + Single hero video (annotation demo)                      │
+│  → Link to full method page                                 │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  RESULTS TEASER                                             │
 │  ──────────────                                             │
+│  "See what 10 weeks can do"                                 │
 │  3 outcome cards → View All Case Studies                    │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  SCHOOLS SECTION (Secondary Entry Point)                    │
+│  ──────────────                                             │
+│  "Or find by school" - 5 featured schools                   │
+│  → View all schools | → Parent Curriculum Guides            │
+│  Note: Positioned after proof layer to reinforce            │
+│  text-first value proposition                               │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
@@ -252,8 +245,12 @@ luminait.app/
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  NOT SURE WHICH TEXT?                                       │
-│  → See our available guides                                 │
+│  TEXT SELECTION HELPER                                      │
+│  ─────────────────────                                      │
+│  "Not sure which text your child is studying?"              │
+│  "We have detailed course plans for 18+ texts..."           │
+│  [Browse Available Texts →] [View All Course Plans]         │
+│  Links: /#text-selection, /curriculum/                      │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │ FOOTER                                                      │
@@ -263,6 +260,9 @@ luminait.app/
 **SEO Target:** Minimal (conversion page, not discovery)
 
 **Voice:** Parent-facing. Warm, clear, addresses concerns.
+
+**Text-Specific Flow:** The text selection helper completes the parent-direct loop:
+`Homepage → Text Guide → Course Page → [Back to Text Selection]`
 
 ---
 
@@ -653,6 +653,7 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 | 2.2 | Jan 27, 2026 | Implemented text-specific course outlines (18 total guides: 8 at root + 10 in /curriculum/) |
 | 3.0 | Jan 28, 2026 | Three-funnel architecture: added Funnel 3 (Video-to-Parent) with /studio/ and /studio/scenes/ |
 | 3.1 | Jan 30, 2026 | Updated homepage structure to reflect Video Demo Section integration |
+| 3.2 | Feb 2, 2026 | **Parent-Direct as PRIMARY:** Repositioned schools section after results (not equal to text grid). Added text selection helper to course page. Explicit PRIMARY designation for Funnel 2 (issue #64) |
 
 ---
 
