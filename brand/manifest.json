@@ -1,0 +1,100 @@
+{
+  "name": "LuminAIT",
+  "version": "1.0.0",
+  "description": "Brand assets for LuminAIT - AI-enhanced learning platform",
+  
+  "colors": {
+    "primary": {
+      "blue": {
+        "light": "#4A90D9",
+        "default": "#2563EB",
+        "dark": "#1A56A8"
+      },
+      "gray": {
+        "light": "#4B5563",
+        "default": "#374151",
+        "dark": "#1F2937"
+      }
+    },
+    "background": {
+      "light": "#F9FAFB",
+      "white": "#FFFFFF"
+    }
+  },
+  
+  "logos": {
+    "mark": {
+      "source": "source/logo-mark.svg",
+      "exports": {
+        "sizes": [32, 64, 128, 256, 512, 1024],
+        "formats": ["png"],
+        "output": "exports/logo/logo-mark_{size}.{format}"
+      }
+    },
+    "lockup-standard": {
+      "source": "source/logo-lockup-standard.svg",
+      "exports": {
+        "sizes": [256, 512, 1024],
+        "formats": ["png"],
+        "output": "exports/logo/logo-lockup-standard_{size}.{format}"
+      }
+    }
+  },
+  
+  "templates": {
+    "social": {
+      "instagram-square": {
+        "width": 1080,
+        "height": 1080,
+        "logo": {
+          "position": "bottom-right",
+          "size": 80,
+          "margin": 40
+        }
+      },
+      "instagram-portrait": {
+        "width": 1080,
+        "height": 1350,
+        "logo": {
+          "position": "bottom-right",
+          "size": 80,
+          "margin": 40
+        }
+      },
+      "linkedin": {
+        "width": 1200,
+        "height": 627,
+        "logo": {
+          "position": "bottom-right",
+          "size": 60,
+          "margin": 32
+        }
+      }
+    },
+    "docs": {
+      "worksheet": {
+        "width": 612,
+        "height": 792,
+        "logo": {
+          "position": "top-left",
+          "size": 48,
+          "margin": 36
+        }
+      },
+      "report-card": {
+        "width": 612,
+        "height": 792,
+        "logo": {
+          "position": "top-center",
+          "size": 64,
+          "margin": 36
+        }
+      }
+    }
+  },
+  
+  "fonts": {
+    "heading": "Inter",
+    "body": "Inter"
+  }
+}
