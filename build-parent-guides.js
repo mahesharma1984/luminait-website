@@ -100,6 +100,27 @@ function generateGuidePage(data) {
   html = html.replace('{{WEEKS_CONTENT}}', generateWeeksContent(data.weeks));
   html = html.replace('{{OUTCOMES_LIST}}', generateOutcomesList(data.outcomes));
 
+  // Annotation block (conditional - only if annotation guide exists)
+  const annotationGuideSlug = data.annotationGuideSlug || null;
+  let annotationBlock = '';
+
+  if (annotationGuideSlug) {
+    annotationBlock = `
+    <section class="method-in-action">
+      <div class="method-badge">
+        <span class="badge badge-accent">Method Demo</span>
+      </div>
+      <h3>See the annotation method in action</h3>
+      <p>Want to see how students mark up this text? Our free annotation guide shows the color-coding system and semantic families in practice.</p>
+      <a href="/annotations/${annotationGuideSlug}/" class="method-link">
+        View Annotation Guide &rarr;
+      </a>
+    </section>
+`;
+  }
+
+  html = html.replace('{{ANNOTATION_BLOCK}}', annotationBlock);
+
   return html;
 }
 
