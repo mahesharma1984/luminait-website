@@ -35,6 +35,12 @@ luminait.app/
 │   └── /ib/                  → IB hub (not implemented)
 │       └── /ib/[text]/       → Full analysis guides
 │
+├── FUNNEL 1B: ANNOTATION GUIDE PLG (Student-First Entry) ─
+│   │
+│   ├── /annotations/         → ✅ Annotation guides hub
+│   └── /annotations/[text]/  → ✅ Preview + download gate + parent bridge
+│                               (the-outsiders, the-giver)
+│
 ├── FUNNEL 3: VIDEO-TO-PARENT (Social Discovery) ───────────
 │   │
 │   └── /studio/              → Video Studio (scene playback)
@@ -340,6 +346,187 @@ Step 5: Write the Essay (gated — email capture)
 **SEO Target:** "[text] themes VCE", "[text] analysis", "[text] literary devices"
 
 **Voice:** Student-facing. Peer-to-capable-peer. "Here's what sophisticated analysis looks like."
+
+---
+
+## 3B. FUNNEL 1B PAGES (Annotation Guide PLG)
+
+### 3B.1 Annotations Hub `/annotations/`
+
+**Role:** Student-first entry point. Lower-friction PLG funnel that captures student intent via SEO/social, then bridges to parent-direct conversion.
+
+**Audience:** Students searching for annotation guides or text analysis help.
+
+**Content Structure:**
+```
+┌─────────────────────────────────────────────────────────────┐
+│ NAV: Logo          Course | Curriculum Guides  [Enquire]    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  HERO                                                       │
+│  ─────                                                      │
+│  Annotation Guides                                          │
+│                                                             │
+│  Download structured annotation guides for classic          │
+│  literature. Learn to identify and analyze key literary     │
+│  patterns with our color-coded system.                      │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  METHOD EXPLANATION                                         │
+│  ──────────────────                                         │
+│  How annotation guides work:                                │
+│  • Color-coded annotation system                            │
+│  • Semantic families to track                               │
+│  • Structured activities                                    │
+│  • Key passage analysis                                     │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  AVAILABLE GUIDES                                           │
+│  ────────────────                                           │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ The Outsiders                                       │   │
+│  │ Exposition Annotation Guide                         │   │
+│  │ S.E. Hinton • Chapters 1-2                          │   │
+│  │ Social — "Class-Naive Witnessing"                   │   │
+│  │ → View Preview                                      │   │
+│  └─────────────────────────────────────────────────────┘   │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ The Giver                                           │   │
+│  │ Chapter Annotation Guide                            │   │
+│  │ Lois Lowry • Chapter 1                              │   │
+│  │ → View Preview                                      │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  COURSE CTA                                                 │
+│  ──────────                                                 │
+│  Want structured, expert-led learning?                      │
+│  [View Course Details →]                                    │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ FOOTER                                                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**SEO Target:** "annotation guide [text]", "[text] literary analysis guide", "how to annotate [text]"
+
+**Voice:** Student-facing. Helpful, practical, direct.
+
+---
+
+### 3B.2 Annotation Preview Page `/annotations/[text]/`
+
+**Role:** Preview + download gate + parent bridge. Demonstrates value, captures email/intent, bridges to parent-direct funnel.
+
+**Audience:** Students seeking specific text help. Secondary: Parents researching alongside student.
+
+**Content Structure:**
+```
+┌─────────────────────────────────────────────────────────────┐
+│ NAV: Logo          ← All Annotation Guides   [Enquire]      │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  HERO                                                       │
+│  ─────                                                      │
+│  The Outsiders                                              │
+│  Exposition Annotation Guide                                │
+│                                                             │
+│  S.E. Hinton • Chapters 1-2 • Years 7-9                     │
+│  Social — "Class-Naive Witnessing"                          │
+│  How Ponyboy reveals class structures he can't              │
+│  fully articulate                                           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  PREVIEW SECTION                                            │
+│  ───────────────                                            │
+│  See how our annotation guides work.                        │
+│  [Image: Page 1 preview]  [Image: Page 2 preview]          │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  METHOD SECTION                                             │
+│  ──────────────                                             │
+│  How This Guide Works:                                      │
+│  Color Key:                                                 │
+│  • Class Signifiers (objects showing group identity)        │
+│  • Social Boundaries (places/barriers separating groups)    │
+│  • Innocence Markers (vulnerability, naivety)               │
+│                                                             │
+│  What to Look For:                                          │
+│  Semantic families with examples + key questions            │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  DOWNLOAD GATE                                              │
+│  ─────────────                                              │
+│  Download the Full Guide                                    │
+│  8-page PDF with structured activities, discovery           │
+│  questions, and key passage analysis.                       │
+│                                                             │
+│  [Email input field]                                        │
+│  [Download Free Guide →]                                    │
+│                                                             │
+│  143 KB PDF • No signup required • Instant download         │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  PARENT BRIDGE                                              │
+│  ─────────────                                              │
+│  Show your parent the full 10-week plan                     │
+│  This annotation guide is just the beginning. See the       │
+│  complete curriculum your child will follow.                │
+│  [View Parent Curriculum Guide →]                           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  SECONDARY CTA                                              │
+│  ──────────────                                             │
+│  Want expert guidance?                                      │
+│  Join our 5-week or 10-week course for personalized        │
+│  feedback and structured learning.                          │
+│  [Enquire About the Course →]                               │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ FOOTER                                                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**SEO Target:** "[text] annotation guide", "how to annotate [text]", "[text] chapter analysis"
+
+**Voice:** Student-facing initially, transitions to parent-facing in bridge section.
+
+**Conversion Flow:**
+```
+Student finds guide (SEO/social)
+  ↓
+Preview + method explanation (value demonstration)
+  ↓
+Email gate (lead capture)
+  ↓
+Download PDF (instant gratification)
+  ↓
+Parent bridge CTA (funnel handoff)
+  ↓
+Parent curriculum guide or course page (parent-direct funnel)
+```
+
+**Content Pipeline:**
+```
+/data/annotation-guides/*.json → build-annotation-guides.js → /annotations/[slug]/index.html
+```
+
+**Gate Strategy (Future A/B Test):**
+- Variant A: Email capture (low friction, list growth)
+- Variant B: Low-price purchase ($5-10, intent + revenue signal)
+
+**Success Metrics:**
+- Download rate (page → download)
+- Parent-bridge CTR (downloaded → outline/course)
+- Course conversion rate (annotation → course enquiry)
 
 ---
 
