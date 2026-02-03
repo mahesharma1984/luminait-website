@@ -192,23 +192,11 @@ a:hover {
 }
 
 .nav-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text-dark);
   text-decoration: none !important;
-}
-
-.nav-logo-mark {
-  width: 32px;
-  height: 32px;
-  display: block;
-}
-
-.nav-logo-lockup {
-  height: 28px;
-  width: auto;
-  display: block;
 }
 
 .nav-links {
@@ -362,15 +350,6 @@ a:hover {
 
   .nav-links {
     display: none;
-  }
-
-  .nav-logo-lockup {
-    display: none;
-  }
-
-  .nav-logo-mark {
-    width: 30px;
-    height: 30px;
   }
 
   /* Simplified mobile nav for now */
