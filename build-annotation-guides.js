@@ -27,17 +27,51 @@ const guideTemplate = fs.readFileSync(
 );
 
 /**
- * Generate preview images HTML
+ * Generate preview images HTML for guide
  */
-function generatePreviewImages(data) {
-  if (!data.preview || !data.preview.pages) return '';
+function generatePreviewGuideImages(data) {
+  if (!data.preview || !data.preview.guide || !data.preview.guide.pages) return '';
 
-  return data.preview.pages
+  return data.preview.guide.pages
     .map(imagePath => {
       const fullPath = `/images/annotations/${data.slug}/${imagePath}`;
       return `        <div class="preview-image">
-          <img src="${fullPath}" alt="${escapeHtml(data.preview.alt)}" loading="lazy">
+          <img src="${fullPath}" alt="${escapeHtml(data.preview.guide.alt)}" loading="lazy">
         </div>`;
+    })
+    .join('\n');
+}
+
+/**
+ * Generate preview images HTML for example
+ */
+function generatePreviewExampleImages(data) {
+  if (!data.preview || !data.preview.example || !data.preview.example.pages) return '';
+
+  return data.preview.example.pages
+    .map(imagePath => {
+      const fullPath = `/images/annotations/${data.slug}/${imagePath}`;
+      return `        <div class="preview-image">
+          <img src="${fullPath}" alt="${escapeHtml(data.preview.example.alt)}" loading="lazy">
+        </div>`;
+    })
+    .join('\n');
+}
+
+/**
+ * Generate downloads list HTML
+ */
+function generateDownloadsList(downloads) {
+  if (!downloads || !Array.isArray(downloads)) return '';
+
+  return downloads
+    .map(download => {
+      const badge = download.badge ? `<span class="badge badge-cool" style="font-size: 0.75rem; margin-right: 0.5rem;">${escapeHtml(download.badge)}</span>` : '';
+      return `      <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        ${badge}<strong>${escapeHtml(download.title)}</strong>
+        <p style="font-size: 0.875rem; margin: 0.5rem 0;">${escapeHtml(download.description)}</p>
+        <p style="font-size: 0.75rem; opacity: 0.8; margin: 0;">${escapeHtml(download.size)} • ${download.pages} pages</p>
+      </div>`;
     })
     .join('\n');
 }
@@ -110,7 +144,9 @@ function generateGuidePage(data) {
   html = html.replace(/\{\{PARENT_BRIDGE_LINK\}\}/g, data.parentBridge?.link || '/course.html');
 
   // Generate dynamic content
-  html = html.replace('{{PREVIEW_IMAGES}}', generatePreviewImages(data));
+  html = html.replace('{{PREVIEW_GUIDE_IMAGES}}', generatePreviewGuideImages(data));
+  html = html.replace('{{PREVIEW_EXAMPLE_IMAGES}}', generatePreviewExampleImages(data));
+  html = html.replace('{{DOWNLOADS_LIST}}', generateDownloadsList(data.downloads));
   html = html.replace('{{COLOR_KEY}}', generateColorKey(data.colorKey));
   html = html.replace('{{SEMANTIC_FAMILIES}}', generateSemanticFamilies(data.semanticFamilies));
 
