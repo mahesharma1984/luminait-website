@@ -85,16 +85,36 @@
   ],
 
   "preview": {
-    "pages": ["preview-page-1.png", "preview-page-2.png"],
-    "alt": "Preview pages from The Outsiders annotation guide showing color-coded system and annotation activities"
+    "guide": {
+      "pages": ["preview-page-1.png", "preview-page-2.png"],
+      "alt": "Preview pages from The Outsiders annotation guide showing color-coded system and annotation activities"
+    },
+    "example": {
+      "pages": ["chapter1-page-1.png", "chapter1-page-2.png"],
+      "alt": "Example of Chapter 1 with student annotations showing class signifiers, social boundaries, and margin notes"
+    }
   },
 
-  "download": {
-    "filename": "Exposition Annotation Guide - The Outsiders (Social Lens).pdf",
-    "path": "social-media-assets/annotations/Exposition Annotation Guide - The Outsiders (Social Lens).pdf",
-    "size": "143 KB",
-    "pages": 8
-  },
+  "downloads": [
+    {
+      "title": "Exposition Annotation Guide",
+      "description": "Teaching guide with color key, structured activities, and passage analysis",
+      "filename": "Exposition Annotation Guide - The Outsiders (Social Lens).pdf",
+      "path": "social-media-assets/annotations/Exposition Annotation Guide - The Outsiders (Social Lens).pdf",
+      "size": "143 KB",
+      "pages": 8,
+      "badge": "Guide"
+    },
+    {
+      "title": "Chapter 1 Annotated Example",
+      "description": "See the system in action - complete chapter with student annotations and margin notes",
+      "filename": "Outsiders_Chapter1.pdf",
+      "path": "social-media-assets/annotations/Outsiders_Chapter1.pdf",
+      "size": "1.5 MB",
+      "pages": 13,
+      "badge": "Example"
+    }
+  ],
 
   "parentBridge": {
     "headline": "Show your parent the full 10-week plan",
