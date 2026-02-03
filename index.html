@@ -170,6 +170,42 @@
       color: var(--text-light);
     }
 
+    /* Method Annotation Link */
+    .method-annotation-link {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: var(--bg-paper);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .annotation-cta-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .annotation-cta-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: white;
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .annotation-cta-btn:hover {
+      background: var(--accent-primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
     /* Mobile */
     @media(max-width: 900px) {
       .schools-grid {
@@ -366,6 +402,16 @@
             <p style="font-size: 0.9rem; color: var(--text-light); margin: 4px 0 0 0;">We trace patterns live, showing
               exactly how devices create meaning.</p>
           </div>
+        </div>
+
+        <!-- NEW: Annotation guide link -->
+        <div class="method-annotation-link">
+          <p class="annotation-cta-text">
+            See how students annotate texts with our free guide
+          </p>
+          <a href="/annotations/" class="annotation-cta-btn">
+            View Annotation Examples →
+          </a>
         </div>
 
       </div>
