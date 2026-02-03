@@ -1,0 +1,110 @@
+{
+  "slug": "the-outsiders",
+  "title": "The Outsiders",
+  "author": "S.E. Hinton",
+  "guideTitle": "Exposition Annotation Guide",
+  "lens": "Social — \"Class-Naive Witnessing\"",
+  "focus": "How Ponyboy reveals class structures he can't fully articulate",
+  "chapters": "Chapters 1-2",
+  "yearLevel": "Years 7-9",
+
+  "metaTitle": "The Outsiders Annotation Guide (Free Download) - Social Lens Analysis",
+  "metaDescription": "Download our free annotation guide for The Outsiders. Learn to identify class signifiers, social boundaries, and narrative perspective. Includes color-coded system and structured activities.",
+
+  "colorKey": [
+    {
+      "name": "Class Signifiers",
+      "color": "blue",
+      "description": "Objects showing group identity (hair, cars, clothes)"
+    },
+    {
+      "name": "Social Boundaries",
+      "color": "orange",
+      "description": "Places or barriers separating groups"
+    },
+    {
+      "name": "Innocence Markers",
+      "color": "green",
+      "description": "Vulnerability, helplessness, naivety"
+    }
+  ],
+
+  "semanticFamilies": [
+    {
+      "name": "Class Signifiers",
+      "description": "Objects that signal group membership",
+      "examples": [
+        "Hair/Grooming: Greaser hair (long, greased) vs. Soc hair (clean-cut)",
+        "Vehicles: \"Old souped-up cars\" vs. Mustangs, Corvairs",
+        "Clothing: T-shirts, leather jackets vs. madras shirts, nice clothes",
+        "Cultural References: What movies, music, activities each group likes"
+      ],
+      "keyQuestion": "Does Ponyboy see these as class markers or just as \"how things are\"?"
+    },
+    {
+      "name": "Social Boundaries",
+      "description": "Physical and symbolic barriers between groups",
+      "examples": [
+        "Geographic: East Side vs. West Side",
+        "Spaces: Where each group feels safe or unsafe",
+        "Crossing Points: What happens when someone enters the other group's territory"
+      ],
+      "keyQuestion": "Who controls access to different spaces? Who gets to feel safe?"
+    }
+  ],
+
+  "activities": [
+    {
+      "title": "Mark Class Signifiers",
+      "instruction": "As you read, highlight or underline every object that signals whether someone is a Greaser or a Soc. Use the color code above or write \"CS\" in the margin.",
+      "task": "After marking, list 5-6 signifiers you found"
+    },
+    {
+      "title": "Find the Boundaries",
+      "instruction": "Mark every mention of places, territories, or barriers between groups. Use the color code above or write \"SB\" in the margin.",
+      "task": "What spaces are \"safe\" for Greasers? What spaces are dangerous?"
+    },
+    {
+      "title": "Catch the Casual Mentions",
+      "instruction": "Mark moments where Ponyboy mentions violence or danger in a casual, matter-of-fact way. His tone tells us as much as his words.",
+      "task": "Find one example and copy it here. What does his casual tone reveal?"
+    },
+    {
+      "title": "Spot the Gap",
+      "instruction": "Find a moment where Ponyboy shows us something he doesn't fully understand. There's a gap between what he sees and what a reader can understand.",
+      "task": "Example: When Ponyboy talks about his hair, he sees personal style. We see a class marker that makes him a target."
+    }
+  ],
+
+  "discoveryQuestions": [
+    "What objects or details immediately tell you whether someone is a Greaser or a Soc?",
+    "How does Ponyboy describe the Socs compared to how he describes his own gang?",
+    "When Ponyboy mentions danger or violence, what is his tone? What does this reveal?",
+    "What does Ponyboy accept as \"normal\" that a reader might question?",
+    "Where is the gap between what Ponyboy sees and what he understands?"
+  ],
+
+  "preview": {
+    "pages": ["preview-page-1.png", "preview-page-2.png"],
+    "alt": "Preview pages from The Outsiders annotation guide showing color-coded system and annotation activities"
+  },
+
+  "download": {
+    "filename": "Exposition Annotation Guide - The Outsiders (Social Lens).pdf",
+    "path": "social-media-assets/annotations/Exposition Annotation Guide - The Outsiders (Social Lens).pdf",
+    "size": "143 KB",
+    "pages": 8
+  },
+
+  "parentBridge": {
+    "headline": "Show your parent the full 10-week plan",
+    "description": "This annotation guide is just the beginning. See the complete curriculum your child will follow.",
+    "cta": "View Parent Curriculum Guide",
+    "link": "/course.html"
+  },
+
+  "related": {
+    "curriculumGuide": "/curriculum/the-outsiders/",
+    "courseInfo": "/course.html"
+  }
+}
