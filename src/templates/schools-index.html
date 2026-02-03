@@ -7,6 +7,7 @@
   <title>Melbourne Schools | LuminAIT English Tutoring</title>
   <meta name="description"
     content="Text-specific English tutoring for Melbourne secondary schools. Find your school and see which texts we teach.">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-mark.svg">
 
   <!-- Fonts & Base Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +98,7 @@
       justify-content: space-between;
       align-items: center;
       padding-top: 12px;
-      border-top: 1px solid rgba(0,0,0,0.06);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .school-card-type {
@@ -147,8 +148,8 @@
   <nav class="nav">
     <div class="nav-content">
       <a href="/" class="nav-logo" aria-label="LuminAIT home">
-        <img src="/brand/exports/logo/logo-mark_64.png" alt="" class="nav-logo-mark">
-        <img src="/brand/exports/logo/logo-lockup-standard.png" alt="LuminAIT" class="nav-logo-lockup">
+        <img src="/images/logo-mark.svg" alt="" class="nav-logo-mark">
+        <img src="/images/logotype.svg" alt="LuminAIT" class="nav-logo-lockup" style="height: 28px; width: auto;">
       </a>
       <div class="nav-links">
         <a href="/method/" class="nav-link">
@@ -184,14 +185,15 @@
   <header class="section schools-hero">
     <div class="schools-badge">Melbourne · {{SCHOOL_COUNT}} Schools</div>
     <h1>Find Your <span style="color: var(--primary);">School</span></h1>
-    <p class="schools-subtitle">We align our courses with your school's exact booklist. Select your school to see which texts we cover.</p>
+    <p class="schools-subtitle">We align our courses with your school's exact booklist. Select your school to see which
+      texts we cover.</p>
   </header>
 
   <!-- Schools Grid -->
   <section class="section schools-grid-section">
     <div class="container">
       <div class="schools-grid">
-{{SCHOOL_CARDS}}
+        {{SCHOOL_CARDS}}
       </div>
     </div>
   </section>

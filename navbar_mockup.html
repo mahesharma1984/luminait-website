@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Mockup - LuminAIT</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Base Styles (assuming these exist relative to root) -->
+    <link rel="stylesheet" href="src/components/base.css">
+    <!-- If src/components/base.css doesn't exist in build, I'll fallback to inline styles for the mockup to be safe -->
+
+    <style>
+        /* basic reset for mockup */
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #f3f4f6;
+            padding: 40px;
+        }
+
+        /* Navbar Styles copied/adapted for standalone preview */
+        .nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-mark {
+            height: 48px;
+            /* Increased by ~50% */
+            width: auto;
+        }
+
+        .nav-logo-lockup {
+            height: 48px;
+            /* Revert to match logo mark height */
+            width: auto;
+            display: block;
+            /* Scale visually without affecting line-height/navbar height */
+            transform: scale(2.2);
+            transform-origin: left center;
+            margin-left: 12px;
+            margin-right: 80px;
+            /* Reserve space for the visual overlap */
+        }
+
+        /* Links mock */
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-cta {
+            background: #2563eb;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .preview-note {
+            margin-bottom: 20px;
+            color: #6b7280;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview-note">
+        <strong>Navbar Preview (Corrected)</strong><br>
+        Verifying: <code>brand/source/logo-mark.svg</code> + <code>brand/source/logotype_cursive.svg</code>
+    </div>
+
+    <!-- The Navbar -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="nav-logo" aria-label="LuminAIT home">
+                <!-- Logo Mark -->
+                <img src="brand/source/logo-mark.svg" alt="" class="nav-logo-mark">
+
+                <!-- Logotype (Cursive) -->
+                <img src="brand/source/logotype_cursive.svg" alt="LuminAIT" class="nav-logo-lockup">
+            </a>
+
+            <div class="nav-links">
+                <a href="#" class="nav-link">The Method</a>
+                <a href="#" class="nav-link">Texts</a>
+                <a href="#" class="nav-link">Schools</a>
+                <a href="#" class="nav-link">Course</a>
+                <a href="#" class="nav-cta">Enquire</a>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>

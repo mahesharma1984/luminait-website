@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>English Tutoring for {{SCHOOL_NAME}} | LuminAIT Melbourne</title>
   <meta name="description" content="{{META_DESCRIPTION}}">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-mark.svg">
   <link rel="canonical" href="https://luminait.app/schools/{{SCHOOL_SLUG}}/">
   <link rel="alternate" hreflang="en" href="https://luminait.app/schools/{{SCHOOL_SLUG}}/">
   <link rel="alternate" hreflang="x-default" href="https://luminait.app/schools/{{SCHOOL_SLUG}}/">
@@ -86,7 +87,7 @@
       color: var(--text-light);
       margin-bottom: 16px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .school-text-link {
@@ -95,7 +96,7 @@
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
       transition: color 0.2s ease;
     }
 
@@ -111,7 +112,7 @@
       display: block;
       padding: 10px 0;
       color: var(--text-light);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     }
 
     .school-text-unavailable:last-child {
@@ -221,8 +222,8 @@
   <nav class="nav">
     <div class="nav-content">
       <a href="/" class="nav-logo" aria-label="LuminAIT home">
-        <img src="/brand/exports/logo/logo-mark_64.png" alt="" class="nav-logo-mark">
-        <img src="/brand/exports/logo/logo-lockup-standard.png" alt="LuminAIT" class="nav-logo-lockup">
+        <img src="/images/logo-mark.svg" alt="" class="nav-logo-mark">
+        <img src="/images/logotype.svg" alt="LuminAIT" class="nav-logo-lockup" style="height: 28px; width: auto;">
       </a>
       <div class="nav-links">
         <a href="/method/" class="nav-link">
@@ -270,7 +271,7 @@
       </div>
 
       <div class="school-booklist-grid">
-{{BOOKLIST_HTML}}
+        {{BOOKLIST_HTML}}
       </div>
 
       {{TESTIMONIAL}}
