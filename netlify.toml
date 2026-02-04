@@ -2,6 +2,9 @@
   command = ""
   publish = "."
 
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
+
 [build.processing.html]
   pretty_urls = true
 
