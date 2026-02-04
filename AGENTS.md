@@ -5,6 +5,7 @@ These instructions apply to all coding assistants (Codex, Claude, Gemini).
 ## 1) Read Docs First (Task-Routed)
 
 Before editing code, load only the docs needed for the task.
+Use `docs/START_HERE.md` as the primary map for Operating vs Strategy docs and small context packets.
 
 ### A. Build Practices (templates, generators, data)
 Read in this order:
@@ -117,6 +118,7 @@ If docs conflict, use this order:
 3. Agent-specific files (`CLAUDE.md`, `GEMINI.md`)
 4. `docs/_archive/*` (reference only)
 
-## 9) Known Drift to Correct
+## 9) Canonical Entry Doc
 
-`CLAUDE.md` currently references `generate_site.py` and `/templates/` guide generation paths that are not present in this repo snapshot. Prefer the active JS build pipelines documented in `docs/technical/BUILD_SYSTEM.md`.
+For planning and prompt setup, prefer:
+- `docs/START_HERE.md` (packetized doc loading)
