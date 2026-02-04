@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Our Curriculum | LuminAIT</title>
-  <meta name="description" content="Browse our complete curriculum of literary texts. See week-by-week breakdowns of what your child will learn.">
+  <meta name="description"
+    content="Browse our complete curriculum of literary texts. See week-by-week breakdowns of what your child will learn.">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-mark.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap"
+    rel="stylesheet">
 
   <!-- Design System CSS -->
   <link rel="stylesheet" href="/components/base.css">
   <link rel="stylesheet" href="/components/page-components.css">
   <link rel="stylesheet" href="/components/page-marketing.css">
 </head>
+
 <body>
 
   {{>nav.html}}
@@ -30,10 +36,11 @@
     <div class="content-section-wide">
       <div class="text-selection">
         <h2 style="text-align: center; margin-bottom: var(--space-sm);">Choose a Text</h2>
-        <p style="text-align: center; color: var(--text-light); margin-bottom: var(--space-lg);">Click any text to view the full curriculum breakdown</p>
+        <p style="text-align: center; color: var(--text-light); margin-bottom: var(--space-lg);">Click any text to view
+          the full curriculum breakdown</p>
 
         <div class="text-grid">
-{{TEXT_CARDS}}
+          {{TEXT_CARDS}}
         </div>
       </div>
     </div>
@@ -42,7 +49,8 @@
   <section class="section section-soft">
     <div class="content-section" style="text-align: center;">
       <h2>Ready to get started?</h2>
-      <p style="color: var(--text-light); margin-bottom: var(--space-lg);">Give your child the skills to write confidently about any text.</p>
+      <p style="color: var(--text-light); margin-bottom: var(--space-lg);">Give your child the skills to write
+        confidently about any text.</p>
       <a href="/course.html" class="btn btn-primary">View Course Details &rarr;</a>
     </div>
   </section>
@@ -52,4 +60,5 @@
   </footer>
 
 </body>
+
 </html>

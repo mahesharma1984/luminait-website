@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{PAGE_TITLE}}</title>
   <meta name="description" content="{{PAGE_META_DESC}}">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-mark.svg">
   {{SEO_META_TAGS}}
 
   <!-- Fonts & Base Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/components/base.css">
   <link rel="stylesheet" href="/components/page-components.css">
   <link rel="stylesheet" href="/components/page-marketing.css">
@@ -67,10 +71,18 @@
       padding: 3rem 2rem;
     }
 
-    .section-white { background: white; }
-    .section-gray { background: var(--bg-paper-dark); }
+    .section-white {
+      background: white;
+    }
 
-    .section-title { text-align: center; margin-bottom: 1.5rem; }
+    .section-gray {
+      background: var(--bg-paper-dark);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
 
     .intro {
       max-width: 800px;
@@ -105,9 +117,17 @@
       box-shadow: var(--shadow-md);
     }
 
-    .phase-card.phase-pre { border-top: 4px solid var(--primary); }
-    .phase-card.phase-analysis { border-top: 4px solid var(--primary-dark); }
-    .phase-card.phase-synthesis { border-top: 4px solid var(--accent); }
+    .phase-card.phase-pre {
+      border-top: 4px solid var(--primary);
+    }
+
+    .phase-card.phase-analysis {
+      border-top: 4px solid var(--primary-dark);
+    }
+
+    .phase-card.phase-synthesis {
+      border-top: 4px solid var(--accent);
+    }
 
     .phase-label {
       font-size: 0.8rem;
@@ -117,12 +137,29 @@
       margin-bottom: 0.5rem;
     }
 
-    .phase-pre .phase-label { color: var(--primary); }
-    .phase-analysis .phase-label { color: var(--primary-dark); }
-    .phase-synthesis .phase-label { color: var(--accent); }
+    .phase-pre .phase-label {
+      color: var(--primary);
+    }
 
-    .phase-card h3 { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 0.75rem; }
-    .phase-card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.6; }
+    .phase-analysis .phase-label {
+      color: var(--primary-dark);
+    }
+
+    .phase-synthesis .phase-label {
+      color: var(--accent);
+    }
+
+    .phase-card h3 {
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .phase-card p {
+      color: var(--text-main);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
     .phase-weeks {
       margin-top: 1rem;
@@ -133,7 +170,10 @@
     }
 
     /* Week Table */
-    .week-table-container { overflow-x: auto; margin-top: 1rem; }
+    .week-table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
 
     .week-table {
       width: 100%;
@@ -149,8 +189,13 @@
       font-weight: 600;
     }
 
-    .week-table th:first-child { border-radius: 8px 0 0 0; }
-    .week-table th:last-child { border-radius: 0 8px 0 0; }
+    .week-table th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .week-table th:last-child {
+      border-radius: 0 8px 0 0;
+    }
 
     .week-table td {
       padding: 1rem;
@@ -158,14 +203,36 @@
       vertical-align: top;
     }
 
-    .week-table tr:nth-child(even) { background: var(--bg-paper); }
-    .week-table tr:hover { background: var(--bg-paper-dark); }
-    .week-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
-    .week-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+    .week-table tr:nth-child(even) {
+      background: var(--bg-paper);
+    }
 
-    .week-num { font-weight: 700; color: var(--primary); white-space: nowrap; }
-    .week-focus { font-weight: 600; color: var(--text-dark); }
-    .week-desc { color: var(--text-main); }
+    .week-table tr:hover {
+      background: var(--bg-paper-dark);
+    }
+
+    .week-table tr:last-child td:first-child {
+      border-radius: 0 0 0 8px;
+    }
+
+    .week-table tr:last-child td:last-child {
+      border-radius: 0 0 8px 0;
+    }
+
+    .week-num {
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .week-focus {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .week-desc {
+      color: var(--text-main);
+    }
 
     /* Frameworks */
     .frameworks-grid {
@@ -188,8 +255,17 @@
       font-weight: 600;
     }
 
-    .framework-full { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.75rem; }
-    .framework-desc { color: var(--text-main); font-size: 0.95rem; line-height: 1.6; }
+    .framework-full {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .framework-desc {
+      color: var(--text-main);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
     /* CTA Section */
     .cta-section {
@@ -198,8 +274,16 @@
       text-align: center;
     }
 
-    .cta-content { max-width: 600px; margin: 0 auto; }
-    .cta-content h2 { color: white; font-size: 1.5rem; margin-bottom: 1rem; }
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
 
     .cta-button {
       display: inline-block;
@@ -221,18 +305,36 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .phases-grid { grid-template-columns: 1fr; }
-      .frameworks-grid { grid-template-columns: 1fr; }
+      .phases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .frameworks-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
-      .page-header h1 { font-size: 1.75rem; }
-      .section-inner { padding: 2rem 1.25rem; }
-      .week-table { font-size: 0.85rem; }
-      .week-table th, .week-table td { padding: 0.75rem; }
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .section-inner {
+        padding: 2rem 1.25rem;
+      }
+
+      .week-table {
+        font-size: 0.85rem;
+      }
+
+      .week-table th,
+      .week-table td {
+        padding: 0.75rem;
+      }
     }
   </style>
 </head>
+
 <body data-lang="en">
 
   {{>nav.html}}
@@ -251,7 +353,9 @@
   <section class="section-white">
     <div class="section intro">
       <p data-lang-content="en">
-        Our structured 10-week course takes students from foundational reading skills to writing complete analytical essays. By the end, students will be able to identify literary devices, explain their significance, and construct cohesive arguments — skills that transfer to NAPLAN, VCE, IB, and beyond.
+        Our structured 10-week course takes students from foundational reading skills to writing complete analytical
+        essays. By the end, students will be able to identify literary devices, explain their significance, and
+        construct cohesive arguments — skills that transfer to NAPLAN, VCE, IB, and beyond.
       </p>
       <p data-lang-content="zh">
         我们精心设计的10周课程，带领学生从基础阅读技能逐步进阶到完成完整的分析性文章。课程结束时，学生将能够识别文学手法、阐释其意义并构建连贯的论证——这些技能适用于NAPLAN、VCE、IB等各类考试。
@@ -274,7 +378,8 @@
           <h3 data-lang-content="en">Context & Pattern</h3>
           <h3 data-lang-content="zh">背景与模式</h3>
           <p data-lang-content="en">
-            Students build foundational understanding of the text: genre conventions, reading strategies, character relationships, and how the text creates meaning.
+            Students build foundational understanding of the text: genre conventions, reading strategies, character
+            relationships, and how the text creates meaning.
           </p>
           <p data-lang-content="zh">
             学生建立对文本的基础理解：文体规范、阅读策略、人物关系，以及文本如何构建意义。
@@ -292,7 +397,8 @@
           <h3 data-lang-content="en">Device Analysis</h3>
           <h3 data-lang-content="zh">手法分析</h3>
           <p data-lang-content="en">
-            Students learn to identify and analyze literary devices through the stages of Freytag's Pyramid: exposition, rising action, climax, falling action, and resolution.
+            Students learn to identify and analyze literary devices through the stages of Freytag's Pyramid: exposition,
+            rising action, climax, falling action, and resolution.
           </p>
           <p data-lang-content="zh">
             学生通过弗莱塔格金字塔的各个阶段学习识别和分析文学手法：开端、上升、高潮、下降和结局。
@@ -310,7 +416,8 @@
           <h3 data-lang-content="en">Thesis & Essay</h3>
           <h3 data-lang-content="zh">论点与文章</h3>
           <p data-lang-content="en">
-            Students synthesize their analysis into thesis statements and complete essays, learning paragraph structure and argument development.
+            Students synthesize their analysis into thesis statements and complete essays, learning paragraph structure
+            and argument development.
           </p>
           <p data-lang-content="zh">
             学生将分析综合成论点陈述和完整文章，学习段落结构和论证展开。
@@ -501,7 +608,8 @@
             <span data-lang-content="zh">主题、声音、对象、细节、效果</span>
           </div>
           <p class="framework-desc">
-            <span data-lang-content="en">A sentence-level structure for building analytical statements that connect textual evidence to interpretation.</span>
+            <span data-lang-content="en">A sentence-level structure for building analytical statements that connect
+              textual evidence to interpretation.</span>
             <span data-lang-content="zh">句子层级的分析结构，将文本证据与解读相连接。</span>
           </p>
         </div>
@@ -512,7 +620,8 @@
             <span data-lang-content="zh">主题、解释、证据、联结</span>
           </div>
           <p class="framework-desc">
-            <span data-lang-content="en">A paragraph-level structure for organising analytical essays with clear topic sentences and supporting evidence.</span>
+            <span data-lang-content="en">A paragraph-level structure for organising analytical essays with clear topic
+              sentences and supporting evidence.</span>
             <span data-lang-content="zh">段落层级的结构，用于组织带有清晰主题句和支撑证据的分析文章。</span>
           </p>
         </div>
@@ -523,7 +632,8 @@
             <span data-lang-content="zh">推理进阶</span>
           </div>
           <p class="framework-desc">
-            <span data-lang-content="en">A framework for developing reasoning skills from description through to evaluation and synthesis.</span>
+            <span data-lang-content="en">A framework for developing reasoning skills from description through to
+              evaluation and synthesis.</span>
             <span data-lang-content="zh">从描述到评价与综合的推理能力发展框架。</span>
           </p>
         </div>
@@ -547,4 +657,5 @@
   {{>scripts.html}}
 
 </body>
+
 </html>

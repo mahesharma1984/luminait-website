@@ -1,149 +1,124 @@
 # Instructions for Claude
 
-**Before doing any work, read `/docs/` first.**
+Before coding, read `/docs/` first using the task-routed order below.
 
-Key documents:
+## Task-Routed Reading
 
-**Theory** (read in order — problem → journey → mechanism → content):
-- `docs/theory/01_CREDENCE_PROBLEM.md` - Why education is hard to sell
-- `docs/theory/02_CUSTOMER_JOURNEY.md` - Parent + student funnel design
-- `docs/theory/03_VALIDATION_LOOP.md` - Handling friction/hesitation
-- `docs/theory/04_CONTENT_DERIVATION.md` - Deriving messaging from text analysis
+### Build Practices (templates, generators, data)
+1. `docs/technical/BUILD_SYSTEM.md`
+2. `docs/technical/DESIGN_SYSTEM.md`
+3. `docs/technical/UX_PROCESS.md`
 
-**Technical:**
-- `docs/technical/SITE_ARCHITECTURE.md` - URL structure for all three funnels
-- `docs/technical/DESIGN_SYSTEM.md` - CSS variables, components, visual standards
-- `docs/technical/BUILD_SYSTEM.md` - Build scripts, templates, partial injection
-- `docs/technical/UX_PROCESS.md` - Page development checklist + journey mapping
-- `docs/technical/GUIDE_TEMPLATE_SPEC.md` - How analysis guide pages work
-- `docs/technical/GUIDE_EXTRACTION_CHECKLIST.md` - Creating new guides from kernels
-- `docs/technical/LOCAL_SEO_STRATEGY.md` - School-by-school local SEO implementation
-- `docs/technical/VEO_PROMPTS.md` - AI video generation prompts (hybrid text/motion strategy)
+### Prototyping / New Features
+1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
+2. `docs/technical/SITE_ARCHITECTURE.md`
+3. `docs/theory/02_CUSTOMER_JOURNEY.md`
 
-**Operational** (at docs root):
-- `DEV_GUIDE_Building_Prototypes_v2_0.md` - Core dev methodology
-- `RALPH_Readiness_Assessment_v3_1.md` - Automation readiness
-- `P_GTM_Partnership_v3_0.md` - Partnership strategy
-- `P_GTM_Graduate_Network_v1_0.md` - Graduate network franchise strategy
-- `FRAMEWORK_Scientific_Relational_Pedagogy_v1_0.md` - Pedagogy IP
+### Debugging / Regressions
+1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (Part 4)
+2. `docs/technical/BUILD_SYSTEM.md` (Troubleshooting)
+3. `docs/technical/UX_PROCESS.md` (Stage 6)
 
-## Project Structure
+### Product Theory / Messaging / Architecture
+1. `docs/theory/01_CREDENCE_PROBLEM.md`
+2. `docs/theory/02_CUSTOMER_JOURNEY.md`
+3. `docs/theory/03_VALIDATION_LOOP.md`
+4. `docs/theory/04_CONTENT_DERIVATION.md`
+5. `docs/theory/05_CHANNEL_ALIGNMENT.md`
+6. `docs/technical/SITE_ARCHITECTURE.md`
+7. `docs/technical/FUNNEL_STRATEGY.md`
+
+## Active Project Structure
 
 ```
-/                           # Root HTML files (deployed)
-├── index.html              # Homepage
-├── course.html             # Course details
+/                           # Generated root pages (do not edit directly)
+├── index.html
+├── course.html
+├── progress.html
 ├── ...
 │
-├── site-config.json        # Shared config (SEO, contact, pricing)
+├── site-config.json
+├── build.js
+├── build-homepage-guides.js
+├── build-parent-guides.js
+├── build-video-scenes.js
+├── build-school-pages.js
+├── build-annotation-guides.js
 │
-├── /src/templates/         # Templates for build.js
-├── build.js                # Generates main pages from templates
+├── /src/templates/         # Source templates
+├── /src/partials/          # Shared partials (nav/footer/scripts)
+├── /data/parent-guides/    # Parent guide content JSON
+├── /data/video-scenes/     # Video scene JSON
+├── /data/schools/          # School page JSON
+├── /data/annotation-guides/# Annotation guide JSON
 │
-├── /templates/             # Templates for generate_site.py
-├── generate_site.py        # Generates analysis guide pages
-│
-├── /data/parent-guides/    # JSON data for parent curriculum guides
-├── build-parent-guides.js  # Generates parent curriculum pages
-├── /curriculum/            # Generated parent guide pages
-│
-├── /data/video-scenes/     # JSON data for video scene pages
-├── build-video-scenes.js   # Generates video scene HTML
-├── /studio/                # Video Studio (animation tool)
-│   ├── /assets/            # Images for video scenes
-│   ├── /scenes/            # Generated scene pages (DO NOT edit)
-│   ├── /scripts/           # Video specs and voiceover scripts
-│   ├── /teacher-guides/    # Teacher curriculum guides (HTML)
-│   ├── ALIGNMENT_SPEC.md   # How guides, scenes, and curriculum connect
-│   ├── STYLE_GUIDE.md      # Tone and writing rules for video content
-│   ├── script.js           # Shared animation controller
-│   └── styles.css          # Shared studio styles
-│
-├── /components/            # Shared JS/CSS
-├── /guides/                # Generated guide pages
-├── /docs/                  # Methodology (READ FIRST)
-│   ├── /theory/            # Why: credence problem → journey → loop → derivation
-│   ├── /technical/         # How: site arch, design system, build, UX process, guides
-│   └── /_archive/          # Superseded strategy docs (reference only)
+├── /curriculum/            # Generated curriculum guide pages
+├── /schools/               # Generated school pages
+├── /annotations/           # Generated annotation preview pages
+├── /studio/scenes/         # Generated scene pages
+└── /docs/                  # Canonical methodology
 ```
 
-## Workflow
+## Build Workflow (Current)
 
-1. **Main pages**: Edit `/src/templates/`, run `node build.js`
-2. **Guide pages**: Edit `/templates/`, run `python generate_site.py`
-3. **Parent curriculum guides**:
-   - **Content changes**: Edit `/data/parent-guides/*.json`
-   - **Layout changes**: Edit `/src/templates/_parent-guide-template.html`
-   - Run `node build-parent-guides.js`
-   - Output: `/curriculum/[slug]/index.html` (auto-generated, DO NOT edit)
-4. **Config changes**: Edit `site-config.json`, rebuild affected pages
-5. **Video scenes**:
-   - **Content changes**: Edit `/data/video-scenes/*.json`
-   - **Layout changes**: Edit `/src/templates/_video-scene-template.html`
-   - Run `node build-video-scenes.js`
-   - Output: `/studio/scenes/[slug].html` (auto-generated, DO NOT edit)
+1. Main pages:
+   - Edit: `src/templates/*.html`, `src/partials/*`, `site-config.json`
+   - Build: `node build.js`
 
-### Parent Curriculum Guide Pipeline
+2. Parent guides (dual system):
+   - Homepage texts at root: `node build-homepage-guides.js`
+   - Curriculum directory: `node build-parent-guides.js`
+   - Template changes in `src/templates/_parent-guide-template.html` require both scripts
 
-**Source of Truth**: JSON files in `/data/parent-guides/`
+3. Video scenes:
+   - Edit: `data/video-scenes/*.json` or `src/templates/_video-scene-template.html`
+   - Build: `node build-video-scenes.js`
 
-```
-/data/parent-guides/*.json  →  build-parent-guides.js  →  /curriculum/*/index.html
-                   ↓                                            ↑
-    _parent-guide-template.html ──────────────────────────────┘
-    (single template for all guides)
-```
+4. School pages:
+   - Edit: `data/schools/*.json`, `src/templates/_school-page-template.html`, `src/templates/schools-index.html`
+   - Build: `node build-school-pages.js`
 
-**To add a new guide:**
-1. Create `data/parent-guides/[text-slug].json` with curriculum data
-2. Run `node build-parent-guides.js`
-3. Output appears at `/curriculum/[text-slug]/index.html`
+5. Annotation guides:
+   - Edit: `data/annotation-guides/*.json` or `src/templates/_annotation-guide-template.html`
+   - Build: `node build-annotation-guides.js`
 
-**Legacy files (DO NOT USE):**
-- `/src/templates/curriculum_*.html` - Old approach, unmigrated guides
-- All content should be in JSON format going forward
+6. Full build:
+   - `npm run build:all`
 
-### Video Scene Pipeline
+## Source-of-Truth Rules
 
-**Source of Truth**: JSON files in `/data/video-scenes/`
+1. Never edit generated root HTML directly (`index.html`, `course.html`, etc.).
+2. Always edit templates/data/config sources.
+3. Rebuild with the matching script immediately after source edits.
+4. Validate generated output and links.
 
-```
-/data/video-scenes/*.json  →  build-video-scenes.js  →  /studio/scenes/*.html
-                   ↓                                            ↑
-    _video-scene-template.html ─────────────────────────────────┘
-    (single template for all scenes)
-```
+## Development Protocol
 
-**To add a new video scene:**
-1. Create `data/video-scenes/[slug].json` with scene data
-2. Add required assets (cover image, etc.) to `/studio/assets/`
-3. Run `node build-video-scenes.js`
-4. Output appears at `/studio/scenes/[slug].html`
+### Measure First
+- Before major rebuilds, check diff to avoid wiping uncaptured changes.
+- Use concrete before/after checks, not visual guesses.
 
-**Legacy files (hand-built, kept for reference):**
-- `studio/outsiders-scene.html` - Original hand-built scene
-- `studio/annotation-giver.html` - Annotation format (not yet templated)
+### Reasoning vs Precision Split
+- Reasoning tasks (classification, interpretation, synthesis): use LLM.
+- Precision tasks (exact extraction/counting/format validation): use code/scripts.
 
-### Video Production Documentation
+### Prototype Discipline
+- Start with one real case.
+- One scoped problem per session.
+- Prefer simplest manual path first; automate after repeated stable pattern.
 
-- `GEMINI.md` - Instructions for Google Gemini (video content production)
-- `studio/ALIGNMENT_SPEC.md` - How teacher guides, video scenes, and curriculum align
-- `studio/STYLE_GUIDE.md` - Tone and writing rules for all video production artifacts
+## Architecture Guardrails
 
-## Dev Guidelines (Added Jan 27, 2026)
+1. Funnel 2 (Parent-Direct) is primary.
+2. Keep page role aligned to journey stage:
+   - Text match -> preparation proof -> method confidence -> action.
+3. Keep channel jobs distinct:
+   - Interpretation/pattern content builds credence.
+   - Annotation content demonstrates method/action.
 
-### 1. Source of Truth
-- **Root HTML files** (`index.html`, `course.html`, `progress.html`) are **READ-ONLY ARTIFACTS** generated by the build system.
-- **NEVER** edit root files directly.
-- **ALWAYS** edit `src/templates/` or configuration.
-- **Incident**: On Jan 27, `progress.html` was manually updated in root but not in templates, causing `build.js` to overwrite the new design with the old one.
+## Documentation Priority
 
-### 2. Measure First Protocol
-- Before running destructive commands (like `node build.js`), **CHECK THE DIFF**.
-- Compare the template against the live root file to ensure you aren't about to wipe out uncaptured progress.
-- Reference: `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`, Section 4.2 ("Measure First").
-
-### 3. R/P Split (Reasoning vs Precision)
-- **Problem**: LLMs are good at reasoning ("why this design works") but bad at precision ("copying 500 lines exactly").
-- **Solution**: Use code for precision tasks (moving files, matching strings). Use Claude for reasoning.
-- Reference: `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`, Part 2.
+1. `docs/theory/*` + `docs/technical/*` (canonical)
+2. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
+3. Agent-specific files (`CLAUDE.md`, `GEMINI.md`)
+4. `docs/_archive/*` (reference only)

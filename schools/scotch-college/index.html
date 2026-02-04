@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>English Tutoring for Scotch College | LuminAIT Melbourne</title>
   <meta name="description" content="Text-specific English tutoring for Scotch College students. Courses for The Giver, Blueback, Animal Farm and more. Melbourne.">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-mark.svg">
   <link rel="canonical" href="https://luminait.app/schools/scotch-college/">
   <link rel="alternate" hreflang="en" href="https://luminait.app/schools/scotch-college/">
   <link rel="alternate" hreflang="x-default" href="https://luminait.app/schools/scotch-college/">
@@ -135,7 +136,7 @@
       color: var(--text-light);
       margin-bottom: 16px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .school-text-link {
@@ -144,7 +145,7 @@
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
       transition: color 0.2s ease;
     }
 
@@ -160,7 +161,7 @@
       display: block;
       padding: 10px 0;
       color: var(--text-light);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     }
 
     .school-text-unavailable:last-child {
@@ -269,11 +270,35 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-content">
-      <a href="/" class="nav-logo">LuminAIT</a>
+      <a href="/" class="nav-logo" aria-label="LuminAIT home">
+        <img src="/images/logo-mark.svg" alt="" class="nav-logo-mark">
+        <img src="/images/logotype.svg" alt="LuminAIT" class="nav-logo-lockup" style="height: 28px; width: auto;">
+      </a>
       <div class="nav-links">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/schools/" class="nav-link active">Schools</a>
-        <a href="/course/" class="nav-link">Course</a>
+        <a href="/method/" class="nav-link">
+          <span data-lang-content="en">The Method</span>
+          <span data-lang-content="zh">方法</span>
+        </a>
+        <a href="/#text-selection" class="nav-link">
+          <span data-lang-content="en">Texts</span>
+          <span data-lang-content="zh">文本</span>
+        </a>
+        <a href="/schools/" class="nav-link active">
+          <span data-lang-content="en">Schools</span>
+          <span data-lang-content="zh">学校</span>
+        </a>
+        <a href="/course/" class="nav-link">
+          <span data-lang-content="en">Course</span>
+          <span data-lang-content="zh">课程</span>
+        </a>
+        <a href="/results/" class="nav-link">
+          <span data-lang-content="en">Results</span>
+          <span data-lang-content="zh">学习成果</span>
+        </a>
+        <a href="/about/" class="nav-link">
+          <span data-lang-content="en">About</span>
+          <span data-lang-content="zh">关于</span>
+        </a>
         <a href="mailto:hello@luminait.app" class="nav-cta">Enquire</a>
       </div>
     </div>
@@ -295,7 +320,7 @@
       </div>
 
       <div class="school-booklist-grid">
-          <div class="school-year-group">
+                  <div class="school-year-group">
             <h4>Year 7</h4>
               <a href="/the-giver/" class="school-text-link">The Giver</a>
           </div>

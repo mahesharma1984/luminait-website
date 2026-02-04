@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Results & Outcomes | 100% Improvement Rate | LuminAIT Melbourne</title>
   <meta name="description" content="100% of students show measurable improvement. 10-20% term improvement, 30-50% when feedback applied. See proven outcomes from our analytical writing course.">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-mark.svg">
   
   <!-- SEO Meta Tags -->
   <link rel="canonical" href="https://luminait.app/results/">
@@ -32,7 +34,9 @@
   <!-- Fonts & Base Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/components/base.css">
   <link rel="stylesheet" href="/components/page-components.css">
   <link rel="stylesheet" href="/components/page-marketing.css">
@@ -89,8 +93,13 @@
       padding: 3rem 2rem;
     }
 
-    .section-white { background: white; }
-    .section-gray { background: var(--bg-paper-dark); }
+    .section-white {
+      background: white;
+    }
+
+    .section-gray {
+      background: var(--bg-paper-dark);
+    }
 
     .section-title {
       text-align: center;
@@ -152,9 +161,22 @@
       gap: 1rem;
     }
 
-    .measured-icon { font-size: 1.5rem; flex-shrink: 0; }
-    .measured-text h3 { font-weight: 600; color: var(--text-dark); font-size: 1rem; margin-bottom: 0.25rem; }
-    .measured-text p { font-size: 0.9rem; color: var(--text-light); }
+    .measured-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .measured-text h3 {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .measured-text p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
 
     /* Progress Chart */
     .progress-chart {
@@ -190,7 +212,9 @@
       transition: all 0.3s ease;
     }
 
-    .chart-bar:hover { transform: scaleY(1.02); }
+    .chart-bar:hover {
+      transform: scaleY(1.02);
+    }
 
     .chart-bar::after {
       content: attr(data-value);
@@ -236,8 +260,13 @@
       padding: 1.5rem;
     }
 
-    .improvement-card.before { border-left: 4px solid var(--text-light); }
-    .improvement-card.after { border-left: 4px solid var(--accent); }
+    .improvement-card.before {
+      border-left: 4px solid var(--text-light);
+    }
+
+    .improvement-card.after {
+      border-left: 4px solid var(--accent);
+    }
 
     .improvement-label {
       font-size: 0.8rem;
@@ -247,11 +276,25 @@
       margin-bottom: 0.5rem;
     }
 
-    .improvement-card.before .improvement-label { color: var(--text-light); }
-    .improvement-card.after .improvement-label { color: var(--accent); }
+    .improvement-card.before .improvement-label {
+      color: var(--text-light);
+    }
 
-    .improvement-week { font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; }
-    .improvement-desc { color: var(--text-main); font-size: 0.95rem; line-height: 1.6; }
+    .improvement-card.after .improvement-label {
+      color: var(--accent);
+    }
+
+    .improvement-week {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .improvement-desc {
+      color: var(--text-main);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
     .improvement-arrow {
       font-size: 2.5rem;
@@ -292,7 +335,9 @@
       margin: 0 auto 1rem;
     }
 
-    body[data-lang="zh"] .testimonial-text { font-style: normal; }
+    body[data-lang="zh"] .testimonial-text {
+      font-style: normal;
+    }
 
     .testimonial-author {
       color: var(--primary);
@@ -307,8 +352,16 @@
       text-align: center;
     }
 
-    .cta-content { max-width: 600px; margin: 0 auto; }
-    .cta-content h2 { color: white; font-size: 1.5rem; margin-bottom: 1rem; }
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
 
     .cta-buttons {
       display: flex;
@@ -342,36 +395,72 @@
       box-shadow: none;
     }
 
-    .cta-button.secondary:hover { background: rgba(255, 255, 255, 0.1); }
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
     /* Responsive */
     @media (max-width: 900px) {
-      .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .measured-list { grid-template-columns: 1fr; }
-      .improvement-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .improvement-arrow { transform: rotate(90deg); }
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .measured-list {
+        grid-template-columns: 1fr;
+      }
+
+      .improvement-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .improvement-arrow {
+        transform: rotate(90deg);
+      }
     }
 
     @media (max-width: 768px) {
-      .page-header h1 { font-size: 1.75rem; }
-      .section-inner { padding: 2rem 1.25rem; }
-      .stat-number { font-size: 2.5rem; }
-      .chart-visual { height: 150px; }
-      .chart-bar { width: 40px; }
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .section-inner {
+        padding: 2rem 1.25rem;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+
+      .chart-visual {
+        height: 150px;
+      }
+
+      .chart-bar {
+        width: 40px;
+      }
     }
 
     @media (max-width: 480px) {
-      .cta-buttons { flex-direction: column; }
+      .cta-buttons {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body data-lang="en">
 
   <nav class="nav">
   <div class="nav-content">
-    <a href="/" class="nav-logo">LuminAIT</a>
+    <a href="/" class="nav-logo" aria-label="LuminAIT home">
+      <img src="brand/source/logo-mark.svg" alt="" class="nav-logo-mark" style="height: 48px; width: auto;">
+      <img src="brand/source/logotype_cursive.svg" alt="LuminAIT" class="nav-logo-lockup"
+        style="height: 48px; width: auto; transform: scale(2.2); transform-origin: left center; margin-left: 12px; margin-right: 80px;">
+    </a>
     <div class="nav-links">
-        <a href="/method/" class="nav-link">
+              <a href="/method/" class="nav-link">
           <span data-lang-content="en">The Method</span>
           <span data-lang-content="zh">方法</span>
         </a>
@@ -552,7 +641,8 @@
             <span data-lang-content="zh">第1周</span>
           </div>
           <p class="improvement-desc">
-            <span data-lang-content="en">Student identifies devices but struggles to explain their significance. Responses describe what happens rather than analyzing why it matters.</span>
+            <span data-lang-content="en">Student identifies devices but struggles to explain their significance.
+              Responses describe what happens rather than analyzing why it matters.</span>
             <span data-lang-content="zh">学生能够识别文学手法，但难以解释其意义。回答只描述发生了什么，而非分析其重要性。</span>
           </p>
         </div>
@@ -567,7 +657,8 @@
             <span data-lang-content="zh">第10周</span>
           </div>
           <p class="improvement-desc">
-            <span data-lang-content="en">Student independently writes analytical paragraphs connecting devices to meaning. Responses explain author intent and evaluate textual effects.</span>
+            <span data-lang-content="en">Student independently writes analytical paragraphs connecting devices to
+              meaning. Responses explain author intent and evaluate textual effects.</span>
             <span data-lang-content="zh">学生能够独立撰写分析段落，将文学手法与意义相连接。回答能解释作者意图并评价文本效果。</span>
           </p>
         </div>
@@ -583,7 +674,8 @@
       </h2>
       <div class="testimonial">
         <p class="testimonial-text">
-          <span data-lang-content="en">The progress reports really helped us understand how our son was developing. We could see the improvement week by week, and the feedback gave him clear direction for growth.</span>
+          <span data-lang-content="en">The progress reports really helped us understand how our son was developing. We
+            could see the improvement week by week, and the feedback gave him clear direction for growth.</span>
           <span data-lang-content="zh">进度报告真正帮助我们了解孩子的发展状况。我们可以每周看到进步，反馈也给他明确的成长方向。</span>
         </p>
         <p class="testimonial-author">
@@ -672,4 +764,5 @@
 
 
 </body>
+
 </html>
