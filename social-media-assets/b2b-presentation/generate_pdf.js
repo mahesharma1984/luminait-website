@@ -29,7 +29,7 @@ const path = require('path');
 
     console.log('Generating PDF...');
     await page.pdf({
-      path: 'presentation.pdf',
+      path: 'presentation_v1.8.pdf',
       printBackground: true,
       width: '1280px',
       height: '720px',

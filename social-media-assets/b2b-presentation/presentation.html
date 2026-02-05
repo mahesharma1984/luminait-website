@@ -25,68 +25,137 @@
 
     <div class="deck-container">
         <!-- Persistent Logo -->
-        <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        <!-- Persistent Logo Removed (Moved inside slides) -->
 
         <!-- SLIDE 1: TITLE -->
         <div class="slide title-slide active">
-            <h1>luminAIT Learning</h1>
-            <p>Engineering Scalable Teaching That Improves Unit Economics</p>
-            <p style="font-size: 1.2rem; opacity: 0.8; margin-top: 10px;"><em>From learning science to predictable
-                    revenue outcomes</em></p>
+            <div class="title-top-plane">
+                <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo"
+                    style="filter: brightness(0) invert(1); position: relative; top: auto; right: auto; margin-bottom: 20px;">
+                <h1>luminAIT Learning</h1>
+                <p class="thesis-statement">Teaching infrastructure that makes learning outcomes measurable</p>
+            </div>
+            <div class="title-bottom-plane">
+                <div class="economic-claim">
+                    → Predictable revenue growth <br>
+                    <span class="formula">(conversion × retention × ARPU)</span>
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE 2: THE CORE ECONOMIC PROBLEM -->
         <div class="slide">
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
             <h2>The Core Economic Problem</h2>
             <h3>Why Most Education Businesses Don’t Scale Profitably</h3>
             <p><strong>The structural constraint:</strong></p>
-            <ul>
-                <li>Teaching quality is tied to individual teachers</li>
-                <li>Class size is capped (1:1 or small groups)</li>
-                <li>Quality drops as scale increases</li>
-            </ul>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div>
-                    <p><strong>Why this happens:</strong></p>
-                    <ul>
-                        <li>Teacher bandwidth and cognitive load</li>
-                        <li>No shared instructional system</li>
-                        <li>No measurement of learning quality</li>
-                    </ul>
+            <div class="triangle-layout causal-triangle">
+                <!-- Root -->
+                <div class="triangle-item root">
+                    <strong>Teaching quality tied to individual teachers</strong>
                 </div>
-                <div>
-                    <p><strong>Economic consequences:</strong></p>
-                    <ul>
-                        <li>Flat conversion, High churn, Low ARPU</li>
-                        <li>Linear scaling tied to teacher hours</li>
-                    </ul>
+                <!-- Branches -->
+                <div class="triangle-branches">
+                    <div class="triangle-item">
+                        <strong>Class size caps</strong>
+                    </div>
+                    <div class="triangle-item">
+                        <strong>Quality decay at scale</strong>
+                    </div>
                 </div>
             </div>
-            <p style="margin-top: 20px;"><strong>luminAIT’s core claim:</strong> Teaching quality <em>can</em> scale if
-                it is engineered, standardized, and measured. This is an implementation problem, not a talent problem.
-            </p>
+
+            <!-- Single Down Arrow -->
+            <div style="text-align: center; margin: -20px 0 20px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </div>
+
+            <div class="consequence-box">
+                <p><strong>Unavoidable Economics:</strong></p>
+                <div class="consequence-list">
+                    <span>Flat conversion</span>
+                    <span class="separator">•</span>
+                    <span>High churn</span>
+                    <span class="separator">•</span>
+                    <span>Linear growth</span>
+                </div>
+            </div>
+            <div class="claim-box">
+                <p style="margin:0; font-size:1.15rem;"><strong>luminAIT’s core claim:</strong> Teaching quality
+                    <em>can</em> scale if
+                    it is engineered, standardized, and measured. This is an implementation problem, not a talent
+                    problem.
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 2.5: WHAT luminAIT IS -->
+        <div class="slide">
+            <h2>What luminAIT Is</h2>
+            <h3>Teaching infrastructure that converts learning quality into economic signal</h3>
+            <div class="split-columns">
+                <!-- Inputs -->
+                <div class="column-group">
+                    <h4
+                        style="color:var(--text-secondary); text-transform:uppercase; font-size:0.9rem; letter-spacing:1px; margin-bottom:15px; border-bottom:1px solid #ddd; padding-bottom:5px;">
+                        System Inputs</h4>
+                    <div class="feature-card">
+                        <strong>Teacher-Independent Artefacts</strong>
+                        <p style="margin:0; font-size:1.1rem;">Expert reading and writing behaviour encoded into tools.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <strong>Measurement Gates</strong>
+                        <p style="margin:0; font-size:1.1rem;">Quality enforced via objective gates, not instructor
+                            judgment.</p>
+                    </div>
+                </div>
+
+                <!-- Outputs -->
+                <div class="column-group">
+                    <h4
+                        style="color:var(--accent-color); text-transform:uppercase; font-size:0.9rem; letter-spacing:1px; margin-bottom:15px; border-bottom:1px solid var(--accent-light); padding-bottom:5px;">
+                        Economic Outputs</h4>
+                    <div class="feature-card highlight">
+                        <strong>Auditable Progress</strong>
+                        <p style="margin:0; font-size:1.1rem;">Learning quality becomes comparable and reportable data.
+                        </p>
+                    </div>
+                    <div class="feature-card highlight">
+                        <strong>Movable Economics</strong>
+                        <p style="margin:0; font-size:1.1rem;">Instrumentation forces conversion, retention, and ARPU.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-strip">
+                <p style="margin:0; color:white; font-size:1rem;"><strong>Not pedagogy advice</strong> — an operational
+                    system that makes teaching quality legible to a business.</p>
+                <div style="margin-top:5px; opacity:0.8; font-size:0.9rem;">Not a platform, not consulting, not content
+                    licensing — tooling runs behind the scenes.</div>
+            </div>
         </div>
 
         <!-- SLIDE 3: BASELINE PROVIDER ECONOMICS -->
         <div class="slide">
             <h2>Baseline Provider Economics</h2>
             <h3>Typical Tutoring Economics Without Systematized Teaching</h3>
-            <p>Most providers operate with:</p>
+            <p style="margin-bottom: 20px;"><strong>Operator archetype:</strong> small–mid tutoring providers (5–30
+                teachers, exam-driven subjects).</p>
             <ul>
-                <li>30–50 qualified leads per month</li>
-                <li>15–20% trial → paid conversion</li>
-                <li>$500–700 revenue per student per term</li>
-                <li>50–60% term retention</li>
-                <li>Growth limited by teacher availability</li>
+                <li>30–50 qualified leads/month (typical)</li>
+                <li>15–20% trial → paid conversion (often flat)</li>
+                <li>$500–700 revenue per student per term (varies by market)</li>
+                <li>50–60% term retention (fragile)</li>
+                <li>Growth cap: linear scaling tied to teacher hours</li>
             </ul>
-            <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 8px;">
-                <p style="margin-bottom: 10px;"><strong>At ~40 leads/month:</strong></p>
-                <ul>
-                    <li>6–8 new students</li>
-                    <li>~$12k–$15k new term revenue</li>
-                    <li>Constant churn replacing lost students</li>
-                </ul>
-            </div>
+            <p style="font-weight: bold; margin-bottom: 25px;">Revenue = Leads × Conversion × Retention × ARPU — most
+                providers can’t move Conversion/Retention predictably.</p>
+
             <p style="margin-top: 20px;"><strong>Root cause:</strong> Teaching quality lives in individual teachers and
                 cannot be transferred, audited, or scaled.</p>
         </div>
@@ -95,52 +164,130 @@
         <div class="slide">
             <h2>What luminAIT Actually Builds</h2>
             <h3>Teaching Quality as Infrastructure (Not Talent)</h3>
-            <p style="font-weight: bold; color: var(--accent-color); margin-bottom: 20px;">System Stack: Pedagogy layer
-                → Measurement layer → Operational handover</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div>
-                    <p><strong>Pedagogical system designed by luminAIT:</strong></p>
-                    <ul>
-                        <li>Explicit instruction grounded in cognitive load theory</li>
-                        <li>Retrieval practice and worked examples</li>
-                        <li>Scaffolded progression with defined mastery checkpoints</li>
-                        <li>Diagnostics embedded at every stage</li>
+
+            <!-- Visual Systems Stack -->
+            <div class="process-flow" style="margin-bottom:30px;">
+                <div class="process-node" style="text-align:center; padding:10px;">
+                    <span class="process-title">Pedagogy Design</span>
+                </div>
+                <div class="process-node" style="text-align:center; padding:10px;">
+                    <span class="process-title">Execution Artefacts</span>
+                </div>
+                <div class="process-node"
+                    style="border-color:var(--accent-color); background:var(--accent-light); text-align:center; padding:10px;">
+                    <span class="process-title" style="color:var(--accent-color);">Measurement Layer</span>
+                </div>
+            </div>
+
+            <div class="col-3-card">
+                <div class="card card-faded">
+                    <span class="card-title">1. Pedagogy</span>
+                    <ul style="font-size:1rem; margin-bottom:0;">
+                        <li>Cognitive load theory</li>
+                        <li>Retrieval practice</li>
+                        <li>Worked examples</li>
+                        <li>Scaffolded progression</li>
                     </ul>
                 </div>
-                <div>
-                    <p><strong>Curriculum as infrastructure:</strong></p>
-                    <ul>
-                        <li>Teacher-independent delivery</li>
-                        <li>Transferable across cohorts and instructors</li>
-                        <li>Reduces reliance on “star” teachers</li>
+                <div class="card card-faded">
+                    <span class="card-title">2. Execution</span>
+                    <ul style="font-size:1rem; margin-bottom:0;">
+                        <li>Annotation guides</li>
+                        <li>Worksheets (TVODE)</li>
+                        <li>Mastery checkpoints</li>
+                        <li>Pattern-constraints</li>
+                    </ul>
+                </div>
+                <div class="card card-dominant">
+                    <span class="card-title">3. Measurement</span>
+                    <ul style="font-size:1rem; margin-bottom:0;">
+                        <li>Reasoning quality diagnostic</li>
+                        <li>Weekly/Term Reports</li>
+                        <li>Auditable quality data</li>
                     </ul>
                 </div>
             </div>
-            <p><strong>Measurement layer:</strong></p>
-            <ul>
-                <li>Continuous diagnostics and progression tracking</li>
-                <li>Outcome visibility for operators and parents</li>
-                <li>Enables accountability and economic predictability</li>
-                <li><strong>Instrumentation layer:</strong> kernel pipeline + measurement gates + worksheet generation
-                    make quality auditable and transferable.</li>
-            </ul>
+        </div>
+
+        <!-- NEW SLIDE: SYSTEM PIPELINE -->
+        <div class="slide">
+            <h2>System Pipeline</h2>
+            <h3>Kernel → Execution → Measurement → Feedback</h3>
+
+            <div class="process-flow-container" style="position: relative;">
+                <div class="process-flow" style="margin-top:40px; margin-bottom:40px;">
+                    <div class="process-node">
+                        <span class="process-title">1. Kernel</span>
+                        <ul style="font-size:0.9rem; margin:0; list-style:none;">
+                            <li>Narratology Analysis</li>
+                            <li>Pedagogical Primitives</li>
+                        </ul>
+                    </div>
+                    <div class="process-node">
+                        <span class="process-title">2. Execution</span>
+                        <ul style="font-size:0.9rem; margin:0; list-style:none;">
+                            <li>Annotation Guides</li>
+                            <li>Writings Tasks (TVODE)</li>
+                        </ul>
+                    </div>
+                    <div class="process-node">
+                        <span class="process-title">3. Diagnostics</span>
+                        <ul style="font-size:0.9rem; margin:0; list-style:none;">
+                            <li>Evaluate Reasoning</li>
+                            <li>Structure Quality</li>
+                        </ul>
+                    </div>
+                    <div class="process-node">
+                        <span class="process-title">4. Reporting</span>
+                        <ul style="font-size:0.9rem; margin:0; list-style:none;">
+                            <li>Weekly/Term Views</li>
+                            <li>Cohort Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Feedback Loop Arrow -->
+                <div class="loop-arrow-container">
+                    <svg width="100%" height="60" viewBox="0 0 800 60" fill="none" class="loop-arrow-svg">
+                        <!-- Path from Right (Reporting) back to Left (Kernel) -->
+                        <path d="M 700 0 Q 700 40 400 40 Q 100 40 100 0" stroke="var(--accent-color)" stroke-width="2"
+                            fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent-color)" />
+                            </marker>
+                        </defs>
+                    </svg>
+                    <div class="loop-label">Constraint feedback / Quality correction</div>
+                </div>
+            </div>
+
+            <div class="footer-strip" style="background:var(--neutral-bg); color:var(--text-primary);">
+                <span style="color:var(--accent-color); font-weight:bold;">Feedback Loop:</span> Diagnostics refine
+                Kernel and Sequencing while feeding Parent Visibility.
+            </div>
+            <p style="margin-top: 20px; text-align: center; font-weight: bold; color: var(--accent-color);">
+                Teacher-independent quality + Auditable progress = Economic predictability.
+            </p>
         </div>
 
         <!-- SLIDE 5: THE ECONOMIC CAUSAL CHAIN -->
         <div class="slide">
             <h2>The Economic Causal Chain</h2>
             <h3>How Instructional Design Drives Unit Economics</h3>
-            <p>These are <strong>mechanistic links</strong>, not correlations:</p>
-            <ol
-                style="list-style: decimal; padding-left: 20px; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
-                <li style="margin-bottom: 15px;">Better learning outcomes → higher perceived value</li>
-                <li style="margin-bottom: 15px;">Higher perceived value → higher trial conversion</li>
-                <li style="margin-bottom: 15px;">Visible progress → higher retention</li>
-                <li style="margin-bottom: 15px;">Trust and competence → ARPU expansion over time</li>
-                <li style="margin-bottom: 15px;">Teacher leverage → margin expansion without quality loss</li>
-            </ol>
-            <p style="margin-top: 20px;"><strong>Key insight:</strong> When teaching quality is instrumented and
-                measured, unit economics become predictable.</p>
+
+            <div class="chevron-chain" style="margin-top:60px; margin-bottom:60px;">
+                <div class="chevron opacity-low">Better Outcomes</div>
+                <div class="chevron opacity-med">Higher Perceived Value</div>
+                <div class="chevron opacity-high">Higher Conversion</div>
+                <div class="chevron opacity-full">Higher Retention</div>
+                <div class="chevron active weight-heavy">Margin Expansion</div>
+            </div>
+
+            <div style="background:var(--neutral-bg); padding:20px; border-radius:8px; text-align:center;">
+                <p style="margin:0; font-size:1.3rem; color:var(--text-primary);"><strong>Key Insight:</strong></p>
+                <p style="margin:0; font-size:1.2rem;">When teaching quality is instrumented and measured, unit
+                    economics become predictable.</p>
+            </div>
         </div>
 
         <!-- SLIDE 6: DESIGNED SYSTEM OUTCOMES -->
@@ -170,38 +317,123 @@
                     <br><small>without learning degradation</small>
                 </div>
             </div>
-            <p>These outcomes are <em>designed</em> results of the system, not optimistic forecasts.</p>
-            <p style="margin-top: 10px; font-style: italic;">Quality is enforced by measurement gates (evidence
-                integrity +
-                pattern constraint), not subjective teacher judgment.</p>
+            <div style="margin-top: 30px; text-align: center;">
+                <h3 style="color: var(--accent-dark); font-size: 1.8rem; font-weight: 800;">
+                    Same leads → 30–50% revenue lift
+                </h3>
+            </div>
+            <p style="margin-top: 10px; font-style: italic; text-align: center; opacity: 0.8;">Quality is enforced by
+                measurement gates (evidence integrity + pattern constraint), not subjective teacher judgment.</p>
+        </div>
+
+        <!-- NEW SLIDE: MEASUREMENT OUTPUTS -->
+        <div class="slide">
+            <h2>What Gets Measured</h2>
+            <h3>Quality is enforced by gates, not subjective judgment</h3>
+            <div class="measurement-split-grid">
+                <!-- Column 1 -->
+                <div class="measurement-column">
+                    <h4 class="column-header">Learning Quality Signals</h4>
+                    <div style="background: #e0f2fe; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <strong style="display: block; font-size: 1.1em; margin-bottom: 10px; color: #0284c7;">Reading
+                            evidence quality</strong>
+                        <ul style="font-size: 0.9em; margin-bottom: 0;">
+                            <li>Annotation correctness (pattern + evidence integrity)</li>
+                            <li>Coverage across device clusters and thematic lenses</li>
+                        </ul>
+                    </div>
+                    <div style="background: #dcfce7; padding: 20px; border-radius: 8px;">
+                        <strong style="display: block; font-size: 1.1em; margin-bottom: 10px; color: #16a34a;">Writing
+                            structure quality</strong>
+                        <ul style="font-size: 0.9em; margin-bottom: 0;">
+                            <li>TVODE clarity and precision</li>
+                            <li>DCCEPS reasoning depth (definition/comparison/cause-effect/problem-solution)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="measurement-column">
+                    <h4 class="column-header">Business Signals</h4>
+                    <div style="background: #fef9c3; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <strong
+                            style="display: block; font-size: 1.1em; margin-bottom: 10px; color: #ca8a04;">Progression</strong>
+                        <ul style="font-size: 0.9em; margin-bottom: 0;">
+                            <li>Week-by-week skill deltas</li>
+                            <li>Mastery checkpoints passed/failed</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 20px; border-radius: 8px;">
+                        <strong style="display: block; font-size: 1.1em; margin-bottom: 10px; color: #4b5563;">Business
+                            outcomes</strong>
+                        <ul style="font-size: 0.9em; margin-bottom: 0;">
+                            <li>Trial → paid conversion</li>
+                            <li>Term retention</li>
+                            <li>ARPU expansion signals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE 7: DEPLOYMENT MODEL -->
         <div class="slide">
             <h2>Deployment Model</h2>
             <h3>Two-Phase Implementation to Remove Risk</h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div>
-                    <p><strong>Phase 1: Founder-Led Calibration (1 Term / 1 Cohort)</strong></p>
-                    <p style="font-size: 1rem;">Purpose: guarantee correct system instantiation and clean economic
-                        measurement.</p>
+            <div class="deployment-phases">
+                <div class="phase-card phase-1">
+                    <div class="phase-badge">Economic verification happens here</div>
+                    <p class="phase-title">Phase 1: Founder-Led Calibration <br><span
+                            style="font-weight:normal; font-size:1rem;">(1 Term / 1 Cohort)</span></p>
+                    <p style="font-size: 1rem; margin-bottom:15px; font-style:italic;">Purpose: Guarantee correct system
+                        instantiation and clean economic measurement.</p>
                     <p style="font-size: 1rem; margin-top: 10px;"><strong>Delivered by luminAIT:</strong></p>
-                    <ul style="font-size: 1rem;">
-                        <li>Direct delivery with your students and leads</li>
+                    <ul style="font-size: 1rem; margin-bottom:0;">
+                        <li>Direct delivery with your students/leads</li>
                         <li>Measurement of conversion, retention, ARPU</li>
                         <li>Documented operating and teaching model</li>
                         <li>Teacher training framework</li>
                     </ul>
                 </div>
+                <div class="phase-card phase-2">
+                    <p class="phase-title">Phase 2: Handover and Replication</p>
+                    <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <ul style="margin-top: 20px;">
+                            <li>Trained teachers run the system</li>
+                            <li>Founder dependency removed</li>
+                            <li>Economics compound operationally</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW SLIDE: B2C vs B2B -->
+        <div class="slide">
+            <h2>B2C vs B2B: One System, Two Entry Points</h2>
+            <h3>B2C generates proof; B2B monetises economics</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                 <div>
-                    <p><strong>Phase 2: Handover and Replication</strong></p>
+                    <p><strong>B2C (Proof Engine)</strong></p>
                     <ul>
-                        <li>Trained teachers run the system</li>
-                        <li>Founder dependency removed</li>
-                        <li>Economics compound operationally</li>
+                        <li>Ships execution artefacts: annotation guides + worksheets</li>
+                        <li>Generates diagnostic data + before/after samples</li>
+                        <li>Validates teacher-independence and measurement gates</li>
+                        <li>Optimises product clarity (what students do, what improves)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>B2B (Unit Economics Transformation)</strong></p>
+                    <ul>
+                        <li>Buys the full pipeline: kernel → execution → diagnostics → reports</li>
+                        <li>Phase 1: founder-led calibration with clean measurement</li>
+                        <li>Phase 2: replication via teacher training and handover</li>
+                        <li>Targets conversion, retention, ARPU (not lead volume)</li>
                     </ul>
                 </div>
             </div>
+            <p style="margin-top: 30px; text-align: center; font-weight: bold; font-size: 1.1em;">Same infrastructure;
+                different packaging depth.</p>
         </div>
 
         <!-- SLIDE 8: WHAT THE PARTNERSHIP IS -->
@@ -257,8 +489,14 @@
         <div class="slide">
             <h2>Commercial Terms</h2>
             <h3>Clear, Bounded, One-Time Engagement</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 20px;">
-                Implementation Fee: $75,000 (one-time)</p>
+            <div class="price-block">
+                <p class="price-label">Implementation Fee due on signing</p>
+                <div class="price-row">
+                    <span class="price-value">$75,000</span>
+                    <span class="price-suffix">(one-time)</span>
+                </div>
+                <p class="price-upside">Unlocking $150k–$300k verified upside within 12 months</p>
+            </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
                 <div>
@@ -343,12 +581,12 @@
                 <div style="flex: 1; opacity: 0.8;">
                     <p><strong>This is NOT:</strong></p>
                     <ul style="font-size: 0.95em;">
+                        <li><strong>Not a platform rollout</strong> — tooling runs behind the scenes; partners receive
+                            curriculum, training, and measurement reports.</li>
                         <li>Consulting</li>
                         <li>Content licensing</li>
                         <li>EdTech software</li>
                         <li>Research or pilots without accountability</li>
-                        <li><strong>Not a platform rollout</strong> — tooling runs behind the scenes; partners receive
-                            curriculum, training, and measurement reports.</li>
                     </ul>
                 </div>
                 <div style="flex: 1; border-left: 2px solid var(--accent-color); padding-left: 30px;">
