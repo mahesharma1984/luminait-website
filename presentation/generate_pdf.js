@@ -10,7 +10,7 @@ const path = require('path');
     });
     const page = await browser.newPage();
 
-    const filePath = path.resolve(__dirname, 'presentation.html');
+    const filePath = path.resolve(__dirname, 'index.html');
     const fileUrl = `file://${filePath}`;
 
     console.log(`Loading ${fileUrl}...`);
