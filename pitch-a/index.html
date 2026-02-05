@@ -25,9 +25,9 @@
 
     <div class="deck-container">
 
-        <!-- SLIDE 1: TITLE -->
-        <div class="slide title-slide active">
-            <div class="title-content">
+        <!-- SLIDE 1: TITLE [Type: System] -->
+        <div class="slide title-slide active" style="justify-content: center; align-items: start; display:flex;">
+            <div style="margin-top: auto; margin-bottom: auto;">
                 <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo-large">
                 <h1>luminAIT</h1>
                 <p class="thesis-statement">Teaching infrastructure that makes learning outcomes measurable and revenue
@@ -36,248 +36,292 @@
             </div>
         </div>
 
-        <!-- SLIDE 2: THE STRUCTURAL PROBLEM -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>The Structural Problem</h2>
-            <h3>Why education businesses struggle to scale profitably</h3>
+        <!-- SLIDE 2: THE STRUCTURAL PROBLEM [Type: Problem] -->
+        <div class="slide type-problem">
+            <div class="slide-header">
+                <h2>The Structural Problem</h2>
+                <h3>Why education businesses struggle to scale profitably</h3>
+            </div>
 
-            <div class="content-block">
-                <ul class="clean-list">
-                    <li>Teaching quality is tied to individual teachers</li>
-                    <li>Quality degrades as scale increases</li>
-                    <li>Class size and revenue are capped</li>
-                    <li>Conversion and retention stall unpredictably</li>
-                </ul>
-
-                <div class="highlight-box">
-                    <strong>Bottom line:</strong> This is a structural problem, not a talent problem.
+            <div class="slide-body">
+                <!-- Converted list to lane diagram for logic flow -->
+                <div class="lane-diagram">
+                    <div class="lane-node">Teaching quality tied to individual teachers</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node">Quality degrades as scale increases</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node">Class size and revenue are capped</div>
                 </div>
             </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">Bottom line: This is a structural problem, not a talent problem.</div>
+            </div>
+
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo" style="filter: invert(1); opacity: 0.2;">
         </div>
 
-        <!-- SLIDE 3: WHY THIS KEEPS HAPPENING -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>Why This Keeps Happening</h2>
-            <h3>Teaching quality is not transferable or measurable</h3>
+        <!-- SLIDE 3: WHY THIS KEEPS HAPPENING [Type: Problem] -->
+        <div class="slide type-problem">
+            <div class="slide-header">
+                <h2>Why This Keeps Happening</h2>
+                <h3>Teaching quality is not transferable or miserable</h3>
+            </div>
 
-            <div class="content-block">
-                <ul class="clean-list">
-                    <li>No shared instructional system</li>
-                    <li>No objective quality enforcement</li>
-                    <li>No way to audit or replicate “good teaching”</li>
-                    <li>Outcomes are subjective and non-comparable</li>
-                </ul>
-
-                <div class="highlight-box">
-                    <strong>Consequence:</strong> Businesses scale labor, not quality — so margins collapse.
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div class="lane-node" style="min-height: 100px;">No shared instructional system</div>
+                    <div class="lane-node" style="min-height: 100px;">No objective quality enforcement</div>
+                    <div class="lane-node" style="min-height: 100px;">No way to audit “good teaching”</div>
+                    <div class="lane-node" style="min-height: 100px;">Outcomes are subjective</div>
                 </div>
             </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">Consequence: Businesses scale labor, not quality — margins collapse.</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo" style="filter: invert(1); opacity: 0.2;">
         </div>
 
-        <!-- SLIDE 4: WHAT luminAIT IS -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>What luminAIT Is</h2>
-            <h3>Teaching infrastructure, not content, consulting, or software</h3>
-
-            <div class="content-block">
-                <p class="definition-lead">luminAIT is an <strong>operational system</strong> that:</p>
-                <ul class="clean-list">
-                    <li>Encodes expert teaching behaviour into artefacts</li>
-                    <li>Enforces quality through measurement gates</li>
-                    <li>Produces auditable learning outcomes</li>
-                    <li>Makes teaching quality transferable</li>
-                </ul>
-
-                <div class="highlight-box">
-                    Teaching quality can scale if it is engineered, instrumented, and measured.
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 5: WHAT luminAIT BUILDS (SYSTEM VIEW) -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>What luminAIT Builds</h2>
-            <h3>Teaching quality as infrastructure</h3>
-
-            <div class="three-col-grid">
-                <div class="grid-card">
-                    <h4>1. Execution artefacts</h4>
-                    <p>Teacher-independent materials that embody expert practice</p>
-                </div>
-                <div class="grid-card">
-                    <h4>2. Measurement gates</h4>
-                    <p>Objective checks that enforce quality (not teacher judgment)</p>
-                </div>
-                <div class="grid-card">
-                    <h4>3. Reporting layer</h4>
-                    <p>Progress becomes visible, comparable, and legible to the business</p>
-                </div>
+        <!-- SLIDE 4: WHAT luminAIT IS [Type: Boundary] -->
+        <div class="slide type-boundary">
+            <div class="slide-header">
+                <h2>What luminAIT Is</h2>
+                <h3>Teaching infrastructure, not content, consulting, or software</h3>
             </div>
 
-            <div class="highlight-box bottom-fix">
-                Quality is enforced structurally, not behaviourally.
-            </div>
-        </div>
-
-        <!-- SLIDE 6: THE ECONOMIC CAUSAL CHAIN -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>The Economic Causal Chain</h2>
-            <h3>How instructional infrastructure changes unit economics</h3>
-
-            <div class="chain-container">
-                <div class="chain-node">Instrumented teaching quality</div>
-                <div class="chain-arrow">→</div>
-                <div class="chain-node">Clearer value perception</div>
-                <div class="chain-arrow">→</div>
-                <div class="chain-node">Higher conversion</div>
-                <div class="chain-arrow">→</div>
-                <div class="chain-node">Higher retention</div>
-                <div class="chain-arrow">→</div>
-                <div class="chain-node highlight">Margin expansion</div>
-            </div>
-
-            <div class="highlight-box bottom-fix">
-                When quality is measurable and transferable, unit economics become predictable.
-            </div>
-        </div>
-
-        <!-- SLIDE 7: DESIGNED BUSINESS OUTCOMES -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>Designed Business Outcomes</h2>
-            <h3>What reliably changes when luminAIT is implemented</h3>
-
-            <div class="outcome-grid">
-                <div class="outcome-card">
-                    <strong>Conversion increases</strong>
-                </div>
-                <div class="outcome-card">
-                    <strong>Retention stabilises and extends</strong>
-                </div>
-                <div class="outcome-card">
-                    <strong>ARPU expands over time</strong>
-                </div>
-                <div class="outcome-card">
-                    <strong>Capacity increases without quality loss</strong>
-                </div>
-            </div>
-
-            <div class="highlight-box bottom-fix">
-                These are system-level effects, not optimisation tactics.
-            </div>
-        </div>
-
-        <!-- SLIDE 8: THE B2B ENGAGEMENT -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>The B2B Engagement</h2>
-            <h3>What partners are actually buying</h3>
-
-            <p class="section-subhead">One-time implementation engagement</p>
-
-            <div class="split-layout">
-                <div class="split-col">
-                    <h4>luminAIT delivers:</h4>
-                    <ul class="clean-list small">
-                        <li>Founder-led system instantiation</li>
-                        <li>Curriculum + artefact integration</li>
-                        <li>Measurement and reporting framework</li>
-                        <li>Teacher training and handover</li>
-                    </ul>
-                </div>
-                <div class="split-col">
-                    <h4>Partner provides:</h4>
-                    <ul class="clean-list small">
-                        <li>Lead flow</li>
-                        <li>Operations</li>
-                        <li>Teachers</li>
+            <div class="slide-body">
+                <!-- Invariant Frame -->
+                <div class="invariant-frame">
+                    <p class="definition-lead" style="margin-bottom: 20px;"><strong>luminAIT is an operational system
+                            that:</strong></p>
+                    <ul class="clean-list" style="font-size: 1.3rem;">
+                        <li>Encodes expert teaching behaviour into artefacts</li>
+                        <li>Enforces quality through measurement gates</li>
+                        <li>Produces auditable learning outcomes</li>
+                        <li>Makes teaching quality transferable</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="highlight-box bottom-fix">
-                What’s being purchased is correct system instantiation — not advice, content, or software.
-            </div>
-        </div>
-
-        <!-- SLIDE 9: PHASE 1: PROOF BEFORE SCALE -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>Phase 1: Proof Before Scale</h2>
-            <h3>Measured outcomes before replication</h3>
-
-            <div class="content-block">
-                <p>Phase 1 exists to:</p>
-                <ul class="clean-list">
-                    <li>Validate economics in the partner’s context</li>
-                    <li>Verify conversion, retention, and ARPU movement</li>
-                    <li>Document the operating model</li>
-                    <li>Remove replication risk</li>
-                </ul>
-
-                <div class="highlight-box">
-                    If the economics don’t move, the engagement ends cleanly.
+            <div class="slide-footer">
+                <div class="constraint-text">Teaching quality can scale if it is engineered, instrumented, and measured.
                 </div>
             </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
         </div>
 
-        <!-- SLIDE 10: ECONOMIC IMPACT -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>Economic Impact</h2>
-            <h3>Same leads. Materially better outcomes.</h3>
-
-            <div class="content-block">
-                <ul class="clean-list">
-                    <li>Same lead flow</li>
-                    <li>No platform rollout</li>
-                    <li>No pricing assumptions</li>
-                    <li>No scale promises</li>
-                </ul>
-
-                <div class="impact-statement">
-                    Six-figure incremental revenue validated during Phase 1.
-                </div>
-                <p class="sub-impact">Typical impact: <strong>$150k–$300k incremental revenue</strong> (Before Phase 2
-                    replication)</p>
+        <!-- SLIDE 5: WHAT luminAIT BUILDS [Type: System] -->
+        <div class="slide type-system">
+            <div class="slide-header">
+                <h2>What luminAIT Builds</h2>
+                <h3>Teaching quality as infrastructure</h3>
             </div>
+
+            <div class="slide-body">
+                <div class="three-col-grid">
+                    <div class="symmetric-card">
+                        <h4>1. Execution artefacts</h4>
+                        <p>Teacher-independent materials that embody expert practice</p>
+                    </div>
+                    <div class="symmetric-card">
+                        <h4>2. Measurement gates</h4>
+                        <p>Objective checks that enforce quality (not teacher judgment)</p>
+                    </div>
+                    <div class="symmetric-card">
+                        <h4>3. Reporting layer</h4>
+                        <p>Progress becomes visible, comparable, and legible to the business</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">Quality is enforced structurally, not behaviourally.</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
         </div>
 
-        <!-- SLIDE 11: POSITIONING CLARITY -->
-        <div class="slide">
-            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
-            <h2>Positioning Clarity</h2>
-            <h3>What this is — and is not</h3>
+        <!-- SLIDE 6: THE ECONOMIC CAUSAL CHAIN [Type: System] -->
+        <div class="slide type-system">
+            <div class="slide-header">
+                <h2>The Economic Causal Chain</h2>
+                <h3>How instructional infrastructure changes unit economics</h3>
+            </div>
 
-            <div class="split-layout">
-                <div class="split-col negative">
-                    <h4>This is not:</h4>
+            <div class="slide-body">
+                <div class="lane-diagram">
+                    <div class="lane-node">Instrumented teaching quality</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node">Clearer value perception</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node">Higher conversion</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node">Higher retention</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node"
+                        style="background:var(--accent-color); color:white; border-color:var(--accent-color);">Margin
+                        expansion</div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">When quality is measurable and transferable, unit economics become
+                    predictable.</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 7: DESIGNED BUSINESS OUTCOMES [Type: Economics] -->
+        <div class="slide type-economics">
+            <div class="slide-header">
+                <h2>Designed Business Outcomes</h2>
+                <h3>What reliably changes when luminAIT is implemented</h3>
+            </div>
+
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div class="symmetric-card" style="align-items: center; text-align: center;">
+                        <h4 style="border:none; color:var(--text-primary);">Conversion</h4>
+                        <strong style="color:var(--accent-color); font-size: 2rem;">Increases</strong>
+                    </div>
+                    <div class="symmetric-card" style="align-items: center; text-align: center;">
+                        <h4 style="border:none; color:var(--text-primary);">Retention</h4>
+                        <strong style="color:var(--accent-color); font-size: 2rem;">Stabilises</strong>
+                    </div>
+                    <div class="symmetric-card" style="align-items: center; text-align: center;">
+                        <h4 style="border:none; color:var(--text-primary);">ARPU</h4>
+                        <strong style="color:var(--accent-color); font-size: 2rem;">Expands</strong>
+                    </div>
+                    <div class="symmetric-card" style="align-items: center; text-align: center;">
+                        <h4 style="border:none; color:var(--text-primary);">Capacity</h4>
+                        <strong style="color:var(--accent-color); font-size: 2rem;">Increases</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">These are system-level effects, not optimisation tactics.</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 8: THE B2B ENGAGEMENT [Type: Boundary] -->
+        <div class="slide type-boundary">
+            <div class="slide-header">
+                <h2>The B2B Engagement</h2>
+                <h3>What partners are actually buying</h3>
+            </div>
+
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div class="symmetric-card">
+                        <h4>luminAIT delivers:</h4>
+                        <ul class="clean-list small">
+                            <li>Founder-led system instantiation</li>
+                            <li>Curriculum + artefact integration</li>
+                            <li>Measurement and reporting framework</li>
+                            <li>Teacher training and handover</li>
+                        </ul>
+                    </div>
+                    <div class="symmetric-card">
+                        <h4>Partner provides:</h4>
+                        <ul class="clean-list small">
+                            <li>Lead flow</li>
+                            <li>Operations</li>
+                            <li>Teachers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">What’s being purchased is correct system instantiation — not advice.</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 9: PHASE 1: PROOF BEFORE SCALE [Type: System] -->
+        <div class="slide type-system">
+            <div class="slide-header">
+                <h2>Phase 1: Proof Before Scale</h2>
+                <h3>Measured outcomes before replication</h3>
+            </div>
+
+            <div class="slide-body">
+                <div class="invariant-frame" style="border-left: 5px solid var(--accent-color);">
+                    <p style="margin-bottom: 15px;"><strong>Phase 1 exists to:</strong></p>
                     <ul class="clean-list">
-                        <li>EdTech software</li>
-                        <li>Consulting</li>
-                        <li>Content licensing</li>
-                        <li>A platform rollout</li>
-                    </ul>
-                </div>
-                <div class="split-col positive">
-                    <h4>This is:</h4>
-                    <ul class="clean-list">
-                        <li>Teaching infrastructure</li>
-                        <li>Measured outcomes</li>
-                        <li>Time-bounded engagement</li>
-                        <li>Permanent capability transfer</li>
+                        <li>Validate economics in the partner’s context</li>
+                        <li>Verify conversion, retention, and ARPU movement</li>
+                        <li>Document the operating model</li>
+                        <li>Remove replication risk</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="highlight-box bottom-fix">
-                If teaching quality moves, revenue follows. If it doesn’t, nothing scales.
+            <div class="slide-footer">
+                <div class="constraint-text">If the economics don’t move, the engagement ends cleanly.</div>
             </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 10: ECONOMIC IMPACT [Type: Economics] -->
+        <div class="slide type-economics">
+            <div class="slide-header">
+                <h2>Economic Impact</h2>
+                <h3>Same leads. Materially better outcomes.</h3>
+            </div>
+
+            <div class="slide-body" style="text-align: center;">
+                <div style="font-size: 3.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 20px;">
+                    $150k – $300k
+                </div>
+                <p style="font-size: 1.5rem; color: var(--text-secondary);">Incremental revenue validated during Phase 1
+                </p>
+                <p style="margin-top: 30px; font-size: 1.1rem; opacity: 0.7;">(Before Phase 2 replication)</p>
+            </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">Six-figure incremental revenue validated during Phase 1.</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 11: POSITIONING CLARITY [Type: Boundary] -->
+        <div class="slide type-boundary">
+            <div class="slide-header">
+                <h2>Positioning Clarity</h2>
+                <h3>What this is — and is not</h3>
+            </div>
+
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div class="symmetric-card" style="background:#fef2f2; border-color: #fecaca;">
+                        <h4 style="color:#991b1b; border-color:#fecaca;">This is not:</h4>
+                        <ul class="clean-list">
+                            <li>EdTech software</li>
+                            <li>Consulting</li>
+                            <li>Content licensing</li>
+                            <li>A platform rollout</li>
+                        </ul>
+                    </div>
+                    <div class="symmetric-card" style="background:#f0fdf4; border-color: #bbf7d0;">
+                        <h4 style="color:#166534; border-color:#bbf7d0;">This is:</h4>
+                        <ul class="clean-list">
+                            <li>Teaching infrastructure</li>
+                            <li>Measured outcomes</li>
+                            <li>Time-bounded engagement</li>
+                            <li>Permanent capability transfer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div class="constraint-text">If teaching quality moves, revenue follows. If it doesn’t, nothing scales.
+                </div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
         </div>
 
         <!-- Controls -->
