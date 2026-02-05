@@ -1,0 +1,8 @@
+{
+  "templateName": "How luminAIT Scales Teaching",
+  "htmlFile": "pitch-b.html",
+  "pdfOutput": "pitch_b.pdf",
+  "slideCount": 11,
+  "designSystem": "simple-content",
+  "description": "Operational implementation pitch with specific scaling mechanics"
+}

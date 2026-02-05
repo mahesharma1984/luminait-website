@@ -1,0 +1,1088 @@
+# luminAIT Presentation System
+
+**Comprehensive Guide for All Presentation Templates**
+
+Version: 2.0
+Last Updated: 2026-02-05
+
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [System Architecture](#system-architecture)
+3. [Three Presentation Templates](#three-presentation-templates)
+4. [Shared Technical Specifications](#shared-technical-specifications)
+5. [Design Systems Comparison](#design-systems-comparison)
+6. [Layout Patterns Library](#layout-patterns-library)
+7. [Content Guidelines](#content-guidelines)
+8. [Navigation & Interaction](#navigation--interaction)
+9. [PDF Generation](#pdf-generation)
+10. [Workflow & Best Practices](#workflow--best-practices)
+11. [Template Selection Guide](#template-selection-guide)
+
+---
+
+## 1. Overview
+
+The luminAIT presentation system consists of **three distinct presentation templates**, each optimized for different audiences and purposes. All three share common technical infrastructure but differ in visual design and narrative focus.
+
+### Current State (Pre-Refactor)
+```
+/presentation/     → Partnership Economics Overview (13 slides)
+/pitch-a/          → Teaching Infrastructure (11 slides)
+/pitch-b/          → How luminAIT Scales Teaching (11 slides)
+```
+
+**Problem:** Each folder contains duplicate scripts (script.js, generate_pdf.js) causing maintenance bloat.
+
+**Solution:** Shared core scripts with template-specific content/styles (see Section 2).
+
+---
+
+## 2. System Architecture
+
+### Proposed Shared Structure
+
+```
+/presentation-core/          # Shared infrastructure (NEW)
+├── script.js                # Shared navigation logic
+├── generate_pdf.js          # Shared PDF generator
+└── assets/
+    ├── logotype_trimmed.svg
+    └── logo-mark.svg
+
+/presentation/               # Template A: Partnership Economics
+├── index.html               # Content & structure
+├── style.css                # Design system
+└── config.json              # Template configuration (NEW)
+
+/pitch-a/                    # Template B: Teaching Infrastructure
+├── index.html
+├── style.css
+└── config.json
+
+/pitch-b/                    # Template C: Scaling Teaching
+├── pitch-b.html
+├── style.css
+└── config.json
+```
+
+### Benefits
+- **Single source of truth** for navigation logic
+- **DRY principle** - scripts maintained in one place
+- **Template-specific** styling and content
+- **Easy updates** - change script.js once, affects all templates
+
+---
+
+## 3. Three Presentation Templates
+
+### Template A: Partnership Economics Overview (`/presentation/`)
+
+**Purpose:** Comprehensive B2B partnership pitch with full economic framework
+**Slides:** 13
+**Audience:** Partners evaluating full economic partnership
+**File:** `index.html`
+
+**Content Focus:**
+- Core economic problem
+- System inputs/outputs
+- Baseline economics comparison
+- Full system pipeline with feedback loop
+- Economic causal chain
+- Designed outcomes with metrics
+- Measurement framework
+- Two-phase deployment model
+- B2C vs B2B positioning
+- Partnership terms
+- Commercial structure ($75k implementation fee)
+- Operational proof
+- Risk mitigation
+
+**Visual System:**
+- Vibrant blue accent (#2563eb)
+- Extended color palette (success green, warning yellow)
+- Split-plane title slide (dark top, white bottom)
+- Advanced components (chevron chains, loop arrows, deployment phases)
+- Process flows with auto-generated arrows
+- Feature cards with emphasis hierarchy
+
+**When to Use:**
+- Full partnership conversations
+- Commercial/financial details matter
+- Need advanced layout patterns
+- Comprehensive economic framework required
+
+---
+
+### Template B: Teaching Infrastructure (`/pitch-a/`)
+
+**Purpose:** B2B sales pitch focused on teaching infrastructure as economic solution
+**Slides:** 11
+**Audience:** Business partners who need teaching infrastructure
+**File:** `index.html`
+
+**Content Focus:**
+- Structural problem definition
+- Why traditional solutions fail
+- What luminAIT is (boundary definition)
+- What luminAIT builds (system components)
+- Economic causal chain
+- Designed business outcomes
+- B2B engagement model
+- Phase 1 proof-before-scale
+- Economic impact projections
+- Positioning clarity (what it is/isn't)
+
+**Visual System:**
+- Slate gray accent (#334155) - professional, subdued
+- Type-based slide system (problem/system/economics/boundary)
+- Lane diagrams for causal flows
+- Constraint-text footer on every slide
+- Symmetric grids and invariant frames
+- Logo opacity control for dark backgrounds
+
+**Unique Features:**
+- **Strict slide grammar** with 4 visual types:
+  - `.type-problem` → Dark background, white text
+  - `.type-system` → White background
+  - `.type-economics` → Light gray background
+  - `.type-boundary` → Light gray with invariant frames
+
+**When to Use:**
+- Business partner presentations
+- Emphasizing systems thinking
+- Problem-solution narrative is primary
+- Need clear visual type differentiation
+
+---
+
+### Template C: How luminAIT Scales Teaching (`/pitch-b/`)
+
+**Purpose:** Operational implementation pitch with specific scaling mechanics
+**Slides:** 11
+**Audience:** Educational institutions understanding scaling limitations
+**File:** `pitch-b.html`
+
+**Content Focus:**
+- Problem specific to secondary English
+- Fixed constraints in teaching
+- Scalable unit definition (text-anchored cohorts)
+- Retention effects
+- Infrastructure control points
+- Growth mechanics
+- Conservative revenue calculations ($18k per cohort)
+- Phase 1 effects
+- Larger revenue sources
+- Infrastructure characteristics
+
+**Visual System:**
+- Slate gray accent (#334155) - matches pitch-a
+- Simplest CSS of all three templates (~377 lines)
+- Content-block based structure
+- Clean lists with arrow bullets (→)
+- Highlight boxes with border-left emphasis
+- Split layouts for comparisons
+- Outcome cards and grid systems
+
+**Unique Features:**
+- **Content-first approach** - no dedicated title slide class
+- **Specific metrics visible** - $18k cohort revenue, exact retention %
+- **Operational language** - cohort lifespan, term-based calculations
+- **Simplest to maintain** - minimal CSS complexity
+
+**When to Use:**
+- Explaining implementation mechanics
+- Audience needs operational clarity
+- Focus on scalable units and constraints
+- Prefer simpler CSS maintenance
+
+---
+
+## 4. Shared Technical Specifications
+
+### Slide Dimensions (All Templates)
+- **Width:** 1280px
+- **Height:** 720px
+- **Aspect Ratio:** 16:9
+- **Format:** HTML + CSS with JavaScript navigation
+
+### File Requirements (All Templates)
+- `index.html` or `pitch-b.html` - Main presentation structure
+- `style.css` - Template-specific design system
+- `script.js` - Navigation logic (to be shared)
+- `generate_pdf.js` - PDF generation (to be shared)
+- `logotype_trimmed.svg` - Brand logotype
+- `logo-mark.svg` - Brand mark (optional)
+
+### Browser Support
+- Modern browsers with CSS Grid and Flexbox
+- Puppeteer for PDF generation (Node.js required)
+
+---
+
+## 5. Design Systems Comparison
+
+### Color Palettes
+
+#### Template A: Partnership Economics (Vibrant)
+```css
+--bg-color: #f8fafc          /* Slate 50 */
+--slide-bg: #ffffff          /* White */
+--text-primary: #1e293b      /* Slate 800 */
+--text-secondary: #334155    /* Slate 700 */
+--accent-color: #2563eb      /* Blue 600 - DISTINCTIVE */
+--accent-dark: #1e40af       /* Blue 700 */
+--accent-light: #e0f2fe      /* Blue 50 */
+--success-color: #16a34a     /* Green 600 */
+--success-bg: #dcfce7        /* Green 50 */
+--warning-color: #ca8a04     /* Yellow 600 */
+--warning-bg: #fef9c3        /* Yellow 50 */
+--neutral-bg: #f3f4f6        /* Gray 100 */
+```
+
+**Color Strategy:** Semantic color coding for visual hierarchy
+- Blue = Primary actions, key points
+- Green = Positive outcomes, growth
+- Yellow = Caution, constraints
+- Red/Pink = Problems, risks
+
+#### Template B & C: Pitch-A/B (Professional)
+```css
+--bg-color: #f8fafc          /* Slate 50 */
+--slide-bg: #ffffff          /* White */
+--text-primary: #0f172a or #475569  /* Slate 900/600 */
+--accent-color: #334155      /* Slate 700 - SUBDUED */
+--accent-light: #e2e8f0      /* Slate 200 */
+--highlight-bg: #f1f5f9      /* Slate 100 */
+--border-color: #cbd5e1      /* Slate 300 */
+```
+
+**Color Strategy:** Minimal color palette for professional clarity
+- Single accent color (slate gray)
+- Emphasis through hierarchy, not color variety
+- Clean, text-focused design
+
+### Typography (All Templates)
+
+**Font Family:** `'Inter', system-ui, -apple-system, sans-serif`
+
+**Scale:**
+- **h1 (Title Slide):** 3.5-4rem, font-weight: 800
+- **h2 (Slide Title):** 3-3.5rem, font-weight: 800
+- **h3 (Subtitle):** 1.4-1.5rem, font-weight: 600
+- **Body Paragraph:** 1.1-1.2rem
+- **List Items:** 1.15-1.25rem
+- **Small Text:** 0.9-1rem
+
+**Line Heights:**
+- Headings: 1.1-1.3
+- Body: 1.5-1.6
+
+### Spacing Systems
+
+**Template A (Partnership Economics):**
+- Slide padding: 80px (top/sides), 40px (bottom)
+- Title slide: 60px 80px
+- Component gaps: 20-40px
+
+**Template B & C (Pitch-A/B):**
+- Slide padding: 60px (all sides)
+- Component gaps: 20-30px
+- Tighter, more compact layout
+
+---
+
+## 6. Layout Patterns Library
+
+### Universal Patterns (All Templates)
+
+#### Basic Slide Structure
+```html
+<div class="slide">
+    <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+    <h2>Main Slide Title</h2>
+    <h3>Subtitle or Context Statement</h3>
+
+    <!-- Content using layout patterns below -->
+
+</div>
+```
+
+#### Simple List
+```html
+<ul>
+    <li>First point with automatic bullet</li>
+    <li>Second point with automatic bullet</li>
+    <li>Third point with automatic bullet</li>
+</ul>
+```
+
+**Styling:**
+- Template A: Blue bullet (•)
+- Template B: Orange/slate bullet
+- Template C: Arrow bullet (→)
+
+---
+
+### Template A Exclusive Patterns
+
+#### 1. Triangle Layout (Causal Relationships)
+```html
+<div class="triangle-layout causal-triangle">
+    <div class="triangle-item root">
+        <strong>Root Cause</strong>
+    </div>
+    <div class="triangle-branches">
+        <div class="triangle-item">
+            <strong>Effect 1</strong>
+        </div>
+        <div class="triangle-item">
+            <strong>Effect 2</strong>
+        </div>
+    </div>
+</div>
+```
+
+**Use Case:** Show root causes with branching effects
+**Example:** Slide 2 - Core Economic Problem
+
+#### 2. Split Columns (Input/Output)
+```html
+<div class="split-columns">
+    <div class="column-group">
+        <h4>System Inputs</h4>
+        <div class="feature-card">
+            <strong>Feature Title</strong>
+            <p>Description</p>
+        </div>
+    </div>
+    <div class="column-group">
+        <h4>Economic Outputs</h4>
+        <div class="feature-card highlight">
+            <strong>Feature Title</strong>
+            <p>Description</p>
+        </div>
+    </div>
+</div>
+```
+
+**Use Case:** Compare/contrast inputs vs outputs
+**Example:** Slide 2.5 - What luminAIT Is
+
+#### 3. Three-Column Cards (Component Emphasis)
+```html
+<div class="col-3-card">
+    <div class="card card-faded">
+        <span class="card-title">1. Pedagogy</span>
+        <ul><li>Item 1</li></ul>
+    </div>
+    <div class="card card-faded">
+        <span class="card-title">2. Execution</span>
+        <ul><li>Item 1</li></ul>
+    </div>
+    <div class="card card-dominant">
+        <span class="card-title">3. Measurement</span>
+        <ul><li>Item 1</li></ul>
+    </div>
+</div>
+```
+
+**Card Modifiers:**
+- `card-faded` - 60% opacity, scale(0.98)
+- `card-dominant` - scale(1.05), border, shadow, emphasized
+
+**Use Case:** Show three components with one emphasized
+**Example:** Slide 4 - What luminAIT Actually Builds
+
+#### 4. Process Flow (Sequential Pipeline)
+```html
+<div class="process-flow">
+    <div class="process-node">
+        <span class="process-title">1. Kernel</span>
+        <ul>
+            <li>Narratology Analysis</li>
+            <li>Pedagogical Primitives</li>
+        </ul>
+    </div>
+    <div class="process-node">
+        <span class="process-title">2. Execution</span>
+        <ul>
+            <li>Annotation Guides</li>
+            <li>Writing Tasks</li>
+        </ul>
+    </div>
+    <!-- Auto-arrow appears between nodes -->
+</div>
+```
+
+**Auto-Feature:** Arrows (→) automatically appear between nodes
+**Use Case:** Show sequential steps or pipeline
+**Example:** Slide 5 - System Pipeline
+
+#### 5. Chevron Chain (Progressive Momentum)
+```html
+<div class="chevron-chain">
+    <div class="chevron opacity-low">Better Outcomes</div>
+    <div class="chevron opacity-med">Higher Perceived Value</div>
+    <div class="chevron opacity-high">Higher Conversion</div>
+    <div class="chevron opacity-full">Higher Retention</div>
+    <div class="chevron active weight-heavy">Margin Expansion</div>
+</div>
+```
+
+**Opacity Modifiers:**
+- `opacity-low` - 40%
+- `opacity-med` - 60%
+- `opacity-high` - 80%
+- `opacity-full` - 100%
+- `active` - Blue background, white text
+- `weight-heavy` - Bold, scale(1.05)
+
+**Use Case:** Show causal progression with final emphasis
+**Example:** Slide 6 - Economic Causal Chain
+
+#### 6. Deployment Phases (Multi-Phase Cards)
+```html
+<div class="deployment-phases">
+    <div class="phase-card phase-1">
+        <div class="phase-badge">Economic verification happens here</div>
+        <p class="phase-title">Phase 1: Founder-Led Calibration</p>
+        <ul>
+            <li>Direct delivery with students</li>
+            <li>Measurement of conversion/retention/ARPU</li>
+        </ul>
+    </div>
+    <div class="phase-card phase-2">
+        <p class="phase-title">Phase 2: Handover and Replication</p>
+        <ul>
+            <li>Trained teachers run system</li>
+            <li>Economics compound operationally</li>
+        </ul>
+    </div>
+</div>
+```
+
+**Phase Styling:**
+- `phase-1` - Blue border, light blue background, emphasized
+- `phase-2` - Standard card styling
+- `phase-badge` - Floating badge with important label
+
+**Use Case:** Show deployment phases with one emphasized
+**Example:** Slide 9 - Deployment Model
+
+#### 7. Measurement Grid (Dual Metrics)
+```html
+<div class="measurement-split-grid">
+    <div class="measurement-column">
+        <h4 class="column-header">Learning Quality Signals</h4>
+        <div style="background: #e0f2fe; padding: 20px; border-radius: 8px;">
+            <strong>Reading evidence quality</strong>
+            <ul>
+                <li>Annotation correctness</li>
+                <li>Coverage across clusters</li>
+            </ul>
+        </div>
+    </div>
+    <div class="measurement-column">
+        <h4 class="column-header">Business Signals</h4>
+        <div style="background: #fef9c3; padding: 20px; border-radius: 8px;">
+            <strong>Progression</strong>
+            <ul>
+                <li>Week-by-week skill deltas</li>
+            </ul>
+        </div>
+    </div>
+</div>
+```
+
+**Use Case:** Show two categories of metrics side-by-side
+**Example:** Slide 8 - What Gets Measured
+
+#### 8. Pricing Block
+```html
+<div class="price-block">
+    <p class="price-label">Implementation Fee due on signing</p>
+    <div class="price-row">
+        <span class="price-value">$75,000</span>
+        <span class="price-suffix">(one-time)</span>
+    </div>
+    <p class="price-upside">Unlocking $150k–$300k verified upside</p>
+</div>
+```
+
+**Use Case:** Display pricing or key financial numbers
+**Example:** Slide 12 - Commercial Terms
+
+#### 9. Loop Arrow (Feedback Loop)
+```html
+<div class="loop-arrow-container">
+    <svg width="100%" height="60" viewBox="0 0 800 60" fill="none">
+        <path d="M 700 0 Q 700 40 400 40 Q 100 40 100 0"
+              stroke="var(--accent-color)" stroke-width="2"
+              fill="none" stroke-dasharray="5,5"
+              marker-end="url(#arrowhead)" />
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                    refX="0" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7"
+                         fill="var(--accent-color)" />
+            </marker>
+        </defs>
+    </svg>
+    <div class="loop-label">Constraint feedback / Quality correction</div>
+</div>
+```
+
+**Use Case:** Show feedback loops in system diagrams
+**Example:** Slide 5 - System Pipeline
+
+---
+
+### Template B Exclusive Patterns
+
+#### 1. Lane Diagram (Horizontal Flow)
+```html
+<div class="lane-diagram">
+    <div class="lane-row">
+        <div class="lane-item">
+            <div class="lane-label">Step 1</div>
+            <p>Description</p>
+        </div>
+        <div class="lane-arrow">→</div>
+        <div class="lane-item">
+            <div class="lane-label">Step 2</div>
+            <p>Description</p>
+        </div>
+    </div>
+</div>
+```
+
+**Use Case:** Show horizontal causal flows
+**Example:** Economic causal chain slides
+
+#### 2. Invariant Frame (Boundary Definition)
+```html
+<div class="invariant-frame">
+    <div class="frame-label">Core Invariant</div>
+    <p>Content that represents fixed constraint or boundary condition</p>
+</div>
+```
+
+**Use Case:** Highlight fixed constraints or boundaries
+**Styling:** White background, thick border, label badge
+
+#### 3. Three-Column Grid
+```html
+<div class="three-col-grid">
+    <div class="grid-item">
+        <strong>Item 1</strong>
+        <p>Description</p>
+    </div>
+    <div class="grid-item">
+        <strong>Item 2</strong>
+        <p>Description</p>
+    </div>
+    <div class="grid-item">
+        <strong>Item 3</strong>
+        <p>Description</p>
+    </div>
+</div>
+```
+
+**Use Case:** Show three equal components in a row
+**Styling:** Symmetric layout with equal spacing
+
+#### 4. Constraint Text Footer
+```html
+<div class="constraint-text">
+    Fixed constraint or key caveat text appears here
+</div>
+```
+
+**Use Case:** Add constraint notes at bottom of slides
+**Styling:** Gray background, smaller text, bottom-aligned
+
+---
+
+### Template C Exclusive Patterns
+
+#### 1. Content Block
+```html
+<div class="content-block">
+    <p><strong>Label:</strong> Content here</p>
+    <ul class="clean-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+</div>
+```
+
+**Use Case:** Standard content container with vertical flow
+**Styling:** Flex column with consistent gaps
+
+#### 2. Highlight Box
+```html
+<div class="highlight-box">
+    <p><strong>Emphasized Point</strong></p>
+    <p>Supporting detail that needs visual emphasis</p>
+</div>
+```
+
+**Use Case:** Callouts, important notes, key takeaways
+**Styling:** Border-left accent, light background
+
+#### 3. Split Layout (Comparison)
+```html
+<div class="split-layout">
+    <div class="split-left">
+        <p><strong>Option A</strong></p>
+        <ul>
+            <li>Point 1</li>
+            <li>Point 2</li>
+        </ul>
+    </div>
+    <div class="split-right">
+        <p><strong>Option B</strong></p>
+        <ul>
+            <li>Point 1</li>
+            <li>Point 2</li>
+        </ul>
+    </div>
+</div>
+```
+
+**Use Case:** Compare/contrast two approaches or options
+**Styling:** 50/50 split with gap
+
+#### 4. Outcome Card
+```html
+<div class="outcome-card">
+    <div class="outcome-value">$18k</div>
+    <div class="outcome-label">Per Cohort Revenue</div>
+    <p class="outcome-detail">Conservative estimate over 2 terms</p>
+</div>
+```
+
+**Use Case:** Display specific metrics or outcomes
+**Styling:** Large number, small label, detail text below
+
+---
+
+## 7. Content Guidelines
+
+### Slide Hierarchy (All Templates)
+
+**Standard Slide:**
+```
+h2 (Main Title) → 3-7 words, outcome-focused
+h3 (Subtitle) → 5-10 words, context or constraint
+Content → Using approved layout patterns
+```
+
+**Title Slide Variations:**
+
+**Template A:**
+- Split-plane design (dark top, white bottom)
+- h1 instead of h2
+- Thesis statement + economic formula
+- Inverted white logo on dark background
+
+**Template B:**
+- Centered layout with vertical margin auto
+- Large logo above heading
+- Simple thesis statement format
+- No dedicated title-slide class
+
+**Template C:**
+- Regular slide structure (not title-optimized)
+- Standard logo positioning (top-right)
+- Content-first approach
+- h2 used (not h1)
+
+### Text Guidelines
+
+**Headings:**
+- **h2:** 3-7 words, action or outcome-focused
+- **h3:** 5-10 words, provides context or constraint
+
+**Body Text:**
+- Keep paragraphs under 2-3 lines
+- Use bullet points for lists
+- Bold key terms and phrases
+- Use strong emphasis sparingly
+
+**Lists:**
+- 3-5 items per list (maximum 7)
+- Parallel structure (all start with verbs, or all nouns)
+- Concise: 1-2 lines per item
+- Use sub-bullets sparingly
+
+### Visual Emphasis
+
+**Template A (Color-Coded):**
+- Blue = Primary actions, key points
+- Green = Positive outcomes, growth
+- Yellow = Caution, constraints
+- Red/Pink = Problems, risks
+
+**Template B & C (Hierarchy-Coded):**
+- Dark backgrounds = Problem slides
+- White backgrounds = System slides
+- Light gray = Economic/boundary slides
+- Emphasis through layout, not color variety
+
+---
+
+## 8. Navigation & Interaction
+
+### Shared Navigation (All Templates)
+
+**Controls:**
+- Previous/Next buttons (bottom-right)
+- Slide counter (current / total)
+
+**Keyboard Shortcuts:**
+- `→` Right Arrow → Next slide
+- `Space` → Next slide
+- `Enter` → Next slide
+- `←` Left Arrow → Previous slide
+
+**Button States:**
+- Disabled at boundaries (first/last slide)
+- Opacity changes when at edges (0.3 = disabled)
+
+### Transitions
+
+**All templates use:**
+- Fade in/out (0.3-0.4s ease-in-out)
+- Only one slide visible at a time
+- First slide has `.active` class on page load
+
+### JavaScript Implementation
+
+```javascript
+// Shared across all templates (to be centralized)
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlideNum');
+    const totalSlidesEl = document.getElementById('totalSlidesNum');
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    totalSlidesEl.textContent = totalSlides;
+    updateSlide(currentSlide);
+
+    function updateSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        currentSlideEl.textContent = index + 1;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === totalSlides - 1;
+        prevBtn.style.opacity = index === 0 ? '0.3' : '1';
+        nextBtn.style.opacity = index === totalSlides - 1 ? '0.3' : '1';
+    }
+
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlide(currentSlide);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlide(currentSlide);
+        }
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+        }
+    });
+});
+```
+
+---
+
+## 9. PDF Generation
+
+### Shared Puppeteer Script
+
+```javascript
+const puppeteer = require('puppeteer');
+const path = require('path');
+
+(async () => {
+  try {
+    console.log('Launching browser...');
+    const browser = await puppeteer.launch({
+      headless: "new",
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const page = await browser.newPage();
+
+    const filePath = path.resolve(__dirname, 'index.html');
+    const fileUrl = `file://${filePath}`;
+
+    console.log(`Loading ${fileUrl}...`);
+    await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+
+    await page.addStyleTag({
+      content: `
+      @media print {
+        @page { size: 1280px 720px; margin: 0; }
+        body { margin: 0; }
+        .slide { break-after: always; page-break-after: always; }
+      }
+    `
+    });
+
+    console.log('Generating PDF...');
+    await page.pdf({
+      path: 'output.pdf',  // Template-specific via config
+      printBackground: true,
+      width: '1280px',
+      height: '720px',
+      landscape: false
+    });
+
+    console.log('PDF generated successfully');
+    await browser.close();
+  } catch (error) {
+    console.error('Error generating PDF:', error);
+    process.exit(1);
+  }
+})();
+```
+
+### Template-Specific Outputs
+
+**Current outputs:**
+- `/presentation/` → `presentation_v1.8.pdf`
+- `/pitch-a/` → `pitch_a.pdf`
+- `/pitch-b/` → (no PDF currently generated)
+
+### Requirements
+
+- Puppeteer installed: `npm install puppeteer`
+- All SVG assets in same directory as HTML
+- Print backgrounds enabled in browser
+
+### Command
+
+```bash
+# From within each template folder
+node generate_pdf.js
+```
+
+---
+
+## 10. Workflow & Best Practices
+
+### Adding a New Slide
+
+1. **Copy existing slide block:**
+   ```html
+   <div class="slide">
+       <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+       <h2>New Slide Title</h2>
+       <h3>New Subtitle</h3>
+       <!-- Content -->
+   </div>
+   ```
+
+2. **Remove `.active` class** (only first slide should have it)
+
+3. **Choose layout pattern** from template-specific library
+
+4. **Replace content** with new material
+
+5. **Test navigation** works correctly
+
+6. **Regenerate PDF:** `node generate_pdf.js`
+
+### Modifying Styling
+
+1. **Edit `style.css`** only (avoid inline styles except title slide logo)
+2. **Use existing CSS variables** for colors
+3. **Test both screen and PDF output**
+4. **Document new patterns** in this file if creating reusable components
+
+### Updating Content
+
+1. Edit HTML file (`index.html` or `pitch-b.html`)
+2. Maintain semantic HTML structure
+3. Use existing component classes
+4. Validate with browser dev tools
+5. Regenerate PDF
+
+### Quality Checklist
+
+**Structure:**
+- [ ] Every slide has h2 and h3
+- [ ] Logo appears on all non-title slides
+- [ ] Slide count is accurate in controls
+- [ ] First slide has `.active` class
+
+**Content:**
+- [ ] No slide exceeds 7 bullet points
+- [ ] Headings are concise
+- [ ] Text is scannable
+- [ ] Key terms are bolded
+
+**Design:**
+- [ ] Colors use CSS variables
+- [ ] Spacing is consistent
+- [ ] Visual hierarchy is clear
+- [ ] Layout patterns used correctly
+
+**Technical:**
+- [ ] Navigation works (keyboard + buttons)
+- [ ] PDF generates without errors
+- [ ] All assets load correctly
+- [ ] No console errors
+
+---
+
+## 11. Template Selection Guide
+
+### Decision Matrix
+
+| Criteria | Template A (Partnership) | Template B (Infrastructure) | Template C (Scaling) |
+|----------|-------------------------|----------------------------|---------------------|
+| **Audience** | Full partnership evaluation | Business partners | Educational institutions |
+| **Depth** | Comprehensive (13 slides) | Strategic (11 slides) | Operational (11 slides) |
+| **Focus** | Economic transformation | Teaching infrastructure | Scaling mechanics |
+| **Visual System** | Vibrant, color-coded | Professional, type-based | Simple, content-first |
+| **Complexity** | High (8+ layout patterns) | Medium (lane diagrams, frames) | Low (minimal components) |
+| **Commercial Details** | Full pricing ($75k) | Phase model | Specific cohort revenue ($18k) |
+| **Best For** | Full B2B partnership pitch | Systems thinking emphasis | Operational clarity |
+| **Maintenance** | High (747 lines CSS) | Medium (428 lines CSS) | Low (377 lines CSS) |
+
+### Use Template A When:
+- Presenting full partnership economics
+- Commercial/financial details are critical
+- Need advanced visual patterns
+- Audience expects comprehensive framework
+- B2C proof + B2B monetization both matter
+
+### Use Template B When:
+- Emphasizing structural/systems thinking
+- Problem-solution narrative is primary
+- Need clear slide type differentiation
+- Professional, subdued visual approach preferred
+- Highlighting teaching infrastructure as solution
+
+### Use Template C When:
+- Explaining specific implementation mechanics
+- Audience needs operational/tactical clarity
+- Focus is on scalable units and constraints
+- Simpler maintenance is priority
+- Want to show specific revenue calculations
+
+---
+
+## 12. Troubleshooting
+
+### Slide Not Showing
+- **Check:** Another slide has `.active` class
+- **Check:** Slide is inside `.deck-container`
+- **Fix:** Remove extra `.active` classes
+
+### Navigation Broken
+- **Check:** `script.js` is loaded in HTML
+- **Check:** Browser console for JavaScript errors
+- **Check:** Button IDs match script selectors (`prevBtn`, `nextBtn`)
+- **Fix:** Verify DOM element IDs are correct
+
+### PDF Generation Fails
+- **Check:** Puppeteer installed (`npm install puppeteer`)
+- **Check:** File paths in `generate_pdf.js` are correct
+- **Check:** All SVG assets are accessible
+- **Fix:** Run `npm install` in presentation folder
+
+### Styling Issues
+- **Check:** CSS variable names match design system
+- **Check:** Class names for typos
+- **Use:** Browser dev tools to inspect element styles
+- **Fix:** Verify CSS file is linked in HTML `<head>`
+
+### Logo Not Appearing
+- **Check:** SVG file exists in same directory as HTML
+- **Check:** Path in `<img src="">` is correct
+- **Fix:** Verify file name matches (case-sensitive)
+
+---
+
+## 13. Migration Plan (Shared Core)
+
+### Phase 1: Create Shared Core
+1. Create `/presentation-core/` folder
+2. Move `script.js` to core (single source)
+3. Move `generate_pdf.js` to core (with config support)
+4. Move assets to `/presentation-core/assets/`
+
+### Phase 2: Update Templates
+1. Update each HTML to reference `../presentation-core/script.js`
+2. Create `config.json` in each template folder
+3. Update PDF generator to read config for output path
+4. Test all three presentations
+
+### Phase 3: Clean Up
+1. Delete duplicate `script.js` files from templates
+2. Delete duplicate `generate_pdf.js` files
+3. Delete duplicate asset files
+4. Update documentation
+
+### Phase 4: Validation
+1. Test navigation in all three templates
+2. Generate PDFs for all three
+3. Verify no broken links or missing assets
+4. Commit changes
+
+### Config File Structure (Proposed)
+
+```json
+{
+  "templateName": "Partnership Economics Overview",
+  "htmlFile": "index.html",
+  "pdfOutput": "presentation_v1.8.pdf",
+  "slideCount": 13,
+  "designSystem": "vibrant-blue"
+}
+```
+
+---
+
+## Version History
+
+- **v2.0** (2026-02-05): Comprehensive documentation covering all three templates
+- **v1.0** (2026-02-05): Initial documentation for `/presentation/` only
+
+---
+
+## Next Steps
+
+1. **Refactor to shared core** (eliminate duplication)
+2. **Create build script** for generating all presentations
+3. **Add template config files** for customization
+4. **Automate PDF generation** for all templates at once
+
+---
+
+## Contact & Support
+
+For questions or issues with the presentation system, refer to the main project documentation in `/docs/` or contact the luminAIT development team.

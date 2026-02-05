@@ -1,0 +1,8 @@
+{
+  "templateName": "Teaching Infrastructure Pitch",
+  "htmlFile": "index.html",
+  "pdfOutput": "pitch_a.pdf",
+  "slideCount": 11,
+  "designSystem": "professional-slate",
+  "description": "B2B sales pitch focused on teaching infrastructure as economic solution"
+}
