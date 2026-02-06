@@ -2,8 +2,8 @@
 
 **Comprehensive Guide for All Presentation Templates**
 
-Version: 2.0
-Last Updated: 2026-02-05
+Version: 2.1
+Last Updated: 2026-02-06
 
 ---
 
@@ -14,7 +14,9 @@ Last Updated: 2026-02-05
 3. [Three Presentation Templates](#three-presentation-templates)
 4. [Shared Technical Specifications](#shared-technical-specifications)
 5. [Design Systems Comparison](#design-systems-comparison)
+   - 5.5 [Logo & Logotype Usage](#logo--logotype-usage)
 6. [Layout Patterns Library](#layout-patterns-library)
+   - 6.5 [Visual Engagement Principles](#visual-engagement-principles)
 7. [Content Guidelines](#content-guidelines)
 8. [Navigation & Interaction](#navigation--interaction)
 9. [PDF Generation](#pdf-generation)
@@ -280,6 +282,45 @@ The luminAIT presentation system consists of **three distinct presentation templ
 - Headings: 1.1-1.3
 - Body: 1.5-1.6
 
+**Headline Constraints:**
+- **h1 max-width:** 900px (prevents overly long title lines)
+- **h2 max-width:** 1000px (maintains focal point, prevents edge-to-edge sprawl)
+- **h3 max-width:** 800px (optimal readability for subtitle length)
+- **Optimal line length:** 45-75 characters for body text
+- **Never exceed:** Full slide width for headings (creates visual tension at edges)
+
+**Emphasis Rules:**
+
+When to use **bold**:
+- Key terms on first mention
+- Numeric values or metrics
+- Action words in lists
+- Contrasting concepts (e.g., "Before" vs "After")
+
+When to use color emphasis:
+- Template A: Semantic meaning (blue = primary, green = positive, yellow = caution)
+- Template B/C: Sparingly, only for critical differentiation
+- Avoid overuse: Max 2-3 color-emphasized items per slide
+
+When to use scale (larger text):
+- Opening statement of slide
+- Critical metric or outcome
+- Call-to-action or conclusion
+- Never scale more than one element per slide
+
+**Display Font Pairing (Optional):**
+- Current system: Single font (Inter) for all text
+- Optional pairing: Consider display font for h1 title slides only
+- Requirement: Must maintain high readability at distance
+- Avoid: Script fonts, overly stylized faces, light weights below 600
+
+**Character Limits by Element:**
+- **h1:** 6-10 words maximum
+- **h2:** 3-7 words optimal (enforced in content guidelines)
+- **h3:** 5-10 words optimal (provides context without overwhelming)
+- **List item:** 10-15 words maximum per line
+- **Body paragraph:** 2-3 lines maximum per block
+
 ### Spacing Systems
 
 **Template A (Partnership Economics):**
@@ -291,6 +332,224 @@ The luminAIT presentation system consists of **three distinct presentation templ
 - Slide padding: 60px (all sides)
 - Component gaps: 20-30px
 - Tighter, more compact layout
+
+### Background Treatment & Texture Rules
+
+**Slide Backgrounds:**
+
+Current system uses flat color backgrounds:
+- White (`#ffffff`) - Primary slide background
+- Slate 50 (`#f8fafc`) - Deck container background
+- Light gray (`#f3f4f6` / `#f1f5f9`) - Economics/boundary slides
+- Dark slate (`#1e293b` / `#0f172a`) - Problem slides (Template B)
+
+**Adding Subtle Texture (Optional):**
+
+To avoid sterile flatness while maintaining professionalism:
+- **Subtle grain:** `background-image: url('data:image/svg+xml,...')` with 2-5% opacity noise
+- **Gradient overlays:** Linear gradients with max 3-5% color shift (e.g., `#ffffff` to `#fefefe`)
+- **Radial vignette:** Slight darkening at edges (5-10% opacity) for visual focus
+
+**Rules:**
+- Texture must not interfere with text readability
+- No photos or illustrations as full-slide backgrounds
+- Gradients should be imperceptible on casual viewing
+- Test in both screen and PDF output for consistency
+
+**Template-Specific Guidance:**
+- **Template A:** Can use light blue gradient overlays on accent slides
+- **Template B/C:** Flat colors preferred; texture only if subtle and professional
+
+### Image & Illustration Usage
+
+**Maximum Per Slide:** 1 image or illustration
+
+**Placement Rules:**
+- Never overlap with text (maintain clear separation)
+- Align to grid (left/right columns or centered)
+- Maintain aspect ratio (no distortion)
+- Size: Maximum 40-50% of slide width for side-aligned, 60% for centered
+
+**Image Treatment:**
+- **Crop consistency:** Use consistent aspect ratios across deck (16:9 or 4:3)
+- **Overlay style:** If using overlays, apply consistent treatment (e.g., 20% dark overlay)
+- **Border:** Optional 1-2px border in `--border-color` for definition
+- **Corner radius:** 8px for soft edges, 0px for formal/data visualization
+
+**Illustration Style:**
+- Prefer diagrams and schematic illustrations over decorative images
+- Line-based illustrations align better with content-first design
+- Color palette must match template design system
+- Avoid stock photos unless necessary for context
+
+**When to Use Images:**
+- Demonstrating interface or product features
+- Showing concrete examples (annotated text samples)
+- Data visualization (charts, graphs - see diagram guide)
+- Proof/credibility (screenshots of results)
+
+**When to Avoid Images:**
+- Decorative purposes only (no content value)
+- Generic stock imagery (reduces credibility)
+- Multiple images competing for attention
+- Images that don't add clarity to the message
+
+**Implementation Example:**
+```html
+<div class="slide">
+    <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+    <h2>Annotation Interface</h2>
+    <h3>Students engage directly with text structure</h3>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+        <div>
+            <ul>
+                <li>Text-anchored interaction</li>
+                <li>Real-time feedback</li>
+                <li>Evidence tracking</li>
+            </ul>
+        </div>
+        <div>
+            <img src="screenshot-annotation.png" alt="Annotation interface example"
+                 style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+        </div>
+    </div>
+</div>
+```
+
+---
+
+## 5.5 Logo & Logotype Usage
+
+### Asset Types
+
+The presentation system uses three logo variants:
+
+- **`logotype_trimmed.svg`** - Full brand name + mark (primary asset)
+- **`logo-mark.svg`** - Icon/mark only (compact contexts)
+- **`logotype_cursive.svg`** - Specialty variant (optional, limited use)
+
+### Placement Rules by Context
+
+#### Title Slides (All Templates)
+
+**Asset:** Full logotype (`logotype_trimmed.svg`)
+
+**Placement by Template:**
+- **Template A:** Centered in dark top plane, part of split-plane design
+- **Template B:** Centered above heading with vertical margin auto
+- **Template C:** Standard top-right positioning (content-first approach)
+
+**Treatment:**
+- Size: 2-3x larger than standard slides (60-80px height)
+- Dark backgrounds: Apply white inversion via `filter: brightness(0) invert(1);`
+- Light backgrounds: Use standard dark logo
+- Clear space: Minimum 40-60px from all edges
+
+**Example (Template A title slide):**
+```html
+<img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo"
+     style="filter: brightness(0) invert(1); position: relative; top: auto; right: auto; margin-bottom: 20px;">
+```
+
+#### Standard Slides (All Templates)
+
+**Asset:** Full logotype (`logotype_trimmed.svg`)
+
+**Placement:** Top-right corner via `.brand-logo` class
+
+**Specifications:**
+- Position: Absolute, top-right
+- Size: 24-32px height (standard)
+- Minimum size: 18px height
+- Clear space: 20px minimum from edges
+- Opacity: 1.0 (never faded unless intentional brand treatment)
+
+**Example:**
+```html
+<img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+```
+
+**Never:**
+- Overlay logo on top of content text
+- Scale below 18px height (readability threshold)
+- Rotate or distort aspect ratio
+
+### Dark/Light Background Variants
+
+**Light Backgrounds (Default):**
+- Use standard logo (dark color)
+- No filter required
+- Maintains brand color
+
+**Dark Backgrounds:**
+- Apply CSS filter: `filter: brightness(0) invert(1);`
+- Produces white logo for contrast
+- Commonly used on title slides and `.type-problem` slides (Template B)
+
+**Opacity Control (Template B Specific):**
+- Template B uses logo opacity control for dark background slides
+- Adjust via inline style or CSS class when needed for visual hierarchy
+
+### When to Use Logo Mark Only
+
+Use `logo-mark.svg` (icon only) in these contexts:
+
+- **Space-constrained layouts** - When horizontal space < 120px
+- **Footer attributions** - Small-scale credits or watermarks
+- **Icon/favicon contexts** - Browser tabs, mobile bookmarks
+- **Repeated branding** - Where logotype would be visually heavy
+
+**Never use logo mark:**
+- On title slides (always use full logotype)
+- As primary slide branding (always prefer logotype)
+- When adequate space exists for full logotype
+
+### Size & Clear Space Standards
+
+**Minimum Sizes:**
+- Logo mark: 16px × 16px
+- Full logotype: 18px height
+
+**Optimal Sizes:**
+- Standard slides: 24-32px height
+- Title slides: 60-80px height
+- Footer/attribution: 16-20px height
+
+**Clear Space Rule:**
+- Minimum clear space: 0.5x logo height on all sides
+- Example: 32px logo = 16px minimum clear space
+- Prevents visual crowding and maintains brand dignity
+
+**Maximum Size:**
+- Title slides: 80px height (prevents overpowering content)
+- Standard slides: 40px height (maintains hierarchy)
+
+### Template-Specific Guidelines
+
+#### Template A: Partnership Economics
+- **Color treatment:** May use accent color overlay on logo for special emphasis slides
+- **Title slide:** White inverted logo on dark blue/slate background
+- **Standard slides:** Standard dark logo, top-right, 28-32px height
+- **Flexibility:** Higher visual variety allowed due to vibrant design system
+
+#### Template B & C: Professional/Operational
+- **Color treatment:** Always standard grayscale (no color overlays)
+- **Consistency:** Strict uniform sizing across all slides
+- **Opacity:** Template B may adjust opacity on dark slides for subtle branding
+- **Simplicity:** Minimal logo variations to maintain professional tone
+
+### Implementation Checklist
+
+When adding logos to slides:
+
+- [ ] Correct asset chosen (logotype vs logo mark)
+- [ ] Proper size for context (title vs standard slide)
+- [ ] Clear space maintained (minimum 0.5x height)
+- [ ] Dark/light treatment correct for background
+- [ ] Alt text included (`alt="luminAIT"`)
+- [ ] No content overlap or visual crowding
+- [ ] Consistent with template design system
 
 ---
 
@@ -538,6 +797,183 @@ The luminAIT presentation system consists of **three distinct presentation templ
 **Use Case:** Show feedback loops in system diagrams
 **Example:** Slide 5 - System Pipeline
 
+#### 10. Section Divider / Scene Change Slide
+
+```html
+<div class="slide section-divider">
+    <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center;">
+        <h2 style="font-size: 4rem; margin-bottom: 20px;">The Solution</h2>
+        <div style="width: 200px; height: 4px; background: var(--accent-color); border-radius: 2px;"></div>
+    </div>
+</div>
+```
+
+**Use Case:** Mark major section transitions in the deck (e.g., Problem → Solution → Proof)
+**Styling:**
+- Centered layout with vertical centering
+- Extra large heading (4rem instead of standard 3rem)
+- Accent line or visual separator below heading
+- Minimal content (title only, no body text)
+- Optional: Different background color to emphasize break
+
+**When to Use:**
+- Decks with 10+ slides needing clear section breaks
+- Transitioning between problem/solution/proof sections
+- Before major topic shifts
+- Limit to 1-2 per deck (overuse dilutes impact)
+
+#### 11. Impact Metric Slide Pattern
+
+```html
+<div class="slide impact-metric">
+    <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+    <h2>Measured Economic Impact</h2>
+    <h3>Verified results from Phase 1 deployment</h3>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px;">
+        <div class="metric-card">
+            <div class="metric-value" style="font-size: 3.5rem; font-weight: 800; color: var(--success-color); line-height: 1;">
+                +47%
+            </div>
+            <div class="metric-label" style="font-size: 1.2rem; font-weight: 600; margin-top: 10px; color: var(--text-secondary);">
+                Conversion Rate
+            </div>
+            <p style="font-size: 0.95rem; margin-top: 10px; opacity: 0.7;">
+                Trial to paid subscriber
+            </p>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-value" style="font-size: 3.5rem; font-weight: 800; color: var(--success-color); line-height: 1;">
+                2.3x
+            </div>
+            <div class="metric-label" style="font-size: 1.2rem; font-weight: 600; margin-top: 10px; color: var(--text-secondary);">
+                Retention
+            </div>
+            <p style="font-size: 0.95rem; margin-top: 10px; opacity: 0.7;">
+                Term-over-term retention
+            </p>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-value" style="font-size: 3.5rem; font-weight: 800; color: var(--success-color); line-height: 1;">
+                $240k
+            </div>
+            <div class="metric-label" style="font-size: 1.2rem; font-weight: 600; margin-top: 10px; color: var(--text-secondary);">
+                Annual Revenue
+            </div>
+            <p style="font-size: 0.95rem; margin-top: 10px; opacity: 0.7;">
+                Per 100 student cohort
+            </p>
+        </div>
+    </div>
+</div>
+```
+
+**Use Case:** Display 2-4 key metrics with high visual impact
+**Component Structure:**
+- Large metric value (3.5-4rem, bold, accent color)
+- Metric label (1.2rem, semibold, secondary color)
+- Supporting detail (0.95rem, muted)
+
+**Styling Guidelines:**
+- Use success green for positive metrics
+- Use warning yellow for constraint metrics
+- Use accent blue for neutral/descriptive metrics
+- Grid layout: 2 columns (for 2 or 4 metrics), 3 columns (for 3 metrics)
+- Consistent card sizing across row
+
+**When to Use:**
+- Showing quantified business outcomes
+- Proof slides (verified results)
+- Economic impact summaries
+- Comparison slides (before/after metrics)
+
+#### 12. Diagram Style Guide
+
+**Purpose:** Consistent visual language for diagrams across all templates.
+
+**Line Weights:**
+- **Primary paths/flows:** 2-3px stroke width
+- **Secondary connections:** 1-2px stroke width
+- **Borders/frames:** 1-2px stroke width
+- **Emphasis:** Up to 4px for critical paths
+
+**Arrowheads:**
+- **Style:** Filled triangle or chevron
+- **Size:** 8-12px width, 6-8px height
+- **Color:** Match stroke color
+- **Placement:** End of path, 0px offset
+
+**SVG Implementation:**
+```html
+<svg width="100%" height="80" viewBox="0 0 800 80">
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent-color)" />
+        </marker>
+    </defs>
+    <path d="M 50 40 L 750 40"
+          stroke="var(--accent-color)"
+          stroke-width="2"
+          fill="none"
+          marker-end="url(#arrowhead)" />
+</svg>
+```
+
+**Corner Radius:**
+- **Boxes/cards:** 8px (soft, modern)
+- **Emphasis boxes:** 12px (friendlier feel)
+- **Small elements:** 4px (subtle softness)
+- **Formal diagrams:** 0px (sharp, technical)
+
+**Label Style:**
+- **Font size:** 0.9-1rem (smaller than body text)
+- **Font weight:** 600 (semibold for readability)
+- **Color:** `var(--text-secondary)` or matching diagram color
+- **Placement:** Above or beside element (never inside unless box is large)
+- **Background:** Optional white background with padding for clarity
+
+**Color Palette for Diagrams:**
+- Use template-specific accent colors
+- Max 3-4 colors per diagram
+- Maintain semantic consistency (blue = input, green = output, etc.)
+- Sufficient contrast (4.5:1 minimum) between elements
+
+**Spacing & Alignment:**
+- **Node spacing:** Minimum 60px between diagram elements
+- **Grid alignment:** Align all elements to invisible grid (prevents messy appearance)
+- **Consistent sizing:** Same-level elements should be same size
+- **Vertical centering:** Center labels and text within shapes
+
+**Common Diagram Types:**
+
+**Flow Diagram:**
+- Left-to-right flow (Western reading direction)
+- Arrows show sequence
+- 2-3px stroke weight
+- Boxes with 8px radius
+
+**Causal Chain:**
+- Horizontal or chevron layout
+- Progressive opacity or color intensity
+- Labels inside or above boxes
+- Final element emphasized (larger or different color)
+
+**Hierarchy/Tree:**
+- Top-down layout
+- Thinner strokes for connections (1px)
+- Parent boxes larger or darker than children
+- Symmetric branching preferred
+
+**Loop/Cycle:**
+- Circular or curved path
+- Dashed line for feedback (stroke-dasharray: "5,5")
+- Arrow returns to start point
+- Label describes loop function
+
 ---
 
 ### Template B Exclusive Patterns
@@ -670,16 +1106,219 @@ The luminAIT presentation system consists of **three distinct presentation templ
 
 ---
 
+## 6.5 Visual Engagement Principles
+
+### Overview
+
+Visual engagement keeps audiences focused and prevents monotony across multi-slide presentations. These principles apply across all three templates but should be adapted to each template's design system.
+
+### 1. Contrast & Focal Hierarchy
+
+**Purpose:** Direct viewer attention to the most important element on each slide.
+
+**Implementation:**
+- **One dominant element per slide** - Scale, color, or position creates clear focal point
+- **Contrast ratios:** Minimum 4.5:1 for body text, 7:1 for headings (WCAG AA)
+- **Visual weight distribution:** 60% focal element, 30% supporting, 10% tertiary
+
+**Techniques:**
+- Size contrast (large heading vs smaller body)
+- Color contrast (accent color vs neutral)
+- Density contrast (dense text block vs white space)
+- Position contrast (centered vs edge-aligned)
+
+**Example:**
+```html
+<!-- Dominant element: Large metric -->
+<div class="outcome-card" style="transform: scale(1.1);">
+    <div class="outcome-value" style="font-size: 4rem; color: var(--accent-color);">$18k</div>
+    <div class="outcome-label">Per Cohort Revenue</div>
+</div>
+<!-- Supporting elements: Smaller, muted -->
+<ul style="font-size: 1rem; opacity: 0.8;">
+    <li>Conservative estimate over 2 terms</li>
+</ul>
+```
+
+### 2. Rhythm & Layout Variation Cadence
+
+**Purpose:** Prevent visual monotony by varying slide layouts throughout the deck.
+
+**Layout Variation Pattern:**
+- **Every 2-3 slides:** Change layout pattern (list → diagram → split columns)
+- **Every 4-5 slides:** Change visual density (text-heavy → visual-heavy)
+- **Every 6-8 slides:** Introduce accent slide (different background color, bold statement)
+
+**Rhythm Guidelines:**
+- Opening: High visual impact (title slide, bold statement)
+- Middle: Varied rhythm (problem → solution → evidence → outcome)
+- Closing: Return to high impact (call-to-action, contact)
+
+**Layout Cadence Example (11-slide deck):**
+1. Title (high impact)
+2. Problem (text + diagram)
+3. Solution overview (split columns)
+4. Solution details (process flow)
+5. Economics (chevron chain)
+6. **Accent slide** (bold statement, different background)
+7. Evidence (measurement grid)
+8. Outcomes (outcome cards)
+9. Implementation (deployment phases)
+10. Positioning (invariant frames)
+11. Call-to-action (centered, high impact)
+
+### 3. Asymmetry for Engagement
+
+**Purpose:** Symmetric layouts feel static; strategic asymmetry creates visual tension and interest.
+
+**Asymmetry Techniques:**
+- **60/40 split** instead of 50/50 (e.g., text left 60%, image right 40%)
+- **Off-center focal points** (position key element at 1/3 or 2/3 width)
+- **Unequal column heights** in multi-column layouts
+- **Diagonal elements** (arrows, chevrons) break horizontal/vertical monotony
+
+**Rules:**
+- Asymmetry must have purpose (guides eye flow, emphasizes hierarchy)
+- Maintain balance (visual weight, not geometric symmetry)
+- Avoid chaos (max 1-2 asymmetric elements per slide)
+
+**Example:**
+```html
+<!-- 60/40 split instead of 50/50 -->
+<div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px;">
+    <div>
+        <h3>Detailed explanation occupies more space</h3>
+        <ul><li>Point 1</li><li>Point 2</li></ul>
+    </div>
+    <div class="highlight-box">
+        <strong>Key takeaway</strong>
+        <p>Concise, emphasized</p>
+    </div>
+</div>
+```
+
+### 4. White Space Optimization
+
+**Purpose:** White space (negative space) prevents cognitive overload and guides eye movement.
+
+**White Space Allocation:**
+- **Minimum 30% of slide area** should be empty (no text, no graphics)
+- **Breathing room:** 40-60px between major sections
+- **Margins:** Never place content within 60px of slide edges (except intentional edge-to-edge design)
+
+**Strategic White Space:**
+- Around focal elements (isolates, emphasizes)
+- Between list items (improves scannability)
+- Left/right of headings (prevents wall-of-text feeling)
+
+**Common Mistakes:**
+- Filling all available space ("more is better" fallacy)
+- Evenly distributing elements (creates flatness)
+- Inconsistent gaps (10px here, 40px there)
+
+### 5. Visual Tension Management
+
+**Purpose:** Tension (unresolved visual elements) keeps viewers engaged, but too much creates confusion.
+
+**Productive Tension:**
+- **Arrows/chevrons pointing forward** - Implies continuation, forward momentum
+- **Incomplete loops** - Implies process in motion (feedback loops)
+- **Asymmetric positioning** - Implies direction, flow
+- **Progressive opacity** (chevron chains) - Implies causal sequence
+
+**Destructive Tension (Avoid):**
+- Elements pointing off-slide (where does eye go?)
+- Orphaned text blocks (no clear relationship to other elements)
+- Competing focal points (two large elements fighting for attention)
+- Misaligned grids (breaks visual coherence)
+
+**Resolution Techniques:**
+- Complete visual loops (arrows return to start)
+- Align elements to consistent grid
+- Use connecting elements (arrows, lines) to show relationships
+- Limit to one "open" tension element per slide
+
+### 6. Color Psychology & Semantic Coding
+
+**Purpose:** Color conveys meaning beyond aesthetics.
+
+**Template A (Vibrant) - Semantic Color:**
+- Blue (`#2563eb`) = Primary action, key points, forward motion
+- Green (`#16a34a`) = Positive outcomes, growth, success
+- Yellow (`#ca8a04`) = Caution, constraints, limitations
+- Red/Pink = Problems, risks, pain points
+
+**Template B/C (Professional) - Hierarchy Color:**
+- Dark backgrounds = Problem definition
+- White backgrounds = Solution/system description
+- Light gray = Economics, boundaries, constraints
+- Minimal color variety = Professional, serious tone
+
+**Usage Rules:**
+- Consistent color meaning across deck (don't switch meanings mid-deck)
+- Max 3-4 semantic colors per deck (prevents confusion)
+- Reserve accent color for truly important elements (loses impact if overused)
+
+### 7. Engagement Checklist (Per Slide)
+
+When designing or reviewing a slide:
+
+- [ ] **One clear focal point** - Eye knows where to look first
+- [ ] **Contrast sufficient** - Text readable, hierarchy clear
+- [ ] **White space adequate** - At least 30% empty space
+- [ ] **Layout varied from previous slide** - Not repetitive
+- [ ] **Asymmetry present (if appropriate)** - Not rigidly symmetric
+- [ ] **Visual tension productive** - Arrows/flows make sense
+- [ ] **Color semantics consistent** - Matches deck-wide meaning
+- [ ] **Typography hierarchy clear** - h2 > h3 > body visually distinct
+
+---
+
 ## 7. Content Guidelines
 
 ### Slide Hierarchy (All Templates)
 
-**Standard Slide:**
+**Hierarchy Enforcement Rules:**
+
+Every slide must have **exactly one primary visual block** - the element that captures attention first. This prevents competing focal points and visual confusion.
+
+**Primary Block Options:**
+1. **h2 heading** - Default primary block for most slides
+2. **Large metric/number** - Impact metric slides
+3. **Diagram/visual** - Process flows, causal chains
+4. **Emphasized card** - Card-dominant patterns
+
+**Secondary elements support the primary block:**
+- h3 subtitle (provides context)
+- Body text (elaborates)
+- Lists (details)
+- Supporting graphics (clarifies)
+
+**Standard Slide Hierarchy:**
 ```
-h2 (Main Title) → 3-7 words, outcome-focused
-h3 (Subtitle) → 5-10 words, context or constraint
-Content → Using approved layout patterns
+h2 (Main Title) → 3-7 words, outcome-focused [PRIMARY BLOCK]
+h3 (Subtitle) → 5-10 words MAX, context or constraint [SECONDARY]
+Content → Using approved layout patterns [TERTIARY]
 ```
+
+**H3 Maximum Length Enforcement:**
+- **Strict limit:** 10 words maximum
+- **Optimal:** 5-7 words
+- **Character limit:** ~60-70 characters including spaces
+- **Rationale:** Subtitles provide context, not full explanations
+- **If longer:** Split into h3 + body paragraph, or shorten wording
+
+**Visual Weight Distribution:**
+- **Primary block:** 50-60% of visual weight
+- **Secondary elements:** 30-40% of visual weight
+- **Tertiary elements:** 10-20% of visual weight
+
+**Enforcement Checklist:**
+- [ ] One clear primary block identified
+- [ ] h3 subtitle ≤ 10 words
+- [ ] No competing focal points (e.g., two large elements of equal size)
+- [ ] Visual hierarchy flows: primary → secondary → tertiary
+- [ ] Eye can scan slide in intended order (top-to-bottom or focal-to-supporting)
 
 **Title Slide Variations:**
 
@@ -721,17 +1360,58 @@ Content → Using approved layout patterns
 
 ### Visual Emphasis
 
+**One Primary Element Rule:**
+
+Each slide should emphasize **exactly one** primary element through:
+- **Scale:** Larger than surrounding elements (1.5-2x size)
+- **Color:** Accent color vs neutral surroundings
+- **Position:** Centered or isolated with white space
+- **Weight:** Bolder font weight or thicker borders
+
+**Never:**
+- Create two equally-weighted focal points
+- Use all-caps for entire headings (reduces readability)
+- Bold entire paragraphs (eliminates emphasis contrast)
+- Use more than one accent color per slide (creates confusion)
+
 **Template A (Color-Coded):**
 - Blue = Primary actions, key points
 - Green = Positive outcomes, growth
 - Yellow = Caution, constraints
 - Red/Pink = Problems, risks
+- **Limit:** Max 2 semantic colors per slide (e.g., blue heading + green outcome)
 
 **Template B & C (Hierarchy-Coded):**
 - Dark backgrounds = Problem slides
 - White backgrounds = System slides
 - Light gray = Economic/boundary slides
 - Emphasis through layout, not color variety
+- **Limit:** One accent element per slide (border, background, or text color)
+
+### Layout Hierarchy Rules
+
+**Grid Alignment:**
+- All elements must align to consistent grid
+- Use CSS Grid or Flexbox for precise alignment
+- Avoid pixel-pushing (manual positioning)
+
+**Z-Index Hierarchy:**
+1. Logo (always visible, but subtle)
+2. Primary heading (h2)
+3. Secondary heading (h3)
+4. Content blocks (diagrams, lists, cards)
+5. Background elements (textures, subtle graphics)
+
+**Reading Flow:**
+- **Western reading pattern:** Top-left → top-right → bottom-left → bottom-right
+- **F-pattern:** Heading spans width, content blocks left-aligned
+- **Z-pattern:** Title top-left, visual top-right, CTA bottom-right
+
+**Violations to Avoid:**
+- Orphaned text (disconnected from other elements)
+- Centered body text (harder to scan than left-aligned)
+- Inconsistent alignment (some left, some centered on same slide)
+- Breaking visual grid without purpose
 
 ---
 
@@ -759,6 +1439,78 @@ Content → Using approved layout patterns
 - Fade in/out (0.3-0.4s ease-in-out)
 - Only one slide visible at a time
 - First slide has `.active` class on page load
+
+### Motion & Animation Constraints
+
+**Standard Slide Transition:**
+- **Type:** Fade only (opacity change)
+- **Duration:** 0.3-0.4s
+- **Easing:** `ease-in-out` (smooth acceleration/deceleration)
+- **No horizontal/vertical sliding** (distracting, inconsistent PDF output)
+
+**Approved Animation Types (Maximum 1-2 per deck):**
+
+1. **Fade In (Current Standard)**
+   - Smoothest, most professional
+   - PDF-safe (renders correctly in static output)
+   - Cognitive load: Minimal
+
+2. **Scale + Fade (Optional Enhancement)**
+   - Element scales from 0.95 to 1.0 while fading in
+   - Subtle depth effect
+   - Use sparingly (title slides, section dividers only)
+   ```css
+   @keyframes slideIn {
+       from { opacity: 0; transform: scale(0.95); }
+       to { opacity: 1; transform: scale(1); }
+   }
+   ```
+
+**Forbidden Animations:**
+- ❌ Horizontal slide (left/right) - Implies linear sequence, conflicts with branching narratives
+- ❌ Vertical slide (up/down) - Disorienting
+- ❌ Zoom in/out (>1.1 scale) - Motion sickness trigger
+- ❌ Rotation - Gimmicky, no functional purpose
+- ❌ 3D flips/cubes - Distracting, renders poorly in PDF
+
+**Within-Slide Animation (Stagger Rules):**
+
+If animating multiple elements on a single slide (e.g., list items appearing sequentially):
+
+**Stagger Timing:**
+- **First element:** 0s delay
+- **Second element:** 0.1-0.15s delay
+- **Third element:** 0.2-0.3s delay
+- **Maximum elements to stagger:** 5 (beyond 5, appears sequential is tedious)
+- **Total sequence duration:** < 1.5s (prevents audience impatience)
+
+**Example:**
+```css
+.slide.active li:nth-child(1) { animation: fadeIn 0.4s ease-in-out 0s; }
+.slide.active li:nth-child(2) { animation: fadeIn 0.4s ease-in-out 0.15s; }
+.slide.active li:nth-child(3) { animation: fadeIn 0.4s ease-in-out 0.3s; }
+```
+
+**When to Avoid Motion:**
+- **Bullet points:** Current system shows all at once (better for self-paced reading)
+- **Diagrams:** Animate only if demonstrating sequence; otherwise show complete
+- **Metrics:** Show all simultaneously (allows comparison)
+- **PDFs:** All animations render as final state (design with static output in mind)
+
+**Motion Accessibility:**
+- Respect `prefers-reduced-motion` media query
+- Provide instant transitions for users with vestibular disorders
+```css
+@media (prefers-reduced-motion: reduce) {
+    .slide { transition: none !important; }
+}
+```
+
+**Performance Guidelines:**
+- Use CSS transitions/animations (GPU-accelerated)
+- Avoid JavaScript-based animations (janky, CPU-intensive)
+- Limit simultaneous animations to 3-5 elements max
+- Test on lower-end devices (ensure smooth 60fps)
 
 ### JavaScript Implementation
 
@@ -955,6 +1707,112 @@ node generate_pdf.js
 - [ ] All assets load correctly
 - [ ] No console errors
 
+### Deck-Level Engagement QA Checklist
+
+**Purpose:** Ensure visual engagement and variation across the entire deck, not just individual slides.
+
+This checklist should be run after completing the full deck to audit overall engagement quality.
+
+#### Layout Variation Cadence
+
+Audit slide layout patterns across the deck:
+
+- [ ] **No more than 2 consecutive slides** use identical layout pattern
+- [ ] **Every 3-4 slides:** Layout pattern changes (list → diagram → split → cards)
+- [ ] **Every 5-7 slides:** Visual density shifts (text-heavy → visual-heavy)
+- [ ] **At least 1 section divider** if deck has 10+ slides
+
+**Layout Pattern Inventory:**
+- Count how many slides use each pattern (lists, diagrams, split columns, etc.)
+- Ensure no single pattern dominates (max 40% of deck)
+- Verify transitions between patterns feel intentional, not random
+
+#### Contrast Mix Validation
+
+Audit visual contrast and focal point distribution:
+
+- [ ] **Every slide has one clear focal point** (no competing elements)
+- [ ] **At least 3 different focal point types** across deck (heading, metric, diagram, visual)
+- [ ] **Color contrast ratios meet WCAG AA** (4.5:1 body, 7:1 headings)
+- [ ] **Background variety:** At least 2 different background treatments (if deck > 8 slides)
+
+**Contrast Patterns:**
+- Opening: High contrast (dark bg or large heading)
+- Middle: Varied contrast (mix of approaches)
+- Closing: High contrast (return to impact)
+
+#### Visual Rhythm Audit
+
+Evaluate pacing and visual interest over time:
+
+- [ ] **No visual monotony:** Layout changes prevent repetitive feel
+- [ ] **Rhythm pattern identified:** Problem → Solution → Proof → Outcome (or similar)
+- [ ] **Accent slides present:** 1-2 high-impact slides with distinct treatment
+- [ ] **White space varies:** Dense slides followed by spacious slides for breathing room
+
+**Rhythm Test:**
+- Flip through deck rapidly (2 seconds per slide)
+- Should feel varied, not monotonous
+- Should have clear visual "peaks" (high impact slides) and "valleys" (supporting detail)
+
+#### Engagement Red Flags
+
+Common issues that reduce engagement:
+
+**Visual:**
+- [ ] ❌ **More than 3 consecutive text-only slides** (add diagrams, metrics, or visuals)
+- [ ] ❌ **Identical heading sizes across all slides** (vary for emphasis)
+- [ ] ❌ **Same color palette on every slide** (introduce accent variations)
+- [ ] ❌ **No visual breaks** (every slide feels equally dense)
+
+**Hierarchy:**
+- [ ] ❌ **Competing focal points** on multiple slides (unclear where to look)
+- [ ] ❌ **Headings too long** (multiple h2 or h3 exceed character limits)
+- [ ] ❌ **Lists exceed 7 items** (break into multiple slides or condense)
+- [ ] ❌ **No primary element** (flat visual hierarchy)
+
+**Readability:**
+- [ ] ❌ **Text too small** (< 1rem body, < 3rem h2)
+- [ ] ❌ **Insufficient contrast** (light gray text on white background)
+- [ ] ❌ **Walls of text** (paragraphs > 3 lines without breaks)
+- [ ] ❌ **Inconsistent spacing** (gaps vary wildly between slides)
+
+#### Deck Coherence Check
+
+Ensure deck feels unified, not like a collection of random slides:
+
+- [ ] **Visual style consistent** (colors, fonts, spacing match design system)
+- [ ] **Logo placement consistent** (same position on all standard slides)
+- [ ] **Pattern usage consistent** (e.g., blue always means "primary action")
+- [ ] **Navigation narrative clear** (story flows from slide to slide)
+
+**Coherence Test Questions:**
+1. Can you identify which template this is at a glance?
+2. Do accent colors have consistent meaning across slides?
+3. Does each slide feel like part of the same deck?
+4. Is visual complexity balanced (not all simple, not all complex)?
+
+#### Performance Metrics (Engagement Goals)
+
+Target metrics for effective decks:
+
+- **Layout variety:** Minimum 4 different patterns across 10-slide deck
+- **Focal point distribution:** No focal type > 50% of slides
+- **White space:** Minimum 30% empty space per slide (average)
+- **Text density:** Maximum 40% of slides are text-heavy
+- **Visual peaks:** 2-3 high-impact slides per 10-slide deck
+- **Section breaks:** 1 divider per 8-10 slides (if deck is sectioned)
+
+#### Final Engagement Review
+
+Before finalizing deck:
+
+1. **Rapid flip test:** Flip through deck at 2s per slide - does it feel varied and engaging?
+2. **5-minute glance test:** Can someone understand core narrative from headings alone?
+3. **Squint test:** Blur eyes - do focal points stand out clearly?
+4. **Colleague review:** Ask someone unfamiliar with deck "What stands out?" on each slide
+5. **PDF export test:** Does deck maintain visual interest in static PDF format?
+
 ---
 
 ## 11. Template Selection Guide
@@ -1069,6 +1927,15 @@ node generate_pdf.js
 
 ## Version History
 
+- **v2.1** (2026-02-06): Added visual engagement priorities and logo usage rules (Issue #99)
+  - New Section 5.5: Logo & Logotype Usage (placement, sizing, dark/light variants)
+  - New Section 6.5: Visual Engagement Principles (contrast, rhythm, asymmetry, white space, tension)
+  - Enhanced typography system with headline constraints and emphasis rules
+  - Added background treatment and image usage guidelines
+  - New slide patterns: Section divider, impact metric, diagram style guide
+  - Strengthened hierarchy rules with one primary element enforcement
+  - Motion/transition constraints and stagger timing rules
+  - Deck-level engagement QA checklist for overall visual rhythm audit
 - **v2.0** (2026-02-05): Comprehensive documentation covering all three templates
 - **v1.0** (2026-02-05): Initial documentation for `/presentation/` only
 
