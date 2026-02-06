@@ -59,9 +59,11 @@ Before coding, read `/docs/` first using the task-routed order below.
 │
 ├── /presentations/         # Presentation deck system
 │   ├── core/               # Shared scripts
-│   ├── partnership/        # Template A
-│   ├── infrastructure/     # Template B
-│   └── scaling/            # Template C
+│   ├── partnership/        # Template A: Partnership Economics
+│   ├── infrastructure/     # Template B: Teaching Infrastructure
+│   ├── scaling/            # Template C: Scaling Teaching
+│   ├── co-founder/         # Template D: Co-Founder Pitch
+│   └── appendix/           # Supplementary: Scaling Reality
 │
 ├── /generated/             # All generated content
 │   ├── curriculum/         # Generated curriculum guide pages
