@@ -52,10 +52,23 @@ Before coding, read `/docs/` first using the task-routed order below.
 ├── /data/schools/          # School page JSON
 ├── /data/annotation-guides/# Annotation guide JSON
 │
-├── /curriculum/            # Generated curriculum guide pages
-├── /schools/               # Generated school pages
-├── /annotations/           # Generated annotation preview pages
-├── /studio/scenes/         # Generated scene pages
+├── /books/                 # Generated homepage book pages
+│   ├── the-giver/
+│   ├── macbeth/
+│   └── ... (8 total)
+│
+├── /presentations/         # Presentation deck system
+│   ├── core/               # Shared scripts
+│   ├── partnership/        # Template A
+│   ├── infrastructure/     # Template B
+│   └── scaling/            # Template C
+│
+├── /generated/             # All generated content
+│   ├── curriculum/         # Generated curriculum guide pages
+│   ├── annotations/        # Generated annotation preview pages
+│   ├── schools/            # Generated school pages
+│   └── studio/             # Generated studio scene pages
+│
 └── /docs/                  # Canonical methodology
 ```
 
@@ -66,8 +79,8 @@ Before coding, read `/docs/` first using the task-routed order below.
    - Build: `node build.js`
 
 2. Parent guides (dual system):
-   - Homepage texts at root: `node build-homepage-guides.js`
-   - Curriculum directory: `node build-parent-guides.js`
+   - Homepage texts in /books/: `node build-homepage-guides.js`
+   - Curriculum in /generated/curriculum/: `node build-parent-guides.js`
    - Template changes in `src/templates/_parent-guide-template.html` require both scripts
 
 3. Video scenes:

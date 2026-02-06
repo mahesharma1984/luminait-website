@@ -29,45 +29,44 @@ Last Updated: 2026-02-06
 
 The luminAIT presentation system consists of **three distinct presentation templates**, each optimized for different audiences and purposes. All three share common technical infrastructure but differ in visual design and narrative focus.
 
-### Current State (Pre-Refactor)
+### Legacy Structure (Pre-2026 Reorganization)
 ```
 /presentation/     → Partnership Economics Overview (13 slides)
 /pitch-a/          → Teaching Infrastructure (11 slides)
 /pitch-b/          → How luminAIT Scales Teaching (11 slides)
 ```
 
-**Problem:** Each folder contains duplicate scripts (script.js, generate_pdf.js) causing maintenance bloat.
+**Problem:** Each folder contained duplicate scripts; root directory cluttered with 30+ folders.
 
-**Solution:** Shared core scripts with template-specific content/styles (see Section 2).
+**Solution:** Shared core scripts + organized under /presentations/ directory (see Section 2).
 
 ---
 
 ## 2. System Architecture
 
-### Proposed Shared Structure
+### Current Structure (Implemented)
 
 ```
-/presentation-core/          # Shared infrastructure (NEW)
-├── script.js                # Shared navigation logic
-├── generate_pdf.js          # Shared PDF generator
-└── assets/
-    ├── logotype_trimmed.svg
-    └── logo-mark.svg
-
-/presentation/               # Template A: Partnership Economics
-├── index.html               # Content & structure
-├── style.css                # Design system
-└── config.json              # Template configuration (NEW)
-
-/pitch-a/                    # Template B: Teaching Infrastructure
-├── index.html
-├── style.css
-└── config.json
-
-/pitch-b/                    # Template C: Scaling Teaching
-├── pitch-b.html
-├── style.css
-└── config.json
+/presentations/
+├── core/                    # Shared infrastructure
+│   ├── script.js            # Shared navigation logic
+│   ├── generate_pdf.js      # Shared PDF generator
+│   └── build-all.js         # Build all presentations
+│
+├── partnership/             # Template A: Partnership Economics
+│   ├── index.html           # Content & structure
+│   ├── style.css            # Design system
+│   └── config.json          # Template configuration
+│
+├── infrastructure/          # Template B: Teaching Infrastructure
+│   ├── index.html
+│   ├── style.css
+│   └── config.json
+│
+└── scaling/                 # Template C: Scaling Teaching
+    ├── pitch-b.html
+    ├── style.css
+    └── config.json
 ```
 
 ### Benefits
@@ -118,7 +117,7 @@ The luminAIT presentation system consists of **three distinct presentation templ
 
 ---
 
-### Template B: Teaching Infrastructure (`/pitch-a/`)
+### Template B: Teaching Infrastructure (`/presentations/infrastructure/`)
 
 **Purpose:** B2B sales pitch focused on teaching infrastructure as economic solution
 **Slides:** 11
@@ -160,7 +159,7 @@ The luminAIT presentation system consists of **three distinct presentation templ
 
 ---
 
-### Template C: How luminAIT Scales Teaching (`/pitch-b/`)
+### Template C: How luminAIT Scales Teaching (`/presentations/scaling/`)
 
 **Purpose:** Operational implementation pitch with specific scaling mechanics
 **Slides:** 11
@@ -1623,9 +1622,9 @@ const path = require('path');
 ### Template-Specific Outputs
 
 **Current outputs:**
-- `/presentation/` → `presentation_v1.8.pdf`
-- `/pitch-a/` → `pitch_a.pdf`
-- `/pitch-b/` → (no PDF currently generated)
+- `/presentations/partnership/` → `presentation.pdf`
+- `/presentations/infrastructure/` → `pitch_a.pdf`
+- `/presentations/scaling/` → `pitch_b.pdf`
 
 ### Requirements
 
@@ -1888,13 +1887,13 @@ Before finalizing deck:
 ## 13. Migration Plan (Shared Core)
 
 ### Phase 1: Create Shared Core
-1. Create `/presentation-core/` folder
+1. Create `/presentations/core/` folder
 2. Move `script.js` to core (single source)
 3. Move `generate_pdf.js` to core (with config support)
-4. Move assets to `/presentation-core/assets/`
+4. Move assets to `/presentations/core/assets/`
 
 ### Phase 2: Update Templates
-1. Update each HTML to reference `../presentation-core/script.js`
+1. Update each HTML to reference `../core/script.js`
 2. Create `config.json` in each template folder
 3. Update PDF generator to read config for output path
 4. Test all three presentations

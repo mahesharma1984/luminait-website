@@ -17,7 +17,7 @@ const path = require('path');
 // Paths
 const DATA_DIR = path.join(__dirname, 'data', 'annotation-guides');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
-const OUTPUT_DIR = path.join(__dirname, 'annotations');
+const OUTPUT_DIR = path.join(__dirname, 'generated', 'annotations');
 const IMAGES_DIR = path.join(__dirname, 'images', 'annotations');
 
 // Load templates
