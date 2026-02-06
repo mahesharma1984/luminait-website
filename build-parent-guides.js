@@ -17,7 +17,7 @@ const path = require('path');
 // Paths
 const DATA_DIR = path.join(__dirname, 'data', 'parent-guides');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
-const OUTPUT_DIR = path.join(__dirname, 'curriculum');
+const OUTPUT_DIR = path.join(__dirname, 'generated', 'curriculum');
 
 // Load templates
 const guideTemplate = fs.readFileSync(
