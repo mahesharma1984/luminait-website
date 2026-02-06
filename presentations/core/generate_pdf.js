@@ -50,8 +50,22 @@ const fs = require('fs');
       content: `
       @media print {
         @page { size: 1280px 720px; margin: 0; }
-        body { margin: 0; }
-        .slide { break-after: always; page-break-after: always; }
+        body { margin: 0; height: auto; overflow: visible; display: block; }
+        .deck-container { height: auto; overflow: visible; }
+        .slide { 
+          display: flex !important; 
+          position: relative !important; 
+          height: 720px !important;
+          width: 1280px !important;
+          break-after: always; 
+          page-break-after: always;
+          top: auto !important;
+          left: auto !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        /* Hide controls in print */
+        .controls { display: none !important; }
       }
     `
     });

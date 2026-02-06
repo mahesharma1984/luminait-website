@@ -19,6 +19,14 @@ const templates = [
   {
     name: 'How luminAIT Scales Teaching',
     dir: path.join(__dirname, '..', 'scaling')
+  },
+  {
+    name: 'Co-Founder Pitch: Tutor Adoption',
+    dir: path.join(__dirname, '..', 'co-founder')
+  },
+  {
+    name: 'Appendix: Scaling Reality',
+    dir: path.join(__dirname, '..', 'appendix')
   }
 ];
 

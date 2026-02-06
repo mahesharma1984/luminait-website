@@ -1,0 +1,8 @@
+{
+    "templateName": "Co-Founder Pitch: Tutor Adoption",
+    "htmlFile": "index.html",
+    "pdfOutput": "co_founder_pitch.pdf",
+    "slideCount": 13,
+    "designSystem": "professional-slate",
+    "description": "Pitch focused on tutor adoption as the primary validation mechanism"
+}
