@@ -21,9 +21,10 @@ Read in this order:
 
 ### C. Debugging / Regressions
 Read in this order:
-1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (Part 4: Measure -> Diagnose -> Fix -> Verify)
-2. `docs/technical/BUILD_SYSTEM.md` (Troubleshooting section)
-3. `docs/technical/UX_PROCESS.md` (Stage 6 Build Validation)
+1. `docs/DEBUG_RUNBOOK.md` (symptom lookup -- start here)
+2. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (Part 4: Measure -> Diagnose -> Fix -> Verify)
+3. `docs/technical/BUILD_SYSTEM.md` (Troubleshooting section)
+4. `docs/technical/UX_PROCESS.md` (Stage 6 Build Validation)
 
 ### D. Product Theory / Messaging / Architecture
 Read in this order:
@@ -34,6 +35,12 @@ Read in this order:
 5. `docs/theory/05_CHANNEL_ALIGNMENT.md`
 6. `docs/technical/SITE_ARCHITECTURE.md`
 7. `docs/technical/FUNNEL_STRATEGY.md`
+
+### E. Development Methodology / Meta-Process
+Read in this order:
+1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
+2. `docs/methodology/knowledge-base/README.md` (reading order)
+3. `docs/methodology/skills/README.md` (composition guide)
 
 ## 2) Source-of-Truth Rules (Non-Negotiable)
 
@@ -110,15 +117,24 @@ Beyond core builds, this repo also has:
 - Script: `composite_assets.py`
 - Purpose: compose social/video image assets from template files
 
-## 8) Documentation Precedence
+## 8) Operational Documents
+
+- `docs/DEBUG_RUNBOOK.md` -- symptom-to-fix lookup for common build failures
+- `docs/WORKFLOW_REGISTRY.md` -- named build procedures (atomic + composed)
+- `docs/CI_RULES.md` -- safety guardrails for commits and AI-assisted work
+- `docs/CORE_DOCS_INDEX.md` -- canonical source for each concept
+
+## 9) Documentation Precedence
 
 If docs conflict, use this order:
-1. `docs/theory/*` and `docs/technical/*` (canonical)
-2. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
-3. Agent-specific files (`CLAUDE.md`, `GEMINI.md`)
-4. `docs/_archive/*` (reference only)
+1. `docs/theory/*` and `docs/technical/*` (canonical product/technical docs)
+2. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (development methodology)
+3. `docs/DEBUG_RUNBOOK.md` + `docs/WORKFLOW_REGISTRY.md` (operational)
+4. Agent-specific files (`CLAUDE.md`, `GEMINI.md`)
+5. `docs/methodology/*` (reference -- theory and skills)
+6. `docs/_archive/*` (reference only)
 
-## 9) Canonical Entry Doc
+## 10) Canonical Entry Doc
 
 For planning and prompt setup, prefer:
 - `docs/START_HERE.md` (packetized doc loading)

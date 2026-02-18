@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luminAIT: MVP Pitch</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SVGs for Icons -->
+    <svg style="display: none;">
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </symbol>
+    </svg>
+    <style>
+        /* Local specific styles for custom visuals */
+        .variance-list li {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .variance-list li:last-child {
+            border-bottom: none;
+        }
+
+        .col-3 {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="deck-container">
+
+        <!-- SLIDE 1: TITLE -->
+        <div class="slide title-slide active" style="justify-content: center; align-items: center; text-align: center;">
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo-large" style="margin-bottom: 40px;">
+            <h1>Phase 1 MVP: <br> Stabilising Pedagogy to Measure Economics</h1>
+            <p class="sub-line" style="font-size: 1.8rem; color: var(--text-primary); margin-top: 20px;">
+                One cohort · One text · One term
+            </p>
+            <div
+                style="margin-top: 60px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">
+                A bounded verification exercise.
+            </div>
+        </div>
+
+        <!-- SLIDE 2: THE CORE PROBLEM -->
+        <div class="slide type-problem">
+            <div class="slide-header">
+                <h2>Instructional outcomes vary too widely to compound.</h2>
+            </div>
+            <div class="slide-body">
+                <p style="font-size: 1.8rem; max-width: 900px;">
+                    In most education settings, teaching outcomes fluctuate between classrooms, teachers, and cohorts.
+                    This variance makes learning progression difficult to compare, difficult to improve, and impossible
+                    to price reliably.
+                </p>
+                <div style="margin-top: 40px; border-left: 4px solid white; padding-left: 30px;">
+                    <p style="font-size: 1.5rem; font-style: italic;">
+                        When outcomes are unstable, improvement resets each term and economics stall.
+                    </p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Pedagogical Entropy</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo" style="filter: brightness(0) invert(1);">
+        </div>
+
+        <!-- SLIDE 3: WHERE VARIANCE COMES FROM -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Variance accumulates through instructional change.</h2>
+                <h3>In most education settings, instruction changes continuously.</h3>
+            </div>
+            <div class="slide-body">
+                <ul class="clean-list variance-list" style="font-size: 1.6rem;">
+                    <li>Teachers change across classes or terms</li>
+                    <li>Curriculum sequencing changes year to year</li>
+                    <li>Lessons and instructions vary week to week</li>
+                    <li>Students receive inconsistent or subjective feedback</li>
+                </ul>
+                <div style="margin-top: 30px; font-weight: 600; color: var(--text-secondary);">
+                    None of these changes are individually catastrophic. Together, they destabilise learning.
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Sources of Variance</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 4: EFFECTS OF VARIANCE -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Variance prevents learning from compounding.</h2>
+                <h3>When instruction is inconsistent, progress resets rather than accumulates.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div style="padding-right: 20px;">
+                        <p>As variance increases:</p>
+                        <ul class="clean-list">
+                            <li>Learning progression becomes opaque</li>
+                            <li>Improvement becomes episodic</li>
+                            <li>Results depend on individual delivery</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <!-- Fading/Broken Line SVG -->
+                        <svg width="400" height="200" viewBox="0 0 400 200">
+                            <!-- Axis -->
+                            <line x1="20" y1="180" x2="380" y2="180" stroke="#cbd5e1" stroke-width="2" />
+                            <line x1="20" y1="180" x2="20" y2="20" stroke="#cbd5e1" stroke-width="2" />
+                            <!-- Broken Learning Path -->
+                            <path d="M 20 160 C 50 140, 80 150, 100 130" stroke="#334155" stroke-width="3"
+                                fill="none" />
+                            <path d="M 120 150 C 150 130, 180 140, 200 120" stroke="#334155" stroke-width="3"
+                                fill="none" stroke-opacity="0.7" />
+                            <path d="M 220 140 C 250 120, 280 150, 300 140" stroke="#334155" stroke-width="3"
+                                fill="none" stroke-opacity="0.4" stroke-dasharray="5,5" />
+                            <path d="M 320 160 C 350 150, 370 170, 380 160" stroke="#334155" stroke-width="3"
+                                fill="none" stroke-opacity="0.2" stroke-dasharray="2,2" />
+                            <text x="300" y="195" font-family="Inter" font-size="12" fill="#64748b">Time (Weeks)</text>
+                            <text x="30" y="30" font-family="Inter" font-size="12" fill="#64748b">Retention</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">The Fragility of Noise</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 5: THE PRINCIPLE OF STABILISATION -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Consistency emerges when instructional elements are standardised.</h2>
+                <h3>When constraints are applied, variance begins to collapse.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="lane-diagram" style="margin-top: 40px;">
+                    <div class="lane-node" style="opacity: 0.6;">Few Constraints</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node">More Constraints</div>
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node" style="background: var(--highlight-bg); border-color: var(--accent-color);">
+                        Stable Outcomes</div>
+                </div>
+                <p style="text-align: center; margin-top: 40px; color: var(--text-secondary);">
+                    Standardisation does not optimise performance immediately. It stabilises it.
+                </p>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Theory of Constraints</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 6: WHAT IS BEING STANDARDISED -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Stability comes from standardising cognitive work.</h2>
+            </div>
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div class="symmetric-card">
+                        <h4>Attention</h4>
+                        <p>What students must notice in the text</p>
+                    </div>
+                    <div class="symmetric-card">
+                        <h4>Selection</h4>
+                        <p>How evidence must be selected</p>
+                    </div>
+                    <div class="symmetric-card">
+                        <h4>Structure</h4>
+                        <p>How reasoning must be structured</p>
+                    </div>
+                    <div class="symmetric-card">
+                        <h4>Verification</h4>
+                        <p>How quality is checked</p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">These constraints align attention and reduce
+                    cognitive drift.</div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Four Control Points</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 7: EFFECT ON LEARNING OUTCOMES -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Reduced variance makes progression visible.</h2>
+                <h3>Improvement accumulates through repetition under constraint.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <p>When students perform the same cognitive operations, week-to-week change becomes observable.
+                        </p>
+                        <p style="margin-top: 20px;">Progress becomes measurable rather than anecdotal.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <!-- Upward Line SVG -->
+                        <svg width="400" height="250" viewBox="0 0 400 250">
+                            <!-- Grid lines -->
+                            <line x1="40" y1="210" x2="380" y2="210" stroke="#cbd5e1" stroke-width="2" />
+                            <line x1="40" y1="210" x2="40" y2="20" stroke="#cbd5e1" stroke-width="2" />
+
+                            <!-- Idealized Growth Curve -->
+                            <path d="M 40 210 Q 150 200, 200 120 T 360 40" stroke="#166534" stroke-width="4"
+                                fill="none" />
+
+                            <!-- Data points -->
+                            <circle cx="100" cy="190" r="4" fill="#166534" />
+                            <circle cx="160" cy="150" r="4" fill="#166534" />
+                            <circle cx="220" cy="110" r="4" fill="#166534" />
+                            <circle cx="280" cy="80" r="4" fill="#166534" />
+                            <circle cx="340" cy="50" r="4" fill="#166534" />
+
+                            <text x="340" y="235" font-family="Inter" font-size="12" fill="#64748b">Time</text>
+                            <text x="0" y="20" font-family="Inter" font-size="12" fill="#64748b"
+                                transform="rotate(-90 15,20)">Proficiency</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Visible Learning</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 8: EFFECT ON TEACHERS AND DELIVERY -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Delivery becomes reproducible.</h2>
+                <h3>Teachers operate within a constrained instructional system.</h3>
+            </div>
+            <div class="slide-body">
+                <div
+                    style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 30px;">
+                    <!-- Multiple Inputs -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="lane-node" style="padding: 15px; width: 140px;">Teacher A</div>
+                        <div class="lane-node" style="padding: 15px; width: 140px;">Teacher B</div>
+                        <div class="lane-node" style="padding: 15px; width: 140px;">Teacher C</div>
+                    </div>
+
+                    <!-- Funnel/System -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 3rem; color: var(--accent-color); line-height: 1;">}</div>
+                        <div
+                            style="background: var(--accent-color); color: white; padding: 10px 20px; border-radius: 20px; font-weight: 600; margin-left: 20px;">
+                            System Constraints
+                        </div>
+                    </div>
+
+                    <!-- Single Output -->
+                    <div class="lane-arrow">→</div>
+                    <div class="lane-node"
+                        style="background: var(--success-bg); border-color: var(--success-color); color: var(--success-color); width: 200px;">
+                        Standardised<br>Outcome
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p>The system absorbs variability and enforces quality structurally.</p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">System over Heroism</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 9: EFFECT ON IMPROVEMENT -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>Improvement becomes incremental rather than heroic.</h2>
+                <h3>Small adjustments persist instead of being lost to noise.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="symmetric-grid">
+                    <div>
+                        <p>Once outcomes stabilise, changes to instruction produce detectable effects. Improvement
+                            compounds across weeks.</p>
+                        <p style="margin-top: 20px; font-weight: 600;">This creates a feedback loop between design and
+                            outcome.</p>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: flex-end;">
+                        <!-- Stepwise SVG -->
+                        <svg width="350" height="250" viewBox="0 0 350 250">
+                            <rect x="20" y="200" width="60" height="50" fill="#e2e8f0" />
+                            <rect x="80" y="170" width="60" height="80" fill="#cbd5e1" />
+                            <rect x="140" y="140" width="60" height="110" fill="#94a3b8" />
+                            <rect x="200" y="110" width="60" height="140" fill="#64748b" />
+                            <rect x="260" y="80" width="60" height="170" fill="#334155" />
+
+                            <!-- Arrow indicating improvements -->
+                            <path d="M 50 190 L 290 70" stroke="#166534" stroke-width="2" border-style="dashed"
+                                stroke-dasharray="4,4" marker-end="url(#arrowhead)" />
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
+                                    orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#166534" />
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Compounding Returns</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 10: EFFECT ON ECONOMICS -->
+        <div class="slide type-economics">
+            <div class="slide-header">
+                <h2>Predictable outcomes reduce commercial risk.</h2>
+                <h3>When learning progression is visible, value becomes legible.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="chevron-chain" style="margin-bottom: 50px;">
+                    <div class="chevron">Stability</div>
+                    <div class="chevron">Visibility</div>
+                    <div class="chevron">Confidence</div>
+                    <div class="chevron" style="background: var(--success-color); color: white;">Retention</div>
+                </div>
+                <div class="symmetric-grid">
+                    <div class="invariant-frame" style="font-size: 1.2rem; padding: 20px;">
+                        <strong>Parents understand:</strong><br><br>
+                        What is improving and why. Decisions are based on evidence rather than trust alone.
+                    </div>
+                    <div class="invariant-frame"
+                        style="font-size: 1.2rem; padding: 20px; border-left-color: var(--success-color);">
+                        <strong>Economic Result:</strong><br><br>
+                        Conversion, retention, and ARPU respond to reduced uncertainty.
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Economics of Trust</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 11: THE MVP QUESTION -->
+        <div class="slide type-system" style="justify-content: center; text-align: center;">
+            <div class="slide-header">
+                <h2>Does stabilising pedagogy move unit economics?</h2>
+            </div>
+            <div class="slide-body" style="align-items: center;">
+                <h3
+                    style="font-size: 2.2rem; font-weight: 600; color: var(--text-primary); max-width: 900px; margin-bottom: 50px;">
+                    If instructional variance is reduced at the delivery layer, do conversion, retention, and ARPU
+                    change without increasing lead volume?
+                </h3>
+                <div style="display: flex; gap: 30px; justify-content: center; opacity: 0.7;">
+                    <span style="border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 20px;">Same
+                        leads</span>
+                    <span style="border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 20px;">Same
+                        pricing</span>
+                    <span style="border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 20px;">Same
+                        teachers</span>
+                    <span style="border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 20px;">Same
+                        brand</span>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">The Scientific Question</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 12: THE MVP SCOPE -->
+        <div class="slide type-boundary">
+            <div class="slide-header">
+                <h2>The MVP Scope</h2>
+                <h3>A single controlled implementation.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="invariant-frame"
+                    style="max-width: 600px; margin: 0 auto; border: 4px solid var(--accent-color); border-radius: 8px;">
+                    <ul class="clean-list">
+                        <li><strong>One</strong> text-anchored cohort</li>
+                        <li><strong>One</strong> year level</li>
+                        <li>Compatible ability band</li>
+                        <li><strong>One</strong> academic term</li>
+                        <li>Founder-led delivery</li>
+                    </ul>
+                </div>
+                <p style="text-align: center; margin-top: 30px;">The purpose is to isolate instructional stability and
+                    measure its effects.</p>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Boundary Conditions</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 13: MEASUREMENT CONDITIONS -->
+        <div class="slide type-economics">
+            <div class="slide-header">
+                <h2>Measurement Conditions</h2>
+                <h3>Outcomes are pre-defined.</h3>
+            </div>
+            <div class="slide-body">
+                <div class="symmetric-grid col-3">
+                    <div class="symmetric-card text-center">
+                        <span class="metric-value">01</span>
+                        <h4>Conversion</h4>
+                        <p>Trial to paid conversion</p>
+                    </div>
+                    <div class="symmetric-card text-center">
+                        <span class="metric-value">02</span>
+                        <h4>Retention</h4>
+                        <p>Across the term</p>
+                    </div>
+                    <div class="symmetric-card text-center">
+                        <span class="metric-value">03</span>
+                        <h4>Progress</h4>
+                        <p>Evidence of learning</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px; font-weight: 600; color: var(--text-secondary);">
+                    If these do not change, the experiment ends.
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Stop/Go Gates</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- SLIDE 14: DECISION LOGIC -->
+        <div class="slide type-system">
+            <div class="slide-header">
+                <h2>Proof precedes replication.</h2>
+            </div>
+            <div class="slide-body">
+                <div
+                    style="display: flex; gap: 40px; justify-content: center; align-items: flex-start; margin-top: 40px;">
+                    <!-- Path A -->
+                    <div
+                        style="flex: 1; padding: 30px; border-top: 4px solid var(--success-color); background: var(--slide-bg);">
+                        <h4 style="color: var(--success-color);">If metrics move:</h4>
+                        <p>The system is ready for replication.</p>
+                        <p style="margin-top: 10px; font-size: 1rem; color: var(--text-secondary);">→ Proceed to Phase 2
+                        </p>
+                    </div>
+
+                    <!-- Path B -->
+                    <div
+                        style="flex: 1; padding: 30px; border-top: 4px solid var(--text-secondary); background: var(--slide-bg); opacity: 0.8;">
+                        <h4 style="color: var(--text-secondary);">If metrics stall:</h4>
+                        <p>Further scaling is unjustified.</p>
+                        <p style="margin-top: 10px; font-size: 1rem; color: var(--text-secondary);">→ Engagement ends
+                        </p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 40px;">This engagement exists to establish that boundary.</p>
+            </div>
+            <div class="slide-footer">
+                <div class="constraint-text">Replication Logic</div>
+            </div>
+            <img src="logotype_trimmed.svg" alt="luminAIT" class="brand-logo">
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" aria-label="Previous Slide">
+                <svg class="icon">
+                    <use href="#icon-arrow-left"></use>
+                </svg>
+            </button>
+            <div
+                style="display: flex; align-items: center; gap: 5px; color: var(--text-secondary); font-variant-numeric: tabular-nums;">
+                <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">14</span>
+            </div>
+            <button id="nextBtn" class="control-btn" aria-label="Next Slide">
+                <svg class="icon">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="../core/script.js"></script>
+    <script>
+        // Fallback script if core/script.js is missing or minimal
+        if (typeof updateSlide === 'undefined') {
+            document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.slide');
+                const totalSlides = slides.length;
+                const currentSlideNum = document.getElementById('currentSlideNum');
+                const totalSlidesNum = document.getElementById('totalSlidesNum');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                let currentIndex = 0;
+
+                totalSlidesNum.textContent = totalSlides;
+
+                function updateSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('active');
+                        if (i === index) {
+                            slide.classList.add('active');
+                        }
+                    });
+                    currentSlideNum.textContent = index + 1;
+
+                    prevBtn.disabled = index === 0;
+                    nextBtn.disabled = index === totalSlides - 1;
+                    prevBtn.style.opacity = index === 0 ? '0.5' : '1';
+                    nextBtn.style.opacity = index === totalSlides - 1 ? '0.5' : '1';
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateSlide(currentIndex);
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < totalSlides - 1) {
+                        currentIndex++;
+                        updateSlide(currentIndex);
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === ' ') {
+                        if (currentIndex < totalSlides - 1) {
+                            currentIndex++;
+                            updateSlide(currentIndex);
+                        }
+                    } else if (e.key === 'ArrowLeft') {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateSlide(currentIndex);
+                        }
+                    }
+                });
+
+                updateSlide(0);
+            });
+        }
+    </script>
+</body>
+
+</html>
