@@ -1,32 +1,46 @@
-# SITE ARCHITECTURE v2.0
+# SITE ARCHITECTURE v4.0
 
-**Date:** January 27, 2026  
-**Status:** Active — canonical reference for URL structure  
-**Supersedes:** Previous site architecture docs
-**Related:** [Customer Journey](../theory/02_CUSTOMER_JOURNEY.md) (funnel design), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md) (proof point strategy)
+**Date:** February 19, 2026
+**Status:** Active — canonical reference for URL structure
+**Supersedes:** v3.2 (Parent-Direct as primary)
+**Related:** [Commercial Thesis](../theory/00_COMMERCIAL_THESIS.md) (B2B anchor), [Customer Journey](../theory/02_CUSTOMER_JOURNEY.md) (parent funnel), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md) (proof point strategy), [Funnel Strategy](./FUNNEL_STRATEGY.md) (funnel hierarchy)
 **Archived sources:** `../_archive/FUNNEL_ARCHITECTURE_v2_0.md`, `../_archive/METHODOLOGY_DEMO_SPEC_v1_0.md`, `../_archive/FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md`
 
 ---
 
 ## 1. OVERVIEW
 
-Site structure supporting three distinct funnels.
+Site structure supporting the B2B partnership sale as primary commercial strategy, with parent-direct and PLG funnels as subordinate proof layers.
 
-**Funnel Priority:** Funnel 2 (Parent-Direct) is the **PRIMARY** conversion path. Funnels 1 and 3 are secondary entry points that feed into the parent-direct flow.
+**Strategy:** B2B cohort-build partnership is the **PRIMARY** commercial strategy. Parent-direct (Funnel 2), PLG (Funnel 1B), and social (Funnel 3) are proof layers that reinforce the B2B sale. B2B messaging is constrained to the partnership page; the rest of the site demonstrates infrastructure value through parent-facing and student-facing assets.
 
 ```
 luminait.app/
 │
-├── FUNNEL 2: PARENT-DIRECT [PRIMARY] ──────────────────────
+├── B2B PARTNERSHIP [PRIMARY COMMERCIAL STRATEGY] ──────────
+│   │
+│   └── /partners/            → Partnership page (cohort economics,
+│                                infrastructure showcase, engagement CTA)
+│
+├── PROOF LAYER 2: PARENT-DIRECT ───────────────────────────
+│   │   (Demonstrates parent experience that partner inherits)
 │   │
 │   ├── /                     → Homepage (text grid, parent-facing)
-│   ├── /schools/             → School-first entry point (NEW)
+│   ├── /schools/             → School-first entry point
 │   │   └── /schools/[school]/→ Text lists by school
 │   ├── /[text-slug]/         → ✅ Text-specific course outlines (8 books)
 │   │                            (the-giver, macbeth, animal-farm, etc.)
 │   └── /course/              → Enrollment
 │
-├── FUNNEL 1: ANALYSIS GUIDES ───────────────────────────────
+├── PROOF LAYER 1B: ANNOTATION GUIDE PLG ───────────────────
+│   │   (Demonstrates demand signal + infrastructure quality)
+│   │
+│   ├── /annotations/         → ✅ Annotation guides hub
+│   └── /annotations/[text]/  → ✅ Preview + download gate + parent bridge
+│                               (the-outsiders, the-giver)
+│
+├── PROOF LAYER 1: ANALYSIS GUIDES ─────────────────────────
+│   │   (Demonstrates analytical depth)
 │   │
 │   ├── /vce/                 → VCE hub (not implemented)
 │   │   └── /vce/[text]/      → Full analysis guides
@@ -35,13 +49,8 @@ luminait.app/
 │   └── /ib/                  → IB hub (not implemented)
 │       └── /ib/[text]/       → Full analysis guides
 │
-├── FUNNEL 1B: ANNOTATION GUIDE PLG (Student-First Entry) ─
-│   │
-│   ├── /annotations/         → ✅ Annotation guides hub
-│   └── /annotations/[text]/  → ✅ Preview + download gate + parent bridge
-│                               (the-outsiders, the-giver)
-│
-├── FUNNEL 3: VIDEO-TO-PARENT (Social Discovery) ───────────
+├── PROOF LAYER 3: VIDEO-TO-PARENT (Social Discovery) ─────
+│   │   (Demonstrates reach + credence bypass)
 │   │
 │   └── /studio/              → Video Studio (scene playback)
 │       ├── /studio/scenes/   → ✅ Auto-generated scene pages
@@ -62,9 +71,105 @@ luminait.app/
 
 ---
 
-## 2. FUNNEL 2 PAGES (Parent-Direct)
+## 2. B2B PARTNERSHIP PAGE `/partners/`
 
-### 2.1 Homepage `/`
+**Role:** Single B2B surface. Presents the cohort economics model, showcases instructional infrastructure, and links to proof layers across the site. All B2B messaging is constrained to this page.
+
+**Status:** PLANNED (highest priority)
+
+**Audience:** Tutoring company operators, education business owners evaluating a partnership engagement.
+
+**Content Structure:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ NAV: Logo          (standard nav — partners page not in     │
+│                     parent-facing primary nav)               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  HERO                                                       │
+│  ─────                                                      │
+│  Cohort Build Partnership                                   │
+│                                                             │
+│  We design, launch, stabilise, and hand over a single       │
+│  text-anchored cohort capable of generating ~$18–20k        │
+│  in lifecycle revenue.                                      │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  COHORT ECONOMICS                                           │
+│  ────────────────                                           │
+│  10 students × $600/term × 3-term lifecycle = ~$18k         │
+│  Ramp visual: Term 1 (build) → Term 2 (stabilise)          │
+│              → Term 3+ (steady state)                       │
+│  Expansion: text-by-text replication                        │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ENGAGEMENT STRUCTURE                                       │
+│  ────────────────────                                       │
+│  What we deliver:                                           │
+│  1. Design one viable cohort                                │
+│  2. Deliver Term 1 directly                                 │
+│  3. Stabilise progression + retention                       │
+│  4. Train your teachers                                     │
+│  5. Hand over delivery framework                            │
+│  6. Continue materials licensing                            │
+│                                                             │
+│  What you provide:                                          │
+│  • Lead flow • Operations • Teachers                        │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  INFRASTRUCTURE SHOWCASE                                    │
+│  ───────────────────────                                    │
+│  "See what your teachers will deliver"                      │
+│  → Annotation guide example (/annotations/[text]/)          │
+│  → Curriculum guide example (/[text-slug]/)                 │
+│  → Progress report example (/progress/)                     │
+│  → Measurement framework overview                           │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  PARENT EXPERIENCE PROOF                                    │
+│  ───────────────────────                                    │
+│  "See what parents experience"                              │
+│  → Homepage parent journey (/[text-slug]/ → /course/)       │
+│  → School-specific pages (/schools/[school]/)               │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  OUTCOMES                                                   │
+│  ────────                                                   │
+│  Observed founder-led cohort outcomes:                      │
+│  • Conversion, retention, class growth data                 │
+│  • Before/after writing samples                             │
+│  → Full results (/results/)                                 │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  CTA                                                        │
+│  ───                                                        │
+│  [Request Engagement Proposal]                              │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ FOOTER                                                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**SEO Target:** "English tutoring partnership", "tutoring business infrastructure", branded B2B searches
+
+**Voice:** Business-facing. Direct, evidence-based, no marketing language. Show the math.
+
+**Design:** Uses `page-marketing.css` base with B2B-specific overrides. Clean, data-forward layout. No parent-voice softness.
+
+**Navigation:** Accessible via footer link or direct URL. NOT in the parent-facing primary nav to avoid confusing parents.
+
+---
+
+## 3. PROOF LAYER: PARENT-DIRECT PAGES (Funnel 2)
+
+### 3.1 Homepage `/`
 
 **Role:** Entry point for parent-direct funnel. Text-match prominent.
 
@@ -142,7 +247,7 @@ luminait.app/
 
 ---
 
-### 2.2 School Directory `/schools/` (NEW)
+### 3.2 School Directory `/schools/`
 
 **Role:** High-relevance entry point. Targets parents searching by school name.
 
@@ -160,7 +265,7 @@ luminait.app/
 
 ---
 
-### 2.3 Text-Specific Course Outline `/[text-slug]/`
+### 3.3 Text-Specific Course Outline `/[text-slug]/`
 
 **Role:** The core proof point (Stage 2 of Credence Framework). Proves detailed preparation for the specific text.
 
@@ -205,7 +310,7 @@ luminait.app/
 
 ---
 
-### 2.3 Course Page `/course/`
+### 3.4 Course Page `/course/`
 
 **Role:** Enrollment page. What they're buying.
 
@@ -272,9 +377,9 @@ luminait.app/
 
 ---
 
-## 3. FUNNEL 1 PAGES (Analysis Guides)
+## 4. PROOF LAYER: ANALYSIS GUIDE PAGES (Funnel 1)
 
-### 3.1 Curriculum Hub `/vce/`, `/hsc/`, `/ib/`
+### 4.1 Curriculum Hub `/vce/`, `/hsc/`, `/ib/`
 
 **Role:** Entry point for curriculum-specific student searches.
 
@@ -324,7 +429,7 @@ luminait.app/
 
 ---
 
-### 3.2 Analysis Guide `/vce/[text]/`
+### 4.2 Analysis Guide `/vce/[text]/`
 
 **Role:** Full SEO content. Steps 1-5. Demonstrates value, captures email.
 
@@ -349,9 +454,9 @@ Step 5: Write the Essay (gated — email capture)
 
 ---
 
-## 3B. FUNNEL 1B PAGES (Annotation Guide PLG)
+## 5. PROOF LAYER: ANNOTATION GUIDE PLG PAGES (Funnel 1B)
 
-### 3B.1 Annotations Hub `/annotations/`
+### 5.1 Annotations Hub `/annotations/`
 
 **Role:** Student-first entry point. Lower-friction PLG funnel that captures student intent via SEO/social, then bridges to parent-direct conversion.
 
@@ -417,7 +522,7 @@ Step 5: Write the Essay (gated — email capture)
 
 ---
 
-### 3B.2 Annotation Preview Page `/annotations/[text]/`
+### 5.2 Annotation Preview Page `/annotations/[text]/`
 
 **Role:** Preview + download gate + parent bridge. Demonstrates value, captures email/intent, bridges to parent-direct funnel.
 
@@ -530,9 +635,9 @@ Parent curriculum guide or course page (parent-direct funnel)
 
 ---
 
-## 4. FUNNEL 3 PAGES (Video-to-Parent)
+## 6. PROOF LAYER: VIDEO-TO-PARENT PAGES (Funnel 3)
 
-### 4.1 Video Studio `/studio/`
+### 6.1 Video Studio `/studio/`
 
 **Role:** Hosts 30-second animated video scenes that demonstrate text analysis. These are recorded as screen captures for social media (Instagram Reels, TikTok, YouTube Shorts).
 
@@ -561,7 +666,7 @@ See `BUILD_SYSTEM.md` for the full build pipeline documentation.
 
 **Not a public-facing URL** — `/studio/` is a production tool, not a page visitors navigate to.
 
-### 4.2 Interactive Demos `/studio/demos/` (NEW)
+### 6.2 Interactive Demos `/studio/demos/`
 
 **Role:** Dual-purpose pages that serve as (1) source for video screen capture and (2) interactive demonstrations linked from the homepage.
 
@@ -581,23 +686,23 @@ See `BUILD_SYSTEM.md` for the full build pipeline documentation.
 
 ---
 
-## 5. SHARED PAGES
+## 7. SHARED PAGES
 
-### 5.1 How It Works `/curriculum/`
+### 7.1 How It Works `/curriculum/`
 
 **Role:** Methodology explanation. Supports both funnels.
 
 **Content:** The 5-step system explained. How reading leads to writing.
 
-### 5.2 About `/about/` (Optional)
+### 7.2 About `/about/` (Optional)
 
 **Role:** Background, credibility. Low priority.
 
 ---
 
-## 6. NAVIGATION
+## 8. NAVIGATION
 
-### 6.1 Header (All Pages)
+### 8.1 Header (All Pages)
 
 **Current Implementation:** Nav is generated from `site-config.json` via the build system.
 
@@ -628,7 +733,7 @@ Logo: LuminAIT    The Method | Texts | Schools | Course | Results | About    [En
 - To change nav text: Update `navTitle` in page config
 - After changes: Run `node build.js` to regenerate pages
 
-### 6.2 Footer (All Pages)
+### 8.2 Footer (All Pages)
 
 ```
 LuminAIT
@@ -645,27 +750,34 @@ The Giver                VCE Guides
 
 ---
 
-## 7. URL PATTERNS
+## 9. URL PATTERNS
 
-### 7.1 Summary Table
+### 9.1 Summary Table
 
-| URL | Funnel | Page Type | Audience |
-|-----|--------|-----------|----------|
-| `/` | 2 | Homepage | Parent |
-| `/guides/` | 2 | Guide index | Parent |
-| `/guides/[text]/` | 2 | Methodology demo | Parent |
-| `/course/` | Both | Enrollment | Parent |
-| `/curriculum/` | Both | How It Works | Both |
-| `/vce/` | 1 | Curriculum hub | Student |
-| `/vce/[text]/` | 1 | Full analysis guide | Student |
-| `/hsc/` | 1 | Curriculum hub | Student |
-| `/hsc/[text]/` | 1 | Full analysis guide | Student |
-| `/ib/` | 1 | Curriculum hub | Student |
-| `/ib/[text]/` | 1 | Full analysis guide | Student |
-| `/studio/` | 3 | Video studio (internal) | Production |
-| `/studio/scenes/[slug].html` | 3 | Auto-generated scene | Production |
+| URL | Role | Page Type | Audience |
+|-----|------|-----------|----------|
+| `/partners/` | B2B Primary | Partnership page | Business |
+| `/` | Proof Layer 2 | Homepage | Parent |
+| `/[text-slug]/` | Proof Layer 2 | Text-specific outline | Parent |
+| `/schools/` | Proof Layer 2 | School directory | Parent |
+| `/schools/[school]/` | Proof Layer 2 | School page | Parent |
+| `/course/` | Proof Layer 2 | Enrollment | Parent |
+| `/curriculum/` | Proof Layer 2 | Additional guides | Parent |
+| `/curriculum/[slug]/` | Proof Layer 2 | Curriculum guide | Parent |
+| `/annotations/` | Proof Layer 1B | Annotation hub | Student |
+| `/annotations/[text]/` | Proof Layer 1B | Annotation preview | Student |
+| `/vce/` | Proof Layer 1 | Curriculum hub | Student |
+| `/vce/[text]/` | Proof Layer 1 | Full analysis guide | Student |
+| `/hsc/` | Proof Layer 1 | Curriculum hub | Student |
+| `/hsc/[text]/` | Proof Layer 1 | Full analysis guide | Student |
+| `/ib/` | Proof Layer 1 | Curriculum hub | Student |
+| `/ib/[text]/` | Proof Layer 1 | Full analysis guide | Student |
+| `/studio/` | Proof Layer 3 | Video studio (internal) | Production |
+| `/studio/scenes/[slug].html` | Proof Layer 3 | Auto-generated scene | Production |
+| `/progress/` | Proof Layer 4 | Progress reports | Parent/B2B |
+| `/results/` | Proof Layer 4 | Student outcomes | Parent/B2B |
 
-### 7.2 Text Slugs
+### 9.2 Text Slugs
 
 | Text | Slug |
 |------|------|
@@ -678,36 +790,46 @@ The Giver                VCE Guides
 
 ---
 
-## 8. SEO STRATEGY
+## 10. SEO STRATEGY
 
 **For detailed local SEO implementation, see [LOCAL_SEO_STRATEGY.md](./LOCAL_SEO_STRATEGY.md)**
 
-### 8.1 By Page Type
+### 10.1 By Page Type
 
 | Page Type | Primary Keywords | Intent |
 |-----------|------------------|--------|
+| Partnership page | "English tutoring partnership", branded B2B | Transactional (B2B) |
 | Homepage | "English tutoring Melbourne", branded | Navigation |
-| Methodology demo | "[text] tutoring", "[text] English help" | Transactional |
+| Text-specific outline | "[text] tutoring", "[text] English help" | Transactional |
 | Course | Branded, "[text] course" | Transactional |
+| Annotation guide | "[text] annotation guide", "how to annotate [text]" | Informational |
 | Curriculum hub | "[curriculum] English texts" | Informational |
 | Analysis guide | "[text] themes", "[text] analysis" | Informational |
 
-### 8.2 Internal Linking
+### 10.2 Internal Linking
 
 ```
+Partnership Page (/partners/)
+    ├── → /annotations/[text]/ (infrastructure showcase)
+    ├── → /[text-slug]/ (parent experience example)
+    ├── → /progress/ (measurement proof)
+    ├── → /results/ (outcomes proof)
+    └── → /schools/[school]/ (school integration proof)
+
 Homepage
-    ├── → /guides/[text]/ (text cards)
+    ├── → /[text-slug]/ (text cards)
     ├── → /course/ (CTA)
     └── → /curriculum/ (nav)
 
-Methodology Demo
+Text-Specific Outline
     ├── → /course/ (CTA)
     ├── → / (back to texts)
     └── → /vce/[text]/ (if full guide exists, "Want more depth?")
 
-Curriculum Hub
-    ├── → /vce/[text]/ (text cards)
-    └── → /course/ (parent bridge)
+Annotation Preview
+    ├── → /[text-slug]/ (parent bridge)
+    ├── → /course/ (secondary CTA)
+    └── → /annotations/ (back to hub)
 
 Analysis Guide
     ├── → /course/ (parent bridge)
@@ -716,39 +838,46 @@ Analysis Guide
 
 ---
 
-## 9. BUILD PHASES
+## 11. BUILD PHASES
 
-### Phase 1: Funnel 2 MVP (Now)
+### Phase 0: B2B Partnership Surface (Highest Priority)
 
-**Goal:** Test parent-direct funnel with one text.
-
-| Page | Status | Action |
-|------|--------|--------|
-| `/` | Exists, needs update | Refine parent voice, text-match prominence |
-| `/guides/tkam/` | New | Build methodology demo |
-| `/course/` | Exists | Update with text-specific framing |
-
-### Phase 2: Funnel 2 Expansion
-
-**Goal:** Methodology demos for all texts.
+**Goal:** Create the B2B partnership page that showcases cohort economics and links to infrastructure proof.
 
 | Page | Status | Action |
 |------|--------|--------|
-| `/guides/gatsby/` | New | Build methodology demo |
-| `/guides/macbeth/` | New | Build methodology demo |
-| `/guides/[etc.]/` | New | Build methodology demos |
+| `/partners/` | New | Build partnership page (template + content) |
 
-### Phase 3: Funnel 1 Foundation
+### Phase 1: Parent-Direct (Complete)
+
+**Goal:** Parent-direct funnel operational.
+
+| Page | Status | Action |
+|------|--------|--------|
+| `/` | ✅ Live | Homepage with text grid |
+| `/[text-slug]/` | ✅ Live (18 texts) | Text-specific outlines |
+| `/course/` | ✅ Live | Enrollment page |
+| `/schools/` | ✅ Live | School directory |
+
+### Phase 2: PLG Expansion
+
+**Goal:** Expand annotation guides per text.
+
+| Page | Status | Action |
+|------|--------|--------|
+| `/annotations/` | ✅ Live | Annotation hub |
+| `/annotations/[text]/` | ✅ Live (2 texts) | Expand to more texts |
+
+### Phase 3: Analysis Guides Foundation
 
 **Goal:** VCE analysis guides live.
 
 | Page | Status | Action |
 |------|--------|--------|
 | `/vce/` | New | Build curriculum hub |
-| `/vce/tkam/` | Exists (current guide) | Move to new URL |
-| `/vce/gatsby/` | New | Build via pipeline |
+| `/vce/[text]/` | New | Build via pipeline |
 
-### Phase 4: Funnel 1 Expansion
+### Phase 4: Analysis Guides Expansion
 
 **Goal:** HSC, IB hubs and guides.
 
@@ -759,9 +888,9 @@ Analysis Guide
 
 ---
 
-## 10. TECHNICAL REQUIREMENTS
+## 12. TECHNICAL REQUIREMENTS
 
-### 10.1 SEO
+### 12.1 SEO
 
 - [ ] XML sitemap (auto-generated)
 - [ ] robots.txt
@@ -770,42 +899,41 @@ Analysis Guide
 - [ ] Schema markup: Organization, Article, Book
 - [ ] Canonical URLs
 
-### 10.2 Performance
+### 12.2 Performance
 
 - [ ] Static HTML (current approach)
 - [ ] Minimal JS
 - [ ] Core Web Vitals passing
 
-### 10.3 Analytics
+### 12.3 Analytics
 
 - [ ] Page views, time on page, scroll depth
 - [ ] Track: text card clicks (which texts get interest)
 - [ ] Track: course page visits by source
 - [ ] Search Console: queries, impressions, CTR
 
-### 10.4 Language
+### 12.4 Language
 
 - [ ] EN/ZH toggle on all Funnel 2 pages
 - [ ] Chinese translations for homepage, course, methodology demos
 
-### 10.5 Styling
+### 12.5 Styling
 
 All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this directory).
 
 | Page Type | CSS File | Voice |
 |-----------|----------|-------|
-| Parent-facing (Funnel 2) | `page-marketing.css` | Warm, parent-focused |
-| Student-facing (Funnel 1) | `page-guide.css` [TODO] | Direct, useful |
+| B2B partnership | `page-marketing.css` + B2B overrides | Direct, evidence-based |
+| Parent-facing (Proof Layer 2) | `page-marketing.css` | Warm, parent-focused |
+| Student-facing (Proof Layers 1/1B) | `page-guide.css` [TODO] | Direct, useful |
 
 **Adding new pages:** Follow `DESIGN_SYSTEM.md` (this directory) Section 8 for complete procedure.
 
 ---
 
----
+## 13. IMPLEMENTATION NOTES
 
-## 11. IMPLEMENTATION NOTES
-
-### 11.1 Dual Parent Guide System
+### 13.1 Dual Parent Guide System
 
 **Why two locations for parent guides?**
 
@@ -830,7 +958,7 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 
 ---
 
-## 12. VERSION HISTORY
+## 14. VERSION HISTORY
 
 | Version | Date | Changes |
 |---------|------|---------|
@@ -840,7 +968,8 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 | 2.2 | Jan 27, 2026 | Implemented text-specific course outlines (18 total guides: 8 at root + 10 in /curriculum/) |
 | 3.0 | Jan 28, 2026 | Three-funnel architecture: added Funnel 3 (Video-to-Parent) with /studio/ and /studio/scenes/ |
 | 3.1 | Jan 30, 2026 | Updated homepage structure to reflect Video Demo Section integration |
-| 3.2 | Feb 2, 2026 | **Parent-Direct as PRIMARY:** Repositioned schools section after results (not equal to text grid). Added text selection helper to course page. Explicit PRIMARY designation for Funnel 2 (issue #64) |
+| 3.2 | Feb 2, 2026 | Parent-Direct as PRIMARY. Repositioned schools section after results. Added text selection helper to course page. |
+| 4.0 | Feb 19, 2026 | **B2B Partnership as PRIMARY commercial strategy.** Added /partners/ page definition. All funnels reframed as proof layers. Section numbering updated. URL patterns table updated with B2B proof layer roles. |
 
 ---
 

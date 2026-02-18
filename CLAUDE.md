@@ -11,22 +11,30 @@ Before coding, read `/docs/` first using the task-routed order below.
 
 ### Prototyping / New Features
 1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
-2. `docs/technical/SITE_ARCHITECTURE.md`
-3. `docs/theory/02_CUSTOMER_JOURNEY.md`
+2. `docs/theory/00_COMMERCIAL_THESIS.md` (understand B2B proof hierarchy)
+3. `docs/technical/SITE_ARCHITECTURE.md`
+4. `docs/theory/02_CUSTOMER_JOURNEY.md`
 
 ### Debugging / Regressions
-1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (Part 4)
-2. `docs/technical/BUILD_SYSTEM.md` (Troubleshooting)
-3. `docs/technical/UX_PROCESS.md` (Stage 6)
+1. `docs/DEBUG_RUNBOOK.md` (symptom lookup -- start here)
+2. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (Part 4)
+3. `docs/technical/BUILD_SYSTEM.md` (Troubleshooting)
+4. `docs/technical/UX_PROCESS.md` (Stage 6)
+
+### Development Methodology / Meta-Process
+1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
+2. `docs/methodology/knowledge-base/README.md` (reading order)
+3. `docs/methodology/skills/README.md` (composition guide)
 
 ### Product Theory / Messaging / Architecture
-1. `docs/theory/01_CREDENCE_PROBLEM.md`
-2. `docs/theory/02_CUSTOMER_JOURNEY.md`
-3. `docs/theory/03_VALIDATION_LOOP.md`
-4. `docs/theory/04_CONTENT_DERIVATION.md`
-5. `docs/theory/05_CHANNEL_ALIGNMENT.md`
-6. `docs/technical/SITE_ARCHITECTURE.md`
-7. `docs/technical/FUNNEL_STRATEGY.md`
+1. `docs/theory/00_COMMERCIAL_THESIS.md` (B2B primary — read first)
+2. `docs/theory/01_CREDENCE_PROBLEM.md`
+3. `docs/theory/02_CUSTOMER_JOURNEY.md`
+4. `docs/theory/03_VALIDATION_LOOP.md`
+5. `docs/theory/04_CONTENT_DERIVATION.md`
+6. `docs/theory/05_CHANNEL_ALIGNMENT.md`
+7. `docs/technical/SITE_ARCHITECTURE.md`
+8. `docs/technical/FUNNEL_STRATEGY.md`
 
 ## Active Project Structure
 
@@ -122,18 +130,41 @@ Before coding, read `/docs/` first using the task-routed order below.
 - One scoped problem per session.
 - Prefer simplest manual path first; automate after repeated stable pattern.
 
+### Failure Gates
+- Every build script has implicit hard gates (file not found, template parse error) -- treat these as stop-execution.
+- Soft gate: a generated page with broken internal links should warn, not halt the full build.
+- Level 0: source files (templates, JSON data, config) must exist and parse correctly before any generation.
+
+### Pattern-First
+- Define template structure before populating with data.
+- Trace causality: template -> build script -> generated output. Never edit downstream.
+- When adding a new page type: define the template first, then the data schema, then populate.
+
 ## Architecture Guardrails
 
-1. Funnel 2 (Parent-Direct) is primary.
-2. Keep page role aligned to journey stage:
+1. B2B cohort-build partnership is the primary commercial strategy.
+2. Parent-direct, PLG, and video funnels are proof layers that reinforce the B2B sale.
+3. B2B messaging is constrained to the partnership page (`/partners/`).
+4. Keep page role aligned to journey stage:
    - Text match -> preparation proof -> method confidence -> action.
-3. Keep channel jobs distinct:
+5. Keep channel jobs distinct:
    - Interpretation/pattern content builds credence.
    - Annotation content demonstrates method/action.
+6. Every content asset serves dual duty: its direct audience AND B2B proof.
+
+## Operational Documents
+
+- `docs/DEBUG_RUNBOOK.md` -- symptom-to-fix lookup for common build failures
+- `docs/WORKFLOW_REGISTRY.md` -- named build procedures (atomic + composed)
+- `docs/CI_RULES.md` -- safety guardrails for commits and AI-assisted work
+- `docs/CORE_DOCS_INDEX.md` -- canonical source for each concept
 
 ## Documentation Priority
 
-1. `docs/theory/*` + `docs/technical/*` (canonical)
-2. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
-3. Agent-specific files (`CLAUDE.md`, `GEMINI.md`)
-4. `docs/_archive/*` (reference only)
+1. `docs/theory/00_COMMERCIAL_THESIS.md` (B2B anchor — read first for any strategy/architecture work)
+2. `docs/theory/*` + `docs/technical/*` (canonical product/technical docs)
+3. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md` (development methodology)
+4. `docs/DEBUG_RUNBOOK.md` + `docs/WORKFLOW_REGISTRY.md` (operational)
+5. Agent-specific files (`CLAUDE.md`, `GEMINI.md`)
+6. `docs/methodology/*` (reference -- theory and skills)
+7. `docs/_archive/*` (reference only)
