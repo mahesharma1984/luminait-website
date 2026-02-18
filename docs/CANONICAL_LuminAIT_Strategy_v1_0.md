@@ -1,6 +1,6 @@
 # CANONICAL STRATEGY OVERVIEW - LuminAIT
 
-Version: 2.0
+Version: 3.0
 Date: February 19, 2026
 Status: Active - canonical summary
 Purpose: Single, comprehensive document that captures the full system, strategy, and execution model.
@@ -139,47 +139,41 @@ The B2B buyer sees:
 
 → Full detail: `docs/technical/FUNNEL_STRATEGY.md`
 
-### 6.2 Proof Layer: Parent-Direct Funnel
+### 6.2 Active PLG: Annotation Guide Funnel
 
 ```
-Homepage (text selection) → Text-specific outline → Course → Enrollment
+Student SEO/social → Annotation preview → Download gate → Method bridge → /method/ → Enquire
 ```
 
-This is the parent journey that the B2B partner will inherit. It demonstrates how parents experience value.
+Annotation guides serve dual duty: students download them (PLG demand signal) while B2B buyers evaluate them as infrastructure proof. This is the highest-leverage content type because each new guide adds PLG value AND B2B proof value simultaneously.
 
-**Secondary entry points:**
-
-* Schools page → Text guide → Course
-* Video demo → Text guide → Course
-
-→ Full detail: `docs/theory/02_CUSTOMER_JOURNEY.md`
-
-### 6.3 Proof Layer: PLG / Annotation Funnel
+### 6.3 Active: Video-to-Parent (Social Discovery)
 
 ```
-Student SEO → Annotation preview → Download gate → Parent bridge
-```
-
-Demonstrates organic demand for the infrastructure.
-
-### 6.4 Proof Layer: Video-to-Parent (Social Discovery)
-
-```
-Social video → Depth layer → Text match → Enrollment
+Social video (30s) → Annotation guide or method page → Enquire
 ```
 
 Demonstrates reach and credence bypass at first contact.
 
-### 6.5 Credibility Sequence (Parent Journey)
+### 6.4 Archived: Parent-Direct Funnel
 
-1. Text Match (binary — verifiable)
-2. Preparation Proof (text-specific outlines)
-3. Method Confidence (generic pedagogy pages)
-4. Outcomes Observed (progress/results)
+```
+[ARCHIVED] Homepage (text selection) → Text-specific outline → Course → Enrollment
+```
 
-### 6.6 Validation Loop
+Parent-direct funnel pages are archived — accessible at their URLs for SEO equity and B2B showcase linking, but removed from navigation. The condensed method page (`/method/`) absorbs all parent-facing proof into a single surface. Parent curriculum guides (18 texts) and school pages (5) remain accessible but unlisted.
 
-When price friction occurs, inject outcome proof to spike motivation and loop users back to conversion.
+### 6.5 Condensed Method Page
+
+The method page replaces 6 separate pages (course, syllabus, method, sample, progress, results) with a single surface showing the complete teaching system. Both parents and B2B buyers benefit from seeing the full system on one page.
+
+### 6.6 Credibility Sequence (Still Valid)
+
+1. Text Match (binary — verifiable) — via annotation guides
+2. Preparation Proof (text-specific outlines) — via method page 10-week plan
+3. Method Confidence — via method page system overview
+4. Outcomes Observed — via method page outcomes section
+5. Validation loop — outcomes section adjacent to pricing on method page
 
 → Full detail: `docs/theory/03_VALIDATION_LOOP.md`
 
@@ -202,14 +196,13 @@ Content is derived from the text kernel, not imposed marketing frameworks.
 
 | Channel | Job | B2B Proof Layer |
 |---------|-----|-----------------|
-| SEO (text-specific) | Capture intent + build credence | Layer 2 (parent assets) |
-| Local SEO (school) | Capture school intent | Layer 2 (parent assets) |
+| B2B partnership page | Cohort economics + infrastructure | Primary B2B surface |
+| SEO (annotation-specific) | Capture student intent + demand signal | Layer 3 (PLG / demand signal) |
 | Social video | Demonstrate expertise in-feed | Layer 1 (infrastructure showcase) |
 | Annotation pages | Low-friction action + method visibility | Layer 3 (PLG / demand signal) |
-| Parent outline | Preparation proof | Layer 2 (parent assets) |
-| Course page | Conversion proof | Layer 2 (parent assets) |
-| Results/Progress | Validation loop | Layer 4 (outcomes) |
-| B2B partnership page | Cohort economics + infrastructure | Primary B2B surface |
+| Method page | Complete system proof + conversion | Layers 1+2+4 |
+| Parent guides (unlisted) | B2B showcase + SEO equity | Layer 2 (parent assets) |
+| School pages (unlisted) | B2B showcase + local SEO | Layer 2 (parent assets) |
 
 → Full detail: `docs/theory/05_CHANNEL_ALIGNMENT.md`, `docs/technical/CONTENT_MAP.md`
 
@@ -325,30 +318,52 @@ Automation is only used after exploration is complete and validation is programm
 
 ## 13. Status Snapshot (What Is Live vs In Progress)
 
-Live and implemented:
+**Live (navigable):**
 
-* Parent-direct funnel core (homepage text grid, text-specific outlines, course page)
-* 18 text-specific outlines (8 root, 10 curriculum)
-* Progress and results proof pages
-* Video studio build pipeline
-* Annotation guide system (template + build script)
+* Annotation guide hub + 1 text-specific guide (The Outsiders)
+* About page
 
-In progress or planned:
+**Live (unlisted — accessible but not in navigation):**
 
-* B2B partnership page (primary — see 00_COMMERCIAL_THESIS.md)
-* School page expansion and local SEO saturation
+* 18 parent curriculum guides (8 root + 10 curriculum)
+* 5 school pages
+* Progress and results pages (to be consolidated into method page)
+* Homepage (current parent-direct text grid — to be redesigned as router)
+* Course, method, syllabus pages (to be consolidated into condensed method page)
+
+**Production tools:**
+
+* Video studio build pipeline (18 scenes, all The Outsiders)
+* All build scripts operational
+
+**Planned (P0 — highest priority):**
+
+* B2B partnership page `/partners/` (primary commercial surface)
+* Condensed method page `/method/` (replaces 6 current pages)
+* Homepage redesign as minimal router
+
+**Planned (P1):**
+
+* Expanded annotation guides per text (highest-leverage content investment)
+* Navigation update to reflect new architecture
+
+**Planned (P2+):**
+
 * Partner pack and proof-of-transfer assets
-* Expanded annotation guides per text
 * Instrumentation and analytics across funnel stages
+* Video scene expansion to more texts
 
 ---
 
 ## 14. Open Gaps
 
-* B2B partnership page does not exist yet (highest priority)
-* More outcome data tied to specific texts and cohorts
+* B2B partnership page does not exist yet (P0 — highest priority)
+* Condensed method page does not exist yet (P0 — required before archiving old pages)
+* Homepage redesign not done yet (P0 — depends on method page and partnership page)
+* Annotation guides for 17/18 texts missing (P1 — highest-leverage content)
+* Unsurfaced proof assets (student work, worksheets, progress reports exist in repo but not linked from site)
+* Navigation still reflects parent-direct architecture
 * Partner-facing proof assets (pack, pilot case study)
-* Expanded school pages and verified booklists
 * Consistent instrumentation and analytics across funnel stages
 
 ---
@@ -408,6 +423,7 @@ In progress or planned:
 |---------|------|---------|
 | 1.0 | Feb 3, 2026 | Initial consolidated strategy (parent-direct primary) |
 | 2.0 | Feb 19, 2026 | B2B cohort-build partnership as primary strategy; parent-direct and PLG reframed as proof layers; added 00_COMMERCIAL_THESIS.md as upstream theory doc |
+| 3.0 | Feb 19, 2026 | Lean B2B architecture. Parent-direct funnel archived. Condensed method page replaces 6 pages. Annotation guides as primary production focus. Updated status snapshot and open gaps. |
 
 ---
 

@@ -143,14 +143,14 @@ Before coding, read `/docs/` first using the task-routed order below.
 ## Architecture Guardrails
 
 1. B2B cohort-build partnership is the primary commercial strategy.
-2. Parent-direct, PLG, and video funnels are proof layers that reinforce the B2B sale.
-3. B2B messaging is constrained to the partnership page (`/partners/`).
-4. Keep page role aligned to journey stage:
-   - Text match -> preparation proof -> method confidence -> action.
-5. Keep channel jobs distinct:
-   - Interpretation/pattern content builds credence.
-   - Annotation content demonstrates method/action.
-6. Every content asset serves dual duty: its direct audience AND B2B proof.
+2. The live site is lean: `/partners/`, `/method/`, `/annotations/`, `/about/`, and a minimal homepage router.
+3. Parent-direct funnel pages are **archived** (accessible at URLs but removed from navigation).
+4. B2B messaging is constrained to `/partners/`. Everything else demonstrates infrastructure through its own audience's lens.
+5. Annotation guides are the highest-leverage content: dual-duty PLG (student downloads) + B2B infrastructure proof.
+6. Pattern over volume: one representative example per asset type, not exhaustive listings.
+7. The condensed method page (`/method/`) replaces course, syllabus, method, sample, progress, and results.
+8. Keep channel jobs distinct: annotation track = action/PLG; video = social proof; method page = complete system.
+9. Every content asset serves dual duty: its direct audience AND B2B proof.
 
 ## Operational Documents
 

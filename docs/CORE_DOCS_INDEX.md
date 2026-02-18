@@ -1,6 +1,6 @@
 # Core Documentation Index
 
-**Updated:** 2026-02-14
+**Updated:** 2026-02-19
 **Purpose:** Quick reference for finding documentation. Each concept has ONE canonical location.
 
 ---
@@ -10,12 +10,12 @@
 | Question | Answer | Source |
 |---|---|---|
 | How do I build pages? | See Build Command Matrix | `AGENTS.md` section 3 |
-| What's the site architecture? | Template > build script > generated HTML | `docs/technical/SITE_ARCHITECTURE.md` |
+| What's the site architecture? | Lean B2B: /partners/, /method/, /annotations/, router homepage | `docs/technical/SITE_ARCHITECTURE.md` |
 | How do I debug a build issue? | Follow the symptom table | `docs/DEBUG_RUNBOOK.md` |
 | What are the development rules? | R/P Split, Measure First, Prototype Discipline | `CLAUDE.md` Development Protocol |
 | How do I add a new book? | CW-NEW-BOOK workflow | `docs/WORKFLOW_REGISTRY.md` |
 | What's the commercial strategy? | B2B cohort-build partnership is primary | `docs/theory/00_COMMERCIAL_THESIS.md` |
-| What's the funnel hierarchy? | B2B primary; parent-direct is proof layer | `docs/technical/FUNNEL_STRATEGY.md` |
+| What's the funnel hierarchy? | B2B primary; parent-direct archived; annotations are active PLG | `docs/technical/FUNNEL_STRATEGY.md` |
 | Why does the product work? | Credence problem theory | `docs/theory/01_CREDENCE_PROBLEM.md` |
 | How do I start a new task? | Use context packets A-E | `docs/START_HERE.md` |
 | What are the safety rules? | Hard rules + checklists | `docs/CI_RULES.md` |
@@ -66,11 +66,12 @@ Each concept has ONE authoritative document. When information conflicts, defer t
 - `docs/theory/05_CHANNEL_ALIGNMENT.md` -- Channel-specific alignment
 
 ### Technical (How the system works)
-- `docs/technical/SITE_ARCHITECTURE.md` -- Page types, URL patterns, content models
+- `docs/technical/SITE_ARCHITECTURE.md` -- Lean B2B architecture, theory-to-asset registry, page specs
 - `docs/technical/BUILD_SYSTEM.md` -- Build scripts and generators
 - `docs/technical/DESIGN_SYSTEM.md` -- UI components and styles
 - `docs/technical/UX_PROCESS.md` -- 6-stage UX validation
-- `docs/technical/FUNNEL_STRATEGY.md` -- Funnel positioning
+- `docs/technical/FUNNEL_STRATEGY.md` -- Funnel hierarchy (B2B primary, parent-direct archived)
+- `docs/technical/CONTENT_MAP.md` -- Channel-to-content mapping, production priorities
 
 ### Operations (How to do things)
 - `docs/DEBUG_RUNBOOK.md` -- Triage and diagnosis

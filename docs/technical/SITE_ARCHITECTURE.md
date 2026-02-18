@@ -1,81 +1,230 @@
-# SITE ARCHITECTURE v4.0
+# SITE ARCHITECTURE v5.0
 
 **Date:** February 19, 2026
-**Status:** Active — canonical reference for URL structure
-**Supersedes:** v3.2 (Parent-Direct as primary)
-**Related:** [Commercial Thesis](../theory/00_COMMERCIAL_THESIS.md) (B2B anchor), [Customer Journey](../theory/02_CUSTOMER_JOURNEY.md) (parent funnel), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md) (proof point strategy), [Funnel Strategy](./FUNNEL_STRATEGY.md) (funnel hierarchy)
+**Status:** Active — canonical reference for site structure and URL patterns
+**Supersedes:** v4.0 (B2B primary but parent-direct still live)
+**Related:** [Commercial Thesis](../theory/00_COMMERCIAL_THESIS.md) (B2B anchor), [Credence Problem](../theory/01_CREDENCE_PROBLEM.md) (proof strategy), [Customer Journey](../theory/02_CUSTOMER_JOURNEY.md) (parent funnel — archived), [Funnel Strategy](./FUNNEL_STRATEGY.md) (funnel hierarchy), [Content Map](./CONTENT_MAP.md) (production priorities)
 **Archived sources:** `../_archive/FUNNEL_ARCHITECTURE_v2_0.md`, `../_archive/METHODOLOGY_DEMO_SPEC_v1_0.md`, `../_archive/FRAMEWORK_Credence_Conversion_Touchpoints_v1_2.md`
 
 ---
 
 ## 1. OVERVIEW
 
-Site structure supporting the B2B partnership sale as primary commercial strategy, with parent-direct and PLG funnels as subordinate proof layers.
+### 1.1 Strategy
 
-**Strategy:** B2B cohort-build partnership is the **PRIMARY** commercial strategy. Parent-direct (Funnel 2), PLG (Funnel 1B), and social (Funnel 3) are proof layers that reinforce the B2B sale. B2B messaging is constrained to the partnership page; the rest of the site demonstrates infrastructure value through parent-facing and student-facing assets.
+B2B cohort-build partnership is the **PRIMARY** commercial strategy. The site exists to support this sale.
+
+The live site is lean: a B2B partnership page, a condensed teaching method page, annotation guides, and minimal supporting pages. Parent-direct funnel pages (text grid homepage, individual course outlines, school directory, enrollment page) are **archived** — accessible at their URLs for SEO equity and B2B showcase linking, but removed from navigation.
+
+### 1.2 Architectural Principles
+
+These principles derive from the theory chain (see §2) and inform every page decision:
+
+1. **Credence bypass through text-specificity.** Both parents and B2B buyers face the credence problem. Text-specific proof creates verifiable claims. Lead with what can be verified.
+2. **Pattern over volume.** One annotation guide proving the template exists is more powerful to a B2B buyer than 21 parent guides showing volume. The system's value is in the repeatable pattern, not the count.
+3. **Condensation.** Six separate marketing pages (course, syllabus, method, sample, progress, results) collapse into one page showing the complete system. Shorter path = higher conversion.
+4. **Dual-duty assets.** Annotation guides ARE the infrastructure (not descriptions of it). A student downloads them; a B2B buyer evaluates them as proof. Same page, two lenses.
+5. **Hub-and-spoke for B2B.** The B2B buyer sees the system from above, not through a linear funnel. Partnership page links out to proof, buyer explores, returns to CTA.
+6. **B2B messaging constrained.** B2B language lives ONLY on `/partners/`. Everything else demonstrates infrastructure value through its own audience's lens.
+
+### 1.3 Site Map
 
 ```
 luminait.app/
 │
-├── B2B PARTNERSHIP [PRIMARY COMMERCIAL STRATEGY] ──────────
+├── LIVE (navigable) ──────────────────────────────────────────
 │   │
-│   └── /partners/            → Partnership page (cohort economics,
-│                                infrastructure showcase, engagement CTA)
+│   ├── /                        Homepage (minimal router)
+│   ├── /partners/               B2B partnership page [PRIMARY]
+│   ├── /method/                 Condensed method page
+│   ├── /annotations/            Annotation guides hub
+│   │   └── /annotations/[text]/ Text-specific preview + download
+│   └── /about/                  About (minimal credibility)
 │
-├── PROOF LAYER 2: PARENT-DIRECT ───────────────────────────
-│   │   (Demonstrates parent experience that partner inherits)
+├── ACCESSIBLE (unlisted) ─────────────────────────────────────
+│   │   Kept for SEO equity + B2B showcase links.
+│   │   Not in navigation. Accessible via direct URL.
 │   │
-│   ├── /                     → Homepage (text grid, parent-facing)
-│   ├── /schools/             → School-first entry point
-│   │   └── /schools/[school]/→ Text lists by school
-│   ├── /[text-slug]/         → ✅ Text-specific course outlines (8 books)
-│   │                            (the-giver, macbeth, animal-farm, etc.)
-│   └── /course/              → Enrollment
+│   ├── /[text-slug]/            Parent curriculum guides (8 root)
+│   ├── /curriculum/[text]/      Parent curriculum guides (10 more)
+│   └── /schools/[school]/       School pages (5)
 │
-├── PROOF LAYER 1B: ANNOTATION GUIDE PLG ───────────────────
-│   │   (Demonstrates demand signal + infrastructure quality)
+├── PRODUCTION (not public) ───────────────────────────────────
 │   │
-│   ├── /annotations/         → ✅ Annotation guides hub
-│   └── /annotations/[text]/  → ✅ Preview + download gate + parent bridge
-│                               (the-outsiders, the-giver)
+│   └── /studio/                 Video scene production tool
+│       ├── /studio/scenes/      Auto-generated scene pages
+│       └── /studio/demos/       Interactive demo files
 │
-├── PROOF LAYER 1: ANALYSIS GUIDES ─────────────────────────
-│   │   (Demonstrates analytical depth)
-│   │
-│   ├── /vce/                 → VCE hub (not implemented)
-│   │   └── /vce/[text]/      → Full analysis guides
-│   ├── /hsc/                 → HSC hub (not implemented)
-│   │   └── /hsc/[text]/      → Full analysis guides
-│   └── /ib/                  → IB hub (not implemented)
-│       └── /ib/[text]/       → Full analysis guides
-│
-├── PROOF LAYER 3: VIDEO-TO-PARENT (Social Discovery) ─────
-│   │   (Demonstrates reach + credence bypass)
-│   │
-│   └── /studio/              → Video Studio (scene playback)
-│       ├── /studio/scenes/   → ✅ Auto-generated scene pages
-│       │   └── /studio/scenes/[slug].html
-│       ├── /studio/demos/    → ✅ Interactive demo files (Annotation/Worksheet/Analysis)
-│       ├── outsiders-scene.html → Legacy hand-built scene
-│       ├── script.js         → StudioController (keyboard/playback)
-│       └── styles.css        → Shared studio styles
-│
-└── SHARED / SUPPORTING ─────────────────────────────────────
-    │
-    ├── /curriculum/          → ✅ Additional parent guides (10 texts)
-    │   └── /curriculum/[slug]/ (dracula, jane-eyre, the-simple-gift, etc.)
-    ├── /about/               → About page
-    ├── /progress/            → Progress reports showcase
-    └── /results/             → Student outcomes
+└── ARCHIVED (redirect to /method/) ───────────────────────────
+    ├── /course.html             → /method/#enroll
+    ├── /syllabus.html           → /method/#ten-week-plan
+    ├── /results.html            → /method/#outcomes
+    ├── /progress.html           → /method/#measurement
+    └── /sample.html             → /method/#artifacts
 ```
+
+**Live navigable pages:** 5 core + N annotation guides (currently 2)
+**Accessible but unlisted:** ~23 (parent guides + school pages)
+
+### 1.4 Build Status Summary
+
+| Layer | Coverage | Notes |
+|-------|----------|-------|
+| B2B Partnership (`/partners/`) | 0% — PLANNED | Highest priority. Wireframe in §3. |
+| Condensed Method (`/method/`) | 0% — PLANNED | Absorbs 6 current pages. Spec in §5. |
+| Homepage Router (`/`) | 0% — PLANNED | Replaces parent-facing text grid. Spec in §4. |
+| Annotation Guides | ~10% | Hub + 1 text (The Outsiders). Expand per text. |
+| Video Production | ~20% | 18 scenes built, all for 1 text (The Outsiders). |
+| Parent Guides (unlisted) | 100% | 18 guides built. Remain accessible. |
+| School Pages (unlisted) | 100% | 5 schools built. Remain accessible. |
 
 ---
 
-## 2. B2B PARTNERSHIP PAGE `/partners/`
+## 2. THEORY-TO-ASSET REGISTRY
+
+Every asset on the site materialises a concept from the theory chain. This registry maps theory → asset → status.
+
+### 2.1 Theory Concept → Asset Mapping
+
+| Theory Concept | Source | Asset(s) | URL(s) | Status | Proof Layer |
+|---|---|---|---|---|---|
+| **Cohort economics model** | 00_COMMERCIAL_THESIS §2 | Partnership page — economics section | `/partners/` | PLANNED | B2B Primary |
+| **Engagement structure** | 00_COMMERCIAL_THESIS §4 | Partnership page — engagement section | `/partners/` | PLANNED | B2B Primary |
+| **Subordination hierarchy** | 00_COMMERCIAL_THESIS §5 | Partnership page — infrastructure showcase links | `/partners/` | PLANNED | B2B Primary |
+| **Credence bypass (text-specificity)** | 01_CREDENCE_PROBLEM §2 | Text-specific annotation guides; parent curriculum guides | `/annotations/[text]/`; `/[text-slug]/` | PARTIAL (1 annotation, 18 parent guides) | Layers 1 + 2 |
+| **Reading vs writing hierarchy** | 01_CREDENCE_PROBLEM §3 | Annotation guides (reading entry) → method page (writing outcomes) | `/annotations/` → `/method/` | PARTIAL | Layers 1 + 4 |
+| **Parent journey stages 1-4** | 02_CUSTOMER_JOURNEY §2 | Condensed method page (all stages on one page) | `/method/` | PLANNED (replaces 6 separate pages) | Layer 2 |
+| **Proof point hierarchy** | 02_CUSTOMER_JOURNEY §3 | Method page artifacts strip (annotation → worksheet → essay) | `/method/#artifacts` | PLANNED | Layer 2 |
+| **Validation loop** | 03_VALIDATION_LOOP §2 | Outcomes section on method page (adjacent to pricing) | `/method/#outcomes` | PLANNED | Layer 4 |
+| **Kernel-derived content** | 04_CONTENT_DERIVATION §2 | Annotation guides (derived from text kernel analysis) | `/annotations/[text]/` | PARTIAL (1 text) | Layer 1 |
+| **Interpretation track (SEO)** | 05_CHANNEL_ALIGNMENT §2 | Parent curriculum guides (text-specific outlines) | `/[text-slug]/`; `/curriculum/[text]/` | LIVE (18 texts, unlisted) | Layer 2 |
+| **Annotation track (PLG)** | 05_CHANNEL_ALIGNMENT §3 | Annotation guide preview + download | `/annotations/[text]/` | PARTIAL (1 text) | Layer 3 |
+| **Video credence bypass** | 05_CHANNEL_ALIGNMENT §4 | Video scenes for social media | `/studio/scenes/` | PARTIAL (1 text, 18 scenes) | Layer 3 |
+| **School-specific trust** | 02_CUSTOMER_JOURNEY §4 | School pages with verified booklists | `/schools/[school]/` | LIVE (5 schools, unlisted) | Layer 2 |
+| **Measurement visibility** | 00_COMMERCIAL_THESIS §6 | Method page outcomes section; progress data | `/method/#measurement` | PLANNED | Layer 4 |
+
+### 2.2 Asset Inventory by Proof Layer
+
+**Proof Layer 1: Instructional Infrastructure** (What the partner gets)
+
+| Asset Type | Count | Needed | Pipeline | Status |
+|---|---|---|---|---|
+| Annotation guides (preview pages) | 1 (The Outsiders) | 1 per text (~18) | JSON → `build-annotation-guides.js` → `/annotations/[text]/` | PARTIAL |
+| Annotation guide PDFs | 4 in repo | Per guide | Manual creation → `/social-media-assets/` | EXISTS (unsurfaced) |
+| Worksheet PDFs | 7+ in repo | Per text | Manual creation → `/social-media-assets/` | EXISTS (unsurfaced) |
+| Method page (system overview) | 0 | 1 | Template → `build.js` → `/method.html` | PLANNED |
+
+**Proof Layer 2: Parent-Facing Assets** (How parents perceive value)
+
+| Asset Type | Count | Needed | Pipeline | Status |
+|---|---|---|---|---|
+| Parent curriculum guides | 18 (8 root + 10 curriculum) | Sufficient | JSON → build scripts → `/[text-slug]/`, `/curriculum/[text]/` | LIVE (unlisted) |
+| School pages | 5 | Expand as partnerships form | JSON → `build-school-pages.js` → `/schools/[school]/` | LIVE (unlisted) |
+
+**Proof Layer 3: PLG / Demand Signal** (That demand exists)
+
+| Asset Type | Count | Needed | Pipeline | Status |
+|---|---|---|---|---|
+| Annotation downloads | 1 text | Per guide | Linked from annotation preview pages | PARTIAL |
+| Video scenes (social content) | 18 (all The Outsiders) | Per text | JSON → `build-video-scenes.js` → `/studio/scenes/` | PARTIAL |
+| Video demos (interactive) | 3 | Sufficient | Standalone HTML in `/studio/demos/` | LIVE |
+
+**Proof Layer 4: Outcomes** (That it works)
+
+| Asset Type | Count | Needed | Pipeline | Status |
+|---|---|---|---|---|
+| Student progress reports | 5 in repo | Surface on method page | PDFs in `/social-media-assets/` | EXISTS (unsurfaced) |
+| Student work samples | 75+ in repo | Surface on method page | Images in `/social-media-assets/` | EXISTS (unsurfaced) |
+| Before/after writing | In progress/results pages | Consolidate to method page | Currently on `/progress.html`, `/results.html` | LIVE (to be consolidated) |
+
+### 2.3 Unsurfaced Proof Assets
+
+These artefacts exist in the repository but are not linked from any site page. They are high-value proof for both B2B showcase and the condensed method page.
+
+**In `/social-media-assets/`:**
+
+| Asset | Location | Potential Use |
+|---|---|---|
+| 5 student progress reports | `/social-media-assets/student-*/progress-*` | Method page §4 (Measurement) |
+| 75+ student work samples | `/social-media-assets/student-*/*.jpg` | Method page §3 (Artifacts) |
+| 4 annotation guide PDFs | `/social-media-assets/annotation-guides/` | Annotation download gates |
+| 7+ worksheet PDFs | `/social-media-assets/worksheets/` | Method page §3 (Artifacts), Partnership showcase |
+
+**In `/presentations/`:**
+
+| Asset | Location | Potential Use |
+|---|---|---|
+| Partnership Economics deck | `/presentations/partnership/` | Source material for `/partners/` content |
+| Teaching Infrastructure deck | `/presentations/infrastructure/` | Source material for `/method/` content |
+| Scaling Teaching deck | `/presentations/scaling/` | B2B engagement narrative |
+| Co-Founder Pitch deck | `/presentations/co-founder/` | Investor/partner context |
+| Scaling Reality appendix | `/presentations/appendix/` | Realistic growth projections |
+
+### 2.4 Asset Interconnection Map
+
+```
+/partners/ (B2B PRIMARY — hub-and-spoke)
+    │
+    ├──→ /annotations/the-outsiders/    "See what your teachers will deliver"
+    │         │                          (Proof Layer 1: Infrastructure)
+    │         └──→ Download PDF
+    │
+    ├──→ /the-giver/                    "See what parents experience"
+    │         │                          (Proof Layer 2: Parent Assets)
+    │         └──→ /method/#enroll
+    │
+    ├──→ /schools/mckinnon-sc/          "See school-level alignment"
+    │                                    (Proof Layer 2: Parent Assets)
+    │
+    ├──→ /method/                        "See the complete system"
+    │         │                          (Proof Layers 1+2+4)
+    │         ├── #method
+    │         ├── #ten-week-plan
+    │         ├── #artifacts
+    │         ├── #outcomes
+    │         └── #enroll
+    │
+    └──→ /method/#outcomes               "See the results"
+                                         (Proof Layer 4: Outcomes)
+
+/ (HOMEPAGE — router)
+    │
+    ├──→ /partners/                      Path A: "For tutoring companies"
+    │
+    ├──→ /annotations/                   Path B: "Browse annotation guides"
+    │
+    └──→ /method/                        Path B: "See how we teach"
+
+/annotations/[text]/ (PLG — student entry)
+    │
+    ├──→ Download PDF                    Lead capture
+    │
+    ├──→ /method/                        Parent bridge → full system
+    │
+    └──→ /annotations/                   Back to hub
+```
+
+### 2.5 Coverage Gaps (Prioritised)
+
+| Priority | Gap | Impact | Effort |
+|---|---|---|---|
+| **P0** | Partnership page (`/partners/`) does not exist | No B2B commercial surface | New page (template + content) |
+| **P0** | Condensed method page (`/method/`) does not exist | Cannot archive old pages until replacement exists | Consolidate 6 pages into 1 |
+| **P0** | Homepage router does not exist | Current homepage is parent-direct text grid | Redesign homepage template |
+| **P1** | Annotation guides for 17/18 texts missing | Weak PLG + infrastructure proof | Expand via `build-annotation-guides.js` |
+| **P1** | Unsurfaced proof assets not linked | Student work, worksheets, progress reports exist but aren't visible | Link from method page + partnership page |
+| **P2** | Video scenes only for 1 text | Limited social content library | Expand via `build-video-scenes.js` |
+| **P2** | Navigation not updated | Current nav reflects parent-direct architecture | Update `site-config.json` |
+| **P3** | Redirects for archived URLs | Old URLs should point to method page sections | Server-side or meta refresh redirects |
+| **P3** | Partner-facing measurement reporting | No partner-specific outcomes view | New asset type (future) |
+
+---
+
+## 3. B2B PARTNERSHIP PAGE `/partners/`
 
 **Role:** Single B2B surface. Presents the cohort economics model, showcases instructional infrastructure, and links to proof layers across the site. All B2B messaging is constrained to this page.
 
-**Status:** PLANNED (highest priority)
+**Status:** PLANNED (highest priority — P0)
 
 **Audience:** Tutoring company operators, education business owners evaluating a partnership engagement.
 
@@ -124,18 +273,18 @@ luminait.app/
 │  INFRASTRUCTURE SHOWCASE                                    │
 │  ───────────────────────                                    │
 │  "See what your teachers will deliver"                      │
-│  → Annotation guide example (/annotations/[text]/)          │
-│  → Curriculum guide example (/[text-slug]/)                 │
-│  → Progress report example (/progress/)                     │
-│  → Measurement framework overview                           │
+│  → Annotation guide example (/annotations/the-outsiders/)   │
+│  → Teaching method overview (/method/)                      │
+│  Note: "18 texts currently built; new texts deployed in     │
+│   <2 weeks from kernel analysis"                            │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  PARENT EXPERIENCE PROOF                                    │
 │  ───────────────────────                                    │
 │  "See what parents experience"                              │
-│  → Homepage parent journey (/[text-slug]/ → /course/)       │
-│  → School-specific pages (/schools/[school]/)               │
+│  → Parent curriculum guide example (/the-giver/)            │
+│  → School-specific page example (/schools/mckinnon-sc/)     │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
@@ -144,7 +293,7 @@ luminait.app/
 │  Observed founder-led cohort outcomes:                      │
 │  • Conversion, retention, class growth data                 │
 │  • Before/after writing samples                             │
-│  → Full results (/results/)                                 │
+│  → Full outcomes (/method/#outcomes)                        │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
@@ -163,309 +312,193 @@ luminait.app/
 
 **Design:** Uses `page-marketing.css` base with B2B-specific overrides. Clean, data-forward layout. No parent-voice softness.
 
-**Navigation:** Accessible via footer link or direct URL. NOT in the parent-facing primary nav to avoid confusing parents.
+**Navigation:** Accessible via homepage Path A and footer link. NOT in the parent-facing primary nav.
 
 ---
 
-## 3. PROOF LAYER: PARENT-DIRECT PAGES (Funnel 2)
+## 4. HOMEPAGE `/` (Minimal Router)
 
-### 3.1 Homepage `/`
+**Role:** Bifurcated landing page that routes two audiences to their correct path in under 5 seconds.
 
-**Role:** Entry point for parent-direct funnel. Text-match prominent.
+**Status:** PLANNED (P0 — depends on `/partners/` and `/method/` existing first)
 
-**Audience:** Parents seeking tutoring for their child.
+**Audience:** Both B2B buyers and parents/students arriving at the root URL.
 
 **Content Structure:**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ NAV: Logo          How It Works | About        [Enquire]    │
+│ NAV: Logo          How We Teach | Annotations | About       │
+│                                                 [Enquire]   │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  HERO                                                       │
 │  ─────                                                      │
-│  Melbourne · Years 7-12                                     │
+│  Text-specific English tutoring infrastructure.             │
 │                                                             │
-│  English tutoring built around                              │
-│  your child's text                                          │
+│  One sentence that works for both audiences.                │
+│  Professional, clean. Not "tutoring company marketing."     │
 │                                                             │
-│  TEXT GRID (Select text to see course plan)                 │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  TWO PATHS (visually prominent, above the fold)            │
 │  ─────────                                                  │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐                       │
-│  │ The     │ │ Romeo & │ │ TKAM    │                       │
-│  │ Giver   │ │ Juliet  │ │         │                       │
-│  │ Y7-8    │ │ Y9-10   │ │ Y9-10   │                       │
-│  └─────────┘ └─────────┘ └─────────┘                       │
-│  ... (8 books total + "Other Text?" link)                   │
 │                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  METHODOLOGY SECTION                                        │
-│  ──────────────────                                         │
-│  "The Method" - Text-specific preparation explained         │
-│  • Chapter-by-chapter breakdown                             │
-│  • Pre-written analysis bank                                │
-│  • 10 weeks of structured worksheets                        │
-│  + Single hero video (annotation demo)                      │
-│  → Link to full method page                                 │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  RESULTS TEASER                                             │
-│  ──────────────                                             │
-│  "See what 10 weeks can do"                                 │
-│  3 outcome cards → View All Case Studies                    │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  SCHOOLS SECTION (Secondary Entry Point)                    │
-│  ──────────────                                             │
-│  "Or find by school" - 5 featured schools                   │
-│  → View all schools | → Parent Curriculum Guides            │
-│  Note: Positioned after proof layer to reinforce            │
-│  text-first value proposition                               │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  TESTIMONIALS (Marquee)                                     │
-│  ─────────────────────                                      │
-│  Auto-scrolling parent/student quotes                       │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ABOUT / TEACHER PROFILE                                    │
-│  ───────────────────────                                    │
-│  → Read Bio & Philosophy                                    │
+│  ┌─────────────────────┐  ┌─────────────────────┐          │
+│  │ FOR TUTORING         │  │ FOR STUDENTS &       │          │
+│  │ COMPANIES            │  │ PARENTS              │          │
+│  │                      │  │                      │          │
+│  │ We design, launch,   │  │ Download free         │          │
+│  │ and stabilise text-  │  │ annotation guides     │          │
+│  │ anchored cohorts     │  │ for your text.        │          │
+│  │ that generate ~$18-  │  │                      │          │
+│  │ 20k in lifecycle     │  │ Or explore our       │          │
+│  │ revenue.             │  │ teaching method.     │          │
+│  │                      │  │                      │          │
+│  │ [Learn about         │  │ [Browse annotation   │          │
+│  │  partnerships →]     │  │  guides →]           │          │
+│  │                      │  │ [See how we teach →] │          │
+│  └─────────────────────┘  └─────────────────────┘          │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │ FOOTER                                                      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**SEO Target:** "English tutoring Melbourne", "text-specific tutoring", branded searches
+**What it does NOT contain:**
+- Text selection grid (the parent-direct Stage 1 mechanism is archived)
+- Methodology deep dive (belongs on `/method/`)
+- Results/testimonials (belongs on `/method/`)
+- Schools section (school pages are accessible but unlisted)
 
-**Voice:** Parent-facing. "Your child's text", not "your text".
+**SEO Target:** "LuminAIT", "English tutoring Melbourne", branded searches
 
----
+**Voice:** Professional, clean. Works for both audiences.
 
-### 3.2 School Directory `/schools/`
-
-**Role:** High-relevance entry point. Targets parents searching by school name.
-
-**Audience:** Parents who know their child's school but not necessarily the text details, or who trust school-specific alignment.
-
-**Content Structure:**
-- **Index:** List of verified schools + "Request Your School" form (Lead Gen).
-- **School Page:** `/schools/[school-slug]/`
-    - Hero: "English Tutoring for [School Name]"
-    - List: 2026 Text List by Year Level
-    - Status: Available / Waitlist
-    - CTA: Link to Text Page or Enquire
-
-**SEO Target:** "[School Name] English tutoring", "[School Name] booklist help"
+**Design:** Technology company landing page feel, not tutoring company marketing page. The "warmth" of parent-facing messaging lives on the pages parents actually visit.
 
 ---
 
-### 3.3 Text-Specific Course Outline `/[text-slug]/`
+## 5. CONDENSED METHOD PAGE `/method/`
 
-**Role:** The core proof point (Stage 2 of Credence Framework). Proves detailed preparation for the specific text.
+**Role:** Single page that demonstrates the complete teaching system. Replaces course.html, syllabus.html, method.html (current), sample.html, progress.html, and results.html.
 
-**Status:** ✅ IMPLEMENTED (Jan 27, 2026)
+**Status:** PLANNED (P0)
 
-**Supersedes:** Methodology Demo (`/guides/[text]`) - Now deprecated.
+**Audience:**
+- Parents who click "See how we teach" from homepage Path B
+- B2B buyers who want to understand the method depth (linked from partnership page's infrastructure showcase)
+- Organic SEO traffic for "English tutoring Melbourne", "analytical writing tutoring"
 
-**Audience:** Parent verifying if you are "ready" for their child's specific book.
+**Why condense:** The separate pages existed to serve different stages of the parent-direct funnel (method = Stage 3, course = Stage 4, results = validation loop). When B2B is primary and parent-direct is a proof layer, these stages collapse. The B2B buyer needs to see the complete system on one surface. The parent needs a shorter path to the same information.
 
-**Implementation:**
-- 8 homepage books at root level: `/the-giver/`, `/macbeth/`, `/animal-farm/`, etc.
-- 10 additional curriculum guides at `/curriculum/[slug]/`
-- Built from JSON data using `build-homepage-guides.js` and `build-parent-guides.js`
-- Design system compliant (uses `/components/page-parent-guide.css`)
+**Content Structure (single long page, section-anchored):**
 
-**Content Structure:**
-1. **Hero:** Title, Author, Year Level, Badge ("Parent Curriculum Guide")
-2. **What They'll Learn:** List of learning outcomes for the 10-week course
-3. **10-Week Breakdown:**
-   - Week-by-week cards with phase indicators (Foundation, Analysis, Writing, Body, Completion)
-   - Weekly topics and skills
-   - Technique highlight boxes for body paragraph weeks
-   - Toggle between 5-week condensed and 10-week extended views
-4. **CTA:** "Ready to get started?" → Link to `/course.html`
-
-**What It Proves:**
-- "They've mapped every week to this text"
-- "They know what techniques matter in THIS book"
-- "They've thought through the skill progression"
-- "This is what my child will learn"
-
-**What It Doesn't Give Away:**
-- The actual worksheets
-- The full analysis bank
-- Teaching method implementation details
-
-**SEO Target:** "[text] tutoring", "[text] English help", "[text] curriculum"
-
-**Voice:** Parent-facing. "Your child will learn...", "Week-by-week breakdown"
-
-**Technical Details:** See `BUILD_SYSTEM.md` (this directory) for build process documentation.
-
----
-
-### 3.4 Course Page `/course/`
-
-**Role:** Enrollment page. What they're buying.
-
-**Audience:** Parent ready to evaluate offer.
-
-**Content Structure:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ NAV                                                         │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  HERO                                                       │
-│  ─────                                                      │
-│  5 weeks. One text. Complete essay.                         │
+│  § THE METHOD (#method)                                     │
+│  ──────────────────────                                     │
+│  "How we teach analytical writing"                          │
+│                                                             │
+│  3-step process:                                            │
+│  Annotation → Structured Activity → Analysis                │
+│                                                             │
+│  One embedded video demo or screenshot of each step         │
+│  (from /studio/demos/)                                      │
+│                                                             │
+│  (Absorbs current method.html content)                      │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  WHAT'S INCLUDED                                            │
-│  ───────────────                                            │
-│  • Weekly worksheets tailored to your child's text          │
-│  • Written feedback on every submission                     │
-│  • Final essay and assessment                               │
-│  • Progress report for parents                              │
+│  § THE 10-WEEK PLAN (#ten-week-plan)                        │
+│  ────────────────────────────────────                       │
+│  "What a text-specific course looks like"                   │
+│                                                             │
+│  Generic 10-week structure:                                 │
+│  Foundation (Wk 1-2) → Analysis (Wk 3-5)                   │
+│  → Writing (Wk 6-8) → Completion (Wk 9-10)                 │
+│                                                             │
+│  ONE text-specific example shown as representative          │
+│  (e.g., The Outsiders)                                      │
+│                                                             │
+│  Note: "We build this plan for every prescribed text.       │
+│  See an example: [The Outsiders plan →]"                    │
+│                                                             │
+│  (Absorbs current course.html + syllabus.html content)      │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  HOW IT WORKS                                               │
-│  ────────────                                               │
-│  Week 1: Understanding the text                             │
-│  Week 2: Identifying patterns and devices                   │
-│  Week 3: Building analytical sentences                      │
-│  Week 4: Structuring the essay                              │
-│  Week 5: Writing and revision                               │
+│  § WHAT STUDENTS PRODUCE (#artifacts)                       │
+│  ────────────────────────────────────                       │
+│  Method artifacts strip: Annotation → Worksheet → Essay     │
+│                                                             │
+│  Sample worksheet (screenshot or interactive demo)          │
+│  Before/after writing samples                               │
+│                                                             │
+│  (Absorbs current sample.html content)                      │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  PRICING                                                    │
-│  ───────                                                    │
-│  5-week course: $275                                        │
-│  10-week course: $495                                       │
+│  § MEASUREMENT & OUTCOMES (#outcomes)                       │
+│  ────────────────────────────────────                       │
+│  Progress report format                                     │
+│  Outcome data (improvement rates, per-term gains)           │
+│  Before/after student writing comparison                    │
 │                                                             │
-│  [Enroll Now]                                               │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  TEXT SELECTION HELPER                                      │
-│  ─────────────────────                                      │
-│  "Not sure which text your child is studying?"              │
-│  "We have detailed course plans for 18+ texts..."           │
-│  [Browse Available Texts →] [View All Course Plans]         │
-│  Links: /#text-selection, /curriculum/                      │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│ FOOTER                                                      │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**SEO Target:** Minimal (conversion page, not discovery)
-
-**Voice:** Parent-facing. Warm, clear, addresses concerns.
-
-**Text-Specific Flow:** The text selection helper completes the parent-direct loop:
-`Homepage → Text Guide → Course Page → [Back to Text Selection]`
-
----
-
-## 4. PROOF LAYER: ANALYSIS GUIDE PAGES (Funnel 1)
-
-### 4.1 Curriculum Hub `/vce/`, `/hsc/`, `/ib/`
-
-**Role:** Entry point for curriculum-specific student searches.
-
-**Audience:** Students searching for help with their curriculum.
-
-**Content Structure:**
-```
-┌─────────────────────────────────────────────────────────────┐
-│ NAV                                                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  HERO                                                       │
-│  ─────                                                      │
-│  VCE English Text Analysis                                  │
-│                                                             │
-│  In-depth guides for VCE English texts.                     │
-│  Pattern-based analysis that shows you HOW texts            │
-│  create meaning.                                            │
+│  (Absorbs current progress.html + results.html content)     │
+│  (Serves as validation loop — adjacent to pricing)          │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  VCE TEXTS                                                  │
-│  ─────────                                                  │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ The Great Gatsby        F. Scott Fitzgerald         │   │
-│  │ The Impossible Dream    → Full Analysis Guide       │   │
-│  └─────────────────────────────────────────────────────┘   │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ Macbeth                 William Shakespeare         │   │
-│  │ Ambition's Corruption   → Full Analysis Guide       │   │
-│  └─────────────────────────────────────────────────────┘   │
+│  § ENROLL / ENQUIRE (#enroll)                               │
+│  ────────────────────────────                               │
+│  Pricing: 5-week ($275) / 10-week ($495)                    │
 │                                                             │
-├─────────────────────────────────────────────────────────────┤
+│  [Enquire →]                                                │
 │                                                             │
-│  HOW TO USE THESE GUIDES                                    │
-│  ───────────────────────                                    │
-│  Brief methodology explanation...                           │
+│  Text helper: "Find your child's text"                      │
+│  → /annotations/ (annotation guides hub)                    │
+│                                                             │
+│  (Absorbs current course.html pricing section)              │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │ FOOTER                                                      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**SEO Target:** "VCE English texts", "VCE text analysis", "[curriculum] essay help"
+**Why this works for both audiences:** A parent sees "here's how my child will be taught." A B2B buyer sees "here's the system my teachers will deliver." Same content, different lens. The page needs no B2B messaging — the B2B buyer is already viewing it through the partnership page's frame.
 
-**Voice:** Student-facing. Direct, useful, no fluff.
+**SEO Target:** "English tutoring Melbourne", "analytical writing tutoring", "[text] essay tutoring"
 
----
+**Voice:** Professional, clear. Neither heavily parent-warm nor B2B-cold. Let the system speak.
 
-### 4.2 Analysis Guide `/vce/[text]/`
-
-**Role:** Full SEO content. Steps 1-5. Demonstrates value, captures email.
-
-**Audience:** Student searching for essay help.
-
-**Content Structure:** Per GUIDE_TEMPLATE_SPEC_v1_1
-
-```
-Step 1: Know the Text (open)
-Step 2: See the Pattern (open)
-Step 3: Find the Proof (open)  
-Step 4: Build the Claim (open)
-Step 5: Write the Essay (gated — email capture)
-
-+ One-sheet download CTA
-+ Parent bridge footer
-```
-
-**SEO Target:** "[text] themes VCE", "[text] analysis", "[text] literary devices"
-
-**Voice:** Student-facing. Peer-to-capable-peer. "Here's what sophisticated analysis looks like."
+**Design:** Uses `page-marketing.css`. Single long page with sticky section nav or jump links. Each section is independently linkable via anchors.
 
 ---
 
-## 5. PROOF LAYER: ANNOTATION GUIDE PLG PAGES (Funnel 1B)
+## 6. ANNOTATION GUIDES `/annotations/`
 
-### 5.1 Annotations Hub `/annotations/`
+**Role:** Student-first entry point AND infrastructure proof for B2B buyers. The highest-leverage content type on the site because annotation guides ARE the infrastructure — not descriptions of it.
 
-**Role:** Student-first entry point. Lower-friction PLG funnel that captures student intent via SEO/social, then bridges to parent-direct conversion.
+**Status:** Hub + 1 text (The Outsiders). Expand per text.
+
+**Dual-duty mechanism:**
+- **Student path:** SEO/social → hub → guide preview → download → parent bridge → `/method/`
+- **B2B path:** `/partners/` infrastructure showcase → links to guide as example → buyer sees what the system produces
+
+The same page serves both audiences without dual messaging. The artefact speaks for itself in both contexts.
+
+### 6.1 Annotations Hub `/annotations/`
 
 **Audience:** Students searching for annotation guides or text analysis help.
 
 **Content Structure:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ NAV: Logo          Course | Curriculum Guides  [Enquire]    │
+│ NAV: Logo       How We Teach | Annotations | About [Enquire]│
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  HERO                                                       │
@@ -490,26 +523,14 @@ Step 5: Write the Essay (gated — email capture)
 │                                                             │
 │  AVAILABLE GUIDES                                           │
 │  ────────────────                                           │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ The Outsiders                                       │   │
-│  │ Exposition Annotation Guide                         │   │
-│  │ S.E. Hinton • Chapters 1-2                          │   │
-│  │ Social — "Class-Naive Witnessing"                   │   │
-│  │ → View Preview                                      │   │
-│  └─────────────────────────────────────────────────────┘   │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ The Giver                                           │   │
-│  │ Chapter Annotation Guide                            │   │
-│  │ Lois Lowry • Chapter 1                              │   │
-│  │ → View Preview                                      │   │
-│  └─────────────────────────────────────────────────────┘   │
+│  [Text cards — one per available guide]                     │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  COURSE CTA                                                 │
+│  METHOD CTA                                                 │
 │  ──────────                                                 │
 │  Want structured, expert-led learning?                      │
-│  [View Course Details →]                                    │
+│  [See how we teach →]                                       │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │ FOOTER                                                      │
@@ -520,13 +541,11 @@ Step 5: Write the Essay (gated — email capture)
 
 **Voice:** Student-facing. Helpful, practical, direct.
 
----
+### 6.2 Annotation Preview Page `/annotations/[text]/`
 
-### 5.2 Annotation Preview Page `/annotations/[text]/`
+**Role:** Preview + download gate + parent/method bridge. Demonstrates value, captures email/intent, bridges to method page.
 
-**Role:** Preview + download gate + parent bridge. Demonstrates value, captures email/intent, bridges to parent-direct funnel.
-
-**Audience:** Students seeking specific text help. Secondary: Parents researching alongside student.
+**Audience:** Students seeking specific text help. Secondary: Parents researching alongside student. Tertiary: B2B buyers evaluating infrastructure quality.
 
 **Content Structure:**
 ```
@@ -536,13 +555,11 @@ Step 5: Write the Essay (gated — email capture)
 │                                                             │
 │  HERO                                                       │
 │  ─────                                                      │
-│  The Outsiders                                              │
-│  Exposition Annotation Guide                                │
+│  [Text Title]                                               │
+│  [Guide Type] Annotation Guide                              │
 │                                                             │
-│  S.E. Hinton • Chapters 1-2 • Years 7-9                     │
-│  Social — "Class-Naive Witnessing"                          │
-│  How Ponyboy reveals class structures he can't              │
-│  fully articulate                                           │
+│  [Author] • [Chapters] • [Year Level]                       │
+│  [Lens] — [Lens Description]                                │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
@@ -556,53 +573,35 @@ Step 5: Write the Essay (gated — email capture)
 │  METHOD SECTION                                             │
 │  ──────────────                                             │
 │  How This Guide Works:                                      │
-│  Color Key:                                                 │
-│  • Class Signifiers (objects showing group identity)        │
-│  • Social Boundaries (places/barriers separating groups)    │
-│  • Innocence Markers (vulnerability, naivety)               │
-│                                                             │
-│  What to Look For:                                          │
-│  Semantic families with examples + key questions            │
+│  Color Key + Semantic Families + Key Questions              │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  DOWNLOAD GATE                                              │
 │  ─────────────                                              │
 │  Download the Full Guide                                    │
-│  8-page PDF with structured activities, discovery           │
-│  questions, and key passage analysis.                       │
-│                                                             │
 │  [Email input field]                                        │
 │  [Download Free Guide →]                                    │
 │                                                             │
-│  143 KB PDF • No signup required • Instant download         │
-│                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  PARENT BRIDGE                                              │
+│  METHOD BRIDGE                                              │
 │  ─────────────                                              │
-│  Show your parent the full 10-week plan                     │
-│  This annotation guide is just the beginning. See the       │
-│  complete curriculum your child will follow.                │
-│  [View Parent Curriculum Guide →]                           │
+│  This annotation guide is just the beginning.               │
+│  See the complete teaching method and 10-week plan.         │
+│  [See how we teach →] (/method/)                            │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  SECONDARY CTA                                              │
 │  ──────────────                                             │
 │  Want expert guidance?                                      │
-│  Join our 5-week or 10-week course for personalized        │
-│  feedback and structured learning.                          │
-│  [Enquire About the Course →]                               │
+│  [Enquire about the course →]                               │
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
 │ FOOTER                                                      │
 └─────────────────────────────────────────────────────────────┘
 ```
-
-**SEO Target:** "[text] annotation guide", "how to annotate [text]", "[text] chapter analysis"
-
-**Voice:** Student-facing initially, transitions to parent-facing in bridge section.
 
 **Conversion Flow:**
 ```
@@ -614,9 +613,9 @@ Email gate (lead capture)
   ↓
 Download PDF (instant gratification)
   ↓
-Parent bridge CTA (funnel handoff)
+Method bridge CTA (funnel handoff → /method/)
   ↓
-Parent curriculum guide or course page (parent-direct funnel)
+Method page (complete system + pricing + enquiry)
 ```
 
 **Content Pipeline:**
@@ -624,30 +623,27 @@ Parent curriculum guide or course page (parent-direct funnel)
 /data/annotation-guides/*.json → build-annotation-guides.js → /annotations/[slug]/index.html
 ```
 
-**Gate Strategy (Future A/B Test):**
-- Variant A: Email capture (low friction, list growth)
-- Variant B: Low-price purchase ($5-10, intent + revenue signal)
+**SEO Target:** "[text] annotation guide", "how to annotate [text]", "[text] chapter analysis"
+
+**Voice:** Student-facing initially, transitions to parent-facing in bridge section.
 
 **Success Metrics:**
 - Download rate (page → download)
-- Parent-bridge CTR (downloaded → outline/course)
-- Course conversion rate (annotation → course enquiry)
+- Method-bridge CTR (downloaded → method page)
+- Course enquiry rate (annotation → method → enquiry)
 
 ---
 
-## 6. PROOF LAYER: VIDEO-TO-PARENT PAGES (Funnel 3)
+## 7. VIDEO STUDIO `/studio/`
 
-### 6.1 Video Studio `/studio/`
+**Role:** Production tool for 30-second animated video scenes demonstrating text analysis. Screen-recorded for social media (Instagram Reels, TikTok, YouTube Shorts). Not a public-facing URL.
 
-**Role:** Hosts 30-second animated video scenes that demonstrate text analysis. These are recorded as screen captures for social media (Instagram Reels, TikTok, YouTube Shorts).
-
-**Audience:** Parents encountering LuminAIT through social media video. The video creates instant credibility by showing what analysis looks like in practice — bypassing the credence problem through specific demonstration.
+**Status:** 18 scenes built (all for The Outsiders).
 
 **How it works:**
-- Each scene is a self-contained HTML page with layered animations (intro → context → text analysis → outro)
-- `script.js` (StudioController) handles SPACE/ArrowRight to advance steps, R to reset, A for auto-play
-- Scene pages define `window.sceneSteps` (timing/subtitles) and a `studio-step` event handler (visual actions per step)
-- Scenes are opened in Chrome fullscreen (F11), screen-recorded, then exported for social
+- Each scene is a self-contained HTML page with layered animations
+- `script.js` (StudioController) handles SPACE/ArrowRight to advance, R to reset, A for auto-play
+- Scenes are opened in Chrome fullscreen, screen-recorded, then exported for social
 
 **Scene structure:**
 ```
@@ -662,291 +658,341 @@ Step 7: Call-to-action (outro layer)
 /data/video-scenes/*.json → build-video-scenes.js → /studio/scenes/[slug].html
 ```
 
-See `BUILD_SYSTEM.md` for the full build pipeline documentation.
+**Interactive Demos** (`/studio/demos/`):
+- `/studio/demos/demo-annotation.html` (The Outsiders annotation loop)
+- `/studio/demos/demo-worksheet.html` (Interactive sorting/sequencing)
+- `/studio/demos/demo-analysis.html` (Essay typing simulator)
+- Standalone HTML files. Auto-play on load. Used as embedded demos on method page.
 
-**Not a public-facing URL** — `/studio/` is a production tool, not a page visitors navigate to.
-
-### 6.2 Interactive Demos `/studio/demos/`
-
-**Role:** Dual-purpose pages that serve as (1) source for video screen capture and (2) interactive demonstrations linked from the homepage.
-
-**Audience:**
-1. **Production:** Video creator recording clips for the homepage/social.
-2. **Homepage Visitor:** Viewing the "The Method" section and clicking "View Interactive Demo".
-
-**Pages:**
-*   `/studio/demos/demo-annotation.html` (The Outsiders loop)
-*   `/studio/demos/demo-worksheet.html` (Interactive sorting/sequencing)
-*   `/studio/demos/demo-analysis.html` (Essay typing simulator)
-
-**Technical Implementation:**
-*   Standalone HTML files (no build step necessary).
-*   Auto-play on load (for video recording).
-*   Looping animations.
+See `BUILD_SYSTEM.md` for full pipeline documentation.
 
 ---
 
-## 7. SHARED PAGES
+## 8. ABOUT PAGE `/about/`
 
-### 7.1 How It Works `/curriculum/`
+**Role:** Background, credibility. Minimal. Supports both audiences peripherally.
 
-**Role:** Methodology explanation. Supports both funnels.
-
-**Content:** The 5-step system explained. How reading leads to writing.
-
-### 7.2 About `/about/` (Optional)
-
-**Role:** Background, credibility. Low priority.
+**Status:** ✅ Live
 
 ---
 
-## 8. NAVIGATION
+## 9. NAVIGATION
 
-### 8.1 Header (All Pages)
+### 9.1 Header (All Pages)
 
-**Current Implementation:** Nav is generated from `site-config.json` via the build system.
+**Target Implementation:**
 
 ```
-Logo: LuminAIT    The Method | Texts | Schools | Course | Results | About    [Enquire]
+Logo: LuminAIT       How We Teach | Annotations | About     [Enquire]
 ```
 
-**Navigation Structure:**
-- Logo → `/` (homepage)
-- The Method → `/method/` (teaching methodology)
-- Texts → `/#text-selection` (jump to text grid on homepage)
-- Schools → `/schools/` (school directory)
-- Course → `/course/` (enrollment page)
-- Results → `/results/` (student outcomes)
-- About → `/about/` (teacher profile & philosophy)
+- Logo → `/` (homepage router)
+- How We Teach → `/method/` (condensed method page)
+- Annotations → `/annotations/` (annotation guides hub)
+- About → `/about/`
 - Enquire → `mailto:hello@luminait.app` (CTA button)
+
+**What was removed from nav:**
+- "Texts" (parent-direct Stage 1 mechanism — archived)
+- "Schools" (school pages accessible but unlisted)
+- "Course" (absorbed into `/method/`)
+- "Results" (absorbed into `/method/`)
+- "The Method" renamed to "How We Teach" (clearer for both audiences)
+
+**What is NOT in nav:**
+- `/partners/` — accessible via homepage Path A and footer, not in parent-facing nav
 
 **Technical Implementation:**
 - Nav partial: `/src/partials/nav.html`
 - Generated via: `{{NAV_LINKS}}` placeholder in build system
 - Controlled by: `showInNav` flag in `site-config.json`
 - Bilingual support: EN/ZH text for all links
-- Active state: Current page highlighted with `.active` class
-
-**Managing Nav:**
-- To add/remove nav items: Update `showInNav: true/false` in `site-config.json`
-- To reorder nav: Reorder pages array in `site-config.json`
-- To change nav text: Update `navTitle` in page config
 - After changes: Run `node build.js` to regenerate pages
 
-### 8.2 Footer (All Pages)
+### 9.2 Footer (All Pages)
 
 ```
 LuminAIT
 
-Texts                    Resources              Contact
-─────────                ─────────              ───────
-Romeo and Juliet         How It Works           Email
-Macbeth                  Course                 Phone
-The Giver                VCE Guides
-[etc.]
+For Partners               Resources              Contact
+──────────                 ─────────              ───────
+Partnership Info           How We Teach           Email
+                           Annotation Guides      Phone
+                           About
 
-© 2026 · Melbourne
+Melbourne, VIC · © 2026
 ```
 
----
-
-## 9. URL PATTERNS
-
-### 9.1 Summary Table
-
-| URL | Role | Page Type | Audience |
-|-----|------|-----------|----------|
-| `/partners/` | B2B Primary | Partnership page | Business |
-| `/` | Proof Layer 2 | Homepage | Parent |
-| `/[text-slug]/` | Proof Layer 2 | Text-specific outline | Parent |
-| `/schools/` | Proof Layer 2 | School directory | Parent |
-| `/schools/[school]/` | Proof Layer 2 | School page | Parent |
-| `/course/` | Proof Layer 2 | Enrollment | Parent |
-| `/curriculum/` | Proof Layer 2 | Additional guides | Parent |
-| `/curriculum/[slug]/` | Proof Layer 2 | Curriculum guide | Parent |
-| `/annotations/` | Proof Layer 1B | Annotation hub | Student |
-| `/annotations/[text]/` | Proof Layer 1B | Annotation preview | Student |
-| `/vce/` | Proof Layer 1 | Curriculum hub | Student |
-| `/vce/[text]/` | Proof Layer 1 | Full analysis guide | Student |
-| `/hsc/` | Proof Layer 1 | Curriculum hub | Student |
-| `/hsc/[text]/` | Proof Layer 1 | Full analysis guide | Student |
-| `/ib/` | Proof Layer 1 | Curriculum hub | Student |
-| `/ib/[text]/` | Proof Layer 1 | Full analysis guide | Student |
-| `/studio/` | Proof Layer 3 | Video studio (internal) | Production |
-| `/studio/scenes/[slug].html` | Proof Layer 3 | Auto-generated scene | Production |
-| `/progress/` | Proof Layer 4 | Progress reports | Parent/B2B |
-| `/results/` | Proof Layer 4 | Student outcomes | Parent/B2B |
-
-### 9.2 Text Slugs
-
-| Text | Slug |
-|------|------|
-| To Kill a Mockingbird | `tkam` |
-| The Great Gatsby | `gatsby` |
-| Romeo and Juliet | `romeo-and-juliet` |
-| Macbeth | `macbeth` |
-| The Giver | `the-giver` |
-| Animal Farm | `animal-farm` |
+The footer provides the secondary route to `/partners/` without polluting the parent-facing nav.
 
 ---
 
-## 10. SEO STRATEGY
+## 10. URL PATTERNS
+
+### 10.1 Summary Table
+
+| URL | Status | Role | Page Type | Audience |
+|-----|--------|------|-----------|----------|
+| `/` | PLANNED | Router | Homepage | Both |
+| `/partners/` | PLANNED | B2B Primary | Partnership page | Business |
+| `/method/` | PLANNED | Complete system | Method + course + outcomes | Both |
+| `/annotations/` | ✅ Live | PLG + Proof Layer 1 | Annotation hub | Student/B2B |
+| `/annotations/[text]/` | ✅ Live (1 text) | PLG + Proof Layer 1 | Annotation preview | Student/B2B |
+| `/about/` | ✅ Live | Credibility | About | Both |
+| `/[text-slug]/` | UNLISTED | Proof Layer 2 | Parent curriculum guide | Parent (via link) |
+| `/curriculum/[text]/` | UNLISTED | Proof Layer 2 | Parent curriculum guide | Parent (via link) |
+| `/schools/[school]/` | UNLISTED | Proof Layer 2 | School page | Parent (via link) |
+| `/studio/` | PRODUCTION | Video production | Studio tool | Internal |
+| `/studio/scenes/[slug].html` | PRODUCTION | Video production | Scene page | Internal |
+| `/studio/demos/*.html` | PRODUCTION | Video production | Interactive demos | Internal |
+| `/course.html` | ARCHIVED | → `/method/#enroll` | Redirect | — |
+| `/syllabus.html` | ARCHIVED | → `/method/#ten-week-plan` | Redirect | — |
+| `/results.html` | ARCHIVED | → `/method/#outcomes` | Redirect | — |
+| `/progress.html` | ARCHIVED | → `/method/#measurement` | Redirect | — |
+| `/sample.html` | ARCHIVED | → `/method/#artifacts` | Redirect | — |
+
+### 10.2 Text Slugs
+
+| Text | Slug | Parent Guide | Annotation Guide |
+|------|------|:---:|:---:|
+| The Outsiders | `the-outsiders` | ✅ | ✅ |
+| The Giver | `the-giver` | ✅ | ✅ |
+| Macbeth | `macbeth` | ✅ | — |
+| Animal Farm | `animal-farm` | ✅ | — |
+| Romeo and Juliet | `romeo-and-juliet` | ✅ | — |
+| To Kill a Mockingbird | `tkam` | ✅ | — |
+| A Christmas Carol | `a-christmas-carol` | ✅ | — |
+| Blueback | `blueback` | ✅ | — |
+| Dracula | `dracula` | ✅ (curriculum) | — |
+| Jane Eyre | `jane-eyre` | ✅ (curriculum) | — |
+| The Simple Gift | `the-simple-gift` | ✅ (curriculum) | — |
+| The White Girl | `the-white-girl` | ✅ (curriculum) | — |
+| Catching Teller Crow | `catching-teller-crow` | ✅ (curriculum) | — |
+| Catherine Called Birdy | `catherine-called-birdy` | ✅ (curriculum) | — |
+| Convenience Store Woman | `convenience-store-woman` | ✅ (curriculum) | — |
+| His Name Was Walter | `his-name-was-walter` | ✅ (curriculum) | — |
+| My Life as an Alphabet | `my-life-as-an-alphabet` | ✅ (curriculum) | — |
+| The Curious Incident | `the-curious-incident` | ✅ (curriculum) | — |
+
+---
+
+## 11. SEO STRATEGY
 
 **For detailed local SEO implementation, see [LOCAL_SEO_STRATEGY.md](./LOCAL_SEO_STRATEGY.md)**
 
-### 10.1 By Page Type
+### 11.1 By Page Type
 
-| Page Type | Primary Keywords | Intent |
-|-----------|------------------|--------|
-| Partnership page | "English tutoring partnership", branded B2B | Transactional (B2B) |
-| Homepage | "English tutoring Melbourne", branded | Navigation |
-| Text-specific outline | "[text] tutoring", "[text] English help" | Transactional |
-| Course | Branded, "[text] course" | Transactional |
-| Annotation guide | "[text] annotation guide", "how to annotate [text]" | Informational |
-| Curriculum hub | "[curriculum] English texts" | Informational |
-| Analysis guide | "[text] themes", "[text] analysis" | Informational |
+| Page Type | Primary Keywords | Intent | Status |
+|-----------|------------------|--------|--------|
+| Homepage (router) | "LuminAIT", "English tutoring Melbourne" | Navigation | PLANNED |
+| Partnership page | "English tutoring partnership", "tutoring business infrastructure" | Transactional (B2B) | PLANNED |
+| Method page | "English tutoring method", "analytical writing tutoring" | Informational/Transactional | PLANNED |
+| Annotation guide | "[text] annotation guide", "how to annotate [text]" | Informational | LIVE (1 text) |
+| Parent guide (unlisted) | "[text] tutoring", "[text] English help" | Transactional | LIVE (18 texts) |
+| School page (unlisted) | "[school] English tutoring" | Local/Transactional | LIVE (5 schools) |
 
-### 10.2 Internal Linking
+### 11.2 Internal Linking
 
 ```
-Partnership Page (/partners/)
-    ├── → /annotations/[text]/ (infrastructure showcase)
-    ├── → /[text-slug]/ (parent experience example)
-    ├── → /progress/ (measurement proof)
-    ├── → /results/ (outcomes proof)
-    └── → /schools/[school]/ (school integration proof)
+Partnership Page (/partners/) — hub-and-spoke
+    ├── → /annotations/the-outsiders/  (infrastructure example)
+    ├── → /method/                     (complete system)
+    ├── → /the-giver/                  (parent experience example)
+    ├── → /schools/mckinnon-sc/        (school alignment example)
+    └── → /method/#outcomes            (outcome proof)
 
-Homepage
-    ├── → /[text-slug]/ (text cards)
-    ├── → /course/ (CTA)
-    └── → /curriculum/ (nav)
+Homepage (/) — router
+    ├── → /partners/                   (Path A: B2B)
+    ├── → /annotations/                (Path B: student/parent)
+    └── → /method/                     (Path B: student/parent)
 
-Text-Specific Outline
-    ├── → /course/ (CTA)
-    ├── → / (back to texts)
-    └── → /vce/[text]/ (if full guide exists, "Want more depth?")
+Annotation Preview (/annotations/[text]/)
+    ├── → Download PDF                 (lead capture)
+    ├── → /method/                     (method bridge)
+    └── → /annotations/                (back to hub)
 
-Annotation Preview
-    ├── → /[text-slug]/ (parent bridge)
-    ├── → /course/ (secondary CTA)
-    └── → /annotations/ (back to hub)
-
-Analysis Guide
-    ├── → /course/ (parent bridge)
-    └── → / (if parent landed here by mistake)
+Method Page (/method/)
+    ├── → /annotations/                (text helper → guides)
+    └── → mailto:hello@luminait.app    (enquiry CTA)
 ```
 
 ---
 
-## 11. BUILD PHASES
+## 12. BUILD PHASES
 
-### Phase 0: B2B Partnership Surface (Highest Priority)
+### Phase 0: Build `/partners/` (Highest Priority)
 
-**Goal:** Create the B2B partnership page that showcases cohort economics and links to infrastructure proof.
-
-| Page | Status | Action |
-|------|--------|--------|
-| `/partners/` | New | Build partnership page (template + content) |
-
-### Phase 1: Parent-Direct (Complete)
-
-**Goal:** Parent-direct funnel operational.
+**Goal:** B2B commercial surface exists.
 
 | Page | Status | Action |
 |------|--------|--------|
-| `/` | ✅ Live | Homepage with text grid |
-| `/[text-slug]/` | ✅ Live (18 texts) | Text-specific outlines |
-| `/course/` | ✅ Live | Enrollment page |
-| `/schools/` | ✅ Live | School directory |
+| `/partners/` | New | Build template + content per §3 wireframe |
 
-### Phase 2: PLG Expansion
+### Phase 1: Build Condensed `/method/`
 
-**Goal:** Expand annotation guides per text.
+**Goal:** Single page replaces 6 current marketing pages.
 
 | Page | Status | Action |
 |------|--------|--------|
-| `/annotations/` | ✅ Live | Annotation hub |
-| `/annotations/[text]/` | ✅ Live (2 texts) | Expand to more texts |
+| `/method/` | Redesign | Consolidate course + syllabus + method + sample + progress + results per §5 spec |
 
-### Phase 3: Analysis Guides Foundation
+### Phase 2: Redesign Homepage as Router
 
-**Goal:** VCE analysis guides live.
-
-| Page | Status | Action |
-|------|--------|--------|
-| `/vce/` | New | Build curriculum hub |
-| `/vce/[text]/` | New | Build via pipeline |
-
-### Phase 4: Analysis Guides Expansion
-
-**Goal:** HSC, IB hubs and guides.
+**Goal:** Minimal landing page routing both audiences.
 
 | Page | Status | Action |
 |------|--------|--------|
-| `/hsc/` | New | Build when HSC texts confirmed |
-| `/ib/` | New | Build when IB texts confirmed |
+| `/` | Redesign | Replace text-grid homepage with two-path router per §4 spec |
+
+### Phase 3: Update Navigation
+
+**Goal:** Nav reflects new architecture.
+
+| Change | Action |
+|--------|--------|
+| Remove from nav | Texts, Schools, Course, Results |
+| Add to nav | "How We Teach" (method), "Annotations" |
+| Add to footer | "For Partners" link |
+| Config | Update `site-config.json` `showInNav` flags |
+| Rebuild | `node build.js` |
+
+### Phase 4: Set Up Redirects
+
+**Goal:** Old URLs point to correct method page sections.
+
+| Old URL | Redirect To |
+|---------|-------------|
+| `/course.html` | `/method/#enroll` |
+| `/syllabus.html` | `/method/#ten-week-plan` |
+| `/results.html` | `/method/#outcomes` |
+| `/progress.html` | `/method/#measurement` |
+| `/sample.html` | `/method/#artifacts` |
+
+### Phase 5: Expand Annotation Guides
+
+**Goal:** Highest-leverage content investment. Each new guide adds PLG value AND B2B proof value simultaneously.
+
+| Action | Pipeline |
+|--------|----------|
+| Create JSON data per text | `/data/annotation-guides/[text].json` |
+| Build | `node build-annotation-guides.js` |
+| Verify | Check `/annotations/[text]/index.html` |
 
 ---
 
-## 12. TECHNICAL REQUIREMENTS
+## 13. TECHNICAL REQUIREMENTS
 
-### 12.1 SEO
+### 13.1 SEO
 
-- [ ] XML sitemap (auto-generated)
+- [ ] XML sitemap (auto-generated — exclude archived URLs, include unlisted)
 - [ ] robots.txt
 - [ ] Google Search Console verified
 - [ ] Meta titles/descriptions per page
 - [ ] Schema markup: Organization, Article, Book
 - [ ] Canonical URLs
+- [ ] 301 redirects for archived pages
 
-### 12.2 Performance
+### 13.2 Performance
 
 - [ ] Static HTML (current approach)
 - [ ] Minimal JS
 - [ ] Core Web Vitals passing
 
-### 12.3 Analytics
+### 13.3 Analytics
 
 - [ ] Page views, time on page, scroll depth
-- [ ] Track: text card clicks (which texts get interest)
-- [ ] Track: course page visits by source
+- [ ] Track: annotation guide downloads by text
+- [ ] Track: method page section views (which sections get attention)
+- [ ] Track: partnership page → proof link clicks (which proof layers B2B buyers explore)
 - [ ] Search Console: queries, impressions, CTR
 
-### 12.4 Language
+### 13.4 Language
 
-- [ ] EN/ZH toggle on all Funnel 2 pages
-- [ ] Chinese translations for homepage, course, methodology demos
+- [ ] EN/ZH toggle on method page and annotation pages
+- [ ] Chinese translations for method page, annotation hub
 
-### 12.5 Styling
+### 13.5 Styling
 
 All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this directory).
 
 | Page Type | CSS File | Voice |
 |-----------|----------|-------|
+| Homepage (router) | `page-marketing.css` + minimal overrides | Professional, clean |
 | B2B partnership | `page-marketing.css` + B2B overrides | Direct, evidence-based |
-| Parent-facing (Proof Layer 2) | `page-marketing.css` | Warm, parent-focused |
-| Student-facing (Proof Layers 1/1B) | `page-guide.css` [TODO] | Direct, useful |
+| Method page | `page-marketing.css` | Professional, system-focused |
+| Annotation guides | `page-guide.css` [TODO] | Direct, useful |
 
 **Adding new pages:** Follow `DESIGN_SYSTEM.md` (this directory) Section 8 for complete procedure.
 
 ---
 
-## 13. IMPLEMENTATION NOTES
+## 14. ARCHIVED PAGES
 
-### 13.1 Dual Parent Guide System
+These page specifications are preserved for reference. They may be reintroduced when priorities shift back to parent-direct acquisition. The pages remain accessible at their current URLs (unlisted) but are no longer part of the navigable site.
 
-**Why two locations for parent guides?**
+### 14.1 Old Homepage (Text Grid)
 
-- **Root level** (`/the-giver/`, `/macbeth/`, etc.): Homepage books
-  - 8 texts featured on homepage text grid
-  - Direct parent funnel: homepage → text page → course
+**Was:** Parent-direct entry point with text selection grid as primary action.
+
+**Content sections (in order):**
+1. Hero: "English tutoring built around your child's text"
+2. Text Grid: 8 book cards → text-specific outlines
+3. Methodology Section: "The Method" with single hero video
+4. Results Teaser: 3 outcome cards
+5. Schools Section: 5 featured schools
+6. Testimonials: Auto-scrolling parent/student quotes
+7. About / Teacher Profile
+
+**SEO Target:** "English tutoring Melbourne", "text-specific tutoring"
+**Voice:** Parent-facing. "Your child's text", not "your text."
+
+### 14.2 Old Course Page `/course.html`
+
+**Was:** Enrollment page. Pricing and course details.
+
+**Content sections:**
+1. Hero: "5 weeks. One text. Complete essay."
+2. What's Included (weekly worksheets, feedback, assessment, progress report)
+3. How It Works (5-week progression)
+4. Pricing: 5-week $275 / 10-week $495
+5. Text Selection Helper linking back to homepage
+
+**Redirect:** → `/method/#enroll`
+
+### 14.3 Old School Directory `/schools/`
+
+**Was:** Index page listing all verified schools with "Request Your School" form.
+
+**Status:** Individual school pages remain accessible at `/schools/[school]/`. The index page is archived. School pages include LocalBusiness schema for local SEO.
+
+**Schools built:** McKinnon SC, Lauriston, Melbourne Girls, Korowa, Scotch College
+
+### 14.4 Old Curriculum Index `/curriculum/`
+
+**Was:** Index page showing all 18 curriculum guide text cards.
+
+**Status:** Individual guides remain accessible at `/curriculum/[text]/`. The index page is archived. Guides are generated from JSON + template via `build-parent-guides.js`.
+
+### 14.5 Analysis Guide Hubs (VCE/HSC/IB)
+
+**Was:** Planned curriculum-specific student entry points. Never built.
+
+**Status:** Removed from architecture. Annotation guides (`/annotations/`) absorb the student-entry role with lower friction and dual B2B proof value. The 5-step analysis guide format (Know → See → Find → Build → Write) may inform future annotation guide depth, but separate VCE/HSC/IB hubs are no longer planned.
+
+---
+
+## 15. IMPLEMENTATION NOTES
+
+### 15.1 Dual Parent Guide System (Unlisted)
+
+Parent guides remain accessible at two URL patterns:
+
+- **Root level** (`/the-giver/`, `/macbeth/`, etc.): 8 homepage books
   - Built with: `build-homepage-guides.js`
 
-- **Curriculum directory** (`/curriculum/dracula/`, `/curriculum/jane-eyre/`, etc.): Additional guides
-  - 10 additional texts not on homepage
-  - Accessed via "View Parent Curriculum Guides" link on homepage
-  - Includes curriculum index page at `/curriculum/`
+- **Curriculum directory** (`/curriculum/dracula/`, `/curriculum/jane-eyre/`, etc.): 10 additional texts
   - Built with: `build-parent-guides.js`
+  - Includes curriculum index page at `/curriculum/`
 
 **Both use the same:**
 - JSON data format (`/data/parent-guides/[slug].json`)
@@ -954,11 +1000,11 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 - Design system (`/components/page-parent-guide.css`)
 - 10-week course outline structure
 
-**Future consolidation:** Once all texts have parent guides, consider moving homepage to use `/curriculum/` links instead of root-level pages. Current structure optimizes for SEO ([text] vs /curriculum/[text]).
+**These pages are unlisted** — not in navigation, but accessible via direct URL and linked from `/partners/` as parent experience examples. They retain SEO equity for "[text] tutoring" searches.
 
 ---
 
-## 14. VERSION HISTORY
+## 16. VERSION HISTORY
 
 | Version | Date | Changes |
 |---------|------|---------|
@@ -969,7 +1015,8 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 | 3.0 | Jan 28, 2026 | Three-funnel architecture: added Funnel 3 (Video-to-Parent) with /studio/ and /studio/scenes/ |
 | 3.1 | Jan 30, 2026 | Updated homepage structure to reflect Video Demo Section integration |
 | 3.2 | Feb 2, 2026 | Parent-Direct as PRIMARY. Repositioned schools section after results. Added text selection helper to course page. |
-| 4.0 | Feb 19, 2026 | **B2B Partnership as PRIMARY commercial strategy.** Added /partners/ page definition. All funnels reframed as proof layers. Section numbering updated. URL patterns table updated with B2B proof layer roles. |
+| 4.0 | Feb 19, 2026 | B2B Partnership as PRIMARY commercial strategy. Added /partners/ page definition. All funnels reframed as proof layers. |
+| 5.0 | Feb 19, 2026 | **Lean B2B architecture.** Archived parent-direct funnel pages. Condensed course+method+outcomes into `/method/`. Homepage redesigned as minimal router. Annotation guides promoted as dual-duty PLG + infrastructure proof. Added theory-to-asset registry (§2). Analysis guide hubs (VCE/HSC/IB) removed — annotation guides absorb that role. |
 
 ---
 
