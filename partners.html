@@ -40,222 +40,6 @@
   <link rel="stylesheet" href="/components/base.css">
   <link rel="stylesheet" href="/components/page-components.css">
   <link rel="stylesheet" href="/components/page-marketing.css">
-
-  <style>
-    .partners-hero {
-      padding: 4rem 0 3rem;
-      text-align: center;
-      max-width: 920px;
-      margin: 0 auto;
-    }
-
-    .partners-kicker {
-      display: inline-block;
-      background: var(--accent-light);
-      color: var(--accent);
-      border-radius: var(--radius-full);
-      padding: 0.35rem 0.9rem;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .partners-hero h1 {
-      margin: 1rem 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--text-dark);
-    }
-
-    .partners-subtitle {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: var(--text-main);
-      line-height: 1.7;
-    }
-
-    .economics-card {
-      margin-top: 2rem;
-      background: white;
-      border: 1px solid rgba(37, 99, 235, 0.2);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-md);
-    }
-
-    .economics-formula {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(1.35rem, 3vw, 1.9rem);
-      color: var(--primary-dark);
-      margin: 0;
-    }
-
-    .economics-note {
-      margin-top: 0.65rem;
-      color: var(--text-light);
-      font-size: 0.95rem;
-    }
-
-    .partners-section {
-      padding: 3.25rem 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .section-title {
-      margin-bottom: 1.35rem;
-      color: var(--text-dark);
-    }
-
-    .split-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    .split-card {
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: var(--radius-md);
-      padding: 1.2rem;
-    }
-
-    .split-card h3 {
-      margin: 0 0 0.75rem;
-      color: var(--text-dark);
-      font-size: 1.1rem;
-    }
-
-    .split-card ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      color: var(--text-main);
-      line-height: 1.75;
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .proof-link-card {
-      display: block;
-      background: var(--bg-white);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: var(--radius-md);
-      padding: 1rem;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .proof-link-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .proof-label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--primary);
-      margin-bottom: 0.35rem;
-    }
-
-    .proof-link-card h3 {
-      margin: 0.2rem 0;
-      font-size: 1.05rem;
-      color: var(--text-dark);
-    }
-
-    .proof-link-card p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--text-main);
-      line-height: 1.55;
-    }
-
-    .proof-link-card .link-arrow {
-      margin-top: 0.6rem;
-      display: inline-block;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 0.92rem;
-    }
-
-    .outcomes-band {
-      background: var(--section-soft);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.2rem;
-      color: var(--text-main);
-      line-height: 1.7;
-    }
-
-    .baseline-strip {
-      margin-top: 0.9rem;
-      font-size: 0.92rem;
-      color: var(--text-light);
-      background: #fff;
-      border: 1px dashed rgba(0, 0, 0, 0.15);
-      border-radius: var(--radius-sm);
-      padding: 0.8rem;
-    }
-
-    .cta-panel {
-      margin-top: 1.2rem;
-      padding: 1.6rem;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: white;
-      text-align: center;
-    }
-
-    .cta-panel h2 {
-      margin: 0 0 0.7rem;
-      color: white;
-    }
-
-    .cta-panel p {
-      margin: 0 0 1rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-actions a {
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: var(--radius-sm);
-      padding: 0.7rem 1rem;
-    }
-
-    .cta-primary {
-      background: white;
-      color: var(--primary-dark);
-    }
-
-    .cta-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      color: white;
-    }
-
-    @media (max-width: 860px) {
-      .split-grid,
-      .proof-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -292,91 +76,259 @@
       <h1>Cohort-Build Partnership for Text-Anchored English Programs</h1>
       <p class="partners-subtitle">
         We design, launch, stabilise, and hand over one viable text-anchored cohort. You get a repeatable delivery
-        model, trained teachers, and a system that can be replicated text by text.
+        model, trained teachers, and a structure that can be replicated text by text.
       </p>
       <div class="economics-card">
-        <p class="economics-formula">10 students × $600/term × 3-term lifecycle ≈ $18k–$20k</p>
-        <p class="economics-note">Shown as lifecycle value with ramp, not immediate cash.</p>
+        <p class="economics-formula">10 students x $600/term x 3-term lifecycle ~= $18k-$20k</p>
+        <p class="economics-note">Shown as lifecycle value with a term-by-term ramp, not immediate cash.</p>
       </div>
     </header>
 
-    <section class="partners-section" id="engagement">
-      <h2 class="section-title">Engagement Structure</h2>
+    <section class="partners-section" id="term-timeline">
+      <h2 class="section-title">3-Term Cohort Timeline</h2>
+      <p class="partners-intro">
+        Revenue clarity improves when the build is shown by term. Each term has a concrete operational target and a
+        visible signal that the cohort is maturing.
+      </p>
+      <div class="term-timeline">
+        <article class="term-card">
+          <span class="term-label">Term 1</span>
+          <h3>Implement</h3>
+          <ul>
+            <li>Deploy one text-based cohort for one year level.</li>
+            <li>Install measurement and reporting cadence.</li>
+            <li>Produce annotation guide, worksheets, and marking constraints.</li>
+          </ul>
+          <p class="term-outcome">Outcome signal: conversion uplift begins when families see consistent artefacts and feedback.</p>
+        </article>
+        <article class="term-card">
+          <span class="term-label">Term 2</span>
+          <h3>Stabilise</h3>
+          <ul>
+            <li>Retention stabilises with a repeatable lesson loop.</li>
+            <li>Measurement reports become predictable.</li>
+            <li>Patch weak steps and reduce tutor variance.</li>
+          </ul>
+          <p class="term-outcome">Outcome signal: retention uplift becomes visible and unit economics begin to settle.</p>
+        </article>
+        <article class="term-card">
+          <span class="term-label">Term 3</span>
+          <h3>Replicate</h3>
+          <ul>
+            <li>Replicate the proven loop to new books and cohorts.</li>
+            <li>Reuse artefacts and measurement model.</li>
+            <li>Grow by adding cohorts rather than adding complexity.</li>
+          </ul>
+          <p class="term-outcome">Outcome signal: lifecycle revenue grows as replicated cohorts mature.</p>
+        </article>
+      </div>
+      <p class="timeline-footnote">Cohorts mature over terms; lifecycle value is realised as the cohort stabilises and repeats.</p>
+    </section>
+
+    <section class="partners-section" id="revenue">
+      <h2 class="section-title">Why revenue increases</h2>
+      <p class="partners-intro">
+        Revenue growth follows a mechanism. Teaching consistency improves trust, trust improves conversion and
+        retention, and repeatable cohorts compound value.
+      </p>
+      <div class="causal-chain" aria-label="Revenue causal chain">
+        <div class="chain-node">Teaching consistency</div>
+        <div class="chain-node">Parents see progress</div>
+        <div class="chain-node">Higher trust</div>
+        <div class="chain-node">Higher conversion + retention</div>
+        <div class="chain-node">Cohort value compounds</div>
+      </div>
       <div class="split-grid">
         <article class="split-card">
-          <h3>What We Deliver</h3>
+          <h3>Conversion drivers</h3>
           <ul>
-            <li>Design one viable text-anchored cohort</li>
-            <li>Deliver and calibrate Term 1 directly</li>
-            <li>Stabilise progression and retention</li>
-            <li>Train partner teachers during handover</li>
-            <li>Provide reusable instructional infrastructure</li>
+            <li>Clear artefacts at first contact.</li>
+            <li>Visible method linked to each artefact.</li>
+            <li>Early wins shown in first-term reporting.</li>
+            <li>Parent visibility from week-level updates.</li>
           </ul>
         </article>
         <article class="split-card">
-          <h3>What You Provide</h3>
+          <h3>Retention drivers</h3>
           <ul>
-            <li>Existing lead flow and enrolment operations</li>
-            <li>Teacher allocation for handover</li>
-            <li>Scheduling and parent communications</li>
-            <li>Cohort continuity over terms</li>
+            <li>Consistent feedback loop across weeks.</li>
+            <li>Reduced tutor variance through constraints.</li>
+            <li>Repeatable cadence that families can trust.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section class="partners-section" id="proof">
-      <h2 class="section-title">Infrastructure Showcase</h2>
-      <p class="text-light">One representative asset per layer. Evaluate the system through the same artefacts your team and families will use.</p>
-      <div class="proof-grid">
-        <a href="/annotations/the-outsiders/" class="proof-link-card" data-proof-link="annotation-example">
-          <span class="proof-label">Layer 1</span>
-          <h3>Annotation Guide Example</h3>
-          <p>See what teachers deliver in class: colour-keyed annotation flow, semantic families, and guided practice.</p>
-          <span class="link-arrow">Open /annotations/the-outsiders/ →</span>
-        </a>
+    <section class="partners-section" id="engagement">
+      <h2 class="section-title">Engagement structure</h2>
+      <p class="partners-intro">
+        Scope is explicit on both sides. The engagement builds one viable cohort, transfers operational capability, and
+        preserves ongoing licensing of instructional assets.
+      </p>
+      <div class="split-grid">
+        <article class="split-card">
+          <h3>What we deliver</h3>
+          <ul>
+            <li>Design one viable text-anchored cohort.</li>
+            <li>Deliver and calibrate Term 1 directly.</li>
+            <li>Stabilise progression and retention loops.</li>
+            <li>Train partner teachers during handover.</li>
+            <li>Provide reusable instructional infrastructure.</li>
+            <li>Continue materials licensing post handover.</li>
+          </ul>
+        </article>
+        <article class="split-card">
+          <h3>What you provide</h3>
+          <ul>
+            <li>Existing lead flow and enrolment operations.</li>
+            <li>Teacher allocation and roster continuity.</li>
+            <li>Scheduling and parent communication ownership.</li>
+            <li>Cohort continuity across terms.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-        <a href="/method/" class="proof-link-card" data-proof-link="method-page">
-          <span class="proof-label">Layers 1+2+4</span>
-          <h3>Complete Teaching System</h3>
-          <p>Method, 10-week structure, student artefacts, outcomes, and enrolment details on one surface.</p>
-          <span class="link-arrow">Open /method/ →</span>
-        </a>
+    <section class="partners-section" id="infrastructure">
+      <h2 class="section-title">Connected systems map</h2>
+      <p class="partners-intro">
+        Infrastructure works as a connected loop. Artefacts structure delivery, delivery produces outputs, outputs feed
+        economics, and economics are verified by measurement.
+      </p>
 
-        <a href="/the-giver/" class="proof-link-card" data-proof-link="parent-guide-example">
-          <span class="proof-label">Layer 2</span>
-          <h3>Parent Experience Example</h3>
-          <p>Text-specific parent-facing curriculum guide used as preparation proof in the parent journey.</p>
-          <span class="link-arrow">Open /the-giver/ →</span>
-        </a>
+      <div class="map-wrap">
+        <div class="systems-map" aria-label="Connected systems map">
+          <svg class="systems-connectors" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <marker id="partnersArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" fill="rgba(17, 24, 39, 0.18)"></path>
+              </marker>
+            </defs>
+            <line x1="210" y1="125" x2="460" y2="125" stroke="rgba(17, 24, 39, 0.18)" stroke-width="2" marker-end="url(#partnersArrow)"></line>
+            <line x1="540" y1="125" x2="790" y2="125" stroke="rgba(17, 24, 39, 0.18)" stroke-width="2" marker-end="url(#partnersArrow)"></line>
+            <line x1="835" y1="185" x2="835" y2="345" stroke="rgba(17, 24, 39, 0.18)" stroke-width="2" marker-end="url(#partnersArrow)"></line>
+            <line x1="790" y1="395" x2="210" y2="395" stroke="rgba(17, 24, 39, 0.18)" stroke-width="2" marker-end="url(#partnersArrow)"></line>
+            <line x1="165" y1="345" x2="165" y2="185" stroke="rgba(17, 24, 39, 0.18)" stroke-width="2" marker-end="url(#partnersArrow)"></line>
+          </svg>
 
-        <a href="/schools/mckinnon-sc/" class="proof-link-card" data-proof-link="school-page-example">
-          <span class="proof-label">Layer 2</span>
-          <h3>School Alignment Example</h3>
-          <p>School-level page structure that maps text offerings to local trust and discovery context.</p>
-          <span class="link-arrow">Open /schools/mckinnon-sc/ →</span>
-        </a>
+          <article class="map-node map-node-artifacts">
+            <span class="proof-label">System node</span>
+            <h3>Artefacts</h3>
+            <p>Annotation guides, worksheets, and exemplars define the teaching surface.</p>
+            <a class="link-arrow" href="/annotations/the-outsiders/" data-proof-link="map-artifacts">View example -&gt;</a>
+          </article>
+
+          <article class="map-node map-node-delivery">
+            <span class="proof-label">System node</span>
+            <h3>Delivery</h3>
+            <p>Tutor training and weekly cadence convert artefacts into repeatable classes.</p>
+            <a class="link-arrow" href="/method/#method" data-proof-link="map-delivery">View example -&gt;</a>
+          </article>
+
+          <article class="map-node map-node-outputs">
+            <span class="proof-label">System node</span>
+            <h3>Outputs</h3>
+            <p>Student work and parent reports provide visible progress across the term.</p>
+            <a class="link-arrow" href="/method/#artifacts" data-proof-link="map-outputs">View example -&gt;</a>
+          </article>
+
+          <article class="map-node map-node-measurement">
+            <span class="proof-label">System node</span>
+            <h3>Measurement</h3>
+            <p>Evidence checks and reporting constraints keep quality consistent across tutors.</p>
+            <a class="link-arrow" href="/method/#measurement" data-proof-link="map-measurement">View example -&gt;</a>
+          </article>
+
+          <article class="map-node map-node-economics">
+            <span class="proof-label">System node</span>
+            <h3>Economics</h3>
+            <p>Conversion and retention movement defines cohort lifecycle value.</p>
+            <a class="link-arrow" href="/method/#enroll" data-proof-link="map-economics">View example -&gt;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section" id="artefact-previews">
+      <h2 class="section-title">Artefact previews</h2>
+      <p class="partners-intro">
+        Preview loops make the delivery concrete before deeper evaluation. Video can be swapped in later without
+        template changes because each tab already supports poster fallback.
+      </p>
+
+      <div class="preview-tabs">
+        <div class="tab-list" role="tablist" aria-label="Artefact preview tabs">
+          <button class="preview-tab is-active" id="tab-annotation" role="tab" aria-controls="panel-annotation"
+            aria-selected="true" tabindex="0" data-preview-tab="annotation">Annotation</button>
+          <button class="preview-tab" id="tab-worksheet" role="tab" aria-controls="panel-worksheet"
+            aria-selected="false" tabindex="-1" data-preview-tab="worksheet">Worksheet</button>
+          <button class="preview-tab" id="tab-report" role="tab" aria-controls="panel-report" aria-selected="false"
+            tabindex="-1" data-preview-tab="report">Report</button>
+        </div>
+
+        <div class="tab-panels">
+          <section class="tab-panel is-active" id="panel-annotation" role="tabpanel" aria-labelledby="tab-annotation">
+            <div class="preview-stage">
+              <video class="preview-media" muted playsinline autoplay loop poster="/images/partners/preview-annotation.png"
+                data-fallback="fallback-annotation">
+                <source src="/studio/assets/clips/demo-annotation.mp4" type="video/mp4">
+              </video>
+              <img class="preview-fallback" id="fallback-annotation" src="/images/partners/preview-annotation.png"
+                alt="Annotation guide preview frame">
+            </div>
+            <p class="tab-caption">Preview loop: color key, marked passage, and instruction prompt in one sequence.</p>
+            <a class="tab-proof-link" href="/annotations/the-outsiders/" data-proof-link="tab-annotation-example">View example -&gt;</a>
+          </section>
+
+          <section class="tab-panel" id="panel-worksheet" role="tabpanel" aria-labelledby="tab-worksheet" hidden>
+            <div class="preview-stage">
+              <video class="preview-media" muted playsinline autoplay loop poster="/images/partners/preview-worksheet.png"
+                data-fallback="fallback-worksheet">
+                <source src="/studio/assets/clips/demo-worksheet.mp4" type="video/mp4">
+              </video>
+              <img class="preview-fallback" id="fallback-worksheet" src="/images/partners/preview-worksheet.png"
+                alt="Worksheet preview frame">
+            </div>
+            <p class="tab-caption">Preview loop: structured prompt flow from evidence capture to analytical response.</p>
+            <a class="tab-proof-link" href="/method/#artifacts" data-proof-link="tab-worksheet-example">View example -&gt;</a>
+          </section>
+
+          <section class="tab-panel" id="panel-report" role="tabpanel" aria-labelledby="tab-report" hidden>
+            <div class="preview-stage">
+              <img class="preview-fallback is-default" id="fallback-report" src="/images/partners/preview-report.png"
+                alt="Measurement report preview frame">
+            </div>
+            <p class="tab-caption">Poster placeholder: summary page, diagnostics table, and example comment block.</p>
+            <a class="tab-proof-link" href="/method/#outcomes" data-proof-link="tab-report-example">View example -&gt;</a>
+          </section>
+        </div>
       </div>
     </section>
 
     <section class="partners-section" id="outcomes">
-      <h2 class="section-title">Outcomes and Validation</h2>
+      <h2 class="section-title">Outcomes and validation</h2>
+      <p class="partners-intro">
+        Founder-led cohorts provide baseline conversion, retention, and writing-improvement evidence. Outcomes are
+        surfaced in one place for consistent partner review.
+      </p>
       <div class="outcomes-band">
-        Founder-led cohorts provide baseline conversion, retention, and writing-improvement evidence.
-        View the consolidated proof block on the method page outcomes section.
-        <a href="/method/#outcomes" data-proof-link="method-outcomes">See outcomes data →</a>
+        Consolidated outcomes include conversion movement, retention movement, and writing-quality progression from
+        real cohorts. <a href="/method/#outcomes" data-proof-link="method-outcomes">Open outcomes layer -&gt;</a>
       </div>
       <div class="baseline-strip">
-        Baseline operator profile from partnership deck data: 30–50 qualified leads/month, 15–20% trial-to-paid
-        conversion, and 50–60% term retention before system instrumentation.
+        Baseline profile from partnership deck data: 30-50 qualified leads/month, 15-20% trial-to-paid conversion,
+        and 50-60% term retention before full system instrumentation.
       </div>
+    </section>
 
-      <div class="cta-panel" id="proposal">
-        <h2>Request an Engagement Proposal</h2>
-        <p>Share your current lead flow, teacher capacity, and priority texts. We will scope one viable cohort build with clear success/failure conditions.</p>
+    <section class="partners-section partners-action" id="proposal">
+      <div class="cta-panel">
+        <h2>Request an engagement proposal</h2>
+        <p>Share your lead flow, teacher capacity, and priority texts. We scope one viable cohort build with clear
+          success and failure conditions.</p>
         <div class="cta-actions">
-          <a class="cta-primary" href="mailto:mahesh@luminait.app?subject=Partnership%20Engagement%20Proposal">Request Proposal</a>
-          <a class="cta-secondary" href="/method/" data-proof-link="return-method">Review Method First</a>
+          <a class="cta-primary" href="mailto:mahesh@luminait.app?subject=Partnership%20Engagement%20Proposal">Request proposal</a>
+          <a class="cta-secondary" href="/method/" data-proof-link="return-method">Review method first</a>
         </div>
       </div>
     </section>
@@ -409,18 +361,99 @@
 
 
   <script>
-    // Lightweight click instrumentation for proof-layer exploration from /partners/.
-    document.querySelectorAll('[data-proof-link]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var label = link.getAttribute('data-proof-link');
-        if (window.dataLayer && Array.isArray(window.dataLayer)) {
-          window.dataLayer.push({
-            event: 'partners_proof_click',
-            proof_target: label
-          });
+    (function () {
+      function trackEvent(eventName, payload) {
+        if (!(window.dataLayer && Array.isArray(window.dataLayer))) {
+          return;
         }
+
+        var eventData = { event: eventName };
+        Object.keys(payload || {}).forEach(function (key) {
+          eventData[key] = payload[key];
+        });
+        window.dataLayer.push(eventData);
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('[data-proof-link]'), function (link) {
+        link.addEventListener('click', function () {
+          var label = link.getAttribute('data-proof-link');
+          trackEvent('partners_proof_click', { proof_target: label });
+        });
       });
-    });
+
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.preview-tab'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+
+      function activateTab(tab, shouldTrack) {
+        var targetId = tab.getAttribute('aria-controls');
+
+        tabs.forEach(function (item) {
+          var isActive = item === tab;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          item.setAttribute('tabindex', isActive ? '0' : '-1');
+        });
+
+        panels.forEach(function (panel) {
+          var isActive = panel.id === targetId;
+          panel.classList.toggle('is-active', isActive);
+          panel.hidden = !isActive;
+        });
+
+        if (shouldTrack) {
+          trackEvent('partners_preview_tab', { preview_tab: tab.getAttribute('data-preview-tab') });
+        }
+      }
+
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener('click', function () {
+          activateTab(tab, true);
+        });
+
+        tab.addEventListener('keydown', function (event) {
+          var nextIndex = null;
+
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+            nextIndex = (index + 1) % tabs.length;
+          }
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+            nextIndex = (index - 1 + tabs.length) % tabs.length;
+          }
+          if (event.key === 'Home') {
+            nextIndex = 0;
+          }
+          if (event.key === 'End') {
+            nextIndex = tabs.length - 1;
+          }
+
+          if (nextIndex !== null) {
+            event.preventDefault();
+            tabs[nextIndex].focus();
+            activateTab(tabs[nextIndex], true);
+          }
+        });
+      });
+
+      if (tabs.length) {
+        activateTab(tabs[0], false);
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('.preview-media'), function (video) {
+        video.addEventListener('error', function () {
+          var fallbackId = video.getAttribute('data-fallback');
+          video.classList.add('is-hidden');
+
+          if (!fallbackId) {
+            return;
+          }
+
+          var fallback = document.getElementById(fallbackId);
+          if (fallback) {
+            fallback.classList.add('is-visible');
+          }
+        });
+      });
+    })();
   </script>
 
 </body>
