@@ -78,6 +78,16 @@ npm run build:all
 **Output:** All generated content refreshed
 **Verify:** Spot-check one page from each type (main, book, curriculum, scene, school, annotation)
 
+### WF-RAG-REBUILD: Rebuild RAG documentation search index
+
+**When:** After adding new docs, major edits to existing docs, or updating `docs/CORE_DOCS_INDEX.md`
+**Command:**
+```bash
+python -m rag.indexer --force
+```
+**Output:** `outputs/rag/index.jsonl`, `outputs/rag/embeddings.npy` (not committed)
+**Verify:** `python -m rag.query "credence problem"` returns `docs/theory/01_CREDENCE_PROBLEM.md` as top result
+
 ---
 
 ## Section 2: Composed Workflows

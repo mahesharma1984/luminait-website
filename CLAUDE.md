@@ -159,6 +159,19 @@ Before coding, read `/docs/` first using the task-routed order below.
 - `docs/CI_RULES.md` -- safety guardrails for commits and AI-assisted work
 - `docs/CORE_DOCS_INDEX.md` -- canonical source for each concept
 
+## Documentation Search
+
+Query the RAG index for task-relevant documentation:
+
+- **RAG doc search:** `python -m rag.query "your question"`
+  - Semantic search across all docs
+  - Returns: Top-5 ranked sections with scores
+  - <100ms, $0 cost (local embeddings)
+  - **When to use:** Cross-cutting queries, quick lookups, methodology verification
+  - **When NOT to use:** Learning architecture from scratch (use task-routed reading above)
+
+- **Rebuild index** (after adding/changing docs): `python -m rag.indexer --force`
+
 ## Documentation Priority
 
 1. `docs/theory/00_COMMERCIAL_THESIS.md` (B2B anchor — read first for any strategy/architecture work)
