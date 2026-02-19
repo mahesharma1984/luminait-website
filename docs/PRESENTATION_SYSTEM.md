@@ -2,8 +2,13 @@
 
 **Comprehensive Guide for All Presentation Templates**
 
-Version: 2.1
-Last Updated: 2026-02-06
+Version: 2.2
+Last Updated: 2026-02-19
+
+**Related (shared principles — read these first for new work):**
+- `theory/06_PAGE_LOGIC.md` — canonical page logic types (semantic section vocabulary shared with web pages)
+- `technical/VISUAL_ENGAGEMENT.md` — shared visual principles extracted from §6.5 of this doc
+- `technical/LAYOUT_PATTERNS.md` — web-specific equivalents of the presentation patterns in §6
 
 ---
 
@@ -15,8 +20,8 @@ Last Updated: 2026-02-06
 4. [Shared Technical Specifications](#shared-technical-specifications)
 5. [Design Systems Comparison](#design-systems-comparison)
    - 5.5 [Logo & Logotype Usage](#logo--logotype-usage)
-6. [Layout Patterns Library](#layout-patterns-library)
-   - 6.5 [Visual Engagement Principles](#visual-engagement-principles)
+6. [Layout Patterns Library](#layout-patterns-library) *(presentation-specific; see `LAYOUT_PATTERNS.md` for web)*
+   - 6.5 [Visual Engagement Principles](#visual-engagement-principles) *(canonical version now in `VISUAL_ENGAGEMENT.md`)*
 7. [Content Guidelines](#content-guidelines)
 8. [Navigation & Interaction](#navigation--interaction)
 9. [PDF Generation](#pdf-generation)
@@ -553,6 +558,15 @@ When adding logos to slides:
 ---
 
 ## 6. Layout Patterns Library
+
+> **Cross-reference:** These are presentation-specific layout patterns. For web page equivalents, see `technical/LAYOUT_PATTERNS.md`. Both share the same page logic types defined in `theory/06_PAGE_LOGIC.md`.
+>
+> Each pattern below maps to a page logic type:
+> - Triangle, process flow, chevron, lane diagram, deployment phases → `type-system`
+> - Measurement grid, pricing block → `type-economics`
+> - Impact metric, evidence slides → `type-proof`
+> - Split columns, invariant frame → `type-boundary`
+> - Section divider → structural (no logic type)
 
 ### Universal Patterns (All Templates)
 
@@ -1107,6 +1121,8 @@ When adding logos to slides:
 
 ## 6.5 Visual Engagement Principles
 
+> **Canonical source:** The medium-independent version of these principles now lives in `technical/VISUAL_ENGAGEMENT.md`. This section retains presentation-specific detail. For web page application, see `VISUAL_ENGAGEMENT.md` directly.
+
 ### Overview
 
 Visual engagement keeps audiences focused and prevents monotony across multi-slide presentations. These principles apply across all three templates but should be adapted to each template's design system.
@@ -1274,6 +1290,8 @@ When designing or reviewing a slide:
 ---
 
 ## 7. Content Guidelines
+
+> **Cross-reference:** Each slide maps to a page logic type from `theory/06_PAGE_LOGIC.md`. The logic type determines what the slide communicates; the content guidelines below determine how. See §4 of `06_PAGE_LOGIC.md` for deck-level logic type mapping.
 
 ### Slide Hierarchy (All Templates)
 
@@ -1926,6 +1944,7 @@ Before finalizing deck:
 
 ## Version History
 
+- **v2.2** (2026-02-19): Added cross-references to shared docs (06_PAGE_LOGIC.md, VISUAL_ENGAGEMENT.md, LAYOUT_PATTERNS.md). Visual engagement principles and layout patterns now have canonical shared versions. Presentation-specific detail retained here.
 - **v2.1** (2026-02-06): Added visual engagement priorities and logo usage rules (Issue #99)
   - New Section 5.5: Logo & Logotype Usage (placement, sizing, dark/light variants)
   - New Section 6.5: Visual Engagement Principles (contrast, rhythm, asymmetry, white space, tension)

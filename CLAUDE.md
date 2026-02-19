@@ -7,13 +7,16 @@ Before coding, read `/docs/` first using the task-routed order below.
 ### Build Practices (templates, generators, data)
 1. `docs/technical/BUILD_SYSTEM.md`
 2. `docs/technical/DESIGN_SYSTEM.md`
-3. `docs/technical/UX_PROCESS.md`
+3. `docs/technical/LAYOUT_PATTERNS.md` (visual patterns per section type)
+4. `docs/technical/UX_PROCESS.md`
 
 ### Prototyping / New Features
 1. `docs/DEV_GUIDE_Building_Prototypes_v2_0.md`
 2. `docs/theory/00_COMMERCIAL_THESIS.md` (understand B2B proof hierarchy)
-3. `docs/technical/SITE_ARCHITECTURE.md`
-4. `docs/theory/02_CUSTOMER_JOURNEY.md`
+3. `docs/theory/06_PAGE_LOGIC.md` (canonical section types — what kind of section does this need?)
+4. `docs/technical/SITE_ARCHITECTURE.md`
+5. `docs/technical/LAYOUT_PATTERNS.md` (pick the right visual pattern for each section)
+6. `docs/theory/02_CUSTOMER_JOURNEY.md`
 
 ### Debugging / Regressions
 1. `docs/DEBUG_RUNBOOK.md` (symptom lookup -- start here)
@@ -33,8 +36,16 @@ Before coding, read `/docs/` first using the task-routed order below.
 4. `docs/theory/03_VALIDATION_LOOP.md`
 5. `docs/theory/04_CONTENT_DERIVATION.md`
 6. `docs/theory/05_CHANNEL_ALIGNMENT.md`
-7. `docs/technical/SITE_ARCHITECTURE.md`
-8. `docs/technical/FUNNEL_STRATEGY.md`
+7. `docs/theory/06_PAGE_LOGIC.md` (canonical section types — how pages compose)
+8. `docs/technical/SITE_ARCHITECTURE.md`
+9. `docs/technical/FUNNEL_STRATEGY.md`
+
+### Page Design / Visual Standards
+1. `docs/theory/06_PAGE_LOGIC.md` (section types — what job does each section do?)
+2. `docs/technical/LAYOUT_PATTERNS.md` (web patterns — how does each section type render?)
+3. `docs/technical/VISUAL_ENGAGEMENT.md` (shared visual principles — focal hierarchy, rhythm, spacing)
+4. `docs/technical/DESIGN_SYSTEM.md` (CSS tokens and component library)
+5. `docs/PRESENTATION_SYSTEM.md` (presentation-specific patterns — if working on decks)
 
 ## Active Project Structure
 
