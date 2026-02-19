@@ -23,7 +23,7 @@
 
 [[redirects]]
   from = "/course.html"
-  to = "/course/"
+  to = "/method/#enroll"
   status = 301
   force = true
 
@@ -35,30 +35,147 @@
 
 [[redirects]]
   from = "/progress.html"
-  to = "/progress/"
+  to = "/method/#measurement"
   status = 301
   force = true
 
 [[redirects]]
   from = "/results.html"
-  to = "/results/"
+  to = "/method/#outcomes"
   status = 301
   force = true
 
 [[redirects]]
   from = "/sample.html"
-  to = "/sample/"
+  to = "/method/#artifacts"
   status = 301
   force = true
 
 [[redirects]]
   from = "/syllabus.html"
-  to = "/syllabus/"
+  to = "/method/#ten-week-plan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/course/"
+  to = "/method/#enroll"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/course"
+  to = "/method/#enroll"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/progress/"
+  to = "/method/#measurement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/progress"
+  to = "/method/#measurement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/results/"
+  to = "/method/#outcomes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/results"
+  to = "/method/#outcomes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sample/"
+  to = "/method/#artifacts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sample"
+  to = "/method/#artifacts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/syllabus/"
+  to = "/method/#ten-week-plan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/syllabus"
+  to = "/method/#ten-week-plan"
   status = 301
   force = true
 
 [[redirects]]
   from = "/about.html"
   to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/partners.html"
+  to = "/partners/"
+  status = 301
+  force = true
+
+# Legacy generated paths -> canonical architecture paths
+[[redirects]]
+  from = "/generated/annotations/*"
+  to = "/annotations/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generated/curriculum/*"
+  to = "/curriculum/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generated/schools/*"
+  to = "/schools/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/generated/studio/scenes/*"
+  to = "/studio/scenes/:splat"
+  status = 301
+  force = true
+
+# Transitional studio asset routing while production assets remain in /generated/studio/
+[[redirects]]
+  from = "/studio/assets/*"
+  to = "/generated/studio/assets/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/studio/demos/*"
+  to = "/generated/studio/demos/:splat"
+  status = 200
+  force = true
+
+# Legacy /books/[slug]/ links -> /[slug]/
+[[redirects]]
+  from = "/books/:slug/"
+  to = "/:slug/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/books/:slug"
+  to = "/:slug/"
   status = 301
   force = true

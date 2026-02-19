@@ -17,7 +17,7 @@ const path = require('path');
 // Paths
 const DATA_DIR = path.join(__dirname, 'data', 'annotation-guides');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
-const OUTPUT_DIR = path.join(__dirname, 'generated', 'annotations');
+const OUTPUT_DIR = path.join(__dirname, 'annotations');
 const IMAGES_DIR = path.join(__dirname, 'images', 'annotations');
 
 // Load templates
@@ -141,7 +141,7 @@ function generateGuidePage(data) {
   html = html.replace(/\{\{PARENT_BRIDGE_HEADLINE\}\}/g, escapeHtml(data.parentBridge?.headline || ''));
   html = html.replace(/\{\{PARENT_BRIDGE_DESCRIPTION\}\}/g, escapeHtml(data.parentBridge?.description || ''));
   html = html.replace(/\{\{PARENT_BRIDGE_CTA\}\}/g, escapeHtml(data.parentBridge?.cta || ''));
-  html = html.replace(/\{\{PARENT_BRIDGE_LINK\}\}/g, data.parentBridge?.link || '/course.html');
+  html = html.replace(/\{\{PARENT_BRIDGE_LINK\}\}/g, data.parentBridge?.link || '/method/');
 
   // Generate dynamic content
   html = html.replace('{{PREVIEW_GUIDE_IMAGES}}', generatePreviewGuideImages(data));
@@ -314,8 +314,8 @@ function generateIndexPage(allGuides) {
     <div class="nav-content">
       <a href="/" class="nav-logo">LuminAIT</a>
       <div class="nav-links">
-        <a href="/course.html" class="nav-link">Course</a>
-        <a href="/curriculum/" class="nav-link">Curriculum Guides</a>
+        <a href="/method/" class="nav-link">How We Teach</a>
+        <a href="/about/" class="nav-link">About</a>
       </div>
     </div>
   </nav>
@@ -347,8 +347,8 @@ ${cardsHtml}
 
     <section style="text-align: center; margin: 4rem 0 2rem;">
       <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Want structured, expert-led learning?</h3>
-      <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Join our 5-week or 10-week course for personalized feedback and guided analysis.</p>
-      <a href="/course.html" style="display: inline-block; padding: 0.875rem 2rem; font-size: 1.125rem; font-weight: 600; color: white; background: var(--accent-primary); border-radius: 6px; text-decoration: none; transition: all 0.2s;">View Course Details →</a>
+      <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 1.5rem;">See the full teaching system, outcomes, and enquiry details.</p>
+      <a href="/method/" style="display: inline-block; padding: 0.875rem 2rem; font-size: 1.125rem; font-weight: 600; color: white; background: var(--accent-primary); border-radius: 6px; text-decoration: none; transition: all 0.2s;">See How We Teach →</a>
     </section>
 
   </main>

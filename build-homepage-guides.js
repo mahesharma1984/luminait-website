@@ -29,7 +29,7 @@ const HOMEPAGE_BOOKS = [
 // Paths
 const DATA_DIR = path.join(__dirname, 'data', 'parent-guides');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
-const OUTPUT_DIR = path.join(__dirname, 'books'); // Books directory
+const OUTPUT_DIR = __dirname;
 
 // Load template
 const guideTemplate = fs.readFileSync(

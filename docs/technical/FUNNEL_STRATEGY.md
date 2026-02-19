@@ -184,6 +184,7 @@ Preserved for reference if parent-direct funnel is reintroduced:
 * Parent-direct pages remain accessible — do not delete build scripts or data files.
 * Use consistent event tracking across B2B funnel and annotation PLG for proof reporting.
 * Update `site-config.json` nav flags after method page and homepage are built.
+* Use approved B2B template reference models from `SITE_ARCHITECTURE.md` §13.6 (layout reference only, no platform migration).
 
 ---
 

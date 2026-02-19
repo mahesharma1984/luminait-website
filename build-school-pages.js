@@ -21,7 +21,7 @@ const path = require('path');
 const DATA_DIR = path.join(__dirname, 'data', 'schools');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
 const PARTIALS_DIR = path.join(__dirname, 'src', 'partials');
-const OUTPUT_DIR = path.join(__dirname, 'generated', 'schools');
+const OUTPUT_DIR = path.join(__dirname, 'schools');
 const CONFIG_PATH = path.join(__dirname, 'site-config.json');
 
 // Load config for navigation links
@@ -100,27 +100,27 @@ try {
   process.exit(1);
 }
 
-// Text slug to URL mapping (homepage texts in /books/, others in /generated/curriculum/)
+// Text slug to URL mapping (homepage texts at /[slug]/, additional texts at /curriculum/[slug]/)
 const TEXT_URL_MAP = {
-  'the-giver': '/books/the-giver/',
-  'macbeth': '/books/macbeth/',
-  'animal-farm': '/books/animal-farm/',
-  'romeo-and-juliet': '/books/romeo-and-juliet/',
-  'to-kill-a-mockingbird': '/books/to-kill-a-mockingbird/',
-  'a-christmas-carol': '/books/a-christmas-carol/',
-  'blueback': '/books/blueback/',
-  'the-outsiders': '/books/the-outsiders/',
+  'the-giver': '/the-giver/',
+  'macbeth': '/macbeth/',
+  'animal-farm': '/animal-farm/',
+  'romeo-and-juliet': '/romeo-and-juliet/',
+  'to-kill-a-mockingbird': '/to-kill-a-mockingbird/',
+  'a-christmas-carol': '/a-christmas-carol/',
+  'blueback': '/blueback/',
+  'the-outsiders': '/the-outsiders/',
   // Curriculum texts
-  'dracula': '/generated/curriculum/dracula/',
-  'jane-eyre': '/generated/curriculum/jane-eyre/',
-  'the-simple-gift': '/generated/curriculum/the-simple-gift/',
-  'convenience-store-woman': '/generated/curriculum/convenience-store-woman/',
-  'catching-teller-crow': '/generated/curriculum/catching-teller-crow/',
-  'the-curious-incident': '/generated/curriculum/the-curious-incident/',
-  'the-white-girl': '/generated/curriculum/the-white-girl/',
-  'his-name-was-walter': '/generated/curriculum/his-name-was-walter/',
-  'catherine-called-birdy': '/generated/curriculum/catherine-called-birdy/',
-  'my-life-as-an-alphabet': '/generated/curriculum/my-life-as-an-alphabet/',
+  'dracula': '/curriculum/dracula/',
+  'jane-eyre': '/curriculum/jane-eyre/',
+  'the-simple-gift': '/curriculum/the-simple-gift/',
+  'convenience-store-woman': '/curriculum/convenience-store-woman/',
+  'catching-teller-crow': '/curriculum/catching-teller-crow/',
+  'the-curious-incident': '/curriculum/the-curious-incident/',
+  'the-white-girl': '/curriculum/the-white-girl/',
+  'his-name-was-walter': '/curriculum/his-name-was-walter/',
+  'catherine-called-birdy': '/curriculum/catherine-called-birdy/',
+  'my-life-as-an-alphabet': '/curriculum/my-life-as-an-alphabet/',
 };
 
 /**

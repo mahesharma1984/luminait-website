@@ -16,149 +16,158 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="components/base.css">
-  <link rel="stylesheet" href="components/page-components.css">
-  <link rel="stylesheet" href="components/page-marketing.css">
+  <link rel="stylesheet" href="/components/base.css">
+  <link rel="stylesheet" href="/components/page-components.css">
+  <link rel="stylesheet" href="/components/page-marketing.css">
 
   <style>
-    /* Homepage Specific Styles - Minimal overrides only */
-
-    .hero {
-      padding-top: 60px;
-      padding-bottom: 60px;
+    .router-hero {
+      padding: 4.5rem 0 2.5rem;
       text-align: center;
-      max-width: 900px;
+      max-width: 940px;
       margin: 0 auto;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .router-badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       background: var(--warm-light);
       color: var(--warm);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: var(--space-md);
     }
 
-    /* Teacher / About Section */
-    .about-section {
-      text-align: center;
-      max-width: 800px;
+    .router-hero h1 {
+      margin: 1rem 0;
+      color: var(--text-dark);
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .router-subtitle {
+      max-width: 760px;
       margin: 0 auto;
+      font-size: 1.1rem;
+      color: var(--text-main);
+      line-height: 1.7;
     }
 
-    /* Schools Section */
-    .schools-section {
-      padding: 60px 0;
-      background: var(--section-soft);
+    .paths-section {
+      padding: 1rem 0 3rem;
     }
 
-    .schools-grid {
+    .paths-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-      max-width: 800px;
-      margin: 0 auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
     }
 
-    .school-card-home {
-      background: var(--bg-paper);
-      border-radius: 8px;
-      padding: 20px 16px;
-      text-decoration: none;
+    .path-card {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      gap: 0.8rem;
+      min-height: 220px;
     }
 
-    .school-card-home:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .school-card-name {
-      display: block;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-
-    .school-card-suburb {
-      font-size: 0.8rem;
-      color: var(--text-light);
-    }
-
-    /* Method Annotation Link */
-    .method-annotation-link {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .annotation-cta-text {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.75rem;
-    }
-
-    .annotation-cta-btn {
+    .path-label {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      background: white;
-      color: var(--accent-primary);
-      border: 1px solid var(--accent-primary);
-      border-radius: 6px;
+      width: fit-content;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.28rem 0.65rem;
+      background: var(--bg-paper-dark);
+      color: var(--text-main);
+    }
+
+    .path-card h2 {
+      margin: 0;
+      color: var(--text-dark);
+      font-size: 1.35rem;
+    }
+
+    .path-card p {
+      margin: 0;
+      color: var(--text-main);
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .path-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .path-actions a {
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: all 0.2s;
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 700;
     }
 
-    .annotation-cta-btn:hover {
-      background: var(--accent-primary);
+    .btn-primary-path {
+      background: var(--primary);
       color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
     }
 
-    /* Mobile */
-    @media(max-width: 900px) {
-      .schools-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .btn-secondary-path {
+      border: 1px solid rgba(15, 23, 42, 0.2);
+      color: var(--text-dark);
+      background: white;
+    }
+
+    .proof-row {
+      margin-top: 1.5rem;
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1rem;
+      background: var(--section-soft);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .proof-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 0.7rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .proof-item strong {
+      display: block;
+      color: var(--text-dark);
+      font-size: 1rem;
+    }
+
+    .proof-item span {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .paths-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media(max-width: 600px) {
-      .hero {
-        padding-top: 40px;
-      }
-
-      .schools-section {
-        padding: 40px 0;
-      }
-
-      .schools-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-
-      .school-card-home {
-        padding: 16px 12px;
-      }
-
-      .school-card-name {
-        font-size: 0.9rem;
+    @media (max-width: 700px) {
+      .proof-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -168,382 +177,62 @@
 
   {{>nav.html}}
 
+  <main class="container">
+    <header class="router-hero">
+      <span class="router-badge">LuminAIT</span>
+      <h1>Text-specific English tutoring infrastructure.</h1>
+      <p class="router-subtitle">
+        Choose your path: partnership for tutoring businesses, or direct access to annotation guides and the full
+        teaching method for students and families.
+      </p>
+    </header>
 
-  <!-- Hero -->
-  <header class="section hero">
-    <div class="hero-badge">Melbourne · Years 7-12</div>
-    <h1>English tutoring built around <span style="color: var(--primary);">your child's text</span>.</h1>
-    <p class="hero-subtitle">Generic tutoring doesn't work. We build the entire 10-week course around the specific book
-      they are studying at school.</p>
-
-    <!-- Stage 1: Text Match Grid -->
-    <div class="text-selection" id="text-selection">
-      <h3 style="font-size: 1.25rem; margin-bottom: var(--space-xs);">Select their text to see the course plan</h3>
-      <p class="text-light" style="font-size: 0.95rem;">Finding your book helps us show you exactly what we cover.</p>
-
-      <div class="text-grid">
-        <a href="/the-giver/" class="text-card">
-          <div>
-            <span class="text-title">The Giver</span>
-            <span class="text-author">Lois Lowry</span>
-          </div>
-          <span class="text-badge">Year 7-8</span>
-        </a>
-        <a href="/romeo-and-juliet/" class="text-card">
-          <div>
-            <span class="text-title">Romeo and Juliet</span>
-            <span class="text-author">William Shakespeare</span>
-          </div>
-          <span class="text-badge">Year 9-10</span>
-        </a>
-        <a href="/to-kill-a-mockingbird/" class="text-card">
-          <div>
-            <span class="text-title">To Kill a Mockingbird</span>
-            <span class="text-author">Harper Lee</span>
-          </div>
-          <span class="text-badge">Year 9-10</span>
-        </a>
-        <a href="/macbeth/" class="text-card">
-          <div>
-            <span class="text-title">Macbeth</span>
-            <span class="text-author">William Shakespeare</span>
-          </div>
-          <span class="text-badge">VCE</span>
-        </a>
-        <a href="/animal-farm/" class="text-card">
-          <div>
-            <span class="text-title">Animal Farm</span>
-            <span class="text-author">George Orwell</span>
-          </div>
-          <span class="text-badge">Year 9-10</span>
-        </a>
-
-        <a href="/a-christmas-carol/" class="text-card">
-          <div>
-            <span class="text-title">A Christmas Carol</span>
-            <span class="text-author">Charles Dickens</span>
-          </div>
-          <span class="text-badge">Year 9-10</span>
-        </a>
-        <a href="/blueback/" class="text-card">
-          <div>
-            <span class="text-title">Blueback</span>
-            <span class="text-author">Tim Winton</span>
-          </div>
-          <span class="text-badge">Year 9-10</span>
-        </a>
-        <a href="/the-outsiders/" class="text-card">
-          <div>
-            <span class="text-title">The Outsiders</span>
-            <span class="text-author">S.E. Hinton</span>
-          </div>
-          <span class="text-badge">Year 9-10</span>
-        </a>
-
-        <!-- Placeholder for 'Other' -->
-        <a href="mailto:hello@luminait.app?subject=Other Text Enquiry" class="text-card"
-          style="background: var(--bg-paper-dark); border-style: dashed;">
-          <div>
-            <span class="text-title" style="color: var(--text-light);">Other Text?</span>
-            <span class="text-author">Let us know</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Methodology Section (Consolidated) -->
-  <section class="section section-paper">
-    <div class="container">
-      <div class="grid grid-2" style="align-items: center;">
-
-        <!-- Left: Value Prop & Logic -->
-        <div>
-          <span class="hero-badge">The Method</span>
-          <h2 style="margin-top: 12px; margin-bottom: 1rem;">We don't just "help with English". We prepare them for
-            <i>this</i> book.
-          </h2>
-          <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.5rem;">
-            Generic tutoring fails because it misses the details. We build the entire 10-week course around the specific
-            text they are studying at school.
+    <section class="paths-section" aria-label="Audience paths">
+      <div class="paths-grid">
+        <article class="path-card">
+          <span class="path-label">Path A</span>
+          <h2>For Tutoring Companies</h2>
+          <p>
+            Explore the cohort-build partnership model, review proof layers, and request an engagement proposal.
           </p>
-
-          <ul style="list-style: none; margin-bottom: 2rem;">
-            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: start;">
-              <span style="color: var(--accent); font-weight: bold;">✓</span>
-              <span><b>Chapter-by-chapter breakdown</b> mapped to their exact school timeline.</span>
-            </li>
-            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: start;">
-              <span style="color: var(--accent); font-weight: bold;">✓</span>
-              <span><b>Pre-written analysis bank</b> so they know exactly what to look for.</span>
-            </li>
-            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: start;">
-              <span style="color: var(--accent); font-weight: bold;">✓</span>
-              <span><b>10 weeks of structured worksheets</b> building from observation to argument.</span>
-            </li>
-          </ul>
-
-          <a href="method.html" class="btn btn-secondary">See the full 3-step method →</a>
-        </div>
-
-        <!-- Right: Single Hero Video -->
-        <div class="video-wrapper"
-          style="box-shadow: var(--shadow-lg); border-radius: 12px; overflow: hidden; background: #000;">
-          <video autoplay muted loop playsinline style="width: 100%; display: block;">
-            <source src="studio/assets/clips/demo-annotation.mp4" type="video/mp4">
-          </video>
-          <div style="padding: 12px; background: white; border-top: 1px solid #eee;">
-            <strong style="color: var(--primary);">Step 1: Annotation</strong>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin: 4px 0 0 0;">We trace patterns live, showing
-              exactly how devices create meaning.</p>
+          <div class="path-actions">
+            <a class="btn-primary-path" href="/partners/">Learn About Partnerships</a>
           </div>
-        </div>
+        </article>
 
-        <!-- NEW: Annotation guide link -->
-        <div class="method-annotation-link">
-          <p class="annotation-cta-text">
-            See how students annotate texts with our free guide
+        <article class="path-card">
+          <span class="path-label">Path B</span>
+          <h2>For Students and Families</h2>
+          <p>
+            Start with free annotation guides, then move into the complete method and outcomes page.
           </p>
-          <a href="/generated/annotations/" class="annotation-cta-btn">
-            View Annotation Examples →
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Latest Results Teaser -->
-  <section class="section section-gray">
-    <div class="container" style="text-align: center;">
-      <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Real Outcomes</span>
-      <h2 style="margin-bottom: 1rem;">See what 10 weeks can do.</h2>
-      <p style="color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-        Our students don't just "improve". They make meaningful leaps in analytical thinking.
-      </p>
-
-      <div class="results-preview-grid">
-        <!-- Card 1 -->
-        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
-          <div class="result-growth">+34%</div>
-          <div class="result-label">Improvement in 1 Term</div>
-          <div class="result-quote">"From being confused about the text to writing sophisticated analytical essays."
+          <div class="path-actions">
+            <a class="btn-primary-path" href="/annotations/">Browse Annotation Guides</a>
+            <a class="btn-secondary-path" href="/method/">See How We Teach</a>
           </div>
-          <div class="result-student">Jordan, Year 9</div>
-        </a>
-
-        <!-- Card 2 -->
-        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
-          <div class="result-growth">+32%</div>
-          <div class="result-label">Improvement in 1 Term</div>
-          <div class="result-quote">"Finally understands how to connect evidence to the author's intent."</div>
-          <div class="result-student">Taylor, Year 10</div>
-        </a>
-
-        <!-- Card 3 -->
-        <a href="/progress.html" class="result-preview-card" style="text-decoration: none;">
-          <div class="result-growth">+19%</div>
-          <div class="result-label">Improvement in 1 Term</div>
-          <div class="result-quote">"Developed a clear argument with cause-and-effect reasoning."</div>
-          <div class="result-student">Alex, Year 8</div>
-        </a>
+        </article>
       </div>
 
-      <div style="margin-top: 3rem; text-align: center;">
-        <a href="/progress.html" class="btn btn-primary" style="padding: 12px 28px;">View All Case Studies</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Schools Section -->
-  <section class="section schools-section">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: var(--space-lg);">
-        <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">
-          Or find by school
-        </h3>
-        <p class="text-light" style="font-size: 0.95rem;">
-          See your school's 2026 booklist and which texts we cover.
-        </p>
-      </div>
-
-      <div class="schools-grid">
-        <a href="/generated/schools/mckinnon-sc/" class="school-card-home">
-          <span class="school-card-name">McKinnon SC</span>
-          <span class="school-card-suburb">McKinnon</span>
-        </a>
-        <a href="/generated/schools/melbourne-girls-college/" class="school-card-home">
-          <span class="school-card-name">Melbourne Girls</span>
-          <span class="school-card-suburb">Richmond</span>
-        </a>
-        <a href="/generated/schools/lauriston-girls/" class="school-card-home">
-          <span class="school-card-name">Lauriston</span>
-          <span class="school-card-suburb">Armadale</span>
-        </a>
-        <a href="/generated/schools/korowa-anglican/" class="school-card-home">
-          <span class="school-card-name">Korowa</span>
-          <span class="school-card-suburb">Glen Iris</span>
-        </a>
-        <a href="/generated/schools/scotch-college/" class="school-card-home">
-          <span class="school-card-name">Scotch</span>
-          <span class="school-card-suburb">Hawthorn</span>
-        </a>
-      </div>
-
-      <div style="text-align: center; margin-top: var(--space-lg);">
-        <a href="/generated/schools/" style="color: var(--primary); font-weight: 600; text-decoration: none;">
-          View all schools →
-        </a>
-        <span style="color: var(--text-light); margin: 0 12px;">·</span>
-        <a href="mailto:hello@luminait.app?subject=School Request"
-          style="color: var(--text-light); text-decoration: none;">
-          Don't see your school?
-        </a>
-      </div>
-
-      <div
-        style="text-align: center; margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(0,0,0,0.05);">
-        <span style="color: var(--text-light); font-size: 0.9rem;">Want to understand our teaching approach?</span>
-        <a href="/generated/curriculum/"
-          style="color: var(--primary); font-weight: 600; text-decoration: none; margin-left: 8px;">View Parent
-          Curriculum Guides →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Proof (What else to include: Testimonials) -->
-  <link rel="stylesheet" href="/components/marquee.css">
-
-  <section class="section section-white">
-    <div class="container" style="overflow: hidden;">
-      <h2 style="text-align: center; margin-bottom: var(--space-xl);">What parents & students say</h2>
-
-      <!-- Infinite Marquee -->
-      <div class="marquee-container">
-        <!-- Track (duplicated content for seamless loop) -->
-        <div class="marquee-track">
-
-          <!-- SET 1 -->
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">His English performance at school improved from a C to a B in Year 7 after taking the
-              course for three terms. When writing speeches... his writing has become more structured.</p>
-            <div class="quote-author">— Parent (Year 7)</div>
+      <div class="proof-row">
+        <div class="proof-grid">
+          <div class="proof-item">
+            <strong>18 texts built</strong>
+            <span>Parent curriculum guide coverage (unlisted proof layer)</span>
           </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">Happy Teacher's Day! We are so grateful to be in your class, your humor and concise
-              lessons make English not only fun but also meaningful. We genuinely love it.</p>
-            <div class="quote-author">— Adele & Bella, Students</div>
+          <div class="proof-item">
+            <strong>Annotation-first PLG</strong>
+            <span>Student entry path that doubles as infrastructure proof</span>
           </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">You were teaching me how to pronounce every single English alphabet... My self esteem
-              has been improved a lot... You are the most unforgettable teacher in my life.</p>
-            <div class="quote-author">— Jinyoung, Year 10 Student</div>
+          <div class="proof-item">
+            <strong>Method + outcomes</strong>
+            <span>Single page for system visibility and conversion</span>
           </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">Dear Mahesh, Thank you for dedication to our students. You are an amazing teacher!</p>
-            <div class="quote-author">— Student Note</div>
-          </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">It's awesome to see his writing progress. Thanks for all your help. Hope he keeps it
-              up.</p>
-            <div class="quote-author">— Parent (Email)</div>
-          </div>
-
-          <!-- SET 2 (Clone for loop) -->
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">His English performance at school improved from a C to a B in Year 7 after taking the
-              course for three terms. When writing speeches... his writing has become more structured.</p>
-            <div class="quote-author">— Parent (Year 7)</div>
-          </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">Happy Teacher's Day! We are so grateful to be in your class, your humor and concise
-              lessons make English not only fun but also meaningful. We genuinely love it.</p>
-            <div class="quote-author">— Adele & Bella, Students</div>
-          </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">You were teaching me how to pronounce every single English alphabet... My self esteem
-              has been improved a lot... You are the most unforgettable teacher in my life.</p>
-            <div class="quote-author">— Jinyoung, Year 10 Student</div>
-          </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">Dear Mahesh, Thank you for dedication to our students. You are an amazing teacher!</p>
-            <div class="quote-author">— Student Note</div>
-          </div>
-
-          <div class="marquee-card">
-            <div class="quote-icon">"</div>
-            <p class="quote-text">It's awesome to see his writing progress. Thanks for all your help. Hope he keeps it
-              up.</p>
-            <div class="quote-author">— Parent (Email)</div>
-          </div>
-
         </div>
       </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-
-  <!-- About / Teacher Profile -->
-  <section class="section section-soft">
-    <div class="container about-section">
-      <div style="margin-bottom: var(--space-md);">
-        <img src="/images/mahesh-bio.jpg" alt="Mahesh Sharma"
-          style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: var(--shadow-md);">
-      </div>
-      <h2>Meet Your Guide</h2>
-      <p style="font-size: 1.1rem; max-width: 600px; margin: 16px auto; color: var(--text-main);">
-        <b>Mahesh Sharma</b> has spent 25 years bridging the gap between technical journalism and IB English teaching.
-      </p>
-      <p style="color: var(--text-light); max-width: 600px; margin: 0 auto var(--space-lg);">
-        "I believe that analytical writing isn't magic—it's a system. And to teach it, you need both scientific
-        precision and deep relational understanding."
-      </p>
-
-      <div>
-        <a href="/about.html" class="btn btn-primary">Read Bio & Philosophy</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-nap">
-      <strong>{{SITE_NAME}}</strong><br>
-      {{ADDRESS_DISPLAY}}<br>
-      <a href="tel:{{CONTACT_PHONE_LINK}}">{{CONTACT_PHONE}}</a><br>
-      <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>
-    </div>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/generated/schools/">Schools</a>
-      <a href="/generated/curriculum/">Guides</a>
-      <a href="/course.html">Course</a>
-      <a href="/privacy">Privacy</a>
-    </div>
-    <div class="footer-copy">© 2026 {{SITE_NAME}}. Text-specific English tutoring in Melbourne.</div>
-  </footer>
-
-  <script>
-    // Play videos at half speed
-    document.querySelectorAll('.video-demo-section video').forEach(v => {
-      v.playbackRate = 0.5;
-    });
-  </script>
+  {{>footer-simple.html}}
 
 </body>
 

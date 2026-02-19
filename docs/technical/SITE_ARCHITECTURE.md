@@ -924,6 +924,37 @@ All pages must follow the unified design system. See `DESIGN_SYSTEM.md` (this di
 
 **Adding new pages:** Follow `DESIGN_SYSTEM.md` (this directory) Section 8 for complete procedure.
 
+### 13.6 Template Reference Models (B2B)
+
+The implementation remains a static template/build system (`src/templates` + build scripts). External templates are used as **layout/reference models only**, not as a platform migration.
+
+**Primary reference model (approved):**
+- **B2bizz** (Webflow template)
+  - Template listing: <https://webflow.com/templates/html/b2bizz-website-template>
+  - Live preview: <https://b2bizz-wbs.webflow.io/>
+  - Why this is primary: closest fit to B2B proof-led hierarchy (`/partners/` as commercial surface, hub-and-spoke proof exploration, strong commercial CTA return path).
+
+**Secondary reference models (fallbacks):**
+- **Partner** (Webflow template): <https://webflow.com/templates/html/partner-business-website-template>
+- **Strategis** (Webflow template): <https://webflow.com/templates/html/strategis-website-template>
+
+**Model-to-page mapping:**
+- `/partners/`: Use B2B consulting/commercial landing structure (economic claim → engagement structure → proof links by layer → CTA).
+- `/` (router): Use minimal bifurcated hero + two path cards (B2B path, student/parent path), no legacy parent-direct content blocks.
+- `/method/`: Use long-form proof page structure with anchored sections and clear jump navigation.
+
+**Adaptation rules (non-negotiable):**
+1. Keep B2B messaging constrained to `/partners/` only.
+2. Keep all implementation inside existing build system (no CMS/framework swap).
+3. Do not import template-specific JS/CMS features that conflict with static generation.
+4. Preserve internal URL architecture and proof-layer linking defined in this document.
+5. Preserve design system tokens/components (`base.css`, `page-components.css`, `page-marketing.css`).
+
+**Anti-patterns (do not adopt):**
+- SaaS app UI patterns that foreground product dashboards over proof assets.
+- Feature-grid-first layouts that hide economics and evidence below the fold.
+- Consumer tutoring tone/styles on `/partners/` (must remain direct and evidence-led).
+
 ---
 
 ## 14. ARCHIVED PAGES

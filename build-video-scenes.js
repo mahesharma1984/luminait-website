@@ -15,7 +15,7 @@ const path = require('path');
 // === PATHS ===
 const DATA_DIR = path.join(__dirname, 'data', 'video-scenes');
 const TEMPLATES_DIR = path.join(__dirname, 'src', 'templates');
-const OUTPUT_DIR = path.join(__dirname, 'generated', 'studio', 'scenes');
+const OUTPUT_DIR = path.join(__dirname, 'studio', 'scenes');
 
 // === LOAD TEMPLATE ===
 const sceneTemplate = fs.readFileSync(

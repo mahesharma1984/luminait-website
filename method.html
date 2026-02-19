@@ -37,31 +37,253 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,wght@0,600;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="components/base.css">
-    <link rel="stylesheet" href="components/page-components.css">
-    <link rel="stylesheet" href="components/page-marketing.css">
+    <link rel="stylesheet" href="/components/base.css">
+    <link rel="stylesheet" href="/components/page-components.css">
+    <link rel="stylesheet" href="/components/page-marketing.css">
 
     <style>
+        .method-hero {
+            padding: 3.8rem 0 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .method-hero h1 {
+            margin: 0.8rem 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+        }
+
+        .method-hero p {
+            margin: 0;
+            color: var(--text-main);
+            line-height: 1.7;
+            font-size: 1.08rem;
+        }
+
+        .jump-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin: 1.3rem 0 2.2rem;
+        }
+
+        .jump-nav a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: var(--text-main);
+            border: 1px solid rgba(0, 0, 0, 0.14);
+            border-radius: var(--radius-full);
+            padding: 0.45rem 0.8rem;
+            background: white;
+        }
+
         .method-step {
-            padding: 60px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .step-number {
             font-family: 'Fraunces', serif;
-            font-size: 3rem;
+            font-size: 2.4rem;
             color: var(--primary-light);
-            opacity: 0.3;
-            margin-bottom: 1rem;
-            display: block;
+            opacity: 0.45;
+            margin-bottom: 0.75rem;
+            display: inline-block;
         }
 
         .video-card-large {
             background: white;
-            border-radius: 12px;
+            border-radius: var(--radius-md);
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            margin-top: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .plan-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-md);
+            padding: 0.9rem;
+        }
+
+        .plan-card h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .plan-card p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .artifact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .artifact-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+        }
+
+        .artifact-card h3 {
+            margin: 0 0 0.45rem;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .artifact-card p {
+            margin: 0 0 0.7rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .artifact-card a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .outcomes-band {
+            margin-top: 1rem;
+            background: var(--section-soft);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+        }
+
+        .outcomes-band ul {
+            margin: 0.7rem 0 0;
+            padding-left: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
+
+        .metric-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+        }
+
+        .metric-links a {
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 0.45rem 0.7rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        .enrol-section {
+            margin-top: 1rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 1.4rem;
+        }
+
+        .enrol-section h2 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 0.4rem;
+        }
+
+        .enrol-section p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .price-grid {
+            margin-top: 0.9rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.7rem;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: 0.9rem;
+        }
+
+        .price-card h3 {
+            margin: 0;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .price-card p {
+            margin-top: 0.35rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+
+        .enrol-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .enrol-actions a {
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            padding: 0.65rem 0.9rem;
+            font-size: 0.9rem;
+        }
+
+        .enrol-primary {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        .enrol-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            color: white;
+        }
+
+        @media (max-width: 950px) {
+            .plan-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .artifact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .plan-grid,
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -71,30 +293,18 @@
     <nav class="nav">
   <div class="nav-content">
     <a href="/" class="nav-logo" aria-label="LuminAIT home">
-      <img src="brand/source/logo-mark.svg" alt="" class="nav-logo-mark" style="height: 48px; width: auto;">
-      <img src="brand/source/logotype_cursive.svg" alt="LuminAIT" class="nav-logo-lockup"
+      <img src="/brand/source/logo-mark.svg" alt="" class="nav-logo-mark" style="height: 48px; width: auto;">
+      <img src="/brand/source/logotype_cursive.svg" alt="LuminAIT" class="nav-logo-lockup"
         style="height: 48px; width: auto; transform: scale(2.2); transform-origin: left center; margin-left: 12px; margin-right: 80px;">
     </a>
     <div class="nav-links">
               <a href="/method/" class="nav-link active">
-          <span data-lang-content="en">The Method</span>
+          <span data-lang-content="en">How We Teach</span>
           <span data-lang-content="zh">方法</span>
         </a>
-        <a href="/#text-selection" class="nav-link">
-          <span data-lang-content="en">Texts</span>
-          <span data-lang-content="zh">文本</span>
-        </a>
-        <a href="/schools/" class="nav-link">
-          <span data-lang-content="en">Schools</span>
-          <span data-lang-content="zh">学校</span>
-        </a>
-        <a href="/course/" class="nav-link">
-          <span data-lang-content="en">Course</span>
-          <span data-lang-content="zh">课程</span>
-        </a>
-        <a href="/results/" class="nav-link">
-          <span data-lang-content="en">Results</span>
-          <span data-lang-content="zh">学习成果</span>
+        <a href="/annotations/" class="nav-link">
+          <span data-lang-content="en">Annotations</span>
+          <span data-lang-content="zh">标注</span>
         </a>
         <a href="/about/" class="nav-link">
           <span data-lang-content="en">About</span>
@@ -105,151 +315,190 @@
   </div>
 </nav>
 
-    <!-- Hero -->
-    <header class="section hero" style="padding-bottom: 20px;">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <div class="hero-badge">The Method</div>
-            <h1>How we teach <span style="color: var(--primary);">analytical writing</span>.</h1>
-            <p class="hero-subtitle">
-                Most students struggle because they don't have a system. We break down the complex process of literary
-                analysis into three visual, tangible steps.
+
+    <main class="container">
+        <header class="method-hero">
+            <div class="badge badge-primary">Method + Proof + Enrolment</div>
+            <h1>How We Teach Analytical Writing</h1>
+            <p>
+                This page consolidates the full system: method, 10-week progression, student artefacts, measurement,
+                and enrolment options.
             </p>
-        </div>
-    </header>
+            <nav class="jump-nav" aria-label="Method page sections">
+                <a href="#method">Method</a>
+                <a href="#ten-week-plan">10-Week Plan</a>
+                <a href="#artifacts">Artefacts</a>
+                <a href="#outcomes">Outcomes</a>
+                <a href="#measurement">Measurement</a>
+                <a href="#enroll">Enrol</a>
+            </nav>
+        </header>
 
-    <!-- Step 1: Annotation -->
-    <section class="section method-step">
-        <div class="container">
+        <section id="method" class="method-step">
             <div class="grid grid-2" style="align-items: center;">
-
                 <div>
                     <span class="step-number">01</span>
-                    <h2>Annotating the Text</h2>
-                    <p style="font-size: 1.1rem; color: var(--text-main);">
-                        Analysis starts with reading. We don't just tell students "this is a metaphor". We show them
-                        <i>how</i> to find it.
-                    </p>
-                    <p class="text-light">
-                        In our live demonstrations, we trace the patterns on screen, highlighting the exact words and
-                        devices the author uses. This trains the student's eye to spot these patterns themselves.
-                    </p>
+                    <h2>Annotation</h2>
+                    <p class="text-light">Students first learn to read for pattern: who is speaking, what is repeated, and what effect the text is producing.</p>
                 </div>
-
                 <div class="video-card-large">
                     <video autoplay muted loop playsinline width="100%">
-                        <source src="studio/assets/clips/demo-annotation.mp4" type="video/mp4">
+                        <source src="/studio/assets/clips/demo-annotation.mp4" type="video/mp4">
                     </video>
                 </div>
-
             </div>
-        </div>
-    </section>
 
-    <!-- Step 2: Worksheets -->
-    <section class="section method-step" style="background: var(--section-soft);">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center;">
-
-                <div style="order: 2;"> <!-- Swap order for visual variety -->
-                    <span class="step-number">02</span>
-                    <h2>Structured Activities</h2>
-                    <p style="font-size: 1.1rem; color: var(--text-main);">
-                        Understanding isn't enough; they need to practice.
-                    </p>
-                    <p class="text-light">
-                        Our worksheets aren't just quizzes. They are scaffolded activities that guide students to link
-                        the <b>Device</b> (what the author used) to the <b>Meaning</b> (why they used it).
-                    </p>
-                </div>
-
-                <div class="video-card-large" style="order: 1;">
+            <div class="grid grid-2" style="align-items: center; margin-top: 1rem;">
+                <div class="video-card-large">
                     <video autoplay muted loop playsinline width="100%">
-                        <source src="studio/assets/clips/demo-worksheet.mp4" type="video/mp4">
+                        <source src="/studio/assets/clips/demo-worksheet.mp4" type="video/mp4">
                     </video>
                 </div>
-
+                <div>
+                    <span class="step-number">02</span>
+                    <h2>Structured Activity</h2>
+                    <p class="text-light">Worksheets convert raw annotation into reasoning practice with constrained prompts and progressive difficulty.</p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Step 3: Analysis -->
-    <section class="section method-step">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center;">
-
+            <div class="grid grid-2" style="align-items: center; margin-top: 1rem;">
                 <div>
                     <span class="step-number">03</span>
-                    <h2>Constructing Analysis</h2>
-                    <p style="font-size: 1.1rem; color: var(--text-main);">
-                        Finally, we turn observations into arguments.
-                    </p>
-                    <p class="text-light">
-                        We use a sentence-building framework (T-V-O-D-E) that helps students construct sophisticated
-                        analytical paragraphs. They learn to weave evidence and explanation together seamlessly.
-                    </p>
+                    <h2>Analytical Writing</h2>
+                    <p class="text-light">TVODE paragraph construction turns evidence into argument, then into complete response structures.</p>
                 </div>
-
                 <div class="video-card-large">
                     <video autoplay muted loop playsinline width="100%">
-                        <source src="studio/assets/clips/demo-analysis.mp4" type="video/mp4">
+                        <source src="/studio/assets/clips/demo-analysis.mp4" type="video/mp4">
                     </video>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="section section-primary" style="text-align: center;">
-        <div class="container">
-            <h2 style="color: white; margin-bottom: 1rem;">Ready to see it applied to <i>their</i> book?</h2>
-            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem;">
-                Find your child's text to see the 10-week plan built specifically for them.
+        <section id="ten-week-plan" class="method-step">
+            <h2>The 10-Week Plan</h2>
+            <p class="text-light">Representative progression used across texts with local adaptation by chapter and assessment schedule.</p>
+            <div class="plan-grid">
+                <article class="plan-card">
+                    <h3>Weeks 1–2</h3>
+                    <p>Foundation: context, core pattern, vocabulary control, annotation baseline.</p>
+                </article>
+                <article class="plan-card">
+                    <h3>Weeks 3–5</h3>
+                    <p>Analysis: device selection, evidence ranking, line-level reasoning.</p>
+                </article>
+                <article class="plan-card">
+                    <h3>Weeks 6–8</h3>
+                    <p>Writing: paragraph planning, TVODE execution, feedback cycles.</p>
+                </article>
+                <article class="plan-card">
+                    <h3>Weeks 9–10</h3>
+                    <p>Completion: timed response structure, exam transfer, final benchmark.</p>
+                </article>
+            </div>
+            <p style="margin-top: 0.9rem;">
+                Example text plan:
+                <a href="/the-outsiders/">The Outsiders parent guide</a>
             </p>
-            <a href="/#text-selection" class="btn btn-white">Find Your Text</a>
-        </div>
-    </section>
+        </section>
+
+        <section id="artifacts" class="method-step">
+            <h2>What Students Produce</h2>
+            <p class="text-light">Method artefacts make delivery visible: annotation → worksheet → writing output.</p>
+            <div class="artifact-grid">
+                <article class="artifact-card">
+                    <h3>Annotation Guide</h3>
+                    <p>Text-specific annotation pack used in guided close reading sessions.</p>
+                    <a href="/social-media-assets/annotations/Outsiders_Chapter1.pdf">Open example PDF →</a>
+                </article>
+                <article class="artifact-card">
+                    <h3>Worksheet</h3>
+                    <p>Structured worksheet used to convert evidence into argument structure.</p>
+                    <a href="/social-media-assets/worksheets/The-Giver-Week-1-Chapter-1-Literary-Analysis-Worksheet-Device-Recognition%20combined.pdf">Open example PDF →</a>
+                </article>
+                <article class="artifact-card">
+                    <h3>Student Writing</h3>
+                    <p>Annotated writing output from guided TVODE progression.</p>
+                    <a href="/social-media-assets/Student%20work/Coden-Week-3-The-Giver.pdf">Open sample PDF →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="outcomes" class="method-step">
+            <h2>Outcomes</h2>
+            <div class="outcomes-band">
+                Outcome proof combines observed writing uplift, progression quality, and parent-visible reporting.
+                <ul>
+                    <li>10–20% term improvement observed in core writing dimensions.</li>
+                    <li>30–50% uplift after feedback application cycles.</li>
+                    <li>Progress reports create shared visibility across student, parent, and teacher.</li>
+                </ul>
+                <div class="metric-links">
+                    <a href="/social-media-assets/progress-reports/Desmond_Progress_Report.pdf">Progress report sample</a>
+                    <a href="/social-media-assets/progress-reports/Jayden_Progress_Report.pdf">Progress report sample</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="measurement" class="method-step">
+            <h2>Measurement</h2>
+            <p class="text-light">
+                Measurement is built into delivery: weekly artefact review, checkpoint diagnostics, and per-term report synthesis.
+                Reports are evidence artefacts, not marketing claims.
+            </p>
+        </section>
+
+        <section id="enroll" class="method-step">
+            <div class="enrol-section">
+                <h2>Enrol / Enquire</h2>
+                <p>Choose the option that fits your term timing. If unsure, start from annotation guides and we map to the right text cohort.</p>
+                <div class="price-grid">
+                    <article class="price-card">
+                        <h3>5-Week Option</h3>
+                        <p>$275 · focused acceleration format</p>
+                    </article>
+                    <article class="price-card">
+                        <h3>10-Week Option</h3>
+                        <p>$495 · full progression format</p>
+                    </article>
+                </div>
+                <div class="enrol-actions">
+                    <a class="enrol-primary" href="mailto:mahesh@luminait.app?subject=Method%20Page%20Enquiry">Enquire Now</a>
+                    <a class="enrol-secondary" href="/annotations/">Not sure which text? Browse guides</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
       <footer class="footer">
-    <div class="footer-links">
-      <a href="method.html">
-        <span data-lang-content="en">The Method</span>
-        <span data-lang-content="zh">方法</span>
-      </a>
-      <a href="index.html#text-selection">
-        <span data-lang-content="en">Texts</span>
-        <span data-lang-content="zh">文本</span>
-      </a>
-      <a href="schools/index.html">
-        <span data-lang-content="en">Schools</span>
-        <span data-lang-content="zh">学校</span>
-      </a>
-      <a href="course.html">
-        <span data-lang-content="en">Course</span>
-        <span data-lang-content="zh">课程</span>
-      </a>
-      <a href="results.html">
-        <span data-lang-content="en">Results</span>
-        <span data-lang-content="zh">学习成果</span>
-      </a>
-      <a href="about.html">
-        <span data-lang-content="en">About</span>
-        <span data-lang-content="zh">关于</span>
-      </a>
+    <div class="footer-links"
+      style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; text-align: left;">
+      <div>
+        <strong style="display: block; margin-bottom: 0.4rem;">For Partners</strong>
+        <a href="/partners/">Partnership Info</a>
+      </div>
+      <div>
+        <strong style="display: block; margin-bottom: 0.4rem;">Resources</strong>
+        <a href="/method/">How We Teach</a>
+        <a href="/annotations/">Annotation Guides</a>
+        <a href="/about/">About</a>
+      </div>
+      <div>
+        <strong style="display: block; margin-bottom: 0.4rem;">Contact</strong>
+        <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a>
+        <a href="tel:+61421213517">+61 421 213 517</a>
+      </div>
     </div>
     <div class="footer-nap">
       <strong>LuminAIT Learning</strong><br>
-      Melbourne, VIC<br>
-      <a href="tel:+61421213517">+61 421 213 517</a><br>
-      <a href="mailto:mahesh@luminait.app">mahesh@luminait.app</a>
+      Melbourne, VIC
     </div>
   </footer>
 
 
-    <script switch-video-speed>
-        // Play videos at half speed for clarity
-        document.querySelectorAll('video').forEach(v => {
-            v.playbackRate = 0.75;
+    <script>
+        document.querySelectorAll('video').forEach(function (video) {
+            video.playbackRate = 0.75;
         });
     </script>
 

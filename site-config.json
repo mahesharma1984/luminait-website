@@ -80,16 +80,38 @@
       }
     },
     {
+      "id": "partners",
+      "file": "partners.html",
+      "template": "partners.html",
+      "showInNav": false,
+      "title": {
+        "en": "Partnerships",
+        "zh": "合作伙伴"
+      },
+      "navTitle": {
+        "en": "Partners",
+        "zh": "合作"
+      },
+      "pageTitle": {
+        "en": "English Tutoring Cohort-Build Partnerships | LuminAIT",
+        "zh": "英语教学业务合作 | LuminAIT"
+      },
+      "metaDescription": {
+        "en": "B2B cohort-build partnership for tutoring companies. We design, launch, stabilise, and hand over text-anchored English cohorts with reusable instructional infrastructure.",
+        "zh": "面向教学机构的B2B班型共建合作。我们设计、启动、稳定并交付以文本为核心的英语班型及可复用教学基础设施。"
+      }
+    },
+    {
       "id": "method",
       "file": "method.html",
       "template": "method.html",
       "showInNav": true,
       "title": {
-        "en": "The Method",
+        "en": "How We Teach",
         "zh": "教学方法"
       },
       "navTitle": {
-        "en": "The Method",
+        "en": "How We Teach",
         "zh": "方法"
       },
       "pageTitle": {
@@ -102,9 +124,30 @@
       }
     },
     {
+      "id": "annotations",
+      "file": "annotations/index.html",
+      "showInNav": true,
+      "title": {
+        "en": "Annotation Guides",
+        "zh": "标注指南"
+      },
+      "navTitle": {
+        "en": "Annotations",
+        "zh": "标注"
+      },
+      "pageTitle": {
+        "en": "Annotation Guides | LuminAIT",
+        "zh": "标注指南 | LuminAIT"
+      },
+      "metaDescription": {
+        "en": "Browse text-specific annotation guides and preview pages for secondary English texts.",
+        "zh": "浏览针对中学英语文本的标注指南与预览页面。"
+      }
+    },
+    {
       "id": "texts",
       "file": "index.html#text-selection",
-      "showInNav": true,
+      "showInNav": false,
       "navTitle": {
         "en": "Texts",
         "zh": "文本"
@@ -113,7 +156,7 @@
     {
       "id": "schools",
       "file": "schools/index.html",
-      "showInNav": true,
+      "showInNav": false,
       "title": {
         "en": "Schools",
         "zh": "学校"
@@ -135,7 +178,7 @@
       "id": "course",
       "file": "course.html",
       "template": "course.html",
-      "showInNav": true,
+      "showInNav": false,
       "title": {
         "en": "Course Details",
         "zh": "课程详情"
@@ -332,7 +375,7 @@
       "id": "results",
       "file": "results.html",
       "template": "results.html",
-      "showInNav": true,
+      "showInNav": false,
       "title": {
         "en": "Results & Outcomes",
         "zh": "学习成果"
